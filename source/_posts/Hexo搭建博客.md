@@ -1,7 +1,7 @@
 title: Hexo搭建博客
 date: 2014-07-01 00:50:07
 categories: WEB
-tags: hexo blog 博客 github
+tags: hexo blog github nodejs 博客
 ---
 ### 安装Hexo
 
@@ -9,4 +9,4 @@ tags: hexo blog 博客 github
 
 1. 配置根目录下的 `_config.yml` 文件
 	
-		但是
+		待续
