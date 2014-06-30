@@ -86,5 +86,7 @@ exclude_generator:
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
-deploy:
-  type:
+deploy: 
+  type: github	
+  repository: git@github.com:verphen/verphen.github.com.git
+  branch: master
