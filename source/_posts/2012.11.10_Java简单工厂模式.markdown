@@ -1,7 +1,7 @@
 ---
 title: JAVA简单工厂模式
 date: 2012-11-10 20:13:12
-categories: methodologies
+categories: Java
 tags: [java,设计模式]
 ---
 简单工厂模式 SimpleFactory，又称 静态工厂方法模式（StaticFactory Method）；

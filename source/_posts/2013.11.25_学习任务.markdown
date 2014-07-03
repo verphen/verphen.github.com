@@ -1,7 +1,7 @@
 ---
 title: Study Task
 date: 2013-11-25 20:54:33
-categories: Leisure
+categories: Essays
 tags: [book,总结]
 ---
 前几天头给我推荐了一本关于js的书<a href="http://yunpan.cn/QUuinR9BHPUhq">《Javascript Web Applications》</a>，让我好好看看！理解js的核心，以及面向对象的js的写法；顺便给了我一些菜鸟进阶的教程：
