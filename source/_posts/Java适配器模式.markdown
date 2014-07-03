@@ -1,7 +1,8 @@
 ---
 title: JAVA适配器模式
 date: 2014-04-07 23:00:06
-categories: JAVA
+categories: Java
+tags: [java,设配器，模式]
 ---
 适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。
 
@@ -25,7 +26,7 @@ categories: JAVA
 				/**
 				 * 这是源类（客户端类）也有的方法method1()
 				 */
-				void method1();
+				void method1
 				
 				/**
 				 * 这是源类（客户端类）没有的方法method2()

@@ -1,7 +1,8 @@
+---
 title: Firefox常用插件
 date: 2012-06-14 18:40:12
-categories: essays
-tags: firefox  plugin  火狐 插件
+categories: Essays
+tags: [firefox,plugin,火狐,插件]
 ---
 经常使用的或者用着还不错的firefox插件
 

@@ -1,7 +1,8 @@
+---
 title: 安装NodeJS
 date: 2014-06-30 01:42:14
-categories: WEB 
-tags: #nodejs #windows #ubuntu
+categories: Web 
+tags: [nodejs,windows,ubuntu]
 ---
 node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到node.js，特此整理一下node.js的安装。
 
