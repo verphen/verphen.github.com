@@ -1,5 +1,5 @@
 ---
-title: 辞职Eclipse插件工程师
+title: 辞职插件工程师
 date: 2013-11-06 23:43:12
 categories: Essays
 tags： [总结]
