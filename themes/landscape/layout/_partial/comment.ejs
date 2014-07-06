@@ -1,6 +1,5 @@
-<!-- 多说评论框 start -->
-	<div class="ds-thread"></div>
-<!-- 多说评论框 end -->
+<% if ( page.comments){ %>
+<section id="comment">
 <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 <script type="text/javascript">
 var duoshuoQuery = {short_name:"verphen"};
@@ -14,3 +13,7 @@ var duoshuoQuery = {short_name:"verphen"};
 	})();
 	</script>
 <!-- 多说公共JS代码 end -->
+</section>
+<% } %>
+
+
