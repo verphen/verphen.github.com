@@ -1,4 +1,4 @@
-title: 2014.7.7_Eclipse生成JavaDoc
+title: Eclipse生成JavaDoc
 date: 2014-07-07 15:30:21
 categories: Tools
 tags: [java,工具,eclipse]
