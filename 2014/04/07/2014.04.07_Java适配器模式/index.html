@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JAVA适配器模式 | verphen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。
+适配器模式的两种形式：
+
+类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：
+
+目标（Target）角色：这就是所期待得到的接口；注意，这里讨论的是类的适配器模式，因此目标不可以是类。
+  &lt;!--lang:java---">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA适配器模式">
+<meta property="og:url" content="http://yoursite.com/2014/04/07/2014.04.07_Java适配器模式/">
+<meta property="og:site_name" content="verphen">
+<meta property="og:description" content="适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。
+适配器模式的两种形式：
+
+类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：
+
+目标（Target）角色：这就是所期待得到的接口；注意，这里讨论的是类的适配器模式，因此目标不可以是类。
+  &lt;!--lang:java---">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA适配器模式">
+<meta name="twitter:description" content="适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。
+适配器模式的两种形式：
+
+类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：
+
+目标（Target）角色：这就是所期待得到的接口；注意，这里讨论的是类的适配器模式，因此目标不可以是类。
+  &lt;!--lang:java---">
+  
+    <link rel="alternative" href="/atom.xml" title="verphen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">verphen</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2014.04.07_Java适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/07/2014.04.07_Java适配器模式/" class="article-date">
+  <time datetime="2014-04-07T15:00:06.000Z" itemprop="datePublished">Apr 7 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA适配器模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。</p>
+<p>适配器模式的两种形式：</p>
+<ol>
+<li><p>类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口；<strong>注意，这里讨论的是类的适配器模式，因此目标不可以是类。</strong></p>
+<pre><code>  &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:44:58
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 目标角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Target</span> {</span>
+
+      <span class="javadoc">/**
+       * 这是源类（客户端类）也有的方法method1()
+       */</span>
+      <span class="keyword">void</span> method1
+
+      <span class="javadoc">/**
+       * 这是源类（客户端类）没有的方法method2()
+       */</span>
+      <span class="keyword">void</span> method2();
+  }
+</code></pre></li>
+<li><p>源（Adaptee）角色：现有需要适配的接口</p>
+<pre><code>  &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:49:00
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 源角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span> {</span>
+
+      <span class="javadoc">/**
+       * 源类（客户端类）含有方法method1()
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span>() {
+          <span class="comment">/* method body */</span>
+      }
+  }
+</code></pre></li>
+<li><p>适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。</p>
+<pre><code>      &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:48:30
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 类的适配器角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalssAdapter</span> <span class="keyword">extends</span> <span class="title">Adaptee</span> <span class="keyword">implements</span> <span class="title">Target</span> {</span>
+
+      <span class="javadoc">/**
+       * 由于源类（客户端类）没有方法method2(),因此适配器补上该方法
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span>() {
+          <span class="comment">/* method body */</span>
+      }
+  }
+</code></pre><p>类适配器的效果：使用一个具体的类把源（Adaptee）适配到目标（Target）中，这样一来源及源的子类都使用此类适配器，就行不通（使用该适配器即可以：<code>Adaptee adapee = new ClassAdapter();</code>）。由于适配器类是源类的子类，因此适配器类可以重写（覆盖）源类的一些方法。且只引进一个适配器类，因此只有一个线路能到达目标类，使问题得到简化。</p>
+</li>
+</ul>
+</li>
+<li><p>对象的适配器模式：与类的适配器模式一样，都是把被适配的类的API转换成目标类的API；区别在于，对象的适配器模式不是使用继承关系连接到Adaptee类，而是使用委托关系进行连接。</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口,<strong>目标可以是具体或抽象的类</strong>。code如类适配器模式的目标角色。</p>
+</li>
+<li><p>源（Adaptee）角色：现有需要适配的接口；code如类适配器模式的源角色。</p>
+</li>
+<li><p>适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。</p>
+<pre><code>  &lt;!--lang:java--&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月8日   上午12:20:12
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 对象的适配器角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectAdapter</span> <span class="keyword">implements</span> <span class="title">Target</span> {</span>
+
+      <span class="keyword">private</span> Adaptee adaptee;
+
+      <span class="keyword">public</span> <span class="title">ObjectAdapter</span>(Adaptee adaptee) {
+          <span class="keyword">super</span>();
+          <span class="keyword">this</span>.adaptee = adaptee;
+      }
+
+      <span class="javadoc">/**
+       * 源类（客户端类）的方法method1(),适配器直接委派即可
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span>() {
+          adaptee.method1();
+      }
+
+      <span class="javadoc">/**
+       * 由于源类（客户端类）没有方法method2(),因此适配器补上该方法
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span>() {
+          <span class="comment">/* method body */</span>
+      }
+
+  }
+</code></pre><p>  对象的适配器的效果：一个适配器可以把多个不同的源适配到同一个目标，换而言之，同一个适配器可以把源类和它的子类都适配到目标接口。与类的适配模式相比，想要置换（重写，覆盖）源类的方法则不易，如必须实现则可以先做一个源类的子类，该子类重写父类（源类）的方法，然后将源类的子类作为对象适配器的真正源进行适配；这样也方便添加新的方法（子类中实现），且添加的方法可同时适合所有的源。</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/04/07/2014.04.07_Java适配器模式/" data-id="kvmfwtxn76g7ju1q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2014/06/30/2014.06.30_安装Nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          安装NodeJS
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/19/2014.03.19_Treeset排序/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">TreeSet排序</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Books/">Books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essays/">Essays</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本管理/">版本管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/book/" style="font-size: 14.00px;">book</a><a href="/tags/browser/" style="font-size: 10.00px;">browser</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/git/" style="font-size: 14.00px;">git</a><a href="/tags/github/" style="font-size: 12.00px;">github</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/java/" style="font-size: 20.00px;">java</a><a href="/tags/maven/" style="font-size: 10.00px;">maven</a><a href="/tags/nodejs/" style="font-size: 10.00px;">nodejs</a><a href="/tags/oracle/" style="font-size: 12.00px;">oracle</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/windows/" style="font-size: 10.00px;">windows</a><a href="/tags/博客/" style="font-size: 10.00px;">博客</a><a href="/tags/工具/" style="font-size: 16.00px;">工具</a><a href="/tags/总结/" style="font-size: 18.00px;">总结</a><a href="/tags/插件/" style="font-size: 10.00px;">插件</a><a href="/tags/数据库/" style="font-size: 12.00px;">数据库</a><a href="/tags/架构/" style="font-size: 10.00px;">架构</a><a href="/tags/版本管理/" style="font-size: 10.00px;">版本管理</a><a href="/tags/算法/" style="font-size: 10.00px;">算法</a><a href="/tags/编译/" style="font-size: 10.00px;">编译</a><a href="/tags/设计模式/" style="font-size: 14.00px;">设计模式</a><a href="/tags/面试/" style="font-size: 10.00px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11">November 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12">December 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11">November 2012</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/07/07/201477_Eclipse生成JavaDoc/">2014.7.7_Eclipse生成JavaDoc</a>
+          </li>
+        
+          <li>
+            <a href="/2014/07/01/2014.07.01_Hexo搭建博客/">Hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06/30/2014.06.30_安装Nodejs/">安装NodeJS</a>
+          </li>
+        
+          <li>
+            <a href="/2014/04/07/2014.04.07_Java适配器模式/">JAVA适配器模式</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/19/2014.03.19_Treeset排序/">TreeSet排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 verphen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

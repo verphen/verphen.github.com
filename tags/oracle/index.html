@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: oracle | verphen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="verphen">
+<meta property="og:url" content="http://yoursite.com/tags/oracle/">
+<meta property="og:site_name" content="verphen">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="verphen">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="verphen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">verphen</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-2013.11.06_Oracle常用命令" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/06/2013.11.06_Oracle常用命令/" class="article-date">
+  <time datetime="2013-11-06T14:58:46.000Z" itemprop="datePublished">Nov 6 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Database/">Database</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/11/06/2013.11.06_Oracle常用命令/">Oracle common commands</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>冬天来了，开始进入工作的节奏做项目，项目使用Oracle数据库，由于之前学习使用过一段时间Oracle，现在补充一下Oracle方面的只是，便于熟悉记忆：</p>
+<p>使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:<br><code>imp username/password@netname file=path\filename.dmp log=C:\log.log full=y</code>（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html" target="_blank" rel="external">《dmp文件导入Oracle数据库》</a>这篇文件。</p>
+<ul>
+<li>username：用户名</li>
+<li>password：密码</li>
+<li>netname：实例名称，即就是数据库</li>
+<li>file：导入的dmp文件（完整路径）</li>
+<li>log：导入过程中产生的日志保存在该文件</li>
+<li>full：是否需要全部导入,只有当前用户是dba的时候，才能使用此项 </li>
+</ul>
+<p>Oracle使用过程中接触到的一些常用操作及命令：</p>
+<ul>
+<li>清屏（host cls、clear screen、clea scre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；</li>
+<li>解锁scott用户：alter user scott account unlock；</li>
+<li>修改密码：alter user scott identified by tiger;</li>
+<li>show user；查看当前用户</li>
+<li>disc 断开连接；conn 连接</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/11/06/2013.11.06_Oracle常用命令/" data-id="1sjmc98acfontvcj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012.11.15_Oracle忘记密码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/15/2012.11.15_Oracle忘记密码/" class="article-date">
+  <time datetime="2012-11-14T17:33:12.000Z" itemprop="datePublished">Nov 15 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Database/">Database</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/15/2012.11.15_Oracle忘记密码/">忘记oracle sys/system/scott用户密码解决方案</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>一、忘记除SYS、SYSTEM用户之外的用户的登录密码。</p>
+<p>用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p>使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;</p>
+<p>注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效</p>
+<p>二、忘记SYS用户，或者是SYSTEM用户的密码。</p>
+<p>如果是忘记SYSTEM用户的密码，可以用SYS用户登录。然后用ALTER USER 密令修改密码：</p>
+<p>CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p>ALTER USER SYSTEM IDENTIFIED BY newpass;</p>
+<p>如果是忘记SYS用户的密码，可以用SYSTEM用户登录。然后用ALTER USER 密令修改密码。</p>
+<p>CONN SYSTEM/PASS_WORD ;</p>
+<p>ALTER USER SYSTEM IDENTIFIED BY newpass;</p>
+<p>三、如果SYS,SYSTEM用户的密码都忘记或是丢失。</p>
+<p>这一项尤其重要。</p>
+<p>可以使用ORAPWD.EXE 工具修改密码。</p>
+<p>开始菜单-&gt;运行-&gt;输入‘CMD’,打开命令提示符窗口，输入如下命令：</p>
+<p>orapwd file=D:\oracle\product\10.2.0\db_1\database\pwdctcsys.ora password=newpass</p>
+<p>这个命令重新生成了数据库的密码文件。密码文件的位置在ORACLE_HOME目录下的\database目录下。</p>
+<p>这个密码是修改sys用户的密码。除sys和system其他用户的密码不会改变。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2012/11/15/2012.11.15_Oracle忘记密码/" data-id="6a541d11z78isxop" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Books/">Books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essays/">Essays</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本管理/">版本管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/book/" style="font-size: 14.00px;">book</a><a href="/tags/browser/" style="font-size: 10.00px;">browser</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/git/" style="font-size: 14.00px;">git</a><a href="/tags/github/" style="font-size: 12.00px;">github</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/java/" style="font-size: 20.00px;">java</a><a href="/tags/maven/" style="font-size: 10.00px;">maven</a><a href="/tags/nodejs/" style="font-size: 10.00px;">nodejs</a><a href="/tags/oracle/" style="font-size: 12.00px;">oracle</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/windows/" style="font-size: 10.00px;">windows</a><a href="/tags/博客/" style="font-size: 10.00px;">博客</a><a href="/tags/工具/" style="font-size: 16.00px;">工具</a><a href="/tags/总结/" style="font-size: 18.00px;">总结</a><a href="/tags/插件/" style="font-size: 10.00px;">插件</a><a href="/tags/数据库/" style="font-size: 12.00px;">数据库</a><a href="/tags/架构/" style="font-size: 10.00px;">架构</a><a href="/tags/版本管理/" style="font-size: 10.00px;">版本管理</a><a href="/tags/算法/" style="font-size: 10.00px;">算法</a><a href="/tags/编译/" style="font-size: 10.00px;">编译</a><a href="/tags/设计模式/" style="font-size: 14.00px;">设计模式</a><a href="/tags/面试/" style="font-size: 10.00px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11">November 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12">December 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11">November 2012</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/07/07/201477_Eclipse生成JavaDoc/">2014.7.7_Eclipse生成JavaDoc</a>
+          </li>
+        
+          <li>
+            <a href="/2014/07/01/2014.07.01_Hexo搭建博客/">Hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06/30/2014.06.30_安装Nodejs/">安装NodeJS</a>
+          </li>
+        
+          <li>
+            <a href="/2014/04/07/2014.04.07_Java适配器模式/">JAVA适配器模式</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/19/2014.03.19_Treeset排序/">TreeSet排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 verphen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>

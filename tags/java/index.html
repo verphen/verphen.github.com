@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tag: java | verphen</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="verphen">
+<meta property="og:url" content="http://yoursite.com/tags/java/">
+<meta property="og:site_name" content="verphen">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="verphen">
+<meta name="twitter:description">
+  
+    <link rel="alternative" href="/atom.xml" title="verphen" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">verphen</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><input type="submit" value="&#xF002;" class="search-form-submit"><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-201477_Eclipse生成JavaDoc" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/07/07/201477_Eclipse生成JavaDoc/" class="article-date">
+  <time datetime="2014-07-07T07:30:21.000Z" itemprop="datePublished">Jul 7 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/07/07/201477_Eclipse生成JavaDoc/">2014.7.7_Eclipse生成JavaDoc</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>项目开发中有时需要一览整个项目的类、方法的文档说明，此时可以使用JavaDoc来临时补缺没有文档的烦恼；下面介绍在Eclipse中导出JavaDoc的几种方法，其实都是殊途同归(不同的方式打开Javadoc Generation向导页进行配置)：</p>
+
+        
+          <p class="article-more-link">
+            <a href="/2014/07/07/201477_Eclipse生成JavaDoc/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/07/07/201477_Eclipse生成JavaDoc/" data-id="r2u6ef9c673ksq93" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2014.04.07_Java适配器模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/07/2014.04.07_Java适配器模式/" class="article-date">
+  <time datetime="2014-04-07T15:00:06.000Z" itemprop="datePublished">Apr 7 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/07/2014.04.07_Java适配器模式/">JAVA适配器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。</p>
+<p>适配器模式的两种形式：</p>
+<ol>
+<li><p>类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口；<strong>注意，这里讨论的是类的适配器模式，因此目标不可以是类。</strong></p>
+<pre><code>  &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:44:58
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 目标角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Target</span> {</span>
+
+      <span class="javadoc">/**
+       * 这是源类（客户端类）也有的方法method1()
+       */</span>
+      <span class="keyword">void</span> method1
+
+      <span class="javadoc">/**
+       * 这是源类（客户端类）没有的方法method2()
+       */</span>
+      <span class="keyword">void</span> method2();
+  }
+</code></pre></li>
+<li><p>源（Adaptee）角色：现有需要适配的接口</p>
+<pre><code>  &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:49:00
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 源角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Adaptee</span> {</span>
+
+      <span class="javadoc">/**
+       * 源类（客户端类）含有方法method1()
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span>() {
+          <span class="comment">/* method body */</span>
+      }
+  }
+</code></pre></li>
+<li><p>适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。</p>
+<pre><code>      &lt;!--lang:java---&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月7日   下午11:48:30
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 类的适配器角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CalssAdapter</span> <span class="keyword">extends</span> <span class="title">Adaptee</span> <span class="keyword">implements</span> <span class="title">Target</span> {</span>
+
+      <span class="javadoc">/**
+       * 由于源类（客户端类）没有方法method2(),因此适配器补上该方法
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span>() {
+          <span class="comment">/* method body */</span>
+      }
+  }
+</code></pre><p>类适配器的效果：使用一个具体的类把源（Adaptee）适配到目标（Target）中，这样一来源及源的子类都使用此类适配器，就行不通（使用该适配器即可以：<code>Adaptee adapee = new ClassAdapter();</code>）。由于适配器类是源类的子类，因此适配器类可以重写（覆盖）源类的一些方法。且只引进一个适配器类，因此只有一个线路能到达目标类，使问题得到简化。</p>
+</li>
+</ul>
+</li>
+<li><p>对象的适配器模式：与类的适配器模式一样，都是把被适配的类的API转换成目标类的API；区别在于，对象的适配器模式不是使用继承关系连接到Adaptee类，而是使用委托关系进行连接。</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口,<strong>目标可以是具体或抽象的类</strong>。code如类适配器模式的目标角色。</p>
+</li>
+<li><p>源（Adaptee）角色：现有需要适配的接口；code如类适配器模式的源角色。</p>
+</li>
+<li><p>适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。</p>
+<pre><code>  &lt;!--lang:java--&gt;
+
+  <span class="javadoc">/**
+   *<span class="javadoctag"> @author</span> verphen
+   *<span class="javadoctag"> @date</span> 2014年4月8日   上午12:20:12
+   */</span>
+
+  <span class="keyword">package</span> org.verphen.adapter;
+
+  <span class="comment">/* 对象的适配器角色 */</span>
+  <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ObjectAdapter</span> <span class="keyword">implements</span> <span class="title">Target</span> {</span>
+
+      <span class="keyword">private</span> Adaptee adaptee;
+
+      <span class="keyword">public</span> <span class="title">ObjectAdapter</span>(Adaptee adaptee) {
+          <span class="keyword">super</span>();
+          <span class="keyword">this</span>.adaptee = adaptee;
+      }
+
+      <span class="javadoc">/**
+       * 源类（客户端类）的方法method1(),适配器直接委派即可
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method1</span>() {
+          adaptee.method1();
+      }
+
+      <span class="javadoc">/**
+       * 由于源类（客户端类）没有方法method2(),因此适配器补上该方法
+       */</span>
+      <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">method2</span>() {
+          <span class="comment">/* method body */</span>
+      }
+
+  }
+</code></pre><p>  对象的适配器的效果：一个适配器可以把多个不同的源适配到同一个目标，换而言之，同一个适配器可以把源类和它的子类都适配到目标接口。与类的适配模式相比，想要置换（重写，覆盖）源类的方法则不易，如必须实现则可以先做一个源类的子类，该子类重写父类（源类）的方法，然后将源类的子类作为对象适配器的真正源进行适配；这样也方便添加新的方法（子类中实现），且添加的方法可同时适合所有的源。</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/04/07/2014.04.07_Java适配器模式/" data-id="kvmfwtxn76g7ju1q" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2014.03.19_Treeset排序" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/03/19/2014.03.19_Treeset排序/" class="article-date">
+  <time datetime="2014-03-18T16:18:30.000Z" itemprop="datePublished">Mar 19 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/03/19/2014.03.19_Treeset排序/">TreeSet排序</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的内部实现了排序；因此，TreeSet 可以给Set集合中的元素进行指定方式的排序，保证元素唯一性的方式：通过比较结果是否为0，底层数据结构为“二叉树”。</p>
+<p><strong>排序的第一种方式：</strong>元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可</p>
+<p>测试类：TreeSetDemo.java<br><!--lang:java--><br>    import java.util.SortedSet;<br>    import java.util.TreeSet;</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> TreeSetDemo {
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+
+        SortedSet&lt;Teacher&gt; ss = <span class="keyword">new</span> TreeSet&lt;Teacher&gt;();
+
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"lisi"</span>, <span class="number">30</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"wangwu"</span>, <span class="number">20</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"zhangsan"</span>, <span class="number">40</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"wanger"</span>, <span class="number">32</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"lida"</span>, <span class="number">10</span>));
+
+        System.<span class="keyword">out</span>.println(ss);
+    }
+}    
+</code></pre><p>实现 Comparable 接口类：Teacher.java<br><!--lang:java--><br>    //同姓名同年龄的学生视为同一个学生，按照学生的年龄排序<br>    public class Teacher implements Comparable {</p>
+<pre><code>    <span class="keyword">private</span> String name;
+    <span class="keyword">private</span> <span class="keyword">int</span> age;
+
+    <span class="keyword">public</span> <span class="title">Teacher</span>(String name, <span class="keyword">int</span> age) {
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>.age = age;
+    }
+
+    <span class="keyword">public</span> String <span class="title">getName</span>() {
+        <span class="keyword">return</span> name;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span>(String name) {
+        <span class="keyword">this</span>.name = name;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span>() {
+        <span class="keyword">return</span> age;
+    }
+
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span>(<span class="keyword">int</span> age) {
+        <span class="keyword">this</span>.age = age;
+    }
+
+    <span class="comment">//排序的操作方法，下面的操作为按照年龄的升序排序</span>
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span>(Object o) {
+        Teacher t = (Teacher) o;
+        <span class="keyword">int</span> num = <span class="keyword">new</span> Integer(<span class="keyword">this</span>.age).compareTo(<span class="keyword">new</span> Integer(t.age));
+        <span class="keyword">return</span> num == <span class="number">0</span> ? <span class="keyword">this</span>.name.compareTo(t.name) : num;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> String <span class="title">toString</span>() {
+        <span class="keyword">return</span> name + <span class="string">":"</span> + age;
+    }
+}
+</code></pre><p><strong>排序的第二种方式：</strong>元素自身不具备比较性，或者元素自身的可比较性不是所需要的；此时定义另外的类实现Comparator接口，覆盖其Compare()方法，将该Comparator接口子类对象作为实际参数传递给TreeSet集合的构造方法，该对象就是比较器。</p>
+<p>定义额外比较器的类：ComparatorDemo.java<br><!--lang:java--><br>    import java.util.Comparator;</p>
+<pre><code><span class="comment">//比较器类实现Comparator接口</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ComparatorDemo</span> <span class="keyword">implements</span> <span class="title">Comparator</span> {</span>
+
+    <span class="annotation">@Override</span>
+    <span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span>(Object o1, Object o2) {
+
+        Teacher t1 = (Teacher) o1;
+        Teacher t2 = (Teacher) o2;
+
+        <span class="keyword">int</span> num = t1.getName().compareTo(t2.getName());
+        <span class="comment">//此处运用了问号表达式</span>
+        <span class="keyword">return</span> num == <span class="number">0</span> ? 
+            <span class="keyword">new</span> Integer(t1.getAge()).compareTo(<span class="keyword">new</span> Integer(t2.getAge())) : num;
+    }
+
+}
+</code></pre><p>修改测试类代码：TreeSetDemo.java<br><!--lang:java--><br>    import java.util.SortedSet;<br>    import java.util.TreeSet;</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> TreeSetDemo {
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+
+        <span class="comment">//将Comparator实现类作为TreeSet的构造参数</span>
+        SortedSet&lt;Teacher&gt; ss = <span class="keyword">new</span> TreeSet&lt;Teacher&gt;(<span class="keyword">new</span> ComparatorDemo());
+
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"lisi"</span>, <span class="number">30</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"wangwu"</span>, <span class="number">20</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"zhangsan"</span>, <span class="number">40</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"wanger"</span>, <span class="number">32</span>));
+        ss.add(<span class="keyword">new</span> Teacher(<span class="string">"lida"</span>, <span class="number">10</span>));
+
+        System.<span class="keyword">out</span>.println(ss);
+    }
+}
+</code></pre><p>实现 Comparable 接口的类（Teacher.java）保持不变即可。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/03/19/2014.03.19_Treeset排序/" data-id="pjr6qz1ugiy30v3v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2014.02.27_Java虚拟机" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/02/27/2014.02.27_Java虚拟机/" class="article-date">
+  <time datetime="2014-02-27T14:18:22.000Z" itemprop="datePublished">Feb 27 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/02/27/2014.02.27_Java虚拟机/">深入JAVA虚拟机</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧<br>！</p>
+<p>本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；</p>
+<p>针对JAVA的一套流程：<br>1、编辑器编写Java源码（.java文件）<br>2、java文件经过Java编译器编程成Class文件<br>3、java虚拟机加载class文件（由类加载器完成）解释执行成字节码，再由虚拟机中的执行引擎去执行字节码文件</p>
+<p>执行引擎有多种策略：<br>1、一次性解释字节码<br>2、较上一种执行引擎更快，消耗内存（即时编译Just In Time Compiler）；第一次执行的字节码会被编译成本地机器代码，编译出的本地机器代码会被缓存，当方法调用的时候可以重用<br>3、该种引擎是自适应优化器；虚拟机开始的时候解释字节码，会监事运行中的程序活动，并且激励下使用最频繁的代码段，程序运行的时候，虚拟机只把那些惠东最频繁的代码编译成本地代码，</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2014/02/27/2014.02.27_Java虚拟机/" data-id="syvj4augh6zpmk2k" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013.11.26_《企业应用架构模式》" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/26/2013.11.26_《企业应用架构模式》/" class="article-date">
+  <time datetime="2013-11-26T15:53:44.000Z" itemprop="datePublished">Nov 26 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Books/">Books</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/11/26/2013.11.26_《企业应用架构模式》/">《企业应用架构模式》~三层架构</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>这些天在阅读《企业应用架构模式》这本书的电子版,文章开篇就三层模式展开阐述，讲述三层模式产生的背景昨天刚看到第一部分的3.1—架构模式；现在想就我所看的做个总结：</p>
+<p>三层架构即就是常用的MVC(Model-View-Controller)架构，即就是模型-视图-控制器；Model采用面向对象抽象出来的实体，对应于数据库中每一条记录，该层作为软件数据的载体；View只提供数据、信息的显示，不参与业务逻辑处理；Controller则具体操作业务逻辑的处理，针对项目的复杂程度来考虑是否需要service层；采用分层的优势到底在哪里？能非常便捷的重构项目，轻松的更换数据载体（数据库）、表现方式（网页、报表等），如业务需求发生变化只需要在逻辑业务层修改即可；至于更多的优点参考Google、bing或者sogou(现在觉得sogou比baidu搜索质量好)；三层的劣势：过多的分层导致软件效率下降；层次不能封装所有东西，可能给我们讲带来级联修改（如果在界面增加显示一个数据域，可能需要在数据库增加字段，从而影响级联修改）—参考本书的说法。</p>
+<p>为什么使用三层架构？因为他给我们带来方便，给我软件编程一个清晰的思路；相反，针对一个软件功能，你可能很快就开发出来，但是对于code的整理和思路的塑造可能显得比较混乱，冗余；也许，作为一个专业的软件开发人员，你觉得code组织得便不混乱，而针对一个非专业人员来审视你的code组织就显得相当疲惫；</p>
+<p>从我开始接触软件编程的时候，映入我脑海中最多的词就是三层MVC架构，吹嘘的最火的框架Framework就是SSH（Struts+Spring+Hibernate）或者SSI(…+Ibatis)；但是现在回想，是不是有点笨重的感觉，我只想做一个简单业务即可上线，这样华大力气去开发是不是值得？所以，现在很多都是用SpringMVC+JDBC templete进行开发，相对来时简单易行，不至于显得比较沉重；Java对我的感觉是一个重量级的coding language,现今的新秀如Ruby等，快速开发轻巧便捷（my feeling）；模模糊糊的差不多一年，正好今年也毕业，经过社会的大熔炉的煅烧，企业项目的磨练，对软件编程有点隐约的架构思想；这不，小小的整理思路于此，供指正与建议。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/11/26/2013.11.26_《企业应用架构模式》/" data-id="gcpjvbcds0xio90t" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/book/">book</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/架构/">架构</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013.10.29_线程设计面试题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/29/2013.10.29_线程设计面试题/" class="article-date">
+  <time datetime="2013-10-29T15:46:26.000Z" itemprop="datePublished">Oct 29 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/29/2013.10.29_线程设计面试题/">线程设计面试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：<br><!--lang:java--><br>    /**</p>
+<pre><code> * @author VerpHen
+ * @<span class="keyword">date</span> <span class="number">2013</span>-<span class="number">10</span>-<span class="number">28</span>  下午<span class="number">11</span>:<span class="number">50</span>:<span class="number">34</span>
+ */
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewThread</span> {</span>
+
+    <span class="keyword">private</span> <span class="keyword">int</span> j = <span class="number">0</span>;
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String args[]) {
+
+        InterviewThread it = <span class="keyword">new</span> InterviewThread();
+
+        <span class="comment">/* 实例化内部类 */</span>
+        Inc inc = it.<span class="keyword">new</span> Inc();
+        Dec dec = it.<span class="keyword">new</span> Dec();
+
+        <span class="comment">/* 循环得到四个线程 */</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) {
+            Thread t = <span class="keyword">new</span> Thread(inc);
+            t.start();
+            t = <span class="keyword">new</span> Thread(dec);
+            t.start();
+        }
+    } <span class="comment">//main method finish</span>
+
+    <span class="comment">/* 同步加1方法 */</span>
+    <span class="keyword">private</span> synchronized <span class="keyword">void</span> inc() {
+        j++;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-inc:"</span> + j);
+    }
+
+    <span class="comment">/* 同步减1方法 */</span>
+    <span class="keyword">private</span> synchronized <span class="keyword">void</span> dec() {
+        j--;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-dec:"</span> + j);
+    }
+
+    <span class="comment">/* 加1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Inc</span> <span class="inheritance"><span class="keyword">implements</span></span> <span class="title">Runnable</span> {</span>
+        <span class="keyword">public</span> <span class="keyword">void</span> run() {
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                inc();
+            }
+        }
+    }
+
+    <span class="comment">/* 减1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Dec</span> <span class="inheritance"><span class="keyword">implements</span></span> <span class="title">Runnable</span> {</span>
+        <span class="keyword">public</span> <span class="keyword">void</span> run() {
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                dec();
+            }
+        }
+    }
+
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/10/29/2013.10.29_线程设计面试题/" data-id="yuwjambko6swooei" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013.10.26_File Tree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/26/2013.10.26_File Tree/" class="article-date">
+  <time datetime="2013-10-26T14:50:10.000Z" itemprop="datePublished">Oct 26 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/26/2013.10.26_File Tree/">File Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看到windows文件资源管理器，突然想用Java来实现这种不同层的文件缩进，参考OSC中一个博主的思想，记录一下；Code如下：</p>
+<p><!-- lang:java--><br>    /**</p>
+<pre><code>* @author VerpHen
+* @date <span class="number">2013</span>年<span class="number">10</span>月<span class="number">26</span>日  下午<span class="number">1</span>:<span class="number">25</span>:<span class="number">14</span>
+*/
+
+import java.io.File;
+
+<span class="keyword">public</span> <span class="keyword">class</span> FileTree {
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">parse</span>(File[] files) {
+    <span class="keyword">if</span> (files.length == <span class="number">0</span>) {
+        FileTree.count--;
+        System.<span class="keyword">out</span>.println();
+        <span class="keyword">return</span>;
+    } <span class="keyword">else</span> {
+        <span class="keyword">for</span> (File f : files) {
+            <span class="keyword">if</span> (f.isDirectory()) {
+                FileTree.count++;
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= FileTree.count; i++) {
+                    System.<span class="keyword">out</span>.print(<span class="string">"\t"</span>);
+                }
+
+                System.<span class="keyword">out</span>.println(f.getName());
+                File[] files2 = f.listFiles();
+
+                FileTree.parse(files2);
+            }
+
+        }
+        <span class="keyword">for</span> (File f : files) {
+            <span class="keyword">if</span> (!f.isDirectory()) {
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= FileTree.count; i++) {
+                    System.<span class="keyword">out</span>.print(<span class="string">"\t"</span>);
+                }
+                System.<span class="keyword">out</span>.println(f.getName());
+            }
+        }
+        FileTree.count--;
+    }
+
+}
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {
+        File file = <span class="keyword">new</span> File(<span class="string">"d:/test"</span>);
+        File[] files = file.listFiles();
+        FileTree.parse(files);
+    }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/10/26/2013.10.26_File Tree/" data-id="x0cx11563iob98lt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013.10.15_Eclipse插件问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/15/2013.10.15_Eclipse插件问题/" class="article-date">
+  <time datetime="2013-10-14T17:26:10.000Z" itemprop="datePublished">Oct 15 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Tools/">Tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/15/2013.10.15_Eclipse插件问题/">Eclipse插件开发向导页问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在开发Eclipse插件过程中，遇到这样的错误：The selected wizard could not be started.  <em>*</em>Wizard cannot be cast to org.eclipse.ui.IWorkbenchWizard</p>
+<p>当时解决措施：</p>
+<p>这个错误是因为我的<em>*</em>Wizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接口即可（INewWizard接口是IWorkbenchWizard的子接口，而这两个接口又都是IWizard接口的子接口）；在Eclipse中，向导必须实现接口org.eclipse.jface.wizard.IWizard，如不实现IWizard接口而只继承Wizard类，则还需实现performFinish()方法，因为该方法在Wizard类中是对接口IWizard的抽象实现，即Eclipse提供的org.eclipse.jface.wizard.Wizard类是IWizard的抽象实现；一般我们编写自己的Wizard类既继承Wizard类，且实现INewWizard接口。向导页必须实现接口org.eclipse.jface.wizard.IWizardPage，因为org.eclipse.jface.wizard.WizardPage 也是 IWizardPage 的一个抽象实现。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/10/15/2013.10.15_Eclipse插件问题/" data-id="qbtzqd8vjdhf21i0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2013.10.15_Java守护线程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/15/2013.10.15_Java守护线程/" class="article-date">
+  <time datetime="2013-10-14T17:20:22.000Z" itemprop="datePublished">Oct 15 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/15/2013.10.15_Java守护线程/">Java守护线程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程)</p>
+<ul>
+<li>Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon也就没有工作可做了，也就没有继续运行程序的必要了。值得一提的是，守护线程并非只有虚拟机内部提供，用户在编写程序时也可以自己设置守护线程。下面的方法就是用来设置守护线程的。<code>public final void setDaemon(boolean on)</code></li>
+</ul>
+<p>这里有几点需要注意： </p>
+<ol>
+<li>thread.setDaemon(true)必须在thread.start()之前设置，否则会跑出一个IllegalThreadStateException异常。你不能把正在运行的常规线程设置为守护线程</li>
+<li>在Daemon线程中产生的新线程也是Daemon的</li>
+<li>不要认为所有的应用都可以分配给Daemon来进行服务，比如读写操作或者计算逻辑。因为你不可能知道在所有的User完成之前，Daemon是否已经完成了预期的服务任务。一旦User退出了，可能大量数据还没有来得及读入或写出，计算任务也可能多次运行结果不一样。这对程序是毁灭性的。造成这个结果理由已经说过了：一旦所有User Thread离开了，虚拟机也就退出运行了。</li>
+</ol>
+<p><!--lang:java--><br>    import java.io.*;     </p>
+<pre><code><span class="comment">//完成文件输出的守护线程任务  </span>
+<span class="class"><span class="keyword">class</span> <span class="title">TestRunnable</span> <span class="inheritance"><span class="keyword">implements</span></span> <span class="title">Runnable</span>{</span>     
+    <span class="keyword">public</span> <span class="keyword">void</span> run(){     
+               <span class="keyword">try</span>{     
+                  Thread.sleep(<span class="number">1000</span>);<span class="comment">//守护线程阻塞1秒后运行     </span>
+                  File f=<span class="keyword">new</span> File(<span class="string">"daemon.txt"</span>);     
+                  FileOutputStream os=<span class="keyword">new</span> FileOutputStream(f,<span class="keyword">true</span>);     
+                  os.write(<span class="string">"daemon"</span>.getBytes());     
+           }     
+               <span class="keyword">catch</span>(IOException e1){     
+          e1.printStackTrace();     
+               }     
+               <span class="keyword">catch</span>(InterruptedException e2){     
+                  e2.printStackTrace();     
+           }     
+    }     
+}     
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo2</span>{</span>     
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) throws InterruptedException     
+    {     
+        Runnable tr=<span class="keyword">new</span> TestRunnable();     
+        Thread thread=<span class="keyword">new</span> Thread(tr);     
+                thread.setDaemon(<span class="keyword">true</span>); <span class="comment">//设置守护线程     </span>
+        thread.start(); <span class="comment">//开始执行分进程     </span>
+    }     
+}     
+<span class="comment">//运行结果：文件daemon.txt中没有"daemon"字符串。  </span>
+</code></pre><p>看到了吧，把输入输出逻辑包装进守护线程多么的可怕，字符串并没有写入指定文件。原因也很简单，直到主线程完成，守护线程仍处于1秒的阻塞状态。这个时候主线程很快就运行完了，虚拟机退出，Daemon停止服务，输出操作自然失败了。</p>
+<p>例子2 ：<br><!--lang:java--><br>    public class Test {<br>        public static void main(String args) {<br>            Thread t1 = new MyCommon();<br>            Thread t2 = new Thread(new MyDaemon());<br>            t2.setDaemon(true); // 设置为守护线程<br>            t2.start();<br>            t1.start();<br>        }<br>    }</p>
+<pre><code><span class="class"><span class="keyword">class</span> <span class="title">MyCommon</span> <span class="inheritance"><span class="keyword">extends</span></span> <span class="title">Thread</span> {</span>
+    <span class="keyword">public</span> <span class="keyword">void</span> run() {
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
+            System.out.println(<span class="string">"线程1第"</span> + i + <span class="string">"次执行！"</span>);
+            <span class="keyword">try</span> {
+                Thread.sleep(<span class="number">7</span>);
+            } <span class="keyword">catch</span> (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+<span class="class"><span class="keyword">class</span> <span class="title">MyDaemon</span> <span class="inheritance"><span class="keyword">implements</span></span> <span class="title">Runnable</span> {</span>
+    <span class="keyword">public</span> <span class="keyword">void</span> run() {
+        <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">0</span>; i &lt; <span class="number">9999999</span>L; i++) {
+            System.out.println(<span class="string">"后台线程第"</span> + i + <span class="string">"次执行！"</span>);
+            <span class="keyword">try</span> {
+                Thread.sleep(<span class="number">7</span>);
+            } <span class="keyword">catch</span> (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+} 
+
+后台线程第<span class="number">0</span>次执行！ 
+线程<span class="number">1</span>第<span class="number">0</span>次执行！ 
+线程<span class="number">1</span>第<span class="number">1</span>次执行！ 
+后台线程第<span class="number">1</span>次执行！ 
+后台线程第<span class="number">2</span>次执行！ 
+线程<span class="number">1</span>第<span class="number">2</span>次执行！ 
+线程<span class="number">1</span>第<span class="number">3</span>次执行！ 
+后台线程第<span class="number">3</span>次执行！ 
+线程<span class="number">1</span>第<span class="number">4</span>次执行！ 
+后台线程第<span class="number">4</span>次执行！ 
+后台线程第<span class="number">5</span>次执行！ 
+后台线程第<span class="number">6</span>次执行！ 
+后台线程第<span class="number">7</span>次执行！ 
+Process finished with exit code <span class="number">0</span> 
+</code></pre><p>从上面的执行结果可以看出：前台线程是保证执行完毕的，后台线程还没有执行完毕就退出了。实际上：JRE判断程序是否执行结束的标准是所有的前台执线程行完毕了，而不管后台线程的状态，因此，在使用后台县城时候一定要注意这个问题。实际应用例子：在使用长连接的comet服务端推送技术中，消息推送线程设置为守护线程，服务于ChatServlet的servlet用户线程，在servlet的init启动消息线程，servlet一旦初始化后，一直存在服务器，servlet摧毁后,消息线程自动退出 </p>
+<p>容器收到一个Servlet请求，调度线程从线程池中选出一个工作者线程,将请求传递给该工作者线程，然后由该线程来执行Servlet的 service方法。当这个线程正在执行的时候,容器收到另外一个请求,调度线程同样从线程池中选出另一个工作者线程来服务新的请求,容器并不关心这个请求是否访问的是同一个Servlet.当容器同时收到对同一个Servlet的多个请求的时候，那么这个Servlet的service()方法将在多线程中并发执行。</p>
+<p>Servlet容器默认采用单实例多线程的方式来处理请求，这样减少产生Servlet实例的开销，提升了对请求的响应时间，对于Tomcat可以在server.xml中通过<connector>元素设置线程池中线程的数目。 </connector></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2013/10/15/2013.10.15_Java守护线程/" data-id="2fg1tnmq3butv3c2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2012.11.10_Java简单工厂模式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/10/2012.11.10_Java简单工厂模式/" class="article-date">
+  <time datetime="2012-11-10T12:13:12.000Z" itemprop="datePublished">Nov 10 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Java/">Java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/10/2012.11.10_Java简单工厂模式/">JAVA简单工厂模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>简单工厂模式 SimpleFactory，又称 静态工厂方法模式（StaticFactory Method）；</p>
+<ul>
+<li><p>优点：工厂类是整个模式的关键.包含了必要的逻辑判断，根据外界给定的信息，决定究竟应该创建哪个具体类的对象.通过使用工厂类，外界可以从直接创建具体产品对象的尴尬局面摆脱出来，仅仅需要负责“消费”对象就可以了。而不必管这些对象究竟如何创建及如何组织的．明确了各自的职责和权利，有利于整个软件体系结构的优化。</p>
+</li>
+<li><p>缺点：由于工厂类集中了所有实例的创建逻辑，违反了高内聚责任分配原则，将全部创建逻辑集中到了一个工厂类中；它所能创建的类只能是事先考虑到的，如果需要添加新的类，则就需要改变工厂类了。当系统中的具体产品类不断增多时候，可能会出现要求工厂类根据不同条件创建不同实例的需求．这种对条件的判断和对具体产品类型的判断交错在一起，很难避免模块功能的蔓延，对系统的维护和扩展非常不利；这些缺点在工厂方法模式中得到了一定的克服。</p>
+</li>
+<li><p>适用场景：</p>
+<ol>
+<li>工厂类负责创建的对象比较少</li>
+<li>客户只知道传入工厂类的阐述，对于如何创建对象(逻辑)并不关心</li>
+<li>由于简单工厂模式容易违反高内聚责任分配原则，因此一般只在很简单的情况下应用</li>
+</ol>
+</li>
+</ul>
+<p><a href="http://www.51testing.com/html/64/n-242064.html" target="_blank" rel="external">（文章参考）</a></p>
+<p>简单工厂模式包含：抽象产品角色、具体产品角色、工厂角色类（有的文章称之为“上帝类”）；下面code包含一个抽象产品类ICar、三个具体产品角色类（奔驰Benz、法拉利Ferrari和捷豹Jaguar）、一个工厂角色类 SimpleFactory 和测试类SimpleFatoryTest.</p>
+<p>ICar.java  (抽象产品角色接口)<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">36</span>:<span class="number">19</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*抽象产品角色接口：汽车Car*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">ICar</span> {</span>  
+
+    <span class="comment">/* 汽车启动 */</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>();  
+
+    <span class="comment">/* 汽车停止 */</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>();  
+}  
+</code></pre><p>Benz.java  (具体产品角色类)<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">38</span>:<span class="number">08</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*具体产品角色类：汽车-奔驰Benz*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Benz</span> <span class="keyword">implements</span> <span class="title">ICar</span> {</span>  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>() {  
+        System.out.println(<span class="string">"奔驰启动"</span>);  
+    }  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>() {  
+        System.out.println(<span class="string">"奔驰停止"</span>);  
+    }  
+}  
+</code></pre><p>Ferrari.java  (具体产品角色类)<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">40</span>:<span class="number">18</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*具体产品角色类：汽车-法拉利Ferrari*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ferrari</span> <span class="keyword">implements</span> <span class="title">ICar</span> {</span>  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>() {  
+        System.out.println(<span class="string">"法拉利启动"</span>);  
+    }  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>() {  
+        System.out.println(<span class="string">"法拉利停止"</span>);  
+    }  
+}  
+</code></pre><p>Jaguar.java  (具体产品角色类)<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">42</span>:<span class="number">21</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*具体产品角色类：汽车-捷豹-Jaguar*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Jaguar</span> <span class="keyword">implements</span> <span class="title">ICar</span> {</span>  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span>() {  
+        System.out.println(<span class="string">"捷豹启动"</span>);  
+    }  
+
+    <span class="annotation">@Override</span>  
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stop</span>() {  
+        System.out.println(<span class="string">"捷豹停止"</span>);  
+    }  
+}  
+</code></pre><p>SimpleFactory.java  (工厂角色类)<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">29</span>:<span class="number">02</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*工厂角色类*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactory</span> {</span>  
+
+    <span class="comment">/* 工厂方法，返回类型为抽象的产品角色 */</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> ICar <span class="title">driveCar</span>(String carType) {  
+
+        <span class="comment">/* equalsIgnoreCase() 忽略carType大小写 */</span>  
+        <span class="keyword">if</span> (<span class="string">"Benz"</span>.equalsIgnoreCase(carType)) {  
+            <span class="keyword">return</span> <span class="keyword">new</span> Benz();  
+        } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"Ferrari"</span>.equalsIgnoreCase(carType)) {  
+            <span class="keyword">return</span> <span class="keyword">new</span> Ferrari();  
+        } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">"Jaguar"</span>.equalsIgnoreCase(carType)) {  
+            <span class="keyword">return</span> <span class="keyword">new</span> Jaguar();  
+        } <span class="keyword">else</span> {  
+            <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"没有该汽车类型"</span>);  
+        }  
+    }  
+}  
+</code></pre><p>SimpleFactoryTest.java （测试类）<br><!--lang:java--><br>    /** </p>
+<pre><code> * <span class="annotation">@author</span> VerpHen 
+ * <span class="annotation">@date</span> <span class="number">2013</span>年<span class="number">9</span>月<span class="number">10</span>日  上午<span class="number">9</span>:<span class="number">48</span>:<span class="number">32</span> 
+ */  
+
+<span class="keyword">package</span> org.verphen.simpleFactory;  
+
+<span class="comment">/*测试简单工厂方法类*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleFactoryTest</span> {</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(String[] args) {  
+
+        <span class="comment">// ICar car = SimpleFactory.driveCar("Benz");  </span>
+        <span class="comment">// ICar car = SimpleFactory.driveCar("Ferrari");  </span>
+        ICar car = SimpleFactory.driveCar(<span class="string">"Jaguar"</span>);  
+
+        car.run();  
+        car.stop();  
+    }  
+}  
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2012/11/10/2012.11.10_Java简单工厂模式/" data-id="fmat8c79k6w9zulk" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/tags/java/page/2/">2</a><a class="extend next" rel="next" href="/tags/java/page/2/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Books/">Books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Database/">Database</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Essays/">Essays</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Java/">Java</a><span class="category-list-count">10</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a><span class="category-list-count">9</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a><span class="category-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/book/">book</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/browser/">browser</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/eclipse/">eclipse</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a><span class="tag-list-count">13</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/maven/">maven</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/oracle/">oracle</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/windows/">windows</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博客/">博客</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/工具/">工具</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/总结/">总结</a><span class="tag-list-count">9</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/插件/">插件</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/架构/">架构</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/版本管理/">版本管理</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/编译/">编译</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/book/" style="font-size: 14.00px;">book</a><a href="/tags/browser/" style="font-size: 10.00px;">browser</a><a href="/tags/eclipse/" style="font-size: 10.00px;">eclipse</a><a href="/tags/git/" style="font-size: 14.00px;">git</a><a href="/tags/github/" style="font-size: 12.00px;">github</a><a href="/tags/hexo/" style="font-size: 10.00px;">hexo</a><a href="/tags/java/" style="font-size: 20.00px;">java</a><a href="/tags/maven/" style="font-size: 10.00px;">maven</a><a href="/tags/nodejs/" style="font-size: 10.00px;">nodejs</a><a href="/tags/oracle/" style="font-size: 12.00px;">oracle</a><a href="/tags/ubuntu/" style="font-size: 10.00px;">ubuntu</a><a href="/tags/windows/" style="font-size: 10.00px;">windows</a><a href="/tags/博客/" style="font-size: 10.00px;">博客</a><a href="/tags/工具/" style="font-size: 16.00px;">工具</a><a href="/tags/总结/" style="font-size: 18.00px;">总结</a><a href="/tags/插件/" style="font-size: 10.00px;">插件</a><a href="/tags/数据库/" style="font-size: 12.00px;">数据库</a><a href="/tags/架构/" style="font-size: 10.00px;">架构</a><a href="/tags/版本管理/" style="font-size: 10.00px;">版本管理</a><a href="/tags/算法/" style="font-size: 10.00px;">算法</a><a href="/tags/编译/" style="font-size: 10.00px;">编译</a><a href="/tags/设计模式/" style="font-size: 14.00px;">设计模式</a><a href="/tags/面试/" style="font-size: 10.00px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/07">July 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/06">June 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/04">April 2014</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/03">March 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2014/02">February 2014</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/12">December 2013</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/11">November 2013</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2013/10">October 2013</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/12">December 2012</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/11">November 2012</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/10">October 2012</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/06">June 2012</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2014/07/07/201477_Eclipse生成JavaDoc/">2014.7.7_Eclipse生成JavaDoc</a>
+          </li>
+        
+          <li>
+            <a href="/2014/07/01/2014.07.01_Hexo搭建博客/">Hexo搭建博客</a>
+          </li>
+        
+          <li>
+            <a href="/2014/06/30/2014.06.30_安装Nodejs/">安装NodeJS</a>
+          </li>
+        
+          <li>
+            <a href="/2014/04/07/2014.04.07_Java适配器模式/">JAVA适配器模式</a>
+          </li>
+        
+          <li>
+            <a href="/2014/03/19/2014.03.19_Treeset排序/">TreeSet排序</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2014 verphen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+</body>
+</html>
