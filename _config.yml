@@ -78,6 +78,9 @@ pagination_dir: page
 # Disqus
 disqus_shortname:
 
+#DuoShuo Comment
+duoshuo_shortname: duoshuo
+
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
