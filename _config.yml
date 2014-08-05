@@ -42,7 +42,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: Java
+default_category: java
 category_map:
 tag_map:
 
