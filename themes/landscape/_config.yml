@@ -2,6 +2,7 @@
 menu:
   Home: /
   Archives: /archives
+  About: /about
 rss: /atom.xml
 
 # Content
@@ -13,8 +14,8 @@ sidebar: right
 widgets:
 - category
 - tag
-- tagcloud
-- archive
+# - tagcloud
+# - archive
 - recent_posts
 
 # Miscellaneous
