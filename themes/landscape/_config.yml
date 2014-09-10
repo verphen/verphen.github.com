@@ -2,6 +2,7 @@
 menu:
   Home: /
   Archives: /archives
+  Docs: /docs
   About: /about
 rss: /atom.xml
 
@@ -24,4 +25,4 @@ favicon: /favicon.png
 twitter:
 google_plus:
 fb_admins:
-fb_app_id:
+fb_app_id: 
