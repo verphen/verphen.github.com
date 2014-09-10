@@ -1,7 +1,7 @@
 ---
 title: Java反编译
 date: 2012-10-14 23:33:21
-categories: Java
+categories: java
 tags: [java,编译]
 ---
 1. 安装软件：DJ Java Decompiler 3.7 （网上有自己下载）
