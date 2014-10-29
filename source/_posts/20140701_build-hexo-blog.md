@@ -1,7 +1,7 @@
 ---
 title: Hexo搭建博客
 date: 2014-07-01 00:50:07
-categories: web
+categories: blog
 tags: [hexo,github,blog]
 ---
 ### 安装Hexo

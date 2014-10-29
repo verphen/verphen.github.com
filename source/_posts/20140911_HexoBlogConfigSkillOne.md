@@ -1,5 +1,6 @@
 title: Hexo博客配置技巧[1]
 date: 2014-09-11 23:22:15
+categories: blog
 tags: [blog]
 ---
 本文整理简介：
