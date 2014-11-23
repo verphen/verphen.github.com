@@ -5,11 +5,11 @@ tags: [tools,hexo]
 ---
 <h3>博客搭建工具hexo基本命令：</h3>
 
-<img src="/imgs/hexo_help.png" alt="hexo help">
-
 - hexo help(hexo h): Get help on a command; 获得命令帮助，你也可以使用 `hexo help [command]`命令获得详细帮助(如hexo help clean),当然你可以访问 <a href="http://hexo.io/docs">http://hexo.io/docs/</a>  获得详细信息。（很多其他工具同样会提供这样的命令，如git help等，可能形式不同而已: hexo h、 hexo -help、 hexo --help等）;
 
 <!--more-->
+
+<img src="/imgs/hexo_help.png" alt="hexo help" />
 
 - hexo init:　Create a new Hexo folder；　初始化一个Hexo文件夹
 
