@@ -39,13 +39,13 @@ tags: [tools,hexo]
 
 Global Options 全局选项:
 
-- hexo --config: Specify config file instead of using _config.yml; 自定义配置文件替换 _config.yml
+- hexo - -config: Specify config file instead of using _config.yml; 自定义配置文件替换 _config.yml
 
-- hexo --debug: Display all verbose messages in the terminal; 调试模式，终端显示所有详细信息
+- hexo - -debug: Display all verbose messages in the terminal; 调试模式，终端显示所有详细信息
 
-- hexo --safe: Disable all plugins and scripts; 禁用所有的插件和脚本
+- hexo - -safe: Disable all plugins and scripts; 禁用所有的插件和脚本
 
-- hexo silent: Hide output on console; 在控制台隐藏输出
+- hexo - -silent: Hide output on console; 在控制台隐藏输出
 
 <h3>建议和心得：</h3>
 
