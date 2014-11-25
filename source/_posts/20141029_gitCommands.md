@@ -13,6 +13,7 @@ tags: [tools,git]
 -  git push :
 -  git branch :
 
-tt------------
+-  git rm [-r] name: 将文件或目录移除git管理，参数 -r表示目录级联
+
 
 待续 ...
