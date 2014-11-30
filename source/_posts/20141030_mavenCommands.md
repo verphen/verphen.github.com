@@ -5,7 +5,4 @@ tags: [tools,maven]
 ---
 总结maven命令
 
-
-
-
-待续 ...
+-  mvn eclipse:eclipse	生成Eclipse项目文件(如.project、.classpath等)
