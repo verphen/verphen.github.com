@@ -46,11 +46,3 @@ Global Options 全局选项:
 - hexo - -safe: Disable all plugins and scripts; 禁用所有的插件和脚本
 
 - hexo - -silent: Hide output on console; 在控制台隐藏输出
-
-<h3>建议和心得：</h3>
-
-- 新建文章名尽量采用英文命令，防止中文(当然也能处理，如有乱码往后看)带来的不必要的麻烦；我一般采用 "日期+文章名" 的方式命名，如 20140101_articleName.md
-
-<h3>出现问题及解决方案：</h3>
-
-- 中文乱码： 待续...
