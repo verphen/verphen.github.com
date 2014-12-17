@@ -1,5 +1,5 @@
 ---
-title: Hexo搭建博客
+title: Build Blog Of Hexo
 date: 2014-07-01 00:50:07
 categories: blog
 tags: [hexo,github,blog]
