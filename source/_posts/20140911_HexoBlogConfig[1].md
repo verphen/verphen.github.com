@@ -1,4 +1,4 @@
-title: Hexo博客配置技巧[1]
+title: Hexo Blog Config[1]
 date: 2014-09-11 23:22:15
 categories: blog
 tags: [blog]
