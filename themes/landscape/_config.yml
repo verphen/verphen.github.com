@@ -20,6 +20,8 @@ widgets:
 # - archive
 - recent_posts	#最近文章
 - tagcloud	#标签云
+# - weibo
+# - blogroll
 
 # Miscellaneous
 google_analytics:
