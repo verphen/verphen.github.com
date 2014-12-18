@@ -44,11 +44,11 @@ highlight:
 # Category & Tag
 default_category: java
 category_map:
-tag_map:
+tag_map: 
 
 # Archives
 ## 2: Enable pagination
-## 1: Disable pagination
+## 1: Disable pagination 禁用分页
 ## 0: Fully Disable
 archive: 2
 category: 2
