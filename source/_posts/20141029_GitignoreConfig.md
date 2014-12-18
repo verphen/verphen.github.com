@@ -1,4 +1,4 @@
-title: gitignore settings
+title: gitignore config
 date: 2014-10-30 07:35:22
 categories: tools
 tags: [tools,git]
