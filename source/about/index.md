@@ -11,7 +11,7 @@ evaluation :
 -  追求完美，崇尚简约，以极少的Code完成高效的任务为宗旨
 -  学习态度：知之为知之，不知为不知，是知也！
 
-if you want contact me,
+if you want contact me, To Github: <a href="https://github.com/verphen" style="text-decoration: none">@verphen</a> or ...
 
 pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
