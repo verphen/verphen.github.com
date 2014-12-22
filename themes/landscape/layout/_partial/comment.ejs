@@ -1,6 +1,7 @@
-<% if ( page.comments){ %>
+<% if (config.duoshuo_shortname && page.comments){ %>
 
-	 <nav id="pagination" >
+	<!-- 页面导航 -->
+	<nav id="pagination" >
 	    <% if (page.prev) { %>
 	    <a href="<%- config.root %><%- page.prev.path %>" class="alignleft prev" ><%= __('prev') %></a>
 	    <% } %>
@@ -9,22 +10,5 @@
 	    <% } %>
 	    <div class="clearfix"></div>
 	</nav>
-
-
-	<section id="comment">
-		<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-		<script type="text/javascript">
-		var duoshuoQuery = {short_name:"verphen"};
-			(function() {
-				var ds = document.createElement('script');
-				ds.type = 'text/javascript';ds.async = true;
-				ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-				ds.charset = 'UTF-8';
-				(document.getElementsByTagName('head')[0] 
-				 || document.getElementsByTagName('body')[0]).appendChild(ds);
-			})();
-			</script>
-		<!-- 多说公共JS代码 end -->
-	</section>
-
+	
 <% } %>

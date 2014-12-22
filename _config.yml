@@ -78,7 +78,7 @@ pagination_dir: page
 # Disqus
 # disqus_shortname: true
 
-# duoshuo
+# duoshuo comments
 duoshuo_shortname: true
 
 # Extensions
