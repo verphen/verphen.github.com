@@ -5,7 +5,24 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &nbsp;
+
+      <!-- cnzz tongji analytics -->
+      <script type="text/javascript">
+          var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000129915'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000129915%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+
+      <!-- Baidu tongji analytics -->
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?70819ec1acf3927700950684f76fe023";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+
     </div>
   </div>
 </footer>
