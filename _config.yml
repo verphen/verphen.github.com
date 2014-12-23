@@ -81,6 +81,9 @@ pagination_dir: page
 # duoshuo comments
 duoshuo_shortname: true
 
+# 404
+permalink_defaults: /404.html
+
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
