@@ -22,7 +22,7 @@ if you want contact me, please send email or other ...
 
 - Douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@verphen</a>
 
-- weclat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
+- wechat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
 <img src="/imgs/wechat_QR.png" alt="Contact Me"/>
 
