@@ -4,7 +4,7 @@ comments: false
 ---
 Hi, Every one !
 
-I`m mr.zhang , my ID is 'verphen',
+I`m effine , my website ID is 'verphen', 
 
 evaluation :
 	
@@ -12,8 +12,18 @@ evaluation :
 -  追求完美，崇尚简约，以极少的Code完成高效的任务为宗旨
 -  学习态度：知之为知之，不知为不知，是知也！
 
-if you want contact me, To Github: <a href="https://github.com/verphen" style="text-decoration: none">@verphen</a> or ...
+if you want contact me, please send email or other ...
 
-pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
+- Email: verphen#163.com(常用) / verphen#gmail.com（备用，穷屌没有购买VPN,避免有时翻墙困难而遗漏邮件），发送邮件时将"#"修改为 "@"
+
+- Github: <a href="https://github.com/verphen" style="text-decoration: none">@verphen</a> 
+
+- Sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@verphen</a>
+
+- Douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@verphen</a>
+
+- weclat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
 <img src="/imgs/wechat_QR.png" alt="Contact Me"/>
+
+- 当然，你也可以去知乎、stackoverflow ...上去联系我，但回复不一定及时,望见谅！
