@@ -14,7 +14,7 @@ evaluation :
 
 if you want contact me, please send email or other ...
 
-- Email: verphen#163.com(常用) / verphen#gmail.com（备用，穷屌没有购买VPN,避免有时翻墙困难而遗漏邮件），发送邮件时将"#"修改为 "@"
+- Email: verphen#163.com(常) / verphen#gmail.com（备），发送邮件时将"#"修改为 "@"
 
 - Github: <a href="https://github.com/verphen" style="text-decoration: none">@verphen</a> 
 
