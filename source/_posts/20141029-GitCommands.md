@@ -25,7 +25,5 @@ tags: [tools,git]
 	- -D branch-name: 删除本地分支(分支名：branch-name),无论该分支是否合并到其他不相关分支
 	- -r -d origin/remoe-branch-name: 删除远程分支(分支名：remote-branch-name)
 	- git push origin :remote-branch-name: 删除远程分支(分支名：remote-branch-name),冒号前面的空格不能少;原理：把空分支push到远程server上,达到删除的结果
-	- 
+	- -m oldName  newName: 重命名(rename)move分支(待命名分支名：oldName;命名成分支：newName) 
 - git branch branch-name: 创建分支（分支名:branch-name）
-- gh
-- 都睡得
