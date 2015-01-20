@@ -1,0 +1,31 @@
+title: Git Commands
+date: 2014-10-30 07:44:00
+categories: tools
+tags: [tools,git]
+---
+简单描述Git常用命令，其都是在git bash中执行；linux大部分命令在git bash中都能使用（如ls、cat、vi ...）,但是也存在部分不能使用(如ll命令等),下面记录以下git特有的命令：
+
+-  git init : 初始化项目；项目根目录下执行该命令,将该项目交给git工具进行管理，生成目录 .git
+-  git status :
+-  git add : 
+-  git commit ： 
+-  git remove :
+-  git push :
+-  git branch :
+
+-  git rm [-r] name: 将文件或目录移除git管理，参数 -r表示目录级联
+
+<p>分支管理
+
+- git branch --help: 查看关于git branch帮助
+- git branch [a|r...]: 查看本地分支(不带任何参数)，分支名前带星号" * "的是当前分支
+	- -a: 查看所有(all)分支（本地及远程分支）
+	- -r: 查看远程（remote）分支
+	- -d branch-name: 删除(delete)本地分支(分支名：branch-name),该分支必须全部合并到不相关分支,没有未完成的操作
+	- -D branch-name: 删除本地分支(分支名：branch-name),无论该分支是否合并到其他不相关分支
+	- -r -d origin/remoe-branch-name: 删除远程分支(分支名：remote-branch-name)
+	- git push origin :remote-branch-name: 删除远程分支(分支名：remote-branch-name),冒号前面的空格不能少;原理：把空分支push到远程server上,达到删除的结果
+	- 
+- git branch branch-name: 创建分支（分支名:branch-name）
+- gh
+- 都睡得
