@@ -6,14 +6,9 @@ tags: [tools,git]
 简单描述Git常用命令，其都是在git bash中执行；linux大部分命令在git bash中都能使用（如ls、cat、vi ...）,但是也存在部分不能使用(如ll命令等),下面记录以下git特有的命令：
 
 -  git init : 初始化项目；项目根目录下执行该命令,将该项目交给git工具进行管理，生成目录 .git
--  git status :
--  git add : 
--  git commit ： 
--  git remove :
--  git push :
--  git branch :
 
--  git rm [-r] name: 将文件或目录移除git管理，参数 -r表示目录级联
+-  git rm filename --cached: 将文件（可以添加多个文件，多个文件用空格隔开）移除git管理
+-  git rm -r directory-name --cached: 将目录（可以添加多个目录，多个目录用空格隔开）移除git的管理； -r表示目录级联（该目录及其所有子目录）
 
 <p>分支管理
 
