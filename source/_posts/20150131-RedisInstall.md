@@ -35,10 +35,11 @@ tags: [redis,database,tools]
 		"bar"
 
 - 总结
-	- 	如需要将redis的相关命令设置成全局（相当于windows将命令进入环境变量）执行如下命令
 	
-			$ make install #将redis-2.8.19/src目录下的redis-*等相关命令复制到/usr/local/bin
+	如需要将redis的相关命令设置成全局（相当于windows将命令进入环境变量）执行如下命令
 
-	- linux执行多条命令小技巧： 多条命令之间可以使用 "&&" 连接, 如 " make && make install " ;
+		$ make install #将redis-2.8.19/src目录下的redis-*等相关命令复制到/usr/local/bin
+
+	linux执行多条命令小技巧： 多条命令之间可以使用 "&&" 连接, 如 " make && make install " ;
 	
 	
