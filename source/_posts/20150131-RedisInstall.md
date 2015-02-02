@@ -9,13 +9,13 @@ tags: [redis,database,tools]
 	
 		$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz		#下载
 		$ tar xzf redis-2.8.19.tar.gz	#解压
-		$ cd redis-2.8.19
+		$ cd redis-2.8.19	#进入redis目录
 		$ make	#编译
 
 	编译redis源码时可能出现错误："make: cc: Command not found make...",是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)
 
 		$ yum install gcc #安装gcc环境
-		$ rpm -qa |grep gcc	#验证gcc是否安装成功（是否打印版本信息）
+		$ rpm -qa | grep gcc	#验证gcc是否安装成功（是否打印版本信息）
 		$ make  #再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)
 
 <!-- more -->

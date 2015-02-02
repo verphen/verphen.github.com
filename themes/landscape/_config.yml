@@ -25,7 +25,7 @@ widgets:
 
 # Miscellaneous
 google_analytics:
-favicon: /imgs/favicon.png	#页面图标
+favicon: /imgs/favicon.png	#浏览器头部显示图标
 twitter:
 google_plus:
 fb_admins:
