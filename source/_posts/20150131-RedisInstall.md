@@ -3,7 +3,7 @@ date: 2015-01-31 23:43:02
 categories: redis
 tags: [redis,database,tools]
 ---
-周六闲来没事研究点新东西，也满足一个技术宅的好奇心；redis简介google，进入正题：redis(官网： <a href="http://redis.io/">http://redis.io/</a> )环境搭建(centos-minimal)
+周六闲来没事研究点新东西，也满足一个技术宅的好奇心；redis简介google，进入正题：redis(官网： <a href="http://redis.io/" style="text-decoration: NONE;">http://redis.io/</a> )环境搭建(centos-minimal)
 
 - redis下载、解压、编译源码
 	
