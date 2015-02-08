@@ -29,7 +29,7 @@ tags: [tools,sublime]
 
 	- 重启sublime,Perferences->package settings中看到package control这一项，则说明安装成功
 
-	- 使用package console 安装插件
+	- 使用package console 安装插件（待续----）
 
-	待续----
+	
 	
