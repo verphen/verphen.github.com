@@ -17,11 +17,11 @@ tags: [java,设计模式]
 
 1、饿汉式  HungrySingleton.java
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013-9-9  下午11:23:42 
 	 */  
 	  
-	package org.verphen.singleton;  
+	package org.effine.singleton;  
 	  
 	/*单例模式：饿汉式*/  
 	public class HungrySingleton {  
@@ -40,11 +40,11 @@ tags: [java,设计模式]
 	}  
 2、懒汉式  LazySingleton.java
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月26日  下午1:50:47 
 	 */  
 	  
-	package org.verphen.singleton;  
+	package org.effine.singleton;  
 	  
 	/*单例模式：懒汉式*/  
 	public class LazySingleton {  
@@ -72,11 +72,11 @@ tags: [java,设计模式]
 
 3、登记式  RegisterSingleton.java
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月29日  下午1:43:31 
 	 */  
 	  
-	package org.verphen.singleton;  
+	package org.effine.singleton;  
 	  
 	import java.util.HashMap;  
 	import java.util.Map;  

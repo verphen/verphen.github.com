@@ -22,11 +22,11 @@ tags: [java,设计模式]
 ICar.java  (抽象产品角色接口)
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:36:19 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*抽象产品角色接口：汽车Car*/  
 	public interface ICar {  
@@ -40,11 +40,11 @@ ICar.java  (抽象产品角色接口)
 Benz.java  (具体产品角色类)
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:38:08 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*具体产品角色类：汽车-奔驰Benz*/  
 	public class Benz implements ICar {  
@@ -62,11 +62,11 @@ Benz.java  (具体产品角色类)
 Ferrari.java  (具体产品角色类)
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:40:18 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*具体产品角色类：汽车-法拉利Ferrari*/  
 	public class Ferrari implements ICar {  
@@ -84,11 +84,11 @@ Ferrari.java  (具体产品角色类)
 Jaguar.java  (具体产品角色类)
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:42:21 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*具体产品角色类：汽车-捷豹-Jaguar*/  
 	public class Jaguar implements ICar {  
@@ -106,11 +106,11 @@ Jaguar.java  (具体产品角色类)
 SimpleFactory.java  (工厂角色类)
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:29:02 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*工厂角色类*/  
 	public class SimpleFactory {  
@@ -133,11 +133,11 @@ SimpleFactory.java  (工厂角色类)
 SimpleFactoryTest.java （测试类）
 <!--lang:java-->
 	/** 
-	 * @author VerpHen 
+	 * @author effine 
 	 * @date 2013年9月10日  上午9:48:32 
 	 */  
 	  
-	package org.verphen.simpleFactory;  
+	package org.effine.simpleFactory;  
 	  
 	/*测试简单工厂方法类*/  
 	public class SimpleFactoryTest {  

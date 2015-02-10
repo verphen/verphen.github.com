@@ -9,11 +9,11 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 抽象被观察者角色
 <!--lang:java--> 
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013年10月4日  下午11:02:21 
 	 */  
 	  
-	package org.verphen.observer;  
+	package org.effine.observer;  
 	  
 	/*抽象被观察者角色*/  
 	public interface IWitched {  
@@ -30,11 +30,11 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 抽象观察者角色
 <!--lang:java-->
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013年10月4日  下午11:06:57 
 	 */  
 	  
-	package org.verphen.observer;  
+	package org.effine.observer;  
 	  
 	/*抽象观察者角色*/  
 	public interface IWitchers {  
@@ -45,11 +45,11 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 具体被观察者角色
 <!--lang:java-->
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013年10月4日  下午11:15:20 
 	 */  
 	  
-	package org.verphen.observer;  
+	package org.effine.observer;  
 	  
 	import java.util.ArrayList;  
 	import java.util.List;  
@@ -80,11 +80,11 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 具体观察者角色
 <!--lang:java-->
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013年10月4日  下午11:16:56 
 	 */  
 	  
-	package org.verphen.observer;  
+	package org.effine.observer;  
 	  
 	/*具体观察者角色*/  
 	public class ConcreteWitchers implements IWitchers {  
@@ -97,11 +97,11 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 测试类
 <!--lang:java-->
 	/** 
-	 * @author Verphen 
+	 * @author effine 
 	 * @date 2013年10月4日  下午11:27:18 
 	 */  
 	  
-	package org.verphen.observer;  
+	package org.effine.observer;  
 	  
 	/* observer pattern test class*/  
 	public class TestWitch {  
