@@ -13,11 +13,11 @@ tags: [java,设计模式]
 	- 目标（Target）角色：这就是所期待得到的接口；**注意，这里讨论的是类的适配器模式，因此目标不可以是类。**
 		
 			/**
-			 * @author verphen
+			 * @author effine
 			 * @date 2014年4月7日   下午11:44:58
 			 */
 			
-			package org.verphen.adapter;
+			package org.effine.adapter;
 			
 			/* 目标角色 */
 			public interface Target {
@@ -36,11 +36,11 @@ tags: [java,设计模式]
 			<!--lang:java--->
 		
 			/**
-			 * @author verphen
+			 * @author effine
 			 * @date 2014年4月7日   下午11:49:00
 			 */
 			
-			package org.verphen.adapter;
+			package org.effine.adapter;
 			
 			/* 源角色 */
 			public class Adaptee {
@@ -56,11 +56,11 @@ tags: [java,设计模式]
 		    	<!--lang:java--->
 			
 			/**
-			 * @author verphen
+			 * @author effine
 			 * @date 2014年4月7日   下午11:48:30
 			 */
 			
-			package org.verphen.adapter;
+			package org.effine.adapter;
 			
 			/* 类的适配器角色 */
 			public class CalssAdapter extends Adaptee implements Target {
@@ -85,11 +85,11 @@ tags: [java,设计模式]
 			<!--lang:java-->
 			
 			/**
-			 * @author verphen
+			 * @author effine
 			 * @date 2014年4月8日   上午12:20:12
 			 */
 			
-			package org.verphen.adapter;
+			package org.effine.adapter;
 			
 			/* 对象的适配器角色 */
 			public class ObjectAdapter implements Target {
