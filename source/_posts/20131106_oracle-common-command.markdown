@@ -18,8 +18,8 @@ tags: [oracle,数据库]
 
 Oracle使用过程中接触到的一些常用操作及命令：
 
-+ 清屏（host cls、clear screen、clea scre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；
-+ 解锁scott用户：alter user scott account unlock；
-+ 修改密码：alter user scott identified by tiger;
-+ show user；查看当前用户
-+ disc 断开连接；conn 连接
+- 清屏（host cls、clear screen、clea scre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；
+- 解锁scott用户：alter user scott account unlock；
+- 修改密码：alter user scott identified by tiger;
+- show user；查看当前用户
+- disc 断开连接；conn 连接
