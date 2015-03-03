@@ -1,6 +1,11 @@
 title: wiki
 date: 2014-11-20 17:33:35
+comments: false
 ---
-Here is my wiki ! 
+hi, welcome access!
 
-welcome access!
+Here is my wiki page !  but, it is maintaining ... 
+
+thank you !
+
+

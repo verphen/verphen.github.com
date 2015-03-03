@@ -6,7 +6,7 @@ Hi, Every one !
 
 I`m effine , my website ID is 'verphen', 
 
-evaluation :
+价值观evaluation :
 	
 -  性格积极乐观，对技术充满激情，渴望挑战，强烈的求知欲
 -  追求完美，崇尚简约，以极少的Code完成高效的任务为宗旨
@@ -14,7 +14,7 @@ evaluation :
 
 if you want contact me, please send email or other ...
 
-- Email: verphen#163.com(常) / verphen#gmail.com（备），发送邮件时将"#"修改为 "@"
+- Email: verphen#gmail.com / verphen#163.com ，发送邮件时将"#"修改为 "@"
 
 - Github: <a href="https://github.com/verphen" style="text-decoration: none">@verphen</a> 
 
