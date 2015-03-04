@@ -5,13 +5,13 @@ tags: [tools,sublime]
 ---
 <h3>Install Sublime</h3>
 
-官网 <a href="http://www.sublimetext.com/" >http://www.sublimetext.com/</a>下载安装即可
+官网 [http://www.sublimetext.com/](http://www.sublimetext.com/) 下载安装即可
 
 <h3>Install plugin</h3>
 
 - 下载安装
 
-	下载安装包解压缩到Packages目录（菜单栏->preferences->packages）
+	下载安装包解压缩到Packages目录（菜单栏 -> preferences -> packages）
 
 - 使用package console组件安装
 
