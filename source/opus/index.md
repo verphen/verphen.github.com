@@ -5,13 +5,13 @@ comments: false
 项目按时间倒叙存放，欢迎浏览.
 
 - 云路科技 - 企业
-	<img src="/imgs/yunlu/enterprise.jpg" alt="云路科技企业端"/>
+	<img src="/imgs/yunlu/enterprise.jpg" alt="云路科技企业端" style="padding:2px;background: #ececec;"/>
 
 - 云路科技 - 教师
-	<img src="/imgs/yunlu/teacher.jpg" alt="云路科技教师端"/>
+	<img src="/imgs/yunlu/teacher.jpg" alt="云路科技教师端" style="padding:2px;background: #ececec;"/>
 
 - 云路科技 - 学生
-	<img src="/imgs/yunlu/student.jpg" alt="云路科技学生端" style=""/>
+	<img src="/imgs/yunlu/student.jpg" alt="云路科技学生端" style="padding:2px;background: #ececec;"/>
 
 - 天赐科技 - 爱挖米App后端
 	
