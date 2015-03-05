@@ -2,5 +2,5 @@ my own blog
 ---
 welcome access my github blog,please click it !
  
-site: [http://effine.cn/](http://effine.cn/)
+site: <a href="http://effine.cn/" "target"="_blank">http://effine.cn/</a>
 
