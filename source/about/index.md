@@ -26,4 +26,4 @@ if you want contact me, please send email or other ...
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
 <img src="/imgs/wechat_QR.png" alt="Contact Me"/>
 
-- 当然，你也可以去知乎、stackoverflow ...上去联系我，但回复不一定及时,望见谅！
+- 当然，你也可以去知乎、stackoverflow ...上联系我，但回复不一定及时,望见谅！
