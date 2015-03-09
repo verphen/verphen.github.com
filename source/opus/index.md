@@ -15,14 +15,14 @@ comments: false
 
 - 天赐科技 - 爱挖米App后端
 	
-	<span style="color: rgb(0, 255, 90);">无作品图片展示</span>
+	<span style="color: rgb(0, 255, 90);">暂无作品图片展示</span>
 	
 - 天赐科技 - 中科院项目
 	
-	<span style="color: rgb(0, 255, 90);">无作品图片展示</span>
+	<span style="color: rgb(0, 255, 90);">保密</span>
 
 - 战信同普 - Eclipse插件开发
 
-	<span style="color: rgb(0, 255, 90);">无作品图片展示</span>
+	<span style="color: rgb(0, 255, 90);">暂无作品图片展示</span>
 
-暂别砖木取火的原始社会...Duang . Duang . Duang...
+砖木取火的原始生产力就不列举了，因为没加特技...Duang . Duang . Duang...

@@ -24,9 +24,9 @@ widgets:
 # - blogroll
 
 # Miscellaneous
-google_analytics:
+google_analytics: verphen
 favicon: /imgs/favicon.png	#浏览器头部显示图标
-twitter:
-google_plus:
-fb_admins:
-fb_app_id: 
+twitter: verphen
+google_plus: verphen
+fb_admins: verphen
+fb_app_id: verphen
