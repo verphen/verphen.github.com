@@ -3,18 +3,57 @@ date: 2015-03-10 17:47:34
 categories: java
 tags: [web.xml]
 ---
-容器 Tomcat 运行多个web项目(测试时运行student、teacher两个web项目)，发生如下错误：
+Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：
+	
+	<web-app>
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.root</param-value>  <!-- 默认值，可以自定义为任意字符串 -->
+	</context-param>
+	<web-app>
 
-	Web app root system property already set to different value: 'webapp.root' = 
-	[/home/user/tomcat/webapps/student/] 
-	instead of [/home/user/tomcat/webapps/teacher/] - Choose unique values for the 'webAppRootKey' 
-	context-param in your web.xml files!  
+<!-- more -->
 
+为什么必须进行以上配置？
+
+Web应用服务器不会为其下不同的web应用的系统参数；即就是说，应用服务器tomcat上所有的web应用公用一个系统参数对象webAppRootKey（默认值为"webapp.root"）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。
+
+如我本地测试，Tomcat同时运行student、teacher两个web项目，我的配置：
+
+	<!-- 项目student的web.xml配置 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.student</param-value>
+	</context-param>
+
+	--------------------------华丽的分割线----------------------------------
+
+	<!-- 项目teacher的web.xml配置 -->
+	<context-param>
+		<param-name>webAppRootKey</param-name>
+		<param-value>webapp.teacher</param-value> 
+	</context-param>
+
+你可以通过 System.getProperty("webapp.root") 动态获取项目运行路径：
+
+	System.getProperty("webapp.student");	//student project	
+	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student
+
+	System.getProperty("webapp.student");	//teacher project
+	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher
+	
 	--------------------------------------------------
-		方便页面展示，错误经过合理的换行处理
+	 友情提示： " D:\workspace " 为我eclipse的工作空间
 	--------------------------------------------------
 
-错误提示指出： key为` "webapp.root" `已经指向项目student, 不能在指向项目teacher
+如果，Tomcat 运行多个web项目不进行webAppRootKey配置（或配置相同的webAppRootKey为webapp.root），将发生如下错误：
 
+	Web app root system property already set to different value: 'webapp.root' 
+	= [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student\] 
+	instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher\] 
+	- Choose unique values for the 'webAppRootKey' context-param in your web.xml files!  
+	--------------------------------------------------
+	 友情提示：方便页面展示，以上错误经过合理的换行处理
+	--------------------------------------------------
 
-出现原因: tomcat 容器下的web项目的 web.xml 都没有配置或配置相同的 WebAppRootKey;
+错误显示大概就是说： key 为 `"webapp.root"` 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值。
