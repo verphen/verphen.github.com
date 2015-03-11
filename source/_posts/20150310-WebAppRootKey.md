@@ -1,3 +1,4 @@
+
 title: web.xml配置WebAppRootKey
 date: 2015-03-10 17:47:34
 categories: java
@@ -8,7 +9,7 @@ Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的
 	<web-app>
 	<context-param>
 		<param-name>webAppRootKey</param-name>
-		<param-value>webapp.root</param-value>  <!-- 默认值，可以自定义为任意字符串 -->
+		<param-value>webapp.root</param-value>  <!-- 更改"webapp.root"为自定义的任意字符串 -->
 	</context-param>
 	<web-app>
 
@@ -16,7 +17,7 @@ Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的
 
 为什么必须进行以上配置？
 
-Web应用服务器不会为其下不同的web应用的系统参数；即就是说，应用服务器tomcat上所有的web应用公用一个系统参数对象webAppRootKey（默认值为"webapp.root"）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。
+Web应用服务器tomcat不会为其下不同的web应用使用独立的系统参数；即就是说，应用服务器tomcat上所有的web应用共用一个系统参数对象（webAppRootKey,默认值为"webapp.root"）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。
 
 如我本地测试，Tomcat同时运行student、teacher两个web项目，我的配置：
 
