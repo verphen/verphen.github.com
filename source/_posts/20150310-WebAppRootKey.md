@@ -1,7 +1,7 @@
 title: web.xml配置WebAppRootKey
 date: 2015-03-10 17:47:34
 categories: java
-tags: [web.xml]
+tags: [tomcat]
 ---
 Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：
 	
@@ -26,7 +26,7 @@ Web应用服务器不会为其下不同的web应用的系统参数；即就是�
 		<param-value>webapp.student</param-value>
 	</context-param>
 
-	--------------------------华丽的分割线----------------------------------
+	------------------- 华丽的分割线 ---------------------
 
 	<!-- 项目teacher的web.xml配置 -->
 	<context-param>
@@ -37,10 +37,10 @@ Web应用服务器不会为其下不同的web应用的系统参数；即就是�
 你可以通过 System.getProperty("webapp.root") 动态获取项目运行路径：
 
 	System.getProperty("webapp.student");	//student project	
-	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student
+	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student\
 
 	System.getProperty("webapp.student");	//teacher project
-	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher
+	运行结果：D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher\
 	
 	--------------------------------------------------
 	 友情提示： " D:\workspace " 为我eclipse的工作空间
@@ -56,4 +56,4 @@ Web应用服务器不会为其下不同的web应用的系统参数；即就是�
 	 友情提示：方便页面展示，以上错误经过合理的换行处理
 	--------------------------------------------------
 
-错误显示大概就是说： key 为 `"webapp.root"` 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值。
+错误显示大概就是说： key 为 `"webapp.root"` 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值; 所以，web应用服务器Tomcat运行多个web应用，必须对webAppRootKey进行相应的配置。
