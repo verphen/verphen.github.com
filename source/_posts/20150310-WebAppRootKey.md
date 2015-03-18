@@ -1,8 +1,7 @@
-
 title: web.xml配置WebAppRootKey
-date: 2015-03-10 17:47:34
-categories: java
 tags: [web,java]
+categories: java
+date: 2015-03-10 17:47:34
 ---
 Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：
 	
