@@ -1,0 +1,27 @@
+title: MysqlCommands
+tags:
+---
+
+启动与停止mysql服务： net start/stop mysql
+
+连接mysql： mysql -h localhost -u root -p aichuan (-h:主机；-u:用户名；-p:密码)
+
+			mysql-hlocalhost -uroot -p;回车；要求你输入密码
+
+
+show databases: 显示所有数据库
+
+use database_name : 使用数据库	
+
+show tables: 显示数据库所有表
+
+修改密码：
+	SET PASSWORD FOR 'root'@'localhost' = PASSWORD('newpass');
+	或
+	update user set password=password('root') where user ='root';
+	flush privileges;
+
+创建用户：
+	 insert into mysql.user(Host,User,Password) values("localhost","test",password("1234"));
+
+<Context path="" docBase="/yunlu-admin"  reloadable="false" source="org.eclipse.jst.jee.server:yunlu-admin"/>
