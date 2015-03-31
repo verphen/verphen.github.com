@@ -27,12 +27,51 @@ history : 操作系统终端执行过的命令历史
 
 		如：(reverse-i-search)`if': ifconfig 
 
+sudo : super user do; 允许授权用户执行超级用户或者其它用户的命令;sudo允许用户借用超级用户的权限，然而"su"命令实际上是允许用户以超级用户登录。所以sudo比su更安全
 
+mkdir : make direactory;创建目录
 
+touch：命令代表了将文件的访问和修改时间更新为当前时间。touch命令只会在文件不存在的时候才会创建它。如果文件已经存在了，它会更新时间戳
 
+chmod: 命令就是改变文件的模式位。chmod会根据要求的模式来改变每个所给的文件，文件夹，脚本等等的文件模式（权限）。在文件(文件夹或者其它，为了简单起见，我们就使用文件)中存在3中类型的权限
+	Read(r): 4
+	Write(w): 2
+	Execute(x): 1
 
+apt: Advanced package Tool ;APT是一个为Debian系列系统（Ubuntu，Kubuntu等等）开发的高级包管理器，在Gnu/Linux系统上，它会为包自动地，智能地搜索，安装，升级以及解决依赖
 
+	apt-get / apt-cache 的使用
 
+tar：解压命令
+
+cal: Calender 日历
+
+date: 查看时间；这个命令在脚本中十分有用，以及基于时间和日期的脚本更完美
+
+cat: concatenation连结;连接两个或者更多文本文件或者以标准输出形式打印文件的内容
+	“>>”和“>”调用了追加符号。它们用来追加到文件里，而不是显示在标准输出上。“>”符号会删除已存在的文件，然后创建一个新的文件。所以因为安全的原因，建议使用“>>”，它会写入到文件中，而不是覆盖或者删除
+
+		* 零个或更多字符
+		？ 恰好一个字符
+		[abcd] 恰好在列举范围中的一个字符
+		[a-z] 恰好在所给范围中的一个字符
+		[!abcd] 任何字符都不在列举范围内
+		[!a-z] 任何字符都不在所给范围内
+		{debain,centos}  恰好在所给选项中的一个单词
+
+cp: 复制
+
+mv: 移动
+
+pwd: print working directory；打印当前目录
+
+kill: 杀死进程
+
+ps: 管道
+
+grep: 匹配
+
+cd: change directory; 改变目录
 
 
 
