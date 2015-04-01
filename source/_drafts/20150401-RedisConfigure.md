@@ -1,6 +1,18 @@
 title: RedisConfigure
 tags:
 ---
+
+edis-server：Redis服务器的daemon启动程序
+redis-cli：Redis命令行操作工具。当然，你也可以用telnet根据其纯文本协议来操作
+redis-benchmark：Redis性能测试工具，测试Redis在你的系统及你的配置下的读写性能
+redis-stat：Redis状态检测工具，可以检测Redis当前状态参数及延迟状况 
+
+$redis-cli -p 6380 shutdown 关闭指定端口redis
+
+redis-cli下命令：
+	shutdown: 关闭redis服务
+
+
 配置redis根目录下的redis.conf文件，修改redis.conf文件需要重启redis
 
 	port: 配置redis访问端口（默认6379）
