@@ -45,6 +45,7 @@ telnet中的命令：
 
 	quit:退出
 	version: 查看版本信息
+	
 
 
 
