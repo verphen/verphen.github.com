@@ -13,7 +13,7 @@ node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客
 	
 	测试是否安装成功：` node --version ` 显示版本信息
 
-2. 安装npm
+2. 安装npm 
 	
 	记得有人说npm相对于nodejs,就相当于maven相对于java，不知道这种比拟是否恰当，暂且这么理解
 

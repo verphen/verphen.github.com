@@ -14,10 +14,6 @@ Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在wind
 2. clone GitHub的gitflow项目到你的临时工作目录（安装完成可以删除），执行命令 `git clone --recursive git://github.com/nvie/gitflow.git`；clone完成，win + R运行"cmd"进入windows控制台，进入该gitflow/contrib目录，执行命令`msysgit-install.cmd "Git Install Path"(如E:\Install\Git)`
 3. 测试；进入windows控制台，执行命令`git flow`看提示信息(前提：git必须设置环境变量；如没有设置则使用Git Bash)
 
-### linux 安装
-
-待续
- 
 参考资料：
 [[作者说明](https://github.com/nvie/gitflow/wiki/Windows)]、
 [[资料一](http://www.360doc.com/content/13/0720/22/2569758_301389862.shtml)]
