@@ -73,7 +73,9 @@ grep: 匹配
 
 cd: change directory; 改变目录
 
+free -m: 查看内存使用情况
 
+grep: Global Regular Expression Print 全局正则表达式版本
 
 
 
