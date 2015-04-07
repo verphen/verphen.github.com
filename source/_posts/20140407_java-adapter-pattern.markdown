@@ -32,8 +32,8 @@ tags: [java,设计模式]
 				 */
 				void method2();
 			}
+
 	- 源（Adaptee）角色：现有需要适配的接口
-			<!--lang:java--->
 		
 			/**
 			 * @author effine
@@ -52,8 +52,8 @@ tags: [java,设计模式]
 					/* method body */
 				}
 			}
+
 	- 适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。
-		    	<!--lang:java--->
 			
 			/**
 			 * @author effine
@@ -82,7 +82,6 @@ tags: [java,设计模式]
 	- 源（Adaptee）角色：现有需要适配的接口；code如类适配器模式的源角色。
 
 	- 适配器（Adapter）角色：适配器类是本模式的核心；适配器把源接口转换成目标接口；显然，这一角色不可能是接口，必须是类。
-			<!--lang:java-->
 			
 			/**
 			 * @author effine

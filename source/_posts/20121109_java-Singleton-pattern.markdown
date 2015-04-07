@@ -16,6 +16,7 @@ tags: [java,设计模式]
 单例模式具体分为饿汉式、懒汉式及登记式（这个很少介绍）：
 
 1、饿汉式  HungrySingleton.java
+	
 	/** 
 	 * @author effine 
 	 * @date 2013-9-9  下午11:23:42 
@@ -39,6 +40,7 @@ tags: [java,设计模式]
 	    }  
 	}  
 2、懒汉式  LazySingleton.java
+	
 	/** 
 	 * @author effine 
 	 * @date 2013年9月26日  下午1:50:47 
@@ -71,6 +73,7 @@ tags: [java,设计模式]
 引用文章针对上面代码（lazy=new LazySingleton();）有加上一次if判断（if(lazy==null) ），给出的理由是“采用双重判断，提高了多线程下操作的效率”；我认为没能提高效率，所以去掉多余的if判断；（ps：如有见解，欢迎指正探讨）
 
 3、登记式  RegisterSingleton.java
+	
 	/** 
 	 * @author effine 
 	 * @date 2013年9月29日  下午1:43:31 

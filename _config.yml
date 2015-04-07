@@ -86,6 +86,9 @@ permalink_defaults: /404.html
 
 # Extensions
 ## Plugins: https://github.com/tommy351/hexo/wiki/Plugins
+#plugins: 
+#- hexo-generator-feed
+
 ## Themes: https://github.com/tommy351/hexo/wiki/Themes
 theme: landscape
 exclude_generator:

@@ -20,7 +20,7 @@ tags: [java,设计模式]
 简单工厂模式包含：抽象产品角色、具体产品角色、工厂角色类（有的文章称之为“上帝类”）；下面code包含一个抽象产品类ICar、三个具体产品角色类（奔驰Benz、法拉利Ferrari和捷豹Jaguar）、一个工厂角色类 SimpleFactory 和测试类SimpleFatoryTest.
 
 ICar.java  (抽象产品角色接口)
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:36:19 
@@ -37,8 +37,9 @@ ICar.java  (抽象产品角色接口)
 	    /* 汽车停止 */  
 	    public void stop();  
 	}  
+
 Benz.java  (具体产品角色类)
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:38:08 
@@ -59,8 +60,9 @@ Benz.java  (具体产品角色类)
 	        System.out.println("奔驰停止");  
 	    }  
 	}  
+
 Ferrari.java  (具体产品角色类)
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:40:18 
@@ -81,8 +83,9 @@ Ferrari.java  (具体产品角色类)
 	        System.out.println("法拉利停止");  
 	    }  
 	}  
+
 Jaguar.java  (具体产品角色类)
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:42:21 
@@ -103,8 +106,9 @@ Jaguar.java  (具体产品角色类)
 	        System.out.println("捷豹停止");  
 	    }  
 	}  
+
 SimpleFactory.java  (工厂角色类)
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:29:02 
@@ -130,8 +134,9 @@ SimpleFactory.java  (工厂角色类)
 	        }  
 	    }  
 	}  
+
 SimpleFactoryTest.java （测试类）
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年9月10日  上午9:48:32 

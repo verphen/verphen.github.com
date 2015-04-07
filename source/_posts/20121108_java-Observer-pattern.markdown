@@ -7,7 +7,7 @@ tags: [java,设计模式]
 Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出code供参考：
 
 抽象被观察者角色
-<!--lang:java--> 
+
 	/** 
 	 * @author effine 
 	 * @date 2013年10月4日  下午11:02:21 
@@ -26,9 +26,10 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	  
 	    /* 被观察者 发生变化，通知观察者 */  
 	    public void notifyWitcher(Object o);  
-	}  
+	}
+  
 抽象观察者角色
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年10月4日  下午11:06:57 
@@ -42,8 +43,9 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	    /* 当被观察者发生变化，接到通知做出反应，更新操作 */  
 	    public void update(Object o);  
 	}  
+
 具体被观察者角色
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年10月4日  下午11:15:20 
@@ -77,8 +79,9 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	        }  
 	    }  
 	}  
+
 具体观察者角色
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年10月4日  下午11:16:56 
@@ -94,8 +97,9 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	        System.out.println(o);  
 	    }  
 	}  
+
 测试类
-<!--lang:java-->
+
 	/** 
 	 * @author effine 
 	 * @date 2013年10月4日  下午11:27:18 

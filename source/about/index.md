@@ -2,17 +2,21 @@ title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
 ---
-Hi, Every one !
+Hi, Every one ! I`m effine , my website ID is 'verphen' ; 
 
-I`m effine , my website ID is 'verphen', 
-
-价值观evaluation :
+[ 价值观 ]
 	
 -  性格积极乐观，对技术充满激情，渴望挑战，强烈的求知欲
 -  追求完美，崇尚简约，以极少的Code完成高效的任务为宗旨
 -  学习态度：知之为知之，不知为不知，是知也！
 
-if you want contact me, please send email or other ...
+[ 兴趣 ]
+
+- 骑行 - - 不知型号的BMW山地车
+- 自驾游 - - 有本无车
+- 旅游 - - 单反已在议程
+
+[ 联系方式 ]
 
 - Email: verphen#gmail.com / verphen#163.com ，发送邮件时将"#"修改为 "@"
 
