@@ -17,7 +17,7 @@ tags: [tools,sublime]
 
 	使用 package console 组件安装sublime text插件，必须先安装package console组件:
 
-	<!-- more -->	
+	<!-- more -->
 
 	- contrl + ` : 调出console面板，明了了框输入一下code，Enter
 
