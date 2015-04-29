@@ -7,4 +7,5 @@ tags:
 ---
 linux命令tail，安装要求
 
-tail -f file1 file2
+tail -f file1 file2（经常用来查看tomcat打印的日志）
+
