@@ -13,11 +13,11 @@ Hexo是基于nodejs的静态博客生成程序，关于Hexo具体，你可以去
 
 安装Hexo之前需要安装nodejs，因为hexo是基于nodejs而生；然后依次按以下步骤进行：
 
-- npm install hexo -g: 安装基于nodejs的hexo modules
+- npm install hexo -g: 安装基于nodejs的hexo modules 
 
 - hexo init blog: 在当前目录创建blog目录作为工作目录，并生成hexo必需文件
 
-- cd blog: 进入hexo工作目录
+- cd blog: 进入hexo工作目录   
 
 - npm install: 应该是安装一些node的依赖dependencies
 

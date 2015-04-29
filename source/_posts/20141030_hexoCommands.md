@@ -11,7 +11,7 @@ tags: [tools,hexo]
 
 <img src="/imgs/hexo_help.png" alt="hexo help" />
 
-- hexo init:　Create a new Hexo folder；　初始化一个Hexo文件夹
+- hexo init:　Create a new Hexo folder；初始化一个Hexo文件夹
 
 - hexo new "article name"(hexo n "article name"): Create a new post；新建post文章
 

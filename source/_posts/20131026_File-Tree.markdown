@@ -6,9 +6,8 @@ tags: [java,总结]
 ---
 看到windows文件资源管理器，突然想用Java来实现这种不同层的文件缩进，参考OSC中一个博主的思想，记录一下；Code如下：
 
-<!-- lang:java-->
 	/**
-	* @author VerpHen
+	* @author effine
 	* @date 2013年10月26日  下午1:25:14
 	*/
 

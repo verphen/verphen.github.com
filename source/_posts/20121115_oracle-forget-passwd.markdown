@@ -40,4 +40,4 @@ tags: [oracle,数据库]
 
 	这个命令重新生成了数据库的密码文件。密码文件的位置在ORACLE_HOME目录下的\database目录下。
 
-	这个密码是修改sys用户的密码。除sys和system其他用户的密码不会改变。
+	这个密码是修改sys用户的密码。除sys和system其他用户的密码不会改变.

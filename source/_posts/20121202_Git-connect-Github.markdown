@@ -28,7 +28,7 @@ tags: [git,github]
 
 14.  在GitHub上仓库页面刷新即可看到你在本地创建并提交的文件
 
-推荐各位使用GitHub的客户端工具，界面做得确实不错。
+推荐各位使用GitHub的客户端工具，界面做得确实不错。  
 
 - windows: [https://windows.github.com/](https://windows.github.com/) 
 - mac: [https://mac.github.com/](https://mac.github.com/)

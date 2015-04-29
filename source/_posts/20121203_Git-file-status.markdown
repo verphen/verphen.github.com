@@ -12,4 +12,4 @@ git库所在的文件夹(即.git所在的文件夹)中的文件的状态：
 
 -  modified：文件已修改，仅仅是修改，并没有进行其它操作。这个文件也有两个去处，通过”git add”可进入暂存(staged)状态，使用”git checkout”则丢弃修改，返因到unmodify状态。这个checkout很好理解，就是取出库中文件，覆盖当前文件。
 
--  staged：暂存状态。执得”git commit”则将修改同步到库中，这时库中的文件与本地文件又一致了，于是文件是unmodify状态。执行”git reset HEAD filenam”取消暂存，文件状态变为modified。
+-  staged：暂存状态。执得”git  commit”则将修改同步到库中，这时库中的文件与本地文件又一致了，于是文件是unmodify状态。执行”git reset HEAD filenam”取消暂存，文件状态变为modified。

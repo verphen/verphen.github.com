@@ -6,7 +6,7 @@ tags: [oracle,数据库]
 ---
 冬天来了，开始进入工作的节奏做项目，项目使用Oracle数据库，由于之前学习使用过一段时间Oracle，现在补充一下Oracle方面的只是，便于熟悉记忆：
 
-使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:
+使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）: 
 `imp username/password@netname file=path\filename.dmp log=C:\log.log full=y`（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。
 
 + username：用户名
@@ -18,7 +18,7 @@ tags: [oracle,数据库]
 
 Oracle使用过程中接触到的一些常用操作及命令：
 
-- 清屏（host cls、clear screen、clea scre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；
+- 清屏（host cls、clear screen、cleascre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；
 - 解锁scott用户：alter user scott account unlock；
 - 修改密码：alter user scott identified by tiger;
 - show user；查看当前用户

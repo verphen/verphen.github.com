@@ -19,7 +19,7 @@ tags: [java,设计模式]
 	
 	/** 
 	 * @author effine 
-	 * @date 2013-9-9  下午11:23:42 
+	 * @date 2013-9-9  下午11:23:42
 	 */  
 	  
 	package org.effine.singleton;  
