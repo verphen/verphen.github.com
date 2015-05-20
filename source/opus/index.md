@@ -7,7 +7,7 @@ comments: false
 - 云路科技 - 招聘
 	<img src="/imgs/yunlu/enterprise.jpg" alt="云路科技招聘端" style="padding:2px;background: #ececec;"/>
 
-- 云路科技 - 编辑
+- 云路科技 - 编辑 / [http:///www.yun.lu/teacher](http:///www.yun.lu/teacher)
 	<img src="/imgs/yunlu/teacher.jpg" alt="云路科技编辑端" style="padding:2px;background: #ececec;"/>
 
 - 云路科技 - 用户 / [http:///www.yun.lu](http:///www.yun.lu)
