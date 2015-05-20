@@ -1,4 +1,4 @@
-title: Omit Passwd Login for SSH
+title: Omit passwd login for SSH
 date: 2015-05-20 17:11:02
 categories: linux
 tags:
