@@ -21,10 +21,16 @@ tail 命令基本用法：
 
 tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：
 
--f : 循环读取(常用于监控应用运行日志)
--n number: 自定义显示行数
+	-f : 循环读取(常用于监控应用运行日志)
+	-n number: 自定义显示行数
 
-	如果number前带正号("+")，则从文件头部第number行开始读取；若带负号（"-"）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。
+如果number前带正号("+")，则从文件头部第number行开始读取；若带负号（"-"）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。
+
+	$ tail -n +5 catalina.out 		# 从catalina.out文件顶部第5行开始读取内容
+	
+	$ tail -n -5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
+
+	$ tail -n 5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
 
 具体参数参考：
 
