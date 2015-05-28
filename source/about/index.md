@@ -15,7 +15,6 @@ Hi, Every one ! I`m effine , my website ID is 'verphen' ;
 - 骑行 - - 捷安特 GIANT ATX 680
 - 自驾游 - - 有本无车
 - 旅游 - - 单反已在议程
-
 - 看书 - - 技术 + 内修
 - 音乐 - - 民谣 ballad
 
