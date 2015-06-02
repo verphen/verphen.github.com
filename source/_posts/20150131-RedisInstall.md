@@ -41,5 +41,3 @@ tags: [redis,database,tools]
 		$ make install #将redis-2.8.19/src目录下的redis-*等相关命令复制到/usr/local/bin
 
 	linux执行多条命令小技巧： 多条命令之间可以使用 "&&" 连接, 如 " make && make install ";
-	
-	
