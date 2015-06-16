@@ -11,14 +11,15 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 
 既然设计文件的远程同步，需要两台服务器s1\s2
 
-环境描述：
+环境描述：	
 	
-	centos 
-
+	操作系统： centos 
 	serverA: 192.168.0.140 待同步的服务器（源服务器）
 	serverB: 192.168.0.141 同步到的服务器 (目标服务器)
 
-	需求: 同步serverA的 /home/test 目录到 serverB 的相同目录（/home/test）
+	需求: 同步serverA的目录 /home/test 到 serverB 的相同目录
+
+<!-- more -->
 
 1. 安装rsync
 
@@ -83,7 +84,6 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 	$chown root.root rsyncd.secrets 　#修改属主
 	$ chmod 600 /etc/rsyncd.secrets   #将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
 
-	
 	rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性
 
 	$ vi /etc/rsyncd.motd 
@@ -93,8 +93,7 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 
 	$ vi /etc/sysconfig/iptables
 
-	添加如下Code
-	
-	#-A INPUT -m state --state NEW -m udp -p udp --dport 873 -j ACCEPT
+	添加如下记录：
+
 	-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 873 -j ACCEPT
 
