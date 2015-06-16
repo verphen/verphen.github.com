@@ -1,4 +1,4 @@
-title: Omit Passwd Login for SSH
+title: SSH免密码登陆
 date: 2015-05-20 17:11:02
 categories: linux
 tags:
@@ -20,7 +20,7 @@ tags:
 
 一直回车即可,最后将会在目录 ` ~/.ssh ` 生成公钥id_rsa.pub和私钥id_rsa两个文件,将公钥内容追加到remoteHost服务器 ` ~/.ssh/authorized_keys`文件中
 
-	$ ssh-copy-i ~/.ssh/id_rsa.pub <your-username>@remoteHost		# 追加本机公钥到remoteHost的authorized_keys
+	$ ssh-copy-i ~/.ssh/id_rsa.pub <your-username>@remoteHost	# 追加本机公钥到remoteHost的authorized_keys
 
 输入remoteHost密码即可实现SSH免密码登录远程主机
 

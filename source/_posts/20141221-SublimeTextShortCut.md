@@ -11,7 +11,6 @@ tags: [tools,sublime]
 	
 	- ctrl + ` : 调出console面板
 	- ctrl + shift + p: 调出package control 包管理器
-	
 
 - 编辑区
 	
@@ -43,9 +42,3 @@ tags: [tools,sublime]
 		- ctrl + k, ctrl + k : 按住ctrl,连续按两次k; 删除光标所在位置至行尾的文本（delete to end）
 		- ctrl + k, ctrl + backspace : 按住ctrl,按k然后在按backspace;删除光标所在位置至行首的文本 (delete to beginning)
 		- ctrl + t : 光标前一个字符和后一个字符交换位置 (transpose)
-	
-
-
-
-
-
