@@ -37,9 +37,9 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 
 	默认rsync需要配置三个文件rsyncd.conf \ rsyncd.secrets \ rsyncd.motd; 如文件不存在则创建即可
 
-	rsyncd.conf: 主配置文件，主要配置rsync同步信息和权限设置;默认可能该文件不存在，需手动创建。
+	. rsyncd.conf: 主配置文件，主要配置rsync同步信息和权限设置;默认可能该文件不存在，需手动创建
 
-	$ vi /etc/rsyncd.conf   #创建rsyncd.conf文件并在vi中编辑
+		$ vi /etc/rsyncd.conf   #创建rsyncd.conf文件并在vi中编辑
 
 	具体内容参考我的配置
 
@@ -72,28 +72,32 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 
 	auth users属性可以添加多个用户，用户之间用逗号分隔；所有的用户必须为服务器真实存在的用户
 
-	rsyncd.secrets： 存放用户密码文件,格式"用户名：密码"
+	. rsyncd.secrets： 存放用户密码文件,格式"用户名：密码"
 
-	$ vi /etc/rsyncd.secrets   
+		$ vi /etc/rsyncd.secrets   
 
 	参考我的配置
 
 		# username:passwd
-		rsync:test123
+		 rsync:test123
 
-	$chown root.root rsyncd.secrets 　#修改属主
-	$ chmod 600 /etc/rsyncd.secrets   #将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
+	修改属主
 
-	rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性
+		$chown root.root rsyncd.secrets
 
-	$ vi /etc/rsyncd.motd 
+	将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!
 
+		$ chmod 600 /etc/rsyncd.secrets  
+
+	. rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性
+
+		$ vi /etc/rsyncd.motd 
 
 3. 开启rsync端口873(开启防火墙)
 
-	$ vi /etc/sysconfig/iptables
+		$ vi /etc/sysconfig/iptables
 
 	添加如下记录：
 
-	-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 873 -j ACCEPT
+		-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 873 -j ACCEPT
 

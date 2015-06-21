@@ -22,4 +22,3 @@ tags: [blog]
 - 针对博客过长，显示主要内容在主页，点击"更多"显示全文
 	
 	- 在博客简介完成之后添加 ` <!--more-->` 即可<br><img src="/imgs/read_more.png" alt="Read More">
-	
