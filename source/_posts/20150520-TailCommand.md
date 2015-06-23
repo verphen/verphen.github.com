@@ -1,4 +1,4 @@
-title: Tail command
+title: tail command
 date: 2015-05-20 16:54:22
 categories: linux
 tags:

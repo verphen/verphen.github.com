@@ -1,4 +1,4 @@
-title: CentOS Network Config
+title: centos 网络配置
 date: 2015-01-29 23:37:34
 categories: linux
 tags: [linux,centos]

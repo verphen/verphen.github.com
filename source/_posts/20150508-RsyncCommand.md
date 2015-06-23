@@ -1,4 +1,4 @@
-title: Rsync Command
+title: rsync command
 date: 2015-05-08 14:27:12
 categories: linux
 tags:
