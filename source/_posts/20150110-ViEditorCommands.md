@@ -1,4 +1,4 @@
-title: Vi Commands
+title: vi commands
 date: 2015-01-10 22:36:25
 categories: linux
 tags: [linux,tools]

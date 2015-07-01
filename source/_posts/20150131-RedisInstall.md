@@ -1,4 +1,4 @@
-title: Redis Install
+title: redis install
 date: 2015-01-31 23:43:02
 categories: redis
 tags: [redis,database,tools]
