@@ -1,17 +1,17 @@
-title: "Tomcat roles"
+title: "tomcat 角色"
 date: 2015-06-01 16:04:40
 categories: web
 tags: 
   - tomcat
   - role
 ---
-配置tomcat角色之后的使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目
+tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目
 
 如你需要访问manager或host-manager项目(http://localhost:8080/[manager|host-manager])，则会出现网页弹框：
 
 	<img src="/imgs/tomcat/verification.png" alt="tomcat verification"/>
 
-提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码已经用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的<tomcat-users>标签内进行如下用户及角色配置即可访问.
+提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的<tomcat-users>标签内进行如下用户及角色配置即可访问.
 
 	<role rolename="manager-gui"/>
   	<role rolename="manager-script"/>
@@ -31,7 +31,7 @@ tomcat的在线documents: http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.
 
 多个角色之间用逗号(",")隔开
 
-访问host-manager项目角色配置：
+访问host-manager项目需配置角色：
 
 	<role rolename="admin-gui"/>
 	<role rolename="admin-script"/>
@@ -41,5 +41,10 @@ tomcat的在线documents: http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.
 	admin-gui - allows access to the HTML GUI
 	admin-script - allows access to the text interface
 
+tips
 
-[完善] -- manager/host-manager项目分别的作用?
+Tomcat默认项目 manager/host-manager 的作用：
+
+	manager 项目： 对 tomcat 应用进行管理，包括对应用进行启动、停止和重启，以及发布新应用和删除已发布应用；设置应用的Expire sessions(session到期时间，默认30分钟)
+
+	host-manager 项目： 对 tomcat 的虚拟主机进行管理
