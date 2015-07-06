@@ -1,7 +1,6 @@
 title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
-share: false
 ---
 hi, every one, I`m effine 
 

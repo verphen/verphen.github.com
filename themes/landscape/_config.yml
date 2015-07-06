@@ -1,11 +1,11 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-  Docs: /docs
-  Opus: /opus
-  Wiki: /wiki
-  About: /about
+  home: /
+  archives: /archives
+  wiki: /wiki
+  opus: /opus
+  reading: /reading
+  about: /about
 rss: /atom.xml
 
 # Content
