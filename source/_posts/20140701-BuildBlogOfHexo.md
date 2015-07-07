@@ -4,7 +4,6 @@ date: 2014-07-01 00:50:07
 categories: blog
 tags: [hexo,github,blog]
 ---
-
 Hexo是基于nodejs的静态博客生成程序，关于Hexo具体，你可以去google或者参考作者<a href="https://github.com/tommy351">@tommy351</a>对<a href="https://github.com/hexojs/hexo">Hexo</a>的介绍,这里不再累述;
 
 <!-- more -->
@@ -16,6 +15,8 @@ Hexo是基于nodejs的静态博客生成程序，关于Hexo具体，你可以去
 - npm install hexo -g: 安装基于nodejs的hexo modules 
 
 - hexo init blog: 在当前目录创建blog目录作为工作目录，并生成hexo必需文件
+
+<!-- more -->
 
 - cd blog: 进入hexo工作目录   
 

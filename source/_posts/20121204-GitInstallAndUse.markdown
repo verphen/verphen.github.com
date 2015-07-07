@@ -6,6 +6,8 @@ tags: [git,工具]
 ---
 Git是一个分布式管理工具，通过字符串来时刻保持数据的完整性，关心的是文件数据整体的变化，并不保存变化前后的差异数据；Git 在本地磁盘保存有关项目的历史更新，所有绝大多数操作只需要访问本地文件资源，并不需要Internet。当然可以使用GitHbub将代码托管，进行远程开发，方便团队比较分散的情况（这正体现Git分布式的优势）；开发人员只需将项目clone到本地，进行相应的开发然后push上传到GitHub（GitHub使用的是utf-8编码，所以上传的文件如若不是以utf-8编码，可能出现乱码），供别的开发人员更新即可。
 
+<!-- more -->
+
 ### 下载安装 ###
 
 Git在windows的版本是[msysgit](http://git-scm.com/download),或者在google code[下载](http://code.google.com/p/msysgit/downloads/list);下载完成自行安装,很简单的(如果你需要在windows控制台使用git命令，你必须把git安装路径的bin目录加入到环境变量)；Git安装完成应该有Git Bash和Git Gui（可视化操作），建议使用Git Bash，理解git的命令操作（Linux下的大部分名字在git bash下都能使用）；

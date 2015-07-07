@@ -12,6 +12,8 @@ tags: [java,efficiency]
 		> Integer.parseInt(String s, int radix);
 	
 	查阅jdk源码发现，发现 `Integer.parseInt(String s)` 方法调用int的包装类Integer的parseInt(s,10)方法，即就是 `Integer.parseInt(String s,int radix)`,解析字符串s使用的基数radix(进制数)，转换成有符号的整数
+
+<!-- more -->
 	
 		 方案二：
 		> Integer.valuseOf(String s);

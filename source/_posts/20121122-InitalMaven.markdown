@@ -9,6 +9,9 @@ tags: [tools,maven]
 - Maven的安装
 
 	首先下载Maven<a href="http://maven.apache.org/download.cgi">(下载地址)</a>（电脑上有以前下载好的，版本是apache-maven-3.0.5，现在就将就这个是用吧），解压到你要安装的目录（我解压到E盘的）。设置环境变量，将bin目录加入到环境变量Path中（如 E:\apache-maven-3.0.5\bin）。现在在dos命令下输入：mvn -v （查看版本信息），如果显示：Apache Maven 3.0.5  、 Maven home: E:\apache-maven-3.0.5\bin\..    、 Java home: E:\Install\JDK\jre （安装maven需要java环境，所以需要提前安装JDK）等信息，则说明你的maven安装成功；否则，检查一下你设置的环境变量，看是否有错误。
+
+<!-- more -->
+    
 -  配置maven的 repository 路径；
 
   	repository 是存放我们需要用到的库文件，默认路径是在`C:\Users\Administrator\.m2`，一般可以修改该路径，在maven的安装目录下conf文件夹中找到settings.xml（我的在E:\apache-maven-3.0.5\conf\settings.xml），打开该文件在标签“settings”的子标签“localRepository”中内容为你需要存放Repository位置（如`D:\.m2\repository`,也可以复制一份settings出来放在任何位置加以修改）。然后，我运行了一下命令：maven help:system，回车，将下载很多的库文件在r刚刚设置的epository目录下（目前还不清楚这条命令的具体功能，只当做尝试一下)

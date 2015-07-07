@@ -9,6 +9,8 @@ tags: [oracle,数据库]
 使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）: 
 `imp username/password@netname file=path\filename.dmp log=C:\log.log full=y`（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。
 
+<!-- more -->
+
 + username：用户名
 + password：密码
 + netname：实例名称，即就是数据库

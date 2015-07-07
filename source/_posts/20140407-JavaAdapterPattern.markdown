@@ -33,6 +33,8 @@ tags: [java,设计模式]
 				void method2();
 			}
 
+<!-- more -->
+
 	- 源（Adaptee）角色：现有需要适配的接口
 		
 			/**

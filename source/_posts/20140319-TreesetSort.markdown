@@ -8,6 +8,8 @@ TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的�
 
 **排序的第一种方式：**元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可
 
+<!-- more -->
+
 测试类：TreeSetDemo.java
 
 	import java.util.SortedSet;

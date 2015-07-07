@@ -10,6 +10,8 @@ tags: [git,github]
 
 2. 本机创建SSH key：`ssh -keygen -C "username@email.com" -t rsa`(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的`C:\Users\本机用户名`路径下产生一个.ssh文件夹，里面对应SSH Keys，其中id_rsa.pub是GitHub需要的SSH公钥文件。然后在GitHub网站右上角选择Account Settings，然后选择SSH Keys，点击Add SSH Key，将id_rsa.pub文件里的内容copy至其中的key里（Title随意）；当然如果之前你使用过SSH Keys命令需要删除.ssh文件夹然后重新开始。
 
+<!-- more -->
+
 3. 验证SSH keys：`ssh -T git@github.com`,仔细看描述信息
 
 5. 设置全局变量(暂且这么称呼)username：`git config  --global user.name "usernme"`(username：GitHub的用户名）, Email：`git config  --global user.email emailName`（emailName：GitHub的注册邮箱） 

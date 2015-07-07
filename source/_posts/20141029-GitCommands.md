@@ -14,6 +14,8 @@ tags: [tools,git]
 -  git commit -m "infomation": 提交文件至暂存区
 -  git remote show origin: 查看远程关联
 
+<!-- more -->
+
 -  git rm filename --cached: 将文件（可以添加多个文件，多个文件用空格隔开）移除git管理
 -  git rm -r directory-name --cached: 将目录（可以添加多个目录，多个目录用空格隔开）移除git的管理； -r表示目录级联（该目录及其所有子目录）
 
