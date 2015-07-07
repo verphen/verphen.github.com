@@ -7,10 +7,10 @@ comments: false
 - 云路科技 - 招聘
 	<img src="/imgs/yunlu/enterprise.jpg" alt="云路科技招聘端" style="padding:2px;background: #ececec;"/>
 
-- 云路科技 - 编辑 / [http:///www.yun.lu/teacher](http:///www.yun.lu/teacher)
+- 云路科技 - 编辑 - [http:///www.yun.lu/teacher](http:///www.yun.lu/teacher)
 	<img src="/imgs/yunlu/teacher.jpg" alt="云路科技编辑端" style="padding:2px;background: #ececec;"/>
 
-- 云路科技 - 用户 / [http:///www.yun.lu](http:///www.yun.lu)
+- 云路科技 - 用户 - [http:///www.yun.lu](http:///www.yun.lu)
 	<img src="/imgs/yunlu/student.png" alt="云路科技用户端" style="padding:2px;background: #ececec;"/>
 
 - 天赐科技 - 爱挖米App后端
@@ -25,4 +25,4 @@ comments: false
 
 	<span style="color: rgb(0, 255, 90);">暂无作品图片展示</span>
 
-砖木取火的原始生产力就不列举了，因为没加特技...Duang . Duang . Duang...
+砖木取火的原始生产力就不列举于此
