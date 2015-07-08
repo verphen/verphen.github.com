@@ -6,8 +6,6 @@ tags: [hexo,github,blog]
 ---
 Hexo是基于nodejs的静态博客生成程序，关于Hexo具体，你可以去google或者参考作者<a href="https://github.com/tommy351">@tommy351</a>对<a href="https://github.com/hexojs/hexo">Hexo</a>的介绍,这里不再累述;
 
-<!-- more -->
-
 <h3>Install Hexo </h3>
 
 安装Hexo之前需要安装nodejs，因为hexo是基于nodejs而生；然后依次按以下步骤进行：
