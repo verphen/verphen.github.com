@@ -11,19 +11,18 @@ tags:
 	service mysqld [status|start|stop|restart]	# RedHat下mysql当前状态、启动、停止、重启
 	net [start|stop] mysql 	# windows下启动、停止mysql
 
-	mysql -u username -p 	# 登录mysql服务
+	mysql -u username -p*** 	# 登录mysql服务
+								# -p和密码之间无空格；避免密码泄露这一步不要输入密码
 		-u username 	# 用户名
 		-p passwd		# 密码,小写p
 		-h host 	# 主机
 		-P port		# 端口, 大写P
 
-	show databases 		# 查看所有数据库
+	show databases 		# 查看所有数据库卸扣
 	drop database-name 	# 删除数据库
 	use database-name 	# 使用数据库database-name
 	show tables 	# 查看使用数据库的全部表
 	describe table-name 	# 显示表属性对象的名称和类型
 	drop table-name 	# 删除表
-
-
 
 

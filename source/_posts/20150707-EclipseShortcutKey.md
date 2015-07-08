@@ -19,6 +19,9 @@ date: 2015-07-07 09:27:14
 	ctrl + shift + h 	# 搜索包含指定内容的文件或其他
  						# 选择 "file search" 则搜索文件
  						# 点击左下角的 "customize...",可以控制显示的标签tab和上次打开的page
+    ctrl + shift + x    # 将选中的字母变为大写
+    ctrl + shift + y    # 将选中的字母变为小写
+    
 <!-- more -->
 
     ctrl + .	# 定位下一处错误或者警告
