@@ -64,7 +64,7 @@ date: 2015-07-08 09:58:06
 - 表	 table
 
 	show tables 	# 查看使用数据库的全部表
-	describe table-name 	# 显示表属性对象的名称和类型
+	describe[desc] table-name 	# 显示表属性对象的名称和类型
 	drop table-name 	# 删除表
 	alter table table-name rename to new-table-name  # 修改表名
 	alter table table-name drop fild-name  # 删除表字段file-name
@@ -76,3 +76,7 @@ date: 2015-07-08 09:58:06
 	show engines 	# mysql支持的存储引擎
 	show table status from databse-name where name = 'table-name' 	# 查看表使用的存储引擎和一些其他信息
 	alter table table-name engine = InnerDB  # 修改表table-name的存储引擎为InnerDB
+
+- 技巧
+	
+	sql语句最后的分号";"替换为"\G"则可以改变查询结果的显示方式,便于用户查看;
