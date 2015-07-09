@@ -24,5 +24,7 @@ tags:
 	show tables 	# 查看使用数据库的全部表
 	describe table-name 	# 显示表属性对象的名称和类型
 	drop table-name 	# 删除表
+	alter table table-name engine = InnerDB  # 修改表table-name的存储引擎为InnerDB
+	alter table table-name rename to new-table-name  # 修改表名
 
 
