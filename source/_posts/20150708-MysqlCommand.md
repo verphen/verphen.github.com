@@ -50,6 +50,8 @@ date: 2015-07-08 09:58:06
 	show grants for effine[@host] 	# 查看用户已有权限
 	revoke privileges on databaseName.tableName from username@host 	# 撤销用户权限
 
+	grant select on *.*  to username[@host] identified by 'passowrd'  # 创建只读用户（对指定主机的所有数据库）
+
 	select user(); 	# 查看当前登录用户和主机
 
 - 数据库 database
