@@ -67,9 +67,9 @@ date: 2015-07-08 09:58:06
 	describe[desc] table-name 	# 显示表属性对象的名称和类型
 	drop table-name 	# 删除表
 	alter table table-name rename to new-table-name  # 修改表名
-	alter table table-name drop fild-name  # 删除表字段file-name
-	alter table table-name modify fild-name type-name 	# 修改字段数据类型
-	alter table table-name change old-fild new-fild type-name 	# 修改字段名称和数据类型
+	alter table table-name drop field-name  # 删除表字段field-name
+	alter table table-name modify field-name type-name 	# 修改字段数据类型
+	alter table table-name change old-field new-field type-name 	# 修改字段名称和数据类型
 
 - 存储引擎 emgine
 
