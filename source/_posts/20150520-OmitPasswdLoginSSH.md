@@ -16,7 +16,7 @@ tags:
 
 	$ ssh-keygen		# 本地主机生成密钥
 	等同于
-	$ ssh-keygen -t rsa 	
+	$ ssh-keygen -t rsa
 
 一直回车即可,最后将会在目录 ` ~/.ssh ` 生成公钥id_rsa.pub和私钥id_rsa两个文件,将公钥内容追加到remoteHost服务器 ` ~/.ssh/authorized_keys`文件中
 
@@ -31,3 +31,5 @@ tags:
 我的远程主机/home目录存在localHost的公钥id_rsa.pub,所以我执行以下命令即可：
 
 	$ cat /home/id_rsa.pub path >> ~/.ssh/authorized_keys
+
+扩展阅读： google ssh-keygen参数设置
