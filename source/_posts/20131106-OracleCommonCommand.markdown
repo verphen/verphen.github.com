@@ -11,17 +11,19 @@ tags: [oracle,数据库]
 
 <!-- more -->
 
-+ username：用户名
-+ password：密码
-+ netname：实例名称，即就是数据库
-+ file：导入的dmp文件（完整路径）
-+ log：导入过程中产生的日志保存在该文件
-+ full：是否需要全部导入,只有当前用户是dba的时候，才能使用此项 
+    username：用户名
+    password：密码
+    netname：实例名称，即就是数据库
+    file：导入的dmp文件（完整路径）
+    log：导入过程中产生的日志保存在该文件
+    full：是否需要全部导入,只有当前用户是dba的时候，才能使用此项 
 
 Oracle使用过程中接触到的一些常用操作及命令：
 
-- 清屏（host cls、clear screen、cleascre），只要在sqlplus中命令前加上host就能使用windows本机的dos命令；
-- 解锁scott用户：alter user scott account unlock；
-- 修改密码：alter user scott identified by tiger;
-- show user；查看当前用户
-- disc 断开连接；conn 连接
+    cls[clear|screen|cleascre]     # 清屏
+    alter user scott account unlock；    # 解锁scott用户：
+    alter user scott identified by tiger;   # 修改密码：
+    show user；  # 查看当前用户
+    disc    # 断开连接；conn 连接
+
+tag：sqlplus中命令前加上host就能使用windows本机的dos命令；
