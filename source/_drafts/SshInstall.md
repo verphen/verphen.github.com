@@ -1,9 +1,9 @@
-title: "SSH"
+title: SSH
 date: 2015-06-19 14:17:34
 categories: web
 tags:
   - ssh
-  -  command
+  - command
 ---
 
 检查SSH是否安装
@@ -12,7 +12,7 @@ tags:
 
 如未安装，则安装即可：
 
-	$ yum install openssh-server
+	$ yum -y install openssh-server openssh-clients
 
 重启ssh：
 	
