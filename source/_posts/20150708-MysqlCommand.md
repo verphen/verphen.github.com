@@ -72,7 +72,7 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 - 数据库 database
 		mysql>  create database database-name； 	# 创建数据库
 		mysql>  show databases；					# 查看所有数据库列表
-		mysql>  drop database database-name;	# 删除数据库
+		mysql>  drop database database-name;    # 删除数据库
 		mysql>  use database-name； 				# 使用数据库database-name
 
 - 表	 table
