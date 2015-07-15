@@ -74,7 +74,7 @@ tags: [tools,sublime]
 	- 搜索
 		- ctrl + f: 查看内容
 		- ctrl + shift + f: 查找并替换
-		- ctrl + h: 替换
 			<br/>
 		- ctrl + d：选择单词，重复按d键可增加选择下一个相同的单词
+		- ctrl + h: 替换	
 		- ctrl + m: 调整到对应的括号
