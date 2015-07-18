@@ -1,5 +1,5 @@
 ---
-title: Oracle common commands
+title: Oracle常用命令
 date: 2013-11-06 22:58:46
 categories: database
 tags: [oracle,数据库]
