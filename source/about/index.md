@@ -24,7 +24,14 @@ hi, every one, I`m effine
 	
 	Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
 	Mac: 
-	
+
+	隐藏联系邮箱实现方式，以base64编码方式对文本进行编解码；
+
+	编码：执行命令 `base64` 回车, 输入需要编码的文本, 按ctrl + d完成即可输出编码后的字符串
+		  echo "带编码文本" | base64
+	解码：echo 待解码字符串 | base64 -d 
+
+
 - Github: <a href="https://github.com/verphen" style="text-decoration: none">@effine</a> 
 - Sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>
 - Douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>
