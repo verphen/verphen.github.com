@@ -20,7 +20,11 @@ hi, every one, I`m effine
 
 [ 联系方式 ]
 
-- Email: verphen#gmail.com / verphen#163.com ，发送邮件时将"#"修改为 "@"
+- Email: 
+	
+	Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
+	Mac: 
+	
 - Github: <a href="https://github.com/verphen" style="text-decoration: none">@effine</a> 
 - Sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>
 - Douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>
