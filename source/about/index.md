@@ -20,21 +20,14 @@ hi, every one, I`m effine
 
 [ 联系方式 ]
 
-- Email: 
-	
-	Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
-	Mac: 
+- Email（ps: 对应平台执行命令即可）: 
+     OS X : echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -D
+	 Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
 
-	隐藏联系邮箱实现方式，以base64编码方式对文本进行编解码；
+- sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>
 
-	编码：执行命令 `base64` 回车, 输入需要编码的文本, 按ctrl + d完成即可输出编码后的字符串
-		  echo "带编码文本" | base64
-	解码：echo 待解码字符串 | base64 -d 
+- douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>
 
-
-- Github: <a href="https://github.com/verphen" style="text-decoration: none">@effine</a> 
-- Sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>
-- Douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>
 - wechat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
 <img src="/imgs/wechat_QR.png" alt="Contact Me"/>

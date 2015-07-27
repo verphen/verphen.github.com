@@ -10,12 +10,12 @@ tags: [java,总结]
 	* @author effine
 	* @date 2013年10月26日  下午1:25:14
 	*/
-
+	
 	import java.io.File;
-
+	
 	public class FileTree {
 	public static int count = 0;
-
+	
 	public static void parse(File[] files) {
 		if (files.length == 0) {
 			FileTree.count--;
@@ -28,13 +28,13 @@ tags: [java,总结]
 					for (int i = 1; i <= FileTree.count; i++) {
 						System.out.print("\t");
 					}
-
+					
 					System.out.println(f.getName());
 					File[] files2 = f.listFiles();
-
+					
 					FileTree.parse(files2);
 				}
-
+				
 			}
 			for (File f : files) {
 				if (!f.isDirectory()) {
@@ -46,9 +46,9 @@ tags: [java,总结]
 			}
 			FileTree.count--;
 		}
-
+		
 	}
-
+	
 	public static void main(String[] args) {
 			File file = new File("d:/test");
 			File[] files = file.listFiles();

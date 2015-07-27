@@ -79,7 +79,7 @@ TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的�
 定义额外比较器的类：ComparatorDemo.java
 
 	import java.util.Comparator;
-
+	
 	//比较器类实现Comparator接口
 	public class ComparatorDemo implements Comparator {
 	
