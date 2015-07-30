@@ -94,7 +94,10 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 
 - 方法、函数 function
 		# 将查询结果field字段名用指定分隔符（默认为逗号）分隔显示
-		group_concat([distinct] field [order by asc/desc order_field] [sepatator '分隔符'])	
+		group_concat([distinct] field [order by asc|desc order_field] [sepatator '使用的分隔符'])	;
+		# 返回字符串str的字符颠倒顺序
+		reverse('待翻转字符串');
+		eg: select reverse('effine')将输出 eniffe
 
 - 技巧
 
