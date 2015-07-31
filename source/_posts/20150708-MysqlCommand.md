@@ -17,6 +17,7 @@ date: 2015-07-08 09:58:06
 		mysql>  \s 		# 查看mysql的版本信息和字符编码
 		mysql>  show variables;     # 查看mysql的变量设置，可以使用like过滤
 		mysql>  show variables like 'autocommit';     # 查看mysql事务是否自动提交
+		mysql>  show variables like '%max_connections%';  # 查看mysql的最大连接数
 		mysql>  set name utf8;    # 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)
 
 <!-- more -->
