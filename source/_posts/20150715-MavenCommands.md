@@ -5,7 +5,6 @@ tags:
 categories: tools
 date: 2015-07-15 10:43:38
 ---
-
 用了maven很多年，针对常用的命令做个总结，方便查阅
 
     $ mvn archetype:create	# 创建 maven 项目
