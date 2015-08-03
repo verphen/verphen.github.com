@@ -5,7 +5,6 @@ tags:
 categories: tools
 date: 2015-07-15 15:56:00
 ---
-
 在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：
 
 	<properties>
