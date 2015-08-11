@@ -5,7 +5,6 @@ tags:
 categories: java
 date: 2015-06-22 17:38:25
 ---
-
 分析之前，先猜想一下看看下面code snippets的输出：
 
 	package cn.effine.test;
