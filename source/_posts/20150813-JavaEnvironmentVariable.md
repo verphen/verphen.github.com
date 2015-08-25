@@ -22,9 +22,9 @@ date: 2015-08-13 19:43:54
 		export PATH=$JAVA_HOME/bin:$PATH
 		export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-	$ source /etc/profile	# 使刚设置的环境变量生效 
+	$ source /etc/profile	# 使刚设置的环境变量生效
 
-随便提一下windows下配置环境变量
+如果配置个人账户的java环境变量只需修改 `vi  ~/.bash_profile`文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:
 
 	计算机[桌面|资源管理器] -> 属性 -> 高级系统设置 -> 环境变量 -> 系统环境变量 -> 新建（存在则追加）
 
