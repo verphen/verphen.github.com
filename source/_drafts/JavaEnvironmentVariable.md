@@ -15,20 +15,27 @@ tags:
 
 	$ tar -zxvf dk-8u51-linux-x64.tar.gz
 
-
 设置环境变量
+	
+	1. 所有用户可用
+		$ vi /etc/profile
 
-	$ vi /etc/profile
+			export JAVA_HOME= /home/yunlu/install/jdk1.8.0_51
+			export PATH=$JAVA_HOME/bin:$PATH
+			export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-	export JAVA_HOME= /home/yunlu/install/jdk1.8.0_51
-	export PATH=$JAVA_HOME/bin:$PATH
-	export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+		$ source /etc/profile
 
+	2. 针对指定用户
+		$ vi ~/.bash_profile
 
-	source /etc/profile
+			export JAVA_HOME= /home/yunlu/install/jdk1.8.0_51
+			export PATH=$JAVA_HOME/bin:$PATH
+			export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
+		$ source /etc/profile
 
-随便提一下windows下配置环境变量
+顺便提一下windows下配置环境变量
 
 	计算机[桌面|资源管理器] -> 属性 -> 高级系统设置 -> 环境变量 -> 系统环境变量 -> 新建 
 

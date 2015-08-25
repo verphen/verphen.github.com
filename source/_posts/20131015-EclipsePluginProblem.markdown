@@ -4,7 +4,6 @@ date: 2013-10-15 01:26:10
 categories: tools
 tags: [eclipse]
 ---
-
 在开发Eclipse插件过程中，遇到这样的错误：
 
 	The selected wizard could not be started.xxxWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard;
