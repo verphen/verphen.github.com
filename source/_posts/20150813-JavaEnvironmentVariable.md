@@ -33,4 +33,4 @@ date: 2015-08-13 19:43:54
 	CLASSPATH [.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;]
 	Path [%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;]
 
-	注意：替换`E:\tools\jdk1.7.0_55`为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.
+注意：替换`E:\tools\jdk1.7.0_55`为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.

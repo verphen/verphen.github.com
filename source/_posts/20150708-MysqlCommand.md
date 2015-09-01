@@ -7,7 +7,7 @@ date: 2015-07-08 09:58:06
 ---
 在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；
 
-- 服务 service
+- 服务 service 
 		service mysql [status|start|stop|restart]	# Debian下mysql当前状态、启动、停止、重启
 		service mysqld [status|start|stop|restart]	# RedHat下mysql当前状态、启动、停止、重启
 		net [start|stop] mysql 	# windows下启动、停止mysql
