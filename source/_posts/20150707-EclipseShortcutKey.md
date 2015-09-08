@@ -43,6 +43,7 @@ date: 2015-07-07 09:27:14
 
     alt + shift + r 	# 修改文件名、方法名、变量名,并更新其引用
     alt + shift + a 	# eclipse列模式, 划定区域输入内容回车即可
+    alt + shift + o     # 切换标记发生(toggle mark occurrences);把选中的方法/变量在本类中全部出现的地方高亮显示
 
 调试模式的快捷方式：
 	
