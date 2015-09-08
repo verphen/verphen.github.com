@@ -2,9 +2,9 @@
 menu:
   home: /
   archives: /archives
-  wiki: /wiki
   opus: /opus
   reading: /reading
+  riding: /riding
   about: /about
 rss: /atom.xml
 
