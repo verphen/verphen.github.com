@@ -30,7 +30,7 @@ date: 2015-07-15 11:42:19
 				<activeProfile>downloadSources</activeProfile>
 			</activeProfiles>
 
-	标签<activeProfiles>默认在<settings>的最后，默认为注释状态
+	标签 `<activeProfiles>` 默认在 `<settings>` 的最后，且默认为注释状态
 
 3. eclipse配置
 
