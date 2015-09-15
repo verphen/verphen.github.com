@@ -30,7 +30,7 @@ tags: [blog]
 	<%- partial('_partial/after-footer') %>
 
 如下图：
-<img src="/imgs/error/buildHexoBlog1.png" alt="Hexo无法解析模板文件" />
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/error/buildHexoBlog1.png" alt="Hexo无法解析模板文件" />
 
 answer: 你博客根目录运行以下命令：
 	

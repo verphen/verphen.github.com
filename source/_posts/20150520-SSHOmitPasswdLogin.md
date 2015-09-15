@@ -5,7 +5,7 @@ tags:
   - linux
   - command
 ---
-<img src="/imgs/linux/ssh.jpg" alt="SSH免密码登录" />
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录" />
 
 频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。
 
