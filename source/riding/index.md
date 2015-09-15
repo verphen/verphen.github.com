@@ -4,7 +4,7 @@ comments: true
 ---
 爱骑行，爱生活！
 
-- 莽山行
+- 莽山森林公园|十三陵
     
     <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/riding/mangshan1.jpg" alt="北京莽山公园" />
 

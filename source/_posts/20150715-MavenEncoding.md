@@ -17,7 +17,7 @@ date: 2015-07-15 15:56:00
 
 <!-- more -->
 
-	<project.build.sourceEncoding>默认maven是可识别的,如果不放心,可以再进行如下配置;
+`<project.build.sourceEncoding>` 默认maven是可识别的,如果不放心,可以再进行如下配置;
 
 	<plugins>
 		<plugin>

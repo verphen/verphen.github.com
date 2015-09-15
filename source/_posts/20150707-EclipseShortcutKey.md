@@ -9,16 +9,15 @@ date: 2015-07-07 09:27:14
 
 	ctrl + / 	# 注释当前行
 	ctrl + shift + c 	# 注释当前行
-	shift + alt + j 	# 给变量、方法、类添加描述(方法会列出参数和返回值等)
+	alt + shift + j 	# 给变量、方法、类添加描述(方法会列出参数和返回值等)
 	
 	ctrl + o 	# 弹框搜索当前类的方法和全局变量
 	ctrl + shift + o 	# 自动导入必须包;
-						# 鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
+						  鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
 	ctrl + shift + r 	# 查找并打开资源文件
 	ctrl + shift + g 	# 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方
-	ctrl + shift + h 	# 搜索包含指定内容的文件或其他
- 						# 选择 "file search" 则搜索文件
- 						# 点击左下角的 "customize...",可以控制显示的标签tab和上次打开的page
+	ctrl + shift + h 	# 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;
+ 						  点击左下角的 "customize...",可以控制显示的标签tab和上次打开的page
     ctrl + shift + x    # 将选中的字母变为大写
     ctrl + shift + y    # 将选中的字母变为小写
     
@@ -43,7 +42,8 @@ date: 2015-07-07 09:27:14
 
     alt + shift + r 	# 修改文件名、方法名、变量名,并更新其引用
     alt + shift + a 	# eclipse列模式, 划定区域输入内容回车即可
-    alt + shift + o(字母)     # 切换标记发生(toggle mark occurrences);把选中的方法/变量在本类中全部出现的地方高亮显示
+    alt + shift + o(字母)     # 切换标记发生(toggle mark occurrences);
+                               把选中的方法/变量在本类中全部出现的地方高亮显示
 
 调试模式的快捷方式：
 	
