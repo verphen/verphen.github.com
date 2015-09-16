@@ -5,7 +5,7 @@ tags:
   - linux
   - command
 ---
-<img src="/imgs/linux/tail.png" alt="tail command" />
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command" />
 
 每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.
 

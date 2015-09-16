@@ -6,9 +6,9 @@ comments: true
 
 - 莽山森林公园 | 十三陵
     
-    <img src="http://7xlmfk.com1.z0.glb.clouddn.com/riding/mangshan1.jpg" alt="北京莽山公园" />
+    <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/riding/mangshan1.jpg" alt="北京莽山公园" />
 
-    <img src="http://7xlmfk.com1.z0.glb.clouddn.com/riding/mangshan2.jpg" alt="北京十三陵水库" />
+    <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/riding/mangshan2.jpg" alt="北京十三陵水库" />
 
     
 
