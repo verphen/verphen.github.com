@@ -12,6 +12,21 @@ tags:
 
 	  `apply plugin: 'java'`
 
-	
+	gradle tasks: 可运行的任务和描述列表
 	gradle build: 构建项目
-	gradle clean: 清理项目
+	gradle clean: 清理项目(删除构建项目)
+	gradle assemble: 该任务编译程序中的源代码，并打包生成Jar文件，这个任务不执行单元测试
+	gradle compileJava: 编译程序中的源代码
+
+
+技巧： build.gradle文件的注释和Java注释语法一样;
+
+	// 单行注释
+
+	/*
+	* 多行注释
+	*/
+
+	/**
+	* 多行注释
+	*/
