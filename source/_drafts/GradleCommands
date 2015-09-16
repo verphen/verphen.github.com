@@ -1,0 +1,17 @@
+title: Gradle Commands
+date: 2015-09-16 20:37:54
+categories: algorithm
+tags:
+  - gradle
+  - tools
+---
+	
+创建一个空目录，依照Maven规范创建项目目录
+	
+	$ vi build.gradle 	# 创建文件并编辑
+
+	  `apply plugin: 'java'`
+
+	
+	gradle build: 构建项目
+	gradle clean: 清理项目
