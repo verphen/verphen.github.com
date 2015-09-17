@@ -17,6 +17,7 @@ tags:
 	gradle clean: 清理项目(删除构建项目)
 	gradle assemble: 该任务编译程序中的源代码，并打包生成Jar文件，这个任务不执行单元测试
 	gradle compileJava: 编译程序中的源代码
+	gradle test: 编译
 
 
 技巧： build.gradle文件的注释和Java注释语法一样;
