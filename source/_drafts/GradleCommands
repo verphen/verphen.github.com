@@ -35,3 +35,7 @@ tags:
 
 		$ gradle setupBuild --type pom		# gradle1.7的写法
 		$ gradle init --type pom		# gradle2.0的写法
+
+	设置gradle本地仓库路径：
+
+		设置环境变量即可： GRADLE_USER_HOME = dest-path(目标目录)
