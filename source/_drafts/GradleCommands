@@ -30,3 +30,8 @@ tags:
 	/**
 	* 多行注释
 	*/
+
+	maven项目秒转成gradle项目:
+
+		$ gradle setupBuild --type pom		# gradle1.7的写法
+		$ gradle init --type pom		# gradle2.0的写法
