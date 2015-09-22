@@ -5,7 +5,9 @@ tags:
   - gradle
   - tools
 ---
-	
+gradle: 欢迎信息
+gradle -v: 显示gradle相关版本	
+
 创建一个空目录，依照Maven规范创建项目目录
 	
 	$ vi build.gradle 	# 创建文件并编辑
