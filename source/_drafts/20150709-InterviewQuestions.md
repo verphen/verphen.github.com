@@ -1,9 +1,9 @@
 title: "InterviewQuestions"
 date: 2015-07-09 15:50:01
-categories: 1
+categories: web
 tags:
-  - 1
-  - 1
+  - interview
+  - 总结
 ---
 
 java什么时候会发生内存溢出
