@@ -30,6 +30,6 @@ hi, every one, I`m effine
 
 - wechat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
-<img src="/imgs/wechat_QR.png" alt="Contact Me"/>
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/about/wechat_QR.png" alt="Contact Me"/>
 
 - 当然，你也可以去知乎、stackoverflow ...上联系我，但回复不一定及时,望见谅！

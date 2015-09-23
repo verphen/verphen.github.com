@@ -9,7 +9,7 @@ tags: [tools,hexo]
 
 <!--more-->
 
-<img src="/imgs/hexo_help.png" alt="hexo help" />
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png" alt="hexo help" />
 
 - hexo init:　Create a new Hexo folder；初始化一个Hexo文件夹
 
