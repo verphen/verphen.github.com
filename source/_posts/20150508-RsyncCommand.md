@@ -100,4 +100,3 @@ rsync - remote synchronized 远程同步工具；采用增量压缩方式进行�
 	添加如下记录：
 
 		-A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 873 -j ACCEPT
-
