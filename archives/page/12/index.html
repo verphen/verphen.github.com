@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Archives | effine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description">
+<meta property="og:type" content="website">
+<meta property="og:title" content="effine">
+<meta property="og:url" content="http://effine.cn/archives/page/12/index.html">
+<meta property="og:site_name" content="effine">
+<meta property="og:description">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="effine">
+<meta name="twitter:description">
+<meta name="twitter:creator" content="@verphen">
+<link rel="publisher" href="verphen">
+<meta property="fb:admins" content="verphen">
+<meta property="fb:app_id" content="verphen">
+  
+    <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/imgs/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'verphen']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <!-- 其后一行被effine注释 -->
+        <!-- <a href="/" id="logo">effine</a> -->
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">home</a>
+        
+          <a class="main-nav-link" href="/archives">archives</a>
+        
+          <a class="main-nav-link" href="/opus">opus</a>
+        
+          <a class="main-nav-link" href="/reading">reading</a>
+        
+          <a class="main-nav-link" href="/riding">riding</a>
+        
+          <a class="main-nav-link" href="/about">about</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://effine.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-InterviewThread" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/29/InterviewThread/" class="article-date">
+  <time datetime="2013-10-29T15:46:26.000Z" itemprop="datePublished">10月 29 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/29/InterviewThread/">线程设计面试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@author</span> effine
+ * <span class="doctag">@date</span> 2013-10-28  下午11:50:34
+ */</span>
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewThread</span> </span>{
+
+    <span class="keyword">private</span> <span class="keyword">int</span> j = <span class="number">0</span>;
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{
+
+        InterviewThread it = <span class="keyword">new</span> InterviewThread();
+
+        <span class="comment">/* 实例化内部类 */</span>
+        Inc inc = it.new Inc();
+        Dec dec = it.new Dec();
+
+        <span class="comment">/* 循环得到四个线程 */</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) {
+            Thread t = <span class="keyword">new</span> Thread(inc);
+            t.start();
+            t = <span class="keyword">new</span> Thread(dec);
+            t.start();
+        }
+    } <span class="comment">//main method finish</span>
+
+    <span class="comment">/* 同步加1方法 */</span>
+    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">()</span> </span>{
+        j++;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-inc:"</span> + j);
+    }
+
+    <span class="comment">/* 同步减1方法 */</span>
+    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">dec</span><span class="params">()</span> </span>{
+        j--;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-dec:"</span> + j);
+    }
+
+    <span class="comment">/* 加1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Inc</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
+        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                inc();
+            }
+        }
+    }
+
+    <span class="comment">/* 减1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Dec</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
+        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                dec();
+            }
+        }
+    }
+
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="ciewy44ch006bs52eqcivlkc3" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/10/29/InterviewThread/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-FileTree" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/26/FileTree/" class="article-date">
+  <time datetime="2013-10-26T14:50:10.000Z" itemprop="datePublished">10月 26 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/26/FileTree/">File Tree</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>看到windows文件资源管理器，突然想用Java来实现这种不同层的文件缩进，参考OSC中一个博主的思想，记录一下；Code如下：</p>
+<pre><code><span class="comment">/**
+* @author effine
+* @date 2013年10月26日  下午1:25:14
+*/</span>
+
+<span class="keyword">import</span> java.io.<span class="keyword">File</span>;
+
+<span class="keyword">public</span> <span class="keyword">class</span> <span class="keyword">FileTree</span> {
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> parse(<span class="keyword">File</span>[] files) {
+    <span class="keyword">if</span> (files.length == <span class="number">0</span>) {
+        <span class="keyword">FileTree</span>.<span class="keyword">count</span>--;
+        System.out.<span class="keyword">println</span>();
+        <span class="keyword">return</span>;
+    } <span class="keyword">else</span> {
+        <span class="keyword">for</span> (<span class="keyword">File</span> f : files) {
+            <span class="keyword">if</span> (f.isDirectory()) {
+                <span class="keyword">FileTree</span>.<span class="keyword">count</span>++;
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">FileTree</span>.<span class="keyword">count</span>; i++) {
+                    System.out.<span class="keyword">print</span>(<span class="string">"\t"</span>);
+                }
+
+                System.out.<span class="keyword">println</span>(f.getName());
+                <span class="keyword">File</span>[] files2 = f.listFiles();
+
+                <span class="keyword">FileTree</span>.parse(files2);
+            }
+
+        }
+        <span class="keyword">for</span> (<span class="keyword">File</span> f : files) {
+            <span class="keyword">if</span> (!f.isDirectory()) {
+                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="keyword">FileTree</span>.<span class="keyword">count</span>; i++) {
+                    System.out.<span class="keyword">print</span>(<span class="string">"\t"</span>);
+                }
+                System.out.<span class="keyword">println</span>(f.getName());
+            }
+        }
+        <span class="keyword">FileTree</span>.<span class="keyword">count</span>--;
+    }
+
+}
+
+<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) {
+        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"d:/test"</span>);
+        <span class="keyword">File</span>[] files = <span class="keyword">file</span>.listFiles();
+        <span class="keyword">FileTree</span>.parse(files);
+    }
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/10/26/FileTree/" data-id="ciewy44cl006hs52eqruu2vf2" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/10/26/FileTree/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-EclipsePluginProblem" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/15/EclipsePluginProblem/" class="article-date">
+  <time datetime="2013-10-14T17:26:10.000Z" itemprop="datePublished">10月 15 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/15/EclipsePluginProblem/">Eclipse插件开发向导页问题分析</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在开发Eclipse插件过程中，遇到这样的错误：</p>
+<pre><code><span class="tag">The</span> <span class="tag">selected</span> <span class="tag">wizard</span> <span class="tag">could</span> <span class="tag">not</span> <span class="tag">be</span> <span class="tag">started</span><span class="class">.xxxWizard</span> <span class="tag">cannot</span> <span class="tag">be</span> <span class="tag">cast</span> <span class="tag">to</span> <span class="tag">org</span><span class="class">.eclipse</span><span class="class">.ui</span><span class="class">.IWorkbenchWizard</span>;
+</code></pre><p>错误分析:</p>
+<p>xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接口即可（INewWizard接口是IWorkbenchWizard的子接口，而这两个接口又都是IWizard接口的子接口）；</p>
+<p>在Eclipse中，向导必须实现接口org.eclipse.jface.wizard.IWizard，如不实现IWizard接口而只继承Wizard类，则还需实现performFinish()方法，因为该方法在Wizard类中是对接口IWizard的抽象实现，即Eclipse提供的org.eclipse.jface.wizard.Wizard类是IWizard的抽象实现；一般我们编写自己的Wizard类既继承Wizard类，且实现INewWizard接口。</p>
+<p>向导页必须实现接口org.eclipse.jface.wizard.IWizardPage，因为org.eclipse.jface.wizard.WizardPage 也是 IWizardPage 的一个抽象实现.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="ciewy44cs006ps52efej7il1q" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/10/15/EclipsePluginProblem/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-JavaDaemonThread" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/15/JavaDaemonThread/" class="article-date">
+  <time datetime="2013-10-14T17:20:22.000Z" itemprop="datePublished">10月 15 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/15/JavaDaemonThread/">Java守护线程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程)</p>
+<ul>
+<li>Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon也就没有工作可做了，也就没有继续运行程序的必要了。值得一提的是，守护线程并非只有虚拟机内部提供，用户在编写程序时也可以自己设置守护线程。下面的方法就是用来设置守护线程的。<code>public final void setDaemon(boolean on)</code></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2013/10/15/JavaDaemonThread/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="ciewy44cp006ls52epjty2tu9" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/10/15/JavaDaemonThread/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/page/11/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="page-number current">12</span><a class="page-number" href="/archives/page/13/">13</a><a class="page-number" href="/archives/page/14/">14</a><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/13/">Next &raquo;</a>
+    </nav>
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenEncoding/">Maven技巧-字符编码</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenDownSourse/">Maven技巧-下载源码</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenCommands/">Maven 命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/08/MysqlCommand/">MySQL基本使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/command/" style="font-size: 14.44px;">command</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 12.22px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 15.56px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 11.11px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.78px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 effine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &nbsp;
+
+      <!-- cnzz tongji analytics -->
+      <script type="text/javascript">
+          var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000129915'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000129915%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+
+      <!-- Baidu tongji analytics -->
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?70819ec1acf3927700950684f76fe023";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/opus" class="mobile-nav-link">opus</a>
+  
+    <a href="/reading" class="mobile-nav-link">reading</a>
+  
+    <a href="/riding" class="mobile-nav-link">riding</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+
+  <!-- fork me on github -->
+  <a href="https://github.com/verphen" target="_blank" alt="Fork me on GitHub">
+    <img style="position: absolute;z-index:1; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+  </a>
+
+</body>
+</html>

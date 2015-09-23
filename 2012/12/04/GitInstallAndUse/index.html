@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git的安装及使用 | effine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Git是一个分布式管理工具，通过字符串来时刻保持数据的完整性，关心的是文件数据整体的变化，并不保存变化前后的差异数据；Git 在本地磁盘保存有关项目的历史更新，所有绝大多数操作只需要访问本地文件资源，并不需要Internet。当然可以使用GitHbub将代码托管，进行远程开发，方便团队比较分散的情况（这正体现Git分布式的优势）；开发人员只需将项目clone到本地，进行相应的开发然后push上传到">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git的安装及使用">
+<meta property="og:url" content="http://effine.cn/2012/12/04/GitInstallAndUse/index.html">
+<meta property="og:site_name" content="effine">
+<meta property="og:description" content="Git是一个分布式管理工具，通过字符串来时刻保持数据的完整性，关心的是文件数据整体的变化，并不保存变化前后的差异数据；Git 在本地磁盘保存有关项目的历史更新，所有绝大多数操作只需要访问本地文件资源，并不需要Internet。当然可以使用GitHbub将代码托管，进行远程开发，方便团队比较分散的情况（这正体现Git分布式的优势）；开发人员只需将项目clone到本地，进行相应的开发然后push上传到">
+<meta property="og:updated_time" content="2015-07-07T15:01:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git的安装及使用">
+<meta name="twitter:description" content="Git是一个分布式管理工具，通过字符串来时刻保持数据的完整性，关心的是文件数据整体的变化，并不保存变化前后的差异数据；Git 在本地磁盘保存有关项目的历史更新，所有绝大多数操作只需要访问本地文件资源，并不需要Internet。当然可以使用GitHbub将代码托管，进行远程开发，方便团队比较分散的情况（这正体现Git分布式的优势）；开发人员只需将项目clone到本地，进行相应的开发然后push上传到">
+<meta name="twitter:creator" content="@verphen">
+<link rel="publisher" href="verphen">
+<meta property="fb:admins" content="verphen">
+<meta property="fb:app_id" content="verphen">
+  
+    <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/imgs/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'verphen']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <!-- 其后一行被effine注释 -->
+        <!-- <a href="/" id="logo">effine</a> -->
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">home</a>
+        
+          <a class="main-nav-link" href="/archives">archives</a>
+        
+          <a class="main-nav-link" href="/opus">opus</a>
+        
+          <a class="main-nav-link" href="/reading">reading</a>
+        
+          <a class="main-nav-link" href="/riding">riding</a>
+        
+          <a class="main-nav-link" href="/about">about</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://effine.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-GitInstallAndUse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/12/04/GitInstallAndUse/" class="article-date">
+  <time datetime="2012-12-04T07:40:32.000Z" itemprop="datePublished">12月 4 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git的安装及使用
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Git是一个分布式管理工具，通过字符串来时刻保持数据的完整性，关心的是文件数据整体的变化，并不保存变化前后的差异数据；Git 在本地磁盘保存有关项目的历史更新，所有绝大多数操作只需要访问本地文件资源，并不需要Internet。当然可以使用GitHbub将代码托管，进行远程开发，方便团队比较分散的情况（这正体现Git分布式的优势）；开发人员只需将项目clone到本地，进行相应的开发然后push上传到GitHub（GitHub使用的是utf-8编码，所以上传的文件如若不是以utf-8编码，可能出现乱码），供别的开发人员更新即可。</p>
+<a id="more"></a>
+<h3 id="下载安装">下载安装</h3><p>Git在windows的版本是<a href="http://git-scm.com/download" target="_blank" rel="external">msysgit</a>,或者在google code<a href="http://code.google.com/p/msysgit/downloads/list" target="_blank" rel="external">下载</a>;下载完成自行安装,很简单的(如果你需要在windows控制台使用git命令，你必须把git安装路径的bin目录加入到环境变量)；Git安装完成应该有Git Bash和Git Gui（可视化操作），建议使用Git Bash，理解git的命令操作（Linux下的大部分名字在git bash下都能使用）；</p>
+<p>任何文件在Git库中都有四种状态：未跟踪状态untracked、跟踪状态tracked（未修改状态unmodified、已修改状态modified、暂存状态staged），由于文件的上述四种状态，在使用Git进行项目管理的时候涉及到三个区域：</p>
+<ul>
+<li>Git 本地数据目录：每个项目都有一个 git 目录，它是 Git 用来保存元数据和对象数据库的地方。该目录非常重要，每次克隆镜像仓库的时候，实际拷贝的就是这个目录里面的数据。</li>
+<li>工作目录（项目工作空间）：从项目中取出某个版本的所有文件和目录，用以开始后续工作的叫做工作目录，即就是我们进行项目开发的目录。</li>
+<li>暂存区域：所谓的暂存区域只不过是个简单的文件，一般都放在 git 目录中。</li>
+</ul>
+<p>git经常使用的命令</p>
+<ol>
+<li>Git本地仓库的基本用法：<ul>
+<li>git init ：初试化当前目录为一个Git本地仓库。</li>
+<li>git add <filename> : 如果一个文件是未被跟踪的，将 一个文件加入到Git版本控制当中，让Git对其进行跟踪；如果一个文件是已修改状态，则将一个文件放到暂存区中。</filename></li>
+<li>git add .  :  “.”点表示当前目录下的所有内容</li>
+<li>git status : 查看当前Git仓库中所有文件的状态，若是为跟踪状态 则用红色显示。</li>
+<li>git diff：比较工作目录中当前文件和暂存区域快照之间的差异，也就是修改之后还没有暂存起来的变化内容。</li>
+<li>git commit：提交暂存区域。git commit -m &lt;说明信息&gt;;git commit -a 可以跳过暂存区域，直接将已跟踪的文件暂存起来一并提交。</li>
+<li>git rm <filename>：从Git中删除一个文件。git rm —cached <filenmae>：从暂存区删除一个文件，但是仍保留在工作目录中。也就是将文件变为未跟踪状态。</filenmae></filename></li>
+<li>git log：查看项目提交历史记录。<ul>
+<li>git log -p 选项展开显示每次提交的内容差异<ul>
+<li>git log —stat 仅显示简要的增改行数统计</li>
+<li>git log —pretty=<option> ，其中option可以是：oneline（使每条历史信息在一行中显示），short，full，fuller，format（按指定的格式输出）<br> gitk 可以打开历史记录的可视化查看窗口。</option></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>git commit —amend：修改最后一次提交。该命令是提交当前缓存区快照，并修改最后一次的说明。</li>
+<li>git checkout — <filename>：撤销对文件的修改，慎用！   </filename></li>
+<li>git reset HEAD <filename>：撤销对文件的暂存，让文件回到暂存前的状态。 </filename></li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>Git远程仓库的基本用法：<ul>
+<li>git clone [url]：将一个远程仓库克隆到本地。</li>
+<li>git remote：查看当前配置的远程仓库，在克隆完某个项目后，至少可以看到一个名为origin的远程仓库，Git 默认使用这个名字来标识你所克隆的原始仓库。如git remote add origingit@github.com:usernmae/repositoryname.git<ul>
+<li>-v ：显示对应的克隆地址。</li>
+<li>git remote add [remote-name] [url]：添加一个新的远程仓库。</li>
+<li>git remote show [remote-name]：查看远程仓库信息。</li>
+<li>git remote rm [remote-name]：移除远程仓库。</li>
+<li>git remote rename [old-remote-name] [new-remote-name]：重命名远程仓库。</li>
+</ul>
+</li>
+<li>git push [remote-name] [branch-name]：推送数据到远程仓库，remote-name指的是远程仓库简称，branch-name指的是分支名称。对于克隆的仓库默认分别为：origin，master;git push -u origin master //将本地的项目提交到远程仓库</li>
+</ul>
+</li>
+<li><p>Git将远程仓库GitHub取回本地：</p>
+<ul>
+<li>git [url]: 在git下切换到想要存放此项目的目录，运行这条命令就可以将项目克隆到本地磁盘的当前目录</li>
+<li>项目取回本地，远程仓库GitHub上有更新;<code>git fetch origin</code>开始取得更新;<code>git merge origin /master</code>将更新内容合并到本地分支/master</li>
+</ul>
+</li>
+</ul>
+<p>系统的学习Git可以参考：<a href="http://gitref.cyj.me/zh/index.html" target="_blank" rel="external">《Git参考手册》</a>、<a href="http://gitref.cyj.me/" target="_blank" rel="external">英文版《Git参考手册》</a>、<a href="http://git-scm.com/book/zh/ " target="_blank" rel="external">官方Book《Pro Git》</a>、<a href="http://git-scm.com/book" target="_blank" rel="external">英文版《Pro Git》参考</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2012/12/04/GitInstallAndUse/" data-id="ciewy44cv006vs52e7a1ryko4" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2012/12/04/GitInstallAndUse/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2013/10/14/OrgnizeIdeas/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          整理思路
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/12/03/GitFileStatus/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git库文件状态</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+
+  <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="2012/12/04/GitInstallAndUse/" data-title="Git的安装及使用" data-url="http://effine.cn/2012/12/04/GitInstallAndUse/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"verphen"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenEncoding/">Maven技巧-字符编码</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenDownSourse/">Maven技巧-下载源码</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/15/MavenCommands/">Maven 命令详解</a>
+          </li>
+        
+          <li>
+            <a href="/2015/07/08/MysqlCommand/">MySQL基本使用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/command/" style="font-size: 14.44px;">command</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 12.22px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 15.56px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.67px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 11.11px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.78px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 effine<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &nbsp;
+
+      <!-- cnzz tongji analytics -->
+      <script type="text/javascript">
+          var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1000129915'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000129915%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+
+      <!-- Baidu tongji analytics -->
+      <script>
+          var _hmt = _hmt || [];
+          (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?70819ec1acf3927700950684f76fe023";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+          })();
+      </script>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/opus" class="mobile-nav-link">opus</a>
+  
+    <a href="/reading" class="mobile-nav-link">reading</a>
+  
+    <a href="/riding" class="mobile-nav-link">riding</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+
+  <!-- fork me on github -->
+  <a href="https://github.com/verphen" target="_blank" alt="Fork me on GitHub">
+    <img style="position: absolute;z-index:1; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+  </a>
+
+</body>
+</html>

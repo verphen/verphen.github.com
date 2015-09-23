@@ -1,0 +1,1275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title><![CDATA[effine]]></title>
+  <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
+  <link href="/atom.xml" rel="self"/>
+  <link href="http://effine.cn/"/>
+  <updated>2015-09-20T14:07:43.000Z</updated>
+  <id>http://effine.cn/</id>
+  
+  <author>
+    <name><![CDATA[effine]]></name>
+    <email><![CDATA[verphen@163.com]]></email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Linux设置Java环境变量]]></title>
+    <link href="http://effine.cn/2015/08/13/JavaEnvironmentVariable/"/>
+    <id>http://effine.cn/2015/08/13/JavaEnvironmentVariable/</id>
+    <published>2015-08-13T11:43:54.000Z</published>
+    <updated>2015-09-20T14:07:43.000Z</updated>
+    <content type="html"><![CDATA[<p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
+<ol>
+<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
+</li>
+<li><p>tar.gz 格式<br> $ tar  -zxvf  dk-8u51-linux-x64.tar.gz  [-C  dist-dir]</p>
+</li>
+</ol>
+<p>设置环境变量</p>
+<pre><code>$ vi /etc/profile
+
+    <span class="comment"># profile文件追加下面内容</span>
+    <span class="built_in">export</span> JAVA_HOME= /tools/jdk1.<span class="number">8.0</span>_51
+    <span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span>
+    <span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar
+
+$ <span class="built_in">source</span> /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span>
+</code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
+<pre><code>计算机[桌面|资源管理器]<span class="function"> -&gt;</span> 属性<span class="function"> -&gt;</span> 高级系统设置<span class="function"> -&gt;</span> 环境变量<span class="function"> -&gt;</span> 系统环境变量<span class="function"> -&gt;</span> 新建Key（存在则追加）
+
+<span class="comment"># 变量名及值"key [value]"</span>
+JAVA_HOME  [<span class="attribute">E</span>:<span class="string">\tools\jdk1.7.0_55]</span>
+CLASSPATH [.;%JAVA_HOME%<span class="string">\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;]</span>
+Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
+</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
+<ol>
+<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
+</li>
+<li><p>tar.gz 格式]]>
+    </summary>
+    
+      <category term="java" scheme="http://effine.cn/tags/java/"/>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Maven技巧-字符编码]]></title>
+    <link href="http://effine.cn/2015/07/15/MavenEncoding/"/>
+    <id>http://effine.cn/2015/07/15/MavenEncoding/</id>
+    <published>2015-07-15T07:56:00.000Z</published>
+    <updated>2015-09-09T16:29:26.000Z</updated>
+    <content type="html"><![CDATA[<p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</project></p>
+<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
+    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
+    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
+</code></pre><a id="more"></a>
+<p><code>&lt;project.build.sourceEncoding&gt;</code> 默认maven是可识别的,如果不放心,可以再进行如下配置;</p>
+<pre><code><span class="tag">&lt;<span class="title">plugins</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">plugin</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">source</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">target</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">encoding</span>&gt;</span>${project.build.sourceEncoding}<span class="tag">&lt;/<span class="title">encoding</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">plugin</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plugins</span>&gt;</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
+    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
+    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
+    
+      <category term="skill" scheme="http://effine.cn/tags/skill/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Maven技巧-下载源码]]></title>
+    <link href="http://effine.cn/2015/07/15/MavenDownSourse/"/>
+    <id>http://effine.cn/2015/07/15/MavenDownSourse/</id>
+    <published>2015-07-15T03:42:19.000Z</published>
+    <updated>2015-09-09T16:26:51.000Z</updated>
+    <content type="html"><![CDATA[<p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
+<ol>
+<li><p>maven命令行(针对具体项目)</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier=</span>javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
+</code></pre></li>
+<li><p>配置maven全局文件settings</p>
+<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
+<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
+    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
+</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
+<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
+</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
+</li>
+<li><p>eclipse配置</p>
+<p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
+<ol>
+<li><p>maven命令行(针对具体项目)</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbo]]>
+    </summary>
+    
+      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
+    
+      <category term="skill" scheme="http://effine.cn/tags/skill/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Maven 命令详解]]></title>
+    <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
+    <id>http://effine.cn/2015/07/15/MavenCommands/</id>
+    <published>2015-07-15T02:43:38.000Z</published>
+    <updated>2015-09-23T15:21:54.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
+<p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
+
+<span class="comment">#maven生成web项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
+  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
+
+<span class="comment"># maven生成java项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
+
+<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
+<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
+<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
+<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
+</code></pre><a id="more"></a>
+<pre><code><span class="variable">$ </span>mvn package     <span class="comment"># 打包（mvn -Dtest package     只打包不测试）</span>
+<span class="variable">$ </span>mvn clean package -<span class="constant">Dmaven.</span>test.skip=<span class="keyword">true</span>  <span class="comment"># 跳过编译测试程序打包项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">jar:</span>jar     <span class="comment"># 打包成jar文件</span>
+<span class="variable">$ </span>mvn install     <span class="comment"># 本地Repository仓库中安装项目jar文件</span>
+                <span class="comment">#（mvn install -D maven.test.skip=true 跳过TestCase检验，否则在install时会运行TestCase测试）</span>
+<span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
+<span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
+<span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
+
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources      <span class="comment"># 下载依赖包的源码</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier=</span>javadoc     <span class="comment"># 下载依赖包的javadoc</span>
+
+<span class="comment"># 启动服务前需执行mvn package及配置相应插件</span>
+<span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
+<span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
+
+<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>clean       <span class="comment"># 清理eclipse项目文件</span>
+<span class="variable">$ </span>mvn <span class="symbol">idea:</span>idea       <span class="comment"># 生成idea项目文件,将项目转换成idea项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">idea:</span>clean      <span class="comment"># 清理idea项目文件</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录" /></p>
+<p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
+
+<span class="comment">#maven生成web项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
+  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
+
+<span class="comment"># maven生成java项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
+
+<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
+<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
+<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
+<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="command" scheme="http://effine.cn/tags/command/"/>
+    
+      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[MySQL基本使用]]></title>
+    <link href="http://effine.cn/2015/07/08/MysqlCommand/"/>
+    <id>http://effine.cn/2015/07/08/MysqlCommand/</id>
+    <published>2015-07-08T01:58:06.000Z</published>
+    <updated>2015-09-06T15:04:58.000Z</updated>
+    <content type="html"><![CDATA[<p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
+<ul>
+<li><p>服务 service</p>
+<pre><code><span class="keyword">service</span> mysql [<span class="literal">status</span>|<span class="literal">start</span>|<span class="literal">stop</span>|<span class="literal">restart</span>]    <span class="comment"># Debian下mysql当前状态、启动、停止、重启</span>
+<span class="keyword">service</span> mysqld [<span class="literal">status</span>|<span class="literal">start</span>|<span class="literal">stop</span>|<span class="literal">restart</span>]    <span class="comment"># RedHat下mysql当前状态、启动、停止、重启</span>
+net [<span class="literal">start</span>|<span class="literal">stop</span>] mysql     <span class="comment"># windows下启动、停止mysql</span>
+</code></pre></li>
+<li><p>mysql</p>
+<pre><code>mysql&gt;  \s         <span class="preprocessor"># 查看mysql的版本信息和字符编码</span>
+mysql&gt;  show variables;     <span class="preprocessor"># 查看mysql的变量设置，可以使用like过滤</span>
+mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'autocommit'</span>;     <span class="preprocessor"># 查看mysql事务是否自动提交</span>
+mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'%max_connections%'</span>;  <span class="preprocessor"># 查看mysql的最大连接数</span>
+mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</span>
+</code></pre></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li>用户 user<pre><code># 登录mysql服务,-p和密码之间无空格；避免密码泄露这一步不要输入密码
+mysql -u username -p***；
+    -<span class="ruby">u username     <span class="comment"># 用户名</span>
+</span>    -<span class="ruby">p password     <span class="comment"># 密码,小写p</span>
+</span>    -<span class="ruby">h host         <span class="comment"># 主机</span>
+</span>    -<span class="ruby"><span class="constant">P</span> port         <span class="comment"># 端口, 大写P</span></span>
+</code></pre></li>
+</ul>
+<p>Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可以使用一般操作表的sql语句操作用户;如更新用户密码:</p>
+<pre><code><span class="comment"># 更新用户 test1 的密码为“123456”</span>
+mysql&gt;  update mysql.<span class="keyword">user</span> set <span class="literal">password</span>=<span class="literal">password</span>(<span class="string">'123456'</span>) where <span class="constant">User</span>=<span class="string">'test1'</span> <span class="keyword">and</span> <span class="constant">Host</span>=<span class="string">'localhost'</span>;
+<span class="comment"># 将更新内容重新加入内存</span>
+mysql&gt;  flush privileges;
+</code></pre><p>针对mysql.user表的操作最后都必须执行 <code>flush privileges;</code>,将执行的更新信息重新加入到内存；</p>
+<pre><code><span class="comment"># 用户的操作都在mysql数据库的user表</span>
+mysql&gt;  create user username[<span class="property">@host</span>] [identified <span class="keyword">by</span> <span class="string">'password'</span>]；
+    username     <span class="comment"># 待创建的用户名</span>
+    host         <span class="comment"># 用户操作的主机,默认为'%'表示可以操作任意主机</span>
+    password     <span class="comment"># 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证</span>
+
+<span class="comment"># 删除用户,不指定主机host参数表示 usernmae@'%'</span>
+mysql&gt;  drop user username[<span class="property">@host</span>]；
+
+<span class="comment"># 修改root用户密码（该命令在非mysql命令模式下执行）</span>
+mysqladmin -u root -p password ****；     
+
+<span class="comment"># 给用户授权</span>
+mysql&gt;  grant privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">to</span> username<span class="property">@host</span>；
+        privileges     <span class="comment"># 权限名;全部权限为all，多个权限使用逗号分隔</span>
+
+<span class="comment"># 赋予用户"给其他用户授权"权限</span>
+mysql&gt;  grant privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">to</span> username<span class="property">@host</span> <span class="keyword">with</span> grant option;
+
+<span class="comment"># 查看用户已有权限</span>
+mysql&gt;  show grants <span class="keyword">for</span> username[<span class="property">@host</span>]；    
+
+<span class="comment"># 撤销用户权限</span>
+mysql&gt;  revoke privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">from</span> username<span class="property">@host</span>；
+
+<span class="comment"># 创建只读用户（对指定主机的所有数据库）</span>
+mysql&gt;  grant select <span class="literal">on</span> *.*  <span class="keyword">to</span> username[<span class="property">@host</span>] identified <span class="keyword">by</span> <span class="string">'passowrd'</span>；
+
+<span class="comment"># 查看当前登录用户和主机</span>
+mysql&gt;  select user();
+</code></pre><ul>
+<li><p>数据库 database</p>
+<pre><code>mysql&gt;  create database database-<span class="property">name</span>；     <span class="comment"># 创建数据库</span>
+mysql&gt;  show databases；                    <span class="comment"># 查看所有数据库列表</span>
+mysql&gt;  drop database database-<span class="property">name</span>;    <span class="comment"># 删除数据库</span>
+mysql&gt;  use database-<span class="property">name</span>；                 <span class="comment"># 使用数据库database-name</span>
+</code></pre></li>
+<li><p>表     table</p>
+<pre><code>mysql&gt;  show tables ；    <span class="comment"># 查看使用数据库的全部表</span>
+mysql&gt;  describe[desc] table-<span class="property">name</span>；     <span class="comment"># 显示表属性对象的名称和类型</span>
+mysql&gt;  drop table-<span class="property">name</span>；     <span class="comment"># 删除表</span>
+mysql&gt;  alter table table-<span class="property">name</span> rename <span class="keyword">to</span> new-table-<span class="property">name</span>；  <span class="comment"># 修改表名</span>
+mysql&gt;  alter table table-<span class="property">name</span> drop fild-<span class="property">name</span>；  <span class="comment"># 删除表字段file-name</span>
+mysql&gt;  alter table table-<span class="property">name</span> modify fild-<span class="property">name</span> type-<span class="property">name</span>；     <span class="comment"># 修改字段数据类型</span>
+mysql&gt;  alter table table-<span class="property">name</span> change old-fild new-fild type-<span class="property">name</span>；     <span class="comment"># 修改字段名称和数据类型</span>
+</code></pre></li>
+<li><p>存储引擎 engine</p>
+<pre><code><span class="comment"># mysql支持的存储引擎</span>
+mysql&gt;  show engines；
+<span class="comment"># 查看表使用的存储引擎和一些其他信息</span>
+mysql&gt;  show table status <span class="keyword">from</span> databse-<span class="property">name</span> <span class="keyword">where</span> <span class="property">name</span> = 'table-<span class="property">name</span>'；
+<span class="comment"># 修改表table-name的存储引擎为InnerDB</span>
+mysql&gt;  alter table table-<span class="property">name</span> engine = InnerDB；
+</code></pre></li>
+<li><p>方法、函数 function</p>
+<pre><code><span class="comment"># 将查询结果field字段名用指定分隔符（默认为逗号）分隔显示</span>
+group_concat([<span class="keyword">distinct</span>] field [order by asc|desc order_field] [sepatator '使用的分隔符'])    ;
+<span class="comment"># 返回字符串str的字符颠倒顺序</span>
+reverse('待翻转字符串');
+eg: select reverse('effine')将输出 eniffe
+</code></pre></li>
+<li><p>技巧</p>
+<p>  sql语句最后的分号”;”替换为”\G”则可以改变查询结果的显示方式,便于用户查看;</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
+<ul>
+<li><p>服务 service</p>
+<pre><code><span class="keyword">service</span> mysql [<span class="literal">status</span>|<span class="literal">start</span>|<span class="literal">stop</span>|<span class="literal">restart</span>]    <span class="comment"># Debian下mysql当前状态、启动、停止、重启</span>
+<span class="keyword">service</span> mysqld [<span class="literal">status</span>|<span class="literal">start</span>|<span class="literal">stop</span>|<span class="literal">restart</span>]    <span class="comment"># RedHat下mysql当前状态、启动、停止、重启</span>
+net [<span class="literal">start</span>|<span class="literal">stop</span>] mysql     <span class="comment"># windows下启动、停止mysql</span>
+</code></pre></li>
+<li><p>mysql</p>
+<pre><code>mysql&gt;  \s         <span class="preprocessor"># 查看mysql的版本信息和字符编码</span>
+mysql&gt;  show variables;     <span class="preprocessor"># 查看mysql的变量设置，可以使用like过滤</span>
+mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'autocommit'</span>;     <span class="preprocessor"># 查看mysql事务是否自动提交</span>
+mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'%max_connections%'</span>;  <span class="preprocessor"># 查看mysql的最大连接数</span>
+mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</span>
+</code></pre></li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="command" scheme="http://effine.cn/tags/command/"/>
+    
+      <category term="mysql" scheme="http://effine.cn/tags/mysql/"/>
+    
+      <category term="database" scheme="http://effine.cn/categories/database/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Mac 使用技巧及快捷键]]></title>
+    <link href="http://effine.cn/2015/07/07/MacShortcutKey/"/>
+    <id>http://effine.cn/2015/07/07/MacShortcutKey/</id>
+    <published>2015-07-07T02:49:11.000Z</published>
+    <updated>2015-08-31T15:05:11.000Z</updated>
+    <content type="html"><![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
+<ul>
+<li><p>应用</p>
+<pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
+<span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
+<span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
+</code></pre></li>
+<li><p>Finder</p>
+<pre><code><span class="built_in">command</span> + c      <span class="comment"># 复制文件</span>
+<span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
+<span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
+</code></pre></li>
+<li><p>终端</p>
+<pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
+<span class="built_in">open</span> + .      <span class="comment"># 打开当前目录</span>
+</code></pre></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>截图操作(默认保存在桌面)</p>
+<pre><code><span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">3</span>        <span class="comment"># 截取全屏</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">4</span>        <span class="comment"># 截取自选区域</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">4</span>  —&gt; 释放按住的三个键 —&gt; 空格   <span class="comment"># 截取规则的区域</span>
+</code></pre></li>
+<li><p>技巧</p>
+<pre><code>选中任何文件，按空格键<span class="constant">space</span>即可预览,不用每次双击打开再关闭
+</code></pre></li>
+</ul>
+<p>只是简单地记录一些使用习惯，后续再追加完善！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
+<ul>
+<li><p>应用</p>
+<pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
+<span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
+<span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
+</code></pre></li>
+<li><p>Finder</p>
+<pre><code><span class="built_in">command</span> + c      <span class="comment"># 复制文件</span>
+<span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
+<span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
+</code></pre></li>
+<li><p>终端</p>
+<pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
+<span class="built_in">open</span> + .      <span class="comment"># 打开当前目录</span>
+</code></pre></li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="mac" scheme="http://effine.cn/tags/mac/"/>
+    
+      <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Eclipse 快捷键]]></title>
+    <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
+    <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
+    <published>2015-07-07T01:27:14.000Z</published>
+    <updated>2015-09-08T16:06:41.000Z</updated>
+    <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
+<pre><code>ctrl + /     <span class="comment"># 注释当前行</span>
+ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释当前行</span>
+alt + <span class="built_in">shift</span> + j     <span class="comment"># 给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
+
+ctrl + o     <span class="comment"># 弹框搜索当前类的方法和全局变量</span>
+ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
+                      鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
+ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
+ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
+ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
+                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
+ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
+ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
+</code></pre><a id="more"></a>
+<pre><code>ctrl + .    <span class="comment"># 定位下一处错误或者警告</span>
+ctrl + <span class="number">1</span>     <span class="comment"># 列出 eclipse 提供的解决方案</span>
+ctrl + <span class="number">3</span>     <span class="comment"># 打开Quick Access搜索（搜索eclipse菜单、标签等）</span>
+
+ctrl + g     <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
+ctrl + t     <span class="comment"># 查看定位方法的继承树</span>
+ctrl + 鼠标右键点击(变量或方法)     <span class="comment"># 进入其定义或实现</span>
+ctrl + l     <span class="comment"># 跳转到指定行号的行</span>
+
+alt + /     <span class="comment"># 显示提示信息</span>
+alt + 左右方向键     <span class="comment"># 后退/前进"ctrl+鼠标右键点击"的跳转流程或操作位置</span>
+alt + 上下方向键     <span class="comment"># 将当前行与上/下行交换位置</span>
+ctrl + alt + 上下方向键     <span class="comment"># 复制当前行到上/下一行</span>
+
+<span class="built_in">shift</span> + enter     <span class="comment"># 当前行下一行插入空行</span>
+ctrl + <span class="built_in">shift</span> + enter     <span class="comment"># 当前行上一行插入空行</span>
+
+alt + <span class="built_in">shift</span> + r     <span class="comment"># 修改文件名、方法名、变量名,并更新其引用</span>
+alt + <span class="built_in">shift</span> + a     <span class="comment"># eclipse列模式, 划定区域输入内容回车即可</span>
+alt + <span class="built_in">shift</span> + o(字母)     <span class="comment"># 切换标记发生(toggle mark occurrences);</span>
+                           把选中的方法/变量在本类中全部出现的地方高亮显示
+</code></pre><p>调试模式的快捷方式：</p>
+<pre><code>ctrl + <span class="built_in">shift</span> + i     <span class="comment"># 显示复制的代码执行的值</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
+<pre><code>ctrl + /     <span class="comment"># 注释当前行</span>
+ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释当前行</span>
+alt + <span class="built_in">shift</span> + j     <span class="comment"># 给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
+
+ctrl + o     <span class="comment"># 弹框搜索当前类的方法和全局变量</span>
+ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
+                      鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
+ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
+ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
+ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
+                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
+ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
+ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
+    
+      <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Tomcat 角色]]></title>
+    <link href="http://effine.cn/2015/07/06/TomcatRoles/"/>
+    <id>http://effine.cn/2015/07/06/TomcatRoles/</id>
+    <published>2015-07-06T08:04:40.000Z</published>
+    <updated>2015-09-16T15:06:16.000Z</updated>
+    <content type="html"><![CDATA[<p>tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目</p>
+<p>如你需要访问manager或host-manager项目; 通过地址 <code>http://localhost:8080/[manager|host-manager]</code> 访问，但是需要用户名密码验证：</p>
+<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"></p>
+<p>提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 <code>&lt;tomcat-users&gt;</code> 标签内进行如下用户及角色配置即可访问.</p>
+<a id="more"></a>
+<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-gui"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-script"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-jmx"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-status"</span>/&gt;</span>
+</code></pre><p>tomcat的在线documents: <a href="http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html" target="_blank" rel="external">http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html</a> , 查看”Configuring Manager Application Access”栏，官方给出角色的描述：</p>
+<pre><code>manager-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-jmx - allows access <span class="built_in">to</span> <span class="operator">the</span> JMX proxy <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-status - allows access <span class="built_in">to</span> <span class="operator">the</span> status pages only
+</code></pre><p>当然你还必须配置用户</p>
+<pre><code>&lt;user <span class="variable">username=</span><span class="string">"admin"</span> <span class="variable">password=</span><span class="string">"admin"</span> <span class="variable">roles=</span><span class="string">"manager-gui,manager-script,manager-jmx,manager-status"</span>/&gt;
+</code></pre><p>多个角色之间用逗号(“,”)隔开</p>
+<p>访问host-manager项目需配置角色：</p>
+<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-gui"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-script"</span>/&gt;</span>
+</code></pre><p>官方描述：</p>
+<pre><code>admin-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI
+admin-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface
+</code></pre><p>tips: Tomcat默认项目 manager/host-manager 的作用</p>
+<ul>
+<li><p>manager 项目：   对tomcat应用进行管理，包括对应用进行启动、停止和重启，以及发布新应用和删除已发布应用；设置应用的Expire sessions(session到期时间，默认30分钟)</p>
+</li>
+<li><p>host-manager 项目： 对 tomcat 的虚拟主机进行管理</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目</p>
+<p>如你需要访问manager或host-manager项目; 通过地址 <code>http://localhost:8080/[manager|host-manager]</code> 访问，但是需要用户名密码验证：</p>
+<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"/></p>
+<p>提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 <code>&lt;tomcat-users&gt;</code> 标签内进行如下用户及角色配置即可访问.</p>]]>
+    
+    </summary>
+    
+      <category term="role" scheme="http://effine.cn/tags/role/"/>
+    
+      <category term="tomcat" scheme="http://effine.cn/tags/tomcat/"/>
+    
+      <category term="web" scheme="http://effine.cn/categories/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[chrome 技巧及快捷键]]></title>
+    <link href="http://effine.cn/2015/07/06/ChromeShortcutKey/"/>
+    <id>http://effine.cn/2015/07/06/ChromeShortcutKey/</id>
+    <published>2015-07-06T01:58:09.000Z</published>
+    <updated>2015-07-07T14:26:14.000Z</updated>
+    <content type="html"><![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
+<pre><code>-<span class="ruby"> 地址栏输入可以搜索的链接(baidu.com、github.com...)，再按tab键可以实现对应网站的搜索功能
+</span>
+-<span class="ruby"> 断网情况下,chrome 打开的网页页面会出现一直可爱的小恐龙和提示<span class="string">"无法显示此页面"</span>，点击<span class="string">"空格"</span>键，可以玩个小游戏放松心情
+</span>
+-<span class="ruby"> 按住 ctrl 鼠标点击页面超链接，会在 chrome 后台以新标签打开链接页面(同样适合 chrome 回退/前进等)</span>
+</code></pre><a id="more"></a>
+<p>常用快捷键：</p>
+<pre><code>ctrl + t     <span class="comment"># 打开新的标签页</span>
+ctrl + w     <span class="comment"># 关闭当前标签页        </span>
+ctrl + <span class="keyword">shift</span> + t     <span class="comment"># 打开上一次关闭的标签页(多次使用可以恢复多个关闭的页面)</span>
+
+ctrl + n     <span class="comment"># 新打开一个浏览器窗口</span>
+ctrl + <span class="keyword">shift</span> + n     <span class="comment"># 以隐身模式新打开浏览器窗口</span>
+
+ctrl + j     <span class="comment"># 打开下载内容</span>
+ctrl + h     <span class="comment"># 打开历史记录</span>
+
+ctrl + d     <span class="comment"># 将当前标签页加入书签（上次添加书签位置）</span>
+ctrl + <span class="keyword">shift</span> + d     <span class="comment"># 将当前标签页加入书签 (自定义书签存放位置)</span>
+ctrl + <span class="keyword">shift</span> + [o|t]     <span class="comment"># 打开书签管理器</span>
+
+ctrl + <span class="keyword">shift</span> + [i|j]     <span class="comment"># 打开 / 关闭console，相当于f12或鼠标右击页面选择"审查元素"</span>
+ctrl + <span class="keyword">shift</span> + b     <span class="comment"># 显示 / 关闭书签栏</span>
+ctrl + <span class="keyword">shift</span> + <span class="keyword">delete</span>     <span class="comment"># 清除chrome数据(缓存、历史...)</span>
+
+ctrl + l     <span class="comment"># 定位地址栏并选中</span>
+windows + d     <span class="comment"># 定位地址栏并选中</span>
+
+ctrl + tab     <span class="comment"># 循环获取当前 chrome 窗口已打开标签页焦点（即展现页面）</span>
+ctrl + <span class="keyword">shift</span> + [pageDown | pageUp]         <span class="comment"># 正向/反向 循环获取当前 chrome 窗口已标签页获取焦点</span>
+ctrl + 数字n     <span class="comment"># 获取 chrome 窗口已打开第n标签页的焦点</span>
+ctrl + f     <span class="comment"># 页面搜索元素, 按 "esc" 退出搜索模式</span>
+
+ctrl + <span class="keyword">shift</span> + <span class="keyword">q</span>     <span class="comment"># 关闭所有标签，退出 chrome 浏览器</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
+<pre><code>-<span class="ruby"> 地址栏输入可以搜索的链接(baidu.com、github.com...)，再按tab键可以实现对应网站的搜索功能
+</span>
+-<span class="ruby"> 断网情况下,chrome 打开的网页页面会出现一直可爱的小恐龙和提示<span class="string">"无法显示此页面"</span>，点击<span class="string">"空格"</span>键，可以玩个小游戏放松心情
+</span>
+-<span class="ruby"> 按住 ctrl 鼠标点击页面超链接，会在 chrome 后台以新标签打开链接页面(同样适合 chrome 回退/前进等)</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="chrome" scheme="http://effine.cn/tags/chrome/"/>
+    
+      <category term="web" scheme="http://effine.cn/tags/web/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Integer的对等比较]]></title>
+    <link href="http://effine.cn/2015/06/22/IntegerPoint/"/>
+    <id>http://effine.cn/2015/06/22/IntegerPoint/</id>
+    <published>2015-06-22T09:38:25.000Z</published>
+    <updated>2015-08-04T15:02:02.000Z</updated>
+    <content type="html"><![CDATA[<p>分析之前，先猜想一下看看下面code snippets的输出：</p>
+<pre><code>package cn.effine.test;
+
+public class IntegerTest {
+
+    public static void main<span class="params">(String[] args)</span> {
+
+        Integer i1 = <span class="number">2</span>;
+        Integer i2 = <span class="number">2</span>;
+        System.err.println<span class="params">(<span class="string">"i1 == i2 : "</span> + <span class="params">(i1 == i2)</span>)</span>;
+
+        Integer i3 = new Integer<span class="params">(<span class="number">2</span>)</span>;
+        Integer i4 = new Integer<span class="params">(<span class="number">2</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i3 == i4: "</span> + <span class="params">(i3 == i4)</span>)</span>;
+
+        Integer i5 = <span class="number">128</span>;
+        Integer i6 = <span class="number">128</span>;
+        System.err.println<span class="params">(<span class="string">"i5 == i6 : "</span> + <span class="params">(i5 == i6)</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + <span class="params">(i5.intValue<span class="params">()</span> == i6.intValue<span class="params">()</span>)</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals<span class="params">(i6)</span>)</span>;
+
+    }
+}
+</code></pre><a id="more"></a>
+<p>运行结果：</p>
+<pre><code>i1 == <span class="string">i2 :</span> <span class="literal">true</span>
+i3 == <span class="string">i4:</span> <span class="literal">false</span>
+i5 == <span class="string">i6 :</span> <span class="literal">false</span>
+i5、i6的inValue()方法等值比较： <span class="literal">true</span>
+i5、i6的equals的比较： <span class="literal">true</span>
+</code></pre><p>如果你对某些输出感到诧异，接着往下看我的分析：</p>
+<p>初始化Integer声明的变量时，会去调用Integer.valueOf()方法进行处理；方法源码如下</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">static</span> <span class="function">Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{
+    <span class="keyword">assert</span> IntegerCache.high &gt;= <span class="number">127</span>;
+    <span class="keyword">if</span> (i &gt;= -<span class="number">128</span> &amp;&amp; i &lt;= <span class="number">127</span>)
+        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];
+    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);
+}
+</code></pre><p>至于为什么调用该方法进行if判断？可能是因为8位二进制的范围是-128到127；当传入的参数在该范围则返回int原始数据类型，超出该范围则新建一个Integer对象，对象的对等比较（“==”）比较的是对象的内存地址；现在你再回去过看程序：</p>
+<p>初始化i1、12时，调用Integer.valueOf()方法，由于i1\i2的值(2)在-128到127范围内，方法返回int类型的值2，进行对等比较时则返回ture</p>
+<p>声明i3、i4时，默认新建了个Integer对象，所以对等比较的是两个对象的内存地址，因此返回false</p>
+<p>初始化i5、i6时，调用Integer.valueOf()方法，其值-128在127范围外，所以方法返回新建的Integer对象，进行对等比较返回false</p>
+<p>调用Integer.intValue()方法返回的是对应对象int值，i5、i6的方法返回值都是128，对等比较当然返回true</p>
+<p>Integer对象的equals()方法底层调用的是Integer.intValue()方法，对等比较同样比较其int值，返回同样为true</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>分析之前，先猜想一下看看下面code snippets的输出：</p>
+<pre><code>package cn.effine.test;
+
+public class IntegerTest {
+
+    public static void main<span class="params">(String[] args)</span> {
+
+        Integer i1 = <span class="number">2</span>;
+        Integer i2 = <span class="number">2</span>;
+        System.err.println<span class="params">(<span class="string">"i1 == i2 : "</span> + <span class="params">(i1 == i2)</span>)</span>;
+
+        Integer i3 = new Integer<span class="params">(<span class="number">2</span>)</span>;
+        Integer i4 = new Integer<span class="params">(<span class="number">2</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i3 == i4: "</span> + <span class="params">(i3 == i4)</span>)</span>;
+
+        Integer i5 = <span class="number">128</span>;
+        Integer i6 = <span class="number">128</span>;
+        System.err.println<span class="params">(<span class="string">"i5 == i6 : "</span> + <span class="params">(i5 == i6)</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + <span class="params">(i5.intValue<span class="params">()</span> == i6.intValue<span class="params">()</span>)</span>)</span>;
+        System.err.println<span class="params">(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals<span class="params">(i6)</span>)</span>;
+
+    }
+}
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="Integer" scheme="http://effine.cn/tags/Integer/"/>
+    
+      <category term="java" scheme="http://effine.cn/tags/java/"/>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[linux单用户模式]]></title>
+    <link href="http://effine.cn/2015/06/22/LinuxSingleUser/"/>
+    <id>http://effine.cn/2015/06/22/LinuxSingleUser/</id>
+    <published>2015-06-21T17:16:28.000Z</published>
+    <updated>2015-09-16T15:06:16.000Z</updated>
+    <content type="html"><![CDATA[<p>linux单用户模式使用场景：</p>
+<ul>
+<li>忘记所有密码</li>
+<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
+<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
+</ul>
+<p>进入单用户模式：</p>
+<ul>
+<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
+<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet
+</code></pre></li>
+<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
+<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet linux single
+</code></pre></li>
+<li><p>按回车结束编辑并返回</p>
+</li>
+<li><p>按一下b键重新启动，进入系统进行相关操作</p>
+</li>
+</ul>
+<a id="more"></a>
+<p>如开篇的问题，修改新密码或者修改文件：</p>
+<ul>
+<li><p>修改密码</p>
+<pre><code><span class="variable">$ </span>passwd username    <span class="comment"># 输入新密码即可</span>
+</code></pre></li>
+<li><p>修改默认启动模式（图形界面、命令行等）</p>
+<pre><code>$ vi <span class="regexp">/etc/</span>inittab     # 图形界面（<span class="string">id:</span><span class="number">3</span>:<span class="string">initdefault:</span>），命令行（<span class="string">id:</span><span class="number">5</span>:<span class="string">initdefault:</span>）
+</code></pre><p>  参考如图 <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/inittab.png" alt="linux默认启动模式控制文件"></p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>linux单用户模式使用场景：</p>
+<ul>
+<li>忘记所有密码</li>
+<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
+<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
+</ul>
+<p>进入单用户模式：</p>
+<ul>
+<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
+<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet
+</code></pre></li>
+<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
+<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet linux single
+</code></pre></li>
+<li><p>按回车结束编辑并返回</p>
+</li>
+<li><p>按一下b键重新启动，进入系统进行相关操作</p>
+</li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="inittab" scheme="http://effine.cn/tags/inittab/"/>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SSH安装]]></title>
+    <link href="http://effine.cn/2015/06/19/SSHInstall/"/>
+    <id>http://effine.cn/2015/06/19/SSHInstall/</id>
+    <published>2015-06-19T06:17:34.000Z</published>
+    <updated>2015-09-01T15:11:38.000Z</updated>
+    <content type="html"><![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+</code></pre><p>如未安装，则安装即可：</p>
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
+</code></pre><p>重启ssh：</p>
+<pre><code>$ <span class="keyword">service</span> sshd <span class="literal">restart</span>
+</code></pre><a id="more"></a>
+<p>查看ssh默认端口22是否启动：</p>
+<pre><code><span class="variable">$ </span>netstat -antp | grep sshd 
+或者
+<span class="variable">$ </span>iptables -nL 
+</code></pre><p>如端口未打开，那开启防火墙</p>
+<pre><code>$ vi /etc/sysconfig/iptables
+插入： -A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
+</code></pre><p>检查SSH是否为开机启动：</p>
+<pre><code>$ chkconfig <span class="comment">--list sshd</span>
+</code></pre><p>设置SSH为开机启动：</p>
+<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment">#开机启动[是|否]</span>
+</code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
+<pre><code><span class="preprocessor"># 限制ip连接</span>
+<span class="label">sshd:</span> All     <span class="preprocessor">#允许所有ip ssh连接该服务器</span>
+<span class="label">sshd:</span> <span class="number">192.168</span>.0.125        <span class="preprocessor">#只允许125 ssh连接，可以配置多台</span>
+</code></pre><p>远程ssh连接,默认为22端口可以省略该参数</p>
+<pre><code>$ ssh -<span class="tag">p</span> <span class="number">22</span> root@<span class="number">192.168</span>.<span class="number">0.125</span>    <span class="id">#ssh</span> -<span class="tag">p</span> port username@ip
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+</code></pre><p>如未安装，则安装即可：</p>
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
+</code></pre><p>重启ssh：</p>
+<pre><code>$ <span class="keyword">service</span> sshd <span class="literal">restart</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="command" scheme="http://effine.cn/tags/command/"/>
+    
+      <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
+    
+      <category term="web" scheme="http://effine.cn/categories/web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SSH免密码登陆]]></title>
+    <link href="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/"/>
+    <id>http://effine.cn/2015/05/20/SSHOmitPasswdLogin/</id>
+    <published>2015-05-20T09:11:02.000Z</published>
+    <updated>2015-09-16T15:06:16.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录"></p>
+<p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
+<a id="more"></a>
+<p>本地主机(LocalHost)通过SSH登录远程主机(RemoteHost),首先在LocalHost生成密钥：</p>
+<pre><code><span class="variable">$ </span>ssh-keygen        <span class="comment"># 本地主机生成密钥</span>
+等同于
+<span class="variable">$ </span>ssh-keygen -t rsa
+</code></pre><p>一直回车即可,最后将会在目录 <code>~/.ssh</code> 生成公钥id_rsa.pub和私钥id_rsa两个文件,将公钥内容追加到RemoteHost服务器 <code>~/.ssh/authorized_keys</code>(~ 表示用户目录)文件中：</p>
+<pre><code><span class="variable">$ </span>ssh-copy-id ~<span class="regexp">/.ssh/id</span>_rsa.pub &lt;your-username&gt;<span class="variable">@RemoteHost</span>    <span class="comment"># 追加本机公钥到RemoteHost的authorized_keys</span>
+</code></pre><p>输入RemoteHost密码即可实现SSH免密码登录远程主机</p>
+<p>当然，追加LocalHost公钥内容到RemoteHost文件authorized_keys时，你也可以上传LocalHost的公钥文件id_rsa.pub到RemoteHost，然后执行命令：</p>
+<pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub path&gt; <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment">#追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
+</code></pre><p>我的远程主机/home目录存在LocalHost的公钥id_rsa.pub,所以我执行以下命令即可：</p>
+<pre><code><span class="variable">$ </span>cat /home/id_rsa.pub path <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys
+</code></pre><p>扩展阅读： google搜索ssh-keygen参数设置</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录" /></p>
+<p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>]]>
+    
+    </summary>
+    
+      <category term="command" scheme="http://effine.cn/tags/command/"/>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[tail command]]></title>
+    <link href="http://effine.cn/2015/05/20/TailCommand/"/>
+    <id>http://effine.cn/2015/05/20/TailCommand/</id>
+    <published>2015-05-20T08:54:22.000Z</published>
+    <updated>2015-09-16T15:06:16.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command"></p>
+<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
+<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.out       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
+</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
+<a id="more"></a>
+<p>tail 命令基本用法：</p>
+<pre><code><span class="variable">$ </span>tail [参数] 文件地址      <span class="comment"># 无参数默认打印文件末尾10行数据</span>
+</code></pre><p>tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：</p>
+<pre><code>-<span class="ruby">f <span class="symbol">:</span> 循环读取(常用于监控应用运行日志)
+</span>-<span class="ruby">n <span class="symbol">number:</span> 自定义显示行数</span>
+</code></pre><p>如果number前带正号(“+”)，则从文件头部第number行开始读取；若带负号（”-“）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。</p>
+<pre><code>$ tail -<span class="keyword">n</span> +5 catalina.<span class="keyword">out</span>         # 从catalina.<span class="keyword">out</span>文件顶部第5行开始读取内容
+
+$ tail -<span class="keyword">n</span> -5 catalina.<span class="keyword">out</span>         # 从catalina.<span class="keyword">out</span>文件尾部倒数5行开始读取内容
+
+$ tail -<span class="keyword">n</span> 5 catalina.<span class="keyword">out</span>         # 从catalina.<span class="keyword">out</span>文件尾部倒数5行开始读取内容
+</code></pre><p>具体参数参考：</p>
+<pre><code>$ <span class="keyword">man</span> mail        # getting help
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command" /></p>
+<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
+<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.out       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
+</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>]]>
+    
+    </summary>
+    
+      <category term="command" scheme="http://effine.cn/tags/command/"/>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[rsync command]]></title>
+    <link href="http://effine.cn/2015/05/08/RsyncCommand/"/>
+    <id>http://effine.cn/2015/05/08/RsyncCommand/</id>
+    <published>2015-05-08T06:27:12.000Z</published>
+    <updated>2015-09-18T13:38:18.000Z</updated>
+    <content type="html"><![CDATA[<p>rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。</p>
+<p>以下采用centos进行讲解，其他平台原理相同，自行参考研究</p>
+<p>既然设计文件的远程同步，需要两台服务器s1\s2</p>
+<p>环境描述：    </p>
+<pre><code>操作系统： centos 
+<span class="string">serverA:</span> <span class="number">192.168</span>.0.140 待同步的服务器（源服务器）
+<span class="string">serverB:</span> <span class="number">192.168</span>.0.141 同步到的服务器 (目标服务器)
+
+需求: 同步serverA的目录 <span class="regexp">/home/</span>test 到 serverB 的相同目录
+</code></pre><a id="more"></a>
+<ol>
+<li><p>安装rsync</p>
+<p> 。 源码安装（安装之前保证本机安装gcc）</p>
+<pre><code>rsync官网（<span class="symbol">http:</span>/<span class="regexp">/rsync.samba.org/</span>） <span class="comment">#下载最新发行版本，目前最新版本rsync-3.1.1.tar.gz；</span>
+<span class="variable">$ </span>tar -zxvf rsync-<span class="number">3.1</span>.<span class="number">1</span>.tar.gz    <span class="comment">#解压</span>
+<span class="variable">$ </span>cd rsync-<span class="number">3.1</span>.<span class="number">1</span> 进入rsync目录
+<span class="variable">$ </span>./configure --prefix=<span class="regexp">/usr  ;make ;make install  </span>
+</code></pre><p> 。 软件包安装</p>
+<pre><code>$ yum <span class="keyword">install</span> rsync
+</code></pre></li>
+<li><p>配置rsync</p>
+<p> 默认rsync需要配置三个文件rsyncd.conf \ rsyncd.secrets \ rsyncd.motd; 如文件不存在则创建即可</p>
+<p> . rsyncd.conf: 主配置文件，主要配置rsync同步信息和权限设置;默认可能该文件不存在，需手动创建</p>
+<pre><code>$ <span class="keyword">vi</span> /etc/rsyncd.<span class="keyword">conf</span>   #创建rsyncd.<span class="keyword">conf</span>文件并在<span class="keyword">vi</span>中编辑
+</code></pre><p> 具体内容参考我的配置</p>
+<pre><code><span class="comment">#Global Settings</span>
+pid <span class="variable">file =</span> /var/run/rsyncd.pid
+<span class="variable">port =</span> <span class="number">873</span>
+<span class="variable">address =</span> <span class="number">192.168</span>.<span class="number">0.140</span>
+
+<span class="comment">#以什么身份运行rsync</span>
+<span class="variable">uid =</span> root
+<span class="variable">gid =</span> root
+
+use <span class="variable">chroot =</span> <span class="constant">false</span>
+read <span class="variable">only =</span> no
+
+<span class="comment">#limit access to private LANs</span>
+hosts <span class="variable">allow =</span> <span class="number">192.168</span>.<span class="number">0.141</span>
+hosts <span class="variable">deny=</span>*
+max <span class="variable">connections =</span> <span class="number">5</span> 
+motd <span class="variable">file =</span> /etc/rsyncd.motd
+
+[backup]
+<span class="variable">path =</span> /home/test
+<span class="variable">list=</span>yes 
+auth <span class="variable">users =</span> rsync
+secrets <span class="variable">file =</span> /etc/rsyncd.secrets 
+<span class="variable">coment =</span> welcome backup !
+log <span class="variable">file =</span> /var/log/rsyncd.log
+lock <span class="variable">file =</span> /var/run/rsyncd.lock
+</code></pre><p> auth users属性可以添加多个用户，用户之间用逗号分隔；所有的用户必须为服务器真实存在的用户</p>
+<p> . rsyncd.secrets： 存放用户密码文件,格式”用户名：密码”</p>
+<pre><code>$ vi /etc/rsyncd<span class="class">.secrets</span>   
+</code></pre><p> 参考我的配置</p>
+<pre><code><span class="comment"># username:passwd</span>
+ rsync:<span class="built_in">test</span>123
+</code></pre><p> 修改属主</p>
+<pre><code><span class="variable">$chown</span> root<span class="class">.root</span> rsyncd.secrets
+</code></pre><p> 将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!</p>
+<pre><code>$ chmod <span class="number">600</span> /etc/rsyncd<span class="class">.secrets</span>  
+</code></pre><p> . rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性</p>
+<pre><code>$ vi /etc/rsyncd<span class="class">.motd</span> 
+</code></pre></li>
+<li><p>开启rsync端口873(开启防火墙)</p>
+<pre><code><span class="variable">$ </span>vi /etc/sysconfig/iptables
+</code></pre><p> 添加如下记录：</p>
+<pre><code>-A RH-Firewall-<span class="number">1</span>-INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">873</span> -j ACCEPT
+</code></pre></li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。</p>
+<p>以下采用centos进行讲解，其他平台原理相同，自行参考研究</p>
+<p>既然设计文件的远程同步，需要两台服务器s1\s2</p>
+<p>环境描述：    </p>
+<pre><code>操作系统： centos 
+<span class="string">serverA:</span> <span class="number">192.168</span>.0.140 待同步的服务器（源服务器）
+<span class="string">serverB:</span> <span class="number">192.168</span>.0.141 同步到的服务器 (目标服务器)
+
+需求: 同步serverA的目录 <span class="regexp">/home/</span>test 到 serverB 的相同目录
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="rsync" scheme="http://effine.cn/tags/rsync/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[web.xml配置WebAppRootKey]]></title>
+    <link href="http://effine.cn/2015/03/10/WebAppRootKey/"/>
+    <id>http://effine.cn/2015/03/10/WebAppRootKey/</id>
+    <published>2015-03-10T09:47:34.000Z</published>
+    <updated>2015-05-20T16:11:30.000Z</updated>
+    <content type="html"><![CDATA[<p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</web-app></p>
+<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+</code></pre><a id="more"></a>
+<p>为什么必须进行以上配置？</p>
+<p>Web应用服务器tomcat不会为其下不同的web应用使用独立的系统参数；即就是说，应用服务器tomcat上所有的web应用共用一个系统参数对象（webAppRootKey,默认值为”webapp.root”）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。</p>
+<p>如我本地测试，Tomcat同时运行student、teacher两个web项目，我的配置：</p>
+<pre><code><span class="comment">&lt;!-- 项目student的web.xml配置 --&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.student<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+
+------------------- 华丽的分割线 --------------------
+
+<span class="comment">&lt;!-- 项目teacher的web.xml配置 --&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.teacher<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+</code></pre><p>你可以通过 System.getProperty(“webapp.root”) 动态获取项目运行路径：</p>
+<pre><code>System.getProperty("webapp.student");    //student project    
+运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\student</span><span class="command">\
+</span>
+System.getProperty("webapp.student");    //teacher project
+运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\teacher</span><span class="command">\
+</span>
+---------------------------------------------------
+ 友情提示： " D:<span class="command">\workspace</span> " 为我eclipse的工作空间
+---------------------------------------------------
+</code></pre><p>如果，Tomcat 运行多个web项目不进行webAppRootKey配置（或配置相同的webAppRootKey为webapp.root），将发生如下错误：</p>
+<pre><code>Web app root system property already set to different value: <span class="emphasis">'webapp.root'</span> 
+<span class="header">= [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student\] </span>
+instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher\] 
+<span class="header">- Choose unique values for the 'webAppRootKey' context-param in your web.xml files!  
+--------------------------------------------------</span>
+<span class="header"> 友情提示：方便页面展示，以上错误经过合理的换行处理
+--------------------------------------------------</span>
+</code></pre><p>错误显示大概就是说： key 为 <code>&quot;webapp.root&quot;</code> 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值; 所以，web应用服务器Tomcat运行多个web应用，必须对webAppRootKey进行相应的配置。</context-param></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="java" scheme="http://effine.cn/tags/java/"/>
+    
+      <category term="web" scheme="http://effine.cn/tags/web/"/>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[2014回家]]></title>
+    <link href="http://effine.cn/2015/03/01/2014GoHome/"/>
+    <id>http://effine.cn/2015/03/01/2014GoHome/</id>
+    <published>2015-03-01T14:20:11.000Z</published>
+    <updated>2015-08-08T12:28:44.000Z</updated>
+    <content type="html"><![CDATA[<p>家，还是那个曾经趴在炉子上学习的地方；她还是那么温暖踏实！</p>
+<p>家里的人，还是那么亲昵；有出嫁有离开，剩下的都变老了…，少了当初的那份热闹，少了那份年味；”家里该添人了…”这是家的主人每次对话对我的期盼，而我总是说”我知道，你们还年轻嘛，不着急”。可心里知道，家里的人声音参杂杂音了，透露他们每况日下的身体；想到此，内心何尝不是疼痛的…</p>
+<a id="more"></a>
+<p>每天家里人都在为我的生活努力奋斗，在他们眼里我是唯一；可我眼里，他们真的是唯一吗？这是不公平的，我应该深思反省。为了我的生活，家里人还在跟随原始生活节奏，没有提高生活质量，想到这里，我又何尝不该反思？</p>
+<p>回到家里的时间，我和她走了去她母亲家的路，路比以前好了，可她却没有以前走的快了,而且走路的时候还在颠簸,突然间的酸楚让小时候的味道难以消化；看到她的背影，无尽的忧伤，她不该为我的生活而再辛苦；可是呢? 每每都是挑起所有的家务活儿…想起她，有太多的要努力回报的地方，有太多她蹒跚的背影，艰辛的步伐…</p>
+<p>而他呢？ 头发越长越少，腿还是我走的时候那么不灵活，每一步都伴随疼痛；那一天，我启程回北京上班，他与我一同去了集市，我担心他的腿，可他却纵然自己的腿伤，我发现我是多么的残忍和不孝；一路上我们都无言，看着他的步伐一瘸一拐的，心里很痛；家里的事，很多是我无法左右还是因为我用心太少? 不要再为我这样辛苦，我会伤心，我不值得你们这样付出，我多想你们自私一点。</p>
+<p>家里的事复杂；时代在进步，家里的人思想还在停留；我不想改变别人，我只想你们过得好。</p>
+<p>我是不是该回去了？ 我是不是该呆在你们身旁照顾你们？但是，就在我回去的时间里，我对你们又有哪些照顾？我不敢回忆…</p>
+<p>我该好好把握现在，努力工作学习，尽快给你们好日子；让你们不再进行原始的劳作，不再为我的生活伤神。这才是你们该有的生活面貌…慢点老，等等我</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>家，还是那个曾经趴在炉子上学习的地方；她还是那么温暖踏实！</p>
+<p>家里的人，还是那么亲昵；有出嫁有离开，剩下的都变老了…，少了当初的那份热闹，少了那份年味；”家里该添人了…”这是家的主人每次对话对我的期盼，而我总是说”我知道，你们还年轻嘛，不着急”。可心里知道，家里的人声音参杂杂音了，透露他们每况日下的身体；想到此，内心何尝不是疼痛的…</p>]]>
+    
+    </summary>
+    
+      <category term="annual" scheme="http://effine.cn/tags/annual/"/>
+    
+      <category term="总结" scheme="http://effine.cn/tags/%E6%80%BB%E7%BB%93/"/>
+    
+      <category term="essays" scheme="http://effine.cn/categories/essays/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[redis install]]></title>
+    <link href="http://effine.cn/2015/01/31/RedisInstall/"/>
+    <id>http://effine.cn/2015/01/31/RedisInstall/</id>
+    <published>2015-01-31T15:43:02.000Z</published>
+    <updated>2015-06-23T15:22:36.000Z</updated>
+    <content type="html"><![CDATA[<p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
+<ul>
+<li><p>redis下载、解压、编译源码</p>
+<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
+$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
+$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
+$ make     <span class="comment">#编译</span>
+</code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
+<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
+<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
+<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
+</code></pre></li>
+</ul>
+<a id="more"></a>
+<ul>
+<li><p>启动redis服务</p>
+<pre><code>$ src/redis-<span class="keyword">server</span>    <span class="preprocessor">#前台启动redis服务</span>
+</code></pre><p>  如需后台(以daemon守护进程启动)运行redis-server需修改redis.conf下的”daemonize no” 为 “daemonize yes”</p>
+<p>  简单尝试redis,另起窗口进入redis-2.8.19,打开redis客户端</p>
+<pre><code><span class="variable">$ </span>src/redis-cli    <span class="comment">#redis内置客户端</span>
+<span class="prompt">127.0.0.1:6379&gt;</span> set foo bar    <span class="comment"># 设值：key(foo)-value(bar)</span>
+    <span class="constant">OK</span>
+<span class="prompt">127.0.0.1:6379&gt;</span> get foo    <span class="comment">#取值：key(foo)</span>
+<span class="string">"bar"</span>
+</code></pre></li>
+<li><p>总结</p>
+<p>  如需要将redis的相关命令设置成全局（相当于windows将命令进入环境变量）执行如下命令</p>
+<pre><code>$ make <span class="operator"><span class="keyword">install</span> #将redis-<span class="number">2.8</span>.19/src目录下的redis-*等相关命令复制到/usr/<span class="keyword">local</span>/<span class="keyword">bin</span></span>
+</code></pre><p>  linux执行多条命令小技巧： 多条命令之间可以使用 “&amp;&amp;” 连接, 如 “ make &amp;&amp; make install “;</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
+<ul>
+<li><p>redis下载、解压、编译源码</p>
+<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
+$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
+$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
+$ make     <span class="comment">#编译</span>
+</code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
+<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
+<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
+<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
+</code></pre></li>
+</ul>]]>
+    
+    </summary>
+    
+      <category term="database" scheme="http://effine.cn/tags/database/"/>
+    
+      <category term="redis" scheme="http://effine.cn/tags/redis/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="redis" scheme="http://effine.cn/categories/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[centos 网络配置]]></title>
+    <link href="http://effine.cn/2015/01/29/CentosNetworkConfig/"/>
+    <id>http://effine.cn/2015/01/29/CentosNetworkConfig/</id>
+    <published>2015-01-29T15:37:34.000Z</published>
+    <updated>2015-06-23T15:23:34.000Z</updated>
+    <content type="html"><![CDATA[<p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
+<p>怎么检测是否可用联网？使用 <code>ping www.baidu.com</code>命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主机等提示之类的提示说明无法联网，则开始配置 centos 的网络配置文件 <code>/etc/sysconfig/network-scripts/ifcfg-eth*</code>; <code>ifcfg-eth*</code>文件的数量表示你机器网卡的数量，如只有一块网卡则在目录 <code>/etc/sysconfig/network-scripts/</code> 下只会存在一个ifcfg-eth*文件（那就是ifcfg-eth0）,文件结构（参数配置）如下：</p>
+<pre><code><span class="constant">DEVICE</span>=<span class="string">"eth0"</span>                  <span class="comment">//指出设备名称</span>
+<span class="constant">BOOTPROTO</span>=<span class="string">"dhcp"</span>              <span class="comment">//启动类型 dhcp</span>
+<span class="constant">HWADDR</span>=<span class="string">"00:0C:29:35:A2:A8"</span>      <span class="comment">//硬件Mac地址</span>
+<span class="constant">IPV6INIT</span>=<span class="string">"yes"</span>                  <span class="comment">//是否支持IPV6</span>
+<span class="constant">NM_CONTROLLED</span>=<span class="string">"yes"</span>              <span class="comment">//network manger参数，修改实时生效无需重启网卡</span>
+<span class="constant">ONBOOT</span>=<span class="string">"yes"</span>                   <span class="comment">//是否启动应用</span>
+<span class="constant">TYPE</span>=<span class="string">"Ethernet"</span>                  <span class="comment">//网络类型</span>
+<span class="constant">UUID</span>=<span class="string">"733r86e3-a47e-4471-a83f-1ef4def437bb"</span>
+</code></pre><p>然后保存并退出， 重启网络服务：<code>service network restart</code>即可;我无法联网的问题是参数ONBOOT=”no”的原因造成。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
+<p>怎么检测是否可用联网？使用 <co]]>
+    </summary>
+    
+      <category term="centos" scheme="http://effine.cn/tags/centos/"/>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[vi commands]]></title>
+    <link href="http://effine.cn/2015/01/10/ViEditorCommands/"/>
+    <id>http://effine.cn/2015/01/10/ViEditorCommands/</id>
+    <published>2015-01-10T14:36:25.000Z</published>
+    <updated>2015-06-23T15:23:46.000Z</updated>
+    <content type="html"><![CDATA[<p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
+<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>
+<a id="more"></a>
+<ol>
+<li><p>命令模式(一般模式): 用户处于任何模式，都可以按 ESC 键进入命令模式；我们使用 “vi” 命令启动编辑器也是进入命令模式；该模式作为编辑模式与末行模式互相切换的桥梁,编辑模式与末行模式不能直接互相切换；该模式主要使用方向键位置进行文字的编辑，常用命令：</p>
+<p> </p><p> - - 移动光标 - -</p>
+<ul>
+<li>↑↓← → —上下左右方向键移动光标</li>
+<li>pagedown/pageup — 翻页上一页/下一页</li>
+<li>0(数字0)/$ — 光标移至所在行 行首/行尾</li>
+<li>G/nG/gg — 移动光标至文件最后一行/n行/第一行(相当于1G)行首</li>
+<li>H/M/L — 光标移至屏幕内容顶部/中央/尾部</li>
+<li><p>:lineNo — 光标跳转到指定行号（lineNo）行首</p>
+<p></p><p> - - 删除/复制/粘贴 - -</p>
+</li>
+<li>x/X — x为光标向后删除一个字符（相当于del键），X为光标向前删除一个字符（相当于Backspace键）</li>
+<li>dd/ndd — 删除光标所在行 / 从光标行开始，向下删除n行</li>
+<li>yy/nyy — 复制光标所在的那一行 / 复制光标所在行的向下n行</li>
+<li>p/P（大写） — 粘贴复制的内容到光标所在行的下一行 / 上一行</li>
+<li>u — 复原前一个操作、</li>
+<li>ctrl + r — 重做上一个操作</li>
+<li>小数点”.” — 重复前一个动作</li>
+</ul>
+</li>
+<li><p>编辑模式(文本输入模式): 该模式是对文件进行编辑操作，进入该模式命令窗口底部显示”— INSERT —“标志; 命令模式切换到编辑模式方式：</p>
+<p> </p><p> - - 进入编辑模式并进行相应操作 - -</p>
+<ul>
+<li>i/I(insert) — 输入即在光标 所在位置之前 / 在当前所在行的一个非空格符处开始插入插入</li>
+<li>a/A(append) — 输入即在光标 所在位置之后 / 所在行行尾追加</li>
+<li>o/O(open) — 光标所在行前 / 后插入一新行</li>
+<li>r/R(replace) — 替换光标所在的那一个字符 / 会一直替换光标所在的字符,直到按下esc 键为止</li>
+</ul>
+</li>
+<li><p>末行模式(指令列命令模式): 即可将光标移动到最下面一行，在该模式下，您可以搜索数据，而且读取，存盘，大量删除字符，离开vi，显示行号等操作</p>
+<p> </p><p> - - 保存/退出vi - -</p>
+<ul>
+<li>:w — 保存文件但不退出vi编辑器</li>
+<li>:w filename — 将修改的文件另存为filename,不退出vi</li>
+<li>:w! — 强制保存，不退出vi</li>
+<li>:q — 退出vi,不保存修改</li>
+<li>:q! — 强制退出vi,不保存修改</li>
+<li>:wq — 保存并退出vi </li>
+<li>:wq! — 强制保存并退出vi</li>
+<li>ZZ — 保存并退出</li>
+<li>:e! — 放弃所有修改，从上次保存文件处开始再次编辑</li>
+<li><p>:set nu/nonu — 让vi编辑器显示 / 隐藏行号</p>
+<p></p><p> - - 搜索与特换 - -</p>
+</li>
+<li>/keyword — 从光标开始，向下搜索关键字keyword字符串<ul>
+<li>按’n’向下定位下一处匹配的关键字</li>
+<li>按”N”向上定位下一处匹配的关键字</li>
+</ul>
+</li>
+<li>?keyword — 从光标开始，向上搜索关键字</li>
+<li>:n1,n2s/word1/word2/g — n1与n2为数字.在第n1与n2行之间寻找word1这个字符串,并将该字符串替换为word2<ul>
+<li>eg: “:1、$s/word1/word2/g”,从第一行到最后一行寻找word1字符串，并将该字符串替换为word2</li>
+<li>eg: “:1、$s/word1/word2/gc”,从第一行到最后一行寻找word1字符串，并将该字符串替换为word2。并且在替换之前显示提示符给用户确认（conform）是否需要替换</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
+<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>]]>
+    
+    </summary>
+    
+      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
+    
+  </entry>
+  
+</feed>
