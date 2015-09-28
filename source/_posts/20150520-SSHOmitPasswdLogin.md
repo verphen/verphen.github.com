@@ -23,7 +23,7 @@ tags:
 
 输入RemoteHost密码即可实现SSH免密码登录远程主机
 
-当然，追加LocalHost公钥内容到RemoteHost文件authorized_keys时，你也可以上传LocalHost的公钥文件id_rsa.pub到RemoteHost，然后执行命令：
+当然，追加LocalHost公钥内容到RemoteHost文件authorized_keys时，你也可以上传LocalHost的公钥文件id_rsa.pub到远程主机，然后执行命令：
 
 	$ cat <id_rsa.pub path> >> ~/.ssh/authorized_keys		#追加id_rsa.pub内容到authorized_keys文件内容尾部
 
