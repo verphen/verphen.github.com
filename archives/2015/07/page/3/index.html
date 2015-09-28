@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives | effine</title>
+  <title>Archives: 2015/7 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/archives/page/3/index.html">
+<meta property="og:url" content="http://effine.cn/archives/2015/07/page/3/index.html">
 <meta property="og:site_name" content="effine">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -88,65 +88,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-ChromeShortcutKey" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/06/ChromeShortcutKey/" class="article-date">
-  <time datetime="2015-07-06T01:58:09.000Z" itemprop="datePublished">7月 6 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/06/ChromeShortcutKey/">chrome 技巧及快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
-<pre><code>-<span class="ruby"> 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容<span class="string">"无法显示此页面"</span>，按<span class="string">"空格"</span>键，可以玩个小游戏放松心情
-</span>
--<span class="ruby"> 按住 ctrl 点击页面链接，后台以新标签打开链接页面(该操作同样适合 chrome 回退/前进等), 你仍停留在当前标签页
-</span>
--<span class="ruby"> 按住 ctrl + shift 点击页面链接，新标签打开链接, 同时切换到新打开的标签页
-</span>
--<span class="ruby"> 按住 shift 点击页面链接, 在新窗口打开链接
-</span>
--<span class="ruby"> 将链接拖动到标签页内, 在指定标签页中打开链接; 将链接拖动到两个标签页之间,则在标签页横条的指定位置建立一个新标签页然后打开链接;</span>
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/06/ChromeShortcutKey/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/06/ChromeShortcutKey/" data-id="ciewy76s6001gtl2e1mu1rxzw" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/07/06/ChromeShortcutKey/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chrome/">chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-ChromeShortcutKey" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -1214,148 +1155,9 @@ date: 2015-07-06 09:58:09</li>
 
 
   
-    <article id="post-IntegerPoint" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/22/IntegerPoint/" class="article-date">
-  <time datetime="2015-06-22T09:38:25.000Z" itemprop="datePublished">6月 22 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/22/IntegerPoint/">Integer的对等比较</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>分析之前，先猜想一下看看下面code snippets的输出：</p>
-<pre><code>package cn.effine.test;
-
-public class IntegerTest {
-
-    public static void main<span class="params">(String[] args)</span> {
-
-        Integer i1 = <span class="number">2</span>;
-        Integer i2 = <span class="number">2</span>;
-        System.err.println<span class="params">(<span class="string">"i1 == i2 : "</span> + <span class="params">(i1 == i2)</span>)</span>;
-
-        Integer i3 = new Integer<span class="params">(<span class="number">2</span>)</span>;
-        Integer i4 = new Integer<span class="params">(<span class="number">2</span>)</span>;
-        System.err.println<span class="params">(<span class="string">"i3 == i4: "</span> + <span class="params">(i3 == i4)</span>)</span>;
-
-        Integer i5 = <span class="number">128</span>;
-        Integer i6 = <span class="number">128</span>;
-        System.err.println<span class="params">(<span class="string">"i5 == i6 : "</span> + <span class="params">(i5 == i6)</span>)</span>;
-        System.err.println<span class="params">(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + <span class="params">(i5.intValue<span class="params">()</span> == i6.intValue<span class="params">()</span>)</span>)</span>;
-        System.err.println<span class="params">(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals<span class="params">(i6)</span>)</span>;
-
-    }
-}
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2015/06/22/IntegerPoint/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/06/22/IntegerPoint/" data-id="ciewy76sc001stl2eg0nvq21d" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/06/22/IntegerPoint/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Integer/">Integer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LinuxSingleUser" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/06/22/LinuxSingleUser/" class="article-date">
-  <time datetime="2015-06-21T17:16:28.000Z" itemprop="datePublished">6月 22 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/06/22/LinuxSingleUser/">linux单用户模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>linux单用户模式使用场景：</p>
-<ul>
-<li>忘记所有密码</li>
-<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
-<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
-</ul>
-<p>进入单用户模式：</p>
-<ul>
-<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet
-</code></pre></li>
-<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span>.<span class="number">11</span>-<span class="number">1.1369</span>_FC4 ro <span class="variable">root=</span><span class="variable">LABEL=</span>/<span class="number">1</span> rhgb quiet linux single
-</code></pre></li>
-<li><p>按回车结束编辑并返回</p>
-</li>
-<li><p>按一下b键重新启动，进入系统进行相关操作</p>
-</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/06/22/LinuxSingleUser/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/06/22/LinuxSingleUser/" data-id="ciewy76sa001mtl2eccae2a6w" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/06/22/LinuxSingleUser/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/inittab/">inittab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/archives/page/4/">4</a><a class="page-number" href="/archives/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/15/">15</a><a class="extend next" rel="next" href="/archives/page/4/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/archives/2015/07/page/2/">&laquo; Prev</a><a class="page-number" href="/archives/2015/07/">1</a><a class="page-number" href="/archives/2015/07/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 </section>

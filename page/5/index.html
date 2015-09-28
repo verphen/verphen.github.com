@@ -89,6 +89,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WebAppRootKey" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/10/WebAppRootKey/" class="article-date">
+  <time datetime="2015-03-10T09:47:34.000Z" itemprop="datePublished">3月 10 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/10/WebAppRootKey/">web.xml配置WebAppRootKey</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2015/03/10/WebAppRootKey/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/03/10/WebAppRootKey/" data-id="ciewy76sv002ftl2ev9yulem3" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/03/10/WebAppRootKey/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-2014GoHome" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/01/2014GoHome/" class="article-date">
@@ -247,56 +303,6 @@ $ make     <span class="comment">#编译</span>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ViEditorCommands" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/01/10/ViEditorCommands/" class="article-date">
-  <time datetime="2015-01-10T14:36:25.000Z" itemprop="datePublished">1月 10 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/10/ViEditorCommands/">vi commands</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
-<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>
-        
-          <p class="article-more-link">
-            <a href="/2015/01/10/ViEditorCommands/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/01/10/ViEditorCommands/" data-id="ciewy76t70034tl2e8n43ghbs" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/01/10/ViEditorCommands/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 
     </footer>
   </div>

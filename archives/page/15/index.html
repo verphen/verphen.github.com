@@ -89,6 +89,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaSingletonPattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/09/JavaSingletonPattern/" class="article-date">
+  <time datetime="2012-11-09T13:32:11.000Z" itemprop="datePublished">11月 9 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/09/JavaSingletonPattern/">JAVA单例模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。</p>
+<p>优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；</p>
+<p>缺点及注意点：</p>
+<ul>
+<li>多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if语句判断块，此时类尚未被实例化，那么将同时得到两个不同的实例（此注意点比较容易避免，获取实例时使用同步sync就可以很好的解决）。</li>
+<li>当单例类被多个classloader加载的情况下，可能获得多个单例类的实例（此种情况可能比较难避免，这需要使所有的类使用相同的类加载器加载）。</li>
+<li>当单例类实现了序列化接口（Serializer）时，我们如果将对象序列化，并返回序列化得到实例时，这个实例将是一个新的实例，而不是序列化之前的实例（在这种情况下，需要在此类中添加readResolve方法，将返回对象设置为当前实例，否则会获得一个不同于序列化之前的类）。<br>单例模式具体分为饿汉式、懒汉式及登记式（这个很少介绍）：</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2012/11/09/JavaSingletonPattern/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2012/11/09/JavaSingletonPattern/" data-id="ciewy76vk007ltl2e2hbwjrb2" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2012/11/09/JavaSingletonPattern/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-JavaObserverPattern" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2012/11/08/JavaObserverPattern/" class="article-date">
