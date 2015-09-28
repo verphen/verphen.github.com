@@ -7,9 +7,13 @@ date: 2015-07-07 09:27:14
 ---
 对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：
 
-	ctrl + / 	# 注释当前行
-	ctrl + shift + c 	# 注释当前行
-	alt + shift + j 	# 给变量、方法、类添加描述(方法会列出参数和返回值等)
+	ctrl + / 	# 注释与取消注释当前行
+	ctrl + shift + c 	# 注释与取消注释当前行
+
+    ctrl + shift + /    # 注释选中的行（多行注释/* content */ ）
+    ctrl + shift + \    # 取消选中的注释行（多行注释）
+
+	alt + shift + j 	# 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)
 	
 	ctrl + o 	# 弹框搜索当前类的方法和全局变量
 	ctrl + shift + o 	# 自动导入必须包;
@@ -48,3 +52,8 @@ date: 2015-07-07 09:27:14
 调试模式的快捷方式：
 	
     ctrl + shift + i 	# 显示复制的代码执行的值
+
+skill:
+
+    - 输入"syso"然后按 alt + / , 则输出 " System.out.println(); "
+    - 输入"syse"然后按 alt + / , 则输出 " System.err.println(); "
