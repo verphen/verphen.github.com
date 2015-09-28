@@ -431,11 +431,15 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
     <published>2015-07-07T01:27:14.000Z</published>
-    <updated>2015-09-08T16:06:41.000Z</updated>
+    <updated>2015-09-28T06:07:47.000Z</updated>
     <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释当前行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释当前行</span>
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
+<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行</span>
+ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行</span>
+
+ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
+ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
+
+alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
 
 ctrl + o     <span class="comment"># 弹框搜索当前类的方法和全局变量</span>
 ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
@@ -470,12 +474,19 @@ alt + <span class="built_in">shift</span> + o(字母)     <span class="comment">
                            把选中的方法/变量在本类中全部出现的地方高亮显示
 </code></pre><p>调试模式的快捷方式：</p>
 <pre><code>ctrl + <span class="built_in">shift</span> + i     <span class="comment"># 显示复制的代码执行的值</span>
+</code></pre><p>skill:</p>
+<pre><code>-<span class="ruby"> 输入<span class="string">"syso"</span>然后按 alt + <span class="regexp">/ , 则输出 " System.out.println(); "
+</span></span>-<span class="ruby"> 输入<span class="string">"syse"</span>然后按 alt + <span class="regexp">/ , 则输出 " System.err.println(); "</span></span>
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释当前行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释当前行</span>
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
+<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行</span>
+ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行</span>
+
+ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
+ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
+
+alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
 
 ctrl + o     <span class="comment"># 弹框搜索当前类的方法和全局变量</span>
 ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
