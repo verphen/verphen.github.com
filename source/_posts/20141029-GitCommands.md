@@ -18,16 +18,3 @@ tags: [tools,git]
 
 -  git rm filename --cached: 将文件（可以添加多个文件，多个文件用空格隔开）移除git管理
 -  git rm -r directory-name --cached: 将目录（可以添加多个目录，多个目录用空格隔开）移除git的管理； -r表示目录级联（该目录及其所有子目录）
-
-<p>分支管理
-
-- git branch --help: 查看关于git branch帮助
-- git branch [a|r...]: 查看本地分支(不带任何参数)，分支名前带星号" * "的是当前分支
-	- -a: 查看所有(all)分支（本地及远程分支）
-	- -r: 查看远程（remote）分支
-	- -d branch-name: 删除(delete)本地分支(分支名：branch-name),该分支必须全部合并到不相关分支,没有未完成的操作
-	- -D branch-name: 删除本地分支(分支名：branch-name),无论该分支是否合并到其他不相关分支
-	- -r -d origin/remoe-branch-name: 删除远程分支(分支名：remote-branch-name)
-	- git push origin :remote-branch-name: 删除远程分支(分支名：remote-branch-name),冒号前面的空格不能少;原理：把空分支push到远程server上,达到删除的结果
-	- -m oldName  newName: 重命名(rename)move分支(待命名分支名：oldName;命名成分支：newName) 
-- git branch branch-name: 创建分支（分支名:branch-name）
