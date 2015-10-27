@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/riding/index.html</loc>
+    <lastmod>2015-10-27T14:42:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/reading/index.html</loc>
     <lastmod>2015-10-21T16:12:18.000Z</lastmod>
   </url>
@@ -57,7 +62,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/05/20/TailCommand/</loc>
+    <loc>http://effine.cn/2015/07/06/TomcatRoles/</loc>
     <lastmod>2015-09-16T15:06:16.000Z</lastmod>
   </url>
   
@@ -67,22 +72,17 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/07/06/TomcatRoles/</loc>
-    <lastmod>2015-09-16T15:06:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/</loc>
-    <lastmod>2015-09-16T15:06:16.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/riding/index.html</loc>
+    <loc>http://effine.cn/2015/05/20/TailCommand/</loc>
     <lastmod>2015-09-16T15:06:16.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://effine.cn/2015/06/22/LinuxSingleUser/</loc>
+    <lastmod>2015-09-16T15:06:16.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/</loc>
     <lastmod>2015-09-16T15:06:16.000Z</lastmod>
   </url>
   
