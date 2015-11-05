@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-05T02:29:17.000Z</updated>
+  <updated>2015-11-05T06:52:27.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2015-11-05T02:29:17.000Z</updated>
-    <content type="html"><![CDATA[<p>$ git tag —help     # 查看帮助</p>
-<p>[查看标签]</p>
+    <updated>2015-11-05T06:52:27.000Z</updated>
+    <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git tag --help     <span class="comment"># 查看帮助</span>
+</code></pre><p>[查看标签]</p>
 <pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标签列表[list]</span>
 <span class="variable">$ </span>git show &lt;tag-name&gt;     <span class="comment"># 查看标签tag-name信息</span>
 </code></pre><p>[创建/切换标签]</p>
@@ -39,9 +39,9 @@ $ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="c
 <span class="variable">$ </span>git push [origin] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<p>$ git tag —help     # 查看帮助</p>
-<p>[查看标签]</p>
-<pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标]]>
+    <![CDATA[<pre><code><span class="variable">$ </span>git tag --help     <span class="comment"># 查看帮助</span>
+</code></pre><p>[查看标签]</p>
+<pre><code><spa]]>
     </summary>
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
@@ -57,9 +57,9 @@ $ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="c
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2015-11-05T02:28:07.000Z</updated>
-    <content type="html"><![CDATA[<p>$ git branch —help        # 查看关于git branch帮助</p>
-<p>[查看分支]</p>
+    <updated>2015-11-05T06:52:27.000Z</updated>
+    <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
+</code></pre><p>[查看分支]</p>
 <pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
 <span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
 <span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
@@ -87,9 +87,8 @@ $ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable"
 <pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;origin/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支origin/<span class="built_in">dev</span>关联<span class="number">1</span>
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<p>$ git branch —help        # 查看关于git branch帮助</p>
-<p>[查看分支]</p>
-<pre><code><span class="variable">$ </span>git branch     <span class="com]]>
+    <![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
+</code></pre><p>[查看分支]</]]>
     </summary>
     
       <category term="branch" scheme="http://effine.cn/tags/branch/"/>
