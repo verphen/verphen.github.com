@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-09-20T14:07:43.000Z</updated>
+  <updated>2015-11-05T02:29:17.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,92 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Git标签]]></title>
+    <link href="http://effine.cn/2015/11/04/GitTag/"/>
+    <id>http://effine.cn/2015/11/04/GitTag/</id>
+    <published>2015-11-04T07:24:30.000Z</published>
+    <updated>2015-11-05T02:29:17.000Z</updated>
+    <content type="html"><![CDATA[<p>$ git tag —help     # 查看帮助</p>
+<p>[查看标签]</p>
+<pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标签列表[list]</span>
+<span class="variable">$ </span>git show &lt;tag-name&gt;     <span class="comment"># 查看标签tag-name信息</span>
+</code></pre><p>[创建/切换标签]</p>
+<pre><code>$ git <span class="keyword">tag</span> <span class="variable">&lt;v1.0&gt;</span>     <span class="comment"># 创建标签v1.0</span>
+$ git <span class="keyword">tag</span> <span class="variable">&lt;tag-name&gt;</span> <span class="variable">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>
+$ git <span class="keyword">tag</span> [-a] <span class="variable">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>
+
+$ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span>
+</code></pre><p>[删除标签]</p>
+<pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span>
+<span class="variable">$ </span>git push origin  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
+</code></pre><p>[获取/推送远程标签]</p>
+<pre><code><span class="variable">$ </span>git pull [origin] --tags     <span class="comment"># 获取远程所有标签(origin可选)</span>
+<span class="variable">$ </span>git push [origin] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
+<span class="variable">$ </span>git push [origin] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>$ git tag —help     # 查看帮助</p>
+<p>[查看标签]</p>
+<pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标]]>
+    </summary>
+    
+      <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="tag" scheme="http://effine.cn/tags/tag/"/>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Git分支]]></title>
+    <link href="http://effine.cn/2015/10/23/GitBranch/"/>
+    <id>http://effine.cn/2015/10/23/GitBranch/</id>
+    <published>2015-10-23T14:35:35.000Z</published>
+    <updated>2015-11-05T02:28:07.000Z</updated>
+    <content type="html"><![CDATA[<p>$ git branch —help        # 查看关于git branch帮助</p>
+<p>[查看分支]</p>
+<pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
+<span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
+<span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
+</code></pre><p>[创建\切换\重命名分支]</p>
+<pre><code>$ git branch <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建dev分支(继承当前分支来创建)</span>
+$ git checkout <span class="variable">&lt;dev&gt;</span>     <span class="comment"># 切换分支到dev(分支dev需已存在)</span>
+$ git checkout -b <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建分支dev并切换到该分支(前提dev分支不存在)</span>
+$ git checkout -b <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支dev并切换到该分支，继承master分支创建而来</span>
+$ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名dev分支为test</span>
+</code></pre><p>[删除分支]</p>
+<pre><code><span class="comment"># 删除本地分支[dev]</span>
+<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;dev&gt;
+    -d         <span class="comment"># 删除[delete]本地dev分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地dev分支（多个分支用空格分隔）</span>
+
+<span class="comment"># 删除远程分支[dev]</span>
+<span class="variable">$ </span>git branch -d -r &lt;origin/dev&gt;     <span class="comment"># 删除远程分支dev</span>
+<span class="variable">$ </span>git push origin <span class="symbol">:&lt;dev&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push origin --delete &lt;dev&gt;     <span class="comment"># [since Git v1.7.0]</span>
+</code></pre><p>[合并分支]</p>
+<pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
+<span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
+<span class="variable">$ </span>git merge &lt;dev&gt;     <span class="comment"># 合并dev分支到当前分支,发生冲突修复后再次提交</span>
+</code></pre><p>[关联分支]</p>
+<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;origin/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支origin/<span class="built_in">dev</span>关联<span class="number">1</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>$ git branch —help        # 查看关于git branch帮助</p>
+<p>[查看分支]</p>
+<pre><code><span class="variable">$ </span>git branch     <span class="com]]>
+    </summary>
+    
+      <category term="branch" scheme="http://effine.cn/tags/branch/"/>
+    
+      <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Linux设置Java环境变量]]></title>
@@ -1192,120 +1278,6 @@ $ make     <span class="comment">#编译</span>
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="redis" scheme="http://effine.cn/categories/redis/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[centos 网络配置]]></title>
-    <link href="http://effine.cn/2015/01/29/CentosNetworkConfig/"/>
-    <id>http://effine.cn/2015/01/29/CentosNetworkConfig/</id>
-    <published>2015-01-29T15:37:34.000Z</published>
-    <updated>2015-06-23T15:23:34.000Z</updated>
-    <content type="html"><![CDATA[<p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
-<p>怎么检测是否可用联网？使用 <code>ping www.baidu.com</code>命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主机等提示之类的提示说明无法联网，则开始配置 centos 的网络配置文件 <code>/etc/sysconfig/network-scripts/ifcfg-eth*</code>; <code>ifcfg-eth*</code>文件的数量表示你机器网卡的数量，如只有一块网卡则在目录 <code>/etc/sysconfig/network-scripts/</code> 下只会存在一个ifcfg-eth*文件（那就是ifcfg-eth0）,文件结构（参数配置）如下：</p>
-<pre><code><span class="constant">DEVICE</span>=<span class="string">"eth0"</span>                  <span class="comment">//指出设备名称</span>
-<span class="constant">BOOTPROTO</span>=<span class="string">"dhcp"</span>              <span class="comment">//启动类型 dhcp</span>
-<span class="constant">HWADDR</span>=<span class="string">"00:0C:29:35:A2:A8"</span>      <span class="comment">//硬件Mac地址</span>
-<span class="constant">IPV6INIT</span>=<span class="string">"yes"</span>                  <span class="comment">//是否支持IPV6</span>
-<span class="constant">NM_CONTROLLED</span>=<span class="string">"yes"</span>              <span class="comment">//network manger参数，修改实时生效无需重启网卡</span>
-<span class="constant">ONBOOT</span>=<span class="string">"yes"</span>                   <span class="comment">//是否启动应用</span>
-<span class="constant">TYPE</span>=<span class="string">"Ethernet"</span>                  <span class="comment">//网络类型</span>
-<span class="constant">UUID</span>=<span class="string">"733r86e3-a47e-4471-a83f-1ef4def437bb"</span>
-</code></pre><p>然后保存并退出， 重启网络服务：<code>service network restart</code>即可;我无法联网的问题是参数ONBOOT=”no”的原因造成。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
-<p>怎么检测是否可用联网？使用 <co]]>
-    </summary>
-    
-      <category term="centos" scheme="http://effine.cn/tags/centos/"/>
-    
-      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[vi commands]]></title>
-    <link href="http://effine.cn/2015/01/10/ViEditorCommands/"/>
-    <id>http://effine.cn/2015/01/10/ViEditorCommands/</id>
-    <published>2015-01-10T14:36:25.000Z</published>
-    <updated>2015-06-23T15:23:46.000Z</updated>
-    <content type="html"><![CDATA[<p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
-<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>
-<a id="more"></a>
-<ol>
-<li><p>命令模式(一般模式): 用户处于任何模式，都可以按 ESC 键进入命令模式；我们使用 “vi” 命令启动编辑器也是进入命令模式；该模式作为编辑模式与末行模式互相切换的桥梁,编辑模式与末行模式不能直接互相切换；该模式主要使用方向键位置进行文字的编辑，常用命令：</p>
-<p> </p><p> - - 移动光标 - -</p>
-<ul>
-<li>↑↓← → —上下左右方向键移动光标</li>
-<li>pagedown/pageup — 翻页上一页/下一页</li>
-<li>0(数字0)/$ — 光标移至所在行 行首/行尾</li>
-<li>G/nG/gg — 移动光标至文件最后一行/n行/第一行(相当于1G)行首</li>
-<li>H/M/L — 光标移至屏幕内容顶部/中央/尾部</li>
-<li><p>:lineNo — 光标跳转到指定行号（lineNo）行首</p>
-<p></p><p> - - 删除/复制/粘贴 - -</p>
-</li>
-<li>x/X — x为光标向后删除一个字符（相当于del键），X为光标向前删除一个字符（相当于Backspace键）</li>
-<li>dd/ndd — 删除光标所在行 / 从光标行开始，向下删除n行</li>
-<li>yy/nyy — 复制光标所在的那一行 / 复制光标所在行的向下n行</li>
-<li>p/P（大写） — 粘贴复制的内容到光标所在行的下一行 / 上一行</li>
-<li>u — 复原前一个操作、</li>
-<li>ctrl + r — 重做上一个操作</li>
-<li>小数点”.” — 重复前一个动作</li>
-</ul>
-</li>
-<li><p>编辑模式(文本输入模式): 该模式是对文件进行编辑操作，进入该模式命令窗口底部显示”— INSERT —“标志; 命令模式切换到编辑模式方式：</p>
-<p> </p><p> - - 进入编辑模式并进行相应操作 - -</p>
-<ul>
-<li>i/I(insert) — 输入即在光标 所在位置之前 / 在当前所在行的一个非空格符处开始插入插入</li>
-<li>a/A(append) — 输入即在光标 所在位置之后 / 所在行行尾追加</li>
-<li>o/O(open) — 光标所在行前 / 后插入一新行</li>
-<li>r/R(replace) — 替换光标所在的那一个字符 / 会一直替换光标所在的字符,直到按下esc 键为止</li>
-</ul>
-</li>
-<li><p>末行模式(指令列命令模式): 即可将光标移动到最下面一行，在该模式下，您可以搜索数据，而且读取，存盘，大量删除字符，离开vi，显示行号等操作</p>
-<p> </p><p> - - 保存/退出vi - -</p>
-<ul>
-<li>:w — 保存文件但不退出vi编辑器</li>
-<li>:w filename — 将修改的文件另存为filename,不退出vi</li>
-<li>:w! — 强制保存，不退出vi</li>
-<li>:q — 退出vi,不保存修改</li>
-<li>:q! — 强制退出vi,不保存修改</li>
-<li>:wq — 保存并退出vi </li>
-<li>:wq! — 强制保存并退出vi</li>
-<li>ZZ — 保存并退出</li>
-<li>:e! — 放弃所有修改，从上次保存文件处开始再次编辑</li>
-<li><p>:set nu/nonu — 让vi编辑器显示 / 隐藏行号</p>
-<p></p><p> - - 搜索与特换 - -</p>
-</li>
-<li>/keyword — 从光标开始，向下搜索关键字keyword字符串<ul>
-<li>按’n’向下定位下一处匹配的关键字</li>
-<li>按”N”向上定位下一处匹配的关键字</li>
-</ul>
-</li>
-<li>?keyword — 从光标开始，向上搜索关键字</li>
-<li>:n1,n2s/word1/word2/g — n1与n2为数字.在第n1与n2行之间寻找word1这个字符串,并将该字符串替换为word2<ul>
-<li>eg: “:1、$s/word1/word2/g”,从第一行到最后一行寻找word1字符串，并将该字符串替换为word2</li>
-<li>eg: “:1、$s/word1/word2/gc”,从第一行到最后一行寻找word1字符串，并将该字符串替换为word2。并且在替换之前显示提示符给用户确认（conform）是否需要替换</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
-<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>]]>
-    
-    </summary>
-    
-      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
-    
-      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
     
   </entry>
   
