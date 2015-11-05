@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-05T06:52:27.000Z</updated>
+  <updated>2015-11-05T06:58:29.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Git标签]]></title>
+    <title><![CDATA[Git 标签]]></title>
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2015-11-05T06:52:27.000Z</updated>
+    <updated>2015-11-05T06:58:29.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git tag --help     <span class="comment"># 查看帮助</span>
 </code></pre><p>[查看标签]</p>
 <pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标签列表[list]</span>
@@ -53,11 +53,11 @@ $ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="c
   </entry>
   
   <entry>
-    <title><![CDATA[Git分支]]></title>
+    <title><![CDATA[Git 分支]]></title>
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2015-11-05T06:52:27.000Z</updated>
+    <updated>2015-11-05T06:58:29.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
 </code></pre><p>[查看分支]</p>
 <pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
