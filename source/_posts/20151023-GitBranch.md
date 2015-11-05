@@ -5,9 +5,7 @@ tags:
 categories: git
 date: 2015-10-23 22:35:35
 ---
-
-
-$ git branch --help		# 查看关于git branch帮助
+	$ git branch --help		# 查看关于git branch帮助
 
 [查看分支]
 
