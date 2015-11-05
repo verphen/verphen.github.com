@@ -35,6 +35,7 @@ date: 2015-07-07 09:27:14
     ctrl + t 	# 查看定位方法的继承树
     ctrl + 鼠标右键点击(变量或方法) 	# 进入其定义或实现
     ctrl + l 	# 跳转到指定行号的行
+    ctrl + m    # 焦点(编辑区/导航树...)区全屏切换
     
     alt + / 	# 显示提示信息
     alt + 左右方向键 	# 后退/前进"ctrl+鼠标右键点击"的跳转流程或操作位置
@@ -51,9 +52,10 @@ date: 2015-07-07 09:27:14
 
 调试模式的快捷方式：
 	
-    ctrl + shift + i 	# 显示复制的代码执行的值
+    ctrl + shift + i 	# 显示被选中代码执行的值
 
 skill:
 
+    - 输入"main"然后按 alt + / , 则输出 " public static void main(String[] args) {} "
     - 输入"syso"然后按 alt + / , 则输出 " System.out.println(); "
     - 输入"syse"然后按 alt + / , 则输出 " System.err.println(); "
