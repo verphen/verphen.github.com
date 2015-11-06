@@ -13,6 +13,7 @@ date: 2015-10-23 22:35:35
 	$ git branch 	# 查看本地分支（星号*标注为当前分支）
 	$ git branch -r 	# 查看所有远程[remote]分支
 	$ git branch -a 	# 查看所有[all]本地及远程分支
+	$ git branch -v 	# 查看各个分支最后的提交
 
 [创建\切换\重命名分支]
 
@@ -39,7 +40,7 @@ date: 2015-10-23 22:35:35
 	$ git branch --merged 	# 查看已合并的分支列表
 	$ git branch --no-merged	# 查看未合并的分支列表
 	$ git merge <dev> 	# 合并dev分支到当前分支,发生冲突修复后再次提交
-
+	
 [关联分支]
 
 	$ git branch --set-upstream <dev> <origin/dev>	# 设置本地分支dev与远程分支origin/dev关联1
