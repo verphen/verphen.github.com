@@ -120,6 +120,7 @@
 <pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
 <span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
 <span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
+<span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
 <pre><code>$ git branch <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建dev分支(继承当前分支来创建)</span>
 $ git checkout <span class="variable">&lt;dev&gt;</span>     <span class="comment"># 切换分支到dev(分支dev需已存在)</span>
@@ -133,15 +134,15 @@ $ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable"
     -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地dev分支（多个分支用空格分隔）</span>
 
 <span class="comment"># 删除远程分支[dev]</span>
-<span class="variable">$ </span>git branch -d -r &lt;origin/dev&gt;     <span class="comment"># 删除远程分支dev</span>
-<span class="variable">$ </span>git push origin <span class="symbol">:&lt;dev&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push origin --delete &lt;dev&gt;     <span class="comment"># [since Git v1.7.0]</span>
+<span class="variable">$ </span>git branch -d -r &lt;remote_name/dev&gt;     <span class="comment"># 删除远程分支dev</span>
+<span class="variable">$ </span>git push remote_name <span class="symbol">:&lt;dev&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push remote_name --delete &lt;dev&gt;     <span class="comment"># [since Git v1.7.0]</span>
 </code></pre><p>[合并分支]</p>
 <pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
 <span class="variable">$ </span>git merge &lt;dev&gt;     <span class="comment"># 合并dev分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
-<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;origin/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支origin/<span class="built_in">dev</span>关联<span class="number">1</span>
+<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;remote_name/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支remote_name/<span class="built_in">dev</span>关联
 </code></pre>
       
     </div>

@@ -120,18 +120,18 @@
 <pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标签列表[list]</span>
 <span class="variable">$ </span>git show &lt;tag-name&gt;     <span class="comment"># 查看标签tag-name信息</span>
 </code></pre><p>[创建/切换标签]</p>
-<pre><code>$ git <span class="keyword">tag</span> <span class="variable">&lt;v1.0&gt;</span>     <span class="comment"># 创建标签v1.0</span>
+<pre><code>$ git <span class="keyword">tag</span> <span class="variable">&lt;v1.0&gt;</span>     <span class="comment"># 创建轻量级标签v1.0</span>
 $ git <span class="keyword">tag</span> <span class="variable">&lt;tag-name&gt;</span> <span class="variable">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>
 $ git <span class="keyword">tag</span> [-a] <span class="variable">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>
 
 $ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span>
 </code></pre><p>[删除标签]</p>
 <pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span>
-<span class="variable">$ </span>git push origin  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
+<span class="variable">$ </span>git push remote_name  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
 </code></pre><p>[获取/推送远程标签]</p>
-<pre><code><span class="variable">$ </span>git pull [origin] --tags     <span class="comment"># 获取远程所有标签(origin可选)</span>
-<span class="variable">$ </span>git push [origin] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
-<span class="variable">$ </span>git push [origin] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
+<pre><code><span class="variable">$ </span>git pull [remote_name] --tags     <span class="comment"># 获取远程所有标签(remote_name可选)</span>
+<span class="variable">$ </span>git push [remote_name] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
+<span class="variable">$ </span>git push [remote_name] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
 </code></pre>
       
     </div>
