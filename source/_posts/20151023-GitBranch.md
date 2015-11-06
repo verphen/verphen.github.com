@@ -31,16 +31,16 @@ date: 2015-10-23 22:35:35
 		-D 		# 忽略修改强制删除本地dev分支（多个分支用空格分隔）
 
 	# 删除远程分支[dev]
-	$ git branch -d -r <origin/dev> 	# 删除远程分支dev
-	$ git push origin :<dev> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
-	$ git push origin --delete <dev> 	# [since Git v1.7.0]
+	$ git branch -d -r <remote_name/dev> 	# 删除远程分支dev
+	$ git push remote_name :<dev> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
+	$ git push remote_name --delete <dev> 	# [since Git v1.7.0]
 
 [合并分支]
 
 	$ git branch --merged 	# 查看已合并的分支列表
 	$ git branch --no-merged	# 查看未合并的分支列表
 	$ git merge <dev> 	# 合并dev分支到当前分支,发生冲突修复后再次提交
-	
+
 [关联分支]
 
-	$ git branch --set-upstream <dev> <origin/dev>	# 设置本地分支dev与远程分支origin/dev关联1
+	$ git branch --set-upstream <dev> <remote_name/dev>	# 设置本地分支dev与远程分支remote_name/dev关联
