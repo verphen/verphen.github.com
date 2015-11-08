@@ -57,7 +57,7 @@ $ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="c
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2015-11-07T14:01:01.000Z</updated>
+    <updated>2015-11-08T14:05:46.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
 </code></pre><p>[查看分支]</p>
 <pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
@@ -85,7 +85,7 @@ $ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable"
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
 <span class="variable">$ </span>git merge &lt;dev&gt;     <span class="comment"># 合并dev分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
-<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;remote_name/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支remote_name/<span class="built_in">dev</span>关联 
+<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;remote_name/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支remote_name/<span class="built_in">dev</span>关联
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
