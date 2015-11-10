@@ -12,14 +12,16 @@ tags: [tools,hexo]
 <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png" alt="hexo help" />
 
 	$ hexo init 	# Create a new Hexo folder(初始化一个Hexo文件夹)
-	$ hexo new "article name"(hexo n "article name"): Create a new post；(新建post文章)
-	$ hexo generate(hexo g)		# 生成博客静态文件
+	$ hexo n[new] "finame" 	# Create a new post(新建post文章filename)
+	$ hexo n[new] draft "filename"  	# 创建一个草稿文章
+	$ hexo g[generate]		# 生成博客静态文件
+	$ hexo p[publish] <filename>	#  发布草稿文章
 	$ hexo draft 	# Publish a draft(发布草稿)
-	$ hexo server(hexo s): (启动本地服务进行文章预览（默认预览地址 localhost:4000）)
-	$ hexo deploy(hexo d): Deploy your website; (部署,如部署至github)
-	$ hexo d -g; (组合命令：生成本地静态文件并部署)
-	$ hexo clean: Remove generated files and the cache;(删除已生成的静态文件和缓存)
-	$ hexo config: List the current configuration；(查看当前所有的配置信息列表)
+	$ hexo s[server] 		# 启动本地服务进行文章预览（localhost:4000)
+	$ hexo d[deploy] 		# Deploy your website (部署)
+	$ hexo d -g 		# 组合命令: 生成本地静态文件并部署
+	$ hexo clean 		# Remove generated files and the cache(删除已生成的静态文件和缓存)
+	$ hexo config 		# List the current configuration(查看当前所有的配置信息列表)
 	$ hexo list:　List the information of the site；　(你站点的信息列表)
 	$ hexo migrate: Migrate your site from other system to Hexo;(将你的站点从其他系统迁移至hexo)
 	$ hexo render: Render the files with Markdown or other engines(使用Markdown或其他引擎渲染文件)
