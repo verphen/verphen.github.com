@@ -1,10 +1,11 @@
 title: Git Config
-date: 2015-11-10 18:17:52
-categories: git
 tags:
   - config
   - git
+categories: git
+date: 2015-11-10 18:17:52
 ---
+
 
 Git配置存在适用范围：
 
