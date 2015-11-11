@@ -24,7 +24,7 @@
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css" type="text/css">
   
 <script type="text/javascript">
@@ -170,8 +170,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>vi编辑器在Linux下使用频率不言而喻，接下来简单叙述。Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
-<p>vi filename — 使用vi编辑器对文件filename进行编辑,Enter进入命令模式（所有的命令必须在英文状态输入才有效）</p>
+        <p>Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；</p>
+<pre><code><span class="variable">$ </span>vi filename        <span class="comment"># 打开或新建文件，并将光标置于首行行首</span>
+<span class="variable">$ </span>vi +n filename     <span class="comment"># 点开文件,置光标与文件第n行行首</span>
+<span class="variable">$ </span>vi + filename     <span class="comment"># 打开文件，置光标于文件尾行行首</span>
+<span class="variable">$ </span>vi -r filename    <span class="comment"># 在上次正用vi编辑时发生系统崩溃，恢复filename</span>
+<span class="variable">$ </span>vi +<span class="regexp">/pattern filename        # 打开文件光标置于第一个与pattern匹配行行首</span>
+</code></pre>
         
           <p class="article-more-link">
             <a href="/2015/01/10/ViEditorCommands/#more">阅读全文</a>
