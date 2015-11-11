@@ -147,9 +147,9 @@
 
 
   
-    <article id="post-GitignoreConfig" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-GitIgnore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2014/10/30/GitignoreConfig/" class="article-date">
+    <a href="/2014/10/30/GitIgnore/" class="article-date">
   <time datetime="2014-10-29T23:35:22.000Z" itemprop="datePublished">10月 30 2014</time>
 </a>
     
@@ -165,7 +165,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2014/10/30/GitignoreConfig/">gitignore配置</a>
+      <a class="article-title" href="/2014/10/30/GitIgnore/">gitignore 配置</a>
     </h1>
   
 
@@ -173,40 +173,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Git管理项目，将某些文件或目录不纳入git的管理，则需要配置忽略文件 <code>.gitignore</code>，在项目根目录下创建该文件:</p>
-<pre><code><span class="comment"># 创建然后编辑文件</span>
-<span class="variable">$ </span>touch .gitignore
-<span class="variable">$ </span>vi .gitignore
-<span class="keyword">or</span>
-<span class="comment"># 直接创建并且编辑</span>
-<span class="variable">$ </span>vi .gitignore
-</code></pre><p>配置忽略文件规则：</p>
-<pre><code>空行不匹配任何内容
-<span class="comment"># 表示该行为注释行</span>
-/ 表示目录
-\ 转义字符(<span class="string">"\!"</span>意为匹配<span class="string">"!"</span>)
-<span class="keyword">*</span> 表示通配符
-? 表示匹配单个字符
-! 表示忽略该文件或目录
+        <p>使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 <code>.gitignore</code></p>
+<pre><code><span class="variable">$ </span>vi .gitignore   <span class="comment"># 直接创建并且编辑（如存在直接编辑）</span>
+</code></pre><p>文件配置忽略规则：</p>
+<pre><code>&gt;  空行不匹配任何内容
+&gt;  井号[#]表示该行为注释行
+&gt;  顺斜杠[/]表示目录
+&gt;  反斜杠[\]表示转义字符(<span class="string">"\!"</span>意为匹配<span class="string">"!"</span>)
+&gt;  星号[*]表示通配符
+&gt;  问号[?]表示匹配单个字符
+&gt;  感叹号[!]表示忽略指定模式以外的文件或目录(表示匹配的模式取反)
 </code></pre><p>skills</p>
 <ul>
 <li><p>通常一条忽略规则或注释单独一行; 忽略规则行尾不允许在使用注释语句</p>
 </li>
-<li><p>git对忽略文件是从上到下进行匹配；如前面的规则范围较大，则后面的规则将不生效</p>
+<li><p>Git对忽略文件是从上到下进行匹配；如前面的规则范围较大，则后面的规则将不生效</p>
 </li>
-<li><p>忽略规则只对未加入git管理的文件生效;若需要忽略文件已经加入git管理，需要先使用 <code>git rm [-r]  - -cached filename</code> 将文件移除git的管理；参数[-r]表示递归移除目录下的文件和目录，filename表示待忽略的完整文件名（目录）</p>
+<li><p>忽略规则只对未加入git管理的文件生效;若需要忽略文件已经加入git管理，需要先使用 <code>git rm [-r]  --cached &lt;filename&gt;</code> 将文件[或目录]移除git的管理；</p>
 </li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/10/30/GitignoreConfig/" data-id="cigulvjgx004ao82ezchackfd" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/10/30/GitIgnore/" data-id="cigumua720000rg2eluue6ulz" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2014/10/30/GitignoreConfig/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/10/30/GitIgnore/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ignore/">ignore</a></li></ul>
 
     </footer>
   </div>
@@ -381,7 +376,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.44px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 12.22px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.67px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 15px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 12.5px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 11.25px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.25px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

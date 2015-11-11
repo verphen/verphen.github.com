@@ -3,17 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: centos | effine</title>
+  <title>gitignore 配置 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/tags/centos/index.html">
+  <meta name="description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitignore 配置">
+<meta property="og:url" content="http://effine.cn/2014/10/30/GitIgnore/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description">
+<meta property="og:description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
+<meta property="og:updated_time" content="2015-11-11T09:56:51.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description">
+<meta name="twitter:title" content="gitignore 配置">
+<meta name="twitter:description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
 <meta name="twitter:creator" content="@verphen">
 <link rel="publisher" href="verphen">
 <meta property="fb:admins" content="verphen">
@@ -87,16 +106,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-CentosNetworkConfig" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitIgnore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/01/29/CentosNetworkConfig/" class="article-date">
-  <time datetime="2015-01-29T15:37:34.000Z" itemprop="datePublished">1月 29 2015</time>
+    <a href="/2014/10/30/GitIgnore/" class="article-date">
+  <time datetime="2014-10-29T23:35:22.000Z" itemprop="datePublished">10月 30 2014</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
+    <a class="article-category-link" href="/categories/tools/">tools</a>
   </div>
 
   </div>
@@ -106,8 +123,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/29/CentosNetworkConfig/">centos 网络配置</a>
+    <h1 class="article-title" itemprop="name">
+      gitignore 配置
     </h1>
   
 
@@ -115,36 +132,89 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
-<p>怎么检测是否可用联网？使用 <code>ping www.baidu.com</code>命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主机等提示之类的提示说明无法联网，则开始配置 centos 的网络配置文件 <code>/etc/sysconfig/network-scripts/ifcfg-eth*</code>; <code>ifcfg-eth*</code>文件的数量表示你机器网卡的数量，如只有一块网卡则在目录 <code>/etc/sysconfig/network-scripts/</code> 下只会存在一个ifcfg-eth*文件（那就是ifcfg-eth0）,文件结构（参数配置）如下：</p>
-<pre><code><span class="constant">DEVICE</span>=<span class="string">"eth0"</span>                  <span class="comment">//指出设备名称</span>
-<span class="constant">BOOTPROTO</span>=<span class="string">"dhcp"</span>              <span class="comment">//启动类型 dhcp</span>
-<span class="constant">HWADDR</span>=<span class="string">"00:0C:29:35:A2:A8"</span>      <span class="comment">//硬件Mac地址</span>
-<span class="constant">IPV6INIT</span>=<span class="string">"yes"</span>                  <span class="comment">//是否支持IPV6</span>
-<span class="constant">NM_CONTROLLED</span>=<span class="string">"yes"</span>              <span class="comment">//network manger参数，修改实时生效无需重启网卡</span>
-<span class="constant">ONBOOT</span>=<span class="string">"yes"</span>                   <span class="comment">//是否启动应用</span>
-<span class="constant">TYPE</span>=<span class="string">"Ethernet"</span>                  <span class="comment">//网络类型</span>
-<span class="constant">UUID</span>=<span class="string">"733r86e3-a47e-4471-a83f-1ef4def437bb"</span>
-</code></pre><p>然后保存并退出， 重启网络服务：<code>service network restart</code>即可;我无法联网的问题是参数ONBOOT=”no”的原因造成。</p>
+        <p>使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 <code>.gitignore</code></p>
+<pre><code><span class="variable">$ </span>vi .gitignore   <span class="comment"># 直接创建并且编辑（如存在直接编辑）</span>
+</code></pre><p>文件配置忽略规则：</p>
+<pre><code>&gt;  空行不匹配任何内容
+&gt;  井号[#]表示该行为注释行
+&gt;  顺斜杠[/]表示目录
+&gt;  反斜杠[\]表示转义字符(<span class="string">"\!"</span>意为匹配<span class="string">"!"</span>)
+&gt;  星号[*]表示通配符
+&gt;  问号[?]表示匹配单个字符
+&gt;  感叹号[!]表示忽略指定模式以外的文件或目录(表示匹配的模式取反)
+</code></pre><p>skills</p>
+<ul>
+<li><p>通常一条忽略规则或注释单独一行; 忽略规则行尾不允许在使用注释语句</p>
+</li>
+<li><p>Git对忽略文件是从上到下进行匹配；如前面的规则范围较大，则后面的规则将不生效</p>
+</li>
+<li><p>忽略规则只对未加入git管理的文件生效;若需要忽略文件已经加入git管理，需要先使用 <code>git rm [-r]  --cached &lt;filename&gt;</code> 将文件[或目录]移除git的管理；</p>
+</li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/01/29/CentosNetworkConfig/" data-id="cigulvjga003fo82ei3o4839l" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/10/30/GitIgnore/" data-id="cigumua720000rg2eluue6ulz" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2015/01/29/CentosNetworkConfig/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/10/30/GitIgnore/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ignore/">ignore</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+    <a href="/2014/10/30/GitCommands/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git Commands
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/11/HexoBlogConfig[1]/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo Blog Config[1]</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+
+  <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="2014/10/30/GitIgnore/" data-title="gitignore 配置" data-url="http://effine.cn/2014/10/30/GitIgnore/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"verphen"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
 </section>
         
       </div>
