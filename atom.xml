@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-09T14:55:38.000Z</updated>
+  <updated>2015-11-11T09:27:36.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,63 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Git Config]]></title>
+    <link href="http://effine.cn/2015/11/10/GitConfig/"/>
+    <id>http://effine.cn/2015/11/10/GitConfig/</id>
+    <published>2015-11-10T10:17:52.000Z</published>
+    <updated>2015-11-11T09:27:36.000Z</updated>
+    <content type="html"><![CDATA[<p>Git配置存在适用范围：</p>
+<ul>
+<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： git config —global      # 保存在用户根目录.gitconfig文件</li>
+</ul>
+<p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
+<pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
+<span class="variable">$ </span>git config --list    [| grep command]
+<span class="variable">$ </span>git config -l [| grep command]
+
+<span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span>
+<span class="variable">$ </span>git config --global user.email <span class="string">"email"</span>     <span class="comment"># 设置全局邮箱(提交历史可见)</span>
+<span class="variable">$ </span>git config --global color.ui &lt;<span class="keyword">true</span>|<span class="keyword">false</span>&gt;   <span class="comment"># Git会显示适当地颜色[打开|关闭]     </span>
+
+<span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span>
+<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;     <span class="comment"># 使用别名aliasname代替command</span>
+<span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>
+    &gt; status [st]
+    &gt; commit [ci]
+    &gt; checkout [co]
+    &gt; branch [br]
+    &gt; diff [df]
+<span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>
+    [<span class="keyword">alias</span>]  
+      st = status  
+      ci = commit  
+      br = branch  
+      co = checkout  
+      df = diff 
+
+<span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span>
+<span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; 
+
+<span class="variable">$ </span>git config  --global --unset-all core.ignorecase    <span class="comment"># 取消所有关于是否忽略Git大小写的设置</span>
+<span class="variable">$ </span>git config  --global --system core.ignorecase &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt;   <span class="comment"># 设置Git是否忽略大小写</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>Git配置存在适用范围：</p>
+<ul>
+<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： git config —global      # 保存在用户根目录.gitconfig文件</]]>
+    </summary>
+    
+      <category term="config" scheme="http://effine.cn/tags/config/"/>
+    
+      <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Git 标签]]></title>
@@ -1221,71 +1278,6 @@ instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtp
       <category term="总结" scheme="http://effine.cn/tags/%E6%80%BB%E7%BB%93/"/>
     
       <category term="essays" scheme="http://effine.cn/categories/essays/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[redis install]]></title>
-    <link href="http://effine.cn/2015/01/31/RedisInstall/"/>
-    <id>http://effine.cn/2015/01/31/RedisInstall/</id>
-    <published>2015-01-31T15:43:02.000Z</published>
-    <updated>2015-06-23T15:22:36.000Z</updated>
-    <content type="html"><![CDATA[<p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
-<ul>
-<li><p>redis下载、解压、编译源码</p>
-<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
-$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
-$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
-$ make     <span class="comment">#编译</span>
-</code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
-<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
-<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
-<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
-</code></pre></li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>启动redis服务</p>
-<pre><code>$ src/redis-<span class="keyword">server</span>    <span class="preprocessor">#前台启动redis服务</span>
-</code></pre><p>  如需后台(以daemon守护进程启动)运行redis-server需修改redis.conf下的”daemonize no” 为 “daemonize yes”</p>
-<p>  简单尝试redis,另起窗口进入redis-2.8.19,打开redis客户端</p>
-<pre><code><span class="variable">$ </span>src/redis-cli    <span class="comment">#redis内置客户端</span>
-<span class="prompt">127.0.0.1:6379&gt;</span> set foo bar    <span class="comment"># 设值：key(foo)-value(bar)</span>
-    <span class="constant">OK</span>
-<span class="prompt">127.0.0.1:6379&gt;</span> get foo    <span class="comment">#取值：key(foo)</span>
-<span class="string">"bar"</span>
-</code></pre></li>
-<li><p>总结</p>
-<p>  如需要将redis的相关命令设置成全局（相当于windows将命令进入环境变量）执行如下命令</p>
-<pre><code>$ make <span class="operator"><span class="keyword">install</span> #将redis-<span class="number">2.8</span>.19/src目录下的redis-*等相关命令复制到/usr/<span class="keyword">local</span>/<span class="keyword">bin</span></span>
-</code></pre><p>  linux执行多条命令小技巧： 多条命令之间可以使用 “&amp;&amp;” 连接, 如 “ make &amp;&amp; make install “;</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
-<ul>
-<li><p>redis下载、解压、编译源码</p>
-<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
-$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
-$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
-$ make     <span class="comment">#编译</span>
-</code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
-<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
-<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
-<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
-</code></pre></li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="database" scheme="http://effine.cn/tags/database/"/>
-    
-      <category term="redis" scheme="http://effine.cn/tags/redis/"/>
-    
-      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
-    
-      <category term="redis" scheme="http://effine.cn/categories/redis/"/>
     
   </entry>
   
