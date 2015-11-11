@@ -6,7 +6,7 @@ comments: false
 项目按时间倒叙存放，欢迎浏览.
 
 - [云路科技 - 微信/支付宝支付]
-	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/yunlu/verifycode.png" alt="微信/支付宝支付" style="padding:2px;background: #ececec;"/>
+	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/yunlu/yunlupay.png" alt="微信/支付宝支付" style="padding:2px;background: #ececec;"/>
 
 - [云路科技 - 改版/学习方案]
 	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/yunlu/reversion.png" alt="改版/学习方案" style="padding:2px;background: #ececec;"/>
