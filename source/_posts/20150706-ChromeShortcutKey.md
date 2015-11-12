@@ -24,6 +24,7 @@ date: 2015-07-06 09:58:09
 常用快捷键：
     
     ctrl + c    # 复制选中内容
+    ctrl + shift + c    # 打开审查元素(页面右键"审查元素"),常用于web调试 
     ctrl + x    # 剪切选中内容（同 shift + delete）
     ctrl + v    # 粘贴剪贴板内容
     ctrl + shift + v    # 粘贴剪贴板存文本（不含样式）
