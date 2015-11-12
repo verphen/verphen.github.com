@@ -1,6 +1,5 @@
 title: opus
 date: 2014-09-12 08:33:35
-comments: false
 ---
 
 项目按时间倒叙存放，欢迎浏览.
