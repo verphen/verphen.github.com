@@ -89,6 +89,84 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaAdapterPattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/07/JavaAdapterPattern/" class="article-date">
+  <time datetime="2014-04-07T15:00:06.000Z" itemprop="datePublished">4月 7 2014</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/07/JavaAdapterPattern/">JAVA适配器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。</p>
+<p>适配器模式的两种形式：</p>
+<ol>
+<li><p>类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口；<strong>注意，这里讨论的是类的适配器模式，因此目标不可以是类。</strong></p>
+<pre><code>/<span class="keyword">*</span><span class="keyword">*</span>
+ <span class="keyword">*</span> <span class="comment">@author effine</span>
+ <span class="keyword">*</span> <span class="comment">@date 2014年4月7日   下午11:44:58</span>
+ <span class="keyword">*</span>/
+
+package org.effine.adapter;
+
+/<span class="keyword">*</span> 目标角色 <span class="keyword">*</span>/
+public interface Target {
+
+    /<span class="keyword">*</span><span class="keyword">*</span>
+     <span class="keyword">*</span> 这是源类（客户端类）也有的方法method1()
+     <span class="keyword">*</span>/
+    void method1();
+
+    /<span class="keyword">*</span><span class="keyword">*</span>
+     <span class="keyword">*</span> 这是源类（客户端类）没有的方法method2()
+     <span class="keyword">*</span>/
+    void method2();
+}
+</code></pre></li>
+</ul>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2014/04/07/JavaAdapterPattern/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="cih0mfzai005fil2epswf0y3p" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2014/04/07/JavaAdapterPattern/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-TreesetSort" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/03/19/TreesetSort/" class="article-date">
@@ -125,7 +203,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/03/19/TreesetSort/" data-id="cigulvjhk005fo82edh6jugxs" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/03/19/TreesetSort/" data-id="cih0mfzal005kil2e4jtclqyc" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/03/19/TreesetSort/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -171,7 +249,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/03/13/BookKnowAnswerForWater/" data-id="cigulvjho005ko82ez8qhr7qk" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/03/13/BookKnowAnswerForWater/" data-id="cih0mfzaq005pil2emnz2wgj9" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/03/13/BookKnowAnswerForWater/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -219,62 +297,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cigulvjhq005qo82emx93qcge" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cih0mfzaw005vil2emx3tdylw" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/02/27/JavaVirtualMachine/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-BookMeetUnknowMe" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02/27/BookMeetUnknowMe/" class="article-date">
-  <time datetime="2014-02-27T13:00:00.000Z" itemprop="datePublished">2月 27 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/books/">books</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02/27/BookMeetUnknowMe/">阅《遇见未知的自己》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>年前在当当给朋友买了这本张德芬的《遇见未知的自己》，自己翻了些许并送给了她；之后一直以没有时间为由而再次拾起，其实电子版一直存放在磁盘，它就是这样一直呆在那个被遗忘的角落；</p>
-<p>中途其实也试着去打开过，但还是缺少买书时的激情去看完；总觉得没有多大的帮助对人生，其实书中阐述的观点“找寻遗失的真我”我一直都懂，只是不去试着寻找而已，只是以没有时间为由去真正的停下来思考；很多次我也曾想过，到底在追寻什么？毕业找工作—努力工作—挣钱买房结婚，这好像就是被安排好的（当然，是现实让我不得不这样走），我应该以这样的流程走下去；在工作中提升自己、锻炼自己，让自己一步一步走向成熟、走向优秀；</p>
-        
-          <p class="article-more-link">
-            <a href="/2014/02/27/BookMeetUnknowMe/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/BookMeetUnknowMe/" data-id="cigulvjht005uo82efwincs90" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2014/02/27/BookMeetUnknowMe/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/book/">book</a></li></ul>
 
     </footer>
   </div>
@@ -299,7 +327,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">19</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">20</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -309,6 +337,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/11/15/EclipseTasks/">Eclipse Tasks</a>
+          </li>
         
           <li>
             <a href="/2015/11/10/GitConfig/">Git Config</a>
@@ -326,10 +358,6 @@
             <a href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
           </li>
         
-          <li>
-            <a href="/2015/07/15/MavenEncoding/">Maven技巧-字符编码</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -339,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 15px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 12.5px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 11.25px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.25px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.44px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 11.11px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.67px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

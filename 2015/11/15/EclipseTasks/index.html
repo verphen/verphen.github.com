@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: 工具 | effine</title>
+  <title>Eclipse Tasks | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/tags/工具/page/2/index.html">
+  <meta name="description" content="使用Eclipse开发中，难免出现很多此时打标记需要以后来完善的代码，借助eclipse tasks来实现是最好不过了！
+打开tasks面板： window -&amp;gt; show view -&amp;gt; other -&amp;gt; Tasks
+// 以下总结来源于网络
+. FIXME       # 表示注释的代码需要被修正(修复我)
+. TODO        # 尚未完成的待办事项(要做)
+. XX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse Tasks">
+<meta property="og:url" content="http://effine.cn/2015/11/15/EclipseTasks/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description">
+<meta property="og:description" content="使用Eclipse开发中，难免出现很多此时打标记需要以后来完善的代码，借助eclipse tasks来实现是最好不过了！
+打开tasks面板： window -&amp;gt; show view -&amp;gt; other -&amp;gt; Tasks
+// 以下总结来源于网络
+. FIXME       # 表示注释的代码需要被修正(修复我)
+. TODO        # 尚未完成的待办事项(要做)
+. XX">
+<meta property="og:updated_time" content="2015-11-15T14:32:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Eclipse Tasks">
+<meta name="twitter:description" content="使用Eclipse开发中，难免出现很多此时打标记需要以后来完善的代码，借助eclipse tasks来实现是最好不过了！
+打开tasks面板： window -&amp;gt; show view -&amp;gt; other -&amp;gt; Tasks
+// 以下总结来源于网络
+. FIXME       # 表示注释的代码需要被修正(修复我)
+. TODO        # 尚未完成的待办事项(要做)
+. XX">
 <meta name="twitter:creator" content="@verphen">
 <link rel="publisher" href="verphen">
 <meta property="fb:admins" content="verphen">
@@ -87,12 +103,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-GitFileStatus" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-EclipseTasks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2012/12/03/GitFileStatus/" class="article-date">
-  <time datetime="2012-12-03T03:00:34.000Z" itemprop="datePublished">12月 3 2012</time>
+    <a href="/2015/11/15/EclipseTasks/" class="article-date">
+  <time datetime="2015-11-15T14:15:02.000Z" itemprop="datePublished">11月 15 2015</time>
 </a>
     
   <div class="article-category">
@@ -106,8 +120,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/03/GitFileStatus/">Git库文件状态</a>
+    <h1 class="article-title" itemprop="name">
+      Eclipse Tasks
     </h1>
   
 
@@ -115,40 +129,71 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>git库所在的文件夹(即.git所在的文件夹)中的文件的状态：</p>
-<ul>
-<li><p>untracked：未跟踪，此文件在工作目录但并没有加入git库，不参与版本控制。 通过“git add”可将它置入跟踪库。</p>
-</li>
-<li><p>unmodify：文件已经库中，未对文件未修改，即版本库中的文件快照内容与文件夹中文件内容完全一致。这种类型的文件有两个去处，如果它被修改，而成为modified。如果使用”git rm  - -cached filename”移出版本库，则成为untracked文件。</p>
-</li>
-<li><p>modified：文件已修改，仅仅是修改，并没有进行其它操作。这个文件也有两个去处，通过”git add”可进入暂存(staged)状态，使用”git checkout”则丢弃修改，返因到unmodify状态。这个checkout很好理解，就是取出库中文件，覆盖当前文件。</p>
-</li>
-<li><p>staged：暂存状态。执得”git commit”则将修改同步到库中，这时库中的文件与本地文件又一致了，于是文件是unmodify状态。执行”git reset HEAD filenam”(撤销当前提交，返回上一次提交状态)取消暂存，文件状态变为modified.</p>
-</li>
-</ul>
+        <p>使用Eclipse开发中，难免出现很多此时打标记需要以后来完善的代码，借助eclipse tasks来实现是最好不过了！</p>
+<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks</p>
+<p>// 以下总结来源于网络</p>
+<pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
+. TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>
+. XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>
+. 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span>
+
+上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯
+</code></pre><p>当然，你还可以对标识设置优先权(proprity)</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/12/03/GitFileStatus/" data-id="cih0mfzca007jil2egdnpsh77" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/15/EclipseTasks/" data-id="cih0mfz5t0005il2e1oj3drfr" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2012/12/03/GitFileStatus/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/11/15/EclipseTasks/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本管理/">版本管理</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/11/10/GitConfig/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git Config</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/tags/工具/">&laquo; Prev</a><a class="page-number" href="/tags/工具/">1</a><span class="page-number current">2</span>
-    </nav>
-  
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+
+  <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="2015/11/15/EclipseTasks/" data-title="Eclipse Tasks" data-url="http://effine.cn/2015/11/15/EclipseTasks/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"verphen"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
 </section>
         
       </div>
