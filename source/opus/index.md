@@ -4,6 +4,10 @@ date: 2014-09-12 08:33:35
 
 项目按时间倒叙存放，欢迎浏览.
 
+- [云路科技 - Android导师](http://www.yun.lu)
+
+	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/yunlu/tutor.png" alt="Android导师" style="padding:2px;background: #ececec;"/>
+
 - [云路科技 - 改版/学习方案](http://www.yun.lu)
 
 	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/yunlu/reversion.png" alt="改版/学习方案" style="padding:2px;background: #ececec;"/>
