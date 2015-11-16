@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-16T10:07:01.000Z</updated>
+  <updated>2015-11-16T14:11:39.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,11 +15,11 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Hexo 访问统计]]></title>
+    <title><![CDATA[Hexo 博客配置访问统计]]></title>
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
     <published>2015-11-16T09:33:44.000Z</published>
-    <updated>2015-11-16T10:07:01.000Z</updated>
+    <updated>2015-11-16T14:11:39.000Z</updated>
     <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。</p>
 <pre><code><span class="xml"># 以下内容来源网络
 1.编辑文件 themes/landscape/_config.yml,添加一行配置，"#"注释原来的google analytics
