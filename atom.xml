@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-15T14:34:14.000Z</updated>
+  <updated>2015-11-16T10:07:01.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Hexo 访问统计]]></title>
+    <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
+    <id>http://effine.cn/2015/11/16/HexoTongji/</id>
+    <published>2015-11-16T09:33:44.000Z</published>
+    <updated>2015-11-16T10:07:01.000Z</updated>
+    <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。</p>
+<pre><code><span class="xml"># 以下内容来源网络
+1.编辑文件 themes/landscape/_config.yml,添加一行配置，"#"注释原来的google analytics
+
+    baidu_tongji: true      # 百度统计
+
+2.新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下
+
+    </span>&lt;%<span class="ruby"> <span class="keyword">if</span> (theme.baidu_tongji) { </span>%&gt;<span class="xml">
+    # 百度统计代码可能已经包含标签<span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="xml">,视情况而定
+    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="1c">
+        <span class="preprocessor"># 申请的百度统计代码</span>
+    </span></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+    </span>&lt;%<span class="ruby"> } </span>%&gt;<span class="xml">
+
+3.编辑themes/landscape/layout/_partial/footer.ejs 在 <span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"outer"</span>&gt;</span><span class="tag">&lt;/<span class="title">div</span>&gt;</span> 内添加
+
+    </span>&lt;%-<span class="ruby"> partial(<span class="string">"baidu_tongji"</span>) </span>%&gt;<span class="xml">
+
+4.重新生产部署站点即可。</span>
+</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.]]>
+    </summary>
+    
+      <category term="hexo" scheme="http://effine.cn/tags/hexo/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Eclipse Tasks]]></title>
@@ -1210,76 +1248,6 @@ lock <span class="variable">file =</span> /var/run/rsyncd.lock
       <category term="rsync" scheme="http://effine.cn/tags/rsync/"/>
     
       <category term="linux" scheme="http://effine.cn/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[web.xml配置WebAppRootKey]]></title>
-    <link href="http://effine.cn/2015/03/10/WebAppRootKey/"/>
-    <id>http://effine.cn/2015/03/10/WebAppRootKey/</id>
-    <published>2015-03-10T09:47:34.000Z</published>
-    <updated>2015-05-20T16:11:30.000Z</updated>
-    <content type="html"><![CDATA[<p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</web-app></p>
-<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
-<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
-<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
-<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
-</code></pre><a id="more"></a>
-<p>为什么必须进行以上配置？</p>
-<p>Web应用服务器tomcat不会为其下不同的web应用使用独立的系统参数；即就是说，应用服务器tomcat上所有的web应用共用一个系统参数对象（webAppRootKey,默认值为”webapp.root”）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。</p>
-<p>如我本地测试，Tomcat同时运行student、teacher两个web项目，我的配置：</p>
-<pre><code><span class="comment">&lt;!-- 项目student的web.xml配置 --&gt;</span>
-<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.student<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
-
-------------------- 华丽的分割线 --------------------
-
-<span class="comment">&lt;!-- 项目teacher的web.xml配置 --&gt;</span>
-<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.teacher<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span> 
-<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
-</code></pre><p>你可以通过 System.getProperty(“webapp.root”) 动态获取项目运行路径：</p>
-<pre><code>System.getProperty("webapp.student");    //student project    
-运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\student</span><span class="command">\
-</span>
-System.getProperty("webapp.student");    //teacher project
-运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\teacher</span><span class="command">\
-</span>
----------------------------------------------------
- 友情提示： " D:<span class="command">\workspace</span> " 为我eclipse的工作空间
----------------------------------------------------
-</code></pre><p>如果，Tomcat 运行多个web项目不进行webAppRootKey配置（或配置相同的webAppRootKey为webapp.root），将发生如下错误：</p>
-<pre><code>Web app root system property already set to different value: <span class="emphasis">'webapp.root'</span> 
-<span class="header">= [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student\] </span>
-instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher\] 
-<span class="header">- Choose unique values for the 'webAppRootKey' context-param in your web.xml files!  
---------------------------------------------------</span>
-<span class="header"> 友情提示：方便页面展示，以上错误经过合理的换行处理
---------------------------------------------------</span>
-</code></pre><p>错误显示大概就是说： key 为 <code>&quot;webapp.root&quot;</code> 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值; 所以，web应用服务器Tomcat运行多个web应用，必须对webAppRootKey进行相应的配置。</context-param></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</p>
-<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
-<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
-<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
-<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="java" scheme="http://effine.cn/tags/java/"/>
-    
-      <category term="web" scheme="http://effine.cn/tags/web/"/>
-    
-      <category term="java" scheme="http://effine.cn/categories/java/"/>
     
   </entry>
   
