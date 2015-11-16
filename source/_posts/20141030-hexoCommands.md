@@ -9,7 +9,7 @@ tags: [tools,hexo]
 	$ hexo h[help] 		# Get help on a command(获得命令帮助)
 	$ hexo h[help] <command> 	# 获得命令command详细帮助
 
-	<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png" alt="hexo help" />
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png" alt="hexo help" />
 
 <!--more-->
 
