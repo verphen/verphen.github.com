@@ -25,6 +25,7 @@ widgets:
 
 # Miscellaneous
 #google_analytics: verphen
+cnzz_tongji: true		# cnzz统计
 baidu_tongji: true		# 百度统计
 favicon: /imgs/favicon.png	#浏览器头部显示图标
 twitter: verphen
