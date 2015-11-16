@@ -4,17 +4,24 @@
   <% } %>
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> &nbsp;
+      &copy; <%= date(new Date(), 'YYYY') %> <%= config.author || config.title %>
+      
+      &nbsp; | &nbsp;
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
 
+      &nbsp; | &nbsp;
+      资源托管<a href="http://www.qiniu.com/" target="_blank">七牛云存储</a>
+
+      <br/>
       <!-- cnzz tongji analytics -->
       <%- partial("cnzz_tongji") %>
-
+      
+      &nbsp;
       <!-- Baidu tongji analytics -->
       <%- partial("baidu_tongji") %>
 
     </div>
 
-    <div>资源托管@[七牛云存储](http://www.qiniu.com/)</div>
+    <div>
   </div>
 </footer>
