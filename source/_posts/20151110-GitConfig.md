@@ -6,7 +6,6 @@ categories: git
 date: 2015-11-10 18:17:52
 ---
 
-
 Git配置存在适用范围：
 
 -  项目范围： git config      # 保存在项目根目录.git/config文件
@@ -20,7 +19,8 @@ Git配置存在适用范围：
 
 	$ git config --global user.name "username"     # 设置全局用户名(提交历史可见)
     $ git config --global user.email "email"     # 设置全局邮箱(提交历史可见)
-    $ git config --global color.ui <true|false>   # Git会显示适当地颜色[打开|关闭]     
+    $ git config --global color.ui <true|false>   # Git会显示适当地颜色[打开|关闭]$ git config --global core.editor <emacs>       # 设置文本编辑器emacs
+    $ git config --global merge.tool <vimdiff>      # 设置差异分析工具vimdiff
      
     # 设置命令别名；命令别名列举(可自定义其他别名)
 	$ git config --global alias.<aliasname> <command> 	# 使用别名aliasname代替command
