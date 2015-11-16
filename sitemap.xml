@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/opus/index.html</loc>
+    <lastmod>2015-11-16T06:32:43.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2015/11/15/EclipseTasks/</loc>
     <lastmod>2015-11-15T14:34:14.000Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://effine.cn/2015/07/06/ChromeShortcutKey/</loc>
     <lastmod>2015-11-12T14:53:41.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/opus/index.html</loc>
-    <lastmod>2015-11-12T09:05:57.000Z</lastmod>
   </url>
   
   <url>
