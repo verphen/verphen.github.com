@@ -1,4 +1,4 @@
-title: Hexo 访问统计
+title: Hexo 博客配置访问统计
 date: 2015-11-16 17:33:44
 tags: [hexo]
 categories: tools
