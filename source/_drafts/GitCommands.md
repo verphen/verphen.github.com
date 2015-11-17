@@ -18,3 +18,6 @@ categories: git
 克隆本地仓库： git clong /path/repository
 克隆远程仓库： git clone username@hostname:/path/repository
 
+https://github.com/xirong/my-git/blob/master/how-to-use-github.md
+
+http://www.codeceo.com/article/8-git-skills.html
