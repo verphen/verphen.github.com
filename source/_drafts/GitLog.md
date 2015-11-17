@@ -36,12 +36,19 @@ git  log -p [filename] 显示文件提交日志信息和文件修改状态
 
   git log --pretty=oneline: 只显示commit id和提交信息 (查看- - pretty属性值)
 
-git log --graph: 查看分支合并图
+    git log --graph: 查看分支合并图
 
 git log -p master..origin/master     (查看本地分支和远程更新的差异)
 
 
----------------------------   git 日志  ----------------------------------------------------------------
+git log --graph --decorate --pretty=oneline --abbrev-commit
+    –graph 会在各个提交之间打印出线条，这些线条可以展示出分支之间的关系。
+    –decorate 显示出分支处在哪一次提交上。
+    –pretty=oneline 只是在一行中显示 sha1 和 提交的注释(译者将title一词应对到更精确的注释)
+    –abbrev-commit 用开始的7个sha1字符代替整个sha1（他在你的仓库中是唯一的）
+
+
+
 查看提交日志
 git log  # 查看提交信息 
 git log  --pretty=oneline  # 以整洁的单行形式显示提交信息

@@ -85,7 +85,8 @@ git add -p filename 选择内容分步提交
 $ git add <resolved-file>
 $ git rm <resolved-file>
 
-git commit  --amend  -m  "commit message."
+git commit  --amend  -m  "commit message."  -m参数的意义
+
 
  跳过暂存区域进行commit : git commit -a -m "commit info"
 

@@ -16,6 +16,7 @@ git diff --stat     # 仅仅比较统计信息
 
 git diff --cached >XXX.patch     ???
 
+git diff –cached 查看差异 
 
 git diff commit1 commit2 比较两次提交所有文件的变好
 git diff commit1:filepath commit2:filepath   比较某次提交的某个文件的对比

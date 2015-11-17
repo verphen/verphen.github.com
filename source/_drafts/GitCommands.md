@@ -20,4 +20,4 @@ categories: git
 
 https://github.com/xirong/my-git/blob/master/how-to-use-github.md
 
-http://www.codeceo.com/article/8-git-skills.html
+git clone <url> [project_name]      # 从现有仓库中克隆
