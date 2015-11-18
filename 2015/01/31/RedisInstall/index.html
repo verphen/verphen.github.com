@@ -3,30 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>redis install | effine</title>
+  <title>Redis 安装 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="周六闲来没事研究了点新东西 Redis，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
+  <meta name="description" content="周六闲来没事研究了点新东西 Redis(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
 
 redis下载、解压、编译源码
-$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     #下载
-$ tar xzf redis-2.8.19.tar.gz    #解">
+$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     # 下载
+$ tar x">
 <meta property="og:type" content="article">
-<meta property="og:title" content="redis install">
+<meta property="og:title" content="Redis 安装">
 <meta property="og:url" content="http://effine.cn/2015/01/31/RedisInstall/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="周六闲来没事研究了点新东西 Redis，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
+<meta property="og:description" content="周六闲来没事研究了点新东西 Redis(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
 
 redis下载、解压、编译源码
-$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     #下载
-$ tar xzf redis-2.8.19.tar.gz    #解">
-<meta property="og:updated_time" content="2015-06-23T15:22:36.000Z">
+$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     # 下载
+$ tar x">
+<meta property="og:updated_time" content="2015-11-18T03:08:19.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="redis install">
-<meta name="twitter:description" content="周六闲来没事研究了点新东西 Redis，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
+<meta name="twitter:title" content="Redis 安装">
+<meta name="twitter:description" content="周六闲来没事研究了点新东西 Redis(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
 
 redis下载、解压、编译源码
-$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     #下载
-$ tar xzf redis-2.8.19.tar.gz    #解">
+$ wget http://download.redis.io/releases/redis-2.8.19.tar.gz     # 下载
+$ tar x">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -102,7 +102,7 @@ $ tar xzf redis-2.8.19.tar.gz    #解">
         
   
     <h1 class="article-title" itemprop="name">
-      redis install
+      Redis 安装
     </h1>
   
 
@@ -110,29 +110,30 @@ $ tar xzf redis-2.8.19.tar.gz    #解">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
+        <p>周六闲来没事研究了点新东西 <a href="http://redis.io" target="_blank" rel="external">Redis</a>(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
 <ul>
 <li><p>redis下载、解压、编译源码</p>
-<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
-$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
-$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
-$ make     <span class="comment">#编译</span>
+<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment"># 下载</span>
+$ tar xzvf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment"># 解压</span>
+$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment"># 进入redis目录</span>
+$ make     <span class="comment"># 编译</span>
 </code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
-<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
-<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
-<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
+<pre><code><span class="variable">$ </span>yum install gcc <span class="comment"># 安装gcc环境</span>
+<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment"># 验证gcc是否安装成功（是否打印版本信息）</span>
+
+<span class="variable">$ </span>make  <span class="comment"># 再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
 </code></pre></li>
 </ul>
 <a id="more"></a>
 <ul>
 <li><p>启动redis服务</p>
-<pre><code>$ src/redis-<span class="keyword">server</span>    <span class="preprocessor">#前台启动redis服务</span>
+<pre><code>$ src/redis-<span class="keyword">server</span>    <span class="preprocessor"># 前台启动redis服务</span>
 </code></pre><p>  如需后台(以daemon守护进程启动)运行redis-server需修改redis.conf下的”daemonize no” 为 “daemonize yes”</p>
 <p>  简单尝试redis,另起窗口进入redis-2.8.19,打开redis客户端</p>
-<pre><code><span class="variable">$ </span>src/redis-cli    <span class="comment">#redis内置客户端</span>
-<span class="prompt">127.0.0.1:6379&gt;</span> set foo bar    <span class="comment"># 设值：key(foo)-value(bar)</span>
+<pre><code><span class="variable">$ </span>src/redis-cli        <span class="comment"># redis内置客户端</span>
+<span class="prompt">127.0.0.1:6379&gt;</span> set foo bar        <span class="comment"># 设值：key(foo)-value(bar)</span>
     <span class="constant">OK</span>
-<span class="prompt">127.0.0.1:6379&gt;</span> get foo    <span class="comment">#取值：key(foo)</span>
+<span class="prompt">127.0.0.1:6379&gt;</span> get foo    <span class="comment"># 取值：key(foo)</span>
 <span class="string">"bar"</span>
 </code></pre></li>
 <li><p>总结</p>
@@ -188,7 +189,7 @@ $ make     <span class="comment">#编译</span>
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="2015/01/31/RedisInstall/" data-title="redis install" data-url="http://effine.cn/2015/01/31/RedisInstall/"></div>
+      <div class="ds-thread" data-thread-key="2015/01/31/RedisInstall/" data-title="Redis 安装" data-url="http://effine.cn/2015/01/31/RedisInstall/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2015/01/31/RedisInstall/</loc>
+    <lastmod>2015-11-18T03:08:19.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2015/11/10/GitConfig/</loc>
     <lastmod>2015-11-16T15:47:44.000Z</lastmod>
   </url>
@@ -82,17 +87,17 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/09/11/HexoBlogConfig%5B1%5D/</loc>
-    <lastmod>2015-09-23T15:21:54.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://effine.cn/2015/07/15/MavenCommands/</loc>
     <lastmod>2015-09-23T15:21:54.000Z</lastmod>
   </url>
   
   <url>
     <loc>http://effine.cn/about/index.html</loc>
+    <lastmod>2015-09-23T15:21:54.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://effine.cn/2014/09/11/HexoBlogConfig%5B1%5D/</loc>
     <lastmod>2015-09-23T15:21:54.000Z</lastmod>
   </url>
   
@@ -222,12 +227,12 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/11/26/BookEnterpriseApplicationFrameworkPattern/</loc>
+    <loc>http://effine.cn/2014/07/01/BuildBlogOfHexo/</loc>
     <lastmod>2015-07-08T13:36:09.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/07/01/BuildBlogOfHexo/</loc>
+    <loc>http://effine.cn/2013/11/26/BookEnterpriseApplicationFrameworkPattern/</loc>
     <lastmod>2015-07-08T13:36:09.000Z</lastmod>
   </url>
   
@@ -292,11 +297,6 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/01/31/RedisInstall/</loc>
-    <lastmod>2015-06-23T15:22:36.000Z</lastmod>
-  </url>
-  
-  <url>
     <loc>http://effine.cn/2013/12/15/MakedownpadShortcut/</loc>
     <lastmod>2015-06-10T15:05:51.000Z</lastmod>
   </url>
@@ -312,12 +312,12 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/10/14/OrgnizeIdeas/</loc>
+    <loc>http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/</loc>
     <lastmod>2015-05-20T16:11:30.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/11/18/MoveHouse/</loc>
+    <loc>http://effine.cn/2013/10/14/OrgnizeIdeas/</loc>
     <lastmod>2015-05-20T16:11:30.000Z</lastmod>
   </url>
   
@@ -327,7 +327,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/</loc>
+    <loc>http://effine.cn/2013/11/25/StudyTask/</loc>
     <lastmod>2015-05-20T16:11:30.000Z</lastmod>
   </url>
   
@@ -337,7 +337,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/11/25/StudyTask/</loc>
+    <loc>http://effine.cn/2013/11/18/MoveHouse/</loc>
     <lastmod>2015-05-20T16:11:30.000Z</lastmod>
   </url>
   

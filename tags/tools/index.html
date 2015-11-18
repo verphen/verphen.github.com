@@ -145,7 +145,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/01/31/RedisInstall/">redis install</a>
+      <a class="article-title" href="/2015/01/31/RedisInstall/">Redis 安装</a>
     </h1>
   
 
@@ -153,17 +153,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>周六闲来没事研究了点新东西 <a href="&quot;http://redis.io&quot;">Redis</a>，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
+        <p>周六闲来没事研究了点新东西 <a href="http://redis.io">Redis</a>(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
 <ul>
 <li><p>redis下载、解压、编译源码</p>
-<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment">#下载</span>
-$ tar xzf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment">#解压</span>
-$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment">#进入redis目录</span>
-$ make     <span class="comment">#编译</span>
+<pre><code>$ wget http://download.redis.io/releases/redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz     <span class="comment"># 下载</span>
+$ tar xzvf redis-<span class="number">2.8</span>.<span class="number">19</span>.tar.gz    <span class="comment"># 解压</span>
+$ <span class="built_in">cd</span> redis-<span class="number">2.8</span>.<span class="number">19</span>     <span class="comment"># 进入redis目录</span>
+$ make     <span class="comment"># 编译</span>
 </code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
-<pre><code><span class="variable">$ </span>yum install gcc <span class="comment">#安装gcc环境</span>
-<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment">#验证gcc是否安装成功（是否打印版本信息）</span>
-<span class="variable">$ </span>make  <span class="comment">#再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
+<pre><code><span class="variable">$ </span>yum install gcc <span class="comment"># 安装gcc环境</span>
+<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment"># 验证gcc是否安装成功（是否打印版本信息）</span>
+
+<span class="variable">$ </span>make  <span class="comment"># 再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
 </code></pre></li>
 </ul>
         
