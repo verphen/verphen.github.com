@@ -97,5 +97,67 @@ elasticsearch-servicewrapper
 
 	重新启动elasticsearch的时候测试/es/bin/elasticsearch还是/es/bin/service/elasticsearch
 
+	1下载插件elasticsearch-servicewrapper.tar.gz（download:http://wrapper.tanukisoftware.com/doc/english/download.jsp）
+
+	2 解压：tar-zxvf elasticsearch-servicewrapper.tar.gz。
+
+	3 把解压得来的service目录拷贝到Es的bin目录下
+
+	  Cdelasticsearch-servicewrapper
+
+	  Mv service /usr/local/elasticsearch-0.18.7/bin
+
+	 
+
+	4启动es
+
+	  Cd/usr/local/elasticsearch-0.18.7/bin/service
+
+	  ./elasticsearch start    ------后台运行
+
+	5 停止es
+
+	   Cd/usr/local/elasticsearch-0.18.7/bin/service
+
+	   /elasticsearch stop
+
+	（说明：可参考https://github.com/elasticsearch/elasticsearch-servicewrapper）
+
+	附：插件的主要命令
+
+	   ./elasticsearchconsole  ------前台运行
+
+	    ./elasticsearch start    ------后台运行
+
+	    ./elasticsearchinstall   -------添加到系统自动启动
+
+	    ./elasticsearchremove   -----取消随系统自动启动
+
+
+
+
+
+
+（二）配置IK分词(服务器必须能连通网络)
+
+1   cd  /usr/local/elasticsearch-0.18.7/bin
+
+          ./plugin -installmedcl/elasticsearch-analysis-ik/1.0.0
+
+    2  cd config
+
+wgethttp://github.com/downloads/medcl/elasticsearch-analysis-ik/ik.zip--no-check-certificate
+
+unzip ik.zip
+
+rm ik.zip
+
+（说明，个人觉得以上两部完成后就已经可以了，ik分词已经起作用，但网上的资料还有些配置，可参考：https://github.com/medcl/elasticsearch-analysis-ik）
+
+
+
+
+
+
 
 	http://my.oschina.net/xiaohui249/blog/228748
