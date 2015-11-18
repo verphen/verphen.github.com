@@ -3,7 +3,7 @@ date: 2015-01-31 23:43:02
 categories: redis
 tags: [redis,database,tools]
 ---
-周六闲来没事研究了点新东西 [Redis]("http://redis.io")，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
+周六闲来没事研究了点新东西 [Redis](http://redis.io)(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。
 
 - redis下载、解压、编译源码
 	
