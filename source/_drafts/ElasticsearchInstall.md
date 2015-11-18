@@ -57,7 +57,7 @@ es默认使用9200，需在iptables中开启
     	$ chown -R <common-user> elasticsearch-{es-version} 	# 修改文件夹所属用户
 
 
-Es配置集群：
+Es配置集群(服务器需要在同一个网段,cluster.name相同即可自动识别组成集群)：
 
 	在另一台服务器上安装es,然后修改 es/config/elasticsearch.yml, 取消cluster.name的注释，修改其值为相同即可
 
@@ -156,6 +156,8 @@ rm ik.zip
 
 
 
+
+使用Marve监控es: http://www.linuxidc.com/Linux/2015-02/113615.htm
 
 
 
