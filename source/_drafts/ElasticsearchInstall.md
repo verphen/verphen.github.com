@@ -57,6 +57,27 @@ es默认使用9200，需在iptables中开启
     	$ chown -R <common-user> elasticsearch-{es-version} 	# 修改文件夹所属用户
 
 
+    重新启动即可成功启动，测试是否允许成功：
+
+    	$ curl -X GET http://localhost:9200/
+
+    	# 打印信息
+	    {
+		  "status" : 200,
+		  "name" : "Fury",
+		  "cluster_name" : "elasticsearch",
+		  "version" : {
+		    "number" : "1.4.2",
+		    "build_hash" : "927caff6f05403e936c20bf4529f144f0c89fd8c",
+		    "build_timestamp" : "2014-12-16T14:11:12Z",
+		    "build_snapshot" : false,
+		    "lucene_version" : "4.10.2"
+		  },
+		  "tagline" : "You Know, for Search"
+		}
+
+
+
 Es配置集群(服务器需要在同一个网段,cluster.name相同即可自动识别组成集群)：
 
 	在另一台服务器上安装es,然后修改 es/config/elasticsearch.yml, 取消cluster.name的注释，修改其值为相同即可
@@ -66,6 +87,7 @@ Es配置集群(服务器需要在同一个网段,cluster.name相同即可自动�
 	同时取消node.name的注释，修改其值为集群中不存在的任意值
 
 		$ node.name: node-2
+
 
 
 插件安装：
