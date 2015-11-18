@@ -40,6 +40,11 @@ tags:
 		$ ./configure --prefix=/usr/local/nginx
 		$ make && make install 
 
+	http://blog.csdn.net/stuartjing/article/details/6909319
+	http://www.cnblogs.com/skynet/p/4146083.html
+	http://blog.csdn.net/hfsu0419/article/details/7190152
+	
+
 ps:
 	
 	configure 	# 该文件是软件提供者提供的shell脚本,生成makefilse
