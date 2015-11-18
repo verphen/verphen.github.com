@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="effine">
 <meta property="og:description" content="频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。">
 <meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg">
-<meta property="og:updated_time" content="2015-09-27T14:48:55.000Z">
+<meta property="og:updated_time" content="2015-11-18T15:10:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH免密码登陆">
 <meta name="twitter:description" content="频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。">
@@ -102,17 +102,14 @@
         <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录"></p>
 <p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
 <a id="more"></a>
-<p>本地主机(LocalHost)通过SSH登录远程主机(RemoteHost),首先在LocalHost生成密钥：</p>
-<pre><code><span class="variable">$ </span>ssh-keygen        <span class="comment"># 本地主机生成密钥</span>
-等同于
-<span class="variable">$ </span>ssh-keygen -t rsa
-</code></pre><p>一直回车即可,最后将会在目录 <code>~/.ssh</code> 生成公钥id_rsa.pub和私钥id_rsa两个文件,将公钥内容追加到RemoteHost服务器 <code>~/.ssh/authorized_keys</code>(~ 表示用户目录)文件中：</p>
-<pre><code><span class="variable">$ </span>ssh-copy-id ~<span class="regexp">/.ssh/id</span>_rsa.pub &lt;your-username&gt;<span class="variable">@RemoteHost</span>    <span class="comment"># 追加本机公钥到RemoteHost的authorized_keys</span>
-</code></pre><p>输入RemoteHost密码即可实现SSH免密码登录远程主机</p>
-<p>当然，追加LocalHost公钥内容到RemoteHost文件authorized_keys时，你也可以上传LocalHost的公钥文件id_rsa.pub到远程主机，然后执行命令：</p>
-<pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub path&gt; <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment">#追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
-</code></pre><p>我的远程主机/home目录存在LocalHost的公钥id_rsa.pub,所以我执行以下命令即可：</p>
-<pre><code><span class="variable">$ </span>cat /home/id_rsa.pub path <span class="prompt">&gt;&gt; </span>~<span class="regexp">/.ssh/authorized</span>_keys
+<p>本地通过SSH登录远程主机,首先需要在本地生成密钥：</p>
+<pre><code><span class="variable">$ </span>ssh-keygen [-t rsa]        <span class="comment"># 本地主机生成密钥[采用rsa算法生成]</span>
+</code></pre><p>一直回车即可,最后将会在用户目录 ~/.ssh 生成公钥 id_rsa.pub 和私钥 id_rsa 两个文件,将公钥内容追加到远程主机文件 ~/.ssh/authorized_keys 文件中：</p>
+<pre><code>$ ssh-<span class="keyword">copy</span>-<span class="property">id</span> [-i [identity_file]] [user@]machine   <span class="comment"># 追加本机公钥到RemoteHost的authorized_keys</span>
+</code></pre><p>输入远程主机密码即完成配置；此时便可以实现SSH免密码登录远程主机。当然，追加公钥内容到主机时，你也可以上传公钥文件到远程主机，然后执行命令：</p>
+<pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub&gt;  <span class="prompt">&gt;&gt;  </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment"># 追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
+</code></pre><p>我远程主机home目录存在本机公钥id_rsa.pub文件,所以我执行以下命令即可：</p>
+<pre><code><span class="variable">$ </span>cat /home/id_rsa.pub path   <span class="prompt">&gt;&gt;    </span>~<span class="regexp">/.ssh/authorized</span>_keys
 </code></pre><p>扩展阅读： google搜索ssh-keygen参数设置</p>
 
       
@@ -123,7 +120,7 @@
         <a href="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
 
     </footer>
   </div>
@@ -229,7 +226,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.44px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 10px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.67px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.67px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
