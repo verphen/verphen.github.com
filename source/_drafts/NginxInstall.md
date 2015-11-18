@@ -15,7 +15,7 @@ tags:
 	$ cd nginx-1.8.0
 
 	# 编译nginx
-	$ ./configure 
+	$ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
 
 	出现错误：
 
@@ -32,8 +32,18 @@ tags:
 		$ ./configure
 		$ make && make install
 
+	安装pcre-devel解决问题
+		yum -y install pcre-deve
+
 	重新进去nginx目录
 
-		$ ./configure
+		$ ./configure --prefix=/usr/local/nginx
 		$ make && make install 
 
+ps:
+	
+	configure 	# 该文件是软件提供者提供的shell脚本,生成makefilse
+	make		# 编译源码，生成Makefile
+	make install    # 读取Makefile中的指令，开始安装
+
+	http://nonfu.me/p/4753.html
