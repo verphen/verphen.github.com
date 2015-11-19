@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2015/01/10/ViEditorCommands/</loc>
+    <lastmod>2015-11-19T15:13:38.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2015/05/20/SSHOmitPasswdLogin/</loc>
     <lastmod>2015-11-18T15:10:26.000Z</lastmod>
   </url>
@@ -49,11 +54,6 @@
   <url>
     <loc>http://effine.cn/2014/10/30/GitIgnore/</loc>
     <lastmod>2015-11-11T09:56:51.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/2015/01/10/ViEditorCommands/</loc>
-    <lastmod>2015-11-11T06:48:56.000Z</lastmod>
   </url>
   
   <url>
