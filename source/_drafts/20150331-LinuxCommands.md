@@ -82,6 +82,3 @@ grep: Global Regular Expression Print 全局正则表达式版本
 	$ find /usr -size +10M 	# 在/usr目录下找出大小超过10MB的文件
 	$ find /var \! -atime -90	# 在/var目录下找出90天之内未被访问过的文件
 	$ find / -name core -exec rm {} \; 	# 在整个目录树下查找文件“core”，如发现则无需提示直接删除它们
-
-
-
