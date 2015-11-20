@@ -77,9 +77,11 @@ free -m: 查看内存使用情况
 
 grep: Global Regular Expression Print 全局正则表达式版本
 
-
-
-
+	$ who -r 	# 查看服务器允许级别(同命令runlevel)
+	$ find /home -mtime +120 	# 在/home目录下找出120天之前被修改过的文件
+	$ find /usr -size +10M 	# 在/usr目录下找出大小超过10MB的文件
+	$ find /var \! -atime -90	# 在/var目录下找出90天之内未被访问过的文件
+	$ find / -name core -exec rm {} \; 	# 在整个目录树下查找文件“core”，如发现则无需提示直接删除它们
 
 
 
