@@ -40,7 +40,13 @@ centos安装logstash前提必须安装jdk（版本必须在1.7之上）
 	$ cd logstash-{logstash_version}
 	$ bin/logstash -e 'input { stdin { } } output { stdout {} }'
 
+		stdin ：命令行参数输入 
+		stdout：命令行输出。
+		-e默认以后面给定字符作为配置（不启用.conf的配置文件） 
+
 输入: hello word !
 2013-11-21T01:22:14.405+0000 0.0.0.0 hello world
 
 结束: ctrl + D
+
+

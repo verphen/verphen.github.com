@@ -185,3 +185,9 @@ rm ik.zip
 
 
 	http://my.oschina.net/xiaohui249/blog/228748
+
+
+清理ES存储的数据：
+
+	# 清理掉了所有 3月份的索引文件，我发现curl 删除比rm删除要快出很多
+	$ curl -XDELETE 'http://172.16.1.16:9200/logstash-2013.03.*' 
