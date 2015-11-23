@@ -73,6 +73,67 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-GitTag" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/04/GitTag/" class="article-date">
+  <time datetime="2015-11-04T07:24:30.000Z" itemprop="datePublished">11月 4 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/04/GitTag/">Git 标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code><span class="variable">$ </span>git tag --help     <span class="comment"># 查看帮助</span>
+</code></pre><p>[查看标签]</p>
+<pre><code><span class="variable">$ </span>git tag [-l]        <span class="comment"># 查看所有标签列表[list]</span>
+<span class="variable">$ </span>git show &lt;tag-name&gt;     <span class="comment"># 查看标签tag-name信息</span>
+</code></pre><p>[创建/切换标签]</p>
+<pre><code>$ git <span class="keyword">tag</span> <span class="variable">&lt;v1.0&gt;</span>     <span class="comment"># 创建轻量级标签v1.0</span>
+$ git <span class="keyword">tag</span> <span class="variable">&lt;tag-name&gt;</span> <span class="variable">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>
+$ git <span class="keyword">tag</span> [-a] <span class="variable">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>
+
+$ git checkout <span class="variable">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span>
+</code></pre><p>[删除标签]</p>
+<pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span>
+<span class="variable">$ </span>git push remote_name  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
+</code></pre><p>[获取/推送远程标签]</p>
+<pre><code><span class="variable">$ </span>git pull [remote_name] --tags     <span class="comment"># 获取远程所有标签(remote_name可选)</span>
+<span class="variable">$ </span>git push [remote_name] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
+<span class="variable">$ </span>git push [remote_name] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/11/04/GitTag/" data-id="cihc2rmh5000sth2e44f8mbb2" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/11/04/GitTag/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tag/">tag</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-GitBranch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/23/GitBranch/" class="article-date">
@@ -131,7 +192,7 @@ $ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable"
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cih0mfz6b000oil2efrnvswvo" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cihc2rmh8000xth2et25qhoa0" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/10/23/GitBranch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -199,7 +260,7 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="cih0mfz6j000til2esmdu25e7" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="cihc2rmha0012th2efeealc0m" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/08/13/JavaEnvironmentVariable/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -256,78 +317,9 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cih0mfz6p0010il2efdxc4d4n" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cihc2rmhe0019th2ezgleb40k" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenEncoding/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MavenDownSourse" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/15/MavenDownSourse/" class="article-date">
-  <time datetime="2015-07-15T03:42:19.000Z" itemprop="datePublished">7月 15 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/15/MavenDownSourse/">Maven技巧-下载源码</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
-<ol>
-<li><p>maven命令行(针对具体项目)</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier=</span>javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
-</code></pre></li>
-<li><p>配置maven全局文件settings</p>
-<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
-<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
-    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
-<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
-</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
-<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
-</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
-</li>
-<li><p>eclipse配置</p>
-<p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cih0mfz6s0016il2etcvxkiur" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/07/15/MavenDownSourse/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
@@ -355,7 +347,7 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -365,6 +357,10 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/11/17/GitRemote/">Git Remote</a>
+          </li>
         
           <li>
             <a href="/2015/11/16/HexoTongji/">Hexo 博客配置访问统计</a>
@@ -382,10 +378,6 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
             <a href="/2015/11/04/GitTag/">Git 标签</a>
           </li>
         
-          <li>
-            <a href="/2015/10/23/GitBranch/">Git 分支</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -395,7 +387,7 @@ Path [%JAVA_HOME%<span class="string">\bin;%JAVA_HOME%\jre\bin;]</span>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 16.67px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 18.89px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.5px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
