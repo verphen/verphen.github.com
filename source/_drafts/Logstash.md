@@ -39,6 +39,8 @@ centos安装logstash前提必须安装jdk（版本必须在1.7之上）
 
 	$ cd logstash-{logstash_version}
 	$ bin/logstash -e 'input { stdin { } } output { stdout {} }'
+	# logstash连接ES
+	$./logstash -e 'input { stdin { } } output { elasticsearch { hosts => localhost } }'
 
 		stdin ：命令行参数输入 
 		stdout：命令行输出。
@@ -48,5 +50,6 @@ centos安装logstash前提必须安装jdk（版本必须在1.7之上）
 2013-11-21T01:22:14.405+0000 0.0.0.0 hello world
 
 结束: ctrl + D
+
 
 
