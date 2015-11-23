@@ -3,45 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>centos 网络配置 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.
+怎么检测是否可用联网？使用 ping www.baidu.com命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos 网络配置">
+<meta property="og:url" content="http://effine.cn/2015/01/29/CentosNetworkConfig/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.
+怎么检测是否可用联网？使用 ping www.baidu.com命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="centos 网络配置">
+<meta name="twitter:description" content="前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.
+怎么检测是否可用联网？使用 ping www.baidu.com命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +75,77 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-CentosNetworkConfig" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/01/29/CentosNetworkConfig/" class="article-date">
+  <time datetime="2015-01-29T15:37:34.000Z" itemprop="datePublished">1月 29 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      centos 网络配置
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>前些日子安装了CentOS minimal版本的操作系统虚拟机（当然实体机安装也大同小异），这个版本应该是CentOS发行版本中集成软件和环境的最少的，方便学习建议安装此版本从零开始。安装之后发现无法上网，于是开始探索查询.</p>
+<p>怎么检测是否可用联网？使用 <code>ping www.baidu.com</code>命令查看发包和接受包的状况（俗话说是否可用’ping通’）,当然你可以使用浏览器测试进行测试；如发现无法解析主机等提示之类的提示说明无法联网，则开始配置 centos 的网络配置文件 <code>/etc/sysconfig/network-scripts/ifcfg-eth*</code>; <code>ifcfg-eth*</code>文件的数量表示你机器网卡的数量，如只有一块网卡则在目录 <code>/etc/sysconfig/network-scripts/</code> 下只会存在一个ifcfg-eth*文件（那就是ifcfg-eth0）,文件结构（参数配置）如下：</p>
+<pre><code><span class="constant">DEVICE</span>=<span class="string">"eth0"</span>                  <span class="comment">//指出设备名称</span>
+<span class="constant">BOOTPROTO</span>=<span class="string">"dhcp"</span>              <span class="comment">//启动类型 dhcp</span>
+<span class="constant">HWADDR</span>=<span class="string">"00:0C:29:35:A2:A8"</span>      <span class="comment">//硬件Mac地址</span>
+<span class="constant">IPV6INIT</span>=<span class="string">"yes"</span>                  <span class="comment">//是否支持IPV6</span>
+<span class="constant">NM_CONTROLLED</span>=<span class="string">"yes"</span>              <span class="comment">//network manger参数，修改实时生效无需重启网卡</span>
+<span class="constant">ONBOOT</span>=<span class="string">"yes"</span>                   <span class="comment">//是否启动应用</span>
+<span class="constant">TYPE</span>=<span class="string">"Ethernet"</span>                  <span class="comment">//网络类型</span>
+<span class="constant">UUID</span>=<span class="string">"733r86e3-a47e-4471-a83f-1ef4def437bb"</span>
+</code></pre><p>然后保存并退出， 重启网络服务：<code>service network restart</code>即可;我无法联网的问题是参数ONBOOT=”no”的原因造成。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/01/29/CentosNetworkConfig/" data-id="cihc6rbg4003sem2ehlpr29uj" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/01/29/CentosNetworkConfig/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/01/31/RedisInstall/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Redis 安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/01/10/ViEditorCommands/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">vi commands</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +159,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/01/29/CentosNetworkConfig/" data-title="centos 网络配置" data-url="http://effine.cn/2015/01/29/CentosNetworkConfig/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

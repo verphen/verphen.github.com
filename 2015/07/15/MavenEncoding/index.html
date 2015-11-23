@@ -3,45 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Maven技巧-字符编码 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的标签内进行以下配置：
+&amp;lt;properties&amp;gt;
+    &amp;lt;!-- 文件拷贝时的编码 --&amp;gt;
+    &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncod">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven技巧-字符编码">
+<meta property="og:url" content="http://effine.cn/2015/07/15/MavenEncoding/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的标签内进行以下配置：
+&amp;lt;properties&amp;gt;
+    &amp;lt;!-- 文件拷贝时的编码 --&amp;gt;
+    &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncod">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Maven技巧-字符编码">
+<meta name="twitter:description" content="在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的标签内进行以下配置：
+&amp;lt;properties&amp;gt;
+    &amp;lt;!-- 文件拷贝时的编码 --&amp;gt;
+    &amp;lt;project.build.sourceEncoding&amp;gt;UTF-8&amp;lt;/project.build.sourceEncod">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +81,88 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MavenEncoding" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/07/15/MavenEncoding/" class="article-date">
+  <time datetime="2015-07-15T07:56:00.000Z" itemprop="datePublished">7月 15 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Maven技巧-字符编码
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</project></p>
+<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
+    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
+    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
+    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
+</code></pre><a id="more"></a>
+<p><code>&lt;project.build.sourceEncoding&gt;</code> 默认maven是可识别的,如果不放心,可以再进行如下配置;</p>
+<pre><code><span class="tag">&lt;<span class="title">plugins</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">plugin</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">source</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">target</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">encoding</span>&gt;</span>${project.build.sourceEncoding}<span class="tag">&lt;/<span class="title">encoding</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">plugin</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">plugins</span>&gt;</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cihc6rbem0019em2e0o6iscyd" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/07/15/MavenEncoding/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/08/13/JavaEnvironmentVariable/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Linux设置Java环境变量
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/15/MavenDownSourse/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Maven技巧-下载源码</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +176,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/07/15/MavenEncoding/" data-title="Maven技巧-字符编码" data-url="http://effine.cn/2015/07/15/MavenEncoding/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

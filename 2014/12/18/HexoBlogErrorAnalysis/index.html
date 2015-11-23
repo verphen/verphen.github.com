@@ -3,45 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Hexo Blog Error Analysis | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="在使用Hexo生成博客静态文件过程中，出现些许问题；经过google和自己分析总结解决方案如下：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+中文乱码
+Hexo无法解析模板文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Blog Error Analysis">
+<meta property="og:url" content="http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="在使用Hexo生成博客静态文件过程中，出现些许问题；经过google和自己分析总结解决方案如下：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+中文乱码
+Hexo无法解析模板文件">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/error/buildHexoBlog1.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Hexo Blog Error Analysis">
+<meta name="twitter:description" content="在使用Hexo生成博客静态文件过程中，出现些许问题；经过google和自己分析总结解决方案如下：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+中文乱码
+Hexo无法解析模板文件">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +82,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-HexoBlogErrorAnalysis" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/12/18/HexoBlogErrorAnalysis/" class="article-date">
+  <time datetime="2014-12-18T15:47:47.000Z" itemprop="datePublished">12月 18 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/blog/">blog</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo Blog Error Analysis
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>在使用Hexo生成博客静态文件过程中，出现些许问题；经过google和自己分析总结解决方案如下：</p>
+<ul>
+<li>中文乱码</li>
+<li>Hexo无法解析模板文件</li>
+</ul>
+<a id="more"></a>
+<h3>中文乱码</h3>
+
+<p> answer: 将<em>.md文件</em>.yml文件设置成 utf-8；</p>
+<p> 新建文章名尽量采用英文命令，防止中文(当然也能处理)带来的不必要的麻烦；我一般采用 “日期+文章名” 的方式命名，如 20140101_articleName.md</p>
+<h3>Hexo无法解析模板文件</h3>
+
+<p> 当我们写好文章生成静态文件 <code>hexo g</code>进行预览 <code>hexo s</code> 出现以下错误:</p>
+<pre><code>&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/head'</span>) <span class="variable">%&gt;</span> 
+&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/header'</span>, null, {cache: true}) <span class="variable">%&gt;</span>                
+&lt;<span class="variable">%-</span> body <span class="variable">%&gt;</span>
+&lt;% <span class="keyword">if</span> (theme.sidebar &amp;&amp; theme.sidebar !== <span class="string">'bottom'</span>){ <span class="variable">%&gt;</span> 
+&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/sidebar'</span>), null, {cache: true} <span class="variable">%&gt;</span> &lt;% } <span class="variable">%&gt;</span>   
+&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/footer'</span>, null, {cache: true}) <span class="variable">%&gt;</span>                
+&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/mobile-nav'</span>, null, {cache: true}) <span class="variable">%&gt;</span> 
+&lt;<span class="variable">%-</span> partial(<span class="string">'_partial/after-footer'</span>) <span class="variable">%&gt;</span>
+</code></pre><p>如下图：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/error/buildHexoBlog1.png" alt="Hexo无法解析模板文件"></p>
+<p>answer: 你博客根目录运行以下命令：</p>
+<pre><code>npm <span class="operator"><span class="keyword">install</span> hexo-renderer-ejs <span class="comment">--save</span>
+
+npm <span class="keyword">install</span> hexo-renderer-stylus <span class="comment">--save</span>
+
+npm <span class="keyword">install</span> hexo-renderer-marked <span class="comment">--save</span></span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/" data-id="cihc6rbgo004fem2ex6vxd8hb" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/blog/">blog</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/12/20/HexoBlogConfig-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo Blog Config[2]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/30/hexoCommands/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo Commands</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +183,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/12/18/HexoBlogErrorAnalysis/" data-title="Hexo Blog Error Analysis" data-url="http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

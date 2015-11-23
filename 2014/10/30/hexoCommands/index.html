@@ -3,45 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Hexo Commands | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="博客搭建工具hexo基本命令：
+$ hexo h[help]         # Get help on a command(获得命令帮助)
+$ hexo h[help] &amp;lt;command&amp;gt;     # 获得命令command详细帮助">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo Commands">
+<meta property="og:url" content="http://effine.cn/2014/10/30/hexoCommands/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="博客搭建工具hexo基本命令：
+$ hexo h[help]         # Get help on a command(获得命令帮助)
+$ hexo h[help] &amp;lt;command&amp;gt;     # 获得命令command详细帮助">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Hexo Commands">
+<meta name="twitter:description" content="博客搭建工具hexo基本命令：
+$ hexo h[help]         # Get help on a command(获得命令帮助)
+$ hexo h[help] &amp;lt;command&amp;gt;     # 获得命令command详细帮助">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +79,91 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-hexoCommands" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/10/30/hexoCommands/" class="article-date">
+  <time datetime="2014-10-30T00:14:27.000Z" itemprop="datePublished">10月 30 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo Commands
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>博客搭建工具<a href="http://hexo.io/" target="_blank" rel="external">hexo</a>基本命令：</p>
+<pre><code>$ hexo <span class="keyword">h</span>[<span class="keyword">help</span>]         # Get <span class="keyword">help</span> <span class="keyword">on</span> <span class="keyword">a</span> <span class="keyword">command</span>(获得命令帮助)
+$ hexo <span class="keyword">h</span>[<span class="keyword">help</span>] &lt;<span class="keyword">command</span>&gt;     # 获得命令<span class="keyword">command</span>详细帮助
+</code></pre><p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/hexo_help.png" alt="hexo help"></p>
+<a id="more"></a>
+<pre><code><span class="variable">$ </span>hexo init     <span class="comment"># Create a new Hexo folder(初始化一个Hexo文件夹)</span>
+<span class="variable">$ </span>hexo n[new] <span class="string">"finame"</span>     <span class="comment"># Create a new post(新建post文章filename)</span>
+<span class="variable">$ </span>hexo n[new] draft <span class="string">"filename"</span>      <span class="comment"># 创建一个草稿文章</span>
+<span class="variable">$ </span>hexo g[generate]        <span class="comment"># 生成博客静态文件</span>
+<span class="variable">$ </span>hexo p[publish] &lt;filename&gt;    <span class="comment">#  发布草稿文章</span>
+<span class="variable">$ </span>hexo draft     <span class="comment"># Publish a draft(发布草稿)</span>
+<span class="variable">$ </span>hexo s[server]         <span class="comment"># 启动本地服务进行文章预览（localhost:4000)</span>
+<span class="variable">$ </span>hexo d[deploy]         <span class="comment"># Deploy your website (部署)</span>
+<span class="variable">$ </span>hexo d -g         <span class="comment"># 组合命令: 生成本地静态文件并部署</span>
+<span class="variable">$ </span>hexo clean         <span class="comment"># Remove generated files and the cache(删除已生成的静态文件和缓存)</span>
+<span class="variable">$ </span>hexo config         <span class="comment"># List the current configuration(查看当前所有的配置信息列表)</span>
+<span class="variable">$ </span>hexo list         <span class="comment"># List the information of the site(你站点的信息列表)</span>
+<span class="variable">$ </span>hexo migrate         <span class="comment"># Migrate your site from other system to Hexo(将你的站点从其他系统迁移至hexo)</span>
+<span class="variable">$ </span>hexo render         <span class="comment"># Render the files with Markdown or other engines(使用Markdown或其他引擎渲染文件)</span>
+<span class="variable">$ </span>hexo version        <span class="comment"># Display version information(显示hexo和相关环境的版本信息)</span>
+</code></pre><p>Global Options 全局选项:</p>
+<pre><code><span class="variable">$ </span>hexo config     <span class="comment"># Specify config file instead of using _config.yml(自定义配置文件替换 _config.yml)</span>
+<span class="variable">$ </span>hexo debug    <span class="comment"># Display all verbose messages in the terminal(调试模式，终端显示所有详细信息)</span>
+<span class="variable">$ </span>hexo - -safe         <span class="comment"># Disable all plugins and scripts(禁用所有的插件和脚本)</span>
+<span class="variable">$ </span>hexo - -silent      <span class="comment"># Hide output on console(在控制台隐藏输出)</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/10/30/hexoCommands/" data-id="cihc6rbgq004iem2e4anllej3" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/10/30/hexoCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/12/18/HexoBlogErrorAnalysis/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo Blog Error Analysis
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/10/30/GitCommands/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git Commands</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +177,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/10/30/hexoCommands/" data-title="Hexo Commands" data-url="http://effine.cn/2014/10/30/hexoCommands/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

@@ -3,45 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Git Config | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="Git配置存在适用范围：
 
+项目范围： git config      # 保存在项目根目录.git/config文件
+系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+便于使用，我们通常配置系统用户范围；一些具体配置如下
+# 列出所有配置,grep可过滤具体Command命令
+$ git config --list    [| gre">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Config">
+<meta property="og:url" content="http://effine.cn/2015/11/10/GitConfig/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="Git配置存在适用范围：
 
+项目范围： git config      # 保存在项目根目录.git/config文件
+系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+便于使用，我们通常配置系统用户范围；一些具体配置如下
+# 列出所有配置,grep可过滤具体Command命令
+$ git config --list    [| gre">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Git Config">
+<meta name="twitter:description" content="Git配置存在适用范围：
 
+项目范围： git config      # 保存在项目根目录.git/config文件
+系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+便于使用，我们通常配置系统用户范围；一些具体配置如下
+# 列出所有配置,grep可过滤具体Command命令
+$ git config --list    [| gre">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +93,103 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitConfig" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/11/10/GitConfig/" class="article-date">
+  <time datetime="2015-11-10T10:17:52.000Z" itemprop="datePublished">11月 10 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git Config
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>Git配置存在适用范围：</p>
+<ul>
+<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件</li>
+</ul>
+<p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
+<pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
+<span class="variable">$ </span>git config --list    [| grep command]
+<span class="variable">$ </span>git config -l [| grep command]
+
+<span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span>
+<span class="variable">$ </span>git config --global user.email <span class="string">"email"</span>     <span class="comment"># 设置全局邮箱(提交历史可见)</span>
+<span class="variable">$ </span>git config --global color.ui &lt;<span class="keyword">true</span>|<span class="keyword">false</span>&gt;   <span class="comment"># Git会显示适当地颜色[打开|关闭]</span>
+<span class="variable">$ </span>git config --global core.editor &lt;emacs&gt;       <span class="comment"># 设置文本编辑器emacs</span>
+<span class="variable">$ </span>git config --global merge.tool &lt;vimdiff&gt;      <span class="comment"># 设置差异分析工具vimdiff</span>
+
+<span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span>
+<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;     <span class="comment"># 使用别名aliasname代替command</span>
+<span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>
+    &gt; status [st]
+    &gt; commit [ci]
+    &gt; checkout [co]
+    &gt; branch [br]
+    &gt; diff [df]
+<span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>
+    [<span class="keyword">alias</span>]  
+      st = status  
+      ci = commit  
+      br = branch  
+      co = checkout  
+      df = diff 
+
+<span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span>
+<span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; 
+
+<span class="variable">$ </span>git config  --global --unset-all core.ignorecase    <span class="comment"># 取消所有关于是否忽略Git大小写的设置</span>
+<span class="variable">$ </span>git config  --global --system core.ignorecase &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt;   <span class="comment"># 设置Git是否忽略大小写</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/10/GitConfig/" data-id="cihc6rbe8000nem2e6kgsxyuc" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/11/10/GitConfig/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config/">config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/11/15/EclipseTasks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Eclipse Tasks
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/04/GitTag/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git 标签</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +203,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/11/10/GitConfig/" data-title="Git Config" data-url="http://effine.cn/2015/11/10/GitConfig/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

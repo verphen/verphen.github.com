@@ -3,45 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Maven技巧-下载源码 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴
 
+maven命令行(针对具体项目)
+$ mvn dependency:sources     # 下载依赖文件源码
+$ mvn dependency:resolve -Dclassifier=javadoc     # 下载依赖文件JavaDoc
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+配置maven全局文件settings
+ 在配置文件 标签内加入以下配置：
+&amp;l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven技巧-下载源码">
+<meta property="og:url" content="http://effine.cn/2015/07/15/MavenDownSourse/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴
 
+maven命令行(针对具体项目)
+$ mvn dependency:sources     # 下载依赖文件源码
+$ mvn dependency:resolve -Dclassifier=javadoc     # 下载依赖文件JavaDoc
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+配置maven全局文件settings
+ 在配置文件 标签内加入以下配置：
+&amp;l">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Maven技巧-下载源码">
+<meta name="twitter:description" content="通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴
 
+maven命令行(针对具体项目)
+$ mvn dependency:sources     # 下载依赖文件源码
+$ mvn dependency:resolve -Dclassifier=javadoc     # 下载依赖文件JavaDoc
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+配置maven全局文件settings
+ 在配置文件 标签内加入以下配置：
+&amp;l">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +96,91 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MavenDownSourse" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/07/15/MavenDownSourse/" class="article-date">
+  <time datetime="2015-07-15T03:42:19.000Z" itemprop="datePublished">7月 15 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Maven技巧-下载源码
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
+<ol>
+<li><p>maven命令行(针对具体项目)</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier</span>=javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
+</code></pre></li>
+<li><p>配置maven全局文件settings</p>
+<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
+<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
+    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
+</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
+<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
+</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
+</li>
+<li><p>eclipse配置</p>
+<p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cihc6rber001fem2eju4yzvwc" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/07/15/MavenDownSourse/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/07/15/MavenEncoding/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Maven技巧-字符编码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/15/MavenCommands/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Maven 命令详解</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +194,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/07/15/MavenDownSourse/" data-title="Maven技巧-下载源码" data-url="http://effine.cn/2015/07/15/MavenDownSourse/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

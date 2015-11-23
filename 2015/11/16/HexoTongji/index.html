@@ -3,45 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Hexo 博客配置访问统计 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、百度统计和CNZZ，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。
+# 以下内容来源网络
+1.编辑文件 themes/landsca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 博客配置访问统计">
+<meta property="og:url" content="http://effine.cn/2015/11/16/HexoTongji/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、百度统计和CNZZ，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。
+# 以下内容来源网络
+1.编辑文件 themes/landsca">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Hexo 博客配置访问统计">
+<meta name="twitter:description" content="常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、百度统计和CNZZ，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。
+# 以下内容来源网络
+1.编辑文件 themes/landsca">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +78,87 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-HexoTongji" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/11/16/HexoTongji/" class="article-date">
+  <time datetime="2015-11-16T09:33:44.000Z" itemprop="datePublished">11月 16 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Hexo 博客配置访问统计
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。</p>
+<pre><code><span class="comment"># 以下内容来源网络</span>
+<span class="number">1.</span>编辑文件 themes/landscape/_config.yml,添加一行配置，<span class="string">"#"</span>注释原来的google analytics
+
+    baidu_tongji: <span class="constant">true</span>      <span class="comment"># 百度统计</span>
+
+<span class="number">2.</span>新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下
+
+    &lt;% <span class="keyword">if</span> (theme.baidu_tongji) { %&gt;
+    <span class="comment"># 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定</span>
+    &lt;<span class="keyword">script</span> type=<span class="string">"text/javascript"</span>&gt;
+        <span class="comment"># 申请的百度统计代码</span>
+    &lt;/<span class="keyword">script</span>&gt;
+    &lt;% } %&gt;
+
+<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 内添加
+
+    &lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;
+
+<span class="number">4.</span>重新生产部署站点即可。
+</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/16/HexoTongji/" data-id="cihc6rbdw000cem2ehg1f3oz2" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/11/16/HexoTongji/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/11/17/GitRemote/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git Remote
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/15/EclipseTasks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Eclipse Tasks</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +172,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/11/16/HexoTongji/" data-title="Hexo 博客配置访问统计" data-url="http://effine.cn/2015/11/16/HexoTongji/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

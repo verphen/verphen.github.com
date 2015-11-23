@@ -3,45 +3,39 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>使用sublime text 3 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="官网 http://www.sublimetext.com/ 下载安装sublime
+插件安装存在两种方式：
 
+下载安装
+  下载待安装插件文件到Packages目录（菜单栏 -&amp;gt; preferences -&amp;gt; browse packages）
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+使用package control组件安装
+  使用package control安装插件，必须先安装package control组件;如">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用sublime text 3">
+<meta property="og:url" content="http://effine.cn/2014/12/21/SublimeTextUse/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="官网 http://www.sublimetext.com/ 下载安装sublime
+插件安装存在两种方式：
 
+下载安装
+  下载待安装插件文件到Packages目录（菜单栏 -&amp;gt; preferences -&amp;gt; browse packages）
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+使用package control组件安装
+  使用package control安装插件，必须先安装package control组件;如">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="使用sublime text 3">
+<meta name="twitter:description" content="官网 http://www.sublimetext.com/ 下载安装sublime
+插件安装存在两种方式：
 
+下载安装
+  下载待安装插件文件到Packages目录（菜单栏 -&amp;gt; preferences -&amp;gt; browse packages）
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+使用package control组件安装
+  使用package control安装插件，必须先安装package control组件;如">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +93,93 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SublimeTextUse" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/12/21/SublimeTextUse/" class="article-date">
+  <time datetime="2014-12-21T14:05:51.000Z" itemprop="datePublished">12月 21 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      使用sublime text 3
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>官网 <a href="http://www.sublimetext.com/" target="_blank" rel="external">http://www.sublimetext.com/</a> 下载安装sublime</p>
+<p>插件安装存在两种方式：</p>
+<ul>
+<li><p>下载安装</p>
+<p>  下载待安装插件文件到Packages目录（菜单栏 -&gt; preferences -&gt; browse packages）</p>
+</li>
+<li><p>使用package control组件安装</p>
+<p>  使用package control安装插件，必须先安装package control组件;如果已安装跳过即可，未安装按如下方式进行安装</p>
+<p>  。ctrl + ` : 调出console面板，弹出框输入一下code回车</p>
+<pre><code><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>;
+ipp = sublime.installed_packages_path(); urllib.request.install_opener(
+urllib.request.build_opener( urllib.request.ProxyHandler()) ); 
+open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen(
+<span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())
+</code></pre>  <a id="more"></a>
+<p>  如果你sublime text 版本为2，输入的code则为：</p>
+<pre><code>import urllib2,os; pf=<span class="string">'Package Control.sublime-package'</span>; 
+ipp = sublime.installed_packages_path(); os.makedirs( ipp ) <span class="keyword">if</span> <span class="keyword">not</span>
+os.path.<span class="keyword">exists</span>(ipp) <span class="keyword">else</span> None; urllib2.install_opener( 
+urllib2.build_opener( urllib2.ProxyHandler( ))); 
+<span class="keyword">open</span>( os.path.<span class="keyword">join</span>( ipp, pf), <span class="string">'wb'</span> ).<span class="keyword">write</span>( urllib2.urlopen(
+<span class="string">'http://sublime.wbond.net/'</span> +pf.replace( <span class="string">' '</span>,<span class="string">'%20'</span> )).<span class="keyword">read</span>()); 
+<span class="keyword">print</span>( <span class="string">'Please restart Sublime Text to finish installation'</span>)
+</code></pre><p>  。重启sublime,Perferences菜单能看到package control这一项，则说明安装成功</p>
+<p>  。ctrl + shift +p 快速打开package control，或者preferences -&gt; package control打开；输入 <code>install package</code> 回车，等待repositories加载完成弹出输入框，输入你要安装的插件名 -&gt; 搜索 -&gt; 选择 -&gt; 回车  </p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/12/21/SublimeTextUse/" data-id="cihc6rbgc0041em2e37bou33u" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/12/21/SublimeTextUse/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/12/21/SublimeTextShortCut/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          sublime text 快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/12/20/HexoBlogConfig-2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo Blog Config[2]</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +193,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/12/21/SublimeTextUse/" data-title="使用sublime text 3" data-url="http://effine.cn/2014/12/21/SublimeTextUse/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

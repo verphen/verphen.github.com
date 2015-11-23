@@ -3,45 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>忘记oracle sys/system/scott用户密码解决方案 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="忘记除SYS、SYSTEM用户之外的用户的登录密码。
+ 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;
+ 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;
+ 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效">
+<meta property="og:type" content="article">
+<meta property="og:title" content="忘记oracle sys/system/scott用户密码解决方案">
+<meta property="og:url" content="http://effine.cn/2012/11/15/OracleForgetPasswd/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="忘记除SYS、SYSTEM用户之外的用户的登录密码。
+ 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;
+ 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;
+ 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="忘记oracle sys/system/scott用户密码解决方案">
+<meta name="twitter:description" content="忘记除SYS、SYSTEM用户之外的用户的登录密码。
+ 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;
+ 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;
+ 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +81,97 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-OracleForgetPasswd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2012/11/15/OracleForgetPasswd/" class="article-date">
+  <time datetime="2012-11-14T17:33:12.000Z" itemprop="datePublished">11月 15 2012</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/database/">database</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      忘记oracle sys/system/scott用户密码解决方案
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <ol>
+<li><p>忘记除SYS、SYSTEM用户之外的用户的登录密码。</p>
+<p> 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p> 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;</p>
+<p> 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效</p>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>忘记SYS用户，或者是SYSTEM用户的密码。</p>
+<p> 如果是忘记SYSTEM用户的密码，可以用SYS用户登录。然后用ALTER USER 密令修改密码：</p>
+<p> CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p> ALTER USER SYSTEM IDENTIFIED BY newpass;</p>
+</li>
+</ol>
+<pre><code>如果是忘记SYS用户的密码，可以用SYSTEM用户登录。然后用<span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> 密令修改密码。
+
+<span class="keyword">CONN</span> <span class="keyword">SYSTEM</span>/PASS_WORD ;</span>
+
+<span class="operator"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="keyword">SYSTEM</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">BY</span> newpass;</span>
+</code></pre><ol>
+<li><p>如果SYS,SYSTEM用户的密码都忘记或是丢失。</p>
+<p> 这一项尤其重要。</p>
+<p> 可以使用ORAPWD.EXE 工具修改密码。</p>
+<p> 开始菜单-&gt;运行-&gt;输入‘CMD’,打开命令提示符窗口，输入如下命令：</p>
+<p> orapwd file=D:\oracle\product\10.2.0\db_1\database\pwdctcsys.ora password=newpass</p>
+</li>
+</ol>
+<pre><code>这个命令重新生成了数据库的密码文件。密码文件的位置在<span class="variable">ORACLE_HOME</span>目录下的\database目录下。
+
+这个密码是修改sys用户的密码。除sys和system其他用户的密码不会改变.
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/" data-id="cihc6rbiu0085em2elmiao4y3" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2012/11/15/OracleForgetPasswd/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数据库/">数据库</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2012/11/22/InitalMaven/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          初识Maven
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/11/10/JavaSimpleFactoryPattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JAVA简单工厂模式</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +185,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2012/11/15/OracleForgetPasswd/" data-title="忘记oracle sys/system/scott用户密码解决方案" data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

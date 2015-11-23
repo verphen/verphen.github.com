@@ -3,45 +3,28 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Tomcat 角色 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目
+如你需要访问manager或host-manager项目; 通过地址 http://localhost:8080/[manager|host-manager] 访问，但是需要用户名密码验证：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tomcat 角色">
+<meta property="og:url" content="http://effine.cn/2015/07/06/TomcatRoles/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目
+如你需要访问manager或host-manager项目; 通过地址 http://localhost:8080/[manager|host-manager] 访问，但是需要用户名密码验证：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Tomcat 角色">
+<meta name="twitter:description" content="tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目
+如你需要访问manager或host-manager项目; 通过地址 http://localhost:8080/[manager|host-manager] 访问，但是需要用户名密码验证：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +82,96 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-TomcatRoles" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/07/06/TomcatRoles/" class="article-date">
+  <time datetime="2015-07-06T08:04:40.000Z" itemprop="datePublished">7月 6 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Tomcat 角色
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目</p>
+<p>如你需要访问manager或host-manager项目; 通过地址 <code>http://localhost:8080/[manager|host-manager]</code> 访问，但是需要用户名密码验证：</p>
+<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"></p>
+<p>提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 <code>&lt;tomcat-users&gt;</code> 标签内进行如下用户及角色配置即可访问.</p>
+<a id="more"></a>
+<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-gui"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-script"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-jmx"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-status"</span>/&gt;</span>
+</code></pre><p>tomcat的在线documents: <a href="http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html" target="_blank" rel="external">http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html</a> , 查看”Configuring Manager Application Access”栏，官方给出角色的描述：</p>
+<pre><code>manager-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-jmx - allows access <span class="built_in">to</span> <span class="operator">the</span> JMX proxy <span class="operator">and</span> <span class="operator">the</span> status pages
+manager-status - allows access <span class="built_in">to</span> <span class="operator">the</span> status pages only
+</code></pre><p>当然你还必须配置用户</p>
+<pre><code><span class="tag">&lt;<span class="title">user</span> <span class="attribute">username</span>=<span class="value">"admin"</span> <span class="attribute">password</span>=<span class="value">"admin"</span> <span class="attribute">roles</span>=<span class="value">"manager-gui,manager-script,manager-jmx,manager-status"</span>/&gt;</span>
+</code></pre><p>多个角色之间用逗号(“,”)隔开</p>
+<p>访问host-manager项目需配置角色：</p>
+<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-gui"</span>/&gt;</span>
+<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-script"</span>/&gt;</span>
+</code></pre><p>官方描述：</p>
+<pre><code>admin-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI
+admin-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface
+</code></pre><p>tips: Tomcat默认项目 manager/host-manager 的作用</p>
+<ul>
+<li><p>manager 项目：   对tomcat应用进行管理，包括对应用进行启动、停止和重启，以及发布新应用和删除已发布应用；设置应用的Expire sessions(session到期时间，默认30分钟)</p>
+</li>
+<li><p>host-manager 项目： 对 tomcat 的虚拟主机进行管理</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/06/TomcatRoles/" data-id="cihc6rbf60024em2e9k97z4sw" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/07/06/TomcatRoles/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/role/">role</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tomcat/">tomcat</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/07/07/EclipseShortcutKey/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Eclipse 快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/06/ChromeShortcutKey/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">chrome 技巧及快捷键</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +185,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/07/06/TomcatRoles/" data-title="Tomcat 角色" data-url="http://effine.cn/2015/07/06/TomcatRoles/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

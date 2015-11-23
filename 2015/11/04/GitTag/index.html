@@ -3,45 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Git 标签 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="$ git tag --help     # 查看帮助
+[查看标签]
+$ git tag [-l]        # 查看所有标签列表[list]
+$ git show &amp;lt;tag-name&amp;gt;     # 查看标签tag-name信息
+[创建/切换标签]
+$ git tag &amp;lt;v1.0&amp;gt;     # 创建轻量级标签v1.0
+$ git tag &amp;lt;tag-name&amp;gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 标签">
+<meta property="og:url" content="http://effine.cn/2015/11/04/GitTag/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="$ git tag --help     # 查看帮助
+[查看标签]
+$ git tag [-l]        # 查看所有标签列表[list]
+$ git show &amp;lt;tag-name&amp;gt;     # 查看标签tag-name信息
+[创建/切换标签]
+$ git tag &amp;lt;v1.0&amp;gt;     # 创建轻量级标签v1.0
+$ git tag &amp;lt;tag-name&amp;gt;">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Git 标签">
+<meta name="twitter:description" content="$ git tag --help     # 查看帮助
+[查看标签]
+$ git tag [-l]        # 查看所有标签列表[list]
+$ git show &amp;lt;tag-name&amp;gt;     # 查看标签tag-name信息
+[创建/切换标签]
+$ git tag &amp;lt;v1.0&amp;gt;     # 创建轻量级标签v1.0
+$ git tag &amp;lt;tag-name&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +90,83 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitTag" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/11/04/GitTag/" class="article-date">
+  <time datetime="2015-11-04T07:24:30.000Z" itemprop="datePublished">11月 4 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git 标签
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
+</code></pre><p>[查看标签]</p>
+<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span>]        <span class="comment"># 查看所有标签列表[list]</span>
+$ git show <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 查看标签tag-name信息</span>
+</code></pre><p>[创建/切换标签]</p>
+<pre><code>$ git <span class="keyword">tag</span> <span class="title">&lt;v1</span>.<span class="number">0</span>&gt;     <span class="comment"># 创建轻量级标签v1.0</span>
+$ git <span class="keyword">tag</span> <span class="title">&lt;tag-name</span>&gt; <span class="tag">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>
+$ git <span class="keyword">tag</span> <span class="title">[-a</span>] <span class="tag">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>
+
+$ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span>
+</code></pre><p>[删除标签]</p>
+<pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span>
+<span class="variable">$ </span>git push remote_name  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
+</code></pre><p>[获取/推送远程标签]</p>
+<pre><code><span class="variable">$ </span>git pull [remote_name] --tags     <span class="comment"># 获取远程所有标签(remote_name可选)</span>
+<span class="variable">$ </span>git push [remote_name] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
+<span class="variable">$ </span>git push [remote_name] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/04/GitTag/" data-id="cihc6rbed000sem2e6u1k4jmu" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/11/04/GitTag/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tag/">tag</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/11/10/GitConfig/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git Config
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/10/23/GitBranch/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Git 分支</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +180,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/11/04/GitTag/" data-title="Git 标签" data-url="http://effine.cn/2015/11/04/GitTag/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

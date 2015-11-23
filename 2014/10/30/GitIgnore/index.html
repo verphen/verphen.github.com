@@ -3,45 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>gitignore 配置 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gitignore 配置">
+<meta property="og:url" content="http://effine.cn/2014/10/30/GitIgnore/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="gitignore 配置">
+<meta name="twitter:description" content="使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 .gitignore
+$ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
+文件配置忽略规则：
+&amp;gt;  空行不匹配任何内容
+&amp;gt;  井号[#]表示该行为注释行
+&amp;gt;  顺斜杠[/]表示目录
+&amp;gt;  反斜杠[\]表示转义字符(&quot;\!&quot;意为匹配">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +90,85 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitIgnore" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/10/30/GitIgnore/" class="article-date">
+  <time datetime="2014-10-29T23:35:22.000Z" itemprop="datePublished">10月 30 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      gitignore 配置
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 <code>.gitignore</code></p>
+<pre><code><span class="variable">$ </span>vi .gitignore   <span class="comment"># 直接创建并且编辑（如存在直接编辑）</span>
+</code></pre><p>文件配置忽略规则：</p>
+<pre><code>&gt;  空行不匹配任何内容
+&gt;  井号<span class="string">[#]</span>表示该行为注释行
+&gt;  顺斜杠<span class="string">[/]</span>表示目录
+&gt;  反斜杠<span class="string">[\]</span>表示转义字符(<span class="string">"\!"</span>意为匹配<span class="string">"!"</span>)
+&gt;  星号<span class="string">[*]</span>表示通配符
+&gt;  问号<span class="string">[?]</span>表示匹配单个字符
+&gt;  感叹号<span class="string">[!]</span>表示忽略指定模式以外的文件或目录(表示匹配的模式取反)
+</code></pre><p>skills</p>
+<ul>
+<li><p>通常一条忽略规则或注释单独一行; 忽略规则行尾不允许在使用注释语句</p>
+</li>
+<li><p>Git对忽略文件是从上到下进行匹配；如前面的规则范围较大，则后面的规则将不生效</p>
+</li>
+<li><p>忽略规则只对未加入git管理的文件生效;若需要忽略文件已经加入git管理，需要先使用 <code>git rm [-r]  --cached &lt;filename&gt;</code> 将文件[或目录]移除git的管理；</p>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/10/30/GitIgnore/" data-id="cihc6rbgt004mem2et8cvocd4" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/10/30/GitIgnore/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ignore/">ignore</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/10/30/GitCommands/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git Commands
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/09/11/HexoBlogConfig[1]/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hexo Blog Config[1]</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +182,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/10/30/GitIgnore/" data-title="gitignore 配置" data-url="http://effine.cn/2014/10/30/GitIgnore/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

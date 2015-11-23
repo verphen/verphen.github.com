@@ -3,45 +3,27 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Eclipse插件开发向导页问题分析 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="在开发Eclipse插件过程中，遇到这样的错误：
+The selected wizard could not be started.xxxWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard;
+错误分析:
+xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse插件开发向导页问题分析">
+<meta property="og:url" content="http://effine.cn/2013/10/15/EclipsePluginProblem/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="在开发Eclipse插件过程中，遇到这样的错误：
+The selected wizard could not be started.xxxWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard;
+错误分析:
+xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Eclipse插件开发向导页问题分析">
+<meta name="twitter:description" content="在开发Eclipse插件过程中，遇到这样的错误：
+The selected wizard could not be started.xxxWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard;
+错误分析:
+xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +81,72 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-EclipsePluginProblem" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2013/10/15/EclipsePluginProblem/" class="article-date">
+  <time datetime="2013-10-14T17:26:10.000Z" itemprop="datePublished">10月 15 2013</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Eclipse插件开发向导页问题分析
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>在开发Eclipse插件过程中，遇到这样的错误：</p>
+<pre><code><span class="tag">The</span> <span class="tag">selected</span> <span class="tag">wizard</span> <span class="tag">could</span> <span class="tag">not</span> <span class="tag">be</span> <span class="tag">started</span><span class="class">.xxxWizard</span> <span class="tag">cannot</span> <span class="tag">be</span> <span class="tag">cast</span> <span class="tag">to</span> <span class="tag">org</span><span class="class">.eclipse</span><span class="class">.ui</span><span class="class">.IWorkbenchWizard</span>;
+</code></pre><p>错误分析:</p>
+<p>xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接口即可（INewWizard接口是IWorkbenchWizard的子接口，而这两个接口又都是IWizard接口的子接口）；</p>
+<p>在Eclipse中，向导必须实现接口org.eclipse.jface.wizard.IWizard，如不实现IWizard接口而只继承Wizard类，则还需实现performFinish()方法，因为该方法在Wizard类中是对接口IWizard的抽象实现，即Eclipse提供的org.eclipse.jface.wizard.Wizard类是IWizard的抽象实现；一般我们编写自己的Wizard类既继承Wizard类，且实现INewWizard接口。</p>
+<p>向导页必须实现接口org.eclipse.jface.wizard.IWizardPage，因为org.eclipse.jface.wizard.WizardPage 也是 IWizardPage 的一个抽象实现.</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="cihc6rbig007hem2ezd1ndmwk" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2013/10/15/EclipsePluginProblem/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2013/10/26/FileTree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          File Tree
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/10/15/JavaDaemonThread/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java守护线程</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +160,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2013/10/15/EclipsePluginProblem/" data-title="Eclipse插件开发向导页问题分析" data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

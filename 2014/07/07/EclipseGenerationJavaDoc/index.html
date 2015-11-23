@@ -3,45 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Eclipse生成JavaDoc | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="项目开发中有时需要一览整个项目的类、方法的文档说明，此时可以使用JavaDoc来临时补缺没有文档的烦恼；下面介绍在Eclipse中导出JavaDoc的几种方法，其实都是殊途同归(不同的方式打开Javadoc Generation向导页进行配置)：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Eclipse生成JavaDoc">
+<meta property="og:url" content="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="项目开发中有时需要一览整个项目的类、方法的文档说明，此时可以使用JavaDoc来临时补缺没有文档的烦恼；下面介绍在Eclipse中导出JavaDoc的几种方法，其实都是殊途同归(不同的方式打开Javadoc Generation向导页进行配置)：">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Eclipse生成JavaDoc">
+<meta name="twitter:description" content="项目开发中有时需要一览整个项目的类、方法的文档说明，此时可以使用JavaDoc来临时补缺没有文档的烦恼；下面介绍在Eclipse中导出JavaDoc的几种方法，其实都是殊途同归(不同的方式打开Javadoc Generation向导页进行配置)：">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +72,82 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-EclipseGenerationJavaDoc" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/07/07/EclipseGenerationJavaDoc/" class="article-date">
+  <time datetime="2014-07-07T07:30:21.000Z" itemprop="datePublished">7月 7 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Eclipse生成JavaDoc
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>项目开发中有时需要一览整个项目的类、方法的文档说明，此时可以使用JavaDoc来临时补缺没有文档的烦恼；下面介绍在Eclipse中导出JavaDoc的几种方法，其实都是殊途同归(不同的方式打开Javadoc Generation向导页进行配置)：</p>
+<a id="more"></a>
+<h3 id="打开Javadoc_Generation向导页">打开Javadoc Generation向导页</h3><ol>
+<li><p>Eclipse菜单栏 –&gt; Project –&gt; Generate javadoc出现Javadoc Generation向导页</p>
+</li>
+<li><p>选择需要生成Javadoc的项目右键Export，选择Java选项的下javadoc即可出现Javadoc Generation向导页 </p>
+</li>
+</ol>
+<p>###配置Javadoc Generation向导页</p>
+<ol>
+<li>在Javadoc command选项配置 <code>jdk\bin\javadoc.exe</code>；</li>
+<li>选择需要导出Javadoc的项目(注意：需要展开项目目录查看是否所有的文件都选中)；</li>
+<li>在选项 create javadoc for members with visibility选择默认的 “public”即可；</li>
+<li>选择Use standard doclet的Destination选择导出Javadoc的目标地址；</li>
+<li>一直点击next到Javadoc Generation的最后一个向导页,在Extra javadoc options选项加入<code>-encoding utf-8  -charset utf-8</code> 点击Finish即可。</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/" data-id="cihc6rbh40053em2e61dnyx44" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/08/05/AnalysisJavaStringToInt/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java字符串转String换成整型int的分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/07/01/BuildBlogOfHexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Build Blog Of Hexo</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +161,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/07/07/EclipseGenerationJavaDoc/" data-title="Eclipse生成JavaDoc" data-url="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

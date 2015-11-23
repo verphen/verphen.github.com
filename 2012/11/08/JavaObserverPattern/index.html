@@ -3,45 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>JAVA观察者模式 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA观察者模式">
+<meta property="og:url" content="http://effine.cn/2012/11/08/JavaObserverPattern/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="JAVA观察者模式">
+<meta name="twitter:description" content="Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +72,180 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaObserverPattern" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2012/11/08/JavaObserverPattern/" class="article-date">
+  <time datetime="2012-11-08T15:33:00.000Z" itemprop="datePublished">11月 8 2012</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA观察者模式
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出code供参考：</p>
+<a id="more"></a>
+<p>抽象被观察者角色</p>
+<pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013年10月4日  下午11:02:21 
+ */</span>  
+
+<span class="keyword">package</span> org.effine.observer;  
+
+<span class="comment">/*抽象被观察者角色*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IWitched</span> </span>{  
+
+    <span class="comment">/* 添加观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWitcher</span><span class="params">(IWitchers w)</span></span>;  
+
+    <span class="comment">/* 删除观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteWitcher</span><span class="params">(IWitchers w)</span></span>;  
+
+    <span class="comment">/* 被观察者 发生变化，通知观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyWitcher</span><span class="params">(Object o)</span></span>;  
+}
+</code></pre><p>抽象观察者角色</p>
+<pre><code>/<span class="keyword">*</span><span class="keyword">*</span> 
+ <span class="keyword">*</span> <span class="comment">@author effine </span>
+ <span class="keyword">*</span> <span class="comment">@date 2013年10月4日  下午11:06:57 </span>
+ <span class="keyword">*</span>/  
+
+package org.effine.observer;  
+
+/<span class="keyword">*</span>抽象观察者角色<span class="keyword">*</span>/  
+public interface IWitchers {  
+
+    /<span class="keyword">*</span> 当被观察者发生变化，接到通知做出反应，更新操作 <span class="keyword">*</span>/  
+    public void update(Object o);  
+}  
+</code></pre><p>具体被观察者角色</p>
+<pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013年10月4日  下午11:15:20 
+ */</span>  
+
+<span class="keyword">package</span> org.effine.observer;  
+
+<span class="keyword">import</span> java.util.ArrayList;  
+<span class="keyword">import</span> java.util.List;  
+
+<span class="comment">/*具体被观察者角色*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteWitched</span> <span class="keyword">implements</span> <span class="title">IWitched</span> </span>{  
+
+    <span class="comment">/* save witchers list */</span>  
+    <span class="keyword">private</span> List&lt;IWitchers&gt; list = <span class="keyword">new</span> ArrayList&lt;IWitchers&gt;();  
+
+    <span class="annotation">@Override</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWitcher</span><span class="params">(IWitchers w)</span> </span>{  
+        list.add(w);  
+    }  
+
+    <span class="annotation">@Override</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteWitcher</span><span class="params">(IWitchers w)</span> </span>{  
+        list.remove(w);  
+    }  
+
+    <span class="annotation">@Override</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyWitcher</span><span class="params">(Object o)</span> </span>{  
+        <span class="keyword">for</span> (IWitchers l : list) {  
+            l.update(o);  
+        }  
+    }  
+}  
+</code></pre><p>具体观察者角色</p>
+<pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013年10月4日  下午11:16:56 
+ */</span>  
+
+<span class="keyword">package</span> org.effine.observer;  
+
+<span class="comment">/*具体观察者角色*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteWitchers</span> <span class="keyword">implements</span> <span class="title">IWitchers</span> </span>{  
+
+    <span class="annotation">@Override</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(Object o)</span> </span>{  
+        System.out.println(o);  
+    }  
+}  
+</code></pre><p>测试类</p>
+<pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013年10月4日  下午11:27:18 
+ */</span>  
+
+<span class="keyword">package</span> org.effine.observer;  
+
+<span class="comment">/* observer pattern test class*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestWitch</span> </span>{  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  
+
+        <span class="comment">/* witched : girl */</span>  
+        IWitched girl = <span class="keyword">new</span> ConcreteWitched();  
+
+        <span class="comment">/* witchers */</span>  
+        IWitchers witcher1 = <span class="keyword">new</span> ConcreteWitchers();  
+        IWitchers witcher2 = <span class="keyword">new</span> ConcreteWitchers();  
+        IWitchers witcher3 = <span class="keyword">new</span> ConcreteWitchers();  
+
+        <span class="comment">/* witched add witchers */</span>  
+        girl.addWitcher(witcher1);  
+        girl.addWitcher(witcher2);  
+        girl.addWitcher(witcher3);  
+
+        girl.notifyWitcher(args);  
+    }  
+}  
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/08/JavaObserverPattern/" data-id="cihc6rbj4008hem2em9cannqc" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2012/11/08/JavaObserverPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2012/11/09/JavaSingletonPattern/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JAVA单例模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/06/14/FirefoxCommonPlugins/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Firefox常用插件</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +259,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2012/11/08/JavaObserverPattern/" data-title="JAVA观察者模式" data-url="http://effine.cn/2012/11/08/JavaObserverPattern/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

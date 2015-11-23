@@ -3,45 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Git 分支 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="$ git branch --help        # 查看关于git branch帮助
+[查看分支]
+$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch -r     # 查看所有远程[remote]分支
+$ git branch -a     # 查看所有[all]本地及远程分支
+$ git branch -v     # 查看各个分支最后的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git 分支">
+<meta property="og:url" content="http://effine.cn/2015/10/23/GitBranch/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="$ git branch --help        # 查看关于git branch帮助
+[查看分支]
+$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch -r     # 查看所有远程[remote]分支
+$ git branch -a     # 查看所有[all]本地及远程分支
+$ git branch -v     # 查看各个分支最后的">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="Git 分支">
+<meta name="twitter:description" content="$ git branch --help        # 查看关于git branch帮助
+[查看分支]
+$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch -r     # 查看所有远程[remote]分支
+$ git branch -a     # 查看所有[all]本地及远程分支
+$ git branch -v     # 查看各个分支最后的">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +87,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitBranch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/10/23/GitBranch/" class="article-date">
+  <time datetime="2015-10-23T14:35:35.000Z" itemprop="datePublished">10月 23 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git 分支
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
+</code></pre><p>[查看分支]</p>
+<pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
+<span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
+<span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
+<span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
+</code></pre><p>[创建\切换\重命名分支]</p>
+<pre><code>$ git branch <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建dev分支(继承当前分支来创建)</span>
+$ git checkout <span class="variable">&lt;dev&gt;</span>     <span class="comment"># 切换分支到dev(分支dev需已存在)</span>
+$ git checkout -b <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建分支dev并切换到该分支(前提dev分支不存在)</span>
+$ git checkout -b <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支dev并切换到该分支，继承master分支创建而来</span>
+$ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名dev分支为test</span>
+</code></pre><p>[删除分支]</p>
+<pre><code><span class="comment"># 删除本地分支[dev]</span>
+<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;dev&gt;
+    -d         <span class="comment"># 删除[delete]本地dev分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地dev分支（多个分支用空格分隔）</span>
+
+<span class="comment"># 删除远程分支[dev]</span>
+<span class="variable">$ </span>git branch -d -r &lt;remote_name/dev&gt;     <span class="comment"># 删除远程分支dev</span>
+<span class="variable">$ </span>git push remote_name <span class="symbol">:&lt;dev&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push remote_name --delete &lt;dev&gt;     <span class="comment"># [since Git v1.7.0]</span>
+</code></pre><p>[合并分支]</p>
+<pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
+<span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
+<span class="variable">$ </span>git merge &lt;dev&gt;     <span class="comment"># 合并dev分支到当前分支,发生冲突修复后再次提交</span>
+</code></pre><p>[关联分支]</p>
+<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;remote_name/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支remote_name/<span class="built_in">dev</span>关联
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cihc6rbeg000xem2eenrc0zvg" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/10/23/GitBranch/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/branch/">branch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/11/04/GitTag/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git 标签
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/13/JavaEnvironmentVariable/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Linux设置Java环境变量</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +188,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/10/23/GitBranch/" data-title="Git 分支" data-url="http://effine.cn/2015/10/23/GitBranch/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

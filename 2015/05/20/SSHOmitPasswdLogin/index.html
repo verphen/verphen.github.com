@@ -3,45 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>SSH免密码登陆 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH免密码登陆">
+<meta property="og:url" content="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="SSH免密码登陆">
+<meta name="twitter:description" content="频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +73,78 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SSHOmitPasswdLogin" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/05/20/SSHOmitPasswdLogin/" class="article-date">
+  <time datetime="2015-05-20T09:11:02.000Z" itemprop="datePublished">5月 20 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSH免密码登陆
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录"></p>
+<p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
+<a id="more"></a>
+<p>本地通过SSH登录远程主机,首先需要在本地生成密钥：</p>
+<pre><code>$ ssh-keygen <span class="string">[-t rsa]</span>        # 本地主机生成密钥<span class="string">[采用rsa算法生成]</span>
+</code></pre><p>一直回车即可,最后将会在用户目录 ~/.ssh 生成公钥 id_rsa.pub 和私钥 id_rsa 两个文件,将公钥内容追加到远程主机文件 ~/.ssh/authorized_keys 文件中：</p>
+<pre><code>$ ssh-<span class="keyword">copy</span>-<span class="property">id</span> [-i [identity_file]] [user@]machine   <span class="comment"># 追加本机公钥到RemoteHost的authorized_keys</span>
+</code></pre><p>输入远程主机密码即完成配置；此时便可以实现SSH免密码登录远程主机。当然，追加公钥内容到主机时，你也可以上传公钥文件到远程主机，然后执行命令：</p>
+<pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub&gt;  <span class="prompt">&gt;&gt;  </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment"># 追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
+</code></pre><p>我远程主机home目录存在本机公钥id_rsa.pub文件,所以我执行以下命令即可：</p>
+<pre><code><span class="variable">$ </span>cat /home/id_rsa.pub path   <span class="prompt">&gt;&gt;    </span>~<span class="regexp">/.ssh/authorized</span>_keys
+</code></pre><p>扩展阅读： google搜索ssh-keygen参数设置</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/" data-id="cihc6rbfo0030em2esnc0a8ac" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/06/19/SSHInstall/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SSH安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/20/TailCommand/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">tail command</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +158,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/05/20/SSHOmitPasswdLogin/" data-title="SSH免密码登陆" data-url="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

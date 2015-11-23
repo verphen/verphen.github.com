@@ -3,45 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Git Flow安装 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="windows 安装Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在windows的安装;
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+因为windows安装的git属于msysgit版，所以需要按照msysgit的安装步骤来安装git flow；首先需要安装util-linux-ng for Windows，下载zip格式的二进制Binaries文件，如下图：将下载的两个文件解压，将util-linux-ng-2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Flow安装">
+<meta property="og:url" content="http://effine.cn/2013/11/15/InstallGitFlow/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="windows 安装Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在windows的安装;
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+因为windows安装的git属于msysgit版，所以需要按照msysgit的安装步骤来安装git flow；首先需要安装util-linux-ng for Windows，下载zip格式的二进制Binaries文件，如下图：将下载的两个文件解压，将util-linux-ng-2">
+<meta property="og:image" content="http://effine.cn/images/git/Install-Git-Flow-One.png">
+<meta property="og:image" content="http://effine.cn/images/git/Install-Git-Flow-Two.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Git Flow安装">
+<meta name="twitter:description" content="windows 安装Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在windows的安装;
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+因为windows安装的git属于msysgit版，所以需要按照msysgit的安装步骤来安装git flow；首先需要安装util-linux-ng for Windows，下载zip格式的二进制Binaries文件，如下图：将下载的两个文件解压，将util-linux-ng-2">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +80,73 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-InstallGitFlow" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2013/11/15/InstallGitFlow/" class="article-date">
+  <time datetime="2013-11-14T17:27:09.000Z" itemprop="datePublished">11月 15 2013</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git Flow安装
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <h3 id="windows_安装">windows 安装</h3><p>Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在windows的安装;</p>
+<ol>
+<li>因为windows安装的git属于msysgit版，所以需要按照msysgit的安装步骤来安装git flow；首先需要安装<a href="http://gnuwin32.sourceforge.net/packages/util-linux-ng.htm" target="_blank" rel="external">util-linux-ng for Windows</a>，下载zip格式的二进制Binaries文件，如下图：<br><img src="/images/git/Install-Git-Flow-One.png" alt="util-linux-ng for Windows"><br><img src="/images/git/Install-Git-Flow-Two.png" alt="libintl"><br>将下载的两个文件解压，将util-linux-ng-2.14.1-bin/bin/getopt.exe和libintl-0.14.4-bin/bin/libintl3.dll文件复制到本地Git安装路径的bin目录；</li>
+<li>clone GitHub的gitflow项目到你的临时工作目录（安装完成可以删除），执行命令 <code>git clone --recursive git://github.com/nvie/gitflow.git</code>；clone完成，win + R运行”cmd”进入windows控制台，进入该gitflow/contrib目录，执行命令<code>msysgit-install.cmd &quot;Git Install Path&quot;(如E:\Install\Git)</code></li>
+<li>测试；进入windows控制台，执行命令<code>git flow</code>看提示信息(前提：git必须设置环境变量；如没有设置则使用Git Bash)</li>
+</ol>
+<p>参考资料：<br>[<a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank" rel="external">作者说明</a>]、<br>[<a href="http://www.360doc.com/content/13/0720/22/2569758_301389862.shtml" target="_blank" rel="external">资料一</a>]</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/11/15/InstallGitFlow/" data-id="cihc6rbi0006qem2ey0qa7o0m" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2013/11/15/InstallGitFlow/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2013/11/18/MoveHouse/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          搬家之余
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/11/06/ResignEclipseEngineer/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">辞职Eclipse工程师</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +160,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2013/11/15/InstallGitFlow/" data-title="Git Flow安装" data-url="http://effine.cn/2013/11/15/InstallGitFlow/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

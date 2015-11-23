@@ -3,45 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>安装NodeJS | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到node.js，特此整理一下node.js的安装。
+Windows安装node.js
+官网下载：http://nodejs.org/download/ ，两种安装方式：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装NodeJS">
+<meta property="og:url" content="http://effine.cn/2014/06/30/InstallNodejs/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到node.js，特此整理一下node.js的安装。
+Windows安装node.js
+官网下载：http://nodejs.org/download/ ，两种安装方式：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="安装NodeJS">
+<meta name="twitter:description" content="node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到node.js，特此整理一下node.js的安装。
+Windows安装node.js
+官网下载：http://nodejs.org/download/ ，两种安装方式：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +84,95 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-InstallNodejs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/06/30/InstallNodejs/" class="article-date">
+  <time datetime="2014-06-29T17:42:14.000Z" itemprop="datePublished">6月 30 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      安装NodeJS
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>node.js听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到node.js，特此整理一下node.js的安装。</p>
+<h3 id="Windows安装node-js">Windows安装node.js</h3><ol>
+<li><p>官网下载：<a href="http://nodejs.org/download/" title="下载node.js" target="_blank" rel="external">http://nodejs.org/download/</a> ，两种安装方式：</p>
+<ul>
+<li>exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）</li>
+<li><p>msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录</p>
+<p>测试是否安装成功：<code>node --version</code> 显示版本信息</p>
+</li>
+</ul>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>安装npm</p>
+<p> 记得有人说npm相对于nodejs,就相当于maven相对于java，不知道这种比拟是否恰当，暂且这么理解</p>
+<ul>
+<li>安装npm之前需要安装git（具体安装参考google）</li>
+<li>执行命令<code>git config --system http.sslcainfo /bin/curl-ca-bundle.crt</code>（说实话我也不知道这个命令什么意思）</li>
+<li>克隆npm仓库到本地<code>git clone --recursive git://github.com/isaacs/npm.git myblog</code>，克隆npm仓库到当前目录下的myblog文件夹；</li>
+<li>进入myblog目录 <code>cd myblog</code> ；执行命令<code>node cli.js install npm -gf</code> （命令含义无从而知），</li>
+<li>测试是否成功执行命令<code>npm install -d</code> ,如果在最后出现信息<code>npm info ok</code>则说明成功安装npm</li>
+</ul>
+</li>
+<li><p>安装过程中错误分析</p>
+<ul>
+<li>出现 <code>npm ERR! registry error parsing json</code> 错误，可能需要设置npm代理,执行命令 <code>npm config set registry http://registry.cnpmjs.org</code></li>
+</ul>
+</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/06/30/InstallNodejs/" data-id="cihc6rbh9005fem2e873ltsl2" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/06/30/InstallNodejs/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/">windows</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/07/01/BuildBlogOfHexo/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Build Blog Of Hexo
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/04/07/JavaAdapterPattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JAVA适配器模式</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +186,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/06/30/InstallNodejs/" data-title="安装NodeJS" data-url="http://effine.cn/2014/06/30/InstallNodejs/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

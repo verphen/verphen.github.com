@@ -3,45 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Git Connect GitHub | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="怎么使用GitHub作为代码的远程托管服务器？
 
+在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+本机创建SSH key：ssh -keygen -C &amp;quot;username@email.com&amp;quot; -t rsa(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Connect GitHub">
+<meta property="og:url" content="http://effine.cn/2012/12/02/GitConnectGithub/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="怎么使用GitHub作为代码的远程托管服务器？
 
+在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+本机创建SSH key：ssh -keygen -C &amp;quot;username@email.com&amp;quot; -t rsa(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的C">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Git Connect GitHub">
+<meta name="twitter:description" content="怎么使用GitHub作为代码的远程托管服务器？
 
+在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。
 
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+本机创建SSH key：ssh -keygen -C &amp;quot;username@email.com&amp;quot; -t rsa(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的C">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +84,99 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-GitConnectGithub" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2012/12/02/GitConnectGithub/" class="article-date">
+  <time datetime="2012-12-02T05:40:43.000Z" itemprop="datePublished">12月 2 2012</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git Connect GitHub
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>怎么使用GitHub作为代码的远程托管服务器？</p>
+<ol>
+<li><p>在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。</p>
+</li>
+<li><p>本机创建SSH key：<code>ssh -keygen -C &quot;username@email.com&quot; -t rsa</code>(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的<code>C:\Users\本机用户名</code>路径下产生一个.ssh文件夹，里面对应SSH Keys，其中id_rsa.pub是GitHub需要的SSH公钥文件。然后在GitHub网站右上角选择Account Settings，然后选择SSH Keys，点击Add SSH Key，将id_rsa.pub文件里的内容copy至其中的key里（Title随意）；当然如果之前你使用过SSH Keys命令需要删除.ssh文件夹然后重新开始。</p>
+</li>
+</ol>
+<a id="more"></a>
+<ol>
+<li><p>验证SSH keys：<code>ssh -T git@github.com</code>,仔细看描述信息</p>
+</li>
+<li><p>设置全局变量(暂且这么称呼)username：<code>git config  --global user.name &quot;usernme&quot;</code>(username：GitHub的用户名）, Email：<code>git config  --global user.email emailName</code>（emailName：GitHub的注册邮箱） </p>
+</li>
+<li><p>克隆GitHub上的仓库<code>git clone</code> </p>
+</li>
+<li><p>在本地创建一个工程（文件夹），在该目录下随意创建一个文件（如readme.txt，在文件中写点内容，最好是英文；如果是中文需要以uft-8编码格式进行保存，因为GitHub上默认使用utf-8编码格式）；git bash进入工程目录（如需要进入D盘<code>cd ./d:</code>， 然后cd到工程目录下），输入命令<code>git init</code>初始化工程。</p>
+</li>
+<li><p>使用<code>git add filename</code>(filename包括后缀) 将文件添加到git库(即将文件交给git管理)；命令<code>git add .</code>是添加所有文件和文件夹。</p>
+</li>
+<li><p>使用<code>git commit -m &quot;commit message&quot;</code>进行提交git本地库</p>
+</li>
+<li><p>使用远程连接：git remote add origin git@github.com:username/Hello.git （username：GitHub上的用户名，Hello：我在GitHub上创建的仓库repository名）</p>
+</li>
+<li><p>输入命令“git push origin master”将源码推送到GitHub</p>
+</li>
+<li><p>在GitHub上仓库页面刷新即可看到你在本地创建并提交的文件</p>
+</li>
+</ol>
+<p>推荐各位使用GitHub的客户端工具，界面做得确实不错。  </p>
+<ul>
+<li>windows: <a href="https://windows.github.com/" target="_blank" rel="external">https://windows.github.com/</a> </li>
+<li>mac: <a href="https://mac.github.com/" target="_blank" rel="external">https://mac.github.com/</a></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/12/02/GitConnectGithub/" data-id="cihc6rbip007xem2ewkc19n9j" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2012/12/02/GitConnectGithub/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2012/12/03/GitFileStatus/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Git库文件状态
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/11/22/InitalMaven/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">初识Maven</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +190,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2012/12/02/GitConnectGithub/" data-title="Git Connect GitHub" data-url="http://effine.cn/2012/12/02/GitConnectGithub/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

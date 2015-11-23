@@ -3,45 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>深入JAVA虚拟机 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！
+本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；
+针对JAVA的一套流程：1、编辑器编写Java源码（.java文件）2、java文件经过Java编译器编程成Class文件3、java虚拟机加载class文件（由类加载">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入JAVA虚拟机">
+<meta property="og:url" content="http://effine.cn/2014/02/27/JavaVirtualMachine/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！
+本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；
+针对JAVA的一套流程：1、编辑器编写Java源码（.java文件）2、java文件经过Java编译器编程成Class文件3、java虚拟机加载class文件（由类加载">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="深入JAVA虚拟机">
+<meta name="twitter:description" content="做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！
+本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；
+针对JAVA的一套流程：1、编辑器编写Java源码（.java文件）2、java文件经过Java编译器编程成Class文件3、java虚拟机加载class文件（由类加载">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +78,70 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-JavaVirtualMachine" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/02/27/JavaVirtualMachine/" class="article-date">
+  <time datetime="2014-02-27T14:18:22.000Z" itemprop="datePublished">2月 27 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      深入JAVA虚拟机
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！</p>
+<p>本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；</p>
+<p>针对JAVA的一套流程：<br>1、编辑器编写Java源码（.java文件）<br>2、java文件经过Java编译器编程成Class文件<br>3、java虚拟机加载class文件（由类加载器完成）解释执行成字节码，再由虚拟机中的执行引擎去执行字节码文件</p>
+<p>执行引擎有多种策略：<br>1、一次性解释字节码<br>2、较上一种执行引擎更快，消耗内存（即时编译Just In Time Compiler）；第一次执行的字节码会被编译成本地机器代码，编译出的本地机器代码会被缓存，当方法调用的时候可以重用<br>3、该种引擎是自适应优化器；虚拟机开始的时候解释字节码，会监事运行中的程序活动，并且激励下使用最频繁的代码段，程序运行的时候，虚拟机只把那些惠东最频繁的代码编译成本地代码，</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cihc6rbhk0063em2evr98jjkr" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/02/27/JavaVirtualMachine/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/03/13/BookKnowAnswerForWater/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          阅《水知道答案》
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/02/27/BookMeetUnknowMe/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">阅《遇见未知的自己》</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +155,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/02/27/JavaVirtualMachine/" data-title="深入JAVA虚拟机" data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

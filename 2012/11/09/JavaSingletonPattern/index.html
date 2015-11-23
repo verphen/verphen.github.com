@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JAVA单例模式 | effine</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。
+优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；
+缺点及注意点：
+
+多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JAVA单例模式">
+<meta property="og:url" content="http://effine.cn/2012/11/09/JavaSingletonPattern/index.html">
+<meta property="og:site_name" content="effine">
+<meta property="og:description" content="作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。
+优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；
+缺点及注意点：
+
+多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if">
+<meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JAVA单例模式">
+<meta name="twitter:description" content="作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。
+优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；
+缺点及注意点：
+
+多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if">
+  
+    <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/imgs/favicon.png">
+  
+  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <!-- 其后一行被effine注释 -->
+        <!-- <a href="/" id="logo">effine</a> -->
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">home</a>
+        
+          <a class="main-nav-link" href="/archives">archives</a>
+        
+          <a class="main-nav-link" href="/opus">opus</a>
+        
+          <a class="main-nav-link" href="/reading">reading</a>
+        
+          <a class="main-nav-link" href="/riding">riding</a>
+        
+          <a class="main-nav-link" href="/about">about</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://effine.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-JavaSingletonPattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/09/JavaSingletonPattern/" class="article-date">
+  <time datetime="2012-11-09T13:32:11.000Z" itemprop="datePublished">11月 9 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JAVA单例模式
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。</p>
+<p>优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；</p>
+<p>缺点及注意点：</p>
+<ul>
+<li>多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if语句判断块，此时类尚未被实例化，那么将同时得到两个不同的实例（此注意点比较容易避免，获取实例时使用同步sync就可以很好的解决）。</li>
+<li>当单例类被多个classloader加载的情况下，可能获得多个单例类的实例（此种情况可能比较难避免，这需要使所有的类使用相同的类加载器加载）。</li>
+<li>当单例类实现了序列化接口（Serializer）时，我们如果将对象序列化，并返回序列化得到实例时，这个实例将是一个新的实例，而不是序列化之前的实例（在这种情况下，需要在此类中添加readResolve方法，将返回对象设置为当前实例，否则会获得一个不同于序列化之前的类）。<br>单例模式具体分为饿汉式、懒汉式及登记式（这个很少介绍）：</li>
+</ul>
+<a id="more"></a>
+<p>1、饿汉式  HungrySingleton.java</p>
+<pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013-9-9  下午11:23:42
+ */</span>  
+
+<span class="keyword">package</span> org.effine.singleton;  
+
+<span class="comment">/*单例模式：饿汉式*/</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HungrySingleton</span> </span>{  
+
+    <span class="comment">/* 饿汉式单例模式,声明的同时初始化对象 */</span>  
+    <span class="keyword">private</span> <span class="keyword">static</span> HungrySingleton hungry = <span class="keyword">new</span> HungrySingleton();  
+
+    <span class="comment">/* 构造方法设置成privae，即实现了单态 */</span>  
+    <span class="function"><span class="keyword">private</span> <span class="title">HungrySingleton</span><span class="params">()</span> </span>{  
+    }  
+
+    <span class="comment">/* 返回一个单态模式的类的实例 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> HungrySingleton <span class="title">getInstance</span><span class="params">()</span> </span>{  
+        <span class="keyword">return</span> hungry;  
+    }  
+}  
+</code></pre><p>2、懒汉式  LazySingleton.java</p>
+<pre><code><span class="comment">/** 
+ * @author effine 
+ * @date 2013年9月26日  下午1:50:47 
+ */</span>  
+
+<span class="keyword">package</span> org.effine.singleton;  
+
+<span class="comment">/*单例模式：懒汉式*/</span>  
+<span class="keyword">public</span> <span class="keyword">class</span> LazySingleton {  
+
+    <span class="comment">/* 声明的时候不初始化对象 */</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton <span class="keyword">lazy</span> = <span class="literal">null</span>;  
+
+    <span class="comment">/* 将构造器私有化，不对外提供构造器 */</span>  
+    <span class="keyword">private</span> LazySingleton() {  
+    }  
+
+    <span class="comment">/* 提供对外访问该类对象的方法，多线程下为了资源共享将代码块设置信号量，保证线程安全 */</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton getInstance() {  
+          <span class="keyword">synchronized</span> (LazySingleton.<span class="keyword">class</span>) {
+            <span class="keyword">if</span> (<span class="keyword">lazy</span> == <span class="literal">null</span>) {  
+                <span class="comment">/* sychronized用于代码块时需要一个锁对象，针对实例方法使用this对象； */</span>  
+                   <span class="comment">/* 当针对类方法时可以使用该类对应的字节码文件对象，this这个时候不存在 */</span>  
+                <span class="keyword">lazy</span> = <span class="keyword">new</span> LazySingleton();  
+            }  
+        }  
+        <span class="keyword">return</span> <span class="keyword">lazy</span>;  
+    }  
+}  
+</code></pre><p>引用文章针对上面代码（lazy=new LazySingleton();）有加上一次if判断（if(lazy==null) ），给出的理由是“采用双重判断，提高了多线程下操作的效率”；我认为没能提高效率，所以去掉多余的if判断；（ps：如有见解，欢迎指正探讨）</p>
+<p>3、登记式  RegisterSingleton.java</p>
+<pre><code><span class="comment">/** 
+ * @author effine 
+ * @date 2013年9月29日  下午1:43:31 
+ */</span>  
+
+package org.effine.singleton;  
+
+import java.util.HashMap;  
+import java.util.Map;  
+
+<span class="comment">/*单例模式：登记式 --- 类似Spring里面的方法，将类名注册，下次从里面直接获取*/</span>  
+<span class="keyword">public</span> <span class="keyword">class</span> RegisterSingleton {  
+    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, RegisterSingleton&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;String, RegisterSingleton&gt;();  
+    <span class="keyword">static</span> {  
+        RegisterSingleton <span class="keyword">register</span> = <span class="keyword">new</span> RegisterSingleton();  
+        <span class="built_in">map</span>.put(<span class="keyword">register</span>.getClass().getName(), <span class="keyword">register</span>);  
+    }  
+
+    <span class="comment">/* 构造方法私有，防止外部实例化 */</span>  
+    <span class="function"><span class="keyword">private</span> <span class="title">RegisterSingleton</span><span class="params">()</span> </span>{  
+    }  
+
+    <span class="comment">/* 静态方法返回类的实例 ,参数：map集合的索引名 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RegisterSingleton <span class="title">getInstance</span><span class="params">(String <span class="keyword">register</span>)</span> </span>{  
+        <span class="keyword">if</span> (<span class="keyword">register</span> == null) {  
+            <span class="keyword">register</span> = RegisterSingleton.<span class="keyword">class</span>.getName();  
+        }  
+        <span class="keyword">if</span> (<span class="built_in">map</span>.get(<span class="keyword">register</span>) == null) {  
+            <span class="keyword">try</span> {  
+                <span class="built_in">map</span>.put(<span class="keyword">register</span>, (RegisterSingleton) Class.forName(<span class="keyword">register</span>)  
+                        .newInstance());  
+            } <span class="keyword">catch</span> (InstantiationException e) {  
+                e.printStackTrace();  
+            } <span class="keyword">catch</span> (IllegalAccessException e) {  
+                e.printStackTrace();  
+            } <span class="keyword">catch</span> (ClassNotFoundException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+        <span class="keyword">return</span> <span class="built_in">map</span>.get(<span class="keyword">register</span>);  
+    }  
+}  
+</code></pre><p>分析饿汉式和懒汉式：</p>
+<p>饿汉式是以预先加载方式加载对象；不管是单线程还是多线程都是线程安全的；懒汉式则以延迟加载方式加载对象；单线程没有任何问题，如果是多线程则可能发生线程不安全，需要加上“互斥锁”；在饿汉式中该类的静态方法getInstance()被调用之前，该类的对象已经存在，假设现有两个线程t1 \ t2在调用该方法获取该类的对象，t1 \ t2 无论怎么调用都不会产生新的对象，因为该对象在方法调用之前已经存在，是伴随类的生成而生成。相反，懒汉式对象调用方法getInstance()之前对象不一定存在（至少第一次调用该方法时对象不存在），所以他每次调用之前要检测，若对象不存在则生成对象，对象存在则直接返回。在多线程环境下问题就出现生成对象的时候，假设有两个线程（t1,t2)在调用该方法，考虑这种情况，就是当线程t1检测到该对象不存在的时候，正要准备创建线程（还没创建），而在这个时候CPU切换到t2上执行权交给t2，t2检测到该对象不存在，就生成了对象，t2线程结束了，执行权回到t1上，t1这个时候就不需要判断了，因为开始他判断了的，他就直接向下执行，生成了对象。这样就导致了该类生成了两个不同的对象，当然这种情况不一定会发生，但这种情况是绝对存在的，也许你运行10000次都不会出现，或许你一运行就会出现该问题。所有我们需要对多线程访问的临界资源getInstance()方法加“互斥锁”，保证临界资源线程安全；这表明同一时刻只有一个线程持有该互斥锁，其他线程若要获得该互斥锁访问对象需要等待该线程（持有互斥锁的对象）将其释放。对临界资源getInstance()方法加上互斥锁即需要使用关键字synchronized，如我们使用synchronized修饰方法getInstance()，则每次调用该方法时都需要检测锁，效率不高；其实我们可以这样思考只有在对象被创建的时候我们才上锁，保证对象的唯一，一旦对象都存在了，以后操作还需要锁嘛，不需要了吧，这样我们并得到上面的懒汉式单例模式。</p>
+<p>总结：</p>
+<ul>
+<li><p>饿汉式：对象预先加载，线程是安全的，在类创建好的同时对象生成，调用获得对象实例的方法反应速度快，代码简练。</p>
+</li>
+<li><p>懒汉式：对象延迟加载，效率高，只有在使用的时候才实例化对象，但若设计不当线程会不安全，代码相对于饿汉式复杂，第一次加载类对象的时候反应不快。</p>
+</li>
+</ul>
+<p><a href="http://hi.baidu.com/chenbobio/item/9c4ecfa95144fb7b6cd455ca" target="_blank" rel="external">文章参考</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2012/11/09/JavaSingletonPattern/" data-id="cihc6rbj0008dem2en6qkfi42" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2012/11/09/JavaSingletonPattern/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2012/11/10/JavaSimpleFactoryPattern/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JAVA简单工厂模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2012/11/08/JavaObserverPattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JAVA观察者模式</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+
+  <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="2012/11/09/JavaSingletonPattern/" data-title="JAVA单例模式" data-url="http://effine.cn/2012/11/09/JavaSingletonPattern/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"verphen"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/11/17/GitRemote/">Git Remote</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/16/HexoTongji/">Hexo 博客配置访问统计</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/15/EclipseTasks/">Eclipse Tasks</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/10/GitConfig/">Git Config</a>
+          </li>
+        
+          <li>
+            <a href="/2015/11/04/GitTag/">Git 标签</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.5px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 effine
+
+      &nbsp; | &nbsp;
+      powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
+
+      &nbsp; | &nbsp;
+      资源托管<a href="http://www.qiniu.com/" target="_blank">七牛云存储</a>
+
+      &nbsp; | &nbsp;
+      <a href="http://tongji.baidu.com/web/welcome/ico?s=552829087bfc7b5aa98c57a617e463c0" target="_blank">
+      百度统计</a>
+      
+	<script type="text/javascript">
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "//hm.baidu.com/hm.js?552829087bfc7b5aa98c57a617e463c0";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+
+
+      &nbsp; | &nbsp;
+      
+	<script type="text/javascript">
+	    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+	    document.write(unescape("%3Cspan id='cnzz_stat_icon_1000129915'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s96.cnzz.com/z_stat.php%3Fid%3D1000129915%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+
+    <div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">home</a>
+  
+    <a href="/archives" class="mobile-nav-link">archives</a>
+  
+    <a href="/opus" class="mobile-nav-link">opus</a>
+  
+    <a href="/reading" class="mobile-nav-link">reading</a>
+  
+    <a href="/riding" class="mobile-nav-link">riding</a>
+  
+    <a href="/about" class="mobile-nav-link">about</a>
+  
+</nav>
+    
+
+<script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+  </div>
+
+  <!-- fork me on github -->
+  <a href="https://github.com/effine" target="_blank" alt="Fork me on GitHub">
+    <img style="position: absolute;z-index:1; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+  </a>
+
+</body>
+</html>

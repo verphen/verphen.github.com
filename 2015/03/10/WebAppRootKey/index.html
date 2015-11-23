@@ -3,45 +3,30 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>web.xml配置WebAppRootKey | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的  内进行如下配置：
+&amp;lt;web-app&amp;gt;
+&amp;lt;context-param&amp;gt;
+    &amp;lt;param-name&amp;gt;webAppRootKey&amp;lt;/param-name&amp;gt;
+    &amp;lt;param-value&amp;gt;webapp.root&amp;lt;/param-value&amp;g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="web.xml配置WebAppRootKey">
+<meta property="og:url" content="http://effine.cn/2015/03/10/WebAppRootKey/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的  内进行如下配置：
+&amp;lt;web-app&amp;gt;
+&amp;lt;context-param&amp;gt;
+    &amp;lt;param-name&amp;gt;webAppRootKey&amp;lt;/param-name&amp;gt;
+    &amp;lt;param-value&amp;gt;webapp.root&amp;lt;/param-value&amp;g">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="web.xml配置WebAppRootKey">
+<meta name="twitter:description" content="Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的  内进行如下配置：
+&amp;lt;web-app&amp;gt;
+&amp;lt;context-param&amp;gt;
+    &amp;lt;param-name&amp;gt;webAppRootKey&amp;lt;/param-name&amp;gt;
+    &amp;lt;param-value&amp;gt;webapp.root&amp;lt;/param-value&amp;g">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +84,109 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-WebAppRootKey" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/03/10/WebAppRootKey/" class="article-date">
+  <time datetime="2015-03-10T09:47:34.000Z" itemprop="datePublished">3月 10 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      web.xml配置WebAppRootKey
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</web-app></p>
+<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+</code></pre><a id="more"></a>
+<p>为什么必须进行以上配置？</p>
+<p>Web应用服务器tomcat不会为其下不同的web应用使用独立的系统参数；即就是说，应用服务器tomcat上所有的web应用共用一个系统参数对象（webAppRootKey,默认值为”webapp.root”）。运行多个web应用时，你就必须通过 webAppRootKey 上下文参数的不同为不同的web应用指定不同的属性名，如此，才不会造成多个web应用指向同一个webAppRootKey。</p>
+<p>如我本地测试，Tomcat同时运行student、teacher两个web项目，我的配置：</p>
+<pre><code><span class="comment">&lt;!-- 项目student的web.xml配置 --&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.student<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+
+------------------- 华丽的分割线 --------------------
+
+<span class="comment">&lt;!-- 项目teacher的web.xml配置 --&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.teacher<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+</code></pre><p>你可以通过 System.getProperty(“webapp.root”) 动态获取项目运行路径：</p>
+<pre><code>System.getProperty("webapp.student");    //student project    
+运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\student</span><span class="command">\
+</span>
+System.getProperty("webapp.student");    //teacher project
+运行结果：D:<span class="command">\workspace</span><span class="command">\.</span>metadata<span class="command">\.</span>plugins<span class="command">\org</span>.eclipse.wst.server.core<span class="command">\tmp</span>0<span class="command">\wtpwebapps</span><span class="command">\teacher</span><span class="command">\
+</span>
+---------------------------------------------------
+ 友情提示： " D:<span class="command">\workspace</span> " 为我eclipse的工作空间
+---------------------------------------------------
+</code></pre><p>如果，Tomcat 运行多个web项目不进行webAppRootKey配置（或配置相同的webAppRootKey为webapp.root），将发生如下错误：</p>
+<pre><code>Web app root system property already set to different value: <span class="emphasis">'webapp.root'</span> 
+<span class="header">= [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\student\] </span>
+instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\teacher\] 
+<span class="header">- Choose unique values for the 'webAppRootKey' context-param in your web.xml files!  
+--------------------------------------------------</span>
+<span class="header"> 友情提示：方便页面展示，以上错误经过合理的换行处理
+--------------------------------------------------</span>
+</code></pre><p>错误显示大概就是说： key 为 <code>&quot;webapp.root&quot;</code> 已经指向项目student, 不能再指向项目teacher，需要在你的web.xml文件<context-param>标签内配置唯一的webAppRootKey值; 所以，web应用服务器Tomcat运行多个web应用，必须对webAppRootKey进行相应的配置。</context-param></p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/03/10/WebAppRootKey/" data-id="cihc6rbfu0039em2e4sgwonr6" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/03/10/WebAppRootKey/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/05/08/RsyncCommand/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          rsync command
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/03/01/2014GoHome/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2014回家</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +200,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/03/10/WebAppRootKey/" data-title="web.xml配置WebAppRootKey" data-url="http://effine.cn/2015/03/10/WebAppRootKey/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

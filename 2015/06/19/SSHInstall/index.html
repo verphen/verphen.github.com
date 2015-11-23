@@ -3,45 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>SSH安装 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="检查SSH是否安装(本文采用centos测试)
+$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+如未安装，则安装即可：
+$ yum -y install openssh-server openssh-clients
+重启ssh：
+$ service sshd restart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSH安装">
+<meta property="og:url" content="http://effine.cn/2015/06/19/SSHInstall/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="检查SSH是否安装(本文采用centos测试)
+$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+如未安装，则安装即可：
+$ yum -y install openssh-server openssh-clients
+重启ssh：
+$ service sshd restart">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="SSH安装">
+<meta name="twitter:description" content="检查SSH是否安装(本文采用centos测试)
+$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+如未安装，则安装即可：
+$ yum -y install openssh-server openssh-clients
+重启ssh：
+$ service sshd restart">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +87,90 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-SSHInstall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/06/19/SSHInstall/" class="article-date">
+  <time datetime="2015-06-19T06:17:34.000Z" itemprop="datePublished">6月 19 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SSH安装
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>检查SSH是否安装(本文采用centos测试)</p>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+</code></pre><p>如未安装，则安装即可：</p>
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
+</code></pre><p>重启ssh：</p>
+<pre><code><span class="variable">$ </span>service sshd restart
+</code></pre><a id="more"></a>
+<p>查看ssh默认端口22是否启动：</p>
+<pre><code><span class="variable">$ </span>netstat -antp | grep sshd 
+或者
+<span class="variable">$ </span>iptables -nL 
+</code></pre><p>如端口未打开，那开启防火墙</p>
+<pre><code>$ vi /etc/sysconfig/iptables
+插入： -A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
+</code></pre><p>检查SSH是否为开机启动：</p>
+<pre><code>$ chkconfig <span class="comment">--list sshd</span>
+</code></pre><p>设置SSH为开机启动：</p>
+<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment">#开机启动[是|否]</span>
+</code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
+<pre><code><span class="preprocessor"># 限制ip连接</span>
+sshd: All     <span class="preprocessor">#允许所有ip ssh连接该服务器</span>
+sshd: <span class="number">192.168</span><span class="number">.0</span><span class="number">.125</span>        <span class="preprocessor">#只允许<span class="number">125</span> ssh连接，可以配置多台</span>
+</code></pre><p>远程ssh连接,默认为22端口可以省略该参数</p>
+<pre><code>$ ssh -<span class="tag">p</span> <span class="number">22</span> root@<span class="number">192.168</span>.<span class="number">0.125</span>    <span class="id">#ssh</span> -<span class="tag">p</span> port username@ip
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/06/19/SSHInstall/" data-id="cihc6rbfj002rem2e3bjwkrwi" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/06/19/SSHInstall/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/06/22/LinuxSingleUser/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          linux单用户模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/20/SSHOmitPasswdLogin/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">SSH免密码登陆</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +184,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/06/19/SSHInstall/" data-title="SSH安装" data-url="http://effine.cn/2015/06/19/SSHInstall/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

@@ -3,45 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>TreeSet排序 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的内部实现了排序；因此，TreeSet 可以给Set集合中的元素进行指定方式的排序，保证元素唯一性的方式：通过比较结果是否为0，底层数据结构为“二叉树”。
+排序的第一种方式：元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TreeSet排序">
+<meta property="og:url" content="http://effine.cn/2014/03/19/TreesetSort/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的内部实现了排序；因此，TreeSet 可以给Set集合中的元素进行指定方式的排序，保证元素唯一性的方式：通过比较结果是否为0，底层数据结构为“二叉树”。
+排序的第一种方式：元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="TreeSet排序">
+<meta name="twitter:description" content="TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的内部实现了排序；因此，TreeSet 可以给Set集合中的元素进行指定方式的排序，保证元素唯一性的方式：通过比较结果是否为0，底层数据结构为“二叉树”。
+排序的第一种方式：元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +75,170 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-TreesetSort" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/03/19/TreesetSort/" class="article-date">
+  <time datetime="2014-03-18T16:18:30.000Z" itemprop="datePublished">3月 19 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      TreeSet排序
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>TreeSet 是 SortedSet 接口（Set接口的子接口）的实现类，该类的内部实现了排序；因此，TreeSet 可以给Set集合中的元素进行指定方式的排序，保证元素唯一性的方式：通过比较结果是否为0，底层数据结构为“二叉树”。</p>
+<p><strong>排序的第一种方式：</strong>元素自身具备比较性。只要让元素实现Comparable接口，覆盖compareTo()方法即可</p>
+<a id="more"></a>
+<p>测试类：TreeSetDemo.java</p>
+<pre><code><span class="keyword">import</span> java.util.SortedSet;
+<span class="keyword">import</span> java.util.TreeSet;
+
+<span class="keyword">public</span> class TreeSetDemo {
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) {
+
+        SortedSet&lt;Teacher&gt; ss = <span class="keyword">new</span> TreeSet&lt;Teacher&gt;();
+
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"lisi"</span>, <span class="number">30</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"wangwu"</span>, <span class="number">20</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"zhangsan"</span>, <span class="number">40</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"wanger"</span>, <span class="number">32</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"lida"</span>, <span class="number">10</span>));
+
+        System.out.<span class="built_in">println</span>(ss);
+    }
+}    
+</code></pre><p>实现 Comparable 接口类：Teacher.java</p>
+<pre><code><span class="comment">//同姓名同年龄的学生视为同一个学生，按照学生的年龄排序</span>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Teacher</span> <span class="keyword">implements</span> <span class="title">Comparable</span> </span>{
+
+    <span class="keyword">private</span> String name;
+    <span class="keyword">private</span> <span class="keyword">int</span> age;
+
+    <span class="function"><span class="keyword">public</span> <span class="title">Teacher</span><span class="params">(String name, <span class="keyword">int</span> age)</span> </span>{
+        <span class="keyword">this</span>.name = name;
+        <span class="keyword">this</span>.age = age;
+    }
+
+    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> name;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String name)</span> </span>{
+        <span class="keyword">this</span>.name = name;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getAge</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> age;
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(<span class="keyword">int</span> age)</span> </span>{
+        <span class="keyword">this</span>.age = age;
+    }
+
+    <span class="comment">//排序的操作方法，下面的操作为按照年龄的升序排序</span>
+    <span class="annotation">@Override</span>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Object o)</span> </span>{
+        Teacher t = (Teacher) o;
+        <span class="keyword">int</span> num = <span class="keyword">new</span> Integer(<span class="keyword">this</span>.age).compareTo(<span class="keyword">new</span> Integer(t.age));
+        <span class="keyword">return</span> num == <span class="number">0</span> ? <span class="keyword">this</span>.name.compareTo(t.name) : num;
+    }
+
+    <span class="annotation">@Override</span>
+    <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>{
+        <span class="keyword">return</span> name + <span class="string">":"</span> + age;
+    }
+}
+</code></pre><p><strong>排序的第二种方式：</strong>元素自身不具备比较性，或者元素自身的可比较性不是所需要的；此时定义另外的类实现Comparator接口，覆盖其Compare()方法，将该Comparator接口子类对象作为实际参数传递给TreeSet集合的构造方法，该对象就是比较器。</p>
+<p>定义额外比较器的类：ComparatorDemo.java</p>
+<pre><code><span class="literal">import</span> java.util.Comparator;
+
+<span class="comment">//比较器类实现Comparator接口</span>
+public <span class="class"><span class="keyword">class</span> <span class="title">ComparatorDemo</span> <span class="keyword">implements</span> <span class="title">Comparator</span> </span>{
+
+    <span class="annotation">@Override</span>
+    public <span class="built_in">int</span> compare(<span class="built_in">Object</span> o1, <span class="built_in">Object</span> o2) {
+
+        Teacher t1 = (Teacher) o1;
+        Teacher t2 = (Teacher) o2;
+
+        <span class="built_in">int</span> <span class="built_in">num</span> = t1.getName().compareTo(t2.getName());
+        <span class="comment">//此处运用了问号表达式</span>
+        <span class="keyword">return</span> <span class="built_in">num</span> == <span class="number">0</span> ? 
+            <span class="keyword">new</span> Integer(t1.getAge()).compareTo(<span class="keyword">new</span> Integer(t2.getAge())) : <span class="built_in">num</span>;
+    }
+
+}
+</code></pre><p>修改测试类代码：TreeSetDemo.java</p>
+<pre><code><span class="keyword">import</span> java.util.SortedSet;
+<span class="keyword">import</span> java.util.TreeSet;
+
+<span class="keyword">public</span> class TreeSetDemo {
+
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="keyword">String</span>[] args) {
+
+        <span class="comment">//将Comparator实现类作为TreeSet的构造参数</span>
+        SortedSet&lt;Teacher&gt; ss = <span class="keyword">new</span> TreeSet&lt;Teacher&gt;(<span class="keyword">new</span> ComparatorDemo());
+
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"lisi"</span>, <span class="number">30</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"wangwu"</span>, <span class="number">20</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"zhangsan"</span>, <span class="number">40</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"wanger"</span>, <span class="number">32</span>));
+        ss.<span class="built_in">add</span>(<span class="keyword">new</span> Teacher(<span class="string">"lida"</span>, <span class="number">10</span>));
+
+        System.out.<span class="built_in">println</span>(ss);
+    }
+}
+</code></pre><p>实现 Comparable 接口的类（Teacher.java）保持不变即可。</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/03/19/TreesetSort/" data-id="cihc6rbhe005sem2eauji7pow" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/03/19/TreesetSort/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/04/07/JavaAdapterPattern/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          JAVA适配器模式
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/03/13/BookKnowAnswerForWater/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">阅《水知道答案》</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +252,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/03/19/TreesetSort/" data-title="TreeSet排序" data-url="http://effine.cn/2014/03/19/TreesetSort/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

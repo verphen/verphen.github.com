@@ -3,45 +3,36 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Java字符串转String换成整型int的分析 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="针对Java的String类型转换成int的技巧和思考：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+转换技巧
+ 方案一： 
+&amp;gt; Integer.parseInt(String s);
+&amp;gt; Integer.parseInt(String s, int radix);
+  查阅jdk源码发现，发现 Integer.parseInt(String s) 方法调用int的包装类Integer的parseInt(s,10)方法，即就是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java字符串转String换成整型int的分析">
+<meta property="og:url" content="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="针对Java的String类型转换成int的技巧和思考：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+转换技巧
+ 方案一： 
+&amp;gt; Integer.parseInt(String s);
+&amp;gt; Integer.parseInt(String s, int radix);
+  查阅jdk源码发现，发现 Integer.parseInt(String s) 方法调用int的包装类Integer的parseInt(s,10)方法，即就是">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Java字符串转String换成整型int的分析">
+<meta name="twitter:description" content="针对Java的String类型转换成int的技巧和思考：
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+转换技巧
+ 方案一： 
+&amp;gt; Integer.parseInt(String s);
+&amp;gt; Integer.parseInt(String s, int radix);
+  查阅jdk源码发现，发现 Integer.parseInt(String s) 方法调用int的包装类Integer的parseInt(s,10)方法，即就是">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +90,93 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-AnalysisJavaStringToInt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2014/08/05/AnalysisJavaStringToInt/" class="article-date">
+  <time datetime="2014-08-04T22:54:25.000Z" itemprop="datePublished">8月 5 2014</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java字符串转String换成整型int的分析
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>针对Java的String类型转换成int的技巧和思考：</p>
+<ul>
+<li><p>转换技巧</p>
+<pre><code> 方案一： 
+&gt; <span class="type">Integer</span>.parseInt(String s);
+&gt; <span class="type">Integer</span>.parseInt(String s, <span class="built_in">int</span> <span class="built_in">radix</span>);
+</code></pre><p>  查阅jdk源码发现，发现 <code>Integer.parseInt(String s)</code> 方法调用int的包装类Integer的parseInt(s,10)方法，即就是 <code>Integer.parseInt(String s,int radix)</code>,解析字符串s使用的基数radix(进制数)，转换成有符号的整数</p>
+</li>
+</ul>
+<a id="more"></a>
+<pre><code>     方案二：
+    &gt; <span class="type">Integer</span>.valuseOf(String s);
+    &gt; <span class="type">Integer</span>.parseInt(String s, <span class="built_in">int</span> <span class="built_in">radix</span>)
+
+方法valueOf(String s)的底层实现： 调用 `<span class="type">Integer</span>.valueOf(parseInt(s,<span class="number">10</span>))`; 类似，方法valueOf(String s,<span class="built_in">int</span> <span class="built_in">radix</span>)底层调用 `<span class="type">Integer</span>.valueOf(parseInt(s,<span class="built_in">radix</span>))`
+</code></pre><ul>
+<li><p>分析比较</p>
+<p>  parseInt方法只是将String转换成int基本数据类型，而valueOf则是将String转换成Integer包装对象；</p>
+<p>  若将以上两种转换方式放入具体的场景：</p>
+<ol>
+<li><p>简单转换String为int： 建议调用 <code>Integer.parseInt(s,10)</code>(ps: s为字符数String类型，10为指定的转换基数radix),这样理论上是可以提高程序的执行效率。</p>
+</li>
+<li><p>如需转换String为对应Integer，建议选择 <code>Integer.valueOf(String s, int radix)</code></p>
+</li>
+</ol>
+</li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/" data-id="cihc6rbh1004yem2el86ffkw0" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/efficiency/">efficiency</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2014/09/11/HexoBlogConfig[1]/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hexo Blog Config[1]
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2014/07/07/EclipseGenerationJavaDoc/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Eclipse生成JavaDoc</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +190,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2014/08/05/AnalysisJavaStringToInt/" data-title="Java字符串转String换成整型int的分析" data-url="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

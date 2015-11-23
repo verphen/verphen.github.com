@@ -3,45 +3,45 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Integer的对等比较 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="分析之前，先猜想一下看看下面code snippets的输出：
+package cn.effine.test;
 
+public class IntegerTest {
 
+    public static void main(String[] args) {
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+        Integer i1 = 2;
+        Integer i2 = 2;
+        System.err.pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Integer的对等比较">
+<meta property="og:url" content="http://effine.cn/2015/06/22/IntegerPoint/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="分析之前，先猜想一下看看下面code snippets的输出：
+package cn.effine.test;
 
+public class IntegerTest {
 
+    public static void main(String[] args) {
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+        Integer i1 = 2;
+        Integer i2 = 2;
+        System.err.pr">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Integer的对等比较">
+<meta name="twitter:description" content="分析之前，先猜想一下看看下面code snippets的输出：
+package cn.effine.test;
 
+public class IntegerTest {
 
+    public static void main(String[] args) {
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+        Integer i1 = 2;
+        Integer i2 = 2;
+        System.err.pr">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +99,110 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-IntegerPoint" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/06/22/IntegerPoint/" class="article-date">
+  <time datetime="2015-06-22T09:38:25.000Z" itemprop="datePublished">6月 22 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Integer的对等比较
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>分析之前，先猜想一下看看下面code snippets的输出：</p>
+<pre><code>package cn.effine.test;
+
+<span class="keyword">public</span> <span class="keyword">class</span> IntegerTest {
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+
+        Integer i1 = <span class="number">2</span>;
+        Integer i2 = <span class="number">2</span>;
+        System.err.println(<span class="string">"i1 == i2 : "</span> + (i1 == i2));
+
+        Integer i3 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
+        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
+        System.err.println(<span class="string">"i3 == i4: "</span> + (i3 == i4));
+
+        Integer i5 = <span class="number">128</span>;
+        Integer i6 = <span class="number">128</span>;
+        System.err.println(<span class="string">"i5 == i6 : "</span> + (i5 == i6));
+        System.err.println(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + (i5.intValue() == i6.intValue()));
+        System.err.println(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals(i6));
+
+    }
+}
+</code></pre><a id="more"></a>
+<p>运行结果：</p>
+<pre><code>i1 == <span class="string">i2 :</span> <span class="literal">true</span>
+i3 == <span class="string">i4:</span> <span class="literal">false</span>
+i5 == <span class="string">i6 :</span> <span class="literal">false</span>
+i5、i6的inValue()方法等值比较： <span class="literal">true</span>
+i5、i6的equals的比较： <span class="literal">true</span>
+</code></pre><p>如果你对某些输出感到诧异，接着往下看我的分析：</p>
+<p>初始化Integer声明的变量时，会去调用Integer.valueOf()方法进行处理；方法源码如下</p>
+<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{
+    assert IntegerCache.high &gt;= <span class="number">127</span>;
+    <span class="keyword">if</span> (i &gt;= -<span class="number">128</span> &amp;&amp; i &lt;= <span class="number">127</span>)
+        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];
+    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);
+}
+</code></pre><p>至于为什么调用该方法进行if判断？可能是因为8位二进制的范围是-128到127；当传入的参数在该范围则返回int原始数据类型，超出该范围则新建一个Integer对象，对象的对等比较（“==”）比较的是对象的内存地址；现在你再回去过看程序：</p>
+<p>初始化i1、12时，调用Integer.valueOf()方法，由于i1\i2的值(2)在-128到127范围内，方法返回int类型的值2，进行对等比较时则返回ture</p>
+<p>声明i3、i4时，默认新建了个Integer对象，所以对等比较的是两个对象的内存地址，因此返回false</p>
+<p>初始化i5、i6时，调用Integer.valueOf()方法，其值-128在127范围外，所以方法返回新建的Integer对象，进行对等比较返回false</p>
+<p>调用Integer.intValue()方法返回的是对应对象int值，i5、i6的方法返回值都是128，对等比较当然返回true</p>
+<p>Integer对象的equals()方法底层调用的是Integer.intValue()方法，对等比较同样比较其int值，返回同样为true</p>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/06/22/IntegerPoint/" data-id="cihc6rbfh002mem2e813i72xj" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/06/22/IntegerPoint/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Integer/">Integer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/07/06/ChromeShortcutKey/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          chrome 技巧及快捷键
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/22/LinuxSingleUser/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">linux单用户模式</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +216,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/06/22/IntegerPoint/" data-title="Integer的对等比较" data-url="http://effine.cn/2015/06/22/IntegerPoint/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

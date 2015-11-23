@@ -3,45 +3,34 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>Maven 命令详解 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
+$ mvn archetype:create    # 创建 maven 项目
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+#maven生成web项目
+$ mvn archetype:create -DgroupId=&apos;package-name&apos; 
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Maven 命令详解">
+<meta property="og:url" content="http://effine.cn/2015/07/15/MavenCommands/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
+$ mvn archetype:create    # 创建 maven 项目
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+#maven生成web项目
+$ mvn archetype:create -DgroupId=&apos;package-name&apos; 
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-w">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="Maven 命令详解">
+<meta name="twitter:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
+$ mvn archetype:create    # 创建 maven 项目
 
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+#maven生成web项目
+$ mvn archetype:create -DgroupId=&apos;package-name&apos; 
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-w">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +88,102 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-MavenCommands" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/07/15/MavenCommands/" class="article-date">
+  <time datetime="2015-07-15T02:43:38.000Z" itemprop="datePublished">7月 15 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Maven 命令详解
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
+<p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
+
+<span class="comment">#maven生成web项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
+  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
+
+<span class="comment"># maven生成java项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
+
+<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
+<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
+<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
+<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
+</code></pre><a id="more"></a>
+<pre><code><span class="variable">$ </span>mvn package     <span class="comment"># 打包（mvn -Dtest package     只打包不测试）</span>
+<span class="variable">$ </span>mvn clean package -<span class="constant">Dmaven</span>.test.skip=<span class="literal">true</span>  <span class="comment"># 跳过编译测试程序打包项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">jar:</span>jar     <span class="comment"># 打包成jar文件</span>
+<span class="variable">$ </span>mvn install     <span class="comment"># 本地Repository仓库中安装项目jar文件</span>
+                <span class="comment">#（mvn install -D maven.test.skip=true 跳过TestCase检验，否则在install时会运行TestCase测试）</span>
+<span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
+<span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
+<span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
+
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources      <span class="comment"># 下载依赖包的源码</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier</span>=javadoc     <span class="comment"># 下载依赖包的javadoc</span>
+
+<span class="comment"># 启动服务前需执行mvn package及配置相应插件</span>
+<span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
+<span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
+
+<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>clean       <span class="comment"># 清理eclipse项目文件</span>
+<span class="variable">$ </span>mvn <span class="symbol">idea:</span>idea       <span class="comment"># 生成idea项目文件,将项目转换成idea项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">idea:</span>clean      <span class="comment"># 清理idea项目文件</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cihc6rbeu001jem2e44du84h0" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/07/15/MavenCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/07/15/MavenDownSourse/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Maven技巧-下载源码
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/07/08/MysqlCommand/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">MySQL基本使用</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +197,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/07/15/MavenCommands/" data-title="Maven 命令详解" data-url="http://effine.cn/2015/07/15/MavenCommands/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

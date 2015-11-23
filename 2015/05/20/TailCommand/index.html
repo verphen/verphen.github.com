@@ -3,45 +3,25 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>tail command | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+  <meta name="description" content="每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.
+$ tail -f &amp;lt;tomcat-dir&amp;gt;/logs/catalina.out       # 屏幕即不断追加打印tomcat的运行日志
+当然，强制关闭打印屏幕 ctrl + c 即可.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tail command">
+<meta property="og:url" content="http://effine.cn/2015/05/20/TailCommand/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta property="og:description" content="每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.
+$ tail -f &amp;lt;tomcat-dir&amp;gt;/logs/catalina.out       # 屏幕即不断追加打印tomcat的运行日志
+当然，强制关闭打印屏幕 ctrl + c 即可.">
+<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
-
-
-
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+<meta name="twitter:title" content="tail command">
+<meta name="twitter:description" content="每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.
+$ tail -f &amp;lt;tomcat-dir&amp;gt;/logs/catalina.out       # 屏幕即不断追加打印tomcat的运行日志
+当然，强制关闭打印屏幕 ctrl + c 即可.">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +79,84 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-TailCommand" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2015/05/20/TailCommand/" class="article-date">
+  <time datetime="2015-05-20T08:54:22.000Z" itemprop="datePublished">5月 20 2015</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tail command
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command"></p>
+<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
+<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.<span class="keyword">out</span>       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
+</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
+<a id="more"></a>
+<p>tail 命令基本用法：</p>
+<pre><code>$ tail [参数] 文件地址      <span class="preprocessor"># 无参数默认打印文件末尾<span class="number">10</span>行数据</span>
+</code></pre><p>tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：</p>
+<pre><code>-<span class="ruby">f <span class="symbol">:</span> 循环读取(常用于监控应用运行日志)
+</span>-<span class="ruby">n <span class="symbol">number:</span> 自定义显示行数</span>
+</code></pre><p>如果number前带正号(“+”)，则从文件头部第number行开始读取；若带负号（”-“）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。</p>
+<pre><code>$ tail -n +<span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件顶部第<span class="number">5</span>行开始读取内容</span>
+
+$ tail -n -<span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件尾部倒数<span class="number">5</span>行开始读取内容</span>
+
+$ tail -n <span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件尾部倒数<span class="number">5</span>行开始读取内容</span>
+</code></pre><p>具体参数参考：</p>
+<pre><code><span class="variable">$ </span>man mail        <span class="comment"># getting help</span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/05/20/TailCommand/" data-id="cihc6rbfm002wem2e5sa0myon" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2015/05/20/TailCommand/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2015/05/20/SSHOmitPasswdLogin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          SSH免密码登陆
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/05/08/RsyncCommand/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">rsync command</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +170,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2015/05/20/TailCommand/" data-title="tail command" data-url="http://effine.cn/2015/05/20/TailCommand/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">

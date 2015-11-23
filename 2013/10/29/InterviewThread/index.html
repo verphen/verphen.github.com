@@ -3,45 +3,48 @@
 <head>
   <meta charset="utf-8">
   
-  <title>effine</title>
+  <title>线程设计面试题 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="&amp;lt;!DOCTYPE html&amp;gt;
+  <meta name="description" content="昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：
+/**
+ * @author effine
+ * @date 2013-10-28  下午11:50:34
+ */
 
+public class InterviewThread {
 
+    private int j = 0;
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/404.html">
+    p">
+<meta property="og:type" content="article">
+<meta property="og:title" content="线程设计面试题">
+<meta property="og:url" content="http://effine.cn/2013/10/29/InterviewThread/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta property="og:description" content="昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：
+/**
+ * @author effine
+ * @date 2013-10-28  下午11:50:34
+ */
 
+public class InterviewThread {
 
+    private int j = 0;
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+    p">
 <meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description" content="&amp;lt;!DOCTYPE html&amp;gt;
+<meta name="twitter:title" content="线程设计面试题">
+<meta name="twitter:description" content="昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：
+/**
+ * @author effine
+ * @date 2013-10-28  下午11:50:34
+ */
 
+public class InterviewThread {
 
+    private int j = 0;
 
-404-effine
-&amp;lt;!-- Tencent公益 --&amp;gt;
-
-
-
-	&amp;lt;!-- content--&amp;gt;">
+    p">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -99,42 +102,124 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-InterviewThread" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/404.html" class="article-date">
-  <time datetime="2015-11-23T16:43:28.000Z" itemprop="datePublished">11月 24 2015</time>
+    <a href="/2013/10/29/InterviewThread/" class="article-date">
+  <time datetime="2013-10-29T15:46:26.000Z" itemprop="datePublished">10月 29 2013</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      线程设计面试题
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>404-effine</title>
-<!-- Tencent公益 -->
-<script type="text/javascript" src="http://www.qq.com/404/search_children.js" charset="utf-8"></script>
-</head>
-<body>
-	<!-- content-->
-</body>
-</html>
+        <p>昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：</p>
+<pre><code><span class="comment">/**
+ * <span class="doctag">@author</span> effine
+ * <span class="doctag">@date</span> 2013-10-28  下午11:50:34
+ */</span>
+
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewThread</span> </span>{
+
+    <span class="keyword">private</span> <span class="keyword">int</span> j = <span class="number">0</span>;
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{
+
+        InterviewThread it = <span class="keyword">new</span> InterviewThread();
+
+        <span class="comment">/* 实例化内部类 */</span>
+        Inc inc = it.new Inc();
+        Dec dec = it.new Dec();
+
+        <span class="comment">/* 循环得到四个线程 */</span>
+        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) {
+            Thread t = <span class="keyword">new</span> Thread(inc);
+            t.start();
+            t = <span class="keyword">new</span> Thread(dec);
+            t.start();
+        }
+    } <span class="comment">//main method finish</span>
+
+    <span class="comment">/* 同步加1方法 */</span>
+    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">()</span> </span>{
+        j++;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-inc:"</span> + j);
+    }
+
+    <span class="comment">/* 同步减1方法 */</span>
+    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">dec</span><span class="params">()</span> </span>{
+        j--;
+        System.out.println(Thread.currentThread().getName() + <span class="string">"-dec:"</span> + j);
+    }
+
+    <span class="comment">/* 加1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Inc</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
+        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                inc();
+            }
+        }
+    }
+
+    <span class="comment">/* 减1线程类 */</span>
+    <span class="class"><span class="keyword">class</span> <span class="title">Dec</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
+        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
+            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+                dec();
+            }
+        }
+    }
+
+}
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/404.html" data-id="cihc6rbd40000em2ef7d3ly8d" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="cihc6rbi80073em2ern3d82k1" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/404.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2013/10/29/InterviewThread/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2013/11/06/OracleCommonCommand/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Oracle常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2013/10/26/FileTree/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">File Tree</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -148,7 +233,7 @@
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="404.html" data-title="" data-url="http://effine.cn/404.html"></div>
+      <div class="ds-thread" data-thread-key="2013/10/29/InterviewThread/" data-title="线程设计面试题" data-url="http://effine.cn/2013/10/29/InterviewThread/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
