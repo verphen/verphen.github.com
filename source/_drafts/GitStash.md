@@ -5,7 +5,6 @@ tags:
   - git
   - stash
 ---
-	
 	$ git stash --help 		# 查看帮助
 
     $ git stash 		# 将当前的改变暂时保存起来
