@@ -35,6 +35,3 @@ $ git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
 $ git remote prune [<options>] <name>   # 清理远程存在过但现在不存在的本地远程分支的引用
 
   -n, --dry-run         dry run(试运行，彩排)
-
-
-
