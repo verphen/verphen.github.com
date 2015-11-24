@@ -1,34 +1,26 @@
 # Header
 menu:
-  home: /
-  archives: /archives
-  opus: /opus
-  reading: /reading
-  riding: /riding
-  about: /about
+  Home: /
+  Archives: /archives
 rss: /atom.xml
 
 # Content
-excerpt_link: 阅读全文 #文章太长"显示全文"
+excerpt_link: Read More
 fancybox: true
 
 # Sidebar
-sidebar: bottom	#导航栏显示位置
+sidebar: right
 widgets:
-- category	#归档
-# - tag
-# - archive
-- recent_posts	#最近文章
-- tagcloud	#标签云
-# - weibo
-# - blogroll
+- category
+- tag
+- tagcloud
+- archive
+- recent_posts
 
 # Miscellaneous
-#google_analytics: verphen
-cnzz_tongji: true		# cnzz统计
-baidu_tongji: true		# 百度统计
-favicon: /imgs/favicon.png	#浏览器头部显示图标
-#twitter: verphen
-#google_plus: verphen
-#fb_admins: verphen
-#fb_app_id: verphen
+google_analytics:
+favicon: /favicon.png
+twitter:
+google_plus:
+fb_admins:
+fb_app_id:
