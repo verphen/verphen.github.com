@@ -6,6 +6,8 @@ tags:
   - npm
 ---
 
+$ npm install   	# 根据当前目录的package.json来安装依赖
+
 
 
 Windows 系统下设置Nodejs NPM全局路径
