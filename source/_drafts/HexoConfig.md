@@ -9,3 +9,5 @@ tags:
 $ npm install   	#
 
 $ npm install hexo-server --save  $ 安装hexo服务，可以使用命令"hexo server"
+
+$ npm install hexo --save

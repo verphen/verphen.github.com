@@ -16,7 +16,7 @@ Windows 系统下设置Nodejs NPM全局路径
 	npm config set cache "D:\nodejs\node_cache"
 	npm config set prefix "D:\nodejs\node_global"
 
-	最后在nodejs的安装目录中找到node_modules\npm\.npmrc文件
+	最后在nodejs的安装目录中找到node_modules\npm\.npmrc（或者用户目录下修改.npmrc）文件
 
 	修改如下即可：
 
