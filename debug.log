@@ -1,0 +1,247 @@
+date: 2015-06-01 16:12:21.855
+argv: e:\nodejs\node.exe e:\nodejs\node_modules\hexo\bin\hexo d -g
+os: Windows_NT 6.1.7601 win32 x64
+version:
+  hexo: 2.7.1
+  http_parser: 2.3
+  node: 0.12.0
+  v8: 3.28.73
+  uv: 1.0.2
+  zlib: 1.2.8
+  modules: 14
+  openssl: 1.0.1l
+---
+
+[debug] 16:12:20.255 Processed: draft.md
+[debug] 16:12:20.255 Processed: page.md
+[debug] 16:12:20.255 Processed: photo.md
+[debug] 16:12:20.255 Processed: post.md
+[debug] 16:12:20.255 Config file loaded
+[debug] 16:12:20.258 Version info checked successfully
+[debug] 16:12:20.280 Loading database.
+[debug] 16:12:20.419 Plugin loaded successfully: hexo-clean-css
+[debug] 16:12:20.487 Plugin loaded successfully: hexo-deployer-ftpsync
+[debug] 16:12:20.672 Plugin loaded successfully: hexo-deployer-git
+[debug] 16:12:20.756 Plugin loaded successfully: hexo-deployer-rsync
+[error] 16:12:20.775 HexoError: Plugin load failed: hexo-generator-archive
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-archive\index.js:11:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[error] 16:12:20.787 HexoError: Plugin load failed: hexo-generator-category
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-category\index.js:9:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[error] 16:12:20.797 HexoError: Plugin load failed: hexo-generator-feed
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-feed\index.js:28:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[error] 16:12:20.806 HexoError: Plugin load failed: hexo-generator-index
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-index\index.js:9:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[error] 16:12:20.814 HexoError: Plugin load failed: hexo-generator-sitemap
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-sitemap\index.js:12:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[error] 16:12:20.823 HexoError: Plugin load failed: hexo-generator-tag
+ExtendError: fn is required
+    at Generator.register (e:\nodejs\node_modules\hexo\lib\extend\generator.js:40:39)
+    at Object.<anonymous> (d:\source\myblog\node_modules\hexo-generator-tag\index.js:9:23)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Module.require (module.js:365:17)
+    at require (module.js:384:17)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:29:13
+    at Array.forEach (native)
+    at e:\nodejs\node_modules\hexo\lib\loaders\plugins.js:25:15
+    at ReaddirReq.Req.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:141:5)
+    at ReaddirReq.done (e:\nodejs\node_modules\hexo\node_modules\graceful-fs\graceful-fs.js:88:22)
+    at FSReqWrap.oncomplete (evalmachine.<anonymous>:99:15)
+
+[debug] 16:12:20.840 Plugin loaded successfully: hexo-renderer-ejs
+[debug] 16:12:20.900 Plugin loaded successfully: hexo-renderer-marked
+[debug] 16:12:21.072 Plugin loaded successfully: hexo-renderer-stylus
+[debug] 16:12:21.216 Plugin loaded successfully: hexo-server
+[debug] 16:12:21.298 Plugin loaded successfully: hexo-uglify
+[debug] 16:12:21.301 Script load successfully: fancybox.js
+[debug] 16:12:21.490 Processed: _drafts/20150305-TomcatConfigure.md
+[debug] 16:12:21.490 Processed: _drafts/20150209-2014AnnualSummary.md
+[debug] 16:12:21.490 Processed: _drafts/20150313-JavaQueue.md
+[debug] 16:12:21.490 Processed: _drafts/20150325-CentosPostfixConfigure.md
+[debug] 16:12:21.490 Processed: _drafts/20150330-MysqlCommands.md
+[debug] 16:12:21.490 Processed: _drafts/20150331-JavaCommands.md
+[debug] 16:12:21.490 Processed: _drafts/20150331-LinuxCommands.md
+[debug] 16:12:21.490 Processed: _drafts/20150331-LsCommandsDetails.md
+[debug] 16:12:21.490 Processed: _drafts/20150401-RedisConfigure.md
+[debug] 16:12:21.490 Processed: _drafts/20150402-MemcachedInstall.md
+[debug] 16:12:21.490 Processed: _drafts/20150416-JavaSendMail.md
+[debug] 16:12:21.490 Processed: _drafts/20150508-RsyncCommand.md
+[debug] 16:12:21.491 Processed: _drafts/20150521-JavaWebExceptionCatch.md
+[debug] 16:12:21.491 Processed: _drafts/20150520-OmitPasswdLoginSSH.md
+[debug] 16:12:21.491 Processed: _drafts/Robots.md
+[debug] 16:12:21.491 Processed: _drafts/TomcatRoles.md
+[debug] 16:12:21.491 Processed: _drafts/hackerAndPainter.md
+[debug] 16:12:21.593 Processed: CNAME
+[debug] 16:12:21.596 Processed: imgs/ForkMeOnGithub.png
+[debug] 16:12:21.597 Processed: imgs/add_navigation_01.png
+[debug] 16:12:21.597 Processed: imgs/add_navigation_02.png
+[debug] 16:12:21.598 Processed: imgs/add_navigation_03.png
+[debug] 16:12:21.599 Processed: imgs/favicon.png
+[debug] 16:12:21.599 Processed: imgs/hexo_help.png
+[debug] 16:12:21.600 Processed: imgs/read_more.png
+[debug] 16:12:21.601 Processed: imgs/wechat_QR.png
+[debug] 16:12:21.602 Processed: imgs/error/buildHexoBlog1.png
+[debug] 16:12:21.602 Processed: imgs/linux/ssh.jpg
+[debug] 16:12:21.603 Processed: imgs/linux/tail.png
+[debug] 16:12:21.603 Processed: imgs/yunlu/enterprise.jpg
+[debug] 16:12:21.604 Processed: imgs/yunlu/student.png
+[debug] 16:12:21.609 Processed: imgs/yunlu/teacher.jpg
+[debug] 16:12:21.683 Processed: LICENSE
+[debug] 16:12:21.683 Processed: Gruntfile.js
+[debug] 16:12:21.684 Processed: README.md
+[debug] 16:12:21.684 Processed: package.json
+[debug] 16:12:21.684 Processed: scripts/fancybox.js
+[debug] 16:12:21.760 Processed: source/css/_extend.styl
+[debug] 16:12:21.760 Processed: source/css/_variables.styl
+[debug] 16:12:21.761 Processed: source/css/_util/grid.styl
+[debug] 16:12:21.761 Processed: source/css/_util/mixin.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/archive.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/article.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/comment.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/header.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/highlight.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/mobile.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/sidebar-aside.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/sidebar-bottom.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/sidebar.styl
+[debug] 16:12:21.772 Processed: source/css/_partial/footer.styl
+[debug] 16:12:21.776 Processed: source/js/script.js
+[debug] 16:12:21.777 Processed: source/fancybox/fancybox_loading.gif
+[debug] 16:12:21.778 Processed: source/fancybox/blank.gif
+[debug] 16:12:21.779 Processed: source/fancybox/fancybox_loading@2x.gif
+[debug] 16:12:21.780 Processed: source/fancybox/fancybox_overlay.png
+[debug] 16:12:21.781 Processed: source/fancybox/fancybox_sprite@2x.png
+[debug] 16:12:21.782 Processed: source/fancybox/fancybox_sprite.png
+[debug] 16:12:21.783 Processed: source/fancybox/jquery.fancybox.css
+[debug] 16:12:21.784 Processed: source/fancybox/jquery.fancybox.pack.js
+[debug] 16:12:21.790 Processed: source/fancybox/jquery.fancybox.js
+[debug] 16:12:21.791 Processed: source/fancybox/helpers/fancybox_buttons.png
+[debug] 16:12:21.792 Processed: source/fancybox/helpers/jquery.fancybox-buttons.css
+[debug] 16:12:21.793 Processed: source/fancybox/helpers/jquery.fancybox-buttons.js
+[debug] 16:12:21.793 Processed: source/fancybox/helpers/jquery.fancybox-media.js
+[debug] 16:12:21.794 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.css
+[debug] 16:12:21.795 Processed: source/fancybox/helpers/jquery.fancybox-thumbs.js
+[debug] 16:12:21.796 Processed: source/css/style.styl
+[debug] 16:12:21.797 Processed: source/css/fonts/FontAwesome.otf
+[debug] 16:12:21.798 Processed: source/css/fonts/fontawesome-webfont.eot
+[debug] 16:12:21.798 Processed: source/css/fonts/fontawesome-webfont.svg
+[debug] 16:12:21.799 Processed: source/css/fonts/fontawesome-webfont.ttf
+[debug] 16:12:21.800 Processed: source/css/fonts/fontawesome-webfont.woff
+[debug] 16:12:21.801 Processed: source/css/images/banner.jpg
+[debug] 16:12:21.818 Processed: 404.html
+[error] 16:12:21.820 HexoError: Process failed: docs/index.md
+TypeError: Cannot read property 'config' of null
+    at module.exports (d:\source\myblog\node_modules\hexo-renderer-marked\lib\renderer.js:55:10)
+    at store.(anonymous function) (e:\nodejs\node_modules\hexo\lib\extend\renderer.js:67:27)
+    at e:\nodejs\node_modules\hexo\lib\core\render.js:96:9
+    at fn (e:\nodejs\node_modules\hexo\node_modules\async\lib\async.js:641:34)
+    at Immediate._onImmediate (e:\nodejs\node_modules\hexo\node_modules\async\lib\async.js:557:34)
+    at processImmediate [as _immediateCallback] (timers.js:358:17)
+
+[debug] 16:12:21.837 Processed: layout/archive.ejs
+[debug] 16:12:21.837 Processed: layout/category.ejs
+[debug] 16:12:21.837 Processed: layout/index.ejs
+[debug] 16:12:21.837 Processed: layout/layout.ejs
+[debug] 16:12:21.837 Processed: layout/page.ejs
+[debug] 16:12:21.837 Processed: layout/post.ejs
+[debug] 16:12:21.837 Processed: layout/tag.ejs
+[debug] 16:12:21.837 Processed: layout/_widget/archive.ejs
+[debug] 16:12:21.837 Processed: layout/_widget/category.ejs
+[debug] 16:12:21.837 Processed: layout/_widget/recent_posts.ejs
+[debug] 16:12:21.837 Processed: layout/_widget/tag.ejs
+[debug] 16:12:21.837 Processed: layout/_widget/tagcloud.ejs
+[debug] 16:12:21.837 Processed: layout/_partial/after-footer.ejs
+[debug] 16:12:21.837 Processed: layout/_partial/archive-post.ejs
+[debug] 16:12:21.837 Processed: layout/_partial/archive.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/footer.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/comment.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/google-analytics.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/header.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/mobile-nav.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/sidebar.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/category.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/date.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/gallery.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/nav.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/tag.ejs
+[debug] 16:12:21.838 Processed: layout/_partial/post/title.ejs
+[debug] 16:12:21.850 Cache saved
+[debug] 16:12:21.859 Processed: layout/_partial/article.ejs
+[debug] 16:12:21.859 Processed: layout/_partial/head.ejs
