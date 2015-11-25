@@ -15,7 +15,7 @@ git push orign HEAD --force
 
 git push #推送本地所有分支
 
-git push -u origin master: 推送本地提交到远程仓库，-u 指定的是默认主机
+git push -u origin master 	# 推送本地提交到远程仓库，-u 指定的是默认主机(并使当前分支与远程分支关联)
 
 git push origin source
 
