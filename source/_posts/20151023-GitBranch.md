@@ -43,7 +43,7 @@ date: 2015-10-23 22:35:35
 
 [关联分支]
 
-	# 设置本地分支跟踪远程分支(与远程分支关联)
+	# 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git push即可直接查找到远程分支进行操作
 	$ git branch --set-upstream-to=origin/<branch> <branch>  (推荐)
 	$ git branch --set-upstream <branch> <origin/branch>	
 	
