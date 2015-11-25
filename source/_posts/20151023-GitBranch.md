@@ -52,7 +52,3 @@ date: 2015-10-23 22:35:35
 	[branch "master"]
 		remote = origin
 		merge = refs/heads/master
-
-首次创建分支提交远程时，可以使用参数u来设置分支跟踪
-	
-	git push -u origin master
