@@ -17,30 +17,38 @@ date: 2015-10-23 22:35:35
 
 [创建\切换\重命名分支]
 
-	$ git branch <dev>		# 创建dev分支(继承当前分支来创建)
-	$ git checkout <dev> 	# 切换分支到dev(分支dev需已存在)
-	$ git checkout -b <dev>		# 创建分支dev并切换到该分支(前提dev分支不存在)
-	$ git checkout -b <dev> <master>	# 创建分支dev并切换到该分支，继承master分支创建而来
-	$ git branch -m <dev> <test>		# 重命名dev分支为test
+	$ git branch <name>		# 创建name分支(继承当前分支来创建)
+	$ git checkout <name> 	# 切换分支到name(分支name需已存在)
+	$ git checkout -b <name>		# 创建分支name并切换到该分支(前提name分支不存在)
+	$ git checkout -b <name> <master>	# 创建分支name并切换到该分支，继承master分支创建而来
+	$ git branch -m <name> <test>		# 重命名name分支为test
 
 [删除分支]
 
-	# 删除本地分支[dev]
-	$ git branch [-d | -D] <dev>
-		-d 		# 删除[delete]本地dev分支(存在修改或未合并删除失败,多个分支用空格分隔)
-		-D 		# 忽略修改强制删除本地dev分支（多个分支用空格分隔）
+	# 删除本地分支[name]
+	$ git branch [-d | -D] <name>
+		-d 		# 删除[delete]本地name分支(存在修改或未合并删除失败,多个分支用空格分隔)
+		-D 		# 忽略修改强制删除本地name分支（多个分支用空格分隔）
 
-	# 删除远程分支[dev]
-	$ git branch -d -r <remote_name/dev> 	# 删除远程分支dev
-	$ git push remote_name :<dev> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
-	$ git push remote_name --delete <dev> 	# [since Git v1.7.0]
+	# 删除远程分支[name]
+	$ git branch -d -r origin/<name> 	# 删除远程分支name
+	$ git push origin :<name> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
+	$ git push origin --delete <name> 	# [since Git v1.7.0]
 
 [合并分支]
 
 	$ git branch --merged 	# 查看已合并的分支列表
 	$ git branch --no-merged	# 查看未合并的分支列表
-	$ git merge <dev> 	# 合并dev分支到当前分支,发生冲突修复后再次提交
+	$ git merge <name> 	# 合并name分支到当前分支,发生冲突修复后再次提交
 
 [关联分支]
 
-	$ git branch --set-upstream <dev> <remote_name/dev>	# 设置本地分支dev与远程分支remote_name/dev关联
+	# 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git push即可直接查找到远程分支进行操作
+	$ git branch --set-upstream-to=origin/<branch> <branch>  (推荐)
+	$ git branch --set-upstream <branch> <origin/branch>	
+	
+本地跟踪远程分支，会在当前项目的config文件产生如下配置
+
+	[branch "master"]
+		remote = origin
+		merge = refs/heads/master
