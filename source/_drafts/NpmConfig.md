@@ -21,4 +21,4 @@ Windows 系统下设置Nodejs NPM全局路径
 	修改如下即可：
 
 	prefix = D:\nodejs\node_global
-	cache = D:\nodejs\node_global
+	cache = D:\nodejs\node_global	
