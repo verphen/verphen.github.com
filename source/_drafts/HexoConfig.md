@@ -5,8 +5,10 @@ tags:
   - tools
   - hexo
 ---
+$ npm install -g hexo-cli
 
-$ npm install   	#
+$ cd <dir>
+$ npm install   	# 安装当前目录依赖
 
 $ npm install hexo-server --save  $ 安装hexo服务，可以使用命令"hexo server"
 

@@ -6,6 +6,15 @@ tags:
   - npm
 ---
 
+设置npm为淘宝镜像:
+
+	打开.npmrc文件（在用户主目录下）
+	加入以下配置信息：
+	registry = http://registry.npm.taobao.org
+
+
+
+
 $ npm install   	# 根据当前目录的package.json来安装依赖
 
 
