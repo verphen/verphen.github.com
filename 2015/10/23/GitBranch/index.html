@@ -21,7 +21,7 @@ $ git branch     # 查看本地分支（星号*标注为当前分支）
 $ git branch -r     # 查看所有远程[remote]分支
 $ git branch -a     # 查看所有[all]本地及远程分支
 $ git branch -v     # 查看各个分支最后的">
-<meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
+<meta property="og:updated_time" content="2015-11-25T05:52:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 分支">
 <meta name="twitter:description" content="$ git branch --help        # 查看关于git branch帮助
@@ -120,32 +120,38 @@ $ git branch -v     # 查看各个分支最后的">
 <span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建dev分支(继承当前分支来创建)</span>
-$ git checkout <span class="variable">&lt;dev&gt;</span>     <span class="comment"># 切换分支到dev(分支dev需已存在)</span>
-$ git checkout -b <span class="variable">&lt;dev&gt;</span>        <span class="comment"># 创建分支dev并切换到该分支(前提dev分支不存在)</span>
-$ git checkout -b <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支dev并切换到该分支，继承master分支创建而来</span>
-$ git branch -m <span class="variable">&lt;dev&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名dev分支为test</span>
+<pre><code>$ git branch &lt;<span class="keyword">name</span>&gt;        # 创建<span class="keyword">name</span>分支(继承当前分支来创建)
+$ git checkout &lt;<span class="keyword">name</span>&gt;     # 切换分支到<span class="keyword">name</span>(分支<span class="keyword">name</span>需已存在)
+$ git checkout -b &lt;<span class="keyword">name</span>&gt;        # 创建分支<span class="keyword">name</span>并切换到该分支(前提<span class="keyword">name</span>分支不存在)
+$ git checkout -b &lt;<span class="keyword">name</span>&gt; &lt;master&gt;    # 创建分支<span class="keyword">name</span>并切换到该分支，继承master分支创建而来
+$ git branch -m &lt;<span class="keyword">name</span>&gt; &lt;test&gt;        # 重命名<span class="keyword">name</span>分支为test
 </code></pre><p>[删除分支]</p>
-<pre><code><span class="comment"># 删除本地分支[dev]</span>
-<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;dev&gt;
-    -d         <span class="comment"># 删除[delete]本地dev分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地dev分支（多个分支用空格分隔）</span>
+<pre><code><span class="comment"># 删除本地分支[name]</span>
+<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;name&gt;
+    -d         <span class="comment"># 删除[delete]本地name分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地name分支（多个分支用空格分隔）</span>
 
-<span class="comment"># 删除远程分支[dev]</span>
-<span class="variable">$ </span>git branch -d -r &lt;remote_name/dev&gt;     <span class="comment"># 删除远程分支dev</span>
-<span class="variable">$ </span>git push remote_name <span class="symbol">:&lt;dev&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push remote_name --delete &lt;dev&gt;     <span class="comment"># [since Git v1.7.0]</span>
+<span class="comment"># 删除远程分支[name]</span>
+<span class="variable">$ </span>git branch -d -r origin/&lt;name&gt;     <span class="comment"># 删除远程分支name</span>
+<span class="variable">$ </span>git push origin <span class="symbol">:&lt;name&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push origin --delete &lt;name&gt;     <span class="comment"># [since Git v1.7.0]</span>
 </code></pre><p>[合并分支]</p>
 <pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;dev&gt;     <span class="comment"># 合并dev分支到当前分支,发生冲突修复后再次提交</span>
+<span class="variable">$ </span>git merge &lt;name&gt;     <span class="comment"># 合并name分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
-<pre><code>$ git branch --<span class="built_in">set</span>-upstream &lt;<span class="built_in">dev</span>&gt; &lt;remote_name/<span class="built_in">dev</span>&gt;    # 设置本地分支<span class="built_in">dev</span>与远程分支remote_name/<span class="built_in">dev</span>关联
+<pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
+</span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
+$ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keyword">branch&gt; </span>&lt;origin/<span class="keyword">branch&gt; </span>   
+</code></pre><p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p>
+<pre><code>[<span class="keyword">branch </span><span class="string">"master"</span>]
+    remote = origin
+    merge = refs/heads/master
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cihcuj9t6000xwf2enuvbshs2" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cihexmdw1000x5m2eu8avlocj" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/10/23/GitBranch/#disqus_thread" class="article-comment-link">Comments</a>
       

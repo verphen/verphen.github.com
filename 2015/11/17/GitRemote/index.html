@@ -5,31 +5,31 @@
   
   <title>Git Remote | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="为书写及阅读方便，以下所有的全部为远程仓库别名(如常用的origin)
+  <meta name="description" content="为书写及阅读方便，以下所有的origin全部为远程仓库别名
 $ git remote        # 查看所有远程仓库别名
 $ git remote &amp;lt;-v | --verbose&amp;gt;     # 查看所有远程仓库别名及地址
-$ git remote show &amp;lt;name&amp;gt;    # 查看远程仓库地址及分支情况
+$ git remote show &amp;lt;origin&amp;gt;    # 查看远程仓库地址及分支情况
 
-$ git remote  add &amp;lt;na">
+$ git remote add &amp;lt;origin&amp;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Remote">
 <meta property="og:url" content="http://effine.cn/2015/11/17/GitRemote/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="为书写及阅读方便，以下所有的全部为远程仓库别名(如常用的origin)
+<meta property="og:description" content="为书写及阅读方便，以下所有的origin全部为远程仓库别名
 $ git remote        # 查看所有远程仓库别名
 $ git remote &amp;lt;-v | --verbose&amp;gt;     # 查看所有远程仓库别名及地址
-$ git remote show &amp;lt;name&amp;gt;    # 查看远程仓库地址及分支情况
+$ git remote show &amp;lt;origin&amp;gt;    # 查看远程仓库地址及分支情况
 
-$ git remote  add &amp;lt;na">
-<meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
+$ git remote add &amp;lt;origin&amp;">
+<meta property="og:updated_time" content="2015-11-25T05:52:59.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Remote">
-<meta name="twitter:description" content="为书写及阅读方便，以下所有的全部为远程仓库别名(如常用的origin)
+<meta name="twitter:description" content="为书写及阅读方便，以下所有的origin全部为远程仓库别名
 $ git remote        # 查看所有远程仓库别名
 $ git remote &amp;lt;-v | --verbose&amp;gt;     # 查看所有远程仓库别名及地址
-$ git remote show &amp;lt;name&amp;gt;    # 查看远程仓库地址及分支情况
+$ git remote show &amp;lt;origin&amp;gt;    # 查看远程仓库地址及分支情况
 
-$ git remote  add &amp;lt;na">
+$ git remote add &amp;lt;origin&amp;">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -113,37 +113,37 @@ $ git remote  add &amp;lt;na">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>为书写及阅读方便，以下所有的<name>全部为远程仓库别名(如常用的origin)</name></p>
+        <p>为书写及阅读方便，以下所有的origin全部为远程仓库别名</p>
 <pre><code>$ git remote        <span class="comment"># 查看所有远程仓库别名</span>
 $ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看所有远程仓库别名及地址</span>
-$ git remote show <span class="variable">&lt;name&gt;</span>    <span class="comment"># 查看远程仓库地址及分支情况</span>
+$ git remote show <span class="variable">&lt;origin&gt;</span>    <span class="comment"># 查看远程仓库地址及分支情况</span>
 
-$ git remote  add <span class="variable">&lt;name&gt;</span>  <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加远程仓库别名及对应的远程地址 </span>
+$ git remote add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加远程仓库别名及对应的远程地址 </span>
 
 <span class="comment"># 更新指定远程仓库名的地址</span>
-$ git remote set-url [--push] <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;newurl&gt;</span> [<span class="variable">&lt;oldurl&gt;</span>] 
-$ git remote set-url --add <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;newurl&gt;</span>
-$ git remote set-url --delete <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;url&gt;</span>
+$ git remote set-url [--push] <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span> [<span class="variable">&lt;oldurl&gt;</span>] 
+$ git remote set-url --add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span>
+$ git remote set-url --delete <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>
     [--push]                <span class="comment"># manipulate push URLs(操作push的URL)</span>
     [--add]                <span class="comment"># add URL</span>
     [--delete]              <span class="comment"># delete URLs</span>
 
-$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;name&gt;</span>     <span class="comment"># 删除指定的远程仓库名</span>
+$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;origin&gt;</span>     <span class="comment"># 删除指定的远程仓库名</span>
 $ git remote rename <span class="variable">&lt;old&gt;</span> <span class="variable">&lt;new&gt;</span>       <span class="comment"># 重命名远程仓库名</span>
 
 <span class="comment"># 设置或删除远程仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行</span>
-$ git remote set-head <span class="variable">&lt;name&gt;</span> (-a |<span class="string"> --auto </span>|<span class="string"> -d </span>|<span class="string"> --delete </span>|<span class="string"> &lt;branch&gt;) 
+$ git remote set-head <span class="variable">&lt;origin&gt;</span> (-a |<span class="string"> --auto </span>|<span class="string"> -d </span>|<span class="string"> --delete </span>|<span class="string"> &lt;branch&gt;) 
     [-a</span>|<span class="string">--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote
     [-d</span>|<span class="string">--delete]       # delete refs/remotes/&lt;name&gt;/HEAD
 
 # 清理远程存在过但现在不存在的本地远程分支的引用
-$ git remote prune [&lt;options&gt;] &lt;name&gt; 
+$ git remote prune [&lt;options&gt;] &lt;origin&gt; 
     [-n</span>|<span class="string">--dry-run]         # dry run(试运行，彩排)</span>
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cihcuj9si0005wf2e03lxunbk" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cihexmdve00055m2et3ff1q2b" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/GitRemote/#disqus_thread" class="article-comment-link">Comments</a>
       
