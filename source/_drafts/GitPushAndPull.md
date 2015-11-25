@@ -17,7 +17,14 @@ git push #推送本地所有分支
 
 git push -u origin master 	# 推送本地提交到远程仓库，-u 指定的是默认主机(并使当前分支与远程分支关联)
 
-	
+
+# 以下配置是针对git push、git pull设置
+git config --global push.default matching 	# 推送本地所有存在跟踪(关联)的所有分支到对应远程分支
+git config --global push.default simple 	# 推送当前分支到其远程跟踪分支
+git push --all origin 	# 推送本地所有分支到远程对应(相同分支名)分支
+git push <[-f|--force]> origin   # 强制推送到远程(远程的更新会被覆盖)
+
+
 git push origin source
 
  将本地托管代码库push到Git服务器： git push -u origin master ( 即就是：git push -u [remote name] [local branch : remote branch] )
