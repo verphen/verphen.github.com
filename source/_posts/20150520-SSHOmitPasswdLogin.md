@@ -18,7 +18,7 @@ tags:
 
 一直回车即可,最后将会在用户目录 ~/.ssh 生成公钥 id_rsa.pub 和私钥 id_rsa 两个文件,将公钥内容追加到远程主机文件 ~/.ssh/authorized_keys 文件中：
     
-    $ ssh-copy-id [-i [identity_file]] [user@]machine   # 追加本机公钥到远程主机的authorized_keys
+    $ ssh-copy-id [-i [identity_file]] [user@]host   # 追加本机公钥到远程主机的authorized_keys
 
 输入远程主机密码即完成配置；此时便可以实现SSH免密码登录远程主机。当然，追加公钥内容到主机时，你也可以上传公钥文件到远程主机，然后执行命令：
 

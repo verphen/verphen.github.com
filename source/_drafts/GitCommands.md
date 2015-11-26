@@ -22,3 +22,11 @@ categories: git
 https://github.com/xirong/my-git/blob/master/how-to-use-github.md
 
 git clone <url> [project_name]      # 从现有仓库中克隆
+
+git reflog：查看上一次版本情况（回退也能看到）
+
+git rebase master               # 将指定分支的超前提交变基到当前
+
+git checkout -- <file>      # 取消未缓存文件的修改
+
+git mv <file_old> <file_new>    # 重命名跟踪文件
