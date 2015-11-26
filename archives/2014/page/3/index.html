@@ -266,15 +266,15 @@
         <p>nodejs听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到nodejs，特此整理了一下对其的安装。</p>
 <p>Windows安装</p>
 <ol>
-<li><p>官网下载：<a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a> ，两种安装方式：</p>
-<ul>
+<li>官网下载：<a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a> ，两种安装方式：<ul>
 <li>exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）</li>
-<li><p>msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录</p>
-<p>测试是否安装成功：</p>
-<p>$ node &lt;[-v|–version]&gt;        # 显示版本信息</p>
-</li>
+<li>msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录</li>
 </ul>
 </li>
+</ol>
+<p>测试是否安装成功：</p>
+<pre><code>$ <span class="keyword">node</span><span class="identifier"> </span><span class="title">&lt;[-v</span>|--<span class="operator">version</span>]&gt;        <span class="comment"># 显示版本信息</span>
+</code></pre><ol>
 <li><p>安装npm (Node Package Manager)</p>
 <p> 现在的node最新版本已经默认集成npm，所以不需要额外安装; 若是以前较低版本参考如下安装：</p>
 <pre><code>$ npm -v         <span class="comment"># 测试npm是否安装（如打印版本信息说明已安装）</span>
