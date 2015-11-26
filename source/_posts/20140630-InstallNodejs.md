@@ -30,12 +30,6 @@ Windows安装
 		$ cd npm
 		$ node cli.js install npm -gf
  
-Linux安装
-
-	同样官网下载对应的文件
-
-	
-
 3. 安装过程中错误分析
 
 	- 出现 `npm ERR! registry error parsing json` 错误，可能需要设置npm代理,执行命令 `npm config set registry http://registry.cnpmjs.org`
