@@ -697,7 +697,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
     <published>2015-07-07T01:27:14.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-11-26T15:11:57.000Z</updated>
     <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
 <pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
 ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
@@ -736,13 +736,17 @@ alt + 左右方向键     <span class="comment"># 后退/前进"ctrl+鼠标右�
 alt + 上下方向键     <span class="comment"># 将当前行与上/下行交换位置</span>
 ctrl + alt + 上下方向键     <span class="comment"># 复制当前行到上/下一行</span>
 
+ctrl + alt + j      <span class="comment"># 合并下一行到当前行</span>
+
 <span class="built_in">shift</span> + enter     <span class="comment"># 当前行下一行插入空行</span>
 ctrl + <span class="built_in">shift</span> + enter     <span class="comment"># 当前行上一行插入空行</span>
 
 alt + <span class="built_in">shift</span> + r     <span class="comment"># 修改文件名、方法名、变量名,并更新其引用</span>
 alt + <span class="built_in">shift</span> + a     <span class="comment"># eclipse列模式, 划定区域输入内容回车即可</span>
-alt + <span class="built_in">shift</span> + o(字母)     <span class="comment"># 切换标记发生(toggle mark occurrences);</span>
-                           把选中的方法/变量在本类中全部出现的地方高亮显示
+<span class="comment"># 切换标记发生(toggle mark occurrences),把选中的方法/变量在本类中全部出现的地方高亮显示</span>
+alt + <span class="built_in">shift</span> + o(字母)     
+
+<span class="built_in">shift</span> + 鼠标悬停方法名         <span class="comment"># 显示方法体内容</span>
 </code></pre><p>调试模式的快捷方式：</p>
 <pre><code>ctrl + <span class="built_in">shift</span> + i     <span class="comment"># 显示被选中代码执行的值</span>
 </code></pre><p>skill:</p>
@@ -1084,13 +1088,12 @@ i5、i6的equals的比较： <span class="literal">true</span>
     <link href="http://effine.cn/2015/06/19/SSHInstall/"/>
     <id>http://effine.cn/2015/06/19/SSHInstall/</id>
     <published>2015-06-19T06:17:34.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-11-26T15:11:57.000Z</updated>
     <content type="html"><![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
 </code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
-</code></pre><p>重启ssh：</p>
-<pre><code><span class="variable">$ </span>service sshd restart
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
+$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
 </code></pre><a id="more"></a>
 <p>查看ssh默认端口22是否启动：</p>
 <pre><code><span class="variable">$ </span>netstat -antp | grep sshd 
@@ -1098,25 +1101,24 @@ i5、i6的equals的比较： <span class="literal">true</span>
 <span class="variable">$ </span>iptables -nL 
 </code></pre><p>如端口未打开，那开启防火墙</p>
 <pre><code>$ vi /etc/sysconfig/iptables
-插入： -A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
+<span class="comment"># 插入内容</span>
+-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
 </code></pre><p>检查SSH是否为开机启动：</p>
 <pre><code>$ chkconfig <span class="comment">--list sshd</span>
 </code></pre><p>设置SSH为开机启动：</p>
-<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment">#开机启动[是|否]</span>
+<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment"># 开机启动[是|否]</span>
 </code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
-<pre><code><span class="preprocessor"># 限制ip连接</span>
-sshd: All     <span class="preprocessor">#允许所有ip ssh连接该服务器</span>
-sshd: <span class="number">192.168</span><span class="number">.0</span><span class="number">.125</span>        <span class="preprocessor">#只允许<span class="number">125</span> ssh连接，可以配置多台</span>
-</code></pre><p>远程ssh连接,默认为22端口可以省略该参数</p>
-<pre><code>$ ssh -<span class="tag">p</span> <span class="number">22</span> root@<span class="number">192.168</span>.<span class="number">0.125</span>    <span class="id">#ssh</span> -<span class="tag">p</span> port username@ip
+<pre><code># 限制<span class="literal">ip</span>连接
+<span class="label">sshd:</span> &lt;[All|<span class="literal">ip</span>]&gt;     # 指定<span class="literal">IP</span>连接[All所有|<span class="literal">ip</span>具体<span class="literal">IP</span>],可以配置多个<span class="literal">IP</span>
+</code></pre><p>远程SSH连接(默认端口22)</p>
+<pre><code>$ ssh [-p <span class="tag">&lt;<span class="title">port</span>&gt;</span>] <span class="tag">&lt;<span class="title">user</span>&gt;</span>@<span class="tag">&lt;<span class="title">host</span>&gt;</span>
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
 </code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
-</code></pre><p>重启ssh：</p>
-<pre><code><span class="variable">$ </span>service sshd restart
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
+$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
 </code></pre>]]>
     
     </summary>
@@ -1125,7 +1127,7 @@ sshd: <span class="number">192.168</span><span class="number">.0</span><span cla
     
       <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
     
-      <category term="web" scheme="http://effine.cn/categories/web/"/>
+      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
     
   </entry>
   
@@ -1134,14 +1136,14 @@ sshd: <span class="number">192.168</span><span class="number">.0</span><span cla
     <link href="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/"/>
     <id>http://effine.cn/2015/05/20/SSHOmitPasswdLogin/</id>
     <published>2015-05-20T09:11:02.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-11-26T15:11:57.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录"></p>
 <p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
 <a id="more"></a>
 <p>本地通过SSH登录远程主机,首先需要在本地生成密钥：</p>
 <pre><code>$ ssh-keygen <span class="string">[-t rsa]</span>        # 本地主机生成密钥<span class="string">[采用rsa算法生成]</span>
 </code></pre><p>一直回车即可,最后将会在用户目录 ~/.ssh 生成公钥 id_rsa.pub 和私钥 id_rsa 两个文件,将公钥内容追加到远程主机文件 ~/.ssh/authorized_keys 文件中：</p>
-<pre><code>$ ssh-<span class="keyword">copy</span>-<span class="property">id</span> [-i [identity_file]] [user@]machine   <span class="comment"># 追加本机公钥到RemoteHost的authorized_keys</span>
+<pre><code>$ ssh-<span class="keyword">copy</span>-<span class="property">id</span> [-i [identity_file]] [user@]host   <span class="comment"># 追加本机公钥到远程主机的authorized_keys</span>
 </code></pre><p>输入远程主机密码即完成配置；此时便可以实现SSH免密码登录远程主机。当然，追加公钥内容到主机时，你也可以上传公钥文件到远程主机，然后执行命令：</p>
 <pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub&gt;  <span class="prompt">&gt;&gt;  </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment"># 追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
 </code></pre><p>我远程主机home目录存在本机公钥id_rsa.pub文件,所以我执行以下命令即可：</p>

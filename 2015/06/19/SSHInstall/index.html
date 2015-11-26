@@ -6,30 +6,27 @@
   <title>SSH安装 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="检查SSH是否安装(本文采用centos测试)
-$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+$ rpm -qa | grep ssh     # 只能检查是否通过rpm的软件
 如未安装，则安装即可：
-$ yum -y install openssh-server openssh-clients
-重启ssh：
-$ service sshd restart">
+$ yum -y install openssh-server openssh-clients 
+$ service sshd &amp;lt;start|stop|restart&amp;gt;         # 重启SSH[]">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSH安装">
 <meta property="og:url" content="http://effine.cn/2015/06/19/SSHInstall/index.html">
 <meta property="og:site_name" content="effine">
 <meta property="og:description" content="检查SSH是否安装(本文采用centos测试)
-$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+$ rpm -qa | grep ssh     # 只能检查是否通过rpm的软件
 如未安装，则安装即可：
-$ yum -y install openssh-server openssh-clients
-重启ssh：
-$ service sshd restart">
-<meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
+$ yum -y install openssh-server openssh-clients 
+$ service sshd &amp;lt;start|stop|restart&amp;gt;         # 重启SSH[]">
+<meta property="og:updated_time" content="2015-11-26T15:11:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH安装">
 <meta name="twitter:description" content="检查SSH是否安装(本文采用centos测试)
-$ rpm -qa | grep ssh     #只能检查是否通过rpm的软件
+$ rpm -qa | grep ssh     # 只能检查是否通过rpm的软件
 如未安装，则安装即可：
-$ yum -y install openssh-server openssh-clients
-重启ssh：
-$ service sshd restart">
+$ yum -y install openssh-server openssh-clients 
+$ service sshd &amp;lt;start|stop|restart&amp;gt;         # 重启SSH[]">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -94,7 +91,7 @@ $ service sshd restart">
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/web/">web</a>
+    <a class="article-category-link" href="/categories/linux/">linux</a>
   </div>
 
   </div>
@@ -114,11 +111,10 @@ $ service sshd restart">
     <div class="article-entry" itemprop="articleBody">
       
         <p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment">#只能检查是否通过rpm的软件</span>
+<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
 </code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients</span>
-</code></pre><p>重启ssh：</p>
-<pre><code><span class="variable">$ </span>service sshd restart
+<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
+$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
 </code></pre><a id="more"></a>
 <p>查看ssh默认端口22是否启动：</p>
 <pre><code><span class="variable">$ </span>netstat -antp | grep sshd 
@@ -126,17 +122,17 @@ $ service sshd restart">
 <span class="variable">$ </span>iptables -nL 
 </code></pre><p>如端口未打开，那开启防火墙</p>
 <pre><code>$ vi /etc/sysconfig/iptables
-插入： -A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
+<span class="comment"># 插入内容</span>
+-A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
 </code></pre><p>检查SSH是否为开机启动：</p>
 <pre><code>$ chkconfig <span class="comment">--list sshd</span>
 </code></pre><p>设置SSH为开机启动：</p>
-<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment">#开机启动[是|否]</span>
+<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment"># 开机启动[是|否]</span>
 </code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
-<pre><code><span class="preprocessor"># 限制ip连接</span>
-sshd: All     <span class="preprocessor">#允许所有ip ssh连接该服务器</span>
-sshd: <span class="number">192.168</span><span class="number">.0</span><span class="number">.125</span>        <span class="preprocessor">#只允许<span class="number">125</span> ssh连接，可以配置多台</span>
-</code></pre><p>远程ssh连接,默认为22端口可以省略该参数</p>
-<pre><code>$ ssh -<span class="tag">p</span> <span class="number">22</span> root@<span class="number">192.168</span>.<span class="number">0.125</span>    <span class="id">#ssh</span> -<span class="tag">p</span> port username@ip
+<pre><code># 限制<span class="literal">ip</span>连接
+<span class="label">sshd:</span> &lt;[All|<span class="literal">ip</span>]&gt;     # 指定<span class="literal">IP</span>连接[All所有|<span class="literal">ip</span>具体<span class="literal">IP</span>],可以配置多个<span class="literal">IP</span>
+</code></pre><p>远程SSH连接(默认端口22)</p>
+<pre><code>$ ssh [-p <span class="tag">&lt;<span class="title">port</span>&gt;</span>] <span class="tag">&lt;<span class="title">user</span>&gt;</span>@<span class="tag">&lt;<span class="title">host</span>&gt;</span>
 </code></pre>
       
     </div>
@@ -212,7 +208,7 @@ sshd: <span class="number">192.168</span><span class="number">.0</span><span cla
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
