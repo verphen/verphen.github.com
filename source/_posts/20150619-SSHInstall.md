@@ -41,7 +41,7 @@ date: 2015-06-19 14:17:34
 SSH的配置文件：/etc/ssh/sshd_config
 
 	# 限制ip连接
-	sshd: <[All|ip]> 	# 指定IP连接[All所有|ip具体IP],可以配置多个IP
+	sshd: <[All|ip]> 	# 指定IP连接[所有|具体IP],当然也可以配置多个IP
 
 远程SSH连接(默认端口22)
 	

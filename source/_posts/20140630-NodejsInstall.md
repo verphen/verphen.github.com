@@ -17,8 +17,6 @@ Windows安装
 		
 		$ node <[-v|--version]>        # 显示版本信息
 	
-<!-- more -->
-
 2. 安装npm (Node Package Manager)
 	
 	现在的node最新版本已经默认集成npm，所以不需要额外安装; 若是以前较低版本参考如下安装：
@@ -30,6 +28,8 @@ Windows安装
 		$ cd npm
 		$ node cli.js install npm -gf
  
-3. 安装过程中错误分析
+安装过程中错误分析
 
-	- 出现 `npm ERR! registry error parsing json` 错误，可能需要设置npm代理,执行命令 `npm config set registry http://registry.cnpmjs.org`
+-  出现错误：npm ERR! registry error parsing json，需要设置npm代理,执行命令
+
+		$ npm config set registry http://registry.cnpmjs.org

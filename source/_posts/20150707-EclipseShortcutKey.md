@@ -62,7 +62,7 @@ date: 2015-07-07 09:27:14
 	
     ctrl + shift + i 	# 显示被选中代码执行的值
 
-skill:
+技巧
 
     - 输入"main"然后按 alt + / , 则输出 " public static void main(String[] args) {} "
     - 输入"syso"然后按 alt + / , 则输出 " System.out.println(); "
