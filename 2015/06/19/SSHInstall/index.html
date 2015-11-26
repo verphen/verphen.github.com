@@ -19,7 +19,7 @@ $ rpm -qa | grep ssh     # 只能检查是否通过rpm的软件
 如未安装，则安装即可：
 $ yum -y install openssh-server openssh-clients 
 $ service sshd &amp;lt;start|stop|restart&amp;gt;         # 重启SSH[]">
-<meta property="og:updated_time" content="2015-11-26T15:11:57.000Z">
+<meta property="og:updated_time" content="2015-11-26T15:16:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSH安装">
 <meta name="twitter:description" content="检查SSH是否安装(本文采用centos测试)
@@ -130,7 +130,7 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
 <pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment"># 开机启动[是|否]</span>
 </code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
 <pre><code># 限制<span class="literal">ip</span>连接
-<span class="label">sshd:</span> &lt;[All|<span class="literal">ip</span>]&gt;     # 指定<span class="literal">IP</span>连接[All所有|<span class="literal">ip</span>具体<span class="literal">IP</span>],可以配置多个<span class="literal">IP</span>
+<span class="label">sshd:</span> &lt;[All|<span class="literal">ip</span>]&gt;     # 指定<span class="literal">IP</span>连接[所有|具体<span class="literal">IP</span>],当然也可以配置多个<span class="literal">IP</span>
 </code></pre><p>远程SSH连接(默认端口22)</p>
 <pre><code>$ ssh [-p <span class="tag">&lt;<span class="title">port</span>&gt;</span>] <span class="tag">&lt;<span class="title">user</span>&gt;</span>@<span class="tag">&lt;<span class="title">host</span>&gt;</span>
 </code></pre>
