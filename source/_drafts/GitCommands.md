@@ -14,6 +14,7 @@ categories: git
 
     $ git show [commitID]   # 显示上一次提交详细差异信息[指定版本的差异信息]
 
+    $ gitk  #  可视化界面查看提交记录等
 
 克隆本地仓库： git clong /path/repository
 克隆远程仓库： git clone username@hostname:/path/repository

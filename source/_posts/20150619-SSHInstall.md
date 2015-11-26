@@ -2,20 +2,18 @@ title: SSH安装
 tags:
   - ssh
   - command
-categories: web
+categories: linux
 date: 2015-06-19 14:17:34
 ---
+
 检查SSH是否安装(本文采用centos测试)
 
-	$ rpm -qa | grep ssh 	#只能检查是否通过rpm的软件
+	$ rpm -qa | grep ssh 	# 只能检查是否通过rpm的软件
 
 如未安装，则安装即可：
 
-	$ yum -y install openssh-server openssh-clients
-
-重启ssh：
-	
-	$ service sshd restart
+	$ yum -y install openssh-server openssh-clients 
+	$ service sshd <start|stop|restart> 		# 重启SSH[]
 	
 
 <!-- more -->
@@ -29,7 +27,8 @@ date: 2015-06-19 14:17:34
 如端口未打开，那开启防火墙
 
 	$ vi /etc/sysconfig/iptables
-	插入： -A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+	# 插入内容
+	-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
 
 检查SSH是否为开机启动：
 	
@@ -37,14 +36,13 @@ date: 2015-06-19 14:17:34
 
 设置SSH为开机启动：
 
-	$ chkconfig sshd [on|off]    #开机启动[是|否]
+	$ chkconfig sshd [on|off]    # 开机启动[是|否]
 
 SSH的配置文件：/etc/ssh/sshd_config
 
 	# 限制ip连接
-	sshd: All 	#允许所有ip ssh连接该服务器
-	sshd: 192.168.0.125		#只允许125 ssh连接，可以配置多台
+	sshd: <[All|ip]> 	# 指定IP连接[All所有|ip具体IP],可以配置多个IP
 
-远程ssh连接,默认为22端口可以省略该参数
+远程SSH连接(默认端口22)
 	
-	$ ssh -p 22 root@192.168.0.125	#ssh -p port username@ip
+	$ ssh [-p <port>] <user>@<host>
