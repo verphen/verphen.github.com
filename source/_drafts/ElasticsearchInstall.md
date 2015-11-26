@@ -6,6 +6,15 @@ tags:
   - elasticsearch
 ---
 
+推荐书籍：
+
+	Elasticsearch 权威指南: 
+		http://www.learnes.net/
+		https://www.gitbook.com/book/fuxiaopang/learnelasticsearch/details
+
+	
+
+
 下载elasticsearch
 
 	https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.0.0/elasticsearch-2.0.0.tar.gz
