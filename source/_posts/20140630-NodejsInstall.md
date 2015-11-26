@@ -13,10 +13,10 @@ Windows安装
 	-   exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）
 	-   msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录
 	
-	测试是否安装成功：
+测试是否安装成功：
 		
 		$ node <[-v|--version]>        # 显示版本信息
-	
+
 2. 安装npm (Node Package Manager)
 	
 	现在的node最新版本已经默认集成npm，所以不需要额外安装; 若是以前较低版本参考如下安装：
