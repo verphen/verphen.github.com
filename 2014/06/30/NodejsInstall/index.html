@@ -23,7 +23,7 @@ Windows安装
 
 exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）
 msi 安装：包装exe安装方式，自动设">
-<meta property="og:updated_time" content="2015-11-26T15:24:39.000Z">
+<meta property="og:updated_time" content="2015-11-26T15:28:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nodejs 安装">
 <meta name="twitter:description" content="nodejs听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到nodejs，特此整理了一下对其的安装。
@@ -142,9 +142,12 @@ $ <span class="keyword">node</span><span class="identifier"> </span><span class=
 </code></pre></li>
 </ol>
 <p>安装过程中错误分析</p>
-<p>  .  出现错误：npm ERR! registry error parsing json，需要设置npm代理,执行命令</p>
+<ul>
+<li><p>出现错误：npm ERR! registry error parsing json，需要设置npm代理,执行命令</p>
 <pre><code>$ npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.cnpmjs.org
-</code></pre>
+</code></pre></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
