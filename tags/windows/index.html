@@ -102,7 +102,7 @@
         <p>nodejs听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到nodejs，特此整理了一下对其的安装。</p>
 <p>Windows安装</p>
 <ol>
-<li><p>官网下载：<a href="http://nodejs.org/">http://nodejs.org/</a> ，两种安装方式：</p>
+<li><p>官网下载：<a href="http://nodejs.org/" target="_blank" rel="external">http://nodejs.org/</a> ，两种安装方式：</p>
 <ul>
 <li>exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）</li>
 <li><p>msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录</p>
@@ -111,12 +111,23 @@
 </li>
 </ul>
 </li>
+<li><p>安装npm (Node Package Manager)</p>
+<p> 现在的node最新版本已经默认集成npm，所以不需要额外安装; 若是以前较低版本参考如下安装：</p>
+<pre><code>$ npm -v         <span class="comment"># 测试npm是否安装（如打印版本信息说明已安装）</span>
+<span class="comment"># Git自行查询安装</span>
+$ git config --system http.sslca<span class="number">inf</span>o /bin/curl-ca-bundle.crt
+$ git <span class="keyword">clone</span> <span class="title">--recursive</span> git://github.com/isaacs/npm.git                   <span class="comment"># git克隆npm项目到本地</span>
+$ cd npm
+$ <span class="keyword">node</span><span class="identifier"> </span><span class="title">cli</span>.js install npm -gf
+</code></pre></li>
 </ol>
-        
-          <p class="article-more-link">
-            <a href="/2014/06/30/NodejsInstall/#more">阅读全文</a>
-          </p>
-        
+<p>安装过程中错误分析</p>
+<ul>
+<li><p>出现错误：npm ERR! registry error parsing json，需要设置npm代理,执行命令</p>
+<pre><code>$ npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.cnpmjs.org
+</code></pre></li>
+</ul>
+
       
     </div>
     <footer class="article-footer">
