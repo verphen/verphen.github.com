@@ -102,3 +102,8 @@ redis命令info:
 
 
 
+redis-cli下命令：
+
+	$ keys '*'   # 列出redis中所有KEY
+
+

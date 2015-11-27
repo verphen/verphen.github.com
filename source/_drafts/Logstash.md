@@ -10,6 +10,7 @@ tags:
 	[官方文档](https://www.elastic.co/guide/en/logstash/current/package-repositories.html#_apt)
 	Logstash 最佳实践：https://github.com/chenryn/logstash-best-practice-cn
 	ELKstack 中文指南：http://kibana.logstash.es/
+	http://www.logstashbook.com/
 
 
 centos安装logstash前提必须安装jdk（版本必须在1.7之上）
@@ -91,3 +92,8 @@ centos安装logstash前提必须安装jdk（版本必须在1.7之上）
 
 	Options:
 	    -h, --help                    print help
+
+
+插件安装：
+
+	collectd的安装
