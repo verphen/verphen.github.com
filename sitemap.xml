@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2015/07/06/ChromeShortcutKey/</loc>
+    <lastmod>2015-11-27T13:00:36.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2014/06/30/NodejsInstall/</loc>
     <lastmod>2015-11-26T15:34:58.000Z</lastmod>
   </url>
@@ -72,12 +77,12 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/11/15/InstallGitFlow/</loc>
+    <loc>http://effine.cn/2014/04/07/JavaAdapterPattern/</loc>
     <lastmod>2015-11-24T07:03:19.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/04/07/JavaAdapterPattern/</loc>
+    <loc>http://effine.cn/2013/11/06/ResignEclipseEngineer/</loc>
     <lastmod>2015-11-24T07:03:19.000Z</lastmod>
   </url>
   
@@ -147,13 +152,8 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2013/11/06/ResignEclipseEngineer/</loc>
+    <loc>http://effine.cn/2013/11/15/InstallGitFlow/</loc>
     <lastmod>2015-11-24T07:03:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/2014/10/30/GitIgnore/</loc>
-    <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
   <url>
@@ -178,11 +178,6 @@
   
   <url>
     <loc>http://effine.cn/2014/07/01/BuildBlogOfHexo/</loc>
-    <lastmod>2015-11-23T16:43:28.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/about/index.html</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -227,7 +222,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/07/06/ChromeShortcutKey/</loc>
+    <loc>http://effine.cn/2015/11/10/GitConfig/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -242,7 +237,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/11/10/GitConfig/</loc>
+    <loc>http://effine.cn/2015/11/04/GitTag/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -252,7 +247,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/11/04/GitTag/</loc>
+    <loc>http://effine.cn/about/index.html</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -297,12 +292,17 @@
   </url>
   
   <url>
+    <loc>http://effine.cn/2014/12/20/HexoBlogConfig-2/</loc>
+    <lastmod>2015-11-23T16:43:28.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2012/11/09/JavaSingletonPattern/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/12/20/HexoBlogConfig-2/</loc>
+    <loc>http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -317,7 +317,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/12/18/HexoBlogErrorAnalysis/</loc>
+    <loc>http://effine.cn/2014/10/30/GitIgnore/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   

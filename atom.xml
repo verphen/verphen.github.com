@@ -845,7 +845,7 @@ admin-script - allows access <span class="built_in">to</span> <span class="opera
     <link href="http://effine.cn/2015/07/06/ChromeShortcutKey/"/>
     <id>http://effine.cn/2015/07/06/ChromeShortcutKey/</id>
     <published>2015-07-06T01:58:09.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-11-27T13:00:36.000Z</updated>
     <content type="html"><![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
 <pre><code>-<span class="ruby"> 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容<span class="string">"无法显示此页面"</span>，按<span class="string">"空格"</span>键，可以玩个小游戏放松心情
 </span>
