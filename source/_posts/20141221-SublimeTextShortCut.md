@@ -46,7 +46,7 @@ tags: [tools,sublime]
 		- ctrl + shift + d : 复制当前行至下一行 (duplicate line)
 		- ctrl + shift + k : 删除当前行 (delete line)
 		- ctrl + J : 无选中则合并下一行到当前行；若选中则合并所有选中行到一行 (join lines)
-		- ctrl + g： 跳转到第几行
+		- ctrl + g： 跳转到第几行(ctrl+p输入冒号":"即可达到相同效果)
 			<br/>
 		- ctrl + l：选择行，重复可依次增加选择下一行
 		- ctrl + shift + l：选择多行
