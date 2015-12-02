@@ -7,7 +7,7 @@ tags: [tools,sublime]
 
 - 菜单栏
 	
-	- ctrl + ` : 调出console面板
+	- ctrl + ` : 调出console面板(或菜单: view -> show console)
 	- ctrl + shift + p: 调出package control 包管理器
 	- ctrl + k + b：开启/关闭侧边导航栏
 
@@ -70,6 +70,9 @@ tags: [tools,sublime]
 		- ctrl + r： 前往 method
 		- ctrl + shift + m：选中当前括号内容，重复可选着括号本身
 		- ctrl + shift + a：选择当前标签前后，修改标签用的
+
+		- ctrl + <[+|-]> 		# 放大/缩小字体
+		- ctrl + shift + "+" 	# 缩小字体
 
 	- 搜索
 		- ctrl + f: 查看内容
