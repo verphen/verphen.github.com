@@ -42,7 +42,13 @@ apt: Advanced package Tool ;APT是一个为Debian系列系统（Ubuntu，Kubuntu
 
 	apt-get / apt-cache 的使用
 
-tar：解压命令
+tar命令(参数)
+	
+	$ tar -czf <dist.tar.gz> <dist_dir> 	# 压缩
+	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压(-C解压到指定目录)
+
+
+
 
 cal: Calender 日历
 
@@ -88,3 +94,9 @@ grep: Global Regular Expression Print 全局正则表达式版本
 配置ip及网络配置文件：
 
 	$ vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+配置防火墙(端口)文件
+
+	$ vi /etc/sysconfig/iptables
+	修改完成如需立即生效，执行
+	$ service iptables restart
