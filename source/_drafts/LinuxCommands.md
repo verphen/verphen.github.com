@@ -47,7 +47,7 @@ tar命令(参数)
 	$ tar -czf <dist.tar.gz> <dist_dir> 	# 压缩
 	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压(-C解压到指定目录)
 
-
+unzip *.zip  解压zip文件
 
 
 cal: Calender 日历
@@ -100,3 +100,9 @@ grep: Global Regular Expression Print 全局正则表达式版本
 	$ vi /etc/sysconfig/iptables
 	修改完成如需立即生效，执行
 	$ service iptables restart
+
+技巧：
+
+	终端保持当前目录不变，去别的目录执行命令；只需把要执行的命令加上括号即可;
+
+	$ clear 	# 清屏(同操作ctrl + l)

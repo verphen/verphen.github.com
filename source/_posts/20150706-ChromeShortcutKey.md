@@ -65,3 +65,8 @@ date: 2015-07-06 09:58:09
     shift + esc     # 查看标签页的任务管理器
     alt + f4    # 关闭当前窗口
     ctrl + shift + q 	# 关闭所有标签，退出 chrome 浏览器
+
+技巧：
+
+    > console.<[log|info|warn|error]>("message")    # 面板以类型[日志|信息|警告|错误]打印信息message
+    
