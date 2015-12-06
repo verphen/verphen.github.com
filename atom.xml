@@ -630,7 +630,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/MacShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/MacShortcutKey/</id>
     <published>2015-07-07T02:49:11.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-12-06T03:35:29.000Z</updated>
     <content type="html"><![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
 <ul>
 <li><p>应用</p>
@@ -657,8 +657,11 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
 <span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">4</span>  —&gt; 释放按住的三个键 —&gt; 空格   <span class="comment"># 截取规则的区域</span>
 </code></pre></li>
 <li><p>技巧</p>
-<pre><code>选中任何文件，按空格键<span class="constant">space</span>即可预览,不用每次双击打开再关闭
-</code></pre></li>
+<ul>
+<li>选中任何文件，按空格键space即可预览,不用每次双击打开再关闭</li>
+<li>$ fn + delete        # 向后进行删除</li>
+</ul>
+</li>
 </ul>
 <p>只是简单地记录一些使用习惯，后续再追加完善！</p>
 ]]></content>
@@ -845,7 +848,7 @@ admin-script - allows access <span class="built_in">to</span> <span class="opera
     <link href="http://effine.cn/2015/07/06/ChromeShortcutKey/"/>
     <id>http://effine.cn/2015/07/06/ChromeShortcutKey/</id>
     <published>2015-07-06T01:58:09.000Z</published>
-    <updated>2015-11-27T13:00:36.000Z</updated>
+    <updated>2015-12-06T03:36:03.000Z</updated>
     <content type="html"><![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
 <pre><code>-<span class="ruby"> 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容<span class="string">"无法显示此页面"</span>，按<span class="string">"空格"</span>键，可以玩个小游戏放松心情
 </span>
@@ -902,6 +905,8 @@ ctrl + <span class="keyword">shift</span> + <span class="keyword">delete</span> 
 <span class="keyword">shift</span> + esc     <span class="comment"># 查看标签页的任务管理器</span>
 alt + f4    <span class="comment"># 关闭当前窗口</span>
 ctrl + <span class="keyword">shift</span> + <span class="keyword">q</span>     <span class="comment"># 关闭所有标签，退出 chrome 浏览器</span>
+</code></pre><p>技巧：</p>
+<pre><code>&gt; console.&lt;[<span class="command">log</span>|info|warn|<span class="keyword">error</span>]&gt;(<span class="string">"message"</span>)    <span class="comment"># 面板以类型[日志|信息|警告|错误]打印信息message</span>
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
