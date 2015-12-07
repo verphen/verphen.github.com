@@ -48,6 +48,7 @@ tar命令(参数)
 	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压(-C解压到指定目录)
 
 unzip *.zip  解压zip文件
+gzip filename;压缩文件(解压缩：gzip -d filename)
 
 
 cal: Calender 日历
@@ -80,6 +81,8 @@ grep: 匹配
 cd: change directory; 改变目录
 
 free -m: 查看内存使用情况
+
+wget: 下载文件
 
 grep: Global Regular Expression Print 全局正则表达式版本
 	$ grep "search content"  "dest file" 搜索目标文件指定内容
