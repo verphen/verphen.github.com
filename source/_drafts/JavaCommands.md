@@ -11,3 +11,8 @@ tags:
 		配置jar的META-INF下得MANIFEST.MF文件指定包含main方法的类(如`Main-Class: cn.effine.MainClass`)
 
 	$ javap -c className		# jdk自带的反编译命令
+
+
+
+
+	java javac jps ,jstat ,jmap, jstack
