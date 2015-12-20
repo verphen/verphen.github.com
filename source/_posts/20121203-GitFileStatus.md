@@ -4,6 +4,7 @@ date: 2012-12-03 11:00:34
 categories: tools
 tags: [git,版本管理,工具]
 ---
+
 git库所在的文件夹(即.git所在的文件夹)中的文件的状态：
 
 -  untracked：未跟踪，此文件在工作目录但并没有加入git库，不参与版本控制。 通过“git add”可将它置入跟踪库。
