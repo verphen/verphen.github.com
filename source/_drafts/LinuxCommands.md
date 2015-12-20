@@ -2,6 +2,10 @@ title: LinuxCommands
 tags:
 ---
 
+echo $variable-name   打印环境变量名的值
+
+netstat -tln | grep 8080 查看端口8080的使用情况
+
 man command / command --help 可以查看命令command的帮助文档
 
 lsblk 列出块设备。除了RAM外，以标准的树状输出格式，整齐地显示块设备
