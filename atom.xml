@@ -630,12 +630,13 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/MacShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/MacShortcutKey/</id>
     <published>2015-07-07T02:49:11.000Z</published>
-    <updated>2015-12-06T03:35:29.000Z</updated>
+    <updated>2015-12-20T16:10:32.000Z</updated>
     <content type="html"><![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
 <ul>
 <li><p>应用</p>
 <pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
 <span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + q   <span class="comment"># 退出当前用户  </span>
 <span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
 </code></pre></li>
 <li><p>Finder</p>
@@ -671,6 +672,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
 <li><p>应用</p>
 <pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
 <span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
+<span class="built_in">command</span> + <span class="built_in">shift</span> + q   <span class="comment"># 退出当前用户  </span>
 <span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
 </code></pre></li>
 <li><p>Finder</p>
