@@ -14,14 +14,15 @@ fancybox: true
 
 # Sidebar
 sidebar: bottom	#导航栏显示位置
+
 widgets:
-- category	#归档
-# - tag
-# - archive
-- recent_posts	#最近文章
-- tagcloud	#标签云
-# - weibo
-# - blogroll
+	- category	#归档
+	# - tag
+	# - archive
+	- recent_posts	#最近文章
+	- tagcloud	#标签云
+	# - weibo
+	# - blogroll
 
 # Miscellaneous
 #google_analytics: verphen
