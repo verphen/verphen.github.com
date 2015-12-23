@@ -17,7 +17,8 @@ date: 2015-10-23 22:35:35
 
 [创建\切换\重命名分支]
 
-	$ git branch <name>		# 创建name分支(继承当前分支来创建)
+	$ git branch <name>		# 创建name分支(继承当前分支最新提交来创建)
+	$ git branch <name>  commitID  # 以指定的提交版本来创建分支
 	$ git checkout <name> 	# 切换分支到name(分支name需已存在)
 	$ git checkout -b <name>		# 创建分支name并切换到该分支(前提name分支不存在)
 	$ git checkout -b <name> <master>	# 创建分支name并切换到该分支，继承master分支创建而来
