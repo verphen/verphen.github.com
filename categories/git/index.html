@@ -319,7 +319,7 @@ $ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="commen
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
 <pre><code>$ git branch <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建name分支(继承当前分支最新提交来创建)</span>
-$ git branch <span class="variable">&lt;name&gt;</span>  commitID  <span class="comment"># 以指定的提交版本来创建分支</span>
+$ git branch <span class="variable">&lt;name&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建分支</span>
 $ git checkout <span class="variable">&lt;name&gt;</span>     <span class="comment"># 切换分支到name(分支name需已存在)</span>
 $ git checkout -b <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建分支name并切换到该分支(前提name分支不存在)</span>
 $ git checkout -b <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支name并切换到该分支，继承master分支创建而来</span>
