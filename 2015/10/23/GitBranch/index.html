@@ -21,7 +21,7 @@ $ git branch     # 查看本地分支（星号*标注为当前分支）
 $ git branch -r     # 查看所有远程[remote]分支
 $ git branch -a     # 查看所有[all]本地及远程分支
 $ git branch -v     # 查看各个分支最后的">
-<meta property="og:updated_time" content="2015-11-25T05:52:59.000Z">
+<meta property="og:updated_time" content="2015-12-23T16:07:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 分支">
 <meta name="twitter:description" content="$ git branch --help        # 查看关于git branch帮助
@@ -120,11 +120,12 @@ $ git branch -v     # 查看各个分支最后的">
 <span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch &lt;<span class="keyword">name</span>&gt;        # 创建<span class="keyword">name</span>分支(继承当前分支来创建)
-$ git checkout &lt;<span class="keyword">name</span>&gt;     # 切换分支到<span class="keyword">name</span>(分支<span class="keyword">name</span>需已存在)
-$ git checkout -b &lt;<span class="keyword">name</span>&gt;        # 创建分支<span class="keyword">name</span>并切换到该分支(前提<span class="keyword">name</span>分支不存在)
-$ git checkout -b &lt;<span class="keyword">name</span>&gt; &lt;master&gt;    # 创建分支<span class="keyword">name</span>并切换到该分支，继承master分支创建而来
-$ git branch -m &lt;<span class="keyword">name</span>&gt; &lt;test&gt;        # 重命名<span class="keyword">name</span>分支为test
+<pre><code>$ git branch <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建name分支(继承当前分支最新提交来创建)</span>
+$ git branch <span class="variable">&lt;name&gt;</span>  commitID  <span class="comment"># 以指定的提交版本来创建分支</span>
+$ git checkout <span class="variable">&lt;name&gt;</span>     <span class="comment"># 切换分支到name(分支name需已存在)</span>
+$ git checkout -b <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建分支name并切换到该分支(前提name分支不存在)</span>
+$ git checkout -b <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支name并切换到该分支，继承master分支创建而来</span>
+$ git branch -m <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名name分支为test</span>
 </code></pre><p>[删除分支]</p>
 <pre><code><span class="comment"># 删除本地分支[name]</span>
 <span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;name&gt;
