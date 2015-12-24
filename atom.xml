@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-11-25T05:52:59.000Z</updated>
+  <updated>2015-12-24T16:15:46.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,55 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Nginx 安装]]></title>
+    <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
+    <id>http://effine.cn/2015/11/17/NginxInstall/</id>
+    <published>2015-11-17T10:08:00.000Z</published>
+    <updated>2015-12-24T16:15:46.000Z</updated>
+    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a></p>
+<pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
+$ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
+$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
+$ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
+</code></pre><p>安装过程出现的错误：</p>
+<pre><code>./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
+You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
+option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
+statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-pcre=&lt;path&gt; option.</span>
+</code></pre><p>日志显示缺少PCRE库，那安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
+<pre><code><span class="variable">$ </span>cd pcre-{version}
+<span class="variable">$ </span>./configure
+<span class="variable">$ </span>make &amp;&amp; make install
+</code></pre><p> 安装过程如出现如下错误，是未安装OpenSSL库造成的，统一如上安装即可：</p>
+<pre><code>./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions
+<span class="keyword">from</span> OpenSSL <span class="keyword">library</span>.   You can either <span class="keyword">disable</span> the <span class="keyword">module</span> <span class="keyword">by</span> <span class="keyword">using</span>
+<span class="comment">--without-http-cache option, or install the OpenSSL library into the system,</span>
+<span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
+<span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
+</code></pre><p>若为linux直接执行命令：yum -y install pcre-devel openssl openssl-devel ；即可安装prce/openssl/openssl-devel库</p>
+<p>再次安装nginx</p>
+<pre><code><span class="variable">$ </span>cd nginx-{version}
+<span class="variable">$ </span>./configure --prefix=<span class="regexp">/usr/local</span><span class="regexp">/nginx
+$ make &amp;&amp; make install </span>
+</code></pre><p>延伸：</p>
+<pre><code>configure     <span class="comment"># 该文件是软件提供者提供的shell脚本,生成makefilse</span>
+make        <span class="comment"># 编译源码，生成Makefile</span>
+make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
+</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">ht]]>
+    </summary>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Git Remote]]></title>
@@ -383,7 +432,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/15/MavenDownSourse/"/>
     <id>http://effine.cn/2015/07/15/MavenDownSourse/</id>
     <published>2015-07-15T03:42:19.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2015-12-23T16:25:45.000Z</updated>
     <content type="html"><![CDATA[<p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
 <ol>
 <li><p>maven命令行(针对具体项目)</p>
@@ -430,7 +479,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
     <id>http://effine.cn/2015/07/15/MavenCommands/</id>
     <published>2015-07-15T02:43:38.000Z</published>
-    <updated>2015-12-23T15:54:06.000Z</updated>
+    <updated>2015-12-23T15:54:24.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
@@ -1177,47 +1226,6 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
       <category term="linux" scheme="http://effine.cn/tags/linux/"/>
     
       <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[tail command]]></title>
-    <link href="http://effine.cn/2015/05/20/TailCommand/"/>
-    <id>http://effine.cn/2015/05/20/TailCommand/</id>
-    <published>2015-05-20T08:54:22.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command"></p>
-<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
-<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.<span class="keyword">out</span>       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
-</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
-<a id="more"></a>
-<p>tail 命令基本用法：</p>
-<pre><code>$ tail [参数] 文件地址      <span class="preprocessor"># 无参数默认打印文件末尾<span class="number">10</span>行数据</span>
-</code></pre><p>tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：</p>
-<pre><code>-<span class="ruby">f <span class="symbol">:</span> 循环读取(常用于监控应用运行日志)
-</span>-<span class="ruby">n <span class="symbol">number:</span> 自定义显示行数</span>
-</code></pre><p>如果number前带正号(“+”)，则从文件头部第number行开始读取；若带负号（”-“）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。</p>
-<pre><code>$ tail -n +<span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件顶部第<span class="number">5</span>行开始读取内容</span>
-
-$ tail -n -<span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件尾部倒数<span class="number">5</span>行开始读取内容</span>
-
-$ tail -n <span class="number">5</span> catalina.out         <span class="preprocessor"># 从catalina.out文件尾部倒数<span class="number">5</span>行开始读取内容</span>
-</code></pre><p>具体参数参考：</p>
-<pre><code><span class="variable">$ </span>man mail        <span class="comment"># getting help</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/tail.png" alt="tail command" /></p>
-<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
-<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.<span class="keyword">out</span>       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
-</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>]]>
-    
-    </summary>
-    
-      <category term="command" scheme="http://effine.cn/tags/command/"/>
-    
-      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
     
       <category term="linux" scheme="http://effine.cn/categories/linux/"/>
     

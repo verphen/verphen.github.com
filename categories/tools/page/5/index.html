@@ -73,6 +73,57 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-InstallGitFlow" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/15/InstallGitFlow/" class="article-date">
+  <time datetime="2013-11-14T17:27:09.000Z" itemprop="datePublished">11月 15 2013</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/11/15/InstallGitFlow/">Git Flow安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="windows_安装">windows 安装</h3><p>Git Flow的诸多特性，我就不再叙述；这里着重介绍git flow在windows的安装;</p>
+<ol>
+<li>因为windows安装的git属于msysgit版，所以需要按照msysgit的安装步骤来安装git flow；首先需要安装<a href="http://gnuwin32.sourceforge.net/packages/util-linux-ng.htm" target="_blank" rel="external">util-linux-ng for Windows</a>，下载zip格式的二进制Binaries文件，如下图：<br><img src="/images/git/Install-Git-Flow-One.png" alt="util-linux-ng for Windows"><br><img src="/images/git/Install-Git-Flow-Two.png" alt="libintl"><br>将下载的两个文件解压，将util-linux-ng-2.14.1-bin/bin/getopt.exe和libintl-0.14.4-bin/bin/libintl3.dll文件复制到本地Git安装路径的bin目录；</li>
+<li>clone GitHub的gitflow项目到你的临时工作目录（安装完成可以删除），执行命令 <code>git clone --recursive git://github.com/nvie/gitflow.git</code>；clone完成，win + R运行”cmd”进入windows控制台，进入该gitflow/contrib目录，执行命令<code>msysgit-install.cmd &quot;Git Install Path&quot;(如E:\Install\Git)</code></li>
+<li>测试；进入windows控制台，执行命令<code>git flow</code>看提示信息(前提：git必须设置环境变量；如没有设置则使用Git Bash)</li>
+</ol>
+<p>参考资料：<br>[<a href="https://github.com/nvie/gitflow/wiki/Windows" target="_blank" rel="external">作者说明</a>]、<br>[<a href="http://www.360doc.com/content/13/0720/22/2569758_301389862.shtml" target="_blank" rel="external">资料一</a>]</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/11/15/InstallGitFlow/" data-id="ciikg2i9w006vx22eyhq9vv1n" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/11/15/InstallGitFlow/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-EclipsePluginProblem" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/10/15/EclipsePluginProblem/" class="article-date">
@@ -109,7 +160,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="cii37r00u007hf02e88a2ydmv" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="ciikg2iac007mx22eg3h9ryqo" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2013/10/15/EclipsePluginProblem/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -158,7 +209,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/12/04/GitInstallAndUse/" data-id="cii37r00x007nf02ehevbwg0w" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/12/04/GitInstallAndUse/" data-id="ciikg2iah007sx22e3hydeow2" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2012/12/04/GitInstallAndUse/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -213,67 +264,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/12/03/GitFileStatus/" data-id="cii37r00y007rf02e26ync9vy" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/12/03/GitFileStatus/" data-id="ciikg2iaj007wx22edv37azx5" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2012/12/03/GitFileStatus/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/版本管理/">版本管理</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-GitConnectGithub" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/12/02/GitConnectGithub/" class="article-date">
-  <time datetime="2012-12-02T05:40:43.000Z" itemprop="datePublished">12月 2 2012</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/12/02/GitConnectGithub/">Git Connect GitHub</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>怎么使用GitHub作为代码的远程托管服务器？</p>
-<ol>
-<li><p>在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。</p>
-</li>
-<li><p>本机创建SSH key：<code>ssh -keygen -C &quot;username@email.com&quot; -t rsa</code>(ps:username@email.com为你在GitHub上使用的email)；运行该命令之后在你电脑的<code>C:\Users\本机用户名</code>路径下产生一个.ssh文件夹，里面对应SSH Keys，其中id_rsa.pub是GitHub需要的SSH公钥文件。然后在GitHub网站右上角选择Account Settings，然后选择SSH Keys，点击Add SSH Key，将id_rsa.pub文件里的内容copy至其中的key里（Title随意）；当然如果之前你使用过SSH Keys命令需要删除.ssh文件夹然后重新开始。</p>
-</li>
-</ol>
-        
-          <p class="article-more-link">
-            <a href="/2012/12/02/GitConnectGithub/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/12/02/GitConnectGithub/" data-id="cii37r010007xf02ec8ufy9w0" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2012/12/02/GitConnectGithub/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li></ul>
 
     </footer>
   </div>
@@ -298,7 +294,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">21</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">22</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -308,6 +304,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/11/17/NginxInstall/">Nginx 安装</a>
+          </li>
         
           <li>
             <a href="/2015/11/17/GitRemote/">Git Remote</a>
@@ -345,10 +345,6 @@
             <a href="/2015/07/15/MavenDownSourse/">Maven技巧-下载源码</a>
           </li>
         
-          <li>
-            <a href="/2015/07/15/MavenCommands/">Maven 命令详解</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -358,7 +354,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.5px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 17.5px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 18.75px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
