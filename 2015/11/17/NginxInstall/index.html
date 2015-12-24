@@ -5,28 +5,22 @@
   
   <title>Nginx 安装 | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="安装nginx
+  <meta name="description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
 $ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [-C &amp;lt;dir&amp;gt;]     # 解压[指定目录]
-$ cd nginx-1.8.0
-$ ./configure --prefix=/usr/local/ngin">
+$ tar -zxvf nginx-{version}.tar.gz [">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx 安装">
 <meta property="og:url" content="http://effine.cn/2015/11/17/NginxInstall/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="安装nginx
+<meta property="og:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
 $ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [-C &amp;lt;dir&amp;gt;]     # 解压[指定目录]
-$ cd nginx-1.8.0
-$ ./configure --prefix=/usr/local/ngin">
-<meta property="og:updated_time" content="2015-12-24T16:08:53.000Z">
+$ tar -zxvf nginx-{version}.tar.gz [">
+<meta property="og:updated_time" content="2015-12-24T16:19:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx 安装">
-<meta name="twitter:description" content="安装nginx
+<meta name="twitter:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
 $ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [-C &amp;lt;dir&amp;gt;]     # 解压[指定目录]
-$ cd nginx-1.8.0
-$ ./configure --prefix=/usr/local/ngin">
+$ tar -zxvf nginx-{version}.tar.gz [">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -110,12 +104,13 @@ $ ./configure --prefix=/usr/local/ngin">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>安装<a href="http://nginx.org/" target="_blank" rel="external">nginx</a></p>
+        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a></p>
 <pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
 $ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
 $ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
-</code></pre><p>安装过程出现的错误：</p>
+</code></pre><a id="more"></a>
+<p>安装过程出现的错误：</p>
 <pre><code>./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
 You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
 option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
@@ -131,7 +126,7 @@ statically <span class="built_in">from</span> <span class="operator">the</span> 
 <span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
 <span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
 </code></pre><p>若为linux直接执行命令：yum -y install pcre-devel openssl openssl-devel ；即可安装prce/openssl/openssl-devel库</p>
-<p>重新nginx目录</p>
+<p>再次安装nginx</p>
 <pre><code><span class="variable">$ </span>cd nginx-{version}
 <span class="variable">$ </span>./configure --prefix=<span class="regexp">/usr/local</span><span class="regexp">/nginx
 $ make &amp;&amp; make install </span>

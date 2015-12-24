@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2015-12-24T16:15:46.000Z</updated>
+  <updated>2015-12-24T16:19:40.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,13 +19,14 @@
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2015-12-24T16:15:46.000Z</updated>
+    <updated>2015-12-24T16:19:40.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a></p>
 <pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
 $ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
 $ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
-</code></pre><p>安装过程出现的错误：</p>
+</code></pre><a id="more"></a>
+<p>安装过程出现的错误：</p>
 <pre><code>./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
 You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
 option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
@@ -52,7 +53,13 @@ make <span class="keyword">install</span>    <span class="comment"># 读取Makef
 </code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">ht]]>
+    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a></p>
+<pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
+$ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
+$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
+$ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
+</code></pre>]]>
+    
     </summary>
     
       <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
