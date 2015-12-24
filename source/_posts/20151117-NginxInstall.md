@@ -13,6 +13,8 @@ date: 2015-11-17 18:08:00
 	$ cd nginx-1.8.0
 	$ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
 
+<!-- more -->
+
 安装过程出现的错误：
 
 	./configure: error: the HTTP rewrite module requires the PCRE library.
