@@ -11,7 +11,7 @@ date: 2015-07-15 10:43:38
     
     $ mvn archetype:create	# 创建 maven 项目
 
-    #maven生成web项目
+    # maven生成web项目
     $ mvn archetype:create -DgroupId='package-name' 
       -DartifactId='projectname' -DarchetypeArtifactId=maven-archetype-webapp
 
@@ -25,17 +25,13 @@ date: 2015-07-15 10:43:38
 
 <!-- more -->
 
-    $ mvn package     # 打包（mvn -Dtest package     只打包不测试）
-    $ mvn clean package -Dmaven.test.skip=true  # 跳过编译测试程序清理并打包项目
+    $ mvn package     # 打包（mvn -Dtest package  只打包不测试）
+    $ mvn clean package  # 组合命令，清理编译文件并打包
     $ mvn jar:jar     # 打包成jar文件
-    $ mvn install     # 本地Repository仓库中安装项目jar文件
-                    #（mvn install -D maven.test.skip=true 跳过TestCase检验，否则在install时会运行TestCase测试）
+    $ mvn install     # 安装项目打包文件至本地仓库Repository
     $ mvn site    # 生成项目相关网站信息(/target/site)
     $ mvn validate    # 验证工程是否正确，所需要的资源是否可用
     $ mvn deploy      # 发布项目
-
-    $ mvn dependency:sources      # 下载依赖包的源码
-    $ mvn dependency:resolve -Dclassifier=javadoc     # 下载依赖包的javadoc
 
     # 启动服务前需执行mvn package及配置相应插件
     $ mvn jetty:run   # 启动jetty服务
@@ -45,3 +41,24 @@ date: 2015-07-15 10:43:38
     $ mvn eclipse:clean       # 清理eclipse项目文件
     $ mvn idea:idea       # 生成idea项目文件,将项目转换成idea项目
     $ mvn idea:clean      # 清理idea项目文件
+
+技巧：maven跳过编译(检验)测试代码进行打包(可以衍生至其他操作，如mvn package等)；可以直接体现在命令,也可在项目文件pom.xml中配置插件
+
+    $ mvn install -DskipTests
+    或者
+    $ mvn install -Dmaven.test.skip=true
+
+    # 插件配置
+    <plugin>  
+        <groupId>org.apache.maven.plugins</groupId>  
+        <artifactId>maven-surefire-plugin</artifactId>  
+        <version>2.18.1</version>  
+        <configuration>  
+          <skipTests>true</skipTests>  
+        </configuration>  
+    </plugin>  
+
+
+
+
+
