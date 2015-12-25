@@ -26,7 +26,7 @@ date: 2015-07-15 10:43:38
 <!-- more -->
 
     $ mvn package     # 打包（mvn -Dtest package     只打包不测试）
-    $ mvn clean package -Dmaven.test.skip=true  # 跳过编译测试程序打包项目
+    $ mvn clean package -Dmaven.test.skip=true  # 跳过编译测试程序清理并打包项目
     $ mvn jar:jar     # 打包成jar文件
     $ mvn install     # 本地Repository仓库中安装项目jar文件
                     #（mvn install -D maven.test.skip=true 跳过TestCase检验，否则在install时会运行TestCase测试）
