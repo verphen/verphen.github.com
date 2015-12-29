@@ -697,7 +697,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/MacShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/MacShortcutKey/</id>
     <published>2015-07-07T02:49:11.000Z</published>
-    <updated>2015-12-20T16:10:32.000Z</updated>
+    <updated>2015-12-29T14:37:45.000Z</updated>
     <content type="html"><![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
 <ul>
 <li><p>应用</p>
@@ -711,6 +711,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
 <span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
 <span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
 <span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
+<span class="built_in">command</span> + i     <span class="comment"># 打开选中文件(文件夹)的简介</span>
 </code></pre></li>
 <li><p>终端</p>
 <pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
@@ -728,10 +729,10 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
 <ul>
 <li>选中任何文件，按空格键space即可预览,不用每次双击打开再关闭</li>
 <li>$ fn + delete        # 向后进行删除</li>
+<li>修改文件或者视频默认打开方式：<br> 。打开简介(command + i),在“打开方式”选项选中默认打开的应用，然后点击“全部更改”即可；<br> 。选中文件，鼠标右键(或者手势操作) -&gt; 打开方式 -&gt; 其他 -&gt; 选中应用  -&gt; 勾选“始终以此方式打开” -&gt; 确定 即可；</li>
 </ul>
 </li>
 </ul>
-<p>只是简单地记录一些使用习惯，后续再追加完善！</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
@@ -747,6 +748,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
 <span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
 <span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
 <span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
+<span class="built_in">command</span> + i     <span class="comment"># 打开选中文件(文件夹)的简介</span>
 </code></pre></li>
 <li><p>终端</p>
 <pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
