@@ -29,3 +29,6 @@ show tables: 显示数据库所有表
 select * from t1 left join t2 on t1.id = t2.id 
 如果on的时候两个表字段名相同，可以用using关键字
 select * from t1 left join t2 using(id)
+
+
+http://blog.chinaunix.net/uid-26706281-id-3075372.html
