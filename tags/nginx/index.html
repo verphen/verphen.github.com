@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/17/NginxInstall/">Nginx 安装</a>
+      <a class="article-title" href="/2015/11/17/NginxInstall/">linux安装nginx</a>
     </h1>
   
 
@@ -99,11 +99,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a></p>
-<pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
-$ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
+        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
+<pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
+$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
-$ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
+$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span>
 </code></pre>
         
           <p class="article-more-link">
@@ -113,7 +113,7 @@ $ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="ciikg2i4y0005x22em0g8hnow" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="ciiyovpr000055s2ekl4wl5da" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/NginxInstall/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -151,7 +151,7 @@ $ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指�
       <ul>
         
           <li>
-            <a href="/2015/11/17/NginxInstall/">Nginx 安装</a>
+            <a href="/2015/11/17/NginxInstall/">linux安装nginx</a>
           </li>
         
           <li>
@@ -208,7 +208,7 @@ $ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指�
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 effine
+      &copy; 2016 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 

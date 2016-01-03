@@ -3,24 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Nginx 安装 | effine</title>
+  <title>linux安装nginx | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
-$ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [">
+  <meta name="description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/ （以下讲解环境使用centos，其他环境安装方式大同小异）
+$ wget http://nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx
+$ tar">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Nginx 安装">
+<meta property="og:title" content="linux安装nginx">
 <meta property="og:url" content="http://effine.cn/2015/11/17/NginxInstall/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
-$ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [">
-<meta property="og:updated_time" content="2015-12-24T16:19:40.000Z">
+<meta property="og:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/ （以下讲解环境使用centos，其他环境安装方式大同小异）
+$ wget http://nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx
+$ tar">
+<meta property="og:updated_time" content="2016-01-03T15:37:27.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Nginx 安装">
-<meta name="twitter:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/
-$ wget http://nginx.org/download/nginx-{version}.tar.gz     # 下载nginx
-$ tar -zxvf nginx-{version}.tar.gz [">
+<meta name="twitter:title" content="linux安装nginx">
+<meta name="twitter:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http://nginx.org/ （以下讲解环境使用centos，其他环境安装方式大同小异）
+$ wget http://nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx
+$ tar">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -96,7 +96,7 @@ $ tar -zxvf nginx-{version}.tar.gz [">
         
   
     <h1 class="article-title" itemprop="name">
-      Nginx 安装
+      linux安装nginx
     </h1>
   
 
@@ -104,33 +104,41 @@ $ tar -zxvf nginx-{version}.tar.gz [">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a></p>
-<pre><code>$ wget <span class="keyword">http</span>://nginx.org/download/nginx-{<span class="built_in">version</span>}.tar.gz     <span class="comment"># 下载nginx</span>
-$ tar -zxvf nginx-{<span class="built_in">version</span>}.tar.gz [-C &lt;dir&gt;]     <span class="comment"># 解压[指定目录]</span>
+        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
+<pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
+$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
-$ ./configure <span class="comment">--prefix=/usr/local/nginx      # prefix指定安装目录</span>
+$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span>
 </code></pre><a id="more"></a>
-<p>安装过程出现的错误：</p>
-<pre><code>./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
+<p>安装过程出现的错误解析：</p>
+<pre><code><span class="comment"># 错误 1</span>
+checking <span class="keyword">for</span> C compiler ... <span class="keyword">not</span> found
+./configure: <span class="keyword">error</span>: C compiler cc <span class="keyword">is</span> <span class="keyword">not</span> found
+</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc++)</p>
+<pre><code><span class="comment"># 错误 2</span>
+./configure: error: <span class="operator">the</span> HTTP gzip module requires <span class="operator">the</span> zlib library.
+You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_gzip_module</span>
+option, <span class="operator">or</span> install <span class="operator">the</span> zlib library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> zlib library
+statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-zlib=&lt;path&gt; option.</span>
+</code></pre><p>分析/解决：不存在zlib library；安装即可：yum install -y zlib-devel</p>
+<pre><code><span class="comment"># 错误 3</span>
+./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
 You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
 option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
 statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-pcre=&lt;path&gt; option.</span>
-</code></pre><p>日志显示缺少PCRE库，那安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
+</code></pre><p>分析/解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
 <pre><code><span class="variable">$ </span>cd pcre-{version}
 <span class="variable">$ </span>./configure
 <span class="variable">$ </span>make &amp;&amp; make install
-</code></pre><p> 安装过程如出现如下错误，是未安装OpenSSL库造成的，统一如上安装即可：</p>
-<pre><code>./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions
+</code></pre><p>当然你也可以使用命令： yum install pcre</p>
+<pre><code># 错误 4
+./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions
 <span class="keyword">from</span> OpenSSL <span class="keyword">library</span>.   You can either <span class="keyword">disable</span> the <span class="keyword">module</span> <span class="keyword">by</span> <span class="keyword">using</span>
 <span class="comment">--without-http-cache option, or install the OpenSSL library into the system,</span>
 <span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
 <span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
-</code></pre><p>若为linux直接执行命令：yum -y install pcre-devel openssl openssl-devel ；即可安装prce/openssl/openssl-devel库</p>
-<p>再次安装nginx</p>
-<pre><code><span class="variable">$ </span>cd nginx-{version}
-<span class="variable">$ </span>./configure --prefix=<span class="regexp">/usr/local</span><span class="regexp">/nginx
-$ make &amp;&amp; make install </span>
-</code></pre><p>延伸：</p>
+</code></pre><p>分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p>
+<p>延伸：</p>
 <pre><code>configure     <span class="comment"># 该文件是软件提供者提供的shell脚本,生成makefilse</span>
 make        <span class="comment"># 编译源码，生成Makefile</span>
 make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
@@ -139,7 +147,7 @@ make <span class="keyword">install</span>    <span class="comment"># 读取Makef
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="ciikg2i4y0005x22em0g8hnow" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="ciiyovpr000055s2ekl4wl5da" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/NginxInstall/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -173,7 +181,7 @@ make <span class="keyword">install</span>    <span class="comment"># 读取Makef
     -->
 
   <!-- 多说评论框 start -->
-      <div class="ds-thread" data-thread-key="2015/11/17/NginxInstall/" data-title="Nginx 安装" data-url="http://effine.cn/2015/11/17/NginxInstall/"></div>
+      <div class="ds-thread" data-thread-key="2015/11/17/NginxInstall/" data-title="linux安装nginx" data-url="http://effine.cn/2015/11/17/NginxInstall/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -213,7 +221,7 @@ make <span class="keyword">install</span>    <span class="comment"># 读取Makef
       <ul>
         
           <li>
-            <a href="/2015/11/17/NginxInstall/">Nginx 安装</a>
+            <a href="/2015/11/17/NginxInstall/">linux安装nginx</a>
           </li>
         
           <li>
@@ -270,7 +278,7 @@ make <span class="keyword">install</span>    <span class="comment"># 读取Makef
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2015 effine
+      &copy; 2016 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
