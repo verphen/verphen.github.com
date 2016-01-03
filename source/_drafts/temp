@@ -4,35 +4,7 @@
 in 创建软链接
 
 --------------------------------------
-
-安装nginx(./configure )出现错误
-checking for OS
- + Linux 2.6.32-431.el6.x86_64 x86_64
-checking for C compiler ... not found
-
-./configure: error: C compiler cc is not found
-
-
-解决:	yum install gcc
-
-
------------------------------------------------------
-安装nginx(./configure )出现错误
-
-./configure: error: the HTTP gzip module requires the zlib library.
-You can either disable the module by using --without-http_gzip_module
-option, or install the zlib library into the system, or build the zlib library
-statically from the source with nginx by using --with-zlib=<path> option.
-
-解决：yum install -y zlib-devel
-
-
--------------------------------------------------------
-checking for sha1 in system OpenSSL crypto library ... not found
-
-解决： yum install openssl openssl-devel
-------------------------------------------------------------
-
+ 
 启动nginx(怎么启动)出现错误已经解决
 http://greatwqs.iteye.com/blog/1539713
 ------------------------------------------------------------
