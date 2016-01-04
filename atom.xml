@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-01-03T15:37:27.000Z</updated>
+  <updated>2016-01-04T14:52:55.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,11 +15,91 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[nginx加入系统服务]]></title>
+    <link href="http://effine.cn/2016/01/04/NginxService/"/>
+    <id>http://effine.cn/2016/01/04/NginxService/</id>
+    <published>2016-01-04T14:08:00.000Z</published>
+    <updated>2016-01-04T14:52:55.000Z</updated>
+    <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
+<p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>
+<a id="more"></a>
+<pre><code><span class="shebang">#! /bin/bash</span>
+<span class="comment"># chkconfig: 35 85 15  </span>
+<span class="comment"># description: Nginx is an HTTP(S) server, HTTP(S) reverse</span>
+<span class="built_in">set</span> <span class="operator">-e</span>
+PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DESC=<span class="string">"nginx daemon"</span>
+NAME=nginx
+DAEMON=/usr/<span class="built_in">local</span>/nginx/sbin/<span class="variable">$NAME</span>
+SCRIPTNAME=/etc/init.d/<span class="variable">$NAME</span>
+<span class="built_in">test</span> -x <span class="variable">$DAEMON</span> || <span class="built_in">exit</span> <span class="number">0</span>
+<span class="function"><span class="title">d_start</span></span>(){
+    <span class="variable">$DAEMON</span> || <span class="built_in">echo</span> -n <span class="string">" already running"</span>
+}
+<span class="function"><span class="title">d_stop</span></span>() {
+    <span class="variable">$DAEMON</span> <span class="operator">-s</span> quit || <span class="built_in">echo</span> -n <span class="string">" not running"</span>
+}
+<span class="function"><span class="title">d_reload</span></span>() {
+    <span class="variable">$DAEMON</span> <span class="operator">-s</span> reload || <span class="built_in">echo</span> -n <span class="string">" counld not reload"</span>
+}
+<span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span>
+start)
+    <span class="built_in">echo</span> -n <span class="string">"Starting <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>
+    d_start
+    <span class="built_in">echo</span> <span class="string">"."</span>
+;;
+stop)
+    <span class="built_in">echo</span> -n <span class="string">"Stopping <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>
+    d_stop
+    <span class="built_in">echo</span> <span class="string">"."</span>
+;;
+reload)
+    <span class="built_in">echo</span> -n <span class="string">"Reloading <span class="variable">$DESC</span> configuration..."</span>
+    d_reload
+    <span class="built_in">echo</span> <span class="string">"reloaded."</span>
+;;
+restart)
+    <span class="built_in">echo</span> -n <span class="string">"Restarting <span class="variable">$DESC</span>: <span class="variable">$NAME</span>"</span>
+    d_stop
+    sleep <span class="number">2</span>
+    d_start
+    <span class="built_in">echo</span> <span class="string">"."</span>
+;;
+*)
+    <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$SCRIPTNAME</span> {start|stop|restart|reload}"</span> &gt;&amp;<span class="number">2</span>
+    <span class="built_in">exit</span> <span class="number">3</span>
+;;
+<span class="keyword">esac</span>
+<span class="built_in">exit</span> <span class="number">0</span>
+</code></pre><p>然后执行以下命令：</p>
+<pre><code># 复制<span class="keyword">shell</span>脚本nginx文件到目录/etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/中
+cp ./nginx  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>     
+
+chmod +x  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/nginx     # 设置文件可执行权限
+chkconfig --add nginx      # 添加至系统服务
+</code></pre><p>任何目录执行命令即可操作nginx：</p>
+<pre><code>service nginx &lt;<span class="built_in">start</span> | <span class="built_in">stop</span> | restart | reload &gt;     <span class="comment"># &lt;启动|停止|重启|重载&gt; nginx</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
+<p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>]]>
+    
+    </summary>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[linux安装nginx]]></title>
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-01-03T15:37:27.000Z</updated>
+    <updated>2016-01-03T15:37:29.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
@@ -1208,39 +1288,6 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     </summary>
     
       <category term="command" scheme="http://effine.cn/tags/command/"/>
-    
-      <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[SSH免密码登陆]]></title>
-    <link href="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/"/>
-    <id>http://effine.cn/2015/05/20/SSHOmitPasswdLogin/</id>
-    <published>2015-05-20T09:11:02.000Z</published>
-    <updated>2015-11-26T15:11:57.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录"></p>
-<p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
-<a id="more"></a>
-<p>本地通过SSH登录远程主机,首先需要在本地生成密钥：</p>
-<pre><code>$ ssh-keygen <span class="string">[-t rsa]</span>        # 本地主机生成密钥<span class="string">[采用rsa算法生成]</span>
-</code></pre><p>一直回车即可,最后将会在用户目录 ~/.ssh 生成公钥 id_rsa.pub 和私钥 id_rsa 两个文件,将公钥内容追加到远程主机文件 ~/.ssh/authorized_keys 文件中：</p>
-<pre><code>$ ssh-<span class="keyword">copy</span>-<span class="property">id</span> [-i [identity_file]] [user@]host   <span class="comment"># 追加本机公钥到远程主机的authorized_keys</span>
-</code></pre><p>输入远程主机密码即完成配置；此时便可以实现SSH免密码登录远程主机。当然，追加公钥内容到主机时，你也可以上传公钥文件到远程主机，然后执行命令：</p>
-<pre><code><span class="variable">$ </span>cat &lt;id_rsa.pub&gt;  <span class="prompt">&gt;&gt;  </span>~<span class="regexp">/.ssh/authorized</span>_keys        <span class="comment"># 追加id_rsa.pub内容到authorized_keys文件内容尾部</span>
-</code></pre><p>我远程主机home目录存在本机公钥id_rsa.pub文件,所以我执行以下命令即可：</p>
-<pre><code><span class="variable">$ </span>cat /home/id_rsa.pub path   <span class="prompt">&gt;&gt;    </span>~<span class="regexp">/.ssh/authorized</span>_keys
-</code></pre><p>扩展阅读： google搜索ssh-keygen参数设置</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/ssh.jpg" alt="SSH免密码登录" /></p>
-<p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>]]>
-    
-    </summary>
-    
-      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
     
       <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
     
