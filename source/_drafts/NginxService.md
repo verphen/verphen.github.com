@@ -58,5 +58,9 @@ tags:
 	# 复制shell脚本nginx文件到目录/etc/rc.d/init.d/中
 	cp ./nginx  /usr/rc.d/init.d 	
 
-	chmod +x /etc/rc.d/init.d/nginx # 设置文件可执行权限
-	chkconfig --add nginx  # 添加至系统服务
+	chmod +x  /etc/rc.d/init.d/nginx 	# 设置文件可执行权限
+	chkconfig --add nginx  	# 添加至系统服务
+
+执行相应的目录：
+	
+	service nginx <start | stop | restart | reload > 	# <启动|停止|重启|重载> nginx
