@@ -109,12 +109,90 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2016/01/04/NginxService/" data-id="cij02s4ei00051y2ehy8i9acz" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/01/04/NginxService/" data-id="cij0686rg00050i2efslf9hiq" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2016/01/04/NginxService/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-SpringMessageConverotr" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/11/SpringMessageConverotr/" class="article-date">
+  <time datetime="2015-12-10T16:20:54.000Z" itemprop="datePublished">12月 11 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
+<p>在你spring启动注解的配置文件中，进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">bean</span>
+            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
+</code></pre><p>当然如果配置文件xml顶部声明版本为3.0或者spring版本为3.0都可能出现如下错误</p>
+<pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.
+</code></pre><p>所以，尽量升级spring为当前文档的最新版本,将xml的声明修改为3.1及以上！</p>
+<pre><code>&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
+xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans  </span>
+      http:<span class="comment">//www.springframework.org/schema/beans/spring-beans-3.2.xsd  </span>
+      http:<span class="comment">//www.springframework.org/schema/context  </span>
+      http:<span class="comment">//www.springframework.org/schema/context/spring-context.xsd  </span>
+      http:<span class="comment">//www.springframework.org/schema/mvc  </span>
+      http:<span class="comment">//www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"&gt;</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/12/11/SpringMessageConverotr/" data-id="cij0686rq000c0i2e7l2dz18y" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/12/11/SpringMessageConverotr/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
 
     </footer>
   </div>
@@ -163,7 +241,7 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="cij02s4es000c1y2e0hsrqn9o" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="cij0686rt000j0i2e2kf1tzzf" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/NginxInstall/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -233,77 +311,12 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cij02s4ev000g1y2eqvpvzxxl" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cij0686rw000n0i2etuugcmz7" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/GitRemote/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/remote/">remote</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-HexoTongji" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/16/HexoTongji/" class="article-date">
-  <time datetime="2015-11-16T09:33:44.000Z" itemprop="datePublished">11月 16 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/16/HexoTongji/">Hexo 博客配置访问统计</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。</p>
-<pre><code><span class="comment"># 以下内容来源网络</span>
-<span class="number">1.</span>编辑文件 themes/landscape/_config.yml,添加一行配置，<span class="string">"#"</span>注释原来的google analytics
-
-    baidu_tongji: <span class="constant">true</span>      <span class="comment"># 百度统计</span>
-
-<span class="number">2.</span>新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下
-
-    &lt;% <span class="keyword">if</span> (theme.baidu_tongji) { %&gt;
-    <span class="comment"># 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定</span>
-    &lt;<span class="keyword">script</span> type=<span class="string">"text/javascript"</span>&gt;
-        <span class="comment"># 申请的百度统计代码</span>
-    &lt;/<span class="keyword">script</span>&gt;
-    &lt;% } %&gt;
-
-<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 内添加
-
-    &lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;
-
-<span class="number">4.</span>重新生产部署站点即可。
-</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/16/HexoTongji/" data-id="cij02s4ey000n1y2evk2mwpoo" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/11/16/HexoTongji/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
 
     </footer>
   </div>
@@ -328,7 +341,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -341,6 +354,10 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
         
           <li>
             <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
           </li>
         
           <li>
@@ -375,10 +392,6 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
             <a href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
           </li>
         
-          <li>
-            <a href="/2015/07/15/MavenEncoding/">Maven技巧-字符编码</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -388,7 +401,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 14.29px;">blog</a> <a href="/tags/book/" style="font-size: 14.29px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.29px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 14.29px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.57px;">git</a> <a href="/tags/github/" style="font-size: 11.43px;">github</a> <a href="/tags/hexo/" style="font-size: 12.86px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 17.14px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 14.29px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 11.43px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.43px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.86px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.43px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.43px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.43px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.43px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15.71px;">工具</a> <a href="/tags/总结/" style="font-size: 18.57px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 14.29px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 14.29px;">blog</a> <a href="/tags/book/" style="font-size: 14.29px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.29px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 14.29px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.57px;">git</a> <a href="/tags/github/" style="font-size: 11.43px;">github</a> <a href="/tags/hexo/" style="font-size: 12.86px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 17.14px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 14.29px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 11.43px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.43px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.86px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.43px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.43px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.43px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.43px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15.71px;">工具</a> <a href="/tags/总结/" style="font-size: 18.57px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 14.29px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

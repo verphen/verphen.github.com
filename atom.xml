@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-01-04T14:52:55.000Z</updated>
+  <updated>2016-01-04T14:53:09.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://effine.cn/2016/01/04/NginxService/"/>
     <id>http://effine.cn/2016/01/04/NginxService/</id>
     <published>2016-01-04T14:08:00.000Z</published>
-    <updated>2016-01-04T14:52:55.000Z</updated>
+    <updated>2016-01-04T14:53:09.000Z</updated>
     <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
 <p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>
 <a id="more"></a>
@@ -91,6 +91,61 @@ chkconfig --add nginx      # 添加至系统服务
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Spring配置MessageConvertor]]></title>
+    <link href="http://effine.cn/2015/12/11/SpringMessageConverotr/"/>
+    <id>http://effine.cn/2015/12/11/SpringMessageConverotr/</id>
+    <published>2015-12-10T16:20:54.000Z</published>
+    <updated>2016-01-04T16:17:45.000Z</updated>
+    <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
+<p>在你spring启动注解的配置文件中，进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">bean</span>
+            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
+</code></pre><p>当然如果配置文件xml顶部声明版本为3.0或者spring版本为3.0都可能出现如下错误</p>
+<pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.
+</code></pre><p>所以，尽量升级spring为当前文档的最新版本,将xml的声明修改为3.1及以上！</p>
+<pre><code>&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
+xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans  </span>
+      http:<span class="comment">//www.springframework.org/schema/beans/spring-beans-3.2.xsd  </span>
+      http:<span class="comment">//www.springframework.org/schema/context  </span>
+      http:<span class="comment">//www.springframework.org/schema/context/spring-context.xsd  </span>
+      http:<span class="comment">//www.springframework.org/schema/mvc  </span>
+      http:<span class="comment">//www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"&gt;</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
+<p>在你spring启动注解的配置文件中，进行如下配置：</p>
+<pre><code><span cla]]>
+    </summary>
+    
+      <category term="java" scheme="http://effine.cn/tags/java/"/>
+    
+      <category term="spring" scheme="http://effine.cn/tags/spring/"/>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
     
   </entry>
   
@@ -1242,54 +1297,6 @@ i5、i6的equals的比较： <span class="literal">true</span>
       <category term="inittab" scheme="http://effine.cn/tags/inittab/"/>
     
       <category term="linux" scheme="http://effine.cn/tags/linux/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[SSH安装]]></title>
-    <link href="http://effine.cn/2015/06/19/SSHInstall/"/>
-    <id>http://effine.cn/2015/06/19/SSHInstall/</id>
-    <published>2015-06-19T06:17:34.000Z</published>
-    <updated>2015-11-26T15:16:16.000Z</updated>
-    <content type="html"><![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
-</code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
-$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
-</code></pre><a id="more"></a>
-<p>查看ssh默认端口22是否启动：</p>
-<pre><code><span class="variable">$ </span>netstat -antp | grep sshd 
-或者
-<span class="variable">$ </span>iptables -nL 
-</code></pre><p>如端口未打开，那开启防火墙</p>
-<pre><code>$ vi /etc/sysconfig/iptables
-<span class="comment"># 插入内容</span>
--A INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">22</span> -j ACCEPT
-</code></pre><p>检查SSH是否为开机启动：</p>
-<pre><code>$ chkconfig <span class="comment">--list sshd</span>
-</code></pre><p>设置SSH为开机启动：</p>
-<pre><code>$ chkconfig sshd [<span class="function_start"><span class="keyword">on</span></span>|off]    <span class="comment"># 开机启动[是|否]</span>
-</code></pre><p>SSH的配置文件：/etc/ssh/sshd_config</p>
-<pre><code># 限制<span class="literal">ip</span>连接
-<span class="label">sshd:</span> &lt;[All|<span class="literal">ip</span>]&gt;     # 指定<span class="literal">IP</span>连接[所有|具体<span class="literal">IP</span>],当然也可以配置多个<span class="literal">IP</span>
-</code></pre><p>远程SSH连接(默认端口22)</p>
-<pre><code>$ ssh [-p <span class="tag">&lt;<span class="title">port</span>&gt;</span>] <span class="tag">&lt;<span class="title">user</span>&gt;</span>@<span class="tag">&lt;<span class="title">host</span>&gt;</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
-</code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
-$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="command" scheme="http://effine.cn/tags/command/"/>
-    
-      <category term="ssh" scheme="http://effine.cn/tags/ssh/"/>
     
       <category term="linux" scheme="http://effine.cn/categories/linux/"/>
     

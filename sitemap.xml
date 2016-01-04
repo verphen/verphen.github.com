@@ -2,8 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2015/12/11/SpringMessageConverotr/</loc>
+    <lastmod>2016-01-04T16:17:45.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2016/01/04/NginxService/</loc>
-    <lastmod>2016-01-04T14:52:55.000Z</lastmod>
+    <lastmod>2016-01-04T14:53:09.000Z</lastmod>
   </url>
   
   <url>

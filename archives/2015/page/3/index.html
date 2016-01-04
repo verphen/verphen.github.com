@@ -73,6 +73,74 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JavaEnvironmentVariable" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/08/13/JavaEnvironmentVariable/" class="article-date">
+  <time datetime="2015-08-13T11:43:54.000Z" itemprop="datePublished">8月 13 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
+<ol>
+<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
+</li>
+<li><p>tar.gz 格式<br> $ tar  -zxvf  dk-8u51-linux-x64.tar.gz  [-C  dist-dir]</p>
+</li>
+</ol>
+<p>设置环境变量</p>
+<pre><code><span class="variable">$ </span>vi /etc/profile
+
+    <span class="comment"># profile文件追加下面内容</span>
+    export <span class="constant">JAVA_HOME</span>= <span class="regexp">/tools/jdk</span>1.<span class="number">8.0_51</span>
+    export <span class="constant">PATH</span>=<span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$PATH</span>
+    export <span class="constant">CLASSPATH</span>=.:<span class="variable">$JAVA_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span>
+
+<span class="variable">$ </span>source /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span>
+</code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
+<pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建<span class="constant">Key</span>（存在则追加）
+
+<span class="comment"># 变量名及值"key [value]"</span>
+<span class="constant">JAVA_HOME</span>  [<span class="constant">E</span>:\tools\jdk1.<span class="number">7.0_55</span>]
+<span class="constant">CLASSPATH</span> [.;%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span>]
+<span class="constant">Path</span> [%<span class="constant">JAVA_HOME</span>%\bin;%<span class="constant">JAVA_HOME</span>%\jre\bin;]
+</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="cij0686sl001i0i2eu7qjq52g" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/08/13/JavaEnvironmentVariable/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MavenEncoding" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/15/MavenEncoding/" class="article-date">
@@ -116,7 +184,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cij02s4fj001i1y2eqkm0dwzi" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cij0686sn001n0i2epv11h769" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenEncoding/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -185,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cij02s4fn001o1y2eneg42skj" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cij0686sq001t0i2exyl1pr0s" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenDownSourse/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -249,75 +317,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cij02s4fp001s1y2emwsmsa66" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cij0686ss001x0i2egfbafqha" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-MysqlCommand" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/08/MysqlCommand/" class="article-date">
-  <time datetime="2015-07-08T01:58:06.000Z" itemprop="datePublished">7月 8 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/database/">database</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/08/MysqlCommand/">MySQL基本使用</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
-<ul>
-<li><p>服务 service</p>
-<pre><code>service mysql [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># Debian下mysql当前状态、启动、停止、重启</span>
-service mysqld [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># RedHat下mysql当前状态、启动、停止、重启</span>
-net [<span class="literal">start</span>|<span class="literal">stop</span>] mysql     <span class="comment"># windows下启动、停止mysql</span>
-</code></pre></li>
-<li><p>mysql</p>
-<pre><code>mysql&gt;  \s         <span class="preprocessor"># 查看mysql的版本信息和字符编码</span>
-mysql&gt;  show variables;     <span class="preprocessor"># 查看mysql的变量设置，可以使用like过滤</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'autocommit'</span>;     <span class="preprocessor"># 查看mysql事务是否自动提交</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'%max_connections%'</span>;  <span class="preprocessor"># 查看mysql的最大连接数</span>
-mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</span>
-</code></pre></li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/08/MysqlCommand/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="cij02s4ft001x1y2ehl7e3h6x" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/07/08/MysqlCommand/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
 
     </footer>
   </div>
@@ -342,7 +347,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">13</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">23</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -355,6 +360,10 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
         
           <li>
             <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
+          </li>
+        
+          <li>
+            <a href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
           </li>
         
           <li>
@@ -389,10 +398,6 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
             <a href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
           </li>
         
-          <li>
-            <a href="/2015/07/15/MavenEncoding/">Maven技巧-字符编码</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -402,7 +407,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 14.29px;">blog</a> <a href="/tags/book/" style="font-size: 14.29px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.29px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 14.29px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.57px;">git</a> <a href="/tags/github/" style="font-size: 11.43px;">github</a> <a href="/tags/hexo/" style="font-size: 12.86px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 17.14px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 14.29px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 11.43px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.43px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.86px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.43px;">skill</a> <a href="/tags/ssh/" style="font-size: 11.43px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.43px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.43px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15.71px;">工具</a> <a href="/tags/总结/" style="font-size: 18.57px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 14.29px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 14.29px;">blog</a> <a href="/tags/book/" style="font-size: 14.29px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 14.29px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 14.29px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.57px;">git</a> <a href="/tags/github/" style="font-size: 11.43px;">github</a> <a href="/tags/hexo/" style="font-size: 12.86px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 17.14px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 14.29px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 11.43px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.43px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.86px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.43px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.43px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.43px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.57px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.43px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15.71px;">工具</a> <a href="/tags/总结/" style="font-size: 18.57px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 14.29px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
