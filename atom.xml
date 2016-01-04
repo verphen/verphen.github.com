@@ -99,7 +99,7 @@ chkconfig --add nginx      # 添加至系统服务
     <link href="http://effine.cn/2015/12/11/SpringMessageConverotr/"/>
     <id>http://effine.cn/2015/12/11/SpringMessageConverotr/</id>
     <published>2015-12-10T16:20:54.000Z</published>
-    <updated>2016-01-04T16:18:18.000Z</updated>
+    <updated>2016-01-04T16:23:44.000Z</updated>
     <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
 <p>在你spring启动注解的配置文件中，进行如下配置：</p>
 <pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
@@ -124,11 +124,14 @@ chkconfig --add nginx      # 添加至系统服务
 <span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
 </code></pre><a id="more"></a>
 <p>当然如果配置文件xml顶部声明版本为3.0或者spring版本为3.0都可能出现如下错误</p>
-<pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.
+<pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element 
+information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.
 </code></pre><p>所以，尽量升级spring为当前文档的最新版本,将xml的声明修改为3.1及以上！</p>
 <pre><code>&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
-xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
-xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
+xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> 
+xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
+xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> 
+xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
 xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans  </span>
       http:<span class="comment">//www.springframework.org/schema/beans/spring-beans-3.2.xsd  </span>
       http:<span class="comment">//www.springframework.org/schema/context  </span>
