@@ -105,6 +105,9 @@ http段的配置：
 		当然除了这些以外，Rewrite规则中还会用到一些相应的全局变量，如$args，$url等等
 
 
+
+ client_max_body_size 500M;			# 设置请求的最大值
+
 http://www.cnblogs.com/skynet/p/4146083.html
 
 
