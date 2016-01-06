@@ -6,12 +6,6 @@ tags:
   - tools
 ---
 
-	$ nginx -t  # 检测配置文件是否正确
-
-	$ nginx -s reload  	# 重载nginx配置
-
-	$ nginx -c /usr/local/nginx/conf/nginx.conf    # 加载指定的配置文件启动
-
 	$ user www-data; 	# 配置运行nginx的用户和用户组
 
 	$ worker_processes 8; # 定义nginx进程数，建议设置为等于CPU总核心数
