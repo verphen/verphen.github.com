@@ -4,6 +4,7 @@ date: 2012-11-15 01:33:12
 categories: database
 tags: [oracle,数据库]
 ---
+
 1. 忘记除SYS、SYSTEM用户之外的用户的登录密码。
 
 	用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;

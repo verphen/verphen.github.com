@@ -5,6 +5,7 @@ tags:
 categories: tools
 date: 2015-07-06 09:58:09
 ---
+
 为提高工作效率，现整理了些 chrome 常用技巧和快捷键：
 
     - 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容"无法显示此页面"，按"空格"键，可以玩个小游戏放松心情
@@ -65,3 +66,8 @@ date: 2015-07-06 09:58:09
     shift + esc     # 查看标签页的任务管理器
     alt + f4    # 关闭当前窗口
     ctrl + shift + q 	# 关闭所有标签，退出 chrome 浏览器
+
+技巧：
+
+    > console.<[log|info|warn|error]>("message")    # 面板以类型[日志|信息|警告|错误]打印信息message
+    

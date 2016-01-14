@@ -6,12 +6,6 @@ tags:
   - tools
 ---
 
-	$ nginx -t  # 检测配置文件是否正确
-
-	$ nginx -s reload  	# 重载nginx配置
-
-	$ nginx -c /usr/local/nginx/conf/nginx.conf    # 加载指定的配置文件启动
-
 	$ user www-data; 	# 配置运行nginx的用户和用户组
 
 	$ worker_processes 8; # 定义nginx进程数，建议设置为等于CPU总核心数
@@ -104,5 +98,10 @@ http段的配置：
 		permanent 返回301永久重定向 地址栏会显示跳转后的地址。
 		当然除了这些以外，Rewrite规则中还会用到一些相应的全局变量，如$args，$url等等
 
+
+
+ client_max_body_size 500M;			# 设置请求的最大值
+
+http://www.cnblogs.com/skynet/p/4146083.html
 
 

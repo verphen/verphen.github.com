@@ -2,6 +2,10 @@ title: LinuxCommands
 tags:
 ---
 
+echo $variable-name   打印环境变量名的值
+
+netstat -tln | grep 8080 查看端口8080的使用情况
+
 man command / command --help 可以查看命令command的帮助文档
 
 lsblk 列出块设备。除了RAM外，以标准的树状输出格式，整齐地显示块设备
@@ -42,7 +46,15 @@ apt: Advanced package Tool ;APT是一个为Debian系列系统（Ubuntu，Kubuntu
 
 	apt-get / apt-cache 的使用
 
-tar：解压命令
+tar命令(参数)
+	
+	$ tar -czf <dist.tar.gz> <dist_dir> 	# 压缩
+	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压到当前目录(-C解压到指定目录)
+	$ tar -jxvf	<dist.tar.bz2> 	# 解压指定bz2后缀文件
+
+unzip *.zip  解压zip文件
+gzip filename;压缩文件(解压缩：gzip -d filename)
+
 
 cal: Calender 日历
 
@@ -75,6 +87,8 @@ cd: change directory; 改变目录
 
 free -m: 查看内存使用情况
 
+wget: 下载文件
+
 grep: Global Regular Expression Print 全局正则表达式版本
 	$ grep "search content"  "dest file" 搜索目标文件指定内容
 
@@ -83,3 +97,20 @@ grep: Global Regular Expression Print 全局正则表达式版本
 	$ find /usr -size +10M 	# 在/usr目录下找出大小超过10MB的文件
 	$ find /var \! -atime -90	# 在/var目录下找出90天之内未被访问过的文件
 	$ find / -name core -exec rm {} \; 	# 在整个目录树下查找文件“core”，如发现则无需提示直接删除它们
+
+
+配置ip及网络配置文件：
+
+	$ vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+配置防火墙(端口)文件
+
+	$ vi /etc/sysconfig/iptables
+	修改完成如需立即生效，执行
+	$ service iptables restart
+
+技巧：
+
+	终端保持当前目录不变，去别的目录执行命令；只需把要执行的命令加上括号即可;
+
+	$ clear 	# 清屏(同操作ctrl + l)

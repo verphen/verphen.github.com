@@ -7,7 +7,7 @@ tags: [tools,sublime]
 
 - 菜单栏
 	
-	- ctrl + ` : 调出console面板
+	- ctrl + ` : 调出console面板(或菜单: view -> show console)
 	- ctrl + shift + p: 调出package control 包管理器
 	- ctrl + k + b：开启/关闭侧边导航栏
 
@@ -46,7 +46,7 @@ tags: [tools,sublime]
 		- ctrl + shift + d : 复制当前行至下一行 (duplicate line)
 		- ctrl + shift + k : 删除当前行 (delete line)
 		- ctrl + J : 无选中则合并下一行到当前行；若选中则合并所有选中行到一行 (join lines)
-		- ctrl + g： 跳转到第几行
+		- ctrl + g： 跳转到第几行(ctrl+p输入冒号":"即可达到相同效果)
 			<br/>
 		- ctrl + l：选择行，重复可依次增加选择下一行
 		- ctrl + shift + l：选择多行
@@ -70,6 +70,9 @@ tags: [tools,sublime]
 		- ctrl + r： 前往 method
 		- ctrl + shift + m：选中当前括号内容，重复可选着括号本身
 		- ctrl + shift + a：选择当前标签前后，修改标签用的
+
+		- ctrl + <[+|-]> 		# 放大/缩小字体
+		- ctrl + shift + "+" 	# 缩小字体
 
 	- 搜索
 		- ctrl + f: 查看内容
