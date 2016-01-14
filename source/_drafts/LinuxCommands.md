@@ -49,7 +49,8 @@ apt: Advanced package Tool ;APT是一个为Debian系列系统（Ubuntu，Kubuntu
 tar命令(参数)
 	
 	$ tar -czf <dist.tar.gz> <dist_dir> 	# 压缩
-	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压(-C解压到指定目录)
+	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压到当前目录(-C解压到指定目录)
+	$ tar -jxvf	<dist.tar.bz2> 	# 解压指定bz2后缀文件
 
 unzip *.zip  解压zip文件
 gzip filename;压缩文件(解压缩：gzip -d filename)
