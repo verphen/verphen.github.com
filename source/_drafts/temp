@@ -35,3 +35,12 @@ JAVA_OPTS="-server -Xms1024m -Xmx2048m -XX:PermSize=128M -XX:MaxPermSize=512m"
 tomcat访问不同的应用是否需要在地址栏加斜线
 
 --------------------------------------------
+
+
+./nginx
+
+------------------
+./nginx: error while loading shared libraries: libpcre.so.1: cannot open shared object file: No such file or directory
+
+
+解决：http://www.cnblogs.com/cnsanshao/p/3652510.html
