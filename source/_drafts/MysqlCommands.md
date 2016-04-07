@@ -31,4 +31,14 @@ select * from t1 left join t2 on t1.id = t2.id
 select * from t1 left join t2 using(id)
 
 
+命令导入sql文件：
+$ use database;
+$ source ***.sql
+
+
+错误分析：ERROR 1045 (28000): Access denied for user ’root’@’localhost’ (using password: NO) 
+解决方法（修改密码）： 
+    # mysqladmin -uroot -p password ’newpassword’ 
+    Enter password: 
+
 http://blog.chinaunix.net/uid-26706281-id-3075372.html
