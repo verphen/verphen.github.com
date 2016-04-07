@@ -30,8 +30,7 @@ tags: [upsource,git,code]
 
 	$ source /etc/profile  		# 使环境变量生效, 免于重启系统
 
-### 启动
 
-	$ upsource.sh start 
+	$ upsource.sh <start|stop> 	$ [启动|停止] upsource
 
 
