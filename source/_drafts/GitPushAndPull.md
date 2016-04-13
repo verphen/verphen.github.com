@@ -7,18 +7,10 @@ tags:
   - pull
 ---
 
-git push orign -u develop
-git push -u origin master  第一次提交远程加上参数-u 
-
-
-git push orign HEAD --force
+git push orign HEAD --force  
 
 git push #推送本地所有分支
-
-git push -u origin master 	# 推送本地提交到远程仓库，-u 指定的是默认主机(并使当前分支与远程分支关联)
-
-git push --set-upstream origin <branch>
-
+git push <-u | --set-upstream> origin dev  # 推送当前分支到远程dev分支，且设置当前分支为远程跟踪的分支
 
 # 以下配置是针对git push、git pull设置
 git config --global push.default matching 	# 推送本地所有存在跟踪(关联)的所有分支到对应远程分支
