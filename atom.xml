@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-01-04T14:53:09.000Z</updated>
+  <updated>2016-01-14T16:10:42.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,41 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[nginx commands]]></title>
+    <link href="http://effine.cn/2016/01/06/NginxCommands/"/>
+    <id>http://effine.cn/2016/01/06/NginxCommands/</id>
+    <published>2016-01-06T10:08:00.000Z</published>
+    <updated>2016-01-14T16:10:42.000Z</updated>
+    <content type="html"><![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
+<pre><code>nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         :  this <span class="operator"><span class="keyword">help</span>
+  -v            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> <span class="keyword">exit</span>
+  -V            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> configure options <span class="keyword">then</span> <span class="keyword">exit</span>
+  -<span class="keyword">t</span>            :  <span class="keyword">test</span> configuration <span class="keyword">and</span> <span class="keyword">exit</span>
+  -q            :  suppress non-<span class="keyword">error</span> messages during configuration testing
+  -s signal     :  send signal <span class="keyword">to</span> a <span class="keyword">master</span> process: <span class="keyword">stop</span>, quit, reopen, reload
+  -<span class="keyword">p</span> prefix     :  <span class="keyword">set</span> prefix <span class="keyword">path</span> (<span class="keyword">default</span>: /usr/<span class="keyword">local</span>/nginx/)
+  -<span class="keyword">c</span> filename   :  <span class="keyword">set</span> configuration <span class="keyword">file</span> (<span class="keyword">default</span>: conf/nginx.conf)
+  -<span class="keyword">g</span> directives :  <span class="keyword">set</span> <span class="keyword">global</span> directives <span class="keyword">out</span> <span class="keyword">of</span> configuration <span class="keyword">file</span></span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
+<pre><code>nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s ]]>
+    </summary>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nginx加入系统服务]]></title>
@@ -179,7 +214,7 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-01-03T15:37:29.000Z</updated>
+    <updated>2016-04-13T15:11:58.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
@@ -214,11 +249,14 @@ statically <span class="built_in">from</span> <span class="operator">the</span> 
 <span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
 <span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
 </code></pre><p>分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p>
-<p>延伸：</p>
-<pre><code>configure     <span class="comment"># 该文件是软件提供者提供的shell脚本,生成makefilse</span>
-make        <span class="comment"># 编译源码，生成Makefile</span>
-make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
-</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
+<pre><code><span class="preprocessor"># 错误<span class="number">5</span></span>
+nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">9000</span> failed (<span class="number">48</span>: Address already in use)
+</code></pre><p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p>
+<pre><code><span class="preprocessor"># 错误<span class="number">6</span></span>
+nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</span> failed (<span class="number">13</span>: Permission denied)
+</code></pre><p>解决： 没有权限，使用root用户启动</p>
+<p>根据nginx源码安装延伸<br>    . configure     # 该文件是软件提供者提供的shell脚本,生成makefilse<br>    . make        # 编译源码，生成Makefile<br>    . make install    # 读取Makefile中的指令，开始安装</p>
+<p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
@@ -1256,74 +1294,6 @@ i5、i6的equals的比较： <span class="literal">true</span>
       <category term="java" scheme="http://effine.cn/tags/java/"/>
     
       <category term="java" scheme="http://effine.cn/categories/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[linux单用户模式]]></title>
-    <link href="http://effine.cn/2015/06/22/LinuxSingleUser/"/>
-    <id>http://effine.cn/2015/06/22/LinuxSingleUser/</id>
-    <published>2015-06-21T17:16:28.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>linux单用户模式使用场景：</p>
-<ul>
-<li>忘记所有密码</li>
-<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
-<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
-</ul>
-<p>进入单用户模式：</p>
-<ul>
-<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet
-</code></pre></li>
-<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet linux single
-</code></pre></li>
-<li><p>按回车结束编辑并返回</p>
-</li>
-<li><p>按一下b键重新启动，进入系统进行相关操作</p>
-</li>
-</ul>
-<a id="more"></a>
-<p>如开篇的问题，修改新密码或者修改文件：</p>
-<ul>
-<li><p>修改密码</p>
-<pre><code><span class="variable">$ </span>passwd username    <span class="comment"># 输入新密码即可</span>
-</code></pre></li>
-<li><p>修改默认启动模式（图形界面、命令行等）</p>
-<pre><code>$ vi /etc/inittab     <span class="preprocessor"># 图形界面（id:<span class="number">3</span>:initdefault:），命令行（id:<span class="number">5</span>:initdefault:）</span>
-</code></pre><p>  参考如图 <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/inittab.png" alt="linux默认启动模式控制文件"></p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>linux单用户模式使用场景：</p>
-<ul>
-<li>忘记所有密码</li>
-<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
-<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
-</ul>
-<p>进入单用户模式：</p>
-<ul>
-<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet
-</code></pre></li>
-<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet linux single
-</code></pre></li>
-<li><p>按回车结束编辑并返回</p>
-</li>
-<li><p>按一下b键重新启动，进入系统进行相关操作</p>
-</li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="inittab" scheme="http://effine.cn/tags/inittab/"/>
-    
-      <category term="linux" scheme="http://effine.cn/tags/linux/"/>
-    
-      <category term="linux" scheme="http://effine.cn/categories/linux/"/>
     
   </entry>
   

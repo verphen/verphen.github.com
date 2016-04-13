@@ -3,17 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/8 | effine</title>
+  <title>nginx commands | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/archives/2015/08/index.html">
+  <meta name="description" content="nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 nginx -? 到的帮助信息:
+nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         :  this help">
+<meta property="og:type" content="article">
+<meta property="og:title" content="nginx commands">
+<meta property="og:url" content="http://effine.cn/2016/01/06/NginxCommands/index.html">
 <meta property="og:site_name" content="effine">
-<meta property="og:description">
+<meta property="og:description" content="nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 nginx -? 到的帮助信息:
+nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         :  this help">
+<meta property="og:updated_time" content="2016-01-14T16:10:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
-<meta name="twitter:description">
+<meta name="twitter:title" content="nginx commands">
+<meta name="twitter:description" content="nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 nginx -? 到的帮助信息:
+nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
+
+Options:
+  -?,-h         :  this help">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -71,16 +87,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-JavaEnvironmentVariable" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-NginxCommands" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/08/13/JavaEnvironmentVariable/" class="article-date">
-  <time datetime="2015-08-13T11:43:54.000Z" itemprop="datePublished">8月 13 2015</time>
+    <a href="/2016/01/06/NginxCommands/" class="article-date">
+  <time datetime="2016-01-06T10:08:00.000Z" itemprop="datePublished">1月 6 2016</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
+    <a class="article-category-link" href="/categories/tools/">tools</a>
   </div>
 
   </div>
@@ -90,8 +104,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/08/13/JavaEnvironmentVariable/">Linux设置Java环境变量</a>
+    <h1 class="article-title" itemprop="name">
+      nginx commands
     </h1>
   
 
@@ -99,49 +113,75 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
-<ol>
-<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
-</li>
-<li><p>tar.gz 格式<br> $ tar  -zxvf  dk-8u51-linux-x64.tar.gz  [-C  dist-dir]</p>
-</li>
-</ol>
-<p>设置环境变量</p>
-<pre><code><span class="variable">$ </span>vi /etc/profile
+        <p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
+<pre><code>nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
 
-    <span class="comment"># profile文件追加下面内容</span>
-    export <span class="constant">JAVA_HOME</span>= <span class="regexp">/tools/jdk</span>1.<span class="number">8.0_51</span>
-    export <span class="constant">PATH</span>=<span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$PATH</span>
-    export <span class="constant">CLASSPATH</span>=.:<span class="variable">$JAVA_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span>
-
-<span class="variable">$ </span>source /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span>
-</code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
-<pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建<span class="constant">Key</span>（存在则追加）
-
-<span class="comment"># 变量名及值"key [value]"</span>
-<span class="constant">JAVA_HOME</span>  [<span class="constant">E</span>:\tools\jdk1.<span class="number">7.0_55</span>]
-<span class="constant">CLASSPATH</span> [.;%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span>]
-<span class="constant">Path</span> [%<span class="constant">JAVA_HOME</span>%\bin;%<span class="constant">JAVA_HOME</span>%\jre\bin;]
-</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
-
+Options:
+  -?,-h         :  this <span class="operator"><span class="keyword">help</span>
+  -v            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> <span class="keyword">exit</span>
+  -V            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> configure options <span class="keyword">then</span> <span class="keyword">exit</span>
+  -<span class="keyword">t</span>            :  <span class="keyword">test</span> configuration <span class="keyword">and</span> <span class="keyword">exit</span>
+  -q            :  suppress non-<span class="keyword">error</span> messages during configuration testing
+  -s signal     :  send signal <span class="keyword">to</span> a <span class="keyword">master</span> process: <span class="keyword">stop</span>, quit, reopen, reload
+  -<span class="keyword">p</span> prefix     :  <span class="keyword">set</span> prefix <span class="keyword">path</span> (<span class="keyword">default</span>: /usr/<span class="keyword">local</span>/nginx/)
+  -<span class="keyword">c</span> filename   :  <span class="keyword">set</span> configuration <span class="keyword">file</span> (<span class="keyword">default</span>: conf/nginx.conf)
+  -<span class="keyword">g</span> directives :  <span class="keyword">set</span> <span class="keyword">global</span> directives <span class="keyword">out</span> <span class="keyword">of</span> configuration <span class="keyword">file</span></span>
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="cimyzmr76001m972e06dy407z" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/01/06/NginxCommands/" data-id="cimyzmr630005972ec59whemy" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2015/08/13/JavaEnvironmentVariable/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2016/01/06/NginxCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nginx/">nginx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 
     </footer>
   </div>
   
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/04/NginxService/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">nginx加入系统服务</div>
+    </a>
+  
+</nav>
+
+  
 </article>
 
 
-  
-  
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+
+  <!-- 多说评论框 start -->
+      <div class="ds-thread" data-thread-key="2016/01/06/NginxCommands/" data-title="nginx commands" data-url="http://effine.cn/2016/01/06/NginxCommands/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"verphen"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+      </script>
+    <!-- 多说公共JS代码 end -->
+</section>
+
 </section>
         
       </div>
