@@ -54,10 +54,19 @@ date: 2015-11-17 18:08:00
 
 分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel 
 
-延伸：
-	
-	configure 	# 该文件是软件提供者提供的shell脚本,生成makefilse
-	make		# 编译源码，生成Makefile
-	make install    # 读取Makefile中的指令，开始安装
+    # 错误5
+    nginx: [emerg] bind() to 0.0.0.0:9000 failed (48: Address already in use)
+   
+解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试
+
+    # 错误6
+    nginx: [emerg] open() "/usr/local/nginx/logs/nginx.pid" failed (13: Permission denied)
+
+解决： 没有权限，使用root用户启动
+
+根据nginx源码安装延伸
+	. configure 	# 该文件是软件提供者提供的shell脚本,生成makefilse
+	. make		# 编译源码，生成Makefile
+	. make install    # 读取Makefile中的指令，开始安装
 
 若文章阐述有误，欢迎指正；我会及时修正，以误他人！
