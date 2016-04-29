@@ -11,7 +11,7 @@ date: 2015-07-15 10:43:38
     
     $ mvn archetype:create	# 创建 maven 项目
 
-    # maven生成web项目
+    # maven生成web项目(参数-D意为定义[Define])
     $ mvn archetype:create -DgroupId='package-name' 
       -DartifactId='projectname' -DarchetypeArtifactId=maven-archetype-webapp
 
@@ -41,24 +41,3 @@ date: 2015-07-15 10:43:38
     $ mvn eclipse:clean       # 清理eclipse项目文件
     $ mvn idea:idea       # 生成idea项目文件,将项目转换成idea项目
     $ mvn idea:clean      # 清理idea项目文件
-
-技巧：maven跳过编译(检验)测试代码进行打包(可以衍生至其他操作，如mvn package等)；可以直接体现在命令,也可在项目文件pom.xml中配置插件
-
-    $ mvn install -DskipTests
-    或者
-    $ mvn install -Dmaven.test.skip=true
-
-    # 插件配置
-    <plugin>  
-        <groupId>org.apache.maven.plugins</groupId>  
-        <artifactId>maven-surefire-plugin</artifactId>  
-        <version>2.18.1</version>  
-        <configuration>  
-          <skipTests>true</skipTests>  
-        </configuration>  
-    </plugin>  
-
-
-
-
-

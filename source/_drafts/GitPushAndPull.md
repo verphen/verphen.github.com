@@ -50,7 +50,7 @@ $ git remote set-url --push [name] [newUrl]
 不要忘记使用git push --tags将tags推送到远端
 
 
-
+git pull --rebase origin master  参数含义
 
 
 
