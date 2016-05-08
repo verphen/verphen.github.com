@@ -8,9 +8,9 @@
   <meta name="description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
 $ mvn archetype:create    # 创建 maven 项目
 
-# maven生成web项目
+# maven生成web项目(参数-D意为定义[Define])
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
-  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-">
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactI">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven 命令详解">
 <meta property="og:url" content="http://effine.cn/2015/07/15/MavenCommands/index.html">
@@ -18,19 +18,19 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 <meta property="og:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
 $ mvn archetype:create    # 创建 maven 项目
 
-# maven生成web项目
+# maven生成web项目(参数-D意为定义[Define])
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
-  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-">
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactI">
 <meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
-<meta property="og:updated_time" content="2015-12-23T15:54:24.000Z">
+<meta property="og:updated_time" content="2016-05-08T14:48:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 命令详解">
 <meta name="twitter:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
 $ mvn archetype:create    # 创建 maven 项目
 
-# maven生成web项目
+# maven生成web项目(参数-D意为定义[Define])
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
-  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactId=maven-archetype-">
+  -DartifactId=&apos;projectname&apos; -DarchetypeArtifactI">
   
     <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
   
@@ -118,7 +118,7 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
 
-<span class="comment"># maven生成web项目</span>
+<span class="comment"># maven生成web项目(参数-D意为定义[Define])</span>
 <span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
   -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
 
@@ -146,20 +146,6 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 <span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>clean       <span class="comment"># 清理eclipse项目文件</span>
 <span class="variable">$ </span>mvn <span class="symbol">idea:</span>idea       <span class="comment"># 生成idea项目文件,将项目转换成idea项目</span>
 <span class="variable">$ </span>mvn <span class="symbol">idea:</span>clean      <span class="comment"># 清理idea项目文件</span>
-</code></pre><p>技巧：maven跳过编译(检验)测试代码进行打包(可以衍生至其他操作，如mvn package等)；可以直接体现在命令,也可在项目文件pom.xml中配置插件</p>
-<pre><code>$ mvn install -D<span class="keyword">skip</span>Tests
-或者
-$ mvn install -Dmaven.test.<span class="keyword">skip</span>=true
-
-<span class="comment"># 插件配置</span>
-<span class="variable">&lt;plugin&gt;</span>  
-    <span class="variable">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="variable">&lt;/groupId&gt;</span>  
-    <span class="variable">&lt;artifactId&gt;</span>maven-surefire-plugin<span class="variable">&lt;/artifactId&gt;</span>  
-    <span class="variable">&lt;version&gt;</span><span class="number">2.18</span>.<span class="number">1</span><span class="variable">&lt;/version&gt;</span>  
-    <span class="variable">&lt;configuration&gt;</span>  
-      <span class="variable">&lt;skipTests&gt;</span>true<span class="variable">&lt;/skipTests&gt;</span>  
-    <span class="variable">&lt;/configuration&gt;</span>  
-<span class="variable">&lt;/plugin&gt;</span>  
 </code></pre>
       
     </div>

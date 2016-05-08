@@ -229,7 +229,7 @@
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
 
-<span class="comment"># maven生成web项目</span>
+<span class="comment"># maven生成web项目(参数-D意为定义[Define])</span>
 <span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
   -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
 
