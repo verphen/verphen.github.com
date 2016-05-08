@@ -2,7 +2,8 @@ title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
 ---
-hi, every one, I`m effine 
+hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微信订阅号[iballad]
+<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/about/subscribeCode.jpg" alt="subscribe me"/>
 
 [ 价值观 ]
 	
@@ -16,7 +17,7 @@ hi, every one, I`m effine
 - 自驾游 - - 有本无车
 - 旅游 - - 单反已在议程
 - 看书 - - 技术 + 内修
-- 音乐 - - 民谣 ballad
+- 音乐 - - 民谣
 
 [ 联系方式 ]
 
@@ -24,9 +25,7 @@ hi, every one, I`m effine
      OS X : echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -D
 	 Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
 
-- sina weibo: <a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>
-
-- douban： <a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>
+- Weibo [<a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>]  ||  Douban [<a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>]
 
 - wechat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
