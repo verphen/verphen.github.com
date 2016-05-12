@@ -19,7 +19,7 @@ $ vi filename        # 打开或新建文件，并将光标置于首行行首
 $ vi +n filename     # 点开文件,置光标与文件第n行行首
 $ vi + filename     # 打开文件，置光标于文件尾行行首
 $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
-<meta property="og:updated_time" content="2015-11-23T16:43:28.000Z">
+<meta property="og:updated_time" content="2016-05-08T23:55:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vi commands">
 <meta name="twitter:description" content="Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；
@@ -149,12 +149,13 @@ $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
 <span class="variable">$ </span>dd/ndd -- 删除当前行 / 删除当前行及其后n-<span class="number">1</span>行
 <span class="variable">$ </span>yy/nyy -- 复制光标所在的那一行 / 复制光标所在行的向下n行
 <span class="variable">$ </span>p/<span class="constant">P（</span>大写） -- 粘贴复制的内容到光标所在行的下一行 / 上一行
-<span class="variable">$ </span>u -- 复原前一个操作、
-<span class="variable">$ </span>ctrl + r -- 重做上一个操作
+<span class="variable">$ </span>u          <span class="comment"># 复原前一个操作、</span>
+<span class="variable">$ </span>ctrl + r      <span class="comment"># 重做上一个操作</span>
 <span class="variable">$ </span>ctrl + u         <span class="comment"># 删除输入方式下所输入的文本</span>
 <span class="variable">$ </span>[<span class="keyword">do</span>|d<span class="variable">$]</span>         <span class="comment"># 删至行首/尾</span>
-<span class="variable">$ </span>[ndw|ndW]         <span class="comment"># 删除光标处开始及其后的n-1个字</span>
+<span class="variable">$ </span>[dw|ndw|ndW]         <span class="comment"># 删除光标处单词、开始及其后的n-1个字</span>
 <span class="variable">$ </span>小数点<span class="string">"."</span> -- 重复前一个动作
+<span class="variable">$ </span><span class="constant">J </span>    <span class="comment"># 删除当前光标所在行行尾的换行符（拼接行）</span>
 </code></pre></li>
 <li><p>编辑模式(文本输入模式): 该模式是对文件进行编辑操作，进入该模式命令窗口底部显示”– INSERT –”标志; 命令模式切换到编辑模式方式：</p>
 <p> [进入编辑模式并进行相应操作]</p>
