@@ -100,6 +100,15 @@ http段的配置：
 
  client_max_body_size 500M;			# 设置请求的最大值
 
+ nginx设置跨域：
+     location / {
+            root   html;
+            index  index.html index.htm;
+            # 跨域CROS的实现
+            add_header Access-Control-Allow-Origin *;
+        }
+        
+
 http://www.cnblogs.com/skynet/p/4146083.html
 
 

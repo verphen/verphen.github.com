@@ -14,6 +14,7 @@ date: 2015-10-23 22:35:35
 	$ git branch -r 	# 查看所有远程[remote]分支
 	$ git branch -a 	# 查看所有[all]本地及远程分支
 	$ git branch -v 	# 查看各个分支最后的提交
+	$ git branch -vv	# 在[-v]参数结果增添本地分支对应的远程分支
 
 [创建\切换\重命名分支]
 

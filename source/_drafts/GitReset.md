@@ -30,6 +30,8 @@ $ git reset HEAD
 将HEAD重置到指定的版本，并抛弃该版本之后的所有修改：
 $ git reset --hard <commit>
 
+$ git reset - -hard  HARD<~|^><n> 	# 回退n次提交；（n可以用符号~、^的个数表示回退次数）
+
 将HEAD重置到上一次提交的版本，并将之后的修改标记为未添加到缓存区的修改：
 $ git reset <commit>
 
@@ -45,4 +47,7 @@ git reset --hard SHA
 
 
 git reset 回溯
+
+
+git reflog 查看操作历史
 
