@@ -48,3 +48,6 @@ git reset --hard SHA
 
 git reset 回溯
 
+
+git reflog 查看操作历史
+
