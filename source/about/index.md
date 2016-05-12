@@ -2,7 +2,7 @@ title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
 ---
-hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微信订阅号[iballad]
+hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微信公众号[iballad]
 <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/about/subscribeCode.jpg" alt="subscribe me"/>
 
 [ 价值观 ]
@@ -22,8 +22,8 @@ hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微�
 [ 联系方式 ]
 
 - Email（ps: 对应平台执行命令即可）: 
-     OS X : echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -D
-	 Linux: echo dmVycGhlbkAxNjMuY29tIC8gdmVycGhlbkBnbWFpbC5jb20K | base64 -d
+     OSX : echo W2liYWxsYWRlckBnbWFpbC5jb20gb3IgaWJhbGxhZEAxNjMuY29tXQo= | base64 -D
+	 Linux: echo W2liYWxsYWRlckBnbWFpbC5jb20gb3IgaWJhbGxhZEAxNjMuY29tXQo= | base64 -d
 
 - Weibo [<a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>]  ||  Douban [<a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>]
 
