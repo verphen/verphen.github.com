@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://effine.cn/2012/11/08/JavaObserverPattern/index.html">
 <meta property="og:site_name" content="effine">
 <meta property="og:description" content="Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角">
-<meta property="og:updated_time" content="2016-01-14T16:13:50.000Z">
+<meta property="og:updated_time" content="2016-05-24T14:51:08.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JAVA观察者模式">
 <meta name="twitter:description" content="Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角">
@@ -106,7 +106,7 @@
  * <span class="doctag">@date</span> 2013年10月4日  下午11:02:21 
  */</span>  
 
-<span class="keyword">package</span> org.effine.observer;  
+<span class="keyword">package</span> cn.effine.observer;  
 
 <span class="comment">/*抽象被观察者角色*/</span>  
 <span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IWitched</span> </span>{  
@@ -126,7 +126,7 @@
  <span class="keyword">*</span> <span class="comment">@date 2013年10月4日  下午11:06:57 </span>
  <span class="keyword">*</span>/  
 
-package org.effine.observer;  
+package cn.effine.observer;  
 
 /<span class="keyword">*</span>抽象观察者角色<span class="keyword">*</span>/  
 public interface IWitchers {  
@@ -140,7 +140,7 @@ public interface IWitchers {
  * <span class="doctag">@date</span> 2013年10月4日  下午11:15:20 
  */</span>  
 
-<span class="keyword">package</span> org.effine.observer;  
+<span class="keyword">package</span> cn.effine.observer;  
 
 <span class="keyword">import</span> java.util.ArrayList;  
 <span class="keyword">import</span> java.util.List;  
@@ -174,7 +174,7 @@ public interface IWitchers {
  * <span class="doctag">@date</span> 2013年10月4日  下午11:16:56 
  */</span>  
 
-<span class="keyword">package</span> org.effine.observer;  
+<span class="keyword">package</span> cn.effine.observer;  
 
 <span class="comment">/*具体观察者角色*/</span>  
 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ConcreteWitchers</span> <span class="keyword">implements</span> <span class="title">IWitchers</span> </span>{  
@@ -190,7 +190,7 @@ public interface IWitchers {
  * <span class="doctag">@date</span> 2013年10月4日  下午11:27:18 
  */</span>  
 
-<span class="keyword">package</span> org.effine.observer;  
+<span class="keyword">package</span> cn.effine.observer;  
 
 <span class="comment">/* observer pattern test class*/</span>  
 <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestWitch</span> </span>{  
