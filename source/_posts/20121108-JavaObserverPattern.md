@@ -4,7 +4,6 @@ date: 2012-11-08 23:33
 categories: java
 tags: [java,设计模式]
 ---
-
 Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出code供参考：
 
 <!-- more -->
@@ -16,7 +15,7 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	 * @date 2013年10月4日  下午11:02:21 
 	 */  
 	  
-	package org.effine.observer;  
+	package cn.effine.observer;  
 	  
 	/*抽象被观察者角色*/  
 	public interface IWitched {  
@@ -38,7 +37,7 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	 * @date 2013年10月4日  下午11:06:57 
 	 */  
 	  
-	package org.effine.observer;  
+	package cn.effine.observer;  
 	  
 	/*抽象观察者角色*/  
 	public interface IWitchers {  
@@ -54,7 +53,7 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	 * @date 2013年10月4日  下午11:15:20 
 	 */  
 	  
-	package org.effine.observer;  
+	package cn.effine.observer;  
 	  
 	import java.util.ArrayList;  
 	import java.util.List;  
@@ -90,7 +89,7 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	 * @date 2013年10月4日  下午11:16:56 
 	 */  
 	  
-	package org.effine.observer;  
+	package cn.effine.observer;  
 	  
 	/*具体观察者角色*/  
 	public class ConcreteWitchers implements IWitchers {  
@@ -108,7 +107,7 @@ Java观察者模式（Observer Pattern），简单说观察者模式包含四种
 	 * @date 2013年10月4日  下午11:27:18 
 	 */  
 	  
-	package org.effine.observer;  
+	package cn.effine.observer;  
 	  
 	/* observer pattern test class*/  
 	public class TestWitch {  
