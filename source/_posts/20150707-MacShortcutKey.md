@@ -18,7 +18,7 @@ Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非�
       command + v      # 粘贴文件
       command + option + v     # 剪切文件
       command + shift + g      # 打开“前往文件夹”，输入路径回车即可进入
-      command + i     # 打开选中文件(文件夹)的简介
+      command + i     # 显示选中文件属性信息
 
 - 终端
       open + 目录		# 即可用finder打开该目录(绝对目录和相对目录都可以)
