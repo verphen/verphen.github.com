@@ -1,0 +1,45 @@
+   
+1. 安装mongodb(http://jingyan.baidu.com/article/0a52e3f4217e65bf62ed729a.html)
+
+        # 上传安装文件mongodb-linux-x86_64-rhel55-3.2.7.tgz
+        $ scp mongodb-linux-x86_64-rhel55-3.2.7.tgz comall@host:/home/comall/packages 
+        
+        # 解压文件
+        $ tar -zxvf  /home/comall/packages/mongodb-linux-x86_64-rhel55-3.2.7.tgz  -d /home/comall/software
+        
+        # 重命名解压文件夹
+        $ cd /home/comall/software && mv mongodb-linux-x86_64-rhel55-3.2.7 mongodb
+        
+        # 新建文件夹db(存放数据文件)、logs(存放日志文件)
+        $ cd /home/comall/software/mongodb && mkdir db logs
+        
+        # 在mongodb/bin目录创建配置文件mongodb.conf
+        $ cd /home/comall/software/mongodb/bin && touch mongodb.conf
+        $ vi mongodb.conf       # 添加如下配置内容保存退出
+        
+            dbpath = /home/comall/software/mongodb/db
+            logpath = /home/comall/software/mongodb/logs/mongodb.log
+            port = 27017
+            fork = true
+            nohttpinterface = true
+        
+        # 启动
+        $ ./mongod --config mongodb.conf
+        
+        
+2. 启动mongodb出现的错误解决方案
+
+    。 ./mongod: error while loading shared libraries: libssl.so.6: cannot open shared object file: No such file or directory
+    
+    解决方案：
+    
+        # 创建软链接（参考 http://www.jiaozn.com/reed/19.html）
+        $ ln -sf /usr/lib64/libssl.so.10 /usr/lib64/libssl.so.6
+        $ ln -sf /usr/lib64/libcrypto.so.10 /usr/lib64/libcrypto.so.6
+      
+    。2016-06-08T08:56:11.619+0000 F CONTROL  [main] Failed global initialization: BadValue: Invalid or no user locale set. Please ensure LANG and/or LC_* environment variables are set correctly.
+    
+    解决方案：
+    
+        # 清除当前shell所有本地化的设置，让命令能正确执行
+        $ export LC_ALL=C   
