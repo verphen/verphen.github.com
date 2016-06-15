@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Tag: try、catch、finally | effine</title>
+  <title>Tag: finally | effine</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="effine">
-<meta property="og:url" content="http://effine.cn/tags/try、catch、finally/index.html">
+<meta property="og:url" content="http://effine.cn/tags/finally/index.html">
 <meta property="og:site_name" content="effine">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -91,7 +91,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/15/TrycatchReturn/">Try Catch 返回值</a>
+      <a class="article-title" href="/2016/06/15/TrycatchReturn/">Java try catch返回值分析</a>
     </h1>
   
 
@@ -99,61 +99,22 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch"></p>
-<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
-<!-- java -->
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
-
-    @<span class="function">Test
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> i = method1();
-        System.<span class="keyword">out</span>.println(i);
-    }
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> a = <span class="number">1</span>;
-        <span class="keyword">try</span> {
-            <span class="keyword">return</span> ++a;
-        } <span class="keyword">catch</span> (Exception e) {
-            e.printStackTrace();
-        } <span class="keyword">finally</span> {
-            ++a;
-        }
-        <span class="keyword">return</span> a;
-    }
-}
-</code></pre><p>junit测试打印结果：2<br>分析：为什么打印的结果是2不是3呢？可以使用debug分析得出，在执行method1方法try中的<code>++a</code>之后（a的值为2，同时将返回值2保存到局部变量中），程序并没有立即执行return，而是紧接着执行了finally的<code>++a</code>(此时a的值为3)，然后再执行try中的return(返回局部变量中的2)；</p>
-<p>若对程序进行改动，在finally中加入return分析返回值是多少？</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
-
-    @<span class="function">Test
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> i = method1();
-        System.<span class="keyword">out</span>.println(i);
-    }
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> a = <span class="number">1</span>;
-        <span class="keyword">try</span> {
-            <span class="keyword">return</span> ++a;
-        } <span class="keyword">catch</span> (Exception e) {
-            e.printStackTrace();
-        } <span class="keyword">finally</span> {
-            <span class="keyword">return</span> ++a;
-        }
-    }
-}
-</code></pre><p>此时，junit测试打印结果为：3<br>分析：当程序执行到finally中的<code>++a</code> (此时a的值为3)，紧接着执行finally中的return；所以，try和finally中同时出现return时，try中的return将会失效；</p>
-
+        <p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
+<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch return"></p>
+        
+          <p class="article-more-link">
+            <a href="/2016/06/15/TrycatchReturn/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2016/06/15/TrycatchReturn/" data-id="ciph36ea50005ta2emr78x6yq" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/06/15/TrycatchReturn/" data-id="ciph3i3sl0005c42eeq0dklog" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2016/06/15/TrycatchReturn/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/try、catch、finally/">try、catch、finally</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/catch/">catch</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/finally/">finally</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/try/">try</a></li></ul>
 
     </footer>
   </div>
@@ -186,7 +147,7 @@
       <ul>
         
           <li>
-            <a href="/2016/06/15/TrycatchReturn/">Try Catch 返回值</a>
+            <a href="/2016/06/15/TrycatchReturn/">Java try catch返回值分析</a>
           </li>
         
           <li>
@@ -234,7 +195,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.75px;">tools</a> <a href="/tags/try、catch、finally/" style="font-size: 10px;">try、catch、finally</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 17.5px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.75px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 17.5px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
