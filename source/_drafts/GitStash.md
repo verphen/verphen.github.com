@@ -5,25 +5,24 @@ tags:
   - git
   - stash
 ---
-	$ git stash --help 		# 查看帮助
+当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。
 
-    $ git stash 		# 将当前的改变暂时保存起来
+	$ git stash - -help 		# 查看帮助
+    $ git stash     # 将当前的改变暂存起来
+    $ git stash save [message]  # 暂存当前改变，且为暂存添加描述信息
+    $ git stash list 		# 查看暂存列表
 
-    $ git stash list 		# 查看暂存地的所有的暂存列表
+    $ git stash apply 		# 恢复最近的暂存，不删除暂存
+    $ git stash pop 		# 恢复最近的暂存，并删除暂存
+    $ git stash drop		# 删除最近的暂存 
+    $ git stash clear       # 删除所有暂存
 
-    $ git stash apply 		# 恢复暂存之前的改变，不删除暂存
-    $ git stash pop 		# 恢复暂存之前的改变，并删除暂存
-    $ git stash drop		# 删除暂存
-
-    $ git stash show
-    $ git stash branch <branchname>
-    $ git stash clear
+    $ git stash show [<stash>]       # 显示最近的暂存(或指定具体的暂存)
+        e.g: git stash show -p stash@{1}  # 显示第二次暂存文件的具体改变
+    $ git stash branch <branchname> [<stash>]   # 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支
+    
     $ git stash create
+        Create a stash (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see "save" above.
+        
     $ git stash store
-
-     git reset HEAD~1  重置最新的提交
-     git revert HEAD  生成新的commit来revert上次操作
-     git rebase -i origin/master   对未同步的代码做“变基”XD
-     git rebase -i --abort   "变基"失败可以忽略重来
-
-     git ll    
+        Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see "save" above.

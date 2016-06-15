@@ -26,3 +26,12 @@ $ git mergetool
 git mergetool                   # GUI方式处理合并冲突
 
 Merge feature branch时请不要使用fast forward
+
+
+
+     git reset HEAD~1  重置最新的提交
+     git revert HEAD  生成新的commit来revert上次操作
+     git rebase -i origin/master   对未同步的代码做“变基”XD
+     git rebase -i --abort   "变基"失败可以忽略重来
+
+     git ll    
