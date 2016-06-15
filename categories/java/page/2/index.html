@@ -73,6 +73,62 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-WebAppRootKey" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/10/WebAppRootKey/" class="article-date">
+  <time datetime="2015-03-10T09:47:34.000Z" itemprop="datePublished">3月 10 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/10/WebAppRootKey/">web.xml配置WebAppRootKey</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Web应用服务器 Tomcat 同时运行多个web项目，必须在每个项目的web.xml的 <web-app> 内进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+<span class="tag">&lt;<span class="title">context-param</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-name</span>&gt;</span>webAppRootKey<span class="tag">&lt;/<span class="title">param-name</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">param-value</span>&gt;</span>webapp.root<span class="tag">&lt;/<span class="title">param-value</span>&gt;</span>  <span class="comment">&lt;!-- 更改"webapp.root"为自定义的任意字符串 --&gt;</span>
+<span class="tag">&lt;/<span class="title">context-param</span>&gt;</span>
+<span class="tag">&lt;<span class="title">web-app</span>&gt;</span>
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2015/03/10/WebAppRootKey/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/03/10/WebAppRootKey/" data-id="ciph36ecu003vta2eppnxtwau" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/03/10/WebAppRootKey/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-AnalysisJavaStringToInt" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/08/05/AnalysisJavaStringToInt/" class="article-date">
@@ -116,7 +172,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/" data-id="cimyzmrbp005g972eofxznxet" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/" data-id="ciph36ee7005kta2e2ftn0t1m" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/08/05/AnalysisJavaStringToInt/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -194,7 +250,7 @@ public interface Target {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="cimyzmrc20065972e3xgf0nbb" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="ciph36eem0069ta2eijh8tbti" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/04/07/JavaAdapterPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -244,60 +300,12 @@ public interface Target {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/03/19/TreesetSort/" data-id="cimyzmrc4006a972ew9yxa63g" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/03/19/TreesetSort/" data-id="ciph36eeq006eta2ecmzs1vt4" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/03/19/TreesetSort/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JavaVirtualMachine" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02/27/JavaVirtualMachine/" class="article-date">
-  <time datetime="2014-02-27T14:18:22.000Z" itemprop="datePublished">2月 27 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02/27/JavaVirtualMachine/">深入JAVA虚拟机</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！</p>
-<p>本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；</p>
-<p>针对JAVA的一套流程：<br>1、编辑器编写Java源码（.java文件）<br>2、java文件经过Java编译器编程成Class文件<br>3、java虚拟机加载class文件（由类加载器完成）解释执行成字节码，再由虚拟机中的执行引擎去执行字节码文件</p>
-<p>执行引擎有多种策略：<br>1、一次性解释字节码<br>2、较上一种执行引擎更快，消耗内存（即时编译Just In Time Compiler）；第一次执行的字节码会被编译成本地机器代码，编译出的本地机器代码会被缓存，当方法调用的时候可以重用<br>3、该种引擎是自适应优化器；虚拟机开始的时候解释字节码，会监事运行中的程序活动，并且激励下使用最频繁的代码段，程序运行的时候，虚拟机只把那些惠东最频繁的代码编译成本地代码，</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cimyzmrcd006l972eocz2h80n" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2014/02/27/JavaVirtualMachine/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
 
     </footer>
   </div>
@@ -322,7 +330,7 @@ public interface Target {
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">14</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">24</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -332,6 +340,10 @@ public interface Target {
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/06/15/TrycatchReturn/">Try Catch 返回值</a>
+          </li>
         
           <li>
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
@@ -369,10 +381,6 @@ public interface Target {
             <a href="/2015/11/04/GitTag/">Git 标签</a>
           </li>
         
-          <li>
-            <a href="/2015/10/23/GitBranch/">Git 分支</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -382,7 +390,7 @@ public interface Target {
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.75px;">tools</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 17.5px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.5px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.75px;">tools</a> <a href="/tags/try、catch、finally/" style="font-size: 10px;">try、catch、finally</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 17.5px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

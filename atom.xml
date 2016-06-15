@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-01-14T16:10:42.000Z</updated>
+  <updated>2016-06-15T16:16:56.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,69 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Try Catch 返回值]]></title>
+    <link href="http://effine.cn/2016/06/15/TrycatchReturn/"/>
+    <id>http://effine.cn/2016/06/15/TrycatchReturn/</id>
+    <published>2016-06-15T15:40:22.000Z</published>
+    <updated>2016-06-15T16:16:56.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch"></p>
+<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
+<!-- java -->
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
+
+    @<span class="function">Test
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
+        <span class="keyword">int</span> i = method1();
+        System.<span class="keyword">out</span>.println(i);
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
+        <span class="keyword">int</span> a = <span class="number">1</span>;
+        <span class="keyword">try</span> {
+            <span class="keyword">return</span> ++a;
+        } <span class="keyword">catch</span> (Exception e) {
+            e.printStackTrace();
+        } <span class="keyword">finally</span> {
+            ++a;
+        }
+        <span class="keyword">return</span> a;
+    }
+}
+</code></pre><p>junit测试打印结果：2<br>分析：为什么打印的结果是2不是3呢？可以使用debug分析得出，在执行method1方法try中的<code>++a</code>之后（a的值为2，同时将返回值2保存到局部变量中），程序并没有立即执行return，而是紧接着执行了finally的<code>++a</code>(此时a的值为3)，然后再执行try中的return(返回局部变量中的2)；</p>
+<p>若对程序进行改动，在finally中加入return分析返回值是多少？</p>
+<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
+
+    @<span class="function">Test
+    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
+        <span class="keyword">int</span> i = method1();
+        System.<span class="keyword">out</span>.println(i);
+    }
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
+        <span class="keyword">int</span> a = <span class="number">1</span>;
+        <span class="keyword">try</span> {
+            <span class="keyword">return</span> ++a;
+        } <span class="keyword">catch</span> (Exception e) {
+            e.printStackTrace();
+        } <span class="keyword">finally</span> {
+            <span class="keyword">return</span> ++a;
+        }
+    }
+}
+</code></pre><p>此时，junit测试打印结果为：3<br>分析：当程序执行到finally中的<code>++a</code> (此时a的值为3)，紧接着执行finally中的return；所以，try和finally中同时出现return时，try中的return将会失效；</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch"></p>
+<p>简单分析异常捕获try catch的try和finally中r]]>
+    </summary>
+    
+      <category term="try、catch、finally" scheme="http://effine.cn/tags/try%E3%80%81catch%E3%80%81finally/"/>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[nginx commands]]></title>
@@ -214,7 +277,7 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-04-13T15:11:58.000Z</updated>
+    <updated>2016-04-13T15:12:48.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
@@ -1194,93 +1257,6 @@ ctrl + <span class="keyword">shift</span> + <span class="keyword">q</span>     <
       <category term="web" scheme="http://effine.cn/tags/web/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Integer的对等比较]]></title>
-    <link href="http://effine.cn/2015/06/22/IntegerPoint/"/>
-    <id>http://effine.cn/2015/06/22/IntegerPoint/</id>
-    <published>2015-06-22T09:38:25.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>分析之前，先猜想一下看看下面code snippets的输出：</p>
-<pre><code>package cn.effine.test;
-
-<span class="keyword">public</span> <span class="keyword">class</span> IntegerTest {
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-
-        Integer i1 = <span class="number">2</span>;
-        Integer i2 = <span class="number">2</span>;
-        System.err.println(<span class="string">"i1 == i2 : "</span> + (i1 == i2));
-
-        Integer i3 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        System.err.println(<span class="string">"i3 == i4: "</span> + (i3 == i4));
-
-        Integer i5 = <span class="number">128</span>;
-        Integer i6 = <span class="number">128</span>;
-        System.err.println(<span class="string">"i5 == i6 : "</span> + (i5 == i6));
-        System.err.println(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + (i5.intValue() == i6.intValue()));
-        System.err.println(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals(i6));
-
-    }
-}
-</code></pre><a id="more"></a>
-<p>运行结果：</p>
-<pre><code>i1 == <span class="string">i2 :</span> <span class="literal">true</span>
-i3 == <span class="string">i4:</span> <span class="literal">false</span>
-i5 == <span class="string">i6 :</span> <span class="literal">false</span>
-i5、i6的inValue()方法等值比较： <span class="literal">true</span>
-i5、i6的equals的比较： <span class="literal">true</span>
-</code></pre><p>如果你对某些输出感到诧异，接着往下看我的分析：</p>
-<p>初始化Integer声明的变量时，会去调用Integer.valueOf()方法进行处理；方法源码如下</p>
-<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{
-    assert IntegerCache.high &gt;= <span class="number">127</span>;
-    <span class="keyword">if</span> (i &gt;= -<span class="number">128</span> &amp;&amp; i &lt;= <span class="number">127</span>)
-        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];
-    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);
-}
-</code></pre><p>至于为什么调用该方法进行if判断？可能是因为8位二进制的范围是-128到127；当传入的参数在该范围则返回int原始数据类型，超出该范围则新建一个Integer对象，对象的对等比较（“==”）比较的是对象的内存地址；现在你再回去过看程序：</p>
-<p>初始化i1、12时，调用Integer.valueOf()方法，由于i1\i2的值(2)在-128到127范围内，方法返回int类型的值2，进行对等比较时则返回ture</p>
-<p>声明i3、i4时，默认新建了个Integer对象，所以对等比较的是两个对象的内存地址，因此返回false</p>
-<p>初始化i5、i6时，调用Integer.valueOf()方法，其值-128在127范围外，所以方法返回新建的Integer对象，进行对等比较返回false</p>
-<p>调用Integer.intValue()方法返回的是对应对象int值，i5、i6的方法返回值都是128，对等比较当然返回true</p>
-<p>Integer对象的equals()方法底层调用的是Integer.intValue()方法，对等比较同样比较其int值，返回同样为true</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>分析之前，先猜想一下看看下面code snippets的输出：</p>
-<pre><code>package cn.effine.test;
-
-<span class="keyword">public</span> <span class="keyword">class</span> IntegerTest {
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
-
-        Integer i1 = <span class="number">2</span>;
-        Integer i2 = <span class="number">2</span>;
-        System.err.println(<span class="string">"i1 == i2 : "</span> + (i1 == i2));
-
-        Integer i3 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        System.err.println(<span class="string">"i3 == i4: "</span> + (i3 == i4));
-
-        Integer i5 = <span class="number">128</span>;
-        Integer i6 = <span class="number">128</span>;
-        System.err.println(<span class="string">"i5 == i6 : "</span> + (i5 == i6));
-        System.err.println(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + (i5.intValue() == i6.intValue()));
-        System.err.println(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals(i6));
-
-    }
-}
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="Integer" scheme="http://effine.cn/tags/Integer/"/>
-    
-      <category term="java" scheme="http://effine.cn/tags/java/"/>
-    
-      <category term="java" scheme="http://effine.cn/categories/java/"/>
     
   </entry>
   
