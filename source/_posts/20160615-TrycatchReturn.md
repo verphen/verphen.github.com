@@ -1,16 +1,16 @@
-title: Try Catch 返回值
-tags:
-  - try、catch、finally
-categories: java
+title: Java try catch返回值分析
 date: 2016-06-15 23:40:22
+categories: java
+tags: [try,catch,finally]
 ---
-
-![try catch](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png)
-
 简单分析异常捕获try catch的try和finally中return对结果的影响
 
-<!-- java -->
-    
+![try catch return](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png)
+
+<!-- more -->
+
+参考程序分析：
+
     public class TryCatchTest {
 
         @Test
@@ -60,3 +60,4 @@ junit测试打印结果：2
 此时，junit测试打印结果为：3
 分析：当程序执行到finally中的`++a` (此时a的值为3)，紧接着执行finally中的return；所以，try和finally中同时出现return时，try中的return将会失效；
 
+题图来源：http://kuroeveryday.blogspot.jp/2014/12/Try-Catch-Finally.html
