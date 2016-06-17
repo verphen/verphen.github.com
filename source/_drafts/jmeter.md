@@ -14,4 +14,22 @@ $ sh zkServer.sh status
 jmeter使用上一次response作为下一次入参
 
 
-解析json安装插件：http://jmeter-plugins.org/downloads/all/
+
+-----------
+
+Jmeter做性能测试的时候，需要处理某一方法response数据作为下一个方法的入参，
+基于这个需求与不同返回值数据格式我们有三种方式来解决;
+
+tips: 我们使用的工具 [apache-jmeter-3.0](https://jmeter.apache.org/download_jmeter.cgi)
+
+1. 使用正则表达式
+
+
+
+2. 使用插件JSON Path Extractor(针对json数据返回值)
+
+    
+
+3. 使用java脚本
+
+ 
