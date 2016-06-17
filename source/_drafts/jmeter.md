@@ -25,10 +25,13 @@ tips: 我们使用的工具 [apache-jmeter-3.0](https://jmeter.apache.org/downlo
 1. 使用正则表达式
 
 
+	http://www.cnblogs.com/scarlett-hy/articles/4244055.html
 
 2. 使用插件JSON Path Extractor(针对json数据返回值)
 
     https://github.com/jayway/JsonPath
+
+
 
 3. 使用java脚本
 
