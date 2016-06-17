@@ -28,7 +28,7 @@ tips: 我们使用的工具 [apache-jmeter-3.0](https://jmeter.apache.org/downlo
 
 2. 使用插件JSON Path Extractor(针对json数据返回值)
 
-    
+    https://github.com/jayway/JsonPath
 
 3. 使用java脚本
 
