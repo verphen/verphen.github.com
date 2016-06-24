@@ -32,8 +32,9 @@ date: 2015-07-15 10:43:38
     $ mvn site    # 生成项目相关网站信息(/target/site)
     $ mvn validate    # 验证工程是否正确，所需要的资源是否可用
     $ mvn deploy      # 发布项目
+    $ mvn dependency:tree   # 查看项目依赖树
 
-    # 启动服务前需执行mvn package及配置相应插件
+    # 启动服务前需配置相应插件
     $ mvn jetty:run   # 启动jetty服务
     $ mvn tomcat:run  # 启动tomcat服务
 
