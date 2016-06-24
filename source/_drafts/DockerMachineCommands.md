@@ -12,3 +12,6 @@ $ docker-machine ssh default	# 连接docker默认虚拟机(用户名docker / 密
      eval “$(docker-machine env default)”     # 连接到default虚拟机
      docker-machine rm <machine-name>     # 删除某台虚拟机
      docker-machine start <machine-name>     # 启动虚拟机
+      $ docker-machine restart default      #  重启docker虚拟机default
+
+ 
