@@ -19,7 +19,7 @@ tags:
 开启memcached守护进程： memcached -d -u root
 
 	#连接参数
-		-p 监听端口
+		-p 监听端口(默认为11211)
 		-l 连接的IP地址,默认是本机
 		-d start启动memecache服务
 		-d restart重启
@@ -45,13 +45,3 @@ telnet中的命令：
 
 	quit:退出
 	version: 查看版本信息
-	
-
-
-
-
-
-
-
-
-
