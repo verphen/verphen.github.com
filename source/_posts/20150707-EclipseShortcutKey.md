@@ -34,6 +34,7 @@ date: 2015-07-07 09:27:14
     ctrl + 3 	# 打开Quick Access搜索（搜索eclipse菜单、标签等）
 
     ctrl + k    # 定位选中文本在该文件下一处
+    ctrl + 左右方向键    # 光标跳到行首尾
     ctrl + shift + k    # 定位选中文本在该文件上一处
     ctrl + t 	# 查看定位方法的继承树(再次按键，反向显示)
     Ctrl + Shift + t    # 打开类型
