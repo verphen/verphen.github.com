@@ -22,7 +22,7 @@ $ mvn archetype:create    # 创建 maven 项目
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
   -DartifactId=&apos;projectname&apos; -DarchetypeArtifactI">
 <meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
-<meta property="og:updated_time" content="2016-05-08T14:48:39.000Z">
+<meta property="og:updated_time" content="2016-06-27T15:21:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 命令详解">
 <meta name="twitter:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
@@ -137,8 +137,9 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 <span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
 <span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
 <span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree   <span class="comment"># 查看项目依赖树</span>
 
-<span class="comment"># 启动服务前需执行mvn package及配置相应插件</span>
+<span class="comment"># 启动服务前需配置相应插件</span>
 <span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
 <span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
 
@@ -150,7 +151,7 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="ciph3i3u20025c42e0lo9jl5f" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="ciq9lgg8z0029462e57h3c4ai" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenCommands/#disqus_thread" class="article-comment-link">Comments</a>
       

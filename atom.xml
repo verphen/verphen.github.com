@@ -763,7 +763,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
     <id>http://effine.cn/2015/07/15/MavenCommands/</id>
     <published>2015-07-15T02:43:38.000Z</published>
-    <updated>2016-05-08T14:48:39.000Z</updated>
+    <updated>2016-06-27T15:21:56.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
@@ -787,8 +787,9 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
 <span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
 <span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
 <span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree   <span class="comment"># 查看项目依赖树</span>
 
-<span class="comment"># 启动服务前需执行mvn package及配置相应插件</span>
+<span class="comment"># 启动服务前需配置相应插件</span>
 <span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
 <span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
 
@@ -1034,7 +1035,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
     <published>2015-07-07T01:27:14.000Z</published>
-    <updated>2015-11-26T15:20:28.000Z</updated>
+    <updated>2016-07-05T15:11:33.000Z</updated>
     <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
 <pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
 ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
@@ -1061,6 +1062,7 @@ ctrl + <span class="number">1</span>     <span class="comment"># 列出 eclipse 
 ctrl + <span class="number">3</span>     <span class="comment"># 打开Quick Access搜索（搜索eclipse菜单、标签等）</span>
 
 ctrl + k    <span class="comment"># 定位选中文本在该文件下一处</span>
+ctrl + 左右方向键    <span class="comment"># 光标跳到行首尾</span>
 ctrl + <span class="built_in">shift</span> + k    <span class="comment"># 定位选中文本在该文件上一处</span>
 ctrl + t     <span class="comment"># 查看定位方法的继承树(再次按键，反向显示)</span>
 Ctrl + Shift + t    <span class="comment"># 打开类型</span>
