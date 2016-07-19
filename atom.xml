@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-06-15T16:38:17.000Z</updated>
+  <updated>2016-07-19T16:05:10.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Gradle Commands]]></title>
+    <link href="http://effine.cn/2016/07/16/GradleCommands/"/>
+    <id>http://effine.cn/2016/07/16/GradleCommands/</id>
+    <published>2016-07-16T12:37:54.000Z</published>
+    <updated>2016-07-19T16:05:10.000Z</updated>
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
+<p>常用的gradle命令集锦：</p>
+<pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
+<span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
+<span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
+<span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
+<span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
+<span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
+<span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
+<span class="variable">$ </span>gradle clean      <span class="comment"># 清理项目构建文件(即就是build文件夹)</span>
+<span class="variable">$ </span>gradle test       <span class="comment"># 编译</span>
+<span class="variable">$ </span>gradle check      <span class="comment"># 代码质量检查</span>
+</code></pre><a id="more"></a>
+<p>使用技巧：<br>。 maven项目秒转成gradle项目:</p>
+<pre><code><span class="variable">$ </span>gradle setupBuild --<span class="keyword">type</span> pom        <span class="comment"># gradle1.7的写法</span>
+<span class="variable">$ </span>gradle init --<span class="keyword">type</span> pom        <span class="comment"># gradle2.0的写法</span>
+</code></pre><p>。 设置gradle本地仓库路径： </p>
+<pre><code>设置环境变量即可： GRADLE_USER_HOME = <span class="function"><span class="title">dest-path</span><span class="params">(目标目录)</span></span>
+</code></pre><p>题图来源：gradle官方 <a href="https://gradle.org/" target="_blank" rel="external">https://gradle.org/</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
+<p>常用的gradle命令集锦：</p>
+<pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
+<span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
+<span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
+<span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
+<span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
+<span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
+<span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
+<span class="variable">$ </span>gradle clean      <span class="comment"># 清理项目构建文件(即就是build文件夹)</span>
+<span class="variable">$ </span>gradle test       <span class="comment"># 编译</span>
+<span class="variable">$ </span>gradle check      <span class="comment"># 代码质量检查</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="commond" scheme="http://effine.cn/tags/commond/"/>
+    
+      <category term="gradle" scheme="http://effine.cn/tags/gradle/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Java try catch返回值分析]]></title>
@@ -284,8 +335,8 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-04-13T15:12:48.000Z</updated>
-    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
+    <updated>2016-07-19T15:37:30.000Z</updated>
+    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
@@ -325,11 +376,14 @@ nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0<
 <pre><code><span class="preprocessor"># 错误<span class="number">6</span></span>
 nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</span> failed (<span class="number">13</span>: Permission denied)
 </code></pre><p>解决： 没有权限，使用root用户启动</p>
-<p>根据nginx源码安装延伸<br>    . configure     # 该文件是软件提供者提供的shell脚本,生成makefilse<br>    . make        # 编译源码，生成Makefile<br>    . make install    # 读取Makefile中的指令，开始安装</p>
-<p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
+<p>根据nginx源码安装延伸</p>
+<pre><code>. configure     <span class="comment"># 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境</span>
+. make        <span class="comment"># 编译源码，生成Makefile</span>
+. make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
+</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
+    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
 $ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
@@ -351,15 +405,15 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
     <link href="http://effine.cn/2015/11/17/GitRemote/"/>
     <id>http://effine.cn/2015/11/17/GitRemote/</id>
     <published>2015-11-17T07:08:24.000Z</published>
-    <updated>2015-11-25T05:52:59.000Z</updated>
-    <content type="html"><![CDATA[<p>为书写及阅读方便，以下所有的origin全部为远程仓库别名</p>
-<pre><code>$ git remote        <span class="comment"># 查看所有远程仓库别名</span>
-$ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看所有远程仓库别名及地址</span>
-$ git remote show <span class="variable">&lt;origin&gt;</span>    <span class="comment"># 查看远程仓库地址及分支情况</span>
+    <updated>2016-07-19T15:50:01.000Z</updated>
+    <content type="html"><![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
+<pre><code>$ git remote        <span class="comment"># 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)</span>
+$ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看跟踪仓库别名及地址</span>
+$ git remote show <span class="variable">&lt;origin&gt;</span>    <span class="comment"># 查看跟踪仓库地址及分支情况</span>
 
-$ git remote add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加远程仓库别名及对应的远程地址 </span>
+$ git remote add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加跟踪仓库别名及对应的跟踪地址 </span>
 
-<span class="comment"># 更新指定远程仓库名的地址</span>
+<span class="comment"># 更新指定跟踪仓库名的地址</span>
 $ git remote set-url [--push] <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span> [<span class="variable">&lt;oldurl&gt;</span>] 
 $ git remote set-url --add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span>
 $ git remote set-url --delete <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>
@@ -367,22 +421,21 @@ $ git remote set-url --delete <span class="variable">&lt;origin&gt;</span> <span
     [--add]                <span class="comment"># add URL</span>
     [--delete]              <span class="comment"># delete URLs</span>
 
-$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;origin&gt;</span>     <span class="comment"># 删除指定的远程仓库名</span>
-$ git remote rename <span class="variable">&lt;old&gt;</span> <span class="variable">&lt;new&gt;</span>       <span class="comment"># 重命名远程仓库名</span>
+$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;origin&gt;</span>     <span class="comment"># 删除指定的跟踪仓库名</span>
+$ git remote rename <span class="variable">&lt;old&gt;</span> <span class="variable">&lt;new&gt;</span>       <span class="comment"># 重命名跟踪仓库名</span>
 
-<span class="comment"># 设置或删除远程仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行</span>
+<span class="comment"># 设置或删除跟踪仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行</span>
 $ git remote set-head <span class="variable">&lt;origin&gt;</span> (-a |<span class="string"> --auto </span>|<span class="string"> -d </span>|<span class="string"> --delete </span>|<span class="string"> &lt;branch&gt;) 
     [-a</span>|<span class="string">--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote
     [-d</span>|<span class="string">--delete]       # delete refs/remotes/&lt;name&gt;/HEAD
 
-# 清理远程存在过但现在不存在的本地远程分支的引用
+# 清理存在过但现在不存在的本地跟踪分支的引用
 $ git remote prune [&lt;options&gt;] &lt;origin&gt; 
     [-n</span>|<span class="string">--dry-run]         # dry run(试运行，彩排)</span>
 </code></pre>]]></content>
     <summary type="html">
-    <![CDATA[<p>为书写及阅读方便，以下所有的origin全部为远程仓库别名</p>
-<pre><code>$ git remote        <span class="comment"># 查看所有远程仓库别名</span>
-$ git remote <span class="vari]]>
+    <![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
+<pre>]]>
     </summary>
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
@@ -1176,96 +1229,6 @@ admin-script - allows access <span class="built_in">to</span> <span class="opera
       <category term="tomcat" scheme="http://effine.cn/tags/tomcat/"/>
     
       <category term="web" scheme="http://effine.cn/categories/web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[chrome 技巧及快捷键]]></title>
-    <link href="http://effine.cn/2015/07/06/ChromeShortcutKey/"/>
-    <id>http://effine.cn/2015/07/06/ChromeShortcutKey/</id>
-    <published>2015-07-06T01:58:09.000Z</published>
-    <updated>2015-12-06T03:36:03.000Z</updated>
-    <content type="html"><![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
-<pre><code>-<span class="ruby"> 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容<span class="string">"无法显示此页面"</span>，按<span class="string">"空格"</span>键，可以玩个小游戏放松心情
-</span>
--<span class="ruby"> 按住 ctrl 点击页面链接，后台以新标签打开链接页面(该操作同样适合 chrome 回退/前进等), 你仍停留在当前标签页
-</span>
--<span class="ruby"> 按住 ctrl + shift 点击页面链接，新标签打开链接, 同时切换到新打开的标签页
-</span>
--<span class="ruby"> 按住 shift 点击页面链接, 在新窗口打开链接
-</span>
--<span class="ruby"> 将链接拖动到标签页内, 在指定标签页中打开链接; 
-</span>
--<span class="ruby"> 将链接拖动到两个标签页之间,则在标签页横条的指定位置建立一个新标签页然后打开链接;</span>
-</code></pre><a id="more"></a>
-<p>常用快捷键：</p>
-<pre><code>ctrl + c    <span class="comment"># 复制选中内容</span>
-ctrl + <span class="keyword">shift</span> + c    <span class="comment"># 打开审查元素(页面右键"审查元素"或F12),常用于web调试 </span>
-ctrl + <span class="keyword">x</span>    <span class="comment"># 剪切选中内容（同 shift + delete）</span>
-ctrl + v    <span class="comment"># 粘贴剪贴板内容</span>
-ctrl + <span class="keyword">shift</span> + v    <span class="comment"># 粘贴剪贴板存文本（不含样式）</span>
-
-ctrl + f    <span class="comment"># 页面搜索元素, 按 "esc" 退出搜索模式</span>
-ctrl + g   <span class="comment"># 查找与您在”在网页上查找”框中输入的内容相匹配的下一个匹配项 (同 f3) </span>
-ctrl + <span class="keyword">shift</span> + g    <span class="comment"># 查找与您在”在网页上查找”框中输入的内容相匹配的上一个匹配项(同 shift + f3)</span>
-ctrl + u    <span class="comment"># 查看当前页面源码</span>
-ctrl + <span class="keyword">shift</span> + [i|j]     <span class="comment"># 打开 / 关闭console，相当于f12或鼠标右击页面选择"审查元素"</span>
-
-ctrl + t     <span class="comment"># 打开新的标签页</span>
-ctrl + w     <span class="comment"># 关闭当前标签页(等同于 ctrl + f4)</span>
-ctrl + <span class="keyword">shift</span> + t     <span class="comment"># 打开上一次关闭的标签页(多次使用可以恢复多个关闭的页面)</span>
-ctrl + tab  <span class="comment"># 正向循环获取当前窗口已打开标签页焦点</span>
-ctrl + <span class="keyword">shift</span> + tab  <span class="comment"># 反向循环获取当前窗口已打开标签页焦点</span>
-ctrl + [<span class="number">1</span>~<span class="number">8</span>]    <span class="comment"># 切换到指定位置编号的标签页, 您按下的数字代表标签页横条上的相应标签位置</span>
-ctrl + <span class="number">9</span>    <span class="comment"># 切换到最后一个标签页</span>
-
-ctrl + n     <span class="comment"># 新打开一个浏览器窗口</span>
-ctrl + <span class="keyword">shift</span> + n     <span class="comment"># 以隐身模式新打开浏览器窗口</span>
-
-ctrl + j     <span class="comment"># 打开下载内容</span>
-ctrl + h     <span class="comment"># 打开历史记录</span>
-ctrl + o    <span class="comment"># 选择文件，用chrome打开</span>
-
-ctrl + d     <span class="comment"># 将当前标签页加入书签（上次添加书签位置）</span>
-ctrl + <span class="keyword">shift</span> + d     <span class="comment"># 将当前标签页加入书签 (自定义书签存放位置)</span>
-ctrl + <span class="keyword">shift</span> + b     <span class="comment"># 显示 / 关闭书签栏</span>
-ctrl + <span class="keyword">shift</span> + [o|t]     <span class="comment"># 打开书签管理器</span>
-
-ctrl + l    <span class="comment"># 定位地址栏并选中，等同于[ windows + d | f6], 如果按 alt + enter 则会在新标签页打开地址</span>
-输入网址<span class="string">"www."</span>和<span class="string">".com"</span>中间部分，按 ctrl + enter 即可自动补全<span class="string">"www."</span>和<span class="string">".com"</span>并打开网址
-地址栏输入可以搜索的链接(baidu.com、github.com...)，再按tab键可以实现对应网站的搜索功能
-
-esc     <span class="comment"># 关闭弹出框、停止刷新等操作</span>
-f5      <span class="comment"># 刷新(重新加载)当前页</span>
-ctrl + <span class="keyword">shift</span> + <span class="keyword">delete</span>   <span class="comment"># 清除chrome数据(缓存、历史...)</span>
-<span class="keyword">shift</span> + esc     <span class="comment"># 查看标签页的任务管理器</span>
-alt + f4    <span class="comment"># 关闭当前窗口</span>
-ctrl + <span class="keyword">shift</span> + <span class="keyword">q</span>     <span class="comment"># 关闭所有标签，退出 chrome 浏览器</span>
-</code></pre><p>技巧：</p>
-<pre><code>&gt; console.&lt;[<span class="command">log</span>|info|warn|<span class="keyword">error</span>]&gt;(<span class="string">"message"</span>)    <span class="comment"># 面板以类型[日志|信息|警告|错误]打印信息message</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>为提高工作效率，现整理了些 chrome 常用技巧和快捷键：</p>
-<pre><code>-<span class="ruby"> 断网情况下, chrome网页页面会出现一只可爱的小恐龙和提示内容<span class="string">"无法显示此页面"</span>，按<span class="string">"空格"</span>键，可以玩个小游戏放松心情
-</span>
--<span class="ruby"> 按住 ctrl 点击页面链接，后台以新标签打开链接页面(该操作同样适合 chrome 回退/前进等), 你仍停留在当前标签页
-</span>
--<span class="ruby"> 按住 ctrl + shift 点击页面链接，新标签打开链接, 同时切换到新打开的标签页
-</span>
--<span class="ruby"> 按住 shift 点击页面链接, 在新窗口打开链接
-</span>
--<span class="ruby"> 将链接拖动到标签页内, 在指定标签页中打开链接; 
-</span>
--<span class="ruby"> 将链接拖动到两个标签页之间,则在标签页横条的指定位置建立一个新标签页然后打开链接;</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
-    
-      <category term="web" scheme="http://effine.cn/tags/web/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
   </entry>
   
