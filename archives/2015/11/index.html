@@ -223,9 +223,9 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer（有的加入head标签内；不过推荐放在footer，不影响页面加载）即可; 本站采用landscape主题，所以以该主题来讲解添加百度统计，其他主题配置大同小异。</p>
+        <p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
 <pre><code><span class="comment"># 以下内容来源网络</span>
-<span class="number">1.</span>编辑文件 themes/landscape/_config.yml,添加一行配置，<span class="string">"#"</span>注释原来的google analytics
+<span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行
 
     baidu_tongji: <span class="constant">true</span>      <span class="comment"># 百度统计</span>
 
@@ -238,7 +238,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     &lt;/<span class="keyword">script</span>&gt;
     &lt;% } %&gt;
 
-<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 内添加
+<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 标签内添加
 
     &lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;
 
