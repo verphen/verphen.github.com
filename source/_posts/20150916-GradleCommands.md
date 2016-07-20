@@ -2,9 +2,12 @@ title: Gradle Commands
 tags:
   - gradle
   - commond
-categories: algorithm
+categories: tools
 date: 2016-07-16 20:37:54
 ---
+
+![Gradle](http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg)
+
 常用的gradle命令集锦：
 
     $ gradle        # 欢迎信息
@@ -18,12 +21,16 @@ date: 2016-07-16 20:37:54
     $ gradle test       # 编译
     $ gradle check      # 代码质量检查
 
+<!-- more -->
+
 使用技巧：
-> maven项目秒转成gradle项目:
-> 
-	$ gradle setupBuild --type pom		# gradle1.7的写法
+。 maven项目秒转成gradle项目:
+	
+    $ gradle setupBuild --type pom		# gradle1.7的写法
 	$ gradle init --type pom		# gradle2.0的写法
 
-> 设置gradle本地仓库路径：
-> 
-	设置环境变量即可： GRADLE_USER_HOME = dest-path(目标目录)
+。 设置gradle本地仓库路径： 
+	
+    设置环境变量即可： GRADLE_USER_HOME = dest-path(目标目录)
+
+题图来源：gradle官方 https://gradle.org/

@@ -5,8 +5,7 @@ tags:
 categories: tools
 date: 2015-11-17 18:08:00
 ---
-
-若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，那你需赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： [http://nginx.org/](http://nginx.org/) （以下讲解环境使用centos，其他环境安装方式大同小异）
+若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： [http://nginx.org/](http://nginx.org/) （以下讲解环境使用centos，其他环境安装方式大同小异）
 
 	$ wget http://nginx.org/download/nginx-1.8.0.tar.gz 	# 下载相应版本nginx
 	$ tar -zxvf nginx-1.8.0.tar.gz [-C <dir>] 	# 解压[指定目录]
@@ -65,7 +64,8 @@ date: 2015-11-17 18:08:00
 解决： 没有权限，使用root用户启动
 
 根据nginx源码安装延伸
-	. configure 	# 该文件是软件提供者提供的shell脚本,生成makefilse
+
+	. configure 	# 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境
 	. make		# 编译源码，生成Makefile
 	. make install    # 读取Makefile中的指令，开始安装
 
