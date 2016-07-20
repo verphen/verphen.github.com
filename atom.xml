@@ -489,22 +489,19 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/15/EclipseTasks/"/>
     <id>http://effine.cn/2015/11/15/EclipseTasks/</id>
     <published>2015-11-15T14:15:02.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记以后来完善的代码，借助eclipse tasks来实现是最好不过了！</p>
-<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks</p>
-<p>// 以下总结来源于网络</p>
+    <updated>2016-07-20T16:08:08.000Z</updated>
+    <content type="html"><![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
+<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p>
 <pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
 . TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>
 . XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>
 . 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span>
-
-上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯
-</code></pre><p>当然，你还可以对标识设置优先权(proprity)</p>
+</code></pre><p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p>
+<p>当然，你还可以对标识设置优先权(proprity)</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记以后来完善的代码，借助eclipse tasks来实现是最好不过了！</p>
-<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks</p>
-<p>// 以下]]>
+    <![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
+<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义]]>
     </summary>
     
       <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
