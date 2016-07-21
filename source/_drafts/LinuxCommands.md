@@ -4,6 +4,8 @@ tags:
 
 echo $variable-name   打印环境变量名的值
 
+![command]  	# 执行最近执行过的命令command
+
 netstat -tln | grep 8080 查看端口8080的使用情况
 
 man command / command --help 可以查看命令command的帮助文档
