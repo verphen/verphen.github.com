@@ -4,7 +4,7 @@
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-07-19T16:05:10.000Z</updated>
+  <updated>2016-07-24T14:37:49.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,13 +19,14 @@
     <link href="http://effine.cn/2016/07/16/GradleCommands/"/>
     <id>http://effine.cn/2016/07/16/GradleCommands/</id>
     <published>2016-07-16T12:37:54.000Z</published>
-    <updated>2016-07-19T16:05:10.000Z</updated>
+    <updated>2016-07-24T14:37:49.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
 <p>常用的gradle命令集锦：</p>
 <pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
 <span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
 <span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
 <span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
+<span class="variable">$ </span>gradle &lt;task&gt;     <span class="comment"># 运行build.gradle中定义的任务</span>
 <span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
 <span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
 <span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
@@ -47,6 +48,7 @@
 <span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
 <span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
 <span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
+<span class="variable">$ </span>gradle &lt;task&gt;     <span class="comment"># 运行build.gradle中定义的任务</span>
 <span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
 <span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
 <span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
@@ -517,11 +519,11 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/10/GitConfig/"/>
     <id>http://effine.cn/2015/11/10/GitConfig/</id>
     <published>2015-11-10T10:17:52.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2016-07-24T14:44:00.000Z</updated>
     <content type="html"><![CDATA[<p>Git配置存在适用范围：</p>
 <ul>
-<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
-<li>系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件</li>
+<li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： <code>git config - -global</code>      # 保存在用户根目录.gitconfig文件</li>
 </ul>
 <p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
 <pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
@@ -542,6 +544,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     &gt; checkout [co]
     &gt; branch [br]
     &gt; diff [df]
+    &gt; cherry-pick [cp]
 <span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>
     [<span class="keyword">alias</span>]  
       st = status  
@@ -549,6 +552,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
       br = branch  
       co = checkout  
       df = diff 
+      cp = cherry-pick
 
 <span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span>
 <span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; 
@@ -559,8 +563,8 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <summary type="html">
     <![CDATA[<p>Git配置存在适用范围：</p>
 <ul>
-<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
-<li>系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件</]]>
+<li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： <code>git config - -global</code>    ]]>
     </summary>
     
       <category term="config" scheme="http://effine.cn/tags/config/"/>
@@ -576,10 +580,10 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2016-07-24T13:51:30.000Z</updated>
     <content type="html"><![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
 </code></pre><p>[查看标签]</p>
-<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span>]        <span class="comment"># 查看所有标签列表[list]</span>
+<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>
 $ git show <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 查看标签tag-name信息</span>
 </code></pre><p>[创建/切换标签]</p>
 <pre><code>$ git <span class="keyword">tag</span> <span class="title">&lt;v1</span>.<span class="number">0</span>&gt;     <span class="comment"># 创建轻量级标签v1.0</span>
@@ -1085,7 +1089,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
     <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
     <published>2015-07-07T01:27:14.000Z</published>
-    <updated>2016-07-05T15:11:33.000Z</updated>
+    <updated>2016-07-24T14:04:45.000Z</updated>
     <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
 <pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
 ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
@@ -1096,8 +1100,8 @@ ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消
 alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
 
 ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
-                      鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
+<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
+ctrl + <span class="built_in">shift</span> + o    
 ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
 
 ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
@@ -1119,6 +1123,7 @@ Ctrl + Shift + t    <span class="comment"># 打开类型</span>
 ctrl + 鼠标右键点击(变量或方法)     <span class="comment"># 进入其定义或实现</span>
 ctrl + l     <span class="comment"># 跳转到指定行号的行</span>
 ctrl + m    <span class="comment"># 焦点(编辑区/导航树...)区全屏切换</span>
+ctrl + [e | f6]    <span class="comment"># 在右边显示出当前打开的所有文件</span>
 
 alt + /     <span class="comment"># 显示提示信息</span>
 alt + 左右方向键     <span class="comment"># 后退/前进"ctrl+鼠标右键点击"的跳转流程或操作位置</span>
@@ -1154,8 +1159,8 @@ ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消
 alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
 
 ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-ctrl + <span class="built_in">shift</span> + o     <span class="comment"># 自动导入必须包;</span>
-                      鼠标焦点在当前java文件内，则只针对当前文件；如果焦点在整个工程，则针对项目所有的文件
+<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
+ctrl + <span class="built_in">shift</span> + o    
 ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
 
 ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>

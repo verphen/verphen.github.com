@@ -101,8 +101,8 @@
       
         <p>Git配置存在适用范围：</p>
 <ul>
-<li>项目范围： git config      # 保存在项目根目录.git/config文件</li>
-<li>系统用户范围： git config –global      # 保存在用户根目录.gitconfig文件</li>
+<li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
+<li>系统用户范围： <code>git config - -global</code>      # 保存在用户根目录.gitconfig文件</li>
 </ul>
 <p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
 <pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
@@ -123,6 +123,7 @@
     &gt; checkout [co]
     &gt; branch [br]
     &gt; diff [df]
+    &gt; cherry-pick [cp]
 <span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>
     [<span class="keyword">alias</span>]  
       st = status  
@@ -130,6 +131,7 @@
       br = branch  
       co = checkout  
       df = diff 
+      cp = cherry-pick
 
 <span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span>
 <span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; 
@@ -182,7 +184,7 @@
       
         <pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
 </code></pre><p>[查看标签]</p>
-<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span>]        <span class="comment"># 查看所有标签列表[list]</span>
+<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>
 $ git show <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 查看标签tag-name信息</span>
 </code></pre><p>[创建/切换标签]</p>
 <pre><code>$ git <span class="keyword">tag</span> <span class="title">&lt;v1</span>.<span class="number">0</span>&gt;     <span class="comment"># 创建轻量级标签v1.0</span>
