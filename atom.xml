@@ -817,7 +817,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
     <id>http://effine.cn/2015/07/15/MavenCommands/</id>
     <published>2015-07-15T02:43:38.000Z</published>
-    <updated>2016-06-27T15:21:56.000Z</updated>
+    <updated>2016-07-24T15:56:23.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
@@ -845,6 +845,8 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
 
 <span class="comment"># 启动服务前需配置相应插件</span>
 <span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
+  <span class="comment"># eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行</span>
+  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D</span> maven.test.skip=<span class="literal">true</span> -<span class="constant">P</span> xxx  
 <span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
 
 <span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>

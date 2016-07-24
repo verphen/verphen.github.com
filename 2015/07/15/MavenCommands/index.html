@@ -22,7 +22,7 @@ $ mvn archetype:create    # 创建 maven 项目
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
   -DartifactId=&apos;projectname&apos; -DarchetypeArtifactI">
 <meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
-<meta property="og:updated_time" content="2016-06-27T15:21:56.000Z">
+<meta property="og:updated_time" content="2016-07-24T15:56:23.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 命令详解">
 <meta name="twitter:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
@@ -141,6 +141,8 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 
 <span class="comment"># 启动服务前需配置相应插件</span>
 <span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
+  <span class="comment"># eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行</span>
+  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D</span> maven.test.skip=<span class="literal">true</span> -<span class="constant">P</span> xxx  
 <span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
 
 <span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
