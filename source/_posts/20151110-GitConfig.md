@@ -8,8 +8,8 @@ date: 2015-11-10 18:17:52
 
 Git配置存在适用范围：
 
--  项目范围： git config      # 保存在项目根目录.git/config文件
--  系统用户范围： git config --global      # 保存在用户根目录.gitconfig文件
+-  项目范围： `git config`    # 保存在项目根目录.git/config文件
+-  系统用户范围： `git config - -global`      # 保存在用户根目录.gitconfig文件
 
 便于使用，我们通常配置系统用户范围；一些具体配置如下
 
@@ -31,6 +31,7 @@ Git配置存在适用范围：
 		> checkout [co]
 		> branch [br]
 		> diff [df]
+        > cherry-pick [cp]
 	# 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)
 		[alias]  
 	      st = status  
@@ -38,6 +39,7 @@ Git配置存在适用范围：
 	      br = branch  
 	      co = checkout  
 	      df = diff 
+          cp = cherry-pick
 	   
 	# 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)
     $ git config  --global  core.autocrlf <false|true> 

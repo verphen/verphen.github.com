@@ -14,6 +14,7 @@ date: 2016-07-16 20:37:54
     $ gradle [-v | --version]       # 显示gradle相关版本及相关环境版本信息
     $ gradle eclipse        # 构建eclipse项目开发环境(创建.classpash等文件)
     $ gradle tasks      # 得到可运行的任务和描述的完整列表
+    $ gradle <task>     # 运行build.gradle中定义的任务
     $ gradle assemble       # 编译程序源码打包生成jar文件，不执行单元测试
     $ gradle build      # 编译程序源码打包生成jar文件,执行单元测试
     $ gradle compileJava        # 编译程序中的源代码
