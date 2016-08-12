@@ -36,6 +36,8 @@ date: 2015-07-15 10:43:38
 
     # 启动服务前需配置相应插件
     $ mvn jetty:run   # 启动jetty服务
+      # eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行
+      eg: mvn clean jetty:run -D maven.test.skip=true -P xxx  
     $ mvn tomcat:run  # 启动tomcat服务
 
     $ mvn eclipse:eclipse     # 生成eclipse项目文件,将项目转换成eclipse项目
