@@ -65,6 +65,22 @@ eg: docker port tomcat		# 查看容器tomcat的端口映射情况
 # 退出容器
 $ exit 		交互方式启动的容器可以使用ctrl + c 退出容器
  
+# 查看容器或镜像基本的信息
+$ docker inspect [OPTIONS] CONTAINER|IMAGE [CONTAINER|IMAGE...]
+OPTIONS选项：
+	-f, --format       指定给定的如果Go语言模板
+  	--help             Print usage
+  	-s, --size         如果是容器，显示总文件大小
+  	--type             返回JSON的特定类型（类型为container或image）
+
+# 连接到运行的容器
+$ docker attach [OPTIONS] CONTAINER
+OPTIONS选项：
+	--detach-keys       Override the key sequence for detaching a container
+  	--help              Print usage
+  	--no-stdin          Do not attach STDIN
+  	--sig-proxy=true    Proxy all received signals to the process
+
 
 # 显示镜像的创建历史
 $ docker history [OPTIONS] IMAGE
