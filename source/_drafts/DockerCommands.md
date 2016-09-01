@@ -4,7 +4,7 @@ tags:
 
 注： 以下命令出现的COTAINER可以用容器名或容器ID来使用
 
-$ docker version 	# 查看docker版本信息
+$ docker version 	# 查看docker Client及Server版本信息
 $ docker images 	# 查看本机的所有镜像
 $ docker pull IMAGE 	# 默认从官方(docker.com)拉取镜像
 ps: 若未翻墙，可以去国内镜像库(daocloud.io)查找对应镜像来拉取
@@ -80,6 +80,16 @@ OPTIONS选项：
   	--help              Print usage
   	--no-stdin          Do not attach STDIN
   	--sig-proxy=true    Proxy all received signals to the process
+
+# 查看容器的日志
+$ docker logs [OPTIONS] CONTAINER
+
+
+# 查看系统范围信息
+$ Docker info [OPTIONS]
+
+# 在Docker Hub搜索镜像
+$ docker search [OPTIONS] TERM
 
 
 # 显示镜像的创建历史

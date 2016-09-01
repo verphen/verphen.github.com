@@ -48,16 +48,6 @@ apt: Advanced package Tool ;APT是一个为Debian系列系统（Ubuntu，Kubuntu
 
 	apt-get / apt-cache 的使用
 
-tar命令(参数)
-	
-	$ tar -czf <dist.tar.gz> <dist_dir> 	# 压缩
-	$ tar -zxf 	<dist.tar.gz> [-C <dist_dir>]	#  解压到当前目录(-C解压到指定目录)
-	$ tar -jxvf <dist.tar.bz2> 	# 解压tar.bz2后缀文件
-
-unzip *.zip  解压zip文件
-gzip filename;压缩文件(解压缩：gzip -d filename)
-
-
 cal: Calender 日历
 
 date: 查看时间；这个命令在脚本中十分有用，以及基于时间和日期的脚本更完美
