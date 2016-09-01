@@ -37,5 +37,31 @@ tar命令(参数)
 	$ tar -jxvf <dist.tar.bz2> 	# 解压tar.bz2后缀文件
 	$ tar -zcvf <dist.tar.gz>  --exclude <Skip files> <source_dir>  # 跳过文件压缩
 
+
+> 压缩命令
+     。zip  <压缩后的文件名>   <源文件>          - - 压缩文件
+         zip -r   <压缩后的文件>     <源目录>          - -压缩目录
+         unzip <压缩文件>      - - 解压( -d dir 解压到其他目录)
+     。tar -cvf   <打包文件名>      <源文件>     - - 压缩文件
+          -c      创建 | 打包
+          -v      显示过程
+          -f      指定打包后的文件名
+
+          -x      解压打包
+          -z      压缩以打包文件为.tar.gz
+                   $ tar -zcvf   <压缩后的文件名.tar.gz>    <待压缩的文件名1  待压缩的文件名2  ...>
+          -t      测试压缩文件，便于查看压缩文件里面的目录和文件
+                  $ tar -ztvf   <压缩后的文件名.tar.gz>            - - 参数v便于显示压缩文件内容
+
+          -j       压缩已打包文件为.tar.bz2
+                    $ tar -jcvf   <压缩后的文件名.tar.bz2>    <待压缩的文件名>
+
+         tar -zxvf test.tar.gz -C /usr           - - 通过参数大写C解压test.tar.gz到/usr目录
+
+
+
+
+         
+
 unzip *.zip  解压zip文件
 gzip filename;压缩文件(解压缩：gzip -d filename)
