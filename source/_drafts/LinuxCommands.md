@@ -27,8 +27,31 @@ uname： unix name；显示机器名
 		x86_64 - 处理器架构
 		GNU/Linux - 操作系统名
 
-history : 操作系统终端执行过的命令历史
+history : 操作系统终端执行过的命令历史(历史命令存储在文件 ~/.bash_history)
 	 
+	 	# 默认1000条，如需修改异步文件 /etc/profile下的HISTSIZE属性
+
+> 查看历史命令; history和文件./bash_history可能不一样，history可以查看保存历史命令文件中的所有命令加上用户登录之后所输入的命令，而文件只是保存本次登录之前的所有历史命令，如用户退出则会写入本次登录输入的命令到文件；
+     history           查看历史命令
+          -c      清空历史命令
+          -w     强制写入登录后的历史命令到文件~/.bash_history
+          
+	 设置历史命令执行时间：
+     临时：HISTTIMEFORMAT="%d/%m/%y %T "
+     永久：vi ~/.bashrc
+           加入：export HISTTIMEFORMAT="%d/%m/%y %T "
+           执行： source ~/.bashrc
+
+     命令和选项的解释：
+		history – 查看运行过的命令
+		HISTIMEFORMAT – 设置时间格式的环境变量
+		%d – 天
+		%m – 月
+		%y – 年
+		%T – 时间戳
+		source – 简而言之就是将文件内容发送给shell来执行
+		.bashrc – BASH以交互方式启动时运行的脚本文件
+
 		按住“CTRL + R”就可以搜索已经执行过的命令，它可以在你写命令时自动补全。
 
 		如：(reverse-i-search)`if': ifconfig 
