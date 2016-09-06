@@ -158,3 +158,28 @@ grep: Global Regular Expression Print 全局正则表达式版本
 	终端保持当前目录不变，去别的目录执行命令；只需把要执行的命令加上括号即可;
 
 	$ clear 	# 清屏(同操作ctrl + l)
+
+
+设置linux别名用法: alias [-p] [name[=value] ... ] 	# 注：等号和字符串直接不能保护空格
+	
+	OPTIONS:
+
+		p 		# 打印
+		name	# 
+
+
+
+取消linux别名用法: unalias [-a] [name ... ]
+	$ alias [-p] [name] 	# 显示所有设置的所有别名(或指定别名name)，参数p无实际作用
+
+	$ 
+	
+		a 		# 取消所有被定义的别名
+		name 	# 取消具体的别名
+
+
+
+
+
+
+
