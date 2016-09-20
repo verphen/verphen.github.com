@@ -20,7 +20,7 @@ date: 2015-11-17 18:08:00
 	checking for C compiler ... not found
 	./configure: error: C compiler cc is not found
 
-分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc++)
+分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)
 
 	# 错误 2
 	./configure: error: the HTTP gzip module requires the zlib library.
