@@ -22,3 +22,17 @@ GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix' WITH
 待完成：
 
 	同步zabbix的服务器时间（Server  agent）
+
+
+
+查看./configure 帮助，查看参数的含义(如--prefix=/usr/local --with-mysql --with-net-snmp --with-libcurl --enable-server --enable-agent)
+
+
+
+ 
+
+
+
+
+
+
