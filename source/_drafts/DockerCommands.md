@@ -31,6 +31,9 @@ OPTIONS选项：
 	-v, --volumes	移除与容器关联的空间
 	--help 			Print usage
 
+$ docker rm -f $(docker ps -a -q)   	# 删除所有容器（包括运行中的容器）
+
+
 # 重命名容器
 $ docker rename [OPTIONS] OLD_NAME NEW_NAME
 

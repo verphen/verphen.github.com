@@ -1,5 +1,6 @@
 
 yum groupinstall 命令详解
+yum groupinfo []
 
 加密：
 https://my.oschina.net/u/724133/blog/299362
@@ -12,7 +13,6 @@ show variables like '%max_connections%';
 
 zabbix安装教程：http://www.360doc.com/content/14/0529/21/8085797_382121204.shtml
 
-./configure --sysconfdir=/etc/zabbix/ --enable-server --enable-agent --with-net-snmp --with-libcurl --with-mysql
 
 
 GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix' WITH GRANT OPTION;
@@ -24,13 +24,8 @@ GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix' WITH
 	同步zabbix的服务器时间（Server  agent）
 
 
-
-查看./configure 帮助，查看参数的含义(如--prefix=/usr/local --with-mysql --with-net-snmp --with-libcurl --enable-server --enable-agent)
-
-
-
  
-
+新版本docker安装,且添加daocloud.io的加速服务: https://www.daocloud.io/mirror#accelerator-doc
 
 
 
