@@ -24,10 +24,16 @@ GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix' WITH
 	同步zabbix的服务器时间（Server  agent）
 
 
- 
-新版本docker安装,且添加daocloud.io的加速服务: https://www.daocloud.io/mirror#accelerator-doc
 
 
 
 
+ http://blog.chinaunix.net/uid-10299986-id-2964493.html
+
+
+yum -y install 包名（支持*） ：自动选择y，全自动
+yum install 包名（支持*） ：手动选择y or n
+yum remove 包名（不支持*）
+rpm -ivh 包名（支持*）：安装rpm包
+rpm -e 包名（不支持*）：卸载rpm包
 
