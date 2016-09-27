@@ -31,6 +31,9 @@ OPTIONS选项：
 	-v, --volumes	移除与容器关联的空间
 	--help 			Print usage
 
+$ docker rm -f $(docker ps -a -q)   	# 删除所有容器（包括运行中的容器）
+
+
 # 重命名容器
 $ docker rename [OPTIONS] OLD_NAME NEW_NAME
 
@@ -101,3 +104,9 @@ OPTIONS选项：
 	--help              Print usage
 	--no-trunc          显示完整的提交记录，不截断输出
 	-q, --quiet         仅列出提交记录ID
+
+
+技巧：
+
+	。 由于某些原因，pull Docker镜像比较慢，你可以使用Daocloud的Docker加速器，https://www.daocloud.io/mirror#accelerator-doc
+

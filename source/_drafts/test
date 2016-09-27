@@ -1,3 +1,0 @@
-mvn install -Dgpg.skip
-
-export LC_ALL=en_US.UTF-8

@@ -158,3 +158,23 @@ grep: Global Regular Expression Print 全局正则表达式版本
 	终端保持当前目录不变，去别的目录执行命令；只需把要执行的命令加上括号即可;
 
 	$ clear 	# 清屏(同操作ctrl + l)
+
+linux别名：
+
+	设置: alias [-p] [name[=value] ... ]
+		注：设置的别名，只对当前shell的本次会话有效
+		OPTIONS:
+			p 		# 打印
+			name=value	# 设置的别名name及实际命令value；等号前后无空格
+		eg:
+			$ alias [-p] 			# 打印所有已设置的别名列表
+			$ alias ll='ls -l'		# 设置‘ls -l’的别名为'll'; 若value存在空格，需使用引号括起来
+			$ alias ll='ls -l' cds='cd /sources' 	# 设置命令多个别名
+
+	取消: unalias [-a] [name ... ]
+		OPTIONS:
+			a 		# 取消所有被定义的别名
+			name 	# 取消具体的别名
+		eg:
+			$ unalias -a 		# 取消所有已定义的别名
+			$ unalias ll 		# 取消别名ll
