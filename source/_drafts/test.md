@@ -30,10 +30,17 @@ GRANT ALL PRIVILEGES ON zabbix.* TO zabbix@localhost IDENTIFIED BY 'zabbix' WITH
 
  http://blog.chinaunix.net/uid-10299986-id-2964493.html
 
-
 yum -y install 包名（支持*） ：自动选择y，全自动
 yum install 包名（支持*） ：手动选择y or n
 yum remove 包名（不支持*）
 rpm -ivh 包名（支持*）：安装rpm包
 rpm -e 包名（不支持*）：卸载rpm包
 
+
+
+docker 网络管理：
+	docker network create --subnet=172.18.0.0/16 shadownet
+	docker network create --subnet=10.0.110.0/24 oraclenet
+
+	docker run --net shadownet --ip 172.18.0.22 --net oraclenet --ip 10.0.110.22 -it testimage /bin/bash
+	运行后的容 器只加入到oraclenet里了。	 
