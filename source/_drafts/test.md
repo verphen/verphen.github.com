@@ -120,4 +120,4 @@ docker 网络管理：
 	运行后的容 器只加入到oraclenet里了。	 
 
 
-
+mysql中engine=innodb和engine=myisam的区别
