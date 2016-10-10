@@ -1,7 +1,7 @@
 title: MongodbInstall
 tags:
 ---
-首先去[MongoDB官网](https://www.mongodb.com/download-center#community)下载安装包
+首先去[MongoDB官网](https://www.mongodb.com/download-center#community)下载安装包; 参考(http://jingyan.baidu.com/article/0a52e3f4217e65bf62ed729a.html)
 
     # 安装目录：/usr/local
     cd /usr/local
@@ -28,3 +28,24 @@ tags:
         nohttpinterface=true
 
 
+# 启动
+$ ./mongod < - -config | -f > mongodb.conf
+
+        
+        
+2. 启动mongodb出现的错误解决方案
+
+    。 ./mongod: error while loading shared libraries: libssl.so.6: cannot open shared object file: No such file or directory
+    
+    解决方案：
+    
+        # 创建软链接（参考 http://www.jiaozn.com/reed/19.html）
+        $ ln -sf /usr/lib64/libssl.so.10 /usr/lib64/libssl.so.6
+        $ ln -sf /usr/lib64/libcrypto.so.10 /usr/lib64/libcrypto.so.6
+      
+    。2016-06-08T08:56:11.619+0000 F CONTROL  [main] Failed global initialization: BadValue: Invalid or no user locale set. Please ensure LANG and/or LC_* environment variables are set correctly.
+    
+    解决方案：
+    
+        # 清除当前shell所有本地化的设置，让命令能正确执行
+        $ export LC_ALL=C   
