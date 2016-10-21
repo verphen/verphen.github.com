@@ -40,3 +40,13 @@ solr集群搭建之前必须先搭建zookeeper集群；
 
 4. 向solr的collection
 
+
+issuse: 
+	在collecgion/core.properties的配置参数含义：
+
+		#Written by CorePropertiesLocator
+		#Tue Mar 03 19:10:26 CST 2015
+		name=songshu-dev
+		config=solrconfig.xml
+		schema=schema.xml
+		dataDir=/home/comall/software/solrhome/songshu-dev/data
