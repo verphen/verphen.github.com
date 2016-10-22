@@ -26,10 +26,26 @@ db.shutdownServer()           #停止mongodb服务
           $ for(i=3; i<100; i++)db.name.insert({x:i})           循环插入数据
      > db.collection_name.save(document)；  save和insert方法都是向集合插入文档(document为json数据)
 
-     > db.collection_name.find()               查询集合的所有数据(以非机构化显示，如需要格式化显示使用pretty)
+    > db.collection_name.find()    查询集合的所有数据(以非机构化显示，如需要格式化显示使用pretty)
+
+    > db.collection_name.find(document,{key:1,_id:0})   查询条件为document的数据，且结果只显示列key,不显示列_id(该列默认都会显示，需要设置才会不显示)
+  
+    > limit(number)   限制结果显示个数
+    > skip(number)    查询结果跳过第n个记录
+    > sort({key:1,key1:-1})   查询结果排序(默认为升序1，-1为降序)
+    > 
 
           $ db.collection_name.find().pretty()    
-          
+
+    > db.collection_name.findOne()  返回第一个document
+    > and的实现
+      $ db.collection_name.find({key1:value1,key2:value2})    多条件同时满足的查询
+
+    > OR 的实现
+      $ db.collection_name.find({
+          $or: [{key1:value1},{key2:value2}]
+        })
+    
      
 
      db.collection_name.find().count()           查询总记录数
