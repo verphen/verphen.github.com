@@ -50,7 +50,6 @@ tags:
 
 
 
-
 # 启动
 $ ./mongod < - -config | -f > mongodb.conf
 
