@@ -21,16 +21,12 @@ tags:
 	#连接参数
 		-p 监听端口(默认为11211)
 		-l 连接的IP地址,默认是本机
-		-d start启动memecache服务
-		-d restart重启
-		-d stop|shutdown关闭服务
-		-d install 安装
-		-d uninstall 卸载
-		-u 以身份运行仅在root下有效
+		-d 以守护进程运行
+		-u 以什么用户运行(仅以root运行时使用)
 		-m 最大内存使用,单位MB,默认64MB,最大2G
 		-M 内存耗尽时返回错误
 		-c 最大同时连接数量,默认是1024
-		-f 块大小增长因为,默认是1.25
+		-f 块大小增长因子,默认是1.25
 		-n 最小分配空间,key+value+flags默认48
 		-h 显示帮助
 
