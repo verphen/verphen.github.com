@@ -1,4 +1,11 @@
 
+
+
+BeanUtils.copyProperties()复制model属性
+
+
+
+
 ln -s ./pcre_chartables.c.dist pcre_chartables.c
 
 
