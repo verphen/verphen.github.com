@@ -11,6 +11,15 @@ tags: linux
 	1. 添加用户 useradd username（adduser username  ,会默认创建用户环境 ）
 	2. 修改密码：passwd username
 
+$ userdel [options] user		# 删除用户
+Options:
+	-f, --force                 force removal of files,even if not owned by user
+	-h, --help                    display this help message and exit
+	-r, --remove                  remove home directory and mail spool
+	-Z, --selinux-user            remove SELinux user from SELinux user mapping
+	
+
+
 用户列表文件：/etc/passwd
 用户组列表文件：/etc/group
 查看系统中有哪些用户：cut -d : -f 1 /etc/passwd

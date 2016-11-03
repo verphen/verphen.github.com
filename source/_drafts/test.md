@@ -9,13 +9,12 @@ ACID的英文
 
 标准都是滞后于发现！  标准不等于就是对的
 
+BeanUtils.copyProperties()复制model属性
+>>>>>>> fbfca85bcff2dc2cad6d613ddafc6145b9906c75
 
 
 
 
-
-
-test
 ln -s ./pcre_chartables.c.dist pcre_chartables.c
 
 

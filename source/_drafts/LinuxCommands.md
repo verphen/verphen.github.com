@@ -14,6 +14,9 @@ lsblk 列出块设备。除了RAM外，以标准的树状输出格式，整齐�
 
 md5sum filename 检验文件是否被改变
 
+linux创建不同的目录(使用"{}"来创建层级目录) 
+$ mkdir -p dd1/dd2/{t1,t2,t3/tt31,t4/{t41,t42}}
+
 dd 复制或转换文件，可以用来制作usb启动器; dd if=/home/centos.iso of=/dev/sdb1 bs=512M; sync (可以使用lsblk查看usb所在块的名称)
 
 uname： unix name；显示机器名
@@ -178,3 +181,12 @@ linux别名：
 		eg:
 			$ unalias -a 		# 取消所有已定义的别名
 			$ unalias ll 		# 取消别名ll
+
+
+创建并编辑文件：
+     $ cat << EOF > /home/test/test.txt
+     > input ...
+     > input ....
+     > input ...
+     > EOF
+创建完成(EOF可以使用其他字符替换)

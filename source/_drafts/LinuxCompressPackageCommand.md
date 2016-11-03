@@ -44,6 +44,7 @@ tar命令(参数)
          unzip <压缩文件>      - - 解压( -d dir 解压到其他目录)
      。tar -cvf   <打包文件名>      <源文件>     - - 压缩文件
           -c      创建 | 打包
+          -C, --directory=DIR        改变(解压)目录；change to directory DIR
           -v      显示过程
           -f      指定打包后的文件名
 
@@ -59,9 +60,6 @@ tar命令(参数)
          tar -zxvf test.tar.gz -C /usr           - - 通过参数大写C解压test.tar.gz到/usr目录
 
 
-
-
-         
-
 unzip *.zip  解压zip文件
 gzip filename;压缩文件(解压缩：gzip -d filename)
+

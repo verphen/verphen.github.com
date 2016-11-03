@@ -26,7 +26,7 @@ date: 2015-07-06 09:58:09
     
     ctrl + c    # 复制选中内容
     ctrl + shift + c    # 打开审查元素(页面右键"审查元素"或F12),常用于web调试 
-    ctrl + x    # 剪切选中内容（同 shift + delete）
+    ctrl + x    # 剪切选中内容
     ctrl + v    # 粘贴剪贴板内容
     ctrl + shift + v    # 粘贴剪贴板存文本（不含样式）
 
@@ -67,6 +67,7 @@ date: 2015-07-06 09:58:09
     ctrl + f5 / ctrl + shift + r    
 
     ctrl + shift + delete   # 清除chrome数据(缓存、历史...)
+    shift + delete  # 删除地址栏提示链接(需先选中，不包含你已加入书签的链接)
     shift + esc     # 查看标签页的任务管理器
     alt + f4    # 关闭当前窗口
     ctrl + shift + q 	# 关闭所有标签，退出 chrome 浏览器
