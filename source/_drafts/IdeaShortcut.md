@@ -1,4 +1,4 @@
-title: IdeaShortcut
+title: IDEA快捷方式
 tags:
 ---
 
@@ -11,4 +11,5 @@ $ command +	option + B 		# 查看方法的实现细节
 
 $ command +	option + 方向键(左left/右right) 		# 返回至上、下次浏览的位置
 
+$ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）
 $ ctrl + option + H 		# 查看方法调用结构图
