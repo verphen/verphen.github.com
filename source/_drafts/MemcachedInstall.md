@@ -35,7 +35,7 @@ tags:
 	service iptables restart
 
 使用telnet测试memcached是否安装、启动成功
-	telnet 124.192.148.18 (telnet ip port)
+	telnet 124.192.148.18 (telnet <ip|domain name> port)
 
 telnet中的命令：
 
