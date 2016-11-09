@@ -98,4 +98,4 @@ exclude_generator:
 deploy: 
   type: git	
   repository: git@github.com:effine/effine.github.com.git
-  branch: master
+  branch: release
