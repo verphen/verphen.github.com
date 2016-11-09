@@ -1,17 +1,20 @@
 title: Linux命令前后台切换
-tags:
+date: 2016-11-08 21:32:11
+categories: linux
+tags: [command,linux]
 ---
+
 
 注: 命令的前后台切换都是针对当前shell，切换到其他shell无法使用；
 
 $ jobs [option] [number] 		# 查看当前shell后台运行的所有命令或指定命令number作业号
 	
 	Optons：
-		-l 		# 增加显示进程PID列
-		-n
-		-p		# 执行时进程PID
-		-r
-		-s
+		-l 		# 增加显示进程号PID列
+		-n		# 显示任务状态变化
+		-p		# 仅显示对应的进程号PID
+		-r		# 仅显示运行状态（running）的任务
+		-s		# 仅显示停止状态（stoped）的任务
 
 	$ ping baidu.com &
 	$ ping google.com &
