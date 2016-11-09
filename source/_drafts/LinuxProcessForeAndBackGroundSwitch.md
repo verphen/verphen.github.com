@@ -4,6 +4,7 @@ categories: linux
 tags: [command,linux]
 ---
 
+场景
 
 注: 命令的前后台切换都是针对当前shell，切换到其他shell无法使用；
 
