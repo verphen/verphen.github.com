@@ -18,30 +18,31 @@ date: 2015-10-23 22:35:35
 
 [创建\切换\重命名分支]
 
-	$ git branch <name>		# 创建name分支(继承当前分支最新提交来创建)
-	$ git branch <name>  commit_id  # 以指定的提交版本commit_id来创建分支
-	$ git checkout <name> 	# 切换分支到name(分支name需已存在)
-	$ git checkout -b <name>		# 创建分支name并切换到该分支(前提name分支不存在)
-	$ git checkout -b <name> <master>	# 创建分支name并切换到该分支，继承master分支创建而来
-	$ git branch -m <name> <test>		# 重命名name分支为test
+	$ git branch <new_branch>		# 创建新分支(继承当前分支最新提交来创建)
+	$ git branch <new_branch>  commit_id  # 以指定的提交版本commit_id来创建新分支
+	$ git checkout <branch> 	# 切换分支
+	$ git checkout [commit_id] -b <new_branch>		# 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支
+	$ git checkout <commit_id> 		# 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改
+	$ git checkout -b <new_branch> <master>	# 继承master分支创建并切换新分支
+	$ git branch -m <branch> <new_branch>		# 重命名分支
 
 [删除分支]
 
-	# 删除本地分支[name]
-	$ git branch [-d | -D] <name>
-		-d 		# 删除[delete]本地name分支(存在修改或未合并删除失败,多个分支用空格分隔)
-		-D 		# 忽略修改强制删除本地name分支（多个分支用空格分隔）
+	# 删除本地分支
+	$ git branch [-d | -D] <branch>
+		-d 		# 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)
+		-D 		# 忽略修改强制删除本地分支（多个分支用空格分隔）
 
-	# 删除远程分支[name]
-	$ git branch -d -r origin/<name> 	# 删除远程分支name
-	$ git push origin :<name> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
-	$ git push origin --delete <name> 	# [since Git v1.7.0]
+	# 删除远程分支
+	$ git branch -d -r origin/<branch> 	# 删除远程分支
+	$ git push origin :<branch> 	# 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
+	$ git push origin --delete <branch> 	# [since Git v1.7.0]
 
 [合并分支]
 
 	$ git branch --merged 	# 查看已合并的分支列表
 	$ git branch --no-merged	# 查看未合并的分支列表
-	$ git merge <name> 	# 合并name分支到当前分支,发生冲突修复后再次提交
+	$ git merge <branch> 	# 合并其他分支到当前分支,发生冲突修复后再次提交
 
 [关联分支]
 

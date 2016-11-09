@@ -12,6 +12,12 @@ git co  -- <file>   # 抛弃工作区修改
 git co  .           # 抛弃工作区修改
 git co HEAD <file>  # 抛弃工作目录区中文件的修改
 
+
+$ git checkout . 		# 丢弃当前目录(及所有子孙目录)所有文件在工作区的修改，即恢复到最近一次add或commit的状态（注意命令最后有一个点号"."）
+$ git checkout filename 	# 丢弃具体文件在工作区的修改
+
+
+
 git add <file>      # 将工作文件修改提交到本地暂存区
 git add .           # 将所有修改过的工作文件提交暂存区
 
@@ -74,11 +80,6 @@ git add -p filename 选择内容分步提交
 输入 s 来分割该块
 
 
-
-
- git checkout -- file :  丢弃file在工作区（修改之后没有执行git add命令）的修改，file为文件的完整路径名(返回最近一次add或commit的状态)
-
-               如果，执行git add命令后，又对git add的文件进行了修改，再执行git checkout -- file 则意味着丢弃工作区的修改，恢复到执行git add之后的状态
 
 
 

@@ -34,8 +34,7 @@ git经常使用的命令
   		-  git log --stat 仅显示简要的增改行数统计
  		-  git log --pretty=<option> ，其中option可以是：oneline（使每条历史信息在一行中显示），short，full，fuller，format（按指定的格式输出）
                gitk 可以打开历史记录的可视化查看窗口。
-	-  git commit --amend：修改最后一次提交。该命令是提交当前缓存区快照，并修改最后一次的说明。
-	-  git checkout -- <filename>：撤销对文件的修改，慎用！   
+	-  git commit --amend：修改最后一次提交。该命令是提交当前缓存区快照，并修改最后一次的说明。   
 	-  git reset HEAD <filename>：撤销对文件的暂存，让文件回到暂存前的状态。 
 -  Git远程仓库的基本用法：
 	-  git clone [url]：将一个远程仓库克隆到本地。

@@ -27,6 +27,4 @@ git reflog：查看上一次版本情况（回退也能看到）
 
 git rebase master               # 将指定分支的超前提交变基到当前
 
-git checkout -- <file>      # 取消未缓存文件的修改
-
 git mv <file_old> <file_new>    # 重命名跟踪文件
