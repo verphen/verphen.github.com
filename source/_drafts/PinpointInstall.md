@@ -77,9 +77,21 @@ tags:
 
 	  		export JAVA_HOME=/home/comall/software/jdk1.8.0_73
 
+	> 服务端
+	> 将编译pinpoint之后，复制collector.war及web.war放在容器中运行起来(若分开部署可能会出现10080端口冲突)
+
+	
 
 
+	> 配置agent
 
+		AGENT_VERSION="1.5.2"
+		AGENT_ID="comall20161111"
+		APPLICATION_NAME="firt-pinpoint"
+		AGENT_PATH="/home/comall/software/pinpoint-agent-1.5.2"
+		CATALINA_OPTS="$CATALINA_OPTS -javaagent:$AGENT_PATH/pinpoint-bootstrap-${AGENT_VERSION}.jar"
+		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.agentId=$AGENT_ID"
+		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.applicationName=$APPLICATION_NAME"
 
 
 
