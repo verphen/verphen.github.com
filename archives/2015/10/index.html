@@ -3,19 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/10 | effine</title>
+  <title>Archives: 2015/10 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
-<meta property="og:title" content="effine">
+<meta property="og:title" content="追求优雅代码而不断受打击的艺术家">
 <meta property="og:url" content="http://effine.cn/archives/2015/10/index.html">
-<meta property="og:site_name" content="effine">
+<meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="effine">
+<meta name="twitter:title" content="追求优雅代码而不断受打击的艺术家">
 <meta name="twitter:description">
   
-    <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
   
     <link rel="icon" href="/imgs/favicon.png">
@@ -33,7 +33,7 @@
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
         <!-- 其后一行被effine注释 -->
-        <!-- <a href="/" id="logo">effine</a> -->
+        <!-- <a href="/" id="logo">追求优雅代码而不断受打击的艺术家</a> -->
       </h1>
       
         <h2 id="subtitle-wrap">
@@ -107,26 +107,27 @@
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 <span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建name分支(继承当前分支最新提交来创建)</span>
-$ git branch <span class="variable">&lt;name&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建分支</span>
-$ git checkout <span class="variable">&lt;name&gt;</span>     <span class="comment"># 切换分支到name(分支name需已存在)</span>
-$ git checkout -b <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建分支name并切换到该分支(前提name分支不存在)</span>
-$ git checkout -b <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支name并切换到该分支，继承master分支创建而来</span>
-$ git branch -m <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名name分支为test</span>
+<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
+$ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>
+$ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>
+$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
+$ git checkout <span class="variable">&lt;commit_id&gt;</span>         <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
+$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 继承master分支创建并切换新分支</span>
+$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 重命名分支</span>
 </code></pre><p>[删除分支]</p>
-<pre><code><span class="comment"># 删除本地分支[name]</span>
-<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;name&gt;
-    -d         <span class="comment"># 删除[delete]本地name分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地name分支（多个分支用空格分隔）</span>
+<pre><code><span class="comment"># 删除本地分支</span>
+<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;
+    -d         <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
 
-<span class="comment"># 删除远程分支[name]</span>
-<span class="variable">$ </span>git branch -d -r origin/&lt;name&gt;     <span class="comment"># 删除远程分支name</span>
-<span class="variable">$ </span>git push origin <span class="symbol">:&lt;name&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push origin --delete &lt;name&gt;     <span class="comment"># [since Git v1.7.0]</span>
+<span class="comment"># 删除远程分支</span>
+<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;     <span class="comment"># 删除远程分支</span>
+<span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span>
 </code></pre><p>[合并分支]</p>
 <pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;name&gt;     <span class="comment"># 合并name分支到当前分支,发生冲突修复后再次提交</span>
+<span class="variable">$ </span>git merge &lt;branch&gt;     <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
 <pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
 </span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
@@ -139,7 +140,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="ciqqtby1l001pfi2e9yts8i1j" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="civfc5fc7001pgq2ezb5rc4p7" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/10/23/GitBranch/#disqus_thread" class="article-comment-link">Comments</a>
       

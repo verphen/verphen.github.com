@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>vi commands | effine</title>
+  <title>vi commands | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；
 $ vi filename        # 打开或新建文件，并将光标置于首行行首
@@ -13,13 +13,13 @@ $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vi commands">
 <meta property="og:url" content="http://effine.cn/2015/01/10/ViEditorCommands/index.html">
-<meta property="og:site_name" content="effine">
+<meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
 <meta property="og:description" content="Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；
 $ vi filename        # 打开或新建文件，并将光标置于首行行首
 $ vi +n filename     # 点开文件,置光标与文件第n行行首
 $ vi + filename     # 打开文件，置光标于文件尾行行首
 $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
-<meta property="og:updated_time" content="2016-05-08T23:55:45.000Z">
+<meta property="og:updated_time" content="2016-11-12T14:43:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vi commands">
 <meta name="twitter:description" content="Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；
@@ -28,7 +28,7 @@ $ vi +n filename     # 点开文件,置光标与文件第n行行首
 $ vi + filename     # 打开文件，置光标于文件尾行行首
 $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
   
-    <link rel="alternative" href="/atom.xml" title="effine" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
   
     <link rel="icon" href="/imgs/favicon.png">
@@ -46,7 +46,7 @@ $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
         <!-- 其后一行被effine注释 -->
-        <!-- <a href="/" id="logo">effine</a> -->
+        <!-- <a href="/" id="logo">追求优雅代码而不断受打击的艺术家</a> -->
       </h1>
       
         <h2 id="subtitle-wrap">
@@ -146,25 +146,34 @@ $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
 <span class="variable">$ </span>nz        <span class="comment"># 将第n行滚至屏幕顶部，不指定n时将当前行滚至屏幕顶部</span>
 </code></pre><p> [删除/复制/粘贴]</p>
 <pre><code><span class="variable">$ </span>x/<span class="constant">X </span>        <span class="comment"># 删除一个字符[向后/前],相当于[del/Backspace键]</span>
-<span class="variable">$ </span>dd/ndd -- 删除当前行 / 删除当前行及其后n-<span class="number">1</span>行
-<span class="variable">$ </span>yy/nyy -- 复制光标所在的那一行 / 复制光标所在行的向下n行
-<span class="variable">$ </span>p/<span class="constant">P（</span>大写） -- 粘贴复制的内容到光标所在行的下一行 / 上一行
+<span class="variable">$ </span>dd/ndd    <span class="comment"># 删除当前行 / 删除当前行及其后n-1行</span>
+<span class="variable">$ </span>yy/nyy    <span class="comment"># 复制光标所在的那一行 / 复制光标所在行的向下n行</span>
+<span class="variable">$ </span>n,my         <span class="comment"># 赋值n到m行内容</span>
+<span class="variable">$ </span>yw          <span class="comment"># 复制光标所在位置之后的一个词</span>
+<span class="variable">$ </span>y<span class="variable">$ </span>        <span class="comment"># 复制光标所在位置到行尾</span>
+<span class="variable">$ </span>p/<span class="constant">P（</span>大写）<span class="comment"># 粘贴复制的内容到光标所在行的下一行 / 上一行</span>
 <span class="variable">$ </span>u          <span class="comment"># 复原前一个操作、</span>
 <span class="variable">$ </span>ctrl + r      <span class="comment"># 重做上一个操作</span>
 <span class="variable">$ </span>ctrl + u         <span class="comment"># 删除输入方式下所输入的文本</span>
 <span class="variable">$ </span>[<span class="keyword">do</span>|d<span class="variable">$]</span>         <span class="comment"># 删至行首/尾</span>
-<span class="variable">$ </span>[dw|ndw|ndW]         <span class="comment"># 删除光标处单词、开始及其后的n-1个字</span>
-<span class="variable">$ </span>小数点<span class="string">"."</span> -- 重复前一个动作
+<span class="variable">$ </span>[dw|ndw|ndW]     <span class="comment"># 删除光标处单词、开始及其后的n-1个字</span>
+<span class="variable">$ </span>小数点<span class="string">"."</span>         <span class="comment"># 重复前一个动作</span>
 <span class="variable">$ </span><span class="constant">J </span>    <span class="comment"># 删除当前光标所在行行尾的换行符（拼接行）</span>
+<span class="variable">$ </span>剪切的实现         <span class="comment"># dd删除行后，使用p粘贴至光标所在处即可</span>
 </code></pre></li>
 <li><p>编辑模式(文本输入模式): 该模式是对文件进行编辑操作，进入该模式命令窗口底部显示”– INSERT –”标志; 命令模式切换到编辑模式方式：</p>
 <p> [进入编辑模式并进行相应操作]</p>
-<pre><code><span class="variable">$ </span>i/<span class="constant">I</span>         <span class="comment"># 在光标前 / 当前行首插入(insert)</span>
-<span class="variable">$ </span>a/<span class="constant">A</span>         <span class="comment"># 在光标后 / 当前行尾追加(append)</span>
-<span class="variable">$ </span>o/<span class="constant">O</span>         <span class="comment"># 光标所在行前/后插入一新行(open)</span>
-<span class="variable">$ </span>r/<span class="constant">R</span>         <span class="comment"># 替换当前字符 / 替换当前字符及其后的字符，直至按ESC键(replace)</span>
+<pre><code><span class="variable">$ </span>i/<span class="constant">I </span>        <span class="comment"># 在光标前 / 当前行首插入(insert)</span>
+<span class="variable">$ </span>a/<span class="constant">A </span>        <span class="comment"># 在光标后 / 当前行尾追加(append)</span>
+<span class="variable">$ </span>o/<span class="constant">O </span>        <span class="comment"># 光标所在行前/后插入一新行(open)</span>
+<span class="variable">$ </span>r/<span class="constant">R </span>        <span class="comment"># 替换当前字符 / 替换当前字符及其后的字符，直至按ESC键(replace)</span>
+<span class="variable">$ </span><span class="symbol">:s/old/new</span>      <span class="comment"># 光标跳到第一次出现old的地方用new来替换</span>
+<span class="variable">$ </span><span class="symbol">:s/old/new/g</span>    <span class="comment"># 一行命令替换所有old</span>
+<span class="variable">$ </span><span class="symbol">:n</span>,ms/old/new/g <span class="comment"># 替换行号n和m之间的所有old</span>
+<span class="variable">$ </span><span class="symbol">:%s/old/new/g</span>   <span class="comment"># 替换整个文件中的所有old</span>
+<span class="variable">$ </span><span class="symbol">:%s/old/new/gc</span>  <span class="comment"># 替换整个文件中的所有old，但每次出现时提示</span>
 <span class="variable">$ </span>s         <span class="comment"># 从当前光标位置处开始，以输入的文本替代指定数目的字符</span>
-<span class="variable">$ </span><span class="constant">S</span>            <span class="comment"># 删除指定数目的行，并以所输入文本代替之</span>
+<span class="variable">$ </span><span class="constant">S </span>           <span class="comment"># 删除指定数目的行，并以所输入文本代替之</span>
 </code></pre></li>
 <li><p>末行模式(指令列命令模式): 即可将光标移动到最下面一行，在该模式下，您可以搜索数据，而且读取，存盘，大量删除字符，离开vi，显示行号等操作</p>
 <p> [保存/退出vi]</p>
@@ -201,7 +210,7 @@ $ vi -r filename    # 在上次正用vi编辑时发生系统崩">
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/01/10/ViEditorCommands/" data-id="ciqqtby3v004ufi2ecevy5h7b" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/01/10/ViEditorCommands/" data-id="civfc5fej004tgq2evk10ikw8" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/01/10/ViEditorCommands/#disqus_thread" class="article-comment-link">Comments</a>
       

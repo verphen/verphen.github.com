@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[effine]]></title>
+  <title><![CDATA[追求优雅代码而不断受打击的艺术家]]></title>
   <subtitle><![CDATA[Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
@@ -9,7 +9,7 @@
   
   <author>
     <name><![CDATA[effine]]></name>
-    <email><![CDATA[verphen@163.com]]></email>
+    <email><![CDATA[iballad@163.com]]></email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
@@ -337,7 +337,7 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-07-19T15:37:30.000Z</updated>
+    <updated>2016-09-27T14:14:26.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
@@ -348,7 +348,7 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
 <pre><code><span class="comment"># 错误 1</span>
 checking <span class="keyword">for</span> C compiler ... <span class="keyword">not</span> found
 ./configure: <span class="keyword">error</span>: C compiler cc <span class="keyword">is</span> <span class="keyword">not</span> found
-</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc++)</p>
+</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p>
 <pre><code><span class="comment"># 错误 2</span>
 ./configure: error: <span class="operator">the</span> HTTP gzip module requires <span class="operator">the</span> zlib library.
 You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_gzip_module</span>
@@ -453,7 +453,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
     <published>2015-11-16T09:33:44.000Z</published>
-    <updated>2016-07-20T15:57:01.000Z</updated>
+    <updated>2016-07-20T15:57:03.000Z</updated>
     <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
 <pre><code><span class="comment"># 以下内容来源网络</span>
 <span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行
@@ -617,7 +617,7 @@ $ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="commen
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2016-05-12T15:41:43.000Z</updated>
+    <updated>2016-11-12T03:42:43.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
 </code></pre><p>[查看分支]</p>
 <pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
@@ -626,26 +626,27 @@ $ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="commen
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 <span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建name分支(继承当前分支最新提交来创建)</span>
-$ git branch <span class="variable">&lt;name&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建分支</span>
-$ git checkout <span class="variable">&lt;name&gt;</span>     <span class="comment"># 切换分支到name(分支name需已存在)</span>
-$ git checkout -b <span class="variable">&lt;name&gt;</span>        <span class="comment"># 创建分支name并切换到该分支(前提name分支不存在)</span>
-$ git checkout -b <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 创建分支name并切换到该分支，继承master分支创建而来</span>
-$ git branch -m <span class="variable">&lt;name&gt;</span> <span class="variable">&lt;test&gt;</span>        <span class="comment"># 重命名name分支为test</span>
+<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
+$ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>
+$ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>
+$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
+$ git checkout <span class="variable">&lt;commit_id&gt;</span>         <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
+$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 继承master分支创建并切换新分支</span>
+$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 重命名分支</span>
 </code></pre><p>[删除分支]</p>
-<pre><code><span class="comment"># 删除本地分支[name]</span>
-<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;name&gt;
-    -d         <span class="comment"># 删除[delete]本地name分支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地name分支（多个分支用空格分隔）</span>
+<pre><code><span class="comment"># 删除本地分支</span>
+<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;
+    -d         <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
 
-<span class="comment"># 删除远程分支[name]</span>
-<span class="variable">$ </span>git branch -d -r origin/&lt;name&gt;     <span class="comment"># 删除远程分支name</span>
-<span class="variable">$ </span>git push origin <span class="symbol">:&lt;name&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push origin --delete &lt;name&gt;     <span class="comment"># [since Git v1.7.0]</span>
+<span class="comment"># 删除远程分支</span>
+<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;     <span class="comment"># 删除远程分支</span>
+<span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
+<span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span>
 </code></pre><p>[合并分支]</p>
 <pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;name&gt;     <span class="comment"># 合并name分支到当前分支,发生冲突修复后再次提交</span>
+<span class="variable">$ </span>git merge &lt;branch&gt;     <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
 <pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
 </span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
@@ -817,7 +818,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
     <id>http://effine.cn/2015/07/15/MavenCommands/</id>
     <published>2015-07-15T02:43:38.000Z</published>
-    <updated>2016-07-24T15:56:23.000Z</updated>
+    <updated>2016-07-24T15:56:27.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
