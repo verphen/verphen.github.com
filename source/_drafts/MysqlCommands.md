@@ -2,7 +2,9 @@ title: MysqlCommands
 tags:
 ---
 
-启动与停止mysql服务： net start/stop mysql
+启动与停止mysql服务： service start/stop/restart mysql
+
+格式化显示mysql命令行结果，只需在执行命令末尾加上'/G'即可
 
 连接mysql：mysql -h localhost -u root -p aichuan (-h:主机；-u:用户名；-p:密码)
 
