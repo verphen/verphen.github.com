@@ -43,7 +43,7 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 			username 	# 待创建的用户名
 			host 		# 用户操作的主机,默认为'%'表示可以操作任意主机
 			password 	# 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证
-		mysql> insert into mysql.user(Host,User,Password) values("localhost","test",password("1234"));
+		
 
 		# 删除用户,不指定主机host参数表示 usernmae@'%'
 		mysql>  drop user username[@host]；

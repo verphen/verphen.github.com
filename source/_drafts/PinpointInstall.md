@@ -2,6 +2,16 @@ title: PinpointInstall
 tags:
 ---
 
+官方描述：Pinpoint 是用Java编写的APM（Application Performance Management & Monitoring 应用性能管理&监控）工具，用于大规模分布式系统。在 Dapper 之后，Pinpoint 提供了一个解决方案，以帮助分析系统的总体结构以及分布式应用程序的组件之间是如何进行数据互联的。
+
+安装agent是无侵入式的
+
+对性能的影响最小（只增加约3％资源利用率）
+
+源码地址：https://github.com/naver/pinpoint
+
+
+
 . 安装jdk
 	
 	必须配置系统变量JAVA_6_HOME、JAVA_7_HOME、JAVA_8_HOME；必须安装jdk8; 若担心系统自带openJDK影响你的安装，可以先卸载` sudo apt-get remove openjdk* `;
@@ -92,12 +102,19 @@ tags:
 		CATALINA_OPTS="$CATALINA_OPTS -javaagent:$AGENT_PATH/pinpoint-bootstrap-${AGENT_VERSION}.jar"
 		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.agentId=$AGENT_ID"
 		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.applicationName=$APPLICATION_NAME"
+	
+	注意：agent_id和agent_name不能为中文或特殊符号
 
 
 
+解读：
 
-
-
+	Call Tree:
+		Gap(ms) : time elapsed between the start of the previous method and entry of this method
+				  从上一个方法的开始和该方法的输入之间经过的时间
+				  
+		Self(ms): the time that was used for execution od this method only, excluding time consumed in nested methods call()
+				  仅用于执行此方法的时间，不包括嵌套方法调用中消耗的时间
 
 
 

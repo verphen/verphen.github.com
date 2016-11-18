@@ -37,8 +37,11 @@ tags:
 
 >> 给web搭建mysql数据库，然后修改配置在尝试
 
+查看记录	get '表名称', '行名称'
+查看表中的记录总数	count  '表名称'
+删除记录	delete  '表名' ,'行名称' , '列名称'
 
 - javaagent:../lib/pinpoint-bootstrap-1.5.2.jar -Dpinpoint.agentId=1111 -Dpinpoint.applicationName=firstTest
 agent采样开关、频率在$AGENT_PATH下的pinpoint.config中配置
 
-[ERROR](o.a.h.h.c.AsyncProcess             :379) Failed to get region location org.apache.hadoop.hbase.TableNotFoundException: AgentStat
+
