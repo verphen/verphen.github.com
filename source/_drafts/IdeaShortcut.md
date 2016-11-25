@@ -13,3 +13,7 @@ $ command +	option + 方向键(左left/右right) 		# 返回至上、下次浏览
 
 $ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）
 $ ctrl + option + H 		# 查看方法调用结构图
+$ command + f7 		# 查找方法的调用 find usages
+$ command + ` 		# 切换打开的多个窗口
+
+ 

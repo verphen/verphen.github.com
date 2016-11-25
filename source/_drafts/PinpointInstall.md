@@ -10,7 +10,7 @@ tags:
 
 源码地址：https://github.com/naver/pinpoint
 
-
+参考：https://skyao.gitbooks.io/leaning-pinpoint/content/installation/guide.html
 
 . 安装jdk
 	
