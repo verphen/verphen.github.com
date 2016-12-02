@@ -37,11 +37,16 @@ tags:
 
 >> 给web搭建mysql数据库，然后修改配置在尝试
 
+$ scan 'table'   # 查看表记录
 查看记录	get '表名称', '行名称'
 查看表中的记录总数	count  '表名称'
 删除记录	delete  '表名' ,'行名称' , '列名称'
 
 - javaagent:../lib/pinpoint-bootstrap-1.5.2.jar -Dpinpoint.agentId=1111 -Dpinpoint.applicationName=firstTest
 agent采样开关、频率在$AGENT_PATH下的pinpoint.config中配置
+
+
+技巧：
+	删除pinpoint界面Application list中过时的应用；进入hbase shell命令，查看表ApplicationIndex所有数据(scan 'ApplicationIndex'),删除对应的数据即可
 
 

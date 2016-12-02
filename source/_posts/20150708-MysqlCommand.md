@@ -54,6 +54,7 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 		# 给用户授权
 		mysql>  grant privileges on databaseName.tableName to username@host；
 				privileges 	# 权限名;全部权限为all，多个权限使用逗号分隔
+		eg: grant all on *.* to 'username@host'; 	# 赋予用户指定主机的所有权限 
 
 		# 赋予用户"给其他用户授权"权限
 		mysql>  grant privileges on databaseName.tableName to username@host with grant option;
