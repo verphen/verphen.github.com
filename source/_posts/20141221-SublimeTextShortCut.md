@@ -64,7 +64,7 @@ tags: [tools,sublime]
 		- ctrl + Backspace : 从后往前删一个词 (delete word backforward)
 		- ctrl + delete : 从前往后删一个词 (delete word forward)
 		- ctrl + k, ctrl + k : 按住ctrl,连续按两次k; 删除光标所在位置至行尾的文本（delete to end）
-		- ctrl + k, ctrl + backspace : 按住ctrl,按k然后在按backspace;删除光标所在位置至行首的文本 (delete to beginning)
+		- ctrl + k, ctrl + backspace : 按住ctrl,按k然后在按backspace;删除光标所在位置至行首的文本 (delete tpinpoo beginning)
 		- ctrl + t : 光标前一个字符和后一个字符交换位置 (transpose)
 		- shift + 右键拖动：光标多不，用来更改或插入列内容
 		- ctrl + r： 前往 method
@@ -74,9 +74,9 @@ tags: [tools,sublime]
 		- ctrl + <[+|-]> 		# 放大/缩小字体
 		- ctrl + shift + "+" 	# 缩小字体
 
-	- 搜索
-		- ctrl + f: 查看内容
-		- ctrl + shift + f: 指定目录(多个目录用逗号分隔)查找并替换
+	- 查找/替换
+		- ctrl + f: 当前标签查找内容
+		- ctrl + shift + f: 指定目录或正则(多个条件用逗号分隔)查找并替换
 			<br/>
 		- ctrl + d：选择单词，重复按d键可增加选择下一个相同的单词
 		- ctrl + h: 替换	

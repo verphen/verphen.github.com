@@ -4,7 +4,7 @@
 
 # Site
 title: 追求优雅代码而不断受打击的艺术家
-subtitle: Full Of Passion And Confidence 追求优雅代码而不断受打击的艺术家
+subtitle: 
 description:
 author: effine
 email: iballad@163.com
@@ -98,4 +98,4 @@ exclude_generator:
 deploy: 
   type: git	
   repository: git@github.com:effine/effine.github.com.git
-  branch: release
+  branch: master
