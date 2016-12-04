@@ -38,11 +38,13 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 
 针对mysql.user表的操作最后都必须执行 `flush privileges;`,将执行的更新信息重新加入到内存；
 	
-		# 用户的操作都在mysql数据库的user表
+		# 用户的操作都在mysql数据库的user表(两种方式)
 		mysql>  create user username[@host] [identified by 'password']；
+		mysql>  insert into mysql.user(host,user,password) values("***","***",password("***”));
 			username 	# 待创建的用户名
 			host 		# 用户操作的主机,默认为'%'表示可以操作任意主机
 			password 	# 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证
+		
 
 		# 删除用户,不指定主机host参数表示 usernmae@'%'
 		mysql>  drop user username[@host]；
@@ -53,6 +55,7 @@ Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可�
 		# 给用户授权
 		mysql>  grant privileges on databaseName.tableName to username@host；
 				privileges 	# 权限名;全部权限为all，多个权限使用逗号分隔
+		eg: grant all on *.* to 'username@host'; 	# 赋予用户指定主机的所有权限 
 
 		# 赋予用户"给其他用户授权"权限
 		mysql>  grant privileges on databaseName.tableName to username@host with grant option;
