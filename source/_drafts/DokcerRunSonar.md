@@ -23,3 +23,8 @@ sonar在maven中的配置(公司和家里的配置不一样)？ sonar5.6能否�
        <sonar.host.url>http://127.0.0.1:9000</sonar.host.url>
      </properties>
    </profile>
+
+
+sonar插件地址：http://docs.sonarqube.org/display/PLUG/Plugin+Library
+
+maven的setting.xml无需配置数据库的用户密码（或者sonar的访问用户名密码）
