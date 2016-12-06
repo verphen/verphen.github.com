@@ -48,5 +48,3 @@ agent采样开关、频率在$AGENT_PATH下的pinpoint.config中配置
 
 技巧：
 	删除pinpoint界面Application list中过时的应用；进入hbase shell命令，查看表ApplicationIndex所有数据(scan 'ApplicationIndex'),删除对应的数据即可
-
-

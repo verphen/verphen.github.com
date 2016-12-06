@@ -11,9 +11,13 @@ tags:
 
 	追加以下内容即可
 
-	export JAVA_HOME=/home/hostname/jdk1.6.0_31
-	export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-	export PATH=$PATH:$JAVA_HOME/bin
+		# 设置java环境变量
+		export JAVA_HOME=/usr/local/jdk1.8.0_73
+		export CLASSPATH=.:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+		export PATH=$PATH:$JAVA_HOME/bin
 
-	# tomcat启动命令
-	/home/install/apache-tomcat-8.0.11/bin/startup.sh
+		# tomcat启动命令
+		/usr/local/apache-tomcat-8.0.11/bin/startup.sh
+	
+	保证文件具有可执行权限
+	$ chmod +x rc.local  

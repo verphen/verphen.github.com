@@ -2,6 +2,9 @@ title: MongodbCommands
 tags:
 ---
 
+启动mongodb报错：Failed global initialization: BadValue Invalid or no user locale set. Please ensure LANG and/or LC_* environment variables are set correctly.
+$ export LC_ALL=C
+
 db.help()           获取mongoDB客户端命令列表
 db.stats()          获取mongoDB的统计信息
 

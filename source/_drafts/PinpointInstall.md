@@ -95,6 +95,8 @@ tags:
 
 	> 配置agent
 
+		使用pinpoint-agent/script/networktest.sh脚本来测试网络是否正常
+
 		AGENT_VERSION="1.5.2"
 		AGENT_ID="comall20161111"
 		APPLICATION_NAME="firt-pinpoint"
