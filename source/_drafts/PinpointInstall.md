@@ -95,17 +95,19 @@ tags:
 
 	> 配置agent
 
-		使用pinpoint-agent/script/networktest.sh脚本来测试网络是否正常
+		. 上传agent到需要监听的服务器，配置agent/pinpoint.config，修改profiler.collector.ip为你启动collector服务的IP
+		. 使用pinpoint-agent/script/networktest.sh脚本来测试网络是否正常
 
-		AGENT_VERSION="1.5.2"
-		AGENT_ID="comall20161111"
-		APPLICATION_NAME="firt-pinpoint"
-		AGENT_PATH="/home/comall/software/pinpoint-agent-1.5.2"
-		CATALINA_OPTS="$CATALINA_OPTS -javaagent:$AGENT_PATH/pinpoint-bootstrap-${AGENT_VERSION}.jar"
-		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.agentId=$AGENT_ID"
-		CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.applicationName=$APPLICATION_NAME"
+		. 配置tomcat/bin/catalina.sh, 最开始的地方加入下面内容
+			AGENT_VERSION="1.5.2"
+			AGENT_ID="comall20161111"
+			APPLICATION_NAME="firt_pinpoint"
+			AGENT_PATH="/home/comall/software/pinpoint-agent-1.5.2"
+			CATALINA_OPTS="$CATALINA_OPTS -javaagent:$AGENT_PATH/pinpoint-bootstrap-${AGENT_VERSION}.jar"
+			CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.agentId=$AGENT_ID"
+			CATALINA_OPTS="$CATALINA_OPTS -Dpinpoint.applicationName=$APPLICATION_NAME"
 	
-	注意：agent_id和agent_name不能为中文或特殊符号
+	注意：agent_id和agent_name不能为中文、中划线
 
 
 
