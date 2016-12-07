@@ -109,7 +109,8 @@ tags:
 	
 	注意：agent_id和agent_name不能为中文、中划线
 
-
+	参考：	- javaagent:../lib/pinpoint-bootstrap-1.5.2.jar -Dpinpoint.agentId=1111 -Dpinpoint.applicationName=firstTest
+agent采样开关、频率在$AGENT_PATH下的pinpoint.config中配置
 
 解读：
 
