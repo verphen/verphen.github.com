@@ -14,6 +14,8 @@ lsblk 列出块设备。除了RAM外，以标准的树状输出格式，整齐�
 
 md5sum filename 检验文件是否被改变
 
+$ wc -l [file]	# 统计文件行数
+
 linux创建不同的目录(使用"{}"来创建层级目录) 
 $ mkdir -p dd1/dd2/{t1,t2,t3/tt31,t4/{t41,t42}}
 
