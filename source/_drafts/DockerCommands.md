@@ -1,6 +1,13 @@
 title: Docker 命令
 tags:
 ---
+docker上传镜像只docker hub:
+    # 登录docker hub
+    $ docker login --username=<name> --password=<passwd> --email=<email>
+    # 制作tag
+    $ docker tag <imageID> <namespace>/<imageName>:<version>
+    # push镜像至docker hub
+    $ docker push <namespace>/<imageName>
 
 注： 以下命令出现的COTAINER可以用容器名或容器ID来使用
 
