@@ -16,4 +16,7 @@ $ ctrl + option + H 		# 查看方法调用结构图
 $ command + f7 		# 查找方法的调用 find usages
 $ command + ` 		# 切换打开的多个窗口
 
+$ command + r 			# 当前文件查找替换
+$ command + shift + r 		# 全局查找替换
+
  
