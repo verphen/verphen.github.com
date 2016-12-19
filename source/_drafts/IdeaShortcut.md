@@ -20,3 +20,6 @@ $ command + r 			# 当前文件查找替换
 $ command + shift + r 		# 全局查找替换
 
  
+$ command + w  	#  关闭当前文件
+$ shift + click   # 关闭点击文件
+$ shift + esc 	# 光标返回编辑框,关闭无用的窗口
