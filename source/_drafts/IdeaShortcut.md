@@ -15,5 +15,6 @@ $ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷
 $ ctrl + option + H 		# 查看方法调用结构图
 $ command + f7 		# 查找方法的调用 find usages
 $ command + ` 		# 切换打开的多个窗口
-
+$ command + option + l  # 格式化代码
+$ option + enter       # 导包
  
