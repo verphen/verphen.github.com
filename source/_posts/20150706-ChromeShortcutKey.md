@@ -72,6 +72,13 @@ date: 2015-07-06 09:58:09
     alt + f4    # 关闭当前窗口
     ctrl + shift + q 	# 关闭所有标签，退出 chrome 浏览器
 
+    ctrl + b       # 打开和关闭书签栏
+    ctrl + shift +b     # 打开书签管理器 
+
+    ctrl + 加号   # 或者按住 Ctrl 键并向上滚动鼠标滚轮 放大网页上的所有内容
+    ctrl + 减号   # 或者按住 Ctrl 键并向下滚动鼠标滚轮 缩小网页上的所有内容 
+    ctrl+0       # 将网页上的所有内容都恢复到正常大小 
+
 技巧：
 
     > console.<[log|info|warn|error]>("message")    # 面板以类型[日志|信息|警告|错误]打印信息message

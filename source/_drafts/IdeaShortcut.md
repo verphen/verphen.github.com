@@ -17,4 +17,10 @@ $ command + f7 		# 查找方法的调用 find usages
 $ command + ` 		# 切换打开的多个窗口
 $ command + option + l  # 格式化代码
 $ option + enter       # 导包
+
+$ command + r 			# 当前文件查找替换
+$ command + shift + r 		# 全局查找替换
  
+$ command + w  	#  关闭当前文件
+$ shift + click   # 关闭点击文件
+$ shift + esc 	# 光标返回编辑框,关闭无用的窗口

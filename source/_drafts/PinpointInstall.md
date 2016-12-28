@@ -93,7 +93,7 @@ tags:
 	
 
 
-	> 配置agent
+	> 配置agent(agentID,agentName命令规范[a-zA-Z0-9], '.', '-', '_'. maxLength:24)
 
 		. 上传agent到需要监听的服务器，配置agent/pinpoint.config，修改profiler.collector.ip为你启动collector服务的IP
 		. 使用pinpoint-agent/script/networktest.sh脚本来测试网络是否正常
@@ -120,10 +120,6 @@ agent采样开关、频率在$AGENT_PATH下的pinpoint.config中配置
 				  
 		Self(ms): the time that was used for execution od this method only, excluding time consumed in nested methods call()
 				  仅用于执行此方法的时间，不包括嵌套方法调用中消耗的时间
-
-
-
-
 
 
 
