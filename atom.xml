@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-07-24T14:37:49.000Z</updated>
+  <updated>2016-12-29T14:22:02.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TeamCity安装]]></title>
+    <link href="http://effine.cn/2016/12/29/TeamCityInstall/"/>
+    <id>http://effine.cn/2016/12/29/TeamCityInstall/</id>
+    <published>2016-12-29T14:15:06.000Z</published>
+    <updated>2016-12-29T14:22:02.000Z</updated>
+    <content type="html"><![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件" target="_blank" rel="external">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p>
+<pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span>
+<span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span>
+<span class="variable">$ </span>./runAll.sh (start | stop [force])    <span class="comment"># 启动、停止(强制)</span>
+</code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
+<pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
+</code></pre><a id="more"></a>
+<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
+<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
+<p>数据目录默认为<code>/home/&lt;user&gt;/.BuildServer</code>，若需修改参考：</p>
+<pre><code><span class="comment"># 修改配置文件属性teamcity.data.path即可</span>
+<span class="variable">$ </span>vi <span class="constant">TeamCity</span>/conf/teamcity-startup.properties
+</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc2.png" alt="选择数据库"></p>
+<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc3.png" alt="创建用户"></p>
+<p>填写完用户名密码后创建用户，即可进入“My Setting &amp; Tools”配置个人信息等信息，点击右上角的”Administration”进入选项Projects即可创建Project；至此，TeamCity的安装说明已介绍完成。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p>
+<pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span>
+<span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span>
+<span class="variable">$ </span>./runAll.sh (start | stop [force])    <span class="comment"># 启动、停止(强制)</span>
+</code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
+<pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Gradle Commands]]></title>
@@ -888,7 +929,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <link href="http://effine.cn/2015/07/08/MysqlCommand/"/>
     <id>http://effine.cn/2015/07/08/MysqlCommand/</id>
     <published>2015-07-08T01:58:06.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
+    <updated>2016-12-04T15:26:00.000Z</updated>
     <content type="html"><![CDATA[<p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
 <ul>
 <li><p>服务 service</p>
@@ -920,35 +961,38 @@ mysql&gt;  <span class="keyword">update</span> mysql.user <span class="keyword">
 <span class="comment"># 将更新内容重新加入内存</span>
 mysql&gt;  <span class="keyword">flush</span> privileges;
 </code></pre><p>针对mysql.user表的操作最后都必须执行 <code>flush privileges;</code>,将执行的更新信息重新加入到内存；</p>
-<pre><code><span class="comment"># 用户的操作都在mysql数据库的user表</span>
-mysql&gt;  create user username[<span class="property">@host</span>] [identified <span class="keyword">by</span> <span class="string">'password'</span>]；
-    username     <span class="comment"># 待创建的用户名</span>
-    host         <span class="comment"># 用户操作的主机,默认为'%'表示可以操作任意主机</span>
-    password     <span class="comment"># 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证</span>
+<pre><code># 用户的操作都在mysql数据库的user表(两种方式)
+mysql&gt;  create user username[@host] [identified by <span class="string">'password'</span>]；
+mysql&gt;  <span class="built_in">insert</span> into mysql.user(host,user,password) <span class="built_in">values</span>(<span class="string">"***"</span>,<span class="string">"***"</span>,password(<span class="string">"***”));
+</span>    username     # 待创建的用户名
+    host         # 用户操作的主机,默认为<span class="string">'%'</span>表示可以操作任意主机
+    password     # 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证
 
-<span class="comment"># 删除用户,不指定主机host参数表示 usernmae@'%'</span>
-mysql&gt;  drop user username[<span class="property">@host</span>]；
 
-<span class="comment"># 修改root用户密码（该命令在非mysql命令模式下执行）</span>
-mysqladmin -u root -p password ****；     
+# 删除用户,不指定主机host参数表示 usernmae@<span class="string">'%'</span>
+mysql&gt;  <span class="keyword">drop</span> user username[@host]；
 
-<span class="comment"># 给用户授权</span>
-mysql&gt;  grant privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">to</span> username<span class="property">@host</span>；
-        privileges     <span class="comment"># 权限名;全部权限为all，多个权限使用逗号分隔</span>
+# 修改root用户密码（该命令在非mysql命令模式下执行）
+mysqladmin -<span class="keyword">u</span> root -<span class="keyword">p</span> password ****；     
 
-<span class="comment"># 赋予用户"给其他用户授权"权限</span>
-mysql&gt;  grant privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">to</span> username<span class="property">@host</span> <span class="keyword">with</span> grant option;
+# 给用户授权
+mysql&gt;  grant privileges <span class="keyword">on</span> databaseName.tableName <span class="keyword">to</span> username@host；
+        privileges     # 权限名;全部权限为<span class="keyword">all</span>，多个权限使用逗号分隔
+<span class="keyword">e</span><span class="variable">g:</span> grant <span class="keyword">all</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'username@host'</span>;     # 赋予用户指定主机的所有权限 
 
-<span class="comment"># 查看用户已有权限</span>
-mysql&gt;  show grants <span class="keyword">for</span> username[<span class="property">@host</span>]；    
+# 赋予用户<span class="string">"给其他用户授权"</span>权限
+mysql&gt;  grant privileges <span class="keyword">on</span> databaseName.tableName <span class="keyword">to</span> username@host with grant option;
 
-<span class="comment"># 撤销用户权限</span>
-mysql&gt;  revoke privileges <span class="literal">on</span> databaseName.tableName <span class="keyword">from</span> username<span class="property">@host</span>；
+# 查看用户已有权限
+mysql&gt;  show grants <span class="keyword">for</span> username[@host]；    
 
-<span class="comment"># 创建只读用户（对指定主机的所有数据库）</span>
-mysql&gt;  grant select <span class="literal">on</span> *.*  <span class="keyword">to</span> username[<span class="property">@host</span>] identified <span class="keyword">by</span> <span class="string">'passowrd'</span>；
+# 撤销用户权限
+mysql&gt;  revoke privileges <span class="keyword">on</span> databaseName.tableName from username@host；
 
-<span class="comment"># 查看当前登录用户和主机</span>
+# 创建只读用户（对指定主机的所有数据库）
+mysql&gt;  grant select <span class="keyword">on</span> *.*  <span class="keyword">to</span> username[@host] identified by <span class="string">'passowrd'</span>；
+
+# 查看当前登录用户和主机
 mysql&gt;  select user();
 </code></pre><ul>
 <li><p>数据库 database</p>
@@ -1181,59 +1225,6 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
       <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Tomcat 角色]]></title>
-    <link href="http://effine.cn/2015/07/06/TomcatRoles/"/>
-    <id>http://effine.cn/2015/07/06/TomcatRoles/</id>
-    <published>2015-07-06T08:04:40.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目</p>
-<p>如你需要访问manager或host-manager项目; 通过地址 <code>http://localhost:8080/[manager|host-manager]</code> 访问，但是需要用户名密码验证：</p>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"></p>
-<p>提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 <code>&lt;tomcat-users&gt;</code> 标签内进行如下用户及角色配置即可访问.</p>
-<a id="more"></a>
-<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-gui"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-script"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-jmx"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"manager-status"</span>/&gt;</span>
-</code></pre><p>tomcat的在线documents: <a href="http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html" target="_blank" rel="external">http://tomcat.apache.org/tomcat-8.0-doc/manager-howto.html</a> , 查看”Configuring Manager Application Access”栏，官方给出角色的描述：</p>
-<pre><code>manager-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI <span class="operator">and</span> <span class="operator">the</span> status pages
-manager-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface <span class="operator">and</span> <span class="operator">the</span> status pages
-manager-jmx - allows access <span class="built_in">to</span> <span class="operator">the</span> JMX proxy <span class="operator">and</span> <span class="operator">the</span> status pages
-manager-status - allows access <span class="built_in">to</span> <span class="operator">the</span> status pages only
-</code></pre><p>当然你还必须配置用户</p>
-<pre><code><span class="tag">&lt;<span class="title">user</span> <span class="attribute">username</span>=<span class="value">"admin"</span> <span class="attribute">password</span>=<span class="value">"admin"</span> <span class="attribute">roles</span>=<span class="value">"manager-gui,manager-script,manager-jmx,manager-status"</span>/&gt;</span>
-</code></pre><p>多个角色之间用逗号(“,”)隔开</p>
-<p>访问host-manager项目需配置角色：</p>
-<pre><code><span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-gui"</span>/&gt;</span>
-<span class="tag">&lt;<span class="title">role</span> <span class="attribute">rolename</span>=<span class="value">"admin-script"</span>/&gt;</span>
-</code></pre><p>官方描述：</p>
-<pre><code>admin-gui - allows access <span class="built_in">to</span> <span class="operator">the</span> HTML GUI
-admin-script - allows access <span class="built_in">to</span> <span class="operator">the</span> <span class="keyword">text</span> interface
-</code></pre><p>tips: Tomcat默认项目 manager/host-manager 的作用</p>
-<ul>
-<li><p>manager 项目：   对tomcat应用进行管理，包括对应用进行启动、停止和重启，以及发布新应用和删除已发布应用；设置应用的Expire sessions(session到期时间，默认30分钟)</p>
-</li>
-<li><p>host-manager 项目： 对 tomcat 的虚拟主机进行管理</p>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-manager项目</p>
-<p>如你需要访问manager或host-manager项目; 通过地址 <code>http://localhost:8080/[manager|host-manager]</code> 访问，但是需要用户名密码验证：</p>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"/></p>
-<p>提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 <code>&lt;tomcat-users&gt;</code> 标签内进行如下用户及角色配置即可访问.</p>]]>
-    
-    </summary>
-    
-      <category term="role" scheme="http://effine.cn/tags/role/"/>
-    
-      <category term="tomcat" scheme="http://effine.cn/tags/tomcat/"/>
-    
-      <category term="web" scheme="http://effine.cn/categories/web/"/>
     
   </entry>
   
