@@ -1,5 +1,7 @@
 title: TeamCity安装
-tags:
+tags: [tools,teamcity]
+categories: tools
+date: 2016-12-29 22:15:06
 ---
 TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(https://www.jetbrains.com/teamcity/)下载对应系统版本文件: `TeamCity-<version>.tag.gz`，我下载的版本为10.0.4；然后按如下步骤进行：
 
@@ -10,7 +12,7 @@ TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(https
 若以上步骤无错即可访问TeamCity界面：` <Host|IP>:8111 `，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：
 
 	$ vi TeamCity/conf/server.xml 		# 编辑server.xml配置文件
-
+<!-- more -->
 ![配置访问端口](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png)
 
 首次访问该地址会进入配置TeamCity的数据目录页：
