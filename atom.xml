@@ -669,6 +669,63 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
   </entry>
   
   <entry>
+    <title><![CDATA[Git Stash]]></title>
+    <link href="http://effine.cn/2015/11/05/GitStash/"/>
+    <id>http://effine.cn/2015/11/05/GitStash/</id>
+    <published>2015-11-05T06:42:43.000Z</published>
+    <updated>2016-12-29T15:13:39.000Z</updated>
+    <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
+<pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
+<span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
+<span class="variable">$ </span>git stash save [message]  <span class="comment"># 暂存当前改变，且为暂存添加描述信息</span>
+<span class="variable">$ </span>git stash list         <span class="comment"># 查看暂存列表</span>
+
+<span class="variable">$ </span>git stash apply         <span class="comment"># 恢复最近的暂存，不删除暂存</span>
+<span class="variable">$ </span>git stash pop         <span class="comment"># 恢复最近的暂存，并删除暂存</span>
+<span class="variable">$ </span>git stash drop        <span class="comment"># 删除最近的暂存 </span>
+<span class="variable">$ </span>git stash clear       <span class="comment"># 删除所有暂存</span>
+
+<span class="variable">$ </span>git stash show [&lt;stash&gt;]       <span class="comment"># 显示最近的暂存(或指定具体的暂存)</span>
+  <span class="symbol">eg:</span> git stash show -p stash@{<span class="number">1</span>}  <span class="comment"># 显示第二次暂存文件的具体改变</span>
+
+<span class="comment"># 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支</span>
+<span class="variable">$ </span>git stash branch &lt;branchname&gt; [&lt;stash&gt;]   
+</code></pre><a id="more"></a>
+<p>$ git stash create</p>
+<p>Create a stash (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>
+<p>$ git stash store</p>
+<p>Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
+<pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
+<span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
+<span class="variable">$ </span>git stash save [message]  <span class="comment"># 暂存当前改变，且为暂存添加描述信息</span>
+<span class="variable">$ </span>git stash list         <span class="comment"># 查看暂存列表</span>
+
+<span class="variable">$ </span>git stash apply         <span class="comment"># 恢复最近的暂存，不删除暂存</span>
+<span class="variable">$ </span>git stash pop         <span class="comment"># 恢复最近的暂存，并删除暂存</span>
+<span class="variable">$ </span>git stash drop        <span class="comment"># 删除最近的暂存 </span>
+<span class="variable">$ </span>git stash clear       <span class="comment"># 删除所有暂存</span>
+
+<span class="variable">$ </span>git stash show [&lt;stash&gt;]       <span class="comment"># 显示最近的暂存(或指定具体的暂存)</span>
+  <span class="symbol">eg:</span> git stash show -p stash@{<span class="number">1</span>}  <span class="comment"># 显示第二次暂存文件的具体改变</span>
+
+<span class="comment"># 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支</span>
+<span class="variable">$ </span>git stash branch &lt;branchname&gt; [&lt;stash&gt;]   
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="stash" scheme="http://effine.cn/tags/stash/"/>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Git 标签]]></title>
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
@@ -1106,80 +1163,6 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
       <category term="mysql" scheme="http://effine.cn/tags/mysql/"/>
     
       <category term="database" scheme="http://effine.cn/categories/database/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Mac 使用技巧及快捷键]]></title>
-    <link href="http://effine.cn/2015/07/07/MacShortcutKey/"/>
-    <id>http://effine.cn/2015/07/07/MacShortcutKey/</id>
-    <published>2015-07-07T02:49:11.000Z</published>
-    <updated>2016-06-15T16:26:18.000Z</updated>
-    <content type="html"><![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
-<ul>
-<li><p>应用</p>
-<pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
-<span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + q   <span class="comment"># 退出当前用户  </span>
-<span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
-</code></pre></li>
-<li><p>Finder</p>
-<pre><code><span class="built_in">command</span> + c      <span class="comment"># 复制文件</span>
-<span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
-<span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
-<span class="built_in">command</span> + i     <span class="comment"># 显示选中文件属性信息</span>
-</code></pre></li>
-<li><p>终端</p>
-<pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
-<span class="built_in">open</span> + .      <span class="comment"># 打开当前目录</span>
-</code></pre></li>
-</ul>
-<a id="more"></a>
-<ul>
-<li><p>截图操作(默认保存在桌面)</p>
-<pre><code><span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">3</span>        <span class="comment"># 截取全屏</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">4</span>        <span class="comment"># 截取自选区域</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + <span class="number">4</span>  —&gt; 释放按住的三个键 —&gt; 空格   <span class="comment"># 截取规则的区域</span>
-</code></pre></li>
-<li><p>技巧</p>
-<ul>
-<li>选中任何文件，按空格键space即可预览,不用每次双击打开再关闭</li>
-<li>$ fn + delete        # 向后进行删除</li>
-<li>修改文件或者视频默认打开方式：<br> 。打开简介(command + i),在“打开方式”选项选中默认打开的应用，然后点击“全部更改”即可；<br> 。选中文件，鼠标右键(或者手势操作) -&gt; 打开方式 -&gt; 其他 -&gt; 选中应用  -&gt; 勾选“始终以此方式打开” -&gt; 确定 即可；</li>
-</ul>
-</li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非常众多的快捷手势，方便我们日常操作；具体查看：苹果系统偏好设置 -&gt; 触控板 (mac提供图文并茂的说明，非常简单易上手)；除此之外，我们可以使用很多快捷键，这都是屌丝逆袭修炼必备使用习惯：</p>
-<ul>
-<li><p>应用</p>
-<pre><code><span class="built_in">command</span> + w  <span class="comment"># 关闭当前窗口，进程还在</span>
-<span class="built_in">command</span> + q        <span class="comment"># 关闭、退出程序</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + q   <span class="comment"># 退出当前用户  </span>
-<span class="built_in">command</span> + option + esc  <span class="comment"># 强制退出某个软件，通常在软件无响应的时候使用</span>
-</code></pre></li>
-<li><p>Finder</p>
-<pre><code><span class="built_in">command</span> + c      <span class="comment"># 复制文件</span>
-<span class="built_in">command</span> + v      <span class="comment"># 粘贴文件</span>
-<span class="built_in">command</span> + option + v     <span class="comment"># 剪切文件</span>
-<span class="built_in">command</span> + <span class="built_in">shift</span> + g      <span class="comment"># 打开“前往文件夹”，输入路径回车即可进入</span>
-<span class="built_in">command</span> + i     <span class="comment"># 显示选中文件属性信息</span>
-</code></pre></li>
-<li><p>终端</p>
-<pre><code><span class="built_in">open</span> + 目录        <span class="comment"># 即可用finder打开该目录(绝对目录和相对目录都可以)</span>
-<span class="built_in">open</span> + .      <span class="comment"># 打开当前目录</span>
-</code></pre></li>
-</ul>]]>
-    
-    </summary>
-    
-      <category term="mac" scheme="http://effine.cn/tags/mac/"/>
-    
-      <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
   </entry>
   
