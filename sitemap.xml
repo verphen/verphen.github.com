@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2016/12/29/TeamCityConfig/</loc>
+    <lastmod>2016-12-29T14:54:31.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2016/12/29/TeamCityInstall/</loc>
     <lastmod>2016-12-29T14:22:02.000Z</lastmod>
   </url>
@@ -282,12 +287,12 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/10/30/HexoCommands/</loc>
+    <loc>http://effine.cn/2015/05/20/TailCommand/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://effine.cn/2015/05/20/TailCommand/</loc>
+    <loc>http://effine.cn/2014/10/30/GitIgnore/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   
@@ -377,7 +382,7 @@
   </url>
   
   <url>
-    <loc>http://effine.cn/2014/10/30/GitIgnore/</loc>
+    <loc>http://effine.cn/2014/10/30/HexoCommands/</loc>
     <lastmod>2015-11-23T16:43:28.000Z</lastmod>
   </url>
   

@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2016-12-29T14:22:02.000Z</updated>
+  <updated>2016-12-29T14:54:31.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,58 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[TeamCity配置]]></title>
+    <link href="http://effine.cn/2016/12/29/TeamCityConfig/"/>
+    <id>http://effine.cn/2016/12/29/TeamCityConfig/</id>
+    <published>2016-12-29T14:26:52.000Z</published>
+    <updated>2016-12-29T14:54:31.000Z</updated>
+    <content type="html"><![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
+<ul>
+<li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
+<ol>
+<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png" alt="创建项目"></p>
+<a id="more"></a>
+</li>
+<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
+<p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p>
+<p>-&gt; Build Configuration Templates： 创建构建的模板配置</p>
+<p>-&gt; Subprojects： 在该项目下创建子项目</p>
+</li>
+<li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
+</li>
+<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
+<p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p>
+</li>
+<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc5.png" alt="配置变量"></p>
+</li>
+<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
+<p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p>
+</li>
+</ol>
+</li>
+<li><p>配置TeamCity插件</p>
+</li>
+</ul>
+<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc7.png" alt="安装插件"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
+<ul>
+<li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
+<ol>
+<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png" alt="创建项目"></p>]]>
+    
+    </summary>
+    
+      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[TeamCity安装]]></title>
@@ -1124,103 +1176,6 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     </summary>
     
       <category term="mac" scheme="http://effine.cn/tags/mac/"/>
-    
-      <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Eclipse 快捷键]]></title>
-    <link href="http://effine.cn/2015/07/07/EclipseShortcutKey/"/>
-    <id>http://effine.cn/2015/07/07/EclipseShortcutKey/</id>
-    <published>2015-07-07T01:27:14.000Z</published>
-    <updated>2016-07-24T14:04:45.000Z</updated>
-    <content type="html"><![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
-
-ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
-ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
-
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
-
-ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
-ctrl + <span class="built_in">shift</span> + o    
-ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
-
-ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
-ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
-ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
-                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
-ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
-ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
-</code></pre><a id="more"></a>
-<pre><code>ctrl + .    <span class="comment"># 定位下一处错误或者警告</span>
-ctrl + <span class="number">1</span>     <span class="comment"># 列出 eclipse 提供的解决方案</span>
-ctrl + <span class="number">3</span>     <span class="comment"># 打开Quick Access搜索（搜索eclipse菜单、标签等）</span>
-
-ctrl + k    <span class="comment"># 定位选中文本在该文件下一处</span>
-ctrl + 左右方向键    <span class="comment"># 光标跳到行首尾</span>
-ctrl + <span class="built_in">shift</span> + k    <span class="comment"># 定位选中文本在该文件上一处</span>
-ctrl + t     <span class="comment"># 查看定位方法的继承树(再次按键，反向显示)</span>
-Ctrl + Shift + t    <span class="comment"># 打开类型</span>
-ctrl + 鼠标右键点击(变量或方法)     <span class="comment"># 进入其定义或实现</span>
-ctrl + l     <span class="comment"># 跳转到指定行号的行</span>
-ctrl + m    <span class="comment"># 焦点(编辑区/导航树...)区全屏切换</span>
-ctrl + [e | f6]    <span class="comment"># 在右边显示出当前打开的所有文件</span>
-
-alt + /     <span class="comment"># 显示提示信息</span>
-alt + 左右方向键     <span class="comment"># 后退/前进"ctrl+鼠标右键点击"的跳转流程或操作位置</span>
-alt + 上下方向键     <span class="comment"># 将当前行与上/下行交换位置</span>
-ctrl + alt + 上下方向键     <span class="comment"># 复制当前行到上/下一行</span>
-
-ctrl + alt + j      <span class="comment"># 合并下一行到当前行</span>
-
-<span class="built_in">shift</span> + enter     <span class="comment"># 当前行下一行插入空行</span>
-ctrl + <span class="built_in">shift</span> + enter     <span class="comment"># 当前行上一行插入空行</span>
-
-alt + <span class="built_in">shift</span> + r     <span class="comment"># 修改文件名、方法名、变量名,并更新其引用</span>
-alt + <span class="built_in">shift</span> + a     <span class="comment"># eclipse列模式, 划定区域输入内容回车即可</span>
-<span class="comment"># 切换标记发生(toggle mark occurrences),把选中的方法/变量在本类中全部出现的地方高亮显示</span>
-alt + <span class="built_in">shift</span> + o(字母)     
-
-<span class="built_in">shift</span> + 鼠标悬停方法名         <span class="comment"># 显示方法体内容</span>
-</code></pre><p>调试模式的快捷方式：</p>
-<pre><code>ctrl + <span class="built_in">shift</span> + i     <span class="comment"># 显示被选中代码执行的值</span>
-</code></pre><p>技巧</p>
-<pre><code>-<span class="ruby"> 输入<span class="string">"main"</span>然后按 alt + <span class="regexp">/ , 则输出 " public static void main(String[] args) {} "
-</span></span>-<span class="ruby"><span class="regexp"> 输入"syso"然后按 alt + /</span> , 则输出 <span class="string">" System.out.println(); "</span>
-</span>-<span class="ruby"> 输入<span class="string">"syse"</span>然后按 alt + <span class="regexp">/ , 则输出 " System.err.println(); "</span></span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
-
-ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
-ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
-
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
-
-ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
-ctrl + <span class="built_in">shift</span> + o    
-ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
-
-ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
-ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
-ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
-                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
-ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
-ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
     
       <category term="shortcut" scheme="http://effine.cn/tags/shortcut/"/>
     
