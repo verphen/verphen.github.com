@@ -7,10 +7,10 @@ tags:
 - 创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)
 
 	1. 点击右上角Administration -> Create Project -> Manually（手动） 
-		![创建项目](../imgs/tcc2.png)
+		![创建项目](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png)
 	
 	2. 填写项目名，自动生成项目ID -> create -> General Settings
-		![项目基本配置](../imgs/tcc3.png)
+		![项目基本配置](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc3.png)
 		
 		Build Configurations： 构建具体项目的部署配置（常用操作）
 		
@@ -23,7 +23,7 @@ tags:
 	3. 点击左侧导航栏`VCS Roots`版本控制系统 -> Create VCS root -> 选择Type of VCS（Git/SVN或其他） -> 查看高级选项`Show advanced options`，配置连接URL、用户名、密码等信息 -> 点击页面底部`Test connection`测试是否可以正常连接
 	
 	4. 点击左侧导航栏`Parameters` -> Add new parameter -> 配置不同范围级别的常量
-		![配置变量](../imgs/tcc4.png)
+		![配置变量](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc4.png)
 		
 		Name: 常量名称
 		
@@ -36,14 +36,14 @@ tags:
 		注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（`%<name>%`）；子级项目继承父级定义的参数，且子级可以重新自定义父级定义的参数值。
 		
 	5. 点击左侧导航栏`Maven settings`，配置Maven来编译项目 -> Upload settings file -> 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可
-		![配置变量](../imgs/tcc5.png)
+		![配置变量](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc5.png)
 
 	6. 点击左侧导航栏`Clean-up Rules`，配置清理TeamCity残留文件 -> 点击待配置项目尾部的`Edit`
-		![配置项目清理规则](../imgs/tcc6.png)
+		![配置项目清理规则](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc6.png)
 		
 		根据需求可以选择不同的策略，选择`Custom policy`自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -> 右侧导航栏Clean-up Settings -> 配置
 
 - 配置TeamCity插件
 
 在官方提供的插件库[https://plugins.jetbrains.com/?teamcity](https://plugins.jetbrains.com/?teamcity)搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -> 点击左侧导航栏底部的`Plugins List` -> `Upload plugin zip` -> 填写名称，选择插件文件上传即可
-![安装插件](../imgs/tcc7.png)
+![安装插件](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc7.png)
