@@ -673,7 +673,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/05/GitStash/"/>
     <id>http://effine.cn/2015/11/05/GitStash/</id>
     <published>2015-11-05T06:42:43.000Z</published>
-    <updated>2016-12-29T15:13:39.000Z</updated>
+    <updated>2016-12-29T15:13:38.000Z</updated>
     <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
 <pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
 <span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
