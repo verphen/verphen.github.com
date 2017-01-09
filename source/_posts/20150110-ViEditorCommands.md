@@ -3,7 +3,6 @@ date: 2015-01-10 22:36:25
 categories: linux
 tags: [linux,tools]
 ---
-
 Vi编辑器存在命令、编辑、末行三种模式(模式的分类不尽相同,仅此以本人理解的叙述)；
 
 	$ vi filename		# 打开或新建文件，并将光标置于首行行首

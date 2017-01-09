@@ -3,7 +3,6 @@ date: 2014-10-30 08:14:27
 categories: tools
 tags: [tools,hexo]
 ---
-
 博客搭建工具[hexo](http://hexo.io/)基本命令：
 
 	$ hexo h[help] 		# Get help on a command(获得命令帮助)

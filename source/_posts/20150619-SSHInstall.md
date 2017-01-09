@@ -5,7 +5,6 @@ tags:
 categories: linux
 date: 2015-06-19 14:17:34
 ---
-
 检查SSH是否安装(本文采用centos测试)
 
 	$ rpm -qa | grep ssh 	# 只能检查是否通过rpm的软件

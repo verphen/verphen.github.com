@@ -3,7 +3,6 @@ date: 2014-10-30 07:35:22
 categories: tools
 tags: [ignore,git]
 ---
-
 使用Git进行项目管理中，如需将某些文件或目录不纳入Git的管理，则需在.git文件夹同级目录（项目根目录）配置忽略文件 `.gitignore`
 
      $ vi .gitignore   # 直接创建并且编辑（如存在直接编辑）
