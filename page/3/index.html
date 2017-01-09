@@ -69,6 +69,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-SpringMessageConverotr" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/12/11/SpringMessageConverotr/" class="article-date">
+  <time datetime="2015-12-10T16:20:54.000Z" itemprop="datePublished">12月 11 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
+<p>在你spring启动注解的配置文件中，进行如下配置：</p>
+<pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">bean</span>
+            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>
+                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
+                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
+            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
+        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2015/12/11/SpringMessageConverotr/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/12/11/SpringMessageConverotr/" data-id="cixq8swti0016uh2elgis90au" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/12/11/SpringMessageConverotr/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/spring/">spring</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-NginxInstall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/17/NginxInstall/" class="article-date">
@@ -109,7 +180,7 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="cixq88hve0018ze2etcvsft9v" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="cixq8swto001cuh2exywqytow" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/NginxInstall/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -179,7 +250,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cixq88hvh001cze2egitrcic4" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cixq8swtu001guh2e4aykq9kn" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/17/GitRemote/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -244,64 +315,12 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/16/HexoTongji/" data-id="cixq88hvl001jze2eih1a0ssl" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/16/HexoTongji/" data-id="cixq8swty001nuh2e1it5i4he" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/11/16/HexoTongji/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-EclipseTasks" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/15/EclipseTasks/" class="article-date">
-  <time datetime="2015-11-15T14:15:02.000Z" itemprop="datePublished">11月 15 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/15/EclipseTasks/">Eclipse Tasks</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
-<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p>
-<pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
-. TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>
-. XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>
-. 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span>
-</code></pre><p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p>
-<p>当然，你还可以对标识设置优先权(proprity)</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/15/EclipseTasks/" data-id="cixq88hvo001nze2ebx570vyi" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/11/15/EclipseTasks/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 
     </footer>
   </div>
@@ -336,6 +355,10 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/01/09/IdeaShortcut/">IDEA快捷方式</a>
+          </li>
         
           <li>
             <a href="/2017/01/09/Dockerfile/">Dockerfile 基本语法</a>
@@ -373,10 +396,6 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
             <a href="/2015/11/17/NginxInstall/">linux安装nginx</a>
           </li>
         
-          <li>
-            <a href="/2015/11/17/GitRemote/">Git Remote</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -386,7 +405,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.22px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.89px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 16.67px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.22px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.89px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 16.67px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-01-09T15:18:59.000Z</updated>
+  <updated>2017-01-09T15:27:50.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[IDEA快捷方式]]></title>
+    <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
+    <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
+    <published>2017-01-09T15:27:21.000Z</published>
+    <updated>2017-01-09T15:27:50.000Z</updated>
+    <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
+<pre><code><span class="variable">$ </span>command + <span class="constant">D </span>        <span class="comment"># 复制当前行</span>
+<span class="variable">$ </span>command + <span class="constant">X </span>       <span class="comment"># 删除当前行</span>
+<span class="variable">$ </span>command + <span class="constant">H </span>       <span class="comment"># 显示类结构(继承)图</span>
+
+<span class="variable">$ </span>command + <span class="constant">B </span>        <span class="comment"># 查看方法定义</span>
+<span class="variable">$ </span>command +    option + <span class="constant">B </span>        <span class="comment"># 查看方法的实现细节</span>
+
+<span class="variable">$ </span>command +    option + 方向键(左left/右right)         <span class="comment"># 返回至上、下次浏览的位置</span>
+
+<span class="variable">$ </span>ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
+<span class="variable">$ </span>ctrl + option + <span class="constant">H </span>        <span class="comment"># 查看方法调用结构图</span>
+<span class="variable">$ </span>command + f7         <span class="comment"># 查找方法的调用 find usages</span>
+<span class="variable">$ </span>command + `         <span class="comment"># 切换打开的多个窗口</span>
+<span class="variable">$ </span>command + option + l  <span class="comment"># 格式化代码</span>
+<span class="variable">$ </span>option + enter       <span class="comment"># 导包</span>
+
+<span class="variable">$ </span>command + r             <span class="comment"># 当前文件查找替换</span>
+<span class="variable">$ </span>command + shift + r         <span class="comment"># 全局查找替换</span>
+
+<span class="variable">$ </span>command + w      <span class="comment">#  关闭当前文件</span>
+<span class="variable">$ </span>shift + click   <span class="comment"># 关闭点击文件</span>
+<span class="variable">$ </span>shift + esc     <span class="comment"># 光标返回编辑框,关闭无用的窗口</span>
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
+<pre><code><span class="variable">$ </span>command + <span class="constant">D </span>        <span class="co]]>
+    </summary>
+    
+      <category term="idea" scheme="http://effine.cn/tags/idea/"/>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Dockerfile 基本语法]]></title>
@@ -1019,76 +1060,6 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
       <category term="maven" scheme="http://effine.cn/tags/maven/"/>
     
       <category term="skill" scheme="http://effine.cn/tags/skill/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Maven 命令详解]]></title>
-    <link href="http://effine.cn/2015/07/15/MavenCommands/"/>
-    <id>http://effine.cn/2015/07/15/MavenCommands/</id>
-    <published>2015-07-15T02:43:38.000Z</published>
-    <updated>2016-07-24T15:56:27.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
-<p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
-
-<span class="comment"># maven生成web项目(参数-D意为定义[Define])</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
-  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
-
-<span class="comment"># maven生成java项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
-
-<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
-<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
-<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
-<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
-</code></pre><a id="more"></a>
-<pre><code><span class="variable">$ </span>mvn package     <span class="comment"># 打包（mvn -Dtest package  只打包不测试）</span>
-<span class="variable">$ </span>mvn clean package  <span class="comment"># 组合命令，清理编译文件并打包</span>
-<span class="variable">$ </span>mvn <span class="symbol">jar:</span>jar     <span class="comment"># 打包成jar文件</span>
-<span class="variable">$ </span>mvn install     <span class="comment"># 安装项目打包文件至本地仓库Repository</span>
-<span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
-<span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
-<span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree   <span class="comment"># 查看项目依赖树</span>
-
-<span class="comment"># 启动服务前需配置相应插件</span>
-<span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
-  <span class="comment"># eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行</span>
-  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D</span> maven.test.skip=<span class="literal">true</span> -<span class="constant">P</span> xxx  
-<span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
-
-<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>clean       <span class="comment"># 清理eclipse项目文件</span>
-<span class="variable">$ </span>mvn <span class="symbol">idea:</span>idea       <span class="comment"># 生成idea项目文件,将项目转换成idea项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">idea:</span>clean      <span class="comment"># 清理idea项目文件</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录" /></p>
-<p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
-
-<span class="comment"># maven生成web项目(参数-D意为定义[Define])</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
-  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
-
-<span class="comment"># maven生成java项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
-
-<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
-<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
-<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
-<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="command" scheme="http://effine.cn/tags/command/"/>
-    
-      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
