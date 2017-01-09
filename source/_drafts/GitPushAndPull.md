@@ -1,12 +1,8 @@
 title: "GitPushAndPull"
 date: 2015-11-17 14:31:16
 categories: git
-tags:
-  - git
-  - push
-  - pull
+tags: [git,push,pull]
 ---
-
 git push orign HEAD --force  
 
 git push #推送本地所有分支
