@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-01-09T15:27:50.000Z</updated>
+  <updated>2017-01-09T15:28:06.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
-    <updated>2017-01-09T15:27:50.000Z</updated>
+    <updated>2017-01-09T15:28:06.000Z</updated>
     <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
 <pre><code><span class="variable">$ </span>command + <span class="constant">D </span>        <span class="comment"># 复制当前行</span>
 <span class="variable">$ </span>command + <span class="constant">X </span>       <span class="comment"># 删除当前行</span>
