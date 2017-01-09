@@ -55,6 +55,3 @@ JAVA_OPTS=%JAVA_OPTS% -Duser.timezone=Asia/Shanghai
 	docker run -it mytest /bin/bash
 
 
-
-dockerfile 命令 ENTRYPOINT是什么意思
-

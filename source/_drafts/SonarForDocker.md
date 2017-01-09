@@ -1,8 +1,7 @@
-title: Dokcer运行Sonar
-tags:
+title: Sonar For Dokcer
+tags: [sonar,docker]
+catagories: docker
 ---
-
-
 配置docker sonar5.6.3（不能连接数据库）  mysql.server restart
 sonar容器启动的时候会重新创建表结构，所以重新创建数据库sonar即可；dockerfile里面的数据库连接需要使用ip，因为本机ip与docker里面的ip不一样
 
