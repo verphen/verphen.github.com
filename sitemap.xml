@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2016/07/16/GradleCommands/</loc>
+    <lastmod>2017-01-10T13:53:10.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2017/01/09/IdeaShortcut/</loc>
     <lastmod>2017-01-09T15:30:00.000Z</lastmod>
   </url>
@@ -89,11 +94,6 @@
   <url>
     <loc>http://effine.cn/2015/11/10/GitConfig/</loc>
     <lastmod>2016-07-24T14:44:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/2016/07/16/GradleCommands/</loc>
-    <lastmod>2016-07-24T14:37:49.000Z</lastmod>
   </url>
   
   <url>

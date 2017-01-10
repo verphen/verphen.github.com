@@ -214,7 +214,7 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/07/16/GradleCommands/"/>
     <id>http://effine.cn/2016/07/16/GradleCommands/</id>
     <published>2016-07-16T12:37:54.000Z</published>
-    <updated>2016-07-24T14:37:49.000Z</updated>
+    <updated>2017-01-10T13:53:10.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
 <p>常用的gradle命令集锦：</p>
 <pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
