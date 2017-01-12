@@ -372,7 +372,7 @@ Usage: nginx [-?hvVtq] [-s ]]>
     <link href="http://effine.cn/2016/01/04/NginxService/"/>
     <id>http://effine.cn/2016/01/04/NginxService/</id>
     <published>2016-01-04T14:08:00.000Z</published>
-    <updated>2016-01-04T14:53:09.000Z</updated>
+    <updated>2017-01-12T16:02:43.000Z</updated>
     <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
 <p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>
 <a id="more"></a>
@@ -452,7 +452,7 @@ chkconfig --add nginx      # 添加至系统服务
     <link href="http://effine.cn/2015/12/11/SpringMessageConverotr/"/>
     <id>http://effine.cn/2015/12/11/SpringMessageConverotr/</id>
     <published>2015-12-10T16:20:54.000Z</published>
-    <updated>2016-01-04T16:23:44.000Z</updated>
+    <updated>2017-01-12T16:02:47.000Z</updated>
     <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
 <p>在你spring启动注解的配置文件中，进行如下配置：</p>
 <pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
@@ -648,7 +648,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
     <published>2015-11-16T09:33:44.000Z</published>
-    <updated>2016-07-20T15:57:03.000Z</updated>
+    <updated>2017-01-12T16:02:55.000Z</updated>
     <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
 <pre><code><span class="comment"># 以下内容来源网络</span>
 <span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行
