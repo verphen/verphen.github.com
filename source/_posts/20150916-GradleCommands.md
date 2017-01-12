@@ -5,7 +5,6 @@ tags:
 categories: tools
 date: 2016-07-16 20:37:54
 ---
-
 ![Gradle](http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg)
 
 常用的gradle命令集锦：
