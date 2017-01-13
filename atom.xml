@@ -832,7 +832,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2016-07-24T13:51:30.000Z</updated>
+    <updated>2017-01-13T14:34:11.000Z</updated>
     <content type="html"><![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
 </code></pre><p>[查看标签]</p>
 <pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>
