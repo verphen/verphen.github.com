@@ -5,7 +5,6 @@ tags:
 categories: tools
 date: 2016-01-04 22:08:00
 ---
-
 将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 ` DAEMON=/usr/local/nginx/sbin/$NAME ` 语句，指定nginx的安装目录。
 
 新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：

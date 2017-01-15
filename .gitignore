@@ -6,3 +6,4 @@ public/
 Thumbs.db
 db.json
 debug.log
+*.Ulysses-favorites.plist

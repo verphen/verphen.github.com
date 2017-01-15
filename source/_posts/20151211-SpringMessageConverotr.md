@@ -5,7 +5,6 @@ tags:
 categories: java
 date: 2015-12-11 00:20:54
 ---
-
 开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：
 
 在你spring启动注解的配置文件中，进行如下配置：

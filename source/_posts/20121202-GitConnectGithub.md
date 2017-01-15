@@ -4,7 +4,6 @@ date: 2012-12-02 13:40:43
 categories: tools
 tags: [git,github]
 ---
-
 怎么使用GitHub作为代码的远程托管服务器？
 
 1. 在GitHub创建账户，然后创建一个 Repository（仓库、储存室），创建过程有提示，这里就不再赘述。
