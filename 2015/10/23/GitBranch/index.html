@@ -5,31 +5,34 @@
   
   <title>Git 分支 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="$ git branch --help        # 查看关于git branch帮助
+  <meta name="description" content="$ git branch --help     # 查看关于git branch帮助
 [查看分支]
-$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch    # 查看本地分支（星号*标注为当前分支）
 $ git branch -r     # 查看所有远程[remote]分支
 $ git branch -a     # 查看所有[all]本地及远程分支
-$ git branch -v     # 查看各个分支最后的">
+$ git branch -v     # 查看各个分支最后的提交
+$">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git 分支">
 <meta property="og:url" content="http://effine.cn/2015/10/23/GitBranch/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="$ git branch --help        # 查看关于git branch帮助
+<meta property="og:description" content="$ git branch --help     # 查看关于git branch帮助
 [查看分支]
-$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch    # 查看本地分支（星号*标注为当前分支）
 $ git branch -r     # 查看所有远程[remote]分支
 $ git branch -a     # 查看所有[all]本地及远程分支
-$ git branch -v     # 查看各个分支最后的">
-<meta property="og:updated_time" content="2016-11-12T03:42:43.000Z">
+$ git branch -v     # 查看各个分支最后的提交
+$">
+<meta property="og:updated_time" content="2017-01-16T15:20:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git 分支">
-<meta name="twitter:description" content="$ git branch --help        # 查看关于git branch帮助
+<meta name="twitter:description" content="$ git branch --help     # 查看关于git branch帮助
 [查看分支]
-$ git branch     # 查看本地分支（星号*标注为当前分支）
+$ git branch    # 查看本地分支（星号*标注为当前分支）
 $ git branch -r     # 查看所有远程[remote]分支
 $ git branch -a     # 查看所有[all]本地及远程分支
-$ git branch -v     # 查看各个分支最后的">
+$ git branch -v     # 查看各个分支最后的提交
+$">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
@@ -109,35 +112,35 @@ $ git branch -v     # 查看各个分支最后的">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code><span class="variable">$ </span>git branch --help        <span class="comment"># 查看关于git branch帮助</span>
+        <pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span>
 </code></pre><p>[查看分支]</p>
-<pre><code><span class="variable">$ </span>git branch     <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
+<pre><code><span class="variable">$ </span>git branch    <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
 <span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
 <span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
 <span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
 <span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span>
 </code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
+<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
 $ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>
 $ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>
-$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
-$ git checkout <span class="variable">&lt;commit_id&gt;</span>         <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
-$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span>    <span class="comment"># 继承master分支创建并切换新分支</span>
-$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>        <span class="comment"># 重命名分支</span>
+$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>      <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
+$ git checkout <span class="variable">&lt;commit_id&gt;</span>      <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
+$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span> <span class="comment"># 继承master分支创建并切换新分支</span>
+$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 重命名分支</span>
 </code></pre><p>[删除分支]</p>
 <pre><code><span class="comment"># 删除本地分支</span>
 <span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;
-    -d         <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>        <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
+    -d      <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
+    -<span class="constant">D </span>     <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
 
 <span class="comment"># 删除远程分支</span>
-<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;     <span class="comment"># 删除远程分支</span>
+<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;  <span class="comment"># 删除远程分支</span>
 <span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
 <span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span>
 </code></pre><p>[合并分支]</p>
-<pre><code><span class="variable">$ </span>git branch --merged     <span class="comment"># 查看已合并的分支列表</span>
+<pre><code><span class="variable">$ </span>git branch --merged   <span class="comment"># 查看已合并的分支列表</span>
 <span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;branch&gt;     <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
+<span class="variable">$ </span>git merge &lt;branch&gt;    <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
 </code></pre><p>[关联分支]</p>
 <pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
 </span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
