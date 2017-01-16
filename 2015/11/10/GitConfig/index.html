@@ -12,7 +12,7 @@
 
 便于使用，我们通常配置系统用户范围；一些具体配置如下
 # 列出所有配置,grep可过滤具体Command命令
-$ git config --list    [| gre">
+$ git config --list [| grep c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git Config">
 <meta property="og:url" content="http://effine.cn/2015/11/10/GitConfig/index.html">
@@ -24,8 +24,8 @@ $ git config --list    [| gre">
 
 便于使用，我们通常配置系统用户范围；一些具体配置如下
 # 列出所有配置,grep可过滤具体Command命令
-$ git config --list    [| gre">
-<meta property="og:updated_time" content="2016-07-24T14:44:00.000Z">
+$ git config --list [| grep c">
+<meta property="og:updated_time" content="2017-01-16T15:18:36.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git Config">
 <meta name="twitter:description" content="Git配置存在适用范围：
@@ -35,7 +35,7 @@ $ git config --list    [| gre">
 
 便于使用，我们通常配置系统用户范围；一些具体配置如下
 # 列出所有配置,grep可过滤具体Command命令
-$ git config --list    [| gre">
+$ git config --list [| grep c">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
@@ -122,7 +122,7 @@ $ git config --list    [| gre">
 </ul>
 <p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
 <pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
-<span class="variable">$ </span>git config --list    [| grep command]
+<span class="variable">$ </span>git config --list [| grep command]
 <span class="variable">$ </span>git config -l [| grep command]
 
 <span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span>
@@ -132,7 +132,7 @@ $ git config --list    [| gre">
 <span class="variable">$ </span>git config --global merge.tool &lt;vimdiff&gt;      <span class="comment"># 设置差异分析工具vimdiff</span>
 
 <span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span>
-<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;     <span class="comment"># 使用别名aliasname代替command</span>
+<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;   <span class="comment"># 使用别名aliasname代替command</span>
 <span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>
     &gt; status [st]
     &gt; commit [ci]

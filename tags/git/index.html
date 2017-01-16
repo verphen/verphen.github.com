@@ -172,7 +172,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
 </ul>
 <p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
 <pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
-<span class="variable">$ </span>git config --list    [| grep command]
+<span class="variable">$ </span>git config --list [| grep command]
 <span class="variable">$ </span>git config -l [| grep command]
 
 <span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span>
@@ -182,7 +182,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
 <span class="variable">$ </span>git config --global merge.tool &lt;vimdiff&gt;      <span class="comment"># 设置差异分析工具vimdiff</span>
 
 <span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span>
-<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;     <span class="comment"># 使用别名aliasname代替command</span>
+<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;   <span class="comment"># 使用别名aliasname代替command</span>
 <span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>
     &gt; status [st]
     &gt; commit [ci]
