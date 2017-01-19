@@ -3,8 +3,6 @@ date: 2016-11-08 21:32:11
 categories: linux
 tags: [command,linux]
 ---
-
-
 注: 命令的前后台切换都是针对当前shell，切换到其他shell无法使用；
 
 $ jobs [option] [number] 		# 查看当前shell后台运行的所有命令或指定命令number作业号
