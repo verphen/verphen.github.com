@@ -1,6 +1,6 @@
 title: Logstash
 categories: tools
-tags:[logstash,elk]
+tags: [logstash,elk]
 ---
 Logstashjdk
 centos安装logstash前提必须安装jdk（版本必须在1.7之上）
