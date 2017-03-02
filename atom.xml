@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-01-09T15:30:00.000Z</updated>
+  <updated>2017-03-02T16:14:45.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -13,6 +13,80 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Zookeeper 安装及配置]]></title>
+    <link href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/"/>
+    <id>http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/</id>
+    <published>2017-03-02T15:33:37.000Z</published>
+    <updated>2017-03-02T16:14:45.000Z</updated>
+    <content type="html"><![CDATA[<p>Zookeeper 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；为方便书写，以下所有 zookeeper 以 zk 替换；</p>
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk</span>
+$ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
+
+$ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
+$ <span class="built_in">cd</span> zookeeper-<span class="variable">${version}</span>   <span class="comment"># 进入zookeeper根目录</span>
+$ mkdir data logs   <span class="comment"># 新建目录data(数据目录)、logs(日志目录)</span>
+$ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
+
+    tickTime=<span class="number">2000</span>
+    dataDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/data
+    dataLogDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/logs
+    clientPort=<span class="number">2181</span>
+    initLimit=<span class="number">5</span>
+    syncLimit=<span class="number">2</span>
+</code></pre><a id="more"></a>
+<h2 id="二、启动_zk">二、启动 zk</h2><pre><code>$ cd zookeeper-${version}/bin  <span class="comment"># 进入zk命令目录</span>
+$ ./zkServer.sh start  <span class="comment"># 启动zk服务</span>
+$ ./zkServer.sh status <span class="comment"># 查看zk启动状态(打印信息出现"Mode: standalone"，即表示zk为单点)</span>
+<span class="comment"># zk基本基本命令[启动|前台启动|停止|重启|查看状态|升级|打印cmd]</span>
+$ zkServer.sh {start|<span class="string">start-foreground</span>|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">status</span>|<span class="string">upgrade</span>|<span class="string">print-cmd}</span>
+</code></pre><h2 id="三、配置_zk_集群">三、配置 zk 集群</h2><p>现提供三台服务器如下：</p>
+<pre><code><span class="preprocessor"># IP 及 HostName</span>
+<span class="number">10.0</span><span class="number">.0</span><span class="number">.21</span> server1
+<span class="number">10.0</span><span class="number">.0</span><span class="number">.22</span> server2
+<span class="number">10.0</span><span class="number">.0</span><span class="number">.23</span> server3
+</code></pre><p>首先，在每台服务器以zk单点形式进行安装，然后分别对zk配置文件 zoo.cfg 添加集群配置：</p>
+<pre><code># <span class="tag">server</span>.<span class="attr_selector">[myid]</span>:<span class="attr_selector">[ip]</span>:<span class="attr_selector">[port1]</span>:<span class="attr_selector">[port2]</span>,表述信息参考博文"<span class="tag">zoo</span><span class="class">.cfg</span>配置"
+<span class="tag">server</span><span class="class">.1</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.21</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
+<span class="tag">server</span><span class="class">.2</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.22</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
+<span class="tag">server</span><span class="class">.3</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.23</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
+</code></pre><p>其次，在每台服务器zk的配置目录conf下新建文件myid,同时将上一步配置的“myid”写入对应服务器myid文件即可；即 10.0.0.21 配置的myid文件内容为1，后面两台类推； </p>
+<pre><code><span class="comment"># server 1 </span>
+$ <span class="built_in">echo</span> <span class="string">"1"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid  
+<span class="comment"># server 2</span>
+$ <span class="built_in">echo</span> <span class="string">"2"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid
+<span class="comment"># server 3</span>
+$ <span class="built_in">echo</span> <span class="string">"3"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid
+</code></pre><p>最后，分别启动zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为foller，使用<code>zkServer.sh status</code>查看状态）  </p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Zookeeper 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；为方便书写，以下所有 zookeeper 以 zk 替换；</p>
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk</span>
+$ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
+
+$ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
+$ <span class="built_in">cd</span> zookeeper-<span class="variable">${version}</span>   <span class="comment"># 进入zookeeper根目录</span>
+$ mkdir data logs   <span class="comment"># 新建目录data(数据目录)、logs(日志目录)</span>
+$ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
+
+    tickTime=<span class="number">2000</span>
+    dataDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/data
+    dataLogDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/logs
+    clientPort=<span class="number">2181</span>
+    initLimit=<span class="number">5</span>
+    syncLimit=<span class="number">2</span>
+</code></pre>]]>
+    
+    </summary>
+    
+      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
+    
+      <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[IDEA快捷方式]]></title>
@@ -1009,53 +1083,6 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
 <span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
 </code></pre>]]>
     
-    </summary>
-    
-      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
-    
-      <category term="skill" scheme="http://effine.cn/tags/skill/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Maven技巧-下载源码]]></title>
-    <link href="http://effine.cn/2015/07/15/MavenDownSourse/"/>
-    <id>http://effine.cn/2015/07/15/MavenDownSourse/</id>
-    <published>2015-07-15T03:42:19.000Z</published>
-    <updated>2015-12-23T16:25:45.000Z</updated>
-    <content type="html"><![CDATA[<p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
-<ol>
-<li><p>maven命令行(针对具体项目)</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier</span>=javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
-</code></pre></li>
-<li><p>配置maven全局文件settings</p>
-<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
-<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
-    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
-<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
-</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
-<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
-</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
-</li>
-<li><p>eclipse配置</p>
-<p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
-</li>
-</ol>
-]]></content>
-    <summary type="html">
-    <![CDATA[<p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
-<ol>
-<li><p>maven命令行(针对具体项目)</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbo]]>
     </summary>
     
       <category term="maven" scheme="http://effine.cn/tags/maven/"/>

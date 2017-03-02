@@ -69,6 +69,75 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MavenDownSourse" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/07/15/MavenDownSourse/" class="article-date">
+  <time datetime="2015-07-15T03:42:19.000Z" itemprop="datePublished">7月 15 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/07/15/MavenDownSourse/">Maven技巧-下载源码</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
+<ol>
+<li><p>maven命令行(针对具体项目)</p>
+<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier</span>=javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
+</code></pre></li>
+<li><p>配置maven全局文件settings</p>
+<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
+<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
+    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
+        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
+    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
+<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
+</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
+<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
+</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
+</li>
+<li><p>eclipse配置</p>
+<p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cizsjy0g70033t288stow7ypa" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/07/15/MavenDownSourse/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/skill/">skill</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-MavenCommands" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/07/15/MavenCommands/" class="article-date">
@@ -119,7 +188,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cixq8swuv0031uh2eawukb6z3" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cizsjy0gb0037t2881syihi4u" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/15/MavenCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -182,7 +251,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="cixq8swuy0036uh2e5p7hod9r" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="cizsjy0gf003ct288ia3kfbl3" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/08/MysqlCommand/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -250,81 +319,12 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/07/MacShortcutKey/" data-id="cixq8swv2003cuh2e7eihxwuk" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/07/MacShortcutKey/" data-id="cizsjy0gi003it288ik5hlrrq" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/07/07/MacShortcutKey/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shortcut/">shortcut</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-EclipseShortcutKey" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/07/07/EclipseShortcutKey/" class="article-date">
-  <time datetime="2015-07-07T01:27:14.000Z" itemprop="datePublished">7月 7 2015</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/07/07/EclipseShortcutKey/">Eclipse 快捷键</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
-
-ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
-ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
-
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
-
-ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
-ctrl + <span class="built_in">shift</span> + o    
-ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
-
-ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
-ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
-ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
-                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
-ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
-ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2015/07/07/EclipseShortcutKey/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/07/EclipseShortcutKey/" data-id="cixq8swv6003iuh2e5nngabd4" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2015/07/07/EclipseShortcutKey/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eclipse/">eclipse</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shortcut/">shortcut</a></li></ul>
 
     </footer>
   </div>
@@ -349,7 +349,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">27</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -359,6 +359,10 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/02/ZookeeperInstallAndConfig/">Zookeeper 安装及配置</a>
+          </li>
         
           <li>
             <a href="/2017/01/09/IdeaShortcut/">IDEA快捷方式</a>
@@ -396,10 +400,6 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
             <a href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
           </li>
         
-          <li>
-            <a href="/2015/11/17/NginxInstall/">linux安装nginx</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -409,7 +409,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.22px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.89px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 16.67px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.22px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.89px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 16.67px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
