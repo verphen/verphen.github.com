@@ -10,3 +10,8 @@ tags: [mock,mockito]
 > InjectMocks 注解接口，相当于将接口的实现注入当前类，可通过该接口调用其方法
 
  
+ 验证方法是否被调用，以及方法调用的次数，方法调用的顺序
+ given方法
+
+ junit 的 @Before
+
