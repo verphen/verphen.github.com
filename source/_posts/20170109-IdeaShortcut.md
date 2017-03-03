@@ -22,7 +22,9 @@ date: 2017-01-09 23:27:21
     $ option + enter       # 导包
 
     $ command + r 			# 当前文件查找替换
-    $ command + shift + r 		# 全局查找替换
+    $ command + shift + r 	# 全局查找替换
+
+    $ command + shift + t   # 选择/创建对应文件的测试类
      
     $ command + w  	#  关闭当前文件
     $ shift + click   # 关闭点击文件
