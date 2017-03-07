@@ -19,13 +19,20 @@ date: 2017-01-09 23:27:21
     $ command + f7 		# 查找方法的调用 find usages
     $ command + ` 		# 切换打开的多个窗口
     $ command + option + l  # 格式化代码
-    $ option + enter       # 导包
+    $ option + enter       # 快速修复（导包等）
+    $ command + shift + enter   # 快速补全行尾分号、括号及方法等
 
     $ command + r 			# 当前文件查找替换
     $ command + shift + r 	# 全局查找替换
+
+    $ command + e       # 列出最近查看过文件
+    $ command + shift + e       # 列出最近编辑过的文件
 
     $ command + shift + t   # 选择/创建对应文件的测试类
      
     $ command + w  	#  关闭当前文件
     $ shift + click   # 关闭点击文件
     $ shift + esc 	# 光标返回编辑框,关闭无用的窗口
+
+    $ F2        # 移动到下一错误代码处
+    $ shift + F2    # 移动到上一错误代码处
