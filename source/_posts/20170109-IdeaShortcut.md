@@ -19,7 +19,7 @@ date: 2017-01-09 23:27:21
     $ command + f7 		# 查找方法的调用 find usages
     $ command + ` 		# 切换打开的多个窗口
     $ command + option + l  # 格式化代码
-    $ option + enter       # 快速修复（导包等）
+    $ option + enter       # 快速修复（自动导包、快速定义并列接收方法返回值等）
     $ command + shift + enter   # 快速补全行尾分号、括号及方法等
 
     $ command + r 			# 当前文件查找替换

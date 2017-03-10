@@ -3,10 +3,10 @@ tags: [zookeeper,zk]
 categories: tools
 date: 2017-03-02 23:33:37
 ---
-Zookeeper 介绍自行 Google 及参考官网： [http://zookeeper.apache.org][1]；为方便书写，以下所有 zookeeper 以 zk 替换；
+Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： [http://zookeeper.apache.org][1]；
  
 ## 一、安装 zk
-	# 官网下载对应版本的zk
+	# 官网下载对应版本的zk（本文实验版本 zookeeper-3.4.9.tar.gz ）
 	$ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-${version}.tar.gz
 	
 	$ tar -zxvf zookeeper-${version}.tar.gz     # 解压文件
