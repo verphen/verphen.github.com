@@ -23,4 +23,8 @@ tickTime）长度后 Zookeeper 服务器还没有收到客户端的返回信息�
 
 syncLimit：这个配置项标识 Leader 与 Follower 之间发送消息，请求和应答时间长度，最长不能超过多少个 tickTime 的时间长度，总的时间长度就是 2*2000=4 秒
 
+# 定时清理snapshot和事务日志的功能(即目录dataDir与dataLogDir)
+autopurge.purgeInterval # 清理频率，单位是小时，需要填写一个1或更大的整数，默认是0，表示不开启自己清理功能。
+autopurge.snapRetainCount   # 该参数和上面的参数（purgeInterval）搭配使用，指定需要保留的文件数目，默认是保留3个
+
 server.A = B:C:D : A表示这个是第几号服务器,B 是这个服务器的 ip 地址；C 表示的是这个服务器与集群中的 Leader 服务器交换信息的端口；D 表示的是万一集群中的 Leader 服务器挂了，需要一个端口来重新进行选举，选出一个新的 Leader
