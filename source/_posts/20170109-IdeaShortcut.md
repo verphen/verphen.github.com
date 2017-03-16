@@ -6,36 +6,39 @@ date: 2017-01-09 23:27:21
 撸代码少不了IDEA，简单的IDEA快捷键记录：
 
     $ double + shift  # 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）
-    $ command + D 		# 复制当前行
-    $ command + X		# 删除当前行
-    $ command + H		# 显示类结构(继承)图
+    $ command + D 		# 复制当前行到下一行
+    $ command + X		# 剪切当前行
+    $ ctrl + H		# 显示类结构(继承)图
+    $ ctrl + option + H         # 查看方法调用结构图
 
-    $ command + B 		# 查看方法定义
+    $ command + B 		# 全局查找方法调用
     $ command + option + B 	# 查看方法的实现细节
+    $ command + f7      # 当前文件查找方法的调用
 
     $ command + option + 方向键(左left/右right) 	# 返回至上、下次浏览的位置
+    $ command + option + T      # 给代码添加if、where等语句包括起来
+    $ command + option + V      # 给方法调用提出引用变量
 
     $ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）
-    $ ctrl + option + H 		# 查看方法调用结构图
-    $ command + f7 		# 查找方法的调用 find usages
+    
     $ command + ` 		# 切换打开的多个窗口
-    $ command + option + l  # 格式化代码
+    $ command + option + L  # 格式化代码（若选中及格式化选中代码）
     $ option + enter       # 快速修复（自动导包、快速定义并列出接收方法返回值等）
     $ command + shift + enter   # 快速补全行尾分号、括号及方法等
 
-    $ command + r 			# 当前文件查找替换
-    $ command + shift + r 	# 全局查找替换
+    $ command + R 			# 当前文件查找替换
+    $ command + shift + R 	# 全局查找替换
 
-    $ command + e       # 列出最近查看过文件
-    $ command + shift + e       # 列出最近编辑过的文件
+    $ command + E      # 列出最近查看过文件
+    $ command + shift + E       # 列出最近编辑过的文件
 
-    $ command + shift + a       # Rest Client(打开调试用的Http等操作)
-    $ command + shift + t   # 选择/创建对应文件的测试类
-    $ command + shift + v   # 访问历史粘贴板
+    $ command + shift + A       # Rest Client(打开调试用的Http等操作)
+    $ command + shift + T   # 选择/创建对应文件的测试类
+    $ command + shift + V   # 访问历史粘贴板
      
-    $ command + w  	#  关闭当前文件
+    $ command + W  	#  关闭当前标签页
     $ shift + click   # 关闭点击文件
-    $ shift + esc 	# 光标返回编辑框,关闭无用的窗口
+    $ shift + esc 	# 光标返回编辑框,关闭获得焦点的窗口
 
     $ F2        # 移动到下一错误代码处
     $ shift + F2    # 移动到上一错误代码处
