@@ -147,7 +147,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Java 的单例模式，即保证在Java应用程序中，一个Java类只有一个实例存在；单例模式可分为饿汉式、懒汉式及登记式（不常用，只做了解即可）。</p>
+        <p>Java 的单例模式，即保证在Java应用程序中，一个Java类只有一个实例存在；单例模式可分为饿汉式、懒汉式及登记式（不常用，只做了解即可）；常用的场景：读取配置文件类、工具类、线程池、缓存、日志对象等。</p>
 <h3 id="饿汉式">饿汉式</h3><pre><code><span class="comment">/** 
  * <span class="doctag">@author</span> effine 
  * <span class="doctag">@date</span> 2013-9-9  下午11:23:42
@@ -188,9 +188,9 @@
 
 
   
-    <article id="post-JavaObserverPattern" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ObserverPattern" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2012/11/08/JavaObserverPattern/" class="article-date">
+    <a href="/2012/11/08/ObserverPattern/" class="article-date">
   <time datetime="2012-11-08T15:33:00.000Z" itemprop="datePublished">11月 8 2012</time>
 </a>
     
@@ -206,7 +206,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/11/08/JavaObserverPattern/">JAVA观察者模式</a>
+      <a class="article-title" href="/2012/11/08/ObserverPattern/">JAVA观察者模式</a>
     </h1>
   
 
@@ -214,18 +214,35 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、抽象观察者角色、具体被观察者角色和具体观察者角色；其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，；而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出code供参考：</p>
+        <p>Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、具体被观察者角色、抽象观察者角色和具体观察者角色；</p>
+<p>针对观察者与被观察者设定场景：每天我们关心的天气预报统一由中国气象局发布(被观察者)，每个发布气象平台（观察者）订阅中国气象局；天气发生变化气象局发布通知给各个平台，然后平台做相应的更新操作。当然，现实中该场景是不存在的，权宜是为了加深理解Java观察者模式而生，因为气象局是不会去通知各个订阅平台，更新操作是各个平台定时刷新完成。</p>
+<p>其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出代码以供参考：</p>
+<h3 id="抽象被观察者角色">抽象被观察者角色</h3><pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013年10月4日  下午11:02:21 
+ */</span>  
+<span class="keyword">package</span> cn.effine.observer;  
+<span class="comment">/* 抽象被观察者角色 */</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IWitched</span> </span>{  
+    <span class="comment">/* 添加观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWitcher</span><span class="params">(IWitchers w)</span></span>;  
+    <span class="comment">/* 删除观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteWitcher</span><span class="params">(IWitchers w)</span></span>;  
+    <span class="comment">/* 被观察者 发生变化，通知观察者 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyWitcher</span><span class="params">(Object o)</span></span>;  
+}
+</code></pre>
         
           <p class="article-more-link">
-            <a href="/2012/11/08/JavaObserverPattern/#more">阅读全文</a>
+            <a href="/2012/11/08/ObserverPattern/#more">阅读全文</a>
           </p>
         
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/08/JavaObserverPattern/" data-id="cj0i7vb5a00a5492eepkjtasq" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/08/ObserverPattern/" data-id="cj0iah0dt0000z82es3csupb9" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2012/11/08/JavaObserverPattern/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2012/11/08/ObserverPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
