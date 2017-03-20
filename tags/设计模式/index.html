@@ -243,69 +243,12 @@ public interface Target {
         <span class="keyword">return</span> hungry;  
     }  
 }  
-</code></pre><p>单例之饿汉式：对象预先加载，线程安全；在类创建的同时生成单例对象，调用时获得对象实例的方法反应速度快，代码简练。</p>
-<h3 id="懒汉式">懒汉式</h3><pre><code><span class="comment">/** 
- * @author effine 
- * @date 2013年9月26日  下午1:50:47 
- */</span>  
-<span class="keyword">package</span> cn.effine.singleton;  
-<span class="comment">/* 单例模式：懒汉式 */</span>  
-<span class="keyword">public</span> <span class="keyword">class</span> LazySingleton {  
-    <span class="comment">/* 声明的时候不初始化对象 */</span>  
-    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton <span class="keyword">lazy</span> = <span class="literal">null</span>;  
-    <span class="comment">/* 将构造器私有化，不允许外部实例化 */</span>  
-    <span class="keyword">private</span> LazySingleton() {  
-    }  
-    <span class="comment">/* 提供对外访问该类对象的方法，多线程下为了资源共享将代码块设置信号量，保证线程安全 */</span>  
-    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton getInstance() { 
-        <span class="comment">/* sychronized 用于代码块时需要一个锁对象，针对实例方法可使用this对象；类方法则使用类对应字节码文件对象 */</span> 
-        <span class="keyword">synchronized</span> (LazySingleton.<span class="keyword">class</span>) {
-            <span class="keyword">if</span> (<span class="keyword">lazy</span> == <span class="literal">null</span>) {
-                <span class="keyword">lazy</span> = <span class="keyword">new</span> LazySingleton();  
-            }  
-        }  
-        <span class="keyword">return</span> <span class="keyword">lazy</span>;  
-    }  
-} 
-</code></pre><p>单例之懒汉式：对象延迟加载、效率高，非线程安全（为保证线程按照，需对判断代码块加上关键字 synchronized）；在使用时才实例化对象，代码相对于饿汉式复杂，第一次加载类对象的时候反应不快（判断不存在需创建）。</p>
-<h3 id="登记式">登记式</h3><pre><code><span class="comment">/** 
- * @author effine 
- * @date 2013年9月29日  下午1:43:31 
- */</span>  
-package cn.effine.singleton;  
-import java.util.HashMap;  
-import java.util.Map;  
-<span class="comment">/* 单例模式：登记式 --- 类似Spring里面的方法，将类名注册，下次从里面直接获取 */</span>  
-<span class="keyword">public</span> <span class="keyword">class</span> RegisterSingleton {  
-    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, RegisterSingleton&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;String, RegisterSingleton&gt;();  
-    <span class="keyword">static</span> {  
-        RegisterSingleton <span class="keyword">register</span> = <span class="keyword">new</span> RegisterSingleton();  
-        <span class="built_in">map</span>.put(<span class="keyword">register</span>.getClass().getName(), <span class="keyword">register</span>);  
-    }  
-    <span class="comment">/* 构造方法私有，防止外部实例化 */</span>  
-    <span class="function"><span class="keyword">private</span> <span class="title">RegisterSingleton</span><span class="params">()</span> </span>{  
-    }  
-    <span class="comment">/* 静态方法返回类的实例 ,参数：map集合的索引名 */</span>  
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RegisterSingleton <span class="title">getInstance</span><span class="params">(String <span class="keyword">register</span>)</span> </span>{  
-        <span class="keyword">if</span> (<span class="keyword">register</span> == null) {  
-            <span class="keyword">register</span> = RegisterSingleton.<span class="keyword">class</span>.getName();  
-        }  
-        <span class="keyword">if</span> (<span class="built_in">map</span>.get(<span class="keyword">register</span>) == null) {  
-            <span class="keyword">try</span> {  
-                <span class="built_in">map</span>.put(<span class="keyword">register</span>, (RegisterSingleton) Class.forName(<span class="keyword">register</span>)  
-                        .newInstance());  
-            } <span class="keyword">catch</span> (InstantiationException e) {  
-                e.printStackTrace();  
-            } <span class="keyword">catch</span> (IllegalAccessException e) {  
-                e.printStackTrace();  
-            } <span class="keyword">catch</span> (ClassNotFoundException e) {  
-                e.printStackTrace();  
-            }  
-        }  
-        <span class="keyword">return</span> <span class="built_in">map</span>.get(<span class="keyword">register</span>);  
-    }  
-}  
-</code></pre>
+</code></pre><p>单例之饿汉式：对象预先加载，线程安全；在类创建的同时生成单例对象，调用时获得对象实例的方法反应速度快，代码简练。<br>
+        
+          <p class="article-more-link">
+            <a href="/2012/11/09/SingletonPattern/#more">阅读全文</a>
+          </p>
+        
       
     </div>
     <footer class="article-footer">
