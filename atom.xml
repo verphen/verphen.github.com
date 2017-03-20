@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-03-02T16:14:45.000Z</updated>
+  <updated>2017-03-10T15:37:37.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,9 +19,9 @@
     <link href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/"/>
     <id>http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/</id>
     <published>2017-03-02T15:33:37.000Z</published>
-    <updated>2017-03-02T16:14:45.000Z</updated>
-    <content type="html"><![CDATA[<p>Zookeeper 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；为方便书写，以下所有 zookeeper 以 zk 替换；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk</span>
+    <updated>2017-03-10T15:37:37.000Z</updated>
+    <content type="html"><![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；</p>
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk（本文实验版本 zookeeper-3.4.9.tar.gz ）</span>
 $ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
 
 $ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
@@ -61,8 +61,8 @@ $ <span class="built_in">echo</span> <span class="string">"3"</span> &gt; /<span
 </code></pre><p>最后，分别启动zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为foller，使用<code>zkServer.sh status</code>查看状态）  </p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>Zookeeper 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；为方便书写，以下所有 zookeeper 以 zk 替换；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk</span>
+    <![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；</p>
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk（本文实验版本 zookeeper-3.4.9.tar.gz ）</span>
 $ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
 
 $ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
@@ -80,9 +80,9 @@ $ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zo
     
     </summary>
     
-      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
-    
       <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
+    
+      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -93,34 +93,50 @@ $ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zo
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
-    <updated>2017-01-09T15:30:00.000Z</updated>
+    <updated>2017-03-16T14:02:07.000Z</updated>
     <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
-<pre><code><span class="variable">$ </span>command + <span class="constant">D </span>        <span class="comment"># 复制当前行</span>
-<span class="variable">$ </span>command + <span class="constant">X </span>       <span class="comment"># 删除当前行</span>
-<span class="variable">$ </span>command + <span class="constant">H </span>       <span class="comment"># 显示类结构(继承)图</span>
+<pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>
+$ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>
+$ <span class="built_in">command</span> + X        <span class="comment"># 剪切当前行</span>
+$ ctrl + H        <span class="comment"># 显示类结构(继承)图</span>
+$ ctrl + option + H         <span class="comment"># 查看方法调用结构图</span>
 
-<span class="variable">$ </span>command + <span class="constant">B </span>        <span class="comment"># 查看方法定义</span>
-<span class="variable">$ </span>command + option + <span class="constant">B </span>    <span class="comment"># 查看方法的实现细节</span>
+$ <span class="built_in">command</span> + B         <span class="comment"># 全局查找方法调用</span>
+$ <span class="built_in">command</span> + option + B     <span class="comment"># 查看方法的实现细节</span>
+$ <span class="built_in">command</span> + f7      <span class="comment"># 当前文件查找方法的调用</span>
 
-<span class="variable">$ </span>command + option + 方向键(左left/右right)     <span class="comment"># 返回至上、下次浏览的位置</span>
+$ <span class="built_in">command</span> + option + 方向键(左left/右right)     <span class="comment"># 返回至上、下次浏览的位置</span>
+$ <span class="built_in">command</span> + option + T      <span class="comment"># 给代码添加if、where等语句包括起来</span>
+$ <span class="built_in">command</span> + option + V      <span class="comment"># 给方法调用提出引用变量</span>
 
-<span class="variable">$ </span>ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
-<span class="variable">$ </span>ctrl + option + <span class="constant">H </span>        <span class="comment"># 查看方法调用结构图</span>
-<span class="variable">$ </span>command + f7         <span class="comment"># 查找方法的调用 find usages</span>
-<span class="variable">$ </span>command + `         <span class="comment"># 切换打开的多个窗口</span>
-<span class="variable">$ </span>command + option + l  <span class="comment"># 格式化代码</span>
-<span class="variable">$ </span>option + enter       <span class="comment"># 导包</span>
+$ ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
 
-<span class="variable">$ </span>command + r             <span class="comment"># 当前文件查找替换</span>
-<span class="variable">$ </span>command + shift + r         <span class="comment"># 全局查找替换</span>
+$ <span class="built_in">command</span> + `         <span class="comment"># 切换打开的多个窗口</span>
+$ <span class="built_in">command</span> + option + L  <span class="comment"># 格式化代码（若选中及格式化选中代码）</span>
+$ option + enter       <span class="comment"># 快速修复（自动导包、快速定义并列出接收方法返回值等）</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + enter   <span class="comment"># 快速补全行尾分号、括号及方法等</span>
 
-<span class="variable">$ </span>command + w      <span class="comment">#  关闭当前文件</span>
-<span class="variable">$ </span>shift + click   <span class="comment"># 关闭点击文件</span>
-<span class="variable">$ </span>shift + esc     <span class="comment"># 光标返回编辑框,关闭无用的窗口</span>
+$ <span class="built_in">command</span> + R             <span class="comment"># 当前文件查找替换</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + R     <span class="comment"># 全局查找替换</span>
+
+$ <span class="built_in">command</span> + E      <span class="comment"># 列出最近查看过文件</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + E       <span class="comment"># 列出最近编辑过的文件</span>
+
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + A       <span class="comment"># Rest Client(打开调试用的Http等操作)</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + T   <span class="comment"># 选择/创建对应文件的测试类</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + V   <span class="comment"># 访问历史粘贴板</span>
+
+$ <span class="built_in">command</span> + W      <span class="comment">#  关闭当前标签页</span>
+$ <span class="built_in">shift</span> + click   <span class="comment"># 关闭点击文件</span>
+$ <span class="built_in">shift</span> + esc     <span class="comment"># 光标返回编辑框,关闭获得焦点的窗口</span>
+
+$ F2        <span class="comment"># 移动到下一错误代码处</span>
+$ <span class="built_in">shift</span> + F2    <span class="comment"># 移动到上一错误代码处</span>
+$ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时遇到一行多个方法，查看执行到哪个方法</span>
 </code></pre>]]></content>
     <summary type="html">
     <![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
-<pre><code><span class="variable">$ </span>command + <span class="constant">D </span>        <span class="co]]>
+<pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“]]>
     </summary>
     
       <category term="idea" scheme="http://effine.cn/tags/idea/"/>
@@ -184,9 +200,9 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
     </summary>
     
-      <category term="docker" scheme="http://effine.cn/tags/docker/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="docker" scheme="http://effine.cn/tags/docker/"/>
     
   </entry>
   
@@ -234,9 +250,9 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
     </summary>
     
-      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -275,9 +291,9 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
     </summary>
     
-      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -328,9 +344,9 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
     </summary>
     
-      <category term="commond" scheme="http://effine.cn/tags/commond/"/>
-    
       <category term="gradle" scheme="http://effine.cn/tags/gradle/"/>
+    
+      <category term="commond" scheme="http://effine.cn/tags/commond/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -396,11 +412,11 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
     </summary>
     
+      <category term="try" scheme="http://effine.cn/tags/try/"/>
+    
       <category term="catch" scheme="http://effine.cn/tags/catch/"/>
     
       <category term="finally" scheme="http://effine.cn/tags/finally/"/>
-    
-      <category term="try" scheme="http://effine.cn/tags/try/"/>
     
       <category term="java" scheme="http://effine.cn/categories/java/"/>
     
@@ -433,9 +449,9 @@ Options:
 Usage: nginx [-?hvVtq] [-s ]]>
     </summary>
     
-      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -513,9 +529,9 @@ chkconfig --add nginx      # 添加至系统服务
     
     </summary>
     
-      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -593,9 +609,9 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     
     </summary>
     
-      <category term="java" scheme="http://effine.cn/tags/java/"/>
-    
       <category term="spring" scheme="http://effine.cn/tags/spring/"/>
+    
+      <category term="java" scheme="http://effine.cn/tags/java/"/>
     
       <category term="java" scheme="http://effine.cn/categories/java/"/>
     
@@ -663,9 +679,9 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
     
     </summary>
     
-      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -775,9 +791,9 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
 <p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义]]>
     </summary>
     
-      <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -836,9 +852,9 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
 <li>系统用户范围： <code>git config - -global</code>    ]]>
     </summary>
     
-      <category term="config" scheme="http://effine.cn/tags/config/"/>
-    
       <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="config" scheme="http://effine.cn/tags/config/"/>
     
       <category term="git" scheme="http://effine.cn/categories/git/"/>
     
@@ -988,9 +1004,9 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
 ]]>
     </summary>
     
-      <category term="branch" scheme="http://effine.cn/tags/branch/"/>
-    
       <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+      <category term="branch" scheme="http://effine.cn/tags/branch/"/>
     
       <category term="git" scheme="http://effine.cn/categories/git/"/>
     

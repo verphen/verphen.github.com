@@ -5,15 +5,12 @@
   
   <title>Tag: 设计模式 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="追求优雅代码而不断受打击的艺术家">
 <meta property="og:url" content="http://effine.cn/tags/设计模式/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="追求优雅代码而不断受打击的艺术家">
-<meta name="twitter:description">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
@@ -21,7 +18,7 @@
     <link rel="icon" href="/imgs/favicon.png">
   
   <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
   
 </head>
 <body>
@@ -133,7 +130,7 @@ public interface Target {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="cizsjy0kq007bt288fkd5tvsf" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="cj0i7vb3i007b492eitzcs6xl" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/04/07/JavaAdapterPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -188,7 +185,7 @@ public interface Target {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/10/JavaSimpleFactoryPattern/" data-id="cizsjy0n1009xt288yjun951t" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/10/JavaSimpleFactoryPattern/" data-id="cj0i7vb53009x492errn6yee7" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2012/11/10/JavaSimpleFactoryPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -202,9 +199,9 @@ public interface Target {
 
 
   
-    <article id="post-JavaSingletonPattern" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-SingletonPattern" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2012/11/09/JavaSingletonPattern/" class="article-date">
+    <a href="/2012/11/09/SingletonPattern/" class="article-date">
   <time datetime="2012-11-09T13:32:11.000Z" itemprop="datePublished">11月 9 2012</time>
 </a>
     
@@ -220,7 +217,7 @@ public interface Target {
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2012/11/09/JavaSingletonPattern/">JAVA单例模式</a>
+      <a class="article-title" href="/2012/11/09/SingletonPattern/">JAVA单例模式</a>
     </h1>
   
 
@@ -228,25 +225,93 @@ public interface Target {
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>作用：保证在Java应用程序中，一个Java类只有一个实例存在；所以一般单态类会提供一个返回该类实例的方法。提供一个对对象的全局访问指针。</p>
-<p>优点：节省内存，限制类的个数，有利于Java的垃圾回收机制（Garbage Collection ）；</p>
-<p>缺点及注意点：</p>
-<ul>
-<li>多线程情况下，懒加载模式可能导致线程不安全因素，例如：同时有两个线程同时调用getInstance方法获取实例时，可能两个线程同时进入if语句判断块，此时类尚未被实例化，那么将同时得到两个不同的实例（此注意点比较容易避免，获取实例时使用同步sync就可以很好的解决）。</li>
-<li>当单例类被多个classloader加载的情况下，可能获得多个单例类的实例（此种情况可能比较难避免，这需要使所有的类使用相同的类加载器加载）。</li>
-<li>当单例类实现了序列化接口（Serializer）时，我们如果将对象序列化，并返回序列化得到实例时，这个实例将是一个新的实例，而不是序列化之前的实例（在这种情况下，需要在此类中添加readResolve方法，将返回对象设置为当前实例，否则会获得一个不同于序列化之前的类）。<br>单例模式具体分为饿汉式、懒汉式及登记式（这个很少介绍）：</li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2012/11/09/JavaSingletonPattern/#more">阅读全文</a>
-          </p>
-        
+        <p>Java 的单例模式，即保证在Java应用程序中，一个Java类只有一个实例存在；单例模式可分为饿汉式、懒汉式及登记式（不常用，只做了解即可）。</p>
+<h3 id="饿汉式">饿汉式</h3><pre><code><span class="comment">/** 
+ * <span class="doctag">@author</span> effine 
+ * <span class="doctag">@date</span> 2013-9-9  下午11:23:42
+ */</span>  
+<span class="keyword">package</span> cn.effine.singleton;  
+<span class="comment">/* 单例模式：饿汉式 */</span>  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HungrySingleton</span> </span>{  
+    <span class="comment">/* 饿汉式单例模式, 声明的同时初始化对象 */</span>  
+    <span class="keyword">private</span> <span class="keyword">static</span> HungrySingleton hungry = <span class="keyword">new</span> HungrySingleton();  
+    <span class="comment">/* 构造方法设置成privae，不允许外部实实例化 */</span>  
+    <span class="function"><span class="keyword">private</span> <span class="title">HungrySingleton</span><span class="params">()</span> </span>{  
+    }  
+    <span class="comment">/* 返回一个单态模式的类的实例 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> HungrySingleton <span class="title">getInstance</span><span class="params">()</span> </span>{  
+        <span class="keyword">return</span> hungry;  
+    }  
+}  
+</code></pre><p>单例之饿汉式：对象预先加载，线程安全；在类创建的同时生成单例对象，调用时获得对象实例的方法反应速度快，代码简练。</p>
+<h3 id="懒汉式">懒汉式</h3><pre><code><span class="comment">/** 
+ * @author effine 
+ * @date 2013年9月26日  下午1:50:47 
+ */</span>  
+<span class="keyword">package</span> cn.effine.singleton;  
+<span class="comment">/* 单例模式：懒汉式 */</span>  
+<span class="keyword">public</span> <span class="keyword">class</span> LazySingleton {  
+    <span class="comment">/* 声明的时候不初始化对象 */</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton <span class="keyword">lazy</span> = <span class="literal">null</span>;  
+    <span class="comment">/* 将构造器私有化，不允许外部实例化 */</span>  
+    <span class="keyword">private</span> LazySingleton() {  
+    }  
+    <span class="comment">/* 提供对外访问该类对象的方法，多线程下为了资源共享将代码块设置信号量，保证线程安全 */</span>  
+    <span class="keyword">public</span> <span class="keyword">static</span> LazySingleton getInstance() { 
+        <span class="comment">/* sychronized 用于代码块时需要一个锁对象，针对实例方法可使用this对象；类方法则使用类对应字节码文件对象 */</span> 
+        <span class="keyword">synchronized</span> (LazySingleton.<span class="keyword">class</span>) {
+            <span class="keyword">if</span> (<span class="keyword">lazy</span> == <span class="literal">null</span>) {
+                <span class="keyword">lazy</span> = <span class="keyword">new</span> LazySingleton();  
+            }  
+        }  
+        <span class="keyword">return</span> <span class="keyword">lazy</span>;  
+    }  
+} 
+</code></pre><p>单例之懒汉式：对象延迟加载、效率高，非线程安全（为保证线程按照，需对判断代码块加上关键字 synchronized）；在使用时才实例化对象，代码相对于饿汉式复杂，第一次加载类对象的时候反应不快（判断不存在需创建）。</p>
+<h3 id="登记式">登记式</h3><pre><code><span class="comment">/** 
+ * @author effine 
+ * @date 2013年9月29日  下午1:43:31 
+ */</span>  
+package cn.effine.singleton;  
+import java.util.HashMap;  
+import java.util.Map;  
+<span class="comment">/* 单例模式：登记式 --- 类似Spring里面的方法，将类名注册，下次从里面直接获取 */</span>  
+<span class="keyword">public</span> <span class="keyword">class</span> RegisterSingleton {  
+    <span class="keyword">private</span> <span class="keyword">static</span> Map&lt;String, RegisterSingleton&gt; <span class="built_in">map</span> = <span class="keyword">new</span> HashMap&lt;String, RegisterSingleton&gt;();  
+    <span class="keyword">static</span> {  
+        RegisterSingleton <span class="keyword">register</span> = <span class="keyword">new</span> RegisterSingleton();  
+        <span class="built_in">map</span>.put(<span class="keyword">register</span>.getClass().getName(), <span class="keyword">register</span>);  
+    }  
+    <span class="comment">/* 构造方法私有，防止外部实例化 */</span>  
+    <span class="function"><span class="keyword">private</span> <span class="title">RegisterSingleton</span><span class="params">()</span> </span>{  
+    }  
+    <span class="comment">/* 静态方法返回类的实例 ,参数：map集合的索引名 */</span>  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RegisterSingleton <span class="title">getInstance</span><span class="params">(String <span class="keyword">register</span>)</span> </span>{  
+        <span class="keyword">if</span> (<span class="keyword">register</span> == null) {  
+            <span class="keyword">register</span> = RegisterSingleton.<span class="keyword">class</span>.getName();  
+        }  
+        <span class="keyword">if</span> (<span class="built_in">map</span>.get(<span class="keyword">register</span>) == null) {  
+            <span class="keyword">try</span> {  
+                <span class="built_in">map</span>.put(<span class="keyword">register</span>, (RegisterSingleton) Class.forName(<span class="keyword">register</span>)  
+                        .newInstance());  
+            } <span class="keyword">catch</span> (InstantiationException e) {  
+                e.printStackTrace();  
+            } <span class="keyword">catch</span> (IllegalAccessException e) {  
+                e.printStackTrace();  
+            } <span class="keyword">catch</span> (ClassNotFoundException e) {  
+                e.printStackTrace();  
+            }  
+        }  
+        <span class="keyword">return</span> <span class="built_in">map</span>.get(<span class="keyword">register</span>);  
+    }  
+}  
+</code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/09/JavaSingletonPattern/" data-id="cizsjy0n500a1t2886d2tx749" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/09/SingletonPattern/" data-id="cj0i877k60000pd2eva80urtq" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2012/11/09/JavaSingletonPattern/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="http://effine.cn/2012/11/09/SingletonPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
@@ -293,7 +358,7 @@ public interface Target {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/08/JavaObserverPattern/" data-id="cizsjy0na00a5t288pqf8mjim" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/08/JavaObserverPattern/" data-id="cj0i7vb5a00a5492eepkjtasq" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2012/11/08/JavaObserverPattern/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -457,11 +522,11 @@ public interface Target {
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js" type="text/javascript"></script>
+<script src="/js/script.js"></script>
   </div>
 
   <!-- fork me on github -->
