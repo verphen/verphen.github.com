@@ -8,3 +8,5 @@ Java虚拟机：
 
 
 	http://www.jianshu.com/p/80f5ee32810d
+
+	https://my.oschina.net/u/1175007/blog/488886
