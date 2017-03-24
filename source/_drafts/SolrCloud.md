@@ -41,7 +41,7 @@ solr集群搭建之前必须先搭建zookeeper集群；
 4. 向solr的collection
 
 
-issuse: 
+issues: 
 	在collecgion/core.properties的配置参数含义：
 
 		#Written by CorePropertiesLocator
