@@ -12,7 +12,7 @@ Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Ma
 	$ command + F   # 当前窗口查找，tab键选中找到的文本，option + enter 粘贴光标处
 	$ command + option + B  # 回放功能
 	$ command + option + E  # 搜索所有的窗口标签Tabs
-	<!-- more -->
+
 	$ command + D           # 竖向分屏 
 	$ command + shift + D   # 横向分屏
 	$ command + option + 方向键/'['及']'    # 切换屏幕
@@ -31,7 +31,7 @@ Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Ma
 	$ ctrl + T      # 交换光标处文本
 	$ command + R   # 清屏
 	$ ctrl + L      $ 清屏
-	
+
 必备技巧：
 -  选中即复制，然后选择目标位置粘贴(command + v)即可
 -  具体配置参考： Profiles -> open profiles
