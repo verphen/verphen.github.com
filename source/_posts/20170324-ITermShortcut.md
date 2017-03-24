@@ -3,7 +3,7 @@ tags: [tools, iterm]
 categories: tools
 date: 2017-03-24 14:28:52
 ---
-Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具 terminal几亿光年，前提是你必须收下其常用快捷键：
+Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：
 	$ command + /           # 查看光标位置
 	$ command + T/W     # 新建/关闭标签
 	$ command + 数字/方向键    # 切换标签
