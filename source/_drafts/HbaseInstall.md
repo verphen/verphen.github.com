@@ -26,7 +26,7 @@ tags:
 	        <value>file:///home/comall/software/data/hbase</value>
 	    </property>
 
-		<!-- web访问端口，默认为16010 -->
+       <!-- web访问端口，默认为16010 -->
 	   <property>
 	        <name>hbase.master.info.port</name>
 	        <value>15000</value>

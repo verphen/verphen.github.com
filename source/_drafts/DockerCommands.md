@@ -145,16 +145,6 @@ OPTIONS选项：
   	--no-stdin          Do not attach STDIN
   	--sig-proxy=true    Proxy all received signals to the process
 
-# 查看容器的日志
-$ docker logs [OPTIONS] CONTAINER
-Options:
-      --details        Show extra details provided to logs
-  -f, --follow         Follow log output
-      --help           Print usage
-      --since string   Show logs since timestamp
-      --tail string    Number of lines to show from the end of the logs (default "all")
-  -t, --timestamps     Show timestamps
-
   
 # 保存镜像
 $ docker save [OPTIONS] IMAGE [IMAGE...]

@@ -46,5 +46,7 @@ git diff --cached       # 查看已暂存与最近提交的差异
 
 git diff对比的客户端工具(git gui)
 
-git diff --cached
+git diff <commitID> <file>  查看指定CommitID与当前工作区改变的比较
+git diff <CommitID> <CommitID> 查看两次提交的比较
+git diff --cached <commitID> <file>  查看指定CommitID与暂存区改变的比较
 
