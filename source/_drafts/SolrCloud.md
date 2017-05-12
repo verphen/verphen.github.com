@@ -90,7 +90,10 @@ solrcloud
 	。添加solr.xml到solrhome的根目录
 
 > 创建集合
-	solr集群的任一节点执行就可以
+	
+	。删除solr集群所有节点solrhome下的集群数据(collection_shard_replica)
+
+	。solr集群的任一节点执行就可以
 	http://localhost:8010/solr/admin/collections?action=CREATE&name=testblog&numShards=3&replicationFactor=2&collection.configName=testblog&maxShardsPerNode=3
 
 熟悉solrj 、 solrconfig.xml 、 schema.xml
