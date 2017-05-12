@@ -100,6 +100,9 @@ solrcloud
 注意：
 
 	。 配置schema.xml时，field标签配置属性的type必须为标签fieldType配置的name值，区分大小写
+	。 schema.xml必须配置field为“_version_”的内容，如
+
+			<field name="_version_" type="long" indexed="true"  stored="true" multiValued="false" />
 
 
 熟悉solrj 、 solrconfig.xml 、 schema.xml
