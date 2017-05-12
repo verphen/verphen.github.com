@@ -96,4 +96,10 @@ solrcloud
 	。solr集群的任一节点执行就可以
 	http://localhost:8010/solr/admin/collections?action=CREATE&name=testblog&numShards=3&replicationFactor=2&collection.configName=testblog&maxShardsPerNode=3
 
+
+注意：
+
+	。 配置schema.xml时，field标签配置属性的type必须为标签fieldType配置的name值，区分大小写
+
+
 熟悉solrj 、 solrconfig.xml 、 schema.xml
