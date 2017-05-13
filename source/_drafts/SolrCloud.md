@@ -50,3 +50,59 @@ issues:
 		config=solrconfig.xml
 		schema=schema.xml
 		dataDir=/home/comall/software/solrhome/songshu-dev/data
+
+
+
+公司搭建solrcloud记录：
+
+
+ 
+solrcloud
+
+	solr
+
+		solr-tomcat8-1 	8010 、8015、8019
+		solr-tomcat8-2 	8020 、8025、8029
+		solr-tomcat8-3 	8030 、8035、8039
+
+	zk
+
+		server.1=10.0.0.6:2888:3888
+		server.2=10.0.0.6:2889:3889
+		server.3=10.0.0.6:2890:2890
+
+
+
+
+
+>  配置zk集群
+
+> 上传solr配置文件至zk
+	。设置 org.apache.solr.cloud.ZkCLI 到环境变量 （D:\solr621\apache-tomcat-8.0.39\webapps\solr\WEB-INF\lib\*）
+	。执行java方法并上传solr配置文件(conf目录包含 solrconfig.xml 及 schema.xml文件)；(参数-classpath已经设置环境变量)
+
+		java -classpath .:/usr/local/solrcloud-4.7.2/solr-tomcat8-server2/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/testblog -confdir /usr/local/solrcloud-4.7.2/solr-tomcat8-server2/solrhome/collection1/conf  -confname testblog
+
+> 安装solr
+	。上传sole.war到webapps
+	。修改web.xml的solrhome；复制
+	。添加log4j.propertis,并修改日志路径（ 参考 ${CATALINA_HOME} 即就是tomcat根目录 ）
+	。添加solr.xml到solrhome的根目录
+
+> 创建集合
+	
+	。删除solr集群所有节点solrhome下的集群数据(collection_shard_replica)
+
+	。solr集群的任一节点执行就可以
+	http://localhost:8010/solr/admin/collections?action=CREATE&name=testblog&numShards=3&replicationFactor=2&collection.configName=testblog&maxShardsPerNode=3
+
+
+注意：
+
+	。 配置schema.xml时，field标签配置属性的type必须为标签fieldType配置的name值，区分大小写
+	。 schema.xml必须配置field为“_version_”的内容，如
+
+			<field name="_version_" type="long" indexed="true"  stored="true" multiValued="false" />
+
+
+熟悉solrj 、 solrconfig.xml 、 schema.xml
