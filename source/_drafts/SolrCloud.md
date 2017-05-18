@@ -81,7 +81,7 @@ solrcloud
 	。设置 org.apache.solr.cloud.ZkCLI 到环境变量 （D:\solr621\apache-tomcat-8.0.39\webapps\solr\WEB-INF\lib\*）
 	。执行java方法并上传solr配置文件(conf目录包含 solrconfig.xml 及 schema.xml文件)；(参数-classpath已经设置环境变量)
 
-		java -classpath .:/usr/local/solrcloud-4.7.2/solr-tomcat8-server2/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/testblog -confdir /usr/local/solrcloud-4.7.2/solr-tomcat8-server2/solrhome/collection1/conf  -confname testblog
+		java -classpath .:/usr/local/solrcloud-4.7.2/solr-tomcat8-server2/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/shopping -confdir /local/solrcloud-4.7.2/packages/conf  -confname product
 
 > 安装solr
 	。上传sole.war到webapps
@@ -106,3 +106,9 @@ solrcloud
 
 
 熟悉solrj 、 solrconfig.xml 、 schema.xml
+
+
+
+解析：http://192.168.0.61:8080/solr/article_shard2_replica2/addDic=可卖
+	 上面的URL的执行，只对article集合的shard2_replica2对应的机器生效，如果shard2_replica2不在本机（192.168.0.61），则本机的JVM不存在URL执行后添加的词条
+
