@@ -10,3 +10,7 @@ Java虚拟机：
 	http://www.jianshu.com/p/80f5ee32810d
 
 	https://my.oschina.net/u/1175007/blog/488886
+
+
+	jdk1.7 将永久代中的字符串常量池移除，放入堆中
+	jdk1.8 移除了永久代，目的是Hotspot JVM和JRockit JVM(该虚拟机不存在永久代)相融合的设计思路； 转移位置：将java类部分放到java heap里，将字符串常量和类中的静态变量放到内存里面。

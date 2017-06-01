@@ -9,9 +9,10 @@ Mac基本可以摆脱对鼠标的依赖，替换而来是其触控板，有非�
 
 - 应用
       command + w  # 关闭当前窗口，进程还在
-      command + q		# 关闭、退出程序
+      command + q		# 关闭、退出当前程序
       command + shift + q   # 退出当前用户  
-      command + option + esc  # 强制退出某个软件，通常在软件无响应的时候使用
+      command + option + esc  # 调出一打开的应用窗口，选择应用点击"Force Quit"强制退出选择软件
+      command ＋option + shift ＋ ecs   # 按下2~3秒，界面窗口一一关闭
 
 - Finder
       command + c      # 复制文件
