@@ -12,5 +12,13 @@ Java虚拟机：
 	https://my.oschina.net/u/1175007/blog/488886
 
 
+	通过参数PermSize和MaxPermSize设置永久代的大小
+
 	jdk1.7 将永久代中的字符串常量池移除，放入堆中
-	jdk1.8 移除了永久代，目的是Hotspot JVM和JRockit JVM(该虚拟机不存在永久代)相融合的设计思路； 转移位置：将java类部分放到java heap里，将字符串常量和类中的静态变量放到内存里面。
+
+	jdk1.8 移除了永久代，目的是Hotspot JVM和JRockit JVM(该虚拟机不存在永久代)相融合的设计思路； 转移位置：将java类部分放到java heap里，将字符串常量和类中的静态变量放到内存里面。类的元数据, 字符串池, 类的静态变量将会从永久代移除, 放入Java heap或者native memory. 其中建议JVM的实现中将类的元数据放入 native memory, 将字符串池和类的静态变量放入Java堆中. 这样可以加载多少类的元数据就不在由MaxPermSize控制, 而由系统的实际可用空间来控制.
+为什么这么做呢? 减少OOM只是表因, 更深层的原因还是要合并HotSpot和JRockit的代码, JRockit从来没有一个叫永久代的东西, 但是运行良好, 也不需要开发运维人员设置这么一个永久代的大小.
+当然不用担心运行性能问题了, 在覆盖到的测试中, 程序启动和运行速度降低不超过1%, 但是这一点性能损失换来了更大的安全保障.
+
+	参数 MaxMetaspaceSize 允许你来限制用于类元数据的本地内存
+
