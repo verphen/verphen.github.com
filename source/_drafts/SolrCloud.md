@@ -81,7 +81,7 @@ solrcloud
 	。设置 org.apache.solr.cloud.ZkCLI 到环境变量 （D:\solr621\apache-tomcat-8.0.39\webapps\solr\WEB-INF\lib\*）
 	。执行java方法并上传solr配置文件(conf目录包含 solrconfig.xml 及 schema.xml文件)；(参数-classpath已经设置环境变量)
 
-		java -classpath .:/usr/local/solrcloud-4.7.2/solr-tomcat8-server2/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/testblog -confdir /usr/local/solrcloud-4.7.2/solr-tomcat8-server2/solrhome/collection1/conf  -confname testblog
+		java -classpath .:/local/solrcloud-6.5.1/solr1/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost localhost:2181,localhost:2182,localhost:2183/product -confdir /sources/github/shopping/src/main/java/cn/effine/lab/solr/solrConf  -confname product
 
 > 安装solr
 	。上传sole.war到webapps
@@ -94,7 +94,7 @@ solrcloud
 	。删除solr集群所有节点solrhome下的集群数据(collection_shard_replica)
 
 	。solr集群的任一节点执行就可以
-	http://localhost:8010/solr/admin/collections?action=CREATE&name=testblog&numShards=3&replicationFactor=2&collection.configName=testblog&maxShardsPerNode=3
+	http://localhost:8010/solr/admin/collections?action=CREATE&name=product&numShards=3&replicationFactor=2&collection.configName=product&maxShardsPerNode=3
 
 
 注意：
