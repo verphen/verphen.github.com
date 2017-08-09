@@ -66,6 +66,68 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-RedisInstall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/01/31/RedisInstall/" class="article-date">
+  <time datetime="2015-01-31T15:43:02.000Z" itemprop="datePublished">1月 31 2015</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/redis/">redis</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/01/31/RedisInstall/">Redis 安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>周六闲来没事研究了点新东西 <a href="http://redis.io">Redis</a>(此时最新版本redis为2.8.19,以此版本讲解)，满足一个技术宅的好奇心；当然，对redis的如下操作都在linux下进行，具体环境为 centos-minimal。</p>
+<ul>
+<li><p>redis下载、解压、编译源码</p>
+<pre><code>$ wget http:<span class="comment">//download.redis.io/releases/redis-2.8.19.tar.gz     # 下载</span>
+$ tar xzvf redis-<span class="number">2.8</span><span class="number">.19</span>.tar.gz    <span class="preprocessor"># 解压</span>
+$ cd redis-<span class="number">2.8</span><span class="number">.19</span>     <span class="preprocessor"># 进入redis目录</span>
+$ make     <span class="preprocessor"># 编译</span>
+</code></pre><p>  编译redis源码时可能出现错误：”make: cc: Command not found make…”,是因为linux没有没有gcc环境(C语言环境), 依照如下步骤安装gcc环境(如已安装跳过)</p>
+<pre><code><span class="variable">$ </span>yum install gcc <span class="comment"># 安装gcc环境</span>
+<span class="variable">$ </span>rpm -qa | grep gcc    <span class="comment"># 验证gcc是否安装成功（是否打印版本信息）</span>
+
+<span class="variable">$ </span>make  <span class="comment"># 再次编译redis源码(建议重新解压编译，防止之前生成的无效文件造成编译错误)</span>
+</code></pre></li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2015/01/31/RedisInstall/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/01/31/RedisInstall/" data-id="cj657dbtb009i2t2e4z8do9oq" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/01/31/RedisInstall/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redis/">redis</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-CentosNetworkConfig" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/01/29/CentosNetworkConfig/" class="article-date">
@@ -107,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/01/29/CentosNetworkConfig/" data-id="cj0i7vb2c005g492ed6ykefy0" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/01/29/CentosNetworkConfig/" data-id="cj657dbt9009e2t2eovpyfigd" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/01/29/CentosNetworkConfig/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -164,7 +226,7 @@ $ </span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/01/10/ViEditorCommands/" data-id="cj0i7vb2e005l492eu073or96" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/01/10/ViEditorCommands/" data-id="cj657dbt8009b2t2emxi89q4r" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2015/01/10/ViEditorCommands/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -237,7 +299,7 @@ $ </span>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/12/21/SublimeTextShortCut/" data-id="cj0i7vb2i005u492e226gs7st" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/12/21/SublimeTextShortCut/" data-id="cj657dbsx008x2t2ew1s93d1m" class="article-share-link">Share</a>
       
         <a href="http://effine.cn/2014/12/21/SublimeTextShortCut/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -251,72 +313,9 @@ $ </span>
 
 
   
-    <article id="post-SublimeTextUse" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/12/21/SublimeTextUse/" class="article-date">
-  <time datetime="2014-12-21T14:05:51.000Z" itemprop="datePublished">12月 21 2014</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/tools/">tools</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/12/21/SublimeTextUse/">使用sublime text 3</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>官网 <a href="http://www.sublimetext.com/">http://www.sublimetext.com/</a> 下载安装sublime</p>
-<p>插件安装存在两种方式：</p>
-<ul>
-<li><p>下载安装</p>
-<p>  下载待安装插件文件到Packages目录（菜单栏 -&gt; preferences -&gt; browse packages）</p>
-</li>
-<li><p>使用package control组件安装</p>
-<p>  使用package control安装插件，必须先安装package control组件;如果已安装跳过即可，未安装按如下方式进行安装</p>
-<p>  。ctrl + ` : 调出console面板，弹出框输入一下code回车</p>
-<pre><code><span class="keyword">import</span> urllib.request,os; pf = <span class="string">'Package Control.sublime-package'</span>;
-ipp = sublime.installed_packages_path(); urllib.request.install_opener(
-urllib.request.build_opener( urllib.request.ProxyHandler()) ); 
-open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'wb'</span>).<span class="keyword">write</span>(urllib.request.urlopen(
-<span class="string">'http://sublime.wbond.net/'</span> + pf.replace(<span class="string">' '</span>,<span class="string">'%20'</span>)).<span class="keyword">read</span>())
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2014/12/21/SublimeTextUse/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/12/21/SublimeTextUse/" data-id="cj0i7vb2g005p492e5jrl97hr" class="article-share-link">Share</a>
-      
-        <a href="http://effine.cn/2014/12/21/SublimeTextUse/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/9/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/20/">20</a><a class="extend next" rel="next" href="/page/11/">Next &raquo;</a>
     </nav>
   
 </section>
@@ -330,7 +329,7 @@ open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'w
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">28</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -340,6 +339,10 @@ open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'w
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
+          </li>
         
           <li>
             <a href="/2017/03/02/ZookeeperInstallAndConfig/">Zookeeper 安装及配置</a>
@@ -377,10 +380,6 @@ open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'w
             <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
           </li>
         
-          <li>
-            <a href="/2015/12/11/SpringMessageConverotr/">Spring配置MessageConvertor</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -390,7 +389,7 @@ open(os.path.<span class="keyword">join</span>(ipp, pf), <span class="string">'w
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.33px;">blog</a> <a href="/tags/book/" style="font-size: 13.33px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.33px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.33px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 17.78px;">git</a> <a href="/tags/github/" style="font-size: 11.11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.22px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 15.56px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.33px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.22px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.22px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 18.89px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/工具/" style="font-size: 14.44px;">工具</a> <a href="/tags/总结/" style="font-size: 16.67px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.11px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.33px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/工具/" style="font-size: 15px;">工具</a> <a href="/tags/总结/" style="font-size: 17.5px;">总结</a> <a href="/tags/数据库/" style="font-size: 11.25px;">数据库</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/版本管理/" style="font-size: 10px;">版本管理</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/设计模式/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

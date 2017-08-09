@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-03-10T15:37:37.000Z</updated>
+  <updated>2017-03-27T16:08:03.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,64 +15,118 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[iTerm 快捷键]]></title>
+    <link href="http://effine.cn/2017/03/24/ITermShortcut/"/>
+    <id>http://effine.cn/2017/03/24/ITermShortcut/</id>
+    <published>2017-03-24T06:28:52.000Z</published>
+    <updated>2017-03-27T16:08:03.000Z</updated>
+    <content type="html"><![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
+<pre><code><span class="variable">$ </span>command + <span class="regexp">/           # 查看光标位置
+$ command + T/</span><span class="constant">W</span>     <span class="comment"># 新建/关闭标签</span>
+<span class="variable">$ </span>command + 数字/方向键    <span class="comment"># 切换标签</span>
+<span class="variable">$ </span>command + enter       <span class="comment"># 全屏/退出全屏</span>
+<span class="variable">$ </span>command + <span class="constant">F</span>   <span class="comment"># 当前窗口查找，tab键选中找到的文本，option + enter 粘贴光标处</span>
+<span class="variable">$ </span>command + option + <span class="constant">B</span>  <span class="comment"># 回放功能</span>
+<span class="variable">$ </span>command + option + <span class="constant">E</span>  <span class="comment"># 搜索所有的窗口标签Tabs</span>
+
+<span class="variable">$ </span>command + <span class="constant">D</span>           <span class="comment"># 竖向分屏 </span>
+<span class="variable">$ </span>command + shift + <span class="constant">D</span>   <span class="comment"># 横向分屏</span>
+<span class="variable">$ </span>command + option + 方向键/<span class="string">'['</span>及<span class="string">']'</span>    <span class="comment"># 切换屏幕</span>
+<span class="variable">$ </span>command + ;   <span class="comment"># 历史命令、自动匹配提示(根据上下文呼出来提示)</span>
+<span class="variable">$ </span>command + shift + <span class="constant">H</span>   <span class="comment"># 列举粘贴历史</span>
+<span class="variable">$ </span>ctrl + <span class="constant">U</span>      <span class="comment"># 清除当前行</span>
+<span class="variable">$ </span>ctrl + <span class="constant">A</span>      <span class="comment"># 到行首</span>
+<span class="variable">$ </span>ctrl + <span class="constant">E</span>      <span class="comment"># 到行尾</span>
+<span class="variable">$ </span>ctrl + <span class="constant">F</span>/<span class="constant">B</span>    <span class="comment"># 前进/后退(相当于左右方向键)</span>
+<span class="variable">$ </span>ctrl + <span class="constant">P</span>      <span class="comment"># 上一条命令</span>
+<span class="variable">$ </span>ctrl + <span class="constant">R</span>      <span class="comment"># 搜索历史命令</span>
+<span class="variable">$ </span>ctrl + <span class="constant">D</span>      <span class="comment"># 删除当前光标的字符</span>
+<span class="variable">$ </span>ctrl + <span class="constant">H</span>      <span class="comment"># 删除光标之前的字符</span>
+<span class="variable">$ </span>ctrl + w      <span class="comment"># 删除光标之前的单词</span>
+<span class="variable">$ </span>ctrl + <span class="constant">K</span>      <span class="comment"># 删除到文本末尾</span>
+<span class="variable">$ </span>ctrl + <span class="constant">T</span>      <span class="comment"># 交换光标处文本</span>
+<span class="variable">$ </span>command + <span class="constant">R</span>   <span class="comment"># 清屏</span>
+<span class="variable">$ </span>ctrl + <span class="constant">L</span>      <span class="variable">$ </span>清屏
+</code></pre><p>必备技巧：</p>
+<ul>
+<li>选中即复制，然后选择目标位置粘贴(command + v)即可</li>
+<li>具体配置参考： Profiles -&gt; open profiles</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
+<pre><code><span class="variable">$ </span>command + <span cla]]>
+    </summary>
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="iterm" scheme="http://effine.cn/tags/iterm/"/>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Zookeeper 安装及配置]]></title>
     <link href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/"/>
     <id>http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/</id>
     <published>2017-03-02T15:33:37.000Z</published>
-    <updated>2017-03-10T15:37:37.000Z</updated>
+    <updated>2017-08-09T16:01:44.000Z</updated>
     <content type="html"><![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk（本文实验版本 zookeeper-3.4.9.tar.gz ）</span>
-$ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>
+$ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>
 
-$ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
-$ <span class="built_in">cd</span> zookeeper-<span class="variable">${version}</span>   <span class="comment"># 进入zookeeper根目录</span>
-$ mkdir data logs   <span class="comment"># 新建目录data(数据目录)、logs(日志目录)</span>
-$ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
+$ tar -zxvf zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz     <span class="preprocessor"># 解压文件</span>
+$ cd zookeeper-<span class="number">3.4</span><span class="number">.9</span>   <span class="preprocessor"># 进入zookeeper根目录</span>
+$ mkdir data logs   <span class="preprocessor"># 新建目录data(数据目录)、logs(日志目录)</span>
+$ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
 
     tickTime=<span class="number">2000</span>
-    dataDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/data
-    dataLogDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/logs
+    dataDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/data
+    dataLogDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/logs
     clientPort=<span class="number">2181</span>
     initLimit=<span class="number">5</span>
     syncLimit=<span class="number">2</span>
 </code></pre><a id="more"></a>
-<h2 id="二、启动_zk">二、启动 zk</h2><pre><code>$ cd zookeeper-${version}/bin  <span class="comment"># 进入zk命令目录</span>
+<h2 id="二、启动_zk">二、启动 zk</h2><pre><code>$ cd zookeeper-3.4.9/bin  <span class="comment"># 进入zk命令目录</span>
 $ ./zkServer.sh start  <span class="comment"># 启动zk服务</span>
 $ ./zkServer.sh status <span class="comment"># 查看zk启动状态(打印信息出现"Mode: standalone"，即表示zk为单点)</span>
 <span class="comment"># zk基本基本命令[启动|前台启动|停止|重启|查看状态|升级|打印cmd]</span>
 $ zkServer.sh {start|<span class="string">start-foreground</span>|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">status</span>|<span class="string">upgrade</span>|<span class="string">print-cmd}</span>
-</code></pre><h2 id="三、配置_zk_集群">三、配置 zk 集群</h2><p>现提供三台服务器如下：</p>
-<pre><code><span class="preprocessor"># IP 及 HostName</span>
-<span class="number">10.0</span><span class="number">.0</span><span class="number">.21</span> server1
-<span class="number">10.0</span><span class="number">.0</span><span class="number">.22</span> server2
-<span class="number">10.0</span><span class="number">.0</span><span class="number">.23</span> server3
+</code></pre><h2 id="三、配置_zk_集群">三、配置 zk 集群</h2><p>现提供三台服务器（当然你也可以提供一台机器，使用不同的端口来实现），如下：</p>
+<pre><code><span class="preprocessor"># HostName:  IP</span>
+server1:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.21</span>
+server2:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.22</span>
+server3:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.23</span>
 </code></pre><p>首先，在每台服务器以zk单点形式进行安装，然后分别对zk配置文件 zoo.cfg 添加集群配置：</p>
-<pre><code># <span class="tag">server</span>.<span class="attr_selector">[myid]</span>:<span class="attr_selector">[ip]</span>:<span class="attr_selector">[port1]</span>:<span class="attr_selector">[port2]</span>,表述信息参考博文"<span class="tag">zoo</span><span class="class">.cfg</span>配置"
+<pre><code># <span class="tag">server</span>.<span class="attr_selector">[myid]</span>:<span class="attr_selector">[ip]</span>:<span class="attr_selector">[port1]</span>:<span class="attr_selector">[port2]</span>，具体信息参考博文"<span class="tag">zoo</span><span class="class">.cfg</span>配置"
 <span class="tag">server</span><span class="class">.1</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.21</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
 <span class="tag">server</span><span class="class">.2</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.22</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
 <span class="tag">server</span><span class="class">.3</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.23</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
-</code></pre><p>其次，在每台服务器zk的配置目录conf下新建文件myid,同时将上一步配置的“myid”写入对应服务器myid文件即可；即 10.0.0.21 配置的myid文件内容为1，后面两台类推； </p>
-<pre><code><span class="comment"># server 1 </span>
-$ <span class="built_in">echo</span> <span class="string">"1"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid  
-<span class="comment"># server 2</span>
-$ <span class="built_in">echo</span> <span class="string">"2"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid
-<span class="comment"># server 3</span>
-$ <span class="built_in">echo</span> <span class="string">"3"</span> &gt; /<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/conf/myid
-</code></pre><p>最后，分别启动zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为foller，使用<code>zkServer.sh status</code>查看状态）  </p>
+</code></pre><p>其次，在每台服务器zk的配置目录conf下新建 myid 文件,同时将上一步配置的“myid”值写入对应服务器myid文件即可；如 10.0.0.21 配置的myid文件内容为“1”，后面两台类推；具体操作： </p>
+<pre><code><span class="preprocessor"># 将myid为<span class="string">"1"</span>写入server1的myid文件 </span>
+$ echo <span class="string">"1"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid 
+
+<span class="preprocessor"># 将myid为<span class="string">"2"</span>写入server2的myid文件</span>
+$ echo <span class="string">"2"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
+
+<span class="preprocessor"># 将myid为<span class="string">"3"</span>写入server3的myid文件</span>
+$ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
+</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="comment"># 官网下载对应版本的zk（本文实验版本 zookeeper-3.4.9.tar.gz ）</span>
-$ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-<span class="variable">${version}</span>.tar.gz
+<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>
+$ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>
 
-$ tar -zxvf zookeeper-<span class="variable">${version}</span>.tar.gz     <span class="comment"># 解压文件</span>
-$ <span class="built_in">cd</span> zookeeper-<span class="variable">${version}</span>   <span class="comment"># 进入zookeeper根目录</span>
-$ mkdir data logs   <span class="comment"># 新建目录data(数据目录)、logs(日志目录)</span>
-$ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
+$ tar -zxvf zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz     <span class="preprocessor"># 解压文件</span>
+$ cd zookeeper-<span class="number">3.4</span><span class="number">.9</span>   <span class="preprocessor"># 进入zookeeper根目录</span>
+$ mkdir data logs   <span class="preprocessor"># 新建目录data(数据目录)、logs(日志目录)</span>
+$ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
 
     tickTime=<span class="number">2000</span>
-    dataDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/data
-    dataLogDir=/<span class="variable">${***}</span>/zookeeper-<span class="variable">${version}</span>/logs
+    dataDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/data
+    dataLogDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/logs
     clientPort=<span class="number">2181</span>
     initLimit=<span class="number">5</span>
     syncLimit=<span class="number">2</span>
@@ -80,9 +134,9 @@ $ vi conf/zoo.cfg   <span class="comment"># 新建并编辑conf/zoo.cfg文件(zo
     
     </summary>
     
-      <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
-    
       <category term="zk" scheme="http://effine.cn/tags/zk/"/>
+    
+      <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -139,9 +193,9 @@ $ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时�
 <pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“]]>
     </summary>
     
-      <category term="idea" scheme="http://effine.cn/tags/idea/"/>
-    
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="idea" scheme="http://effine.cn/tags/idea/"/>
     
   </entry>
   
@@ -609,9 +663,9 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     
     </summary>
     
-      <category term="spring" scheme="http://effine.cn/tags/spring/"/>
-    
       <category term="java" scheme="http://effine.cn/tags/java/"/>
+    
+      <category term="spring" scheme="http://effine.cn/tags/spring/"/>
     
       <category term="java" scheme="http://effine.cn/categories/java/"/>
     
@@ -1056,56 +1110,6 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
       <category term="linux" scheme="http://effine.cn/tags/linux/"/>
     
       <category term="java" scheme="http://effine.cn/categories/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Maven技巧-字符编码]]></title>
-    <link href="http://effine.cn/2015/07/15/MavenEncoding/"/>
-    <id>http://effine.cn/2015/07/15/MavenEncoding/</id>
-    <published>2015-07-15T07:56:00.000Z</published>
-    <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</project></p>
-<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
-    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
-    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
-</code></pre><a id="more"></a>
-<p><code>&lt;project.build.sourceEncoding&gt;</code> 默认maven是可识别的,如果不放心,可以再进行如下配置;</p>
-<pre><code><span class="tag">&lt;<span class="title">plugins</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">plugin</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">version</span>&gt;</span>3.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">configuration</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">source</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">source</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">target</span>&gt;</span>1.7<span class="tag">&lt;/<span class="title">target</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">encoding</span>&gt;</span>${project.build.sourceEncoding}<span class="tag">&lt;/<span class="title">encoding</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">configuration</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">plugin</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">plugins</span>&gt;</span>
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</p>
-<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
-    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
-    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
-</code></pre>]]>
-    
-    </summary>
-    
-      <category term="maven" scheme="http://effine.cn/tags/maven/"/>
-    
-      <category term="skill" scheme="http://effine.cn/tags/skill/"/>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
   </entry>
   
