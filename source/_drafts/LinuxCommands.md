@@ -63,6 +63,7 @@ history : 操作系统终端执行过的命令历史(历史命令存储在文件
 
 sudo : super user do; 允许授权用户执行超级用户或者其它用户的命令;sudo允许用户借用超级用户的权限，然而"su"命令实际上是允许用户以超级用户登录。所以sudo比su更安全
 
+sudo passwd <user>  修改用户密码
 mkdir : make direactory;创建目录
 rmdir  删除文件夹
 
