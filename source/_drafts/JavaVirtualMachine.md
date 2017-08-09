@@ -22,3 +22,11 @@ Java虚拟机：
 
 	参数 MaxMetaspaceSize 允许你来限制用于类元数据的本地内存
 
+
+永久代(PermGen: Permnent Generation space): 存放类和方法的元数据、以及字符串常量，类被加载是元数据存储在永久代； 是 oracle sun JVM虚拟机 HotSpot 特有的，其他厂商 Oralce JRockit, IBM J9, Taobao JVM 都没永久代；JDK8没有了永久代，当然不会再出现永久代内存溢出(java.lang.OutOfMemoryError: PermGen),取而代之的可能是云空间 metaspace 的其他问题；之前永久代配置参数PermSize(JVM初始分配的非堆内存) 和 MaxPermSize(JVM最大允许分配的非堆内存，按需分配)在JDK8中将被忽略；移除永久代后方法区被存放在元空间metaspace,而字符串常量池则存放java堆；
+
+元数据配置参数：
+		-XX:MetaspaceSize 
+		-XX:MaxMetaspaceSize 
+		-XX:MinMetaspaceFreeRatio 
+		-XX:MaxMetaspaceFreeRatio

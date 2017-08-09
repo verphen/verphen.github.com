@@ -3,10 +3,6 @@ tags:
 ---
 
 
-zookeeper搭建： http://blog.csdn.net/shirdrn/article/details/7183503
-
-
-
 
 solr搭建集群：http://blog.csdn.net/xyls12345/article/details/27504965
 
@@ -50,6 +46,11 @@ issues:
 		config=solrconfig.xml
 		schema=schema.xml
 		dataDir=/home/comall/software/solrhome/songshu-dev/data
+
+
+
+
+
 
 
 
