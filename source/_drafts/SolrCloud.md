@@ -84,6 +84,8 @@ solrcloud
 
 		java -classpath .:/usr/local/solrcloud-4.7.2/solr-tomcat8-server2/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 127.0.0.1:2181,127.0.0.1:2182,127.0.0.1:2183/shopping -confdir /local/solrcloud-4.7.2/packages/conf  -confname product
 
+		java -classpath .:/sources/comall/qpmall/solr/solr-tomcat8-server1/webapps/solr/WEB-INF/lib/*  org.apache.solr.cloud.ZkCLI -cmd upconfig -zkhost 10.90.26.115:2181,10.90.26.116:2181,10.90.26.117:2181/qpmall_index -confdir /sources/comall/qpmall/solr/conf/merchant  -confname merchant_conf
+
 		(java -classpath 等同于 java -cp)
 
 > 安装solr
@@ -97,8 +99,11 @@ solrcloud
 	。删除solr集群所有节点solrhome下的集群数据(collection_shard_replica)
 
 	。solr集群的任一节点执行就可以
-	http://localhost:8010/solr/admin/collections?action=CREATE&name=product&numShards=3&replicationFactor=2&collection.configName=product&maxShardsPerNode=3
+	http://localhost:8010/solr/admin/collections?action=create&name=product&numShards=3&replicationFactor=2&collection.configName=product&maxShardsPerNode=3
 
+	http://localhost:9010/solr/admin/collections?action=create&name=merchant&numShards=2&replicationFactor=3&collection.configName=merchant_conf&maxShardsPerNode=3
+
+	> 删除solr的collection ： http://localhost:8010/solr/admin/collections?action=delete&name=collectionName
 
 注意：
 
@@ -116,4 +121,10 @@ solrcloud
 	 上面的URL的执行，只对article集合的shard2_replica2对应的机器生效，如果shard2_replica2不在本机（192.168.0.61），则本机的JVM不存在URL执行后添加的词条
 
 	 
+
+
+
+zookeeper命令：
+	ls / 	# 查看根目录内容
+	rm /dir	#  删除根目录dir节点；若dir存在子节点则无法删除，可以使用 `rmr /dir`删除
 
