@@ -8,3 +8,5 @@ db.json
 debug.log
 *.Ulysses-favorites.plist
 *.Ulysses-Group.plist
+
+package-lock.json

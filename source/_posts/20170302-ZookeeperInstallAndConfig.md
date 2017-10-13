@@ -49,7 +49,7 @@ Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： [http://z
 	
 	# 将myid为"3"写入server3的myid文件
 	$ echo "3" > ~/zookeeper-3.4.9/conf/myid
-最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为follower，使用`zkServer.sh status`查看状态）  
+最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是一台为leader、两台为follower，使用`zkServer.sh status`查看状态）  
 
 
 

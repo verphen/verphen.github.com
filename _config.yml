@@ -75,11 +75,14 @@ time_format: H:mm:ss
 per_page: 4
 pagination_dir: page
 
-# Disqus
-# disqus_shortname: true
 
-# duoshuo comments
-duoshuo_shortname: true
+##############################
+##        评论配置           ##
+##############################
+# 评论开关
+#comment_enable: false
+# 评论插件
+#comment_plugin: disqus
 
 # 404
 permalink_defaults: /404.html
