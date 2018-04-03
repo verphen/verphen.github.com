@@ -1,10 +1,11 @@
-
+spring
 spring-boot启动方式：
 
-	> idea run with
+	> idea run main method
 		运行包含 @SpringBootApplication 注解的类的main方法即可
 	> mvn spring-boot:run
 	> java -jar ***.jar
+	  java -jar ***.jar --debug 	启用debug
 
 
 注解 @SpringBootApplication 相当于一下三个注解：
@@ -20,10 +21,59 @@ spring-boot启动方式：
 
 	研究： @SpringBootApplication 提供用户自定义对其他三个注解(@Configuration、@EnabbleAutoConfigration、@ComponetScan)别名的设置
 
+	@SpringBootApplication注解也提供了用于自定义@EnableAutoConfiguration和@ComponentScan属性的别名（aliases） ？
+
+	Spring Boot支持以远程调试模式运行一个打包的应用，下面的命令可以为应用关联一个调试器：
+	$ java -Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n \
+       -jar target/myproject-0.0.1-SNAPSHOT.jar
+
+
+Thymeleaf模板设置
+
+application.properties文件的配置：
+
+	spring.thymeleaf.cache  缓存设置
+	spring.devtools.restart.exclude
+	spring.devtools.restart.additional-exclude
+
+	spring.devtools.restart.additional-paths 	添加其他监控路径(修改后自动重启或者重新加载)
+	spring.devtools.restart.enabled 	禁用重启(依旧会初始化重启类加载器)
+
+	// 彻底禁用文件变化应用重启
+	public static void main(String[] args) {
+	    System.setProperty("spring.devtools.restart.enabled", "false");
+    	SpringApplication.run(MyApp.class, args);
+	}
+
+	spring.devtools.restart.trigger-file 	 配置触发器文件(该文件变化才会触发重启)
+	spring.devtools.livereload.enabled 		配置livereload开启禁用状态(每次只能运行一个LiveReload服务器，如果你在IDE中启动多个应用，只有第一个能够获得动态加载功能)
+
+	spring.devtools.remote.debug.local-port 	远程调试自定义端口
+
+可以设置全局的application.properties配置，在用户目录创建文件".spring-boot-devtools.properties"即可
 
 
 
 
 
+经典的Spring Boot依赖库: 
+	spring-boot-starter-web:支持全栈web开发，里面包括了Tomcat和Spring-webmvc。
+	spring-boot-starter-mail:提供对javax.mail的支持.
+	spring-boot-starter-ws: 提供对Spring Web Services的支持
+	spring-boot-starter-test:提供对常用测试框架的支持，包括JUnit，Hamcrest以及Mockito等。
+	spring-boot-starter-actuator:支持产品环境下的一些功能，比如指标度量及监控等。
+	spring-boot-starter-jetty:支持jetty容器。
+	spring-boot-starter-log4j:引入默认的log框架（logback）
 
-springBoot的文章：10.1    https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/
+
+
+spring-boot-actuator
+development-time配置
+JRebel
+SpringApplication.setRegisterShutdownHook(false)
+自定义banner
+
+ 
+springBoot的文章：
+
+	https://qbgbook.gitbooks.io/spring-boot-reference-guide-zh/content/

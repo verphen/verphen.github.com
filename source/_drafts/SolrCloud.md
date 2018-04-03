@@ -128,3 +128,16 @@ zookeeper命令：
 	ls / 	# 查看根目录内容
 	rm /dir	#  删除根目录dir节点；若dir存在子节点则无法删除，可以使用 `rmr /dir`删除
 
+
+
+
+
+	###Zookeeper上传Solr配置文件
+* * *
+>1. 上传schemal.xml到服务器
+>2.  执行命令 
+>sudo /usr/share/zookeeper/bin/zkCli.sh -cmd upconfig -zkhost 127.0.0.1:2181   -collection collection1 -confname /home/comall/schema.xml -solorhome /home/comall/software/solrhome -confdir /home/comall/software/solrhome
+> 3. 重新加载Solr 
+> http://172.31.6.57:8080/solr/admin/cores?action=RELOAD&core=collection1
+
+
