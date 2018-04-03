@@ -18,6 +18,11 @@ spring-boot启动方式：
 	// xx.xx.xx 是待扫描的包路径
 	@ComponentScan(value = "xx.xx.xx")
 
+	研究： @SpringBootApplication 提供用户自定义对其他三个注解(@Configuration、@EnabbleAutoConfigration、@ComponetScan)别名的设置
+
+
+
+
 
 
 
