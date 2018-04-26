@@ -18,6 +18,7 @@ date: 2017-01-09 23:27:21
     $ command + option + 方向键(左left/右right) 	# 返回至上、下次浏览的位置
     $ command + option + T      # 给代码添加if、where等语句包括起来
     $ command + option + V      # 给方法调用提出引用变量
+    $ command + option + u    # 生成类集成图
 
     $ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）
     
@@ -35,6 +36,8 @@ date: 2017-01-09 23:27:21
     $ command + shift + A       # Rest Client(打开调试用的Http等操作)
     $ command + shift + T   # 选择/创建对应文件的测试类
     $ command + shift + V   # 访问历史粘贴板
+    $ command + shift + u   # 将选中内容进行大小写切换
+
      
     $ command + W  	#  关闭当前标签页
     $ shift + click   # 关闭点击文件
