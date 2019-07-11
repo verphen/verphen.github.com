@@ -9,7 +9,7 @@ tomcat角色使用场景：jenkins的配置、访问tomcat默认的manager\host-
 
 如你需要访问manager或host-manager项目; 通过地址 ` http://localhost:8080/[manager|host-manager]` 访问，但是需要用户名密码验证：
 
-<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/tomcat/verification.png" alt="Tomcat verification"/>
+<img src="/imgs/tomcat/verification.png" alt="Tomcat verification"/>
 
 提示你输入用户名密码进行登录，tomcat默认没有配置用户名密码以及用户角色;具体配置文件: conf/tomcat-user-xml; 只需在该文件的 `<tomcat-users>` 标签内进行如下用户及角色配置即可访问.
 

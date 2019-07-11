@@ -5,7 +5,7 @@ tags:
 categories: tools
 date: 2015-07-15 10:43:38
 ---
-<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录" />
+<img src="/imgs/article/maven-standard-dir.png" alt="Maven标准目录" />
 
 用了maven很多年，针对常用的命令做个总结，方便查阅
     
@@ -33,6 +33,7 @@ date: 2015-07-15 10:43:38
     $ mvn validate    # 验证工程是否正确，所需要的资源是否可用
     $ mvn deploy      # 发布项目
     $ mvn dependency:tree   # 查看项目依赖树
+    $ mvn dependency:tree -Dverbose -Dincludes=<groupId>:<artifactId>   # 查看依赖冲突
 
     # 启动服务前需配置相应插件
     $ mvn jetty:run   # 启动jetty服务

@@ -37,4 +37,4 @@ linux单用户模式使用场景：
 
 		$ vi /etc/inittab 	# 图形界面（id:3:initdefault:），命令行（id:5:initdefault:）
 
-	参考如图 <img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/linux/inittab.png" alt="linux默认启动模式控制文件" />
+	参考如图 <img src="/imgs/linux/inittab.png" alt="linux默认启动模式控制文件" />

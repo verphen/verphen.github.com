@@ -119,6 +119,7 @@ ls     显示当前目录文件和文件夹
 
 
 kill: 杀死进程
+killall <appName>    # 杀死所有应用进程(appName) eg: killall nginx
 
 ps: 管道
 	- ps：查看后台进程（常用"ps aux"）

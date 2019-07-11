@@ -1,3 +1,4 @@
+s@: SolrForTomcatSingleInstall
 title: Solr for Tomcat 单点安装
 tags: solr
 ---

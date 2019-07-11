@@ -6,7 +6,7 @@ tags: [upsource,git,code]
 
 [Upsource](https://www.jetbrains.com/upsource/) 是jetbrains推出的代码审查code review工具，官方提出的口号"Polyglot code review tool" 通晓多种语言的代码审查工具；
 
-<img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/upsource.png" alt="upsource" />
+<img src="/imgs/article/upsource.png" alt="upsource" />
 
 ### 下载
 

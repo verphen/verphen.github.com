@@ -5,7 +5,7 @@ tags: [try,catch,finally]
 ---
 简单分析异常捕获try catch的try和finally中return对结果的影响
 
-![try catch return](http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png)
+![try catch return](/imgs/article/TryCatchFinally.png)
 
 <!-- more -->
 

@@ -25,12 +25,12 @@ widgets:
 	# - blogroll
 
 # Miscellaneous
-#google_analytics: verphen
+#google_analytics: effine
 cnzz_tongji: true		# cnzz统计
 baidu_tongji: true		# 百度统计
 busuanzi_tongji: true 		# 不蒜子统计访问量(http://service.ibruce.info/)
 favicon: /imgs/favicon.png	# 浏览器头部显示图标
-#twitter: verphen
-#google_plus: verphen
-#fb_admins: verphen
-#fb_app_id: verphen
+#twitter: effine
+#google_plus: effine
+#fb_admins: effine
+#fb_app_id: effine
