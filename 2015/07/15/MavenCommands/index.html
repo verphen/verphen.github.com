@@ -21,8 +21,8 @@ $ mvn archetype:create    # 创建 maven 项目
 # maven生成web项目(参数-D意为定义[Define])
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
   -DartifactId=&apos;projectname&apos; -DarchetypeArtifact">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
-<meta property="og:updated_time" content="2016-07-24T15:56:27.000Z">
+<meta property="og:image" content="http://effine.cn/imgs/article/maven-standard-dir.png">
+<meta property="og:updated_time" content="2019-07-11T16:20:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven 命令详解">
 <meta name="twitter:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅
@@ -31,14 +31,14 @@ $ mvn archetype:create    # 创建 maven 项目
 # maven生成web项目(参数-D意为定义[Define])
 $ mvn archetype:create -DgroupId=&apos;package-name&apos; 
   -DartifactId=&apos;projectname&apos; -DarchetypeArtifact">
-<meta name="twitter:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png">
+<meta name="twitter:image" content="http://effine.cn/imgs/article/maven-standard-dir.png">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -111,7 +111,7 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
+        <p><img src="/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
 <pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
 
@@ -135,11 +135,12 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 <span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
 <span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
 <span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree   <span class="comment"># 查看项目依赖树</span>
+<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree -<span class="constant">Dverbose </span>-<span class="constant">Dincludes=</span>&lt;groupId&gt;<span class="symbol">:&lt;artifactId&gt;</span>   <span class="comment"># 查看依赖冲突</span>
 
 <span class="comment"># 启动服务前需配置相应插件</span>
 <span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
   <span class="comment"># eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行</span>
-  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D</span> maven.test.skip=<span class="literal">true</span> -<span class="constant">P</span> xxx  
+  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D </span>maven.test.skip=<span class="keyword">true</span> -<span class="constant">P </span>xxx  
 <span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
 
 <span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
@@ -150,7 +151,7 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cj66lc7v000b5xv2e7ilgnde3" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cjxzh44z00050u0fyla01jyyg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/">maven</a></li></ul>
@@ -180,6 +181,16 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
 
   
 </article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+</section>
 
 </section>
         
@@ -261,7 +272,7 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 effine
+      &copy; 2019 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -326,20 +337,6 @@ $ mvn archetype:create -DgroupId=&apos;package-name&apos;
   
 </nav>
     
-<script>
-  var disqus_shortname = 'true';
-  
-  var disqus_url = 'http://effine.cn/2015/07/15/MavenCommands/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 

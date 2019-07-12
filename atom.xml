@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2017-03-27T16:08:03.000Z</updated>
+  <updated>2018-10-31T08:24:53.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://effine.cn/2017/03/24/ITermShortcut/"/>
     <id>http://effine.cn/2017/03/24/ITermShortcut/</id>
     <published>2017-03-24T06:28:52.000Z</published>
-    <updated>2017-03-27T16:08:03.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
 <pre><code><span class="variable">$ </span>command + <span class="regexp">/           # 查看光标位置
 $ command + T/</span><span class="constant">W</span>     <span class="comment"># 新建/关闭标签</span>
@@ -71,7 +71,7 @@ $ command + T/</span><span class="constant">W</span>     <span class="comment">#
     <link href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/"/>
     <id>http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/</id>
     <published>2017-03-02T15:33:37.000Z</published>
-    <updated>2017-08-09T16:01:44.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；</p>
 <h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>
 $ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>
@@ -112,7 +112,7 @@ $ echo <span class="string">"2"</span> &gt; ~/zookeeper-<span class="number">3.4
 
 <span class="preprocessor"># 将myid为<span class="string">"3"</span>写入server3的myid文件</span>
 $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
-</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
+</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是一台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；</p>
@@ -134,9 +134,9 @@ $ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文�
     
     </summary>
     
-      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
-    
       <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
+    
+      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
     
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
@@ -147,7 +147,7 @@ $ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文�
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
-    <updated>2017-03-16T14:02:07.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
 <pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>
 $ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>
@@ -162,6 +162,7 @@ $ <span class="built_in">command</span> + f7      <span class="comment"># 当前
 $ <span class="built_in">command</span> + option + 方向键(左left/右right)     <span class="comment"># 返回至上、下次浏览的位置</span>
 $ <span class="built_in">command</span> + option + T      <span class="comment"># 给代码添加if、where等语句包括起来</span>
 $ <span class="built_in">command</span> + option + V      <span class="comment"># 给方法调用提出引用变量</span>
+$ <span class="built_in">command</span> + option + u    <span class="comment"># 生成类集成图</span>
 
 $ ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
 
@@ -179,6 +180,8 @@ $ <span class="built_in">command</span> + <span class="built_in">shift</span> + 
 $ <span class="built_in">command</span> + <span class="built_in">shift</span> + A       <span class="comment"># Rest Client(打开调试用的Http等操作)</span>
 $ <span class="built_in">command</span> + <span class="built_in">shift</span> + T   <span class="comment"># 选择/创建对应文件的测试类</span>
 $ <span class="built_in">command</span> + <span class="built_in">shift</span> + V   <span class="comment"># 访问历史粘贴板</span>
+$ <span class="built_in">command</span> + <span class="built_in">shift</span> + u   <span class="comment"># 将选中内容进行大小写切换</span>
+
 
 $ <span class="built_in">command</span> + W      <span class="comment">#  关闭当前标签页</span>
 $ <span class="built_in">shift</span> + click   <span class="comment"># 关闭点击文件</span>
@@ -204,7 +207,7 @@ $ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时�
     <link href="http://effine.cn/2017/01/09/Dockerfile/"/>
     <id>http://effine.cn/2017/01/09/Dockerfile/</id>
     <published>2017-01-09T15:04:51.000Z</published>
-    <updated>2017-01-09T15:18:59.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>Dockerfile指令不区分大小写，默认约定大写；该文件必须以FROM命令开始，其意义为指定基础镜像；FROM命令可多次使用，表示会创建多个镜像</p>
 <pre><code><span class="built_in">FROM</span> &lt;IMAGE&gt;  <span class="comment"># 指定基础镜像</span>
 <span class="built_in">MAINTAINER</span> &lt;author&gt;  &lt;email&gt;   <span class="comment"># 指定创建Dockerfile作者及邮箱</span>
@@ -265,27 +268,27 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/12/29/TeamCityConfig/"/>
     <id>http://effine.cn/2016/12/29/TeamCityConfig/</id>
     <published>2016-12-29T14:26:52.000Z</published>
-    <updated>2016-12-29T14:54:31.000Z</updated>
+    <updated>2019-07-11T16:20:39.000Z</updated>
     <content type="html"><![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
 <ul>
 <li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
 <ol>
-<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png" alt="创建项目"></p>
+<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>
 <a id="more"></a>
 </li>
-<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
+<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
 <p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p>
 <p>-&gt; Build Configuration Templates： 创建构建的模板配置</p>
 <p>-&gt; Subprojects： 在该项目下创建子项目</p>
 </li>
 <li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
 </li>
-<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
+<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
 <p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p>
 </li>
-<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc5.png" alt="配置变量"></p>
+<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p>
 </li>
-<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
+<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
 <p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p>
 </li>
 </ol>
@@ -293,14 +296,14 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
 <li><p>配置TeamCity插件</p>
 </li>
 </ul>
-<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc7.png" alt="安装插件"></p>
+<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
 <ul>
 <li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
 <ol>
-<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png" alt="创建项目"></p>]]>
+<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>]]>
     
     </summary>
     
@@ -317,7 +320,7 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/12/29/TeamCityInstall/"/>
     <id>http://effine.cn/2016/12/29/TeamCityInstall/</id>
     <published>2016-12-29T14:15:06.000Z</published>
-    <updated>2016-12-29T14:22:02.000Z</updated>
+    <updated>2019-07-11T16:20:39.000Z</updated>
     <content type="html"><![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件" target="_blank" rel="external">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p>
 <pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span>
 <span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span>
@@ -325,13 +328,13 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
 </code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
 <pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
 </code></pre><a id="more"></a>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
-<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
+<p><img src="/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
+<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
 <p>数据目录默认为<code>/home/&lt;user&gt;/.BuildServer</code>，若需修改参考：</p>
 <pre><code><span class="comment"># 修改配置文件属性teamcity.data.path即可</span>
 <span class="variable">$ </span>vi <span class="constant">TeamCity</span>/conf/teamcity-startup.properties
-</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc2.png" alt="选择数据库"></p>
-<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc3.png" alt="创建用户"></p>
+</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="/imgs/teamcity/tc2.png" alt="选择数据库"></p>
+<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="/imgs/teamcity/tc3.png" alt="创建用户"></p>
 <p>填写完用户名密码后创建用户，即可进入“My Setting &amp; Tools”配置个人信息等信息，点击右上角的”Administration”进入选项Projects即可创建Project；至此，TeamCity的安装说明已介绍完成。</p>
 ]]></content>
     <summary type="html">
@@ -358,7 +361,7 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/07/16/GradleCommands/"/>
     <id>http://effine.cn/2016/07/16/GradleCommands/</id>
     <published>2016-07-16T12:37:54.000Z</published>
-    <updated>2017-01-10T13:53:10.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
 <p>常用的gradle命令集锦：</p>
 <pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
@@ -411,9 +414,9 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/06/15/TrycatchReturn/"/>
     <id>http://effine.cn/2016/06/15/TrycatchReturn/</id>
     <published>2016-06-15T15:40:22.000Z</published>
-    <updated>2016-06-15T16:38:17.000Z</updated>
+    <updated>2019-07-11T16:20:39.000Z</updated>
     <content type="html"><![CDATA[<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch return"></p>
+<p><img src="/imgs/article/TryCatchFinally.png" alt="try catch return"></p>
 <a id="more"></a>
 <p>参考程序分析：</p>
 <pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
@@ -462,7 +465,7 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
 ]]></content>
     <summary type="html">
     <![CDATA[<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/article/TryCatchFinally.png" alt="try catch return"></p>]]>
+<p><img src="/imgs/article/TryCatchFinally.png" alt="try catch return"></p>]]>
     
     </summary>
     
@@ -481,7 +484,7 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     <link href="http://effine.cn/2016/01/06/NginxCommands/"/>
     <id>http://effine.cn/2016/01/06/NginxCommands/</id>
     <published>2016-01-06T10:08:00.000Z</published>
-    <updated>2017-01-12T15:27:36.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
 <pre><code>nginx version: nginx/1.8.0
 Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
@@ -516,7 +519,7 @@ Usage: nginx [-?hvVtq] [-s ]]>
     <link href="http://effine.cn/2016/01/04/NginxService/"/>
     <id>http://effine.cn/2016/01/04/NginxService/</id>
     <published>2016-01-04T14:08:00.000Z</published>
-    <updated>2017-01-12T16:02:43.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
 <p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>
 <a id="more"></a>
@@ -596,7 +599,7 @@ chkconfig --add nginx      # 添加至系统服务
     <link href="http://effine.cn/2015/12/11/SpringMessageConverotr/"/>
     <id>http://effine.cn/2015/12/11/SpringMessageConverotr/</id>
     <published>2015-12-10T16:20:54.000Z</published>
-    <updated>2017-01-12T16:02:47.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
 <p>在你spring启动注解的配置文件中，进行如下配置：</p>
 <pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
@@ -676,7 +679,7 @@ xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/b
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2016-09-27T14:14:26.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
 <pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
 $ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
@@ -746,7 +749,7 @@ $ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix
     <link href="http://effine.cn/2015/11/17/GitRemote/"/>
     <id>http://effine.cn/2015/11/17/GitRemote/</id>
     <published>2015-11-17T07:08:24.000Z</published>
-    <updated>2016-07-19T15:50:01.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
 <pre><code>$ git remote        <span class="comment"># 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)</span>
 $ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看跟踪仓库别名及地址</span>
@@ -792,7 +795,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
     <published>2015-11-16T09:33:44.000Z</published>
-    <updated>2017-01-12T16:02:55.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
 <pre><code><span class="comment"># 以下内容来源网络</span>
 <span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行
@@ -830,7 +833,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/15/EclipseTasks/"/>
     <id>http://effine.cn/2015/11/15/EclipseTasks/</id>
     <published>2015-11-15T14:15:02.000Z</published>
-    <updated>2016-07-20T16:08:08.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
 <p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p>
 <pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
@@ -858,7 +861,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/10/GitConfig/"/>
     <id>http://effine.cn/2015/11/10/GitConfig/</id>
     <published>2015-11-10T10:17:52.000Z</published>
-    <updated>2017-01-16T15:18:36.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>Git配置存在适用范围：</p>
 <ul>
 <li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
@@ -919,7 +922,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/05/GitStash/"/>
     <id>http://effine.cn/2015/11/05/GitStash/</id>
     <published>2015-11-05T06:42:43.000Z</published>
-    <updated>2016-12-29T15:13:39.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
 <pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
 <span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
@@ -976,7 +979,7 @@ $ git remote prune [&lt;options&gt;] &lt;origin&gt;
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2017-01-13T14:34:11.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
 </code></pre><p>[查看标签]</p>
 <pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>
@@ -1013,7 +1016,7 @@ $ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="commen
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2017-01-16T15:20:50.000Z</updated>
+    <updated>2018-10-31T08:24:53.000Z</updated>
     <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span>
 </code></pre><p>[查看分支]</p>
 <pre><code><span class="variable">$ </span>git branch    <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>

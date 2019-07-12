@@ -15,7 +15,7 @@ $ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9">
 <meta property="og:description" content="Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： http://zookeeper.apache.org；
 一、安装 zk# 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-3.4.9.tar.gz ）
 $ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9">
-<meta property="og:updated_time" content="2017-08-09T16:01:44.000Z">
+<meta property="og:updated_time" content="2018-10-31T08:24:53.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Zookeeper 安装及配置">
 <meta name="twitter:description" content="Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： http://zookeeper.apache.org；
@@ -27,7 +27,7 @@ $ wget http://mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9">
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -140,12 +140,12 @@ $ echo <span class="string">"2"</span> &gt; ~/zookeeper-<span class="number">3.4
 
 <span class="preprocessor"># 将myid为<span class="string">"3"</span>写入server3的myid文件</span>
 $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
-</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是1台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
+</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是一台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/" data-id="cj66lc7w400cyxv2ejz1bzhfe" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/" data-id="cjxzh44zj006pu0fyecd6pdxp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zk/">zk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/">zookeeper</a></li></ul>
@@ -175,6 +175,16 @@ $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4
 
   
 </article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+</section>
 
 </section>
         
@@ -256,7 +266,7 @@ $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 effine
+      &copy; 2019 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -321,20 +331,6 @@ $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4
   
 </nav>
     
-<script>
-  var disqus_shortname = 'true';
-  
-  var disqus_url = 'http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 

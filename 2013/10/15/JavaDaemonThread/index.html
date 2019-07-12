@@ -15,7 +15,7 @@ Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回�
 <meta property="og:description" content="在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程)
 
 Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Dae">
-<meta property="og:updated_time" content="2015-11-24T07:03:19.000Z">
+<meta property="og:updated_time" content="2018-10-31T08:24:52.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java守护线程">
 <meta name="twitter:description" content="在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程)
@@ -27,7 +27,7 @@ Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回�
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -190,7 +190,7 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="cj66lc7sh006nxv2e6vzjfr75" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="cjxzh44xc000tu0fy7oss2dsq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li></ul>
@@ -220,6 +220,16 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
 
   
 </article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+</section>
 
 </section>
         
@@ -301,7 +311,7 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 effine
+      &copy; 2019 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -366,20 +376,6 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
   
 </nav>
     
-<script>
-  var disqus_shortname = 'true';
-  
-  var disqus_url = 'http://effine.cn/2013/10/15/JavaDaemonThread/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 

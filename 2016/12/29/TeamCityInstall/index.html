@@ -13,23 +13,23 @@ $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
 <meta property="og:description" content="TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(https://www.jetbrains.com/teamcity/)下载对应系统版本文件: TeamCity-&amp;lt;version&amp;gt;.tag.gz，我下载的版本为10.0.4；然后按如下步骤进行：
 $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc1.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc2.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc3.png">
-<meta property="og:updated_time" content="2016-12-29T14:22:02.000Z">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc1.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tc1.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tc2.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tc3.png">
+<meta property="og:updated_time" content="2019-07-11T16:20:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TeamCity安装">
 <meta name="twitter:description" content="TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(https://www.jetbrains.com/teamcity/)下载对应系统版本文件: TeamCity-&amp;lt;version&amp;gt;.tag.gz，我下载的版本为10.0.4；然后按如下步骤进行：
 $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
-<meta name="twitter:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png">
+<meta name="twitter:image" content="http://effine.cn/imgs/teamcity/tcc1.png">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -109,19 +109,19 @@ $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
 </code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
 <pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
 </code></pre><a id="more"></a>
-<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
-<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
+<p><img src="/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
+<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
 <p>数据目录默认为<code>/home/&lt;user&gt;/.BuildServer</code>，若需修改参考：</p>
 <pre><code><span class="comment"># 修改配置文件属性teamcity.data.path即可</span>
 <span class="variable">$ </span>vi <span class="constant">TeamCity</span>/conf/teamcity-startup.properties
-</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc2.png" alt="选择数据库"></p>
-<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tc3.png" alt="创建用户"></p>
+</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="/imgs/teamcity/tc2.png" alt="选择数据库"></p>
+<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="/imgs/teamcity/tc3.png" alt="创建用户"></p>
 <p>填写完用户名密码后创建用户，即可进入“My Setting &amp; Tools”配置个人信息等信息，点击右上角的”Administration”进入选项Projects即可创建Project；至此，TeamCity的安装说明已介绍完成。</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2016/12/29/TeamCityInstall/" data-id="cj66lc7w200cvxv2ebhxabqu2" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/12/29/TeamCityInstall/" data-id="cjxzh44zi006lu0fy96k33xdy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/teamcity/">teamcity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -151,6 +151,16 @@ $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
 
   
 </article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+</section>
 
 </section>
         
@@ -232,7 +242,7 @@ $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 effine
+      &copy; 2019 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -297,20 +307,6 @@ $ tar -zxvf TeamCity-&amp;lt;version&amp;gt;.tag.gz -C &amp;lt;dist dir&amp;gt">
   
 </nav>
     
-<script>
-  var disqus_shortname = 'true';
-  
-  var disqus_url = 'http://effine.cn/2016/12/29/TeamCityInstall/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 

@@ -19,13 +19,13 @@
 创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)
 
 点击右上角Administration -&amp;gt; Create Project -&amp;gt; Manually（手">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc3.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc4.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc5.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc6.png">
-<meta property="og:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc7.png">
-<meta property="og:updated_time" content="2016-12-29T14:54:31.000Z">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc2.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc3.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc4.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc5.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc6.png">
+<meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc7.png">
+<meta property="og:updated_time" content="2019-07-11T16:20:39.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="TeamCity配置">
 <meta name="twitter:description" content="本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面&amp;lt;Host|IP&amp;gt;:8111，参考如下：
@@ -33,14 +33,14 @@
 创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)
 
 点击右上角Administration -&amp;gt; Create Project -&amp;gt; Manually（手">
-<meta name="twitter:image" content="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png">
+<meta name="twitter:image" content="http://effine.cn/imgs/teamcity/tcc2.png">
   
     <link rel="alternative" href="/atom.xml" title="追求优雅代码而不断受打击的艺术家" type="application/atom+xml">
   
   
     <link rel="icon" href="/imgs/favicon.png">
   
-  <link href="//fonts.useso.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="/css/style.css">
   
 </head>
@@ -117,22 +117,22 @@
 <ul>
 <li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
 <ol>
-<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc2.png" alt="创建项目"></p>
+<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>
 <a id="more"></a>
 </li>
-<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
+<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
 <p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p>
 <p>-&gt; Build Configuration Templates： 创建构建的模板配置</p>
 <p>-&gt; Subprojects： 在该项目下创建子项目</p>
 </li>
 <li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
 </li>
-<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
+<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
 <p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p>
 </li>
-<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc5.png" alt="配置变量"></p>
+<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p>
 </li>
-<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
+<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
 <p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p>
 </li>
 </ol>
@@ -140,12 +140,12 @@
 <li><p>配置TeamCity插件</p>
 </li>
 </ul>
-<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="http://7xlmfk.com1.z0.glb.clouddn.com/imgs/teamcity/tcc7.png" alt="安装插件"></p>
+<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2016/12/29/TeamCityConfig/" data-id="cj66lc7vv00ckxv2epg189fpi" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/12/29/TeamCityConfig/" data-id="cjxzh44zg006fu0fy7ex99pj9" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/teamcity/">teamcity</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
@@ -175,6 +175,16 @@
 
   
 </article>
+
+
+<section id="comments">
+  <!-- disqus comments -->
+  <!--
+    <div id="disqus">
+      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    -->
+</section>
 
 </section>
         
@@ -256,7 +266,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 effine
+      &copy; 2019 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -321,20 +331,6 @@
   
 </nav>
     
-<script>
-  var disqus_shortname = 'true';
-  
-  var disqus_url = 'http://effine.cn/2016/12/29/TeamCityConfig/';
-  
-  (function(){
-    var dsq = document.createElement('script');
-    dsq.type = 'text/javascript';
-    dsq.async = true;
-    dsq.src = '//go.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-
 
 <script src="//upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.3.min.js"></script>
 
