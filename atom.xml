@@ -147,11 +147,12 @@ $ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文�
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
-    <updated>2018-10-31T08:24:53.000Z</updated>
+    <updated>2020-03-23T07:48:05.020Z</updated>
     <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
 <pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>
 $ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>
 $ <span class="built_in">command</span> + X        <span class="comment"># 剪切当前行</span>
+$ <span class="built_in">command</span> + J       <span class="comment"># 智能提示补齐</span>
 $ ctrl + H        <span class="comment"># 显示类结构(继承)图</span>
 $ ctrl + option + H         <span class="comment"># 查看方法调用结构图</span>
 
