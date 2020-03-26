@@ -8,6 +8,7 @@ date: 2017-01-09 23:27:21
     $ double + shift  # 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）
     $ command + D 		# 复制当前行到下一行
     $ command + X		# 剪切当前行
+    $ command + J       # 智能提示补齐
     $ ctrl + H		# 显示类结构(继承)图
     $ ctrl + option + H         # 查看方法调用结构图
 
