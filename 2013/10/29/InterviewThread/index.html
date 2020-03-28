@@ -185,13 +185,17 @@ public class InterviewThread {
 </code></pre>
       
     </div>
+
     <footer class="article-footer">
       <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="ck88tirrb00762y883ooqrvzy" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/10/29/InterviewThread/#disqus" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/总结/">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
 
     </footer>
+
   </div>
   
     
@@ -218,15 +222,34 @@ public class InterviewThread {
 </article>
 
 
-<section id="comments">
-  <!-- disqus comments -->
-  <!--
-    <div id="disqus">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-    -->
-</section>
+    
 
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	 
+	<div class="card gitalk-card" data-aos="fade-up">
+	    <div id="gitalk-container" class="card-content"></div>
+	</div>
+	 
+  	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+	    let gitalk = new Gitalk({
+	        clientID: '',
+	        clientSecret: '70aec74c8aa8ffed7d724d9c683bd1746aee54d5',
+	        repo: 'effine.github.io',
+	        owner: 'effine',
+	        admin: "effine",
+	        id: '2013-10-29T23-46-26',
+	        distractionFreeMode: theme.gitalk.distractionFreeMode
+	    });
+	 
+	    gitalk.render('gitalk-container');
+	</script>
+	
+
+
+    <section id="comments">
+      <div id="gitalk-container"></div>
+    </section>
 </section>
         
       </div>

@@ -144,13 +144,17 @@ $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4
 
       
     </div>
+
     <footer class="article-footer">
       <a data-url="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/" data-id="ck88tirtc00d72y88ht3gn4ls" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/#disqus" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zk/">zk</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zookeeper/">zookeeper</a></li></ul>
 
     </footer>
+
   </div>
   
     
@@ -177,15 +181,34 @@ $ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4
 </article>
 
 
-<section id="comments">
-  <!-- disqus comments -->
-  <!--
-    <div id="disqus">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-    -->
-</section>
+    
 
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	 
+	<div class="card gitalk-card" data-aos="fade-up">
+	    <div id="gitalk-container" class="card-content"></div>
+	</div>
+	 
+  	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+	    let gitalk = new Gitalk({
+	        clientID: '',
+	        clientSecret: '70aec74c8aa8ffed7d724d9c683bd1746aee54d5',
+	        repo: 'effine.github.io',
+	        owner: 'effine',
+	        admin: "effine",
+	        id: '2017-03-02T23-33-37',
+	        distractionFreeMode: theme.gitalk.distractionFreeMode
+	    });
+	 
+	    gitalk.render('gitalk-container');
+	</script>
+	
+
+
+    <section id="comments">
+      <div id="gitalk-container"></div>
+    </section>
 </section>
         
       </div>

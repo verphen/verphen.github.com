@@ -128,13 +128,17 @@
 
       
     </div>
+
     <footer class="article-footer">
       <a data-url="http://effine.cn/2013/12/15/MakedownpadShortcut/" data-id="ck88tirri007v2y88nbhuh8on" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2013/12/15/MakedownpadShortcut/#disqus" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
 
     </footer>
+
   </div>
   
     
@@ -161,15 +165,34 @@
 </article>
 
 
-<section id="comments">
-  <!-- disqus comments -->
-  <!--
-    <div id="disqus">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-    -->
-</section>
+    
 
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	 
+	<div class="card gitalk-card" data-aos="fade-up">
+	    <div id="gitalk-container" class="card-content"></div>
+	</div>
+	 
+  	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+	    let gitalk = new Gitalk({
+	        clientID: '',
+	        clientSecret: '70aec74c8aa8ffed7d724d9c683bd1746aee54d5',
+	        repo: 'effine.github.io',
+	        owner: 'effine',
+	        admin: "effine",
+	        id: '2013-12-15T21-51-11',
+	        distractionFreeMode: theme.gitalk.distractionFreeMode
+	    });
+	 
+	    gitalk.render('gitalk-container');
+	</script>
+	
+
+
+    <section id="comments">
+      <div id="gitalk-container"></div>
+    </section>
 </section>
         
       </div>

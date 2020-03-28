@@ -219,13 +219,17 @@ ctrl + w ： 关闭当前打开文">
 
       
     </div>
+
     <footer class="article-footer">
       <a data-url="http://effine.cn/2014/12/21/SublimeTextShortCut/" data-id="ck88tirrx009c2y88mxh1v716" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2014/12/21/SublimeTextShortCut/#disqus" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/sublime/">sublime</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/">tools</a></li></ul>
 
     </footer>
+
   </div>
   
     
@@ -252,15 +256,34 @@ ctrl + w ： 关闭当前打开文">
 </article>
 
 
-<section id="comments">
-  <!-- disqus comments -->
-  <!--
-    <div id="disqus">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-    -->
-</section>
+    
 
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	 
+	<div class="card gitalk-card" data-aos="fade-up">
+	    <div id="gitalk-container" class="card-content"></div>
+	</div>
+	 
+  	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+	    let gitalk = new Gitalk({
+	        clientID: '',
+	        clientSecret: '70aec74c8aa8ffed7d724d9c683bd1746aee54d5',
+	        repo: 'effine.github.io',
+	        owner: 'effine',
+	        admin: "effine",
+	        id: '2014-12-21T22-12-51',
+	        distractionFreeMode: theme.gitalk.distractionFreeMode
+	    });
+	 
+	    gitalk.render('gitalk-container');
+	</script>
+	
+
+
+    <section id="comments">
+      <div id="gitalk-container"></div>
+    </section>
 </section>
         
       </div>

@@ -152,13 +152,17 @@ instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtp
 
       
     </div>
+
     <footer class="article-footer">
       <a data-url="http://effine.cn/2015/03/10/WebAppRootKey/" data-id="ck88tirs8009w2y88w8fsp0uw" class="article-share-link">Share</a>
+      
+        <a href="http://effine.cn/2015/03/10/WebAppRootKey/#disqus" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
 
     </footer>
+
   </div>
   
     
@@ -185,15 +189,34 @@ instead of [D:\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtp
 </article>
 
 
-<section id="comments">
-  <!-- disqus comments -->
-  <!--
-    <div id="disqus">
-      <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-    </div>
-    -->
-</section>
+    
 
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+	 
+	<div class="card gitalk-card" data-aos="fade-up">
+	    <div id="gitalk-container" class="card-content"></div>
+	</div>
+	 
+  	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+	<script>
+	    let gitalk = new Gitalk({
+	        clientID: '',
+	        clientSecret: '70aec74c8aa8ffed7d724d9c683bd1746aee54d5',
+	        repo: 'effine.github.io',
+	        owner: 'effine',
+	        admin: "effine",
+	        id: '2015-03-10T17-47-34',
+	        distractionFreeMode: theme.gitalk.distractionFreeMode
+	    });
+	 
+	    gitalk.render('gitalk-container');
+	</script>
+	
+
+
+    <section id="comments">
+      <div id="gitalk-container"></div>
+    </section>
 </section>
         
       </div>
