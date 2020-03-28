@@ -161,14 +161,20 @@ $ git config --list [| grep c">
     <footer class="article-footer">
       <a data-url="http://effine.cn/2015/11/10/GitConfig/" data-id="ck88tirsw00by2y88q3pm6624" class="article-share-link">Share</a>
       
-        <a href="http://effine.cn/2015/11/10/GitConfig/#" class="article-comment-link">Comments</a>
-      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2015/11/10/GitConfig/#" class="article-comment-link">Comments</a>
+        
+      -->
+
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/config/">config</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 
     </footer>
 
   </div>
+  
   
     
 <nav id="article-nav">
@@ -191,15 +197,33 @@ $ git config --list [| grep c">
 </nav>
 
   
+
 </article>
 
 
     
-
+      
+	
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-	 
-	<div class="card gitalk-card" data-aos="fade-up">
-	    <div id="gitalk-container" class="card-content"></div>
+	
+
+	<!-- 页面导航 -->
+	<!-- 
+		<nav id="pagination" >
+		    
+		    <a href="/2015/11/15/EclipseTasks/" class="alignleft prev" >prev</a>
+		    
+		    
+		    <a href="/2015/11/05/GitStash/" class="alignright next" >next</a>
+		    
+		    <div class="clearfix"></div>
+		</nav>
+	-->
+
+
+ 	<!-- 添加gitalk评论 -->
+	<div class="card gitalk-card" data-aos="fade-up"> 
+		<div id="gitalk-container" class="card-content"></div>
 	</div>
 	 
   	<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
@@ -218,7 +242,10 @@ $ git config --list [| grep c">
 	</script>
 	
 
-    <div id="gitalk-container"></div>
+      <div id="gitalk-container"></div>
+    
+
+
 </section>
         
       </div>
