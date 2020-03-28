@@ -34,3 +34,14 @@ favicon: /imgs/favicon.png	# 浏览器头部显示图标
 #google_plus: effine
 #fb_admins: effine
 #fb_app_id: effine
+
+# gitalk comments
+gitalk:
+  enable: true 
+  clientID: 4157d3de82a3693527ff
+  clientSecret: 70aec74c8aa8ffed7d724d9c683bd1746aee54d5
+  repo: blog-comments
+  owner: effine
+  admin: effine
+  distractionFreeMode: true
+

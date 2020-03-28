@@ -80,9 +80,9 @@ pagination_dir: page
 ##        评论配置           ##
 ##############################
 # 评论开关
-comment_enable: false
+comment_enable: true
 # 评论插件
-comment_plugin: disqus
+# comment_plugin: disqus
 
 # 404
 permalink_defaults: /404.html
