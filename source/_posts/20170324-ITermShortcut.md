@@ -30,7 +30,7 @@ Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Ma
 	$ ctrl + K      # 删除到文本末尾
 	$ ctrl + T      # 交换光标处文本
 	$ command + R   # 清屏
-	$ ctrl + L      $ 清屏
+	$ ctrl + L      # 清屏
 
 必备技巧：
 -  选中即复制，然后选择目标位置粘贴(command + v)即可
