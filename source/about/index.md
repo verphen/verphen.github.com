@@ -2,8 +2,7 @@ title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
 ---
-hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微信公众号[iballad]
-<img src="/imgs/about/subscribeCode.jpg" alt="subscribe me"/>
+hi, every one, I`m effine; 无聊喜欢写点文字和书法！
 
 [ 价值观 ]
 	
@@ -29,6 +28,4 @@ hi, every one, I`m effine; 无聊喜欢写点文字和书法，欢迎订阅微�
 
 - wechat: @verphen ; pleaset scan QR code add me on wechat (or add me wechat ID : 'verphen')<br/>
 联系我，扫描下面的二维码加我微信（或者直接加我微信号：'verphen'）<br/>
-<img src="/imgs/about/wechat_QR.png" alt="Contact Me"/>
-
-- 当然，你也可以去知乎、stackoverflow ...上联系我，但回复不一定及时,望见谅！
+<img src="/imgs/about/wechat_QR.jpg" alt="Contact Me"/>
