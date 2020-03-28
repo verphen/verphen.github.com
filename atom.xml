@@ -4,7 +4,7 @@
   
   <link href="/atom.xml" rel="self"/>
   <link href="http://effine.cn/"/>
-  <updated>2018-10-31T08:24:53.000Z</updated>
+  <updated>2020-03-28T12:28:57.828Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -19,7 +19,7 @@
     <link href="http://effine.cn/2017/03/24/ITermShortcut/"/>
     <id>http://effine.cn/2017/03/24/ITermShortcut/</id>
     <published>2017-03-24T06:28:52.000Z</published>
-    <updated>2018-10-31T08:24:53.000Z</updated>
+    <updated>2020-03-28T12:28:57.828Z</updated>
     <content type="html"><![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
 <pre><code><span class="variable">$ </span>command + <span class="regexp">/           # 查看光标位置
 $ command + T/</span><span class="constant">W</span>     <span class="comment"># 新建/关闭标签</span>
@@ -46,7 +46,7 @@ $ command + T/</span><span class="constant">W</span>     <span class="comment">#
 <span class="variable">$ </span>ctrl + <span class="constant">K</span>      <span class="comment"># 删除到文本末尾</span>
 <span class="variable">$ </span>ctrl + <span class="constant">T</span>      <span class="comment"># 交换光标处文本</span>
 <span class="variable">$ </span>command + <span class="constant">R</span>   <span class="comment"># 清屏</span>
-<span class="variable">$ </span>ctrl + <span class="constant">L</span>      <span class="variable">$ </span>清屏
+<span class="variable">$ </span>ctrl + <span class="constant">L</span>      <span class="comment"># 清屏</span>
 </code></pre><p>必备技巧：</p>
 <ul>
 <li>选中即复制，然后选择目标位置粘贴(command + v)即可</li>
