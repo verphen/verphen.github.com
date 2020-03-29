@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/reading/index.html</loc>
+    <lastmod>2020-03-29T16:59:24.877Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://effine.cn/about/index.html</loc>
     <lastmod>2020-03-29T16:16:37.762Z</lastmod>
   </url>
@@ -9,11 +14,6 @@
   <url>
     <loc>http://effine.cn/2017/03/24/ITermShortcut/</loc>
     <lastmod>2020-03-28T12:28:57.828Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/reading/index.html</loc>
-    <lastmod>2020-03-27T06:59:30.964Z</lastmod>
   </url>
   
   <url>
