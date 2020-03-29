@@ -2,7 +2,11 @@ title: About　Ｍe
 date: 2014-09-10 06:59:51
 comments: false
 ---
-hi, every one, I`m effine; 无聊喜欢写点文字和书法！
+hi, every one, I`m effine; 无聊喜欢阅读、音乐或写点文字、书法！
+
+<div style="float: right;">
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=27890306&auto=0&height=66"></iframe>
+</div>
 
 [ 价值观 ]
 	
