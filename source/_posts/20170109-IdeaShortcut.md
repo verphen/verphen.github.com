@@ -9,7 +9,8 @@ date: 2017-01-09 23:27:21
     $ command + D 		# 复制当前行到下一行
     $ command + X		# 剪切当前行
     $ command + J       # 智能提示补齐
-    $ ctrl + H		# 显示类结构(继承)图
+    $ command +        # 查看类往上查找继承的类或实现的接口
+    $ ctrl + H		    # 显示类结构(继承)图
     $ ctrl + option + H         # 查看方法调用结构图
 
     $ command + B 		# 全局查找方法调用

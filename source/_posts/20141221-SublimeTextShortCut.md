@@ -73,6 +73,7 @@ tags: [tools,sublime]
 
 		- ctrl + <[+|-]> 		# 放大/缩小字体
 		- ctrl + shift + "+" 	# 缩小字体
+		- ctrl + command + J 	# 格式化json文本
 
 	- 查找/替换
 		- ctrl + f: 当前标签查找内容
