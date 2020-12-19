@@ -33,6 +33,6 @@ hi, every one, I`m effine; 无聊喜欢阅读、音乐或写点文字、书法�
 
 - Weibo [<a href="http://weibo.com/verphen" style="text-decoration: none">@iballad</a>]  ||  Douban [<a href="http://www.douban.com/people/verphen/" style="text-decoration: none">@effine</a>]
 
-- wechat: @verphen ; pleaset scan QR code add me on wechat<br/>
+- wechat: @smartmaidou ; pleaset scan QR code add me on wechat<br/>
 联系我，扫描下面的二维码加我微信(点击图片可以遮罩显示)，或者直接加我微信号：'smartmaidou'<br/>
 <img src="/imgs/about/wechat_QR.jpg" alt="Contact Me" style="width: 400px" height="400px" />
