@@ -21,6 +21,7 @@ date: 2017-01-09 23:27:21
     $ command + option + T      # 给代码添加if、where等语句包括起来
     $ command + option + V      # 给方法调用提出引用变量
     $ command + option + u    # 生成类集成图
+    $ command + option + shift + u  # 生成类图 
 
     $ ctrl + tab		# 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）
     
@@ -29,6 +30,7 @@ date: 2017-01-09 23:27:21
     $ option + enter       # 快速修复（自动导包、快速定义并列出接收方法返回值等）
     $ command + shift + enter   # 快速补全行尾分号、括号及方法等
 
+    $ commadn + \           # 按请求的URL路径进行搜索
     $ command + R 			# 当前文件查找替换
     $ command + shift + R 	# 全局查找替换
 
