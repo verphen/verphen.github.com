@@ -147,13 +147,14 @@ $ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文�
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
-    <updated>2020-03-23T07:48:05.020Z</updated>
+    <updated>2021-02-23T03:36:54.159Z</updated>
     <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
 <pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>
 $ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>
 $ <span class="built_in">command</span> + X        <span class="comment"># 剪切当前行</span>
 $ <span class="built_in">command</span> + J       <span class="comment"># 智能提示补齐</span>
-$ ctrl + H        <span class="comment"># 显示类结构(继承)图</span>
+$ <span class="built_in">command</span> +        <span class="comment"># 查看类往上查找继承的类或实现的接口</span>
+$ ctrl + H            <span class="comment"># 显示类结构(继承)图</span>
 $ ctrl + option + H         <span class="comment"># 查看方法调用结构图</span>
 
 $ <span class="built_in">command</span> + B         <span class="comment"># 全局查找方法调用</span>
@@ -164,6 +165,7 @@ $ <span class="built_in">command</span> + option + 方向键(左left/右right)  
 $ <span class="built_in">command</span> + option + T      <span class="comment"># 给代码添加if、where等语句包括起来</span>
 $ <span class="built_in">command</span> + option + V      <span class="comment"># 给方法调用提出引用变量</span>
 $ <span class="built_in">command</span> + option + u    <span class="comment"># 生成类集成图</span>
+$ <span class="built_in">command</span> + option + <span class="built_in">shift</span> + u  <span class="comment"># 生成类图 </span>
 
 $ ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
 
@@ -172,6 +174,7 @@ $ <span class="built_in">command</span> + option + L  <span class="comment"># �
 $ option + enter       <span class="comment"># 快速修复（自动导包、快速定义并列出接收方法返回值等）</span>
 $ <span class="built_in">command</span> + <span class="built_in">shift</span> + enter   <span class="comment"># 快速补全行尾分号、括号及方法等</span>
 
+$ commadn + \           <span class="comment"># 按请求的URL路径进行搜索</span>
 $ <span class="built_in">command</span> + R             <span class="comment"># 当前文件查找替换</span>
 $ <span class="built_in">command</span> + <span class="built_in">shift</span> + R     <span class="comment"># 全局查找替换</span>
 
