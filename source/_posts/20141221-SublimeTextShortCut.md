@@ -30,6 +30,9 @@ tags: [tools,sublime]
 
 - 编辑区
 
+	- command + ku	# 转换选择内容为大写
+	- command + kl	# 转换选择内容为小写
+
 	- ctrl + z : 撤销向后 (undo)
 	- ctrl + y : 撤销向前 (redo)
 	- ctrl + u：软撤销，撤销光标位置
@@ -37,6 +40,7 @@ tags: [tools,sublime]
 	- ctrl + x : 剪切光标所在行
 	- ctrl + v : 粘贴在光标所在位置
 	- ctrl + shift + v : 伴有缩进的粘贴 (Paste and Indent)
+	
 		<br/>
 	- 行操作(line)
 		- ctrl + ] : 增加缩进 (indent)
