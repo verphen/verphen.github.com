@@ -25,7 +25,6 @@ hi, every one, I`m effine; 无聊喜欢阅读、音乐或写点文字、书法�
 [ 联系方式 ]
 
 - wechat: `smartmaidou`
-
 - Email（Mac/Linux 执行）: 
     ` echo WyBpYmFsbGFkQDE2My5jb20gIHwgaWJhbGxhZGVyQGdtYWlsLmNvbSBdCg== | base64 -d `
     
