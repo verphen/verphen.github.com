@@ -5,7 +5,7 @@ comments: false
 hi, every one, I`m effine; 无聊喜欢阅读、音乐或写点文字、书法！
 
 <div style="float: right;">
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=27890306&auto=0&height=66"></iframe>
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=300 height=86 src="//music.163.com/outchain/player?type=2&id=94092&auto=1&height=66"></iframe>
 </div>
 
 [ 价值观 ]
@@ -16,18 +16,18 @@ hi, every one, I`m effine; 无聊喜欢阅读、音乐或写点文字、书法�
 
 [ 兴趣 ]
 
-- 骑行
-- 自驾游
-- 旅游
+- 骑行、跑步、自驾
+- 美食
 - 看书
 - 音乐
+- 书法（钢笔字、毛笔字）
 
 [ 联系方式 ]
 
-- wechat: `smartmaidou`
-- Email（Mac/Linux 执行）: 
-    ` echo WyBpYmFsbGFkQDE2My5jb20gIHwgaWJhbGxhZGVyQGdtYWlsLmNvbSBdCg== | base64 -d `
+- Wechat: smartmaidou
+- Email（Mac/Linux 执行）
+` echo WyBpYmFsbGFkQDE2My5jb20gIHwgaWJhbGxhZGVyQGdtYWlsLmNvbSBdCg== | base64 -d `
     
-    tips: 
+tips: 
     `加密字符串：echo "待加密文本" | base64`
     `解密字符串：echo 加密文本 | base64 -d`
