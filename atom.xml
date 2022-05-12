@@ -1,204 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[追求优雅代码而不断受打击的艺术家]]></title>
+  <title>追求优雅代码而不断受打击的艺术家</title>
+  <icon>https://www.gravatar.com/avatar/5f7e4b54b5cd1a7a91eedae0578dafa7</icon>
   
   <link href="/atom.xml" rel="self"/>
+  
   <link href="http://effine.cn/"/>
   <updated>2020-03-28T12:28:57.828Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
-    <name><![CDATA[effine]]></name>
-    <email><![CDATA[iballad@163.com]]></email>
+    <name>effine</name>
+    <email>iballad@163.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[iTerm 快捷键]]></title>
+    <title>iTerm 快捷键</title>
     <link href="http://effine.cn/2017/03/24/ITermShortcut/"/>
     <id>http://effine.cn/2017/03/24/ITermShortcut/</id>
     <published>2017-03-24T06:28:52.000Z</published>
     <updated>2020-03-28T12:28:57.828Z</updated>
-    <content type="html"><![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
-<pre><code><span class="variable">$ </span>command + <span class="regexp">/           # 查看光标位置
-$ command + T/</span><span class="constant">W</span>     <span class="comment"># 新建/关闭标签</span>
-<span class="variable">$ </span>command + 数字/方向键    <span class="comment"># 切换标签</span>
-<span class="variable">$ </span>command + enter       <span class="comment"># 全屏/退出全屏</span>
-<span class="variable">$ </span>command + <span class="constant">F</span>   <span class="comment"># 当前窗口查找，tab键选中找到的文本，option + enter 粘贴光标处</span>
-<span class="variable">$ </span>command + option + <span class="constant">B</span>  <span class="comment"># 回放功能</span>
-<span class="variable">$ </span>command + option + <span class="constant">E</span>  <span class="comment"># 搜索所有的窗口标签Tabs</span>
-
-<span class="variable">$ </span>command + <span class="constant">D</span>           <span class="comment"># 竖向分屏 </span>
-<span class="variable">$ </span>command + shift + <span class="constant">D</span>   <span class="comment"># 横向分屏</span>
-<span class="variable">$ </span>command + option + 方向键/<span class="string">'['</span>及<span class="string">']'</span>    <span class="comment"># 切换屏幕</span>
-<span class="variable">$ </span>command + ;   <span class="comment"># 历史命令、自动匹配提示(根据上下文呼出来提示)</span>
-<span class="variable">$ </span>command + shift + <span class="constant">H</span>   <span class="comment"># 列举粘贴历史</span>
-<span class="variable">$ </span>ctrl + <span class="constant">U</span>      <span class="comment"># 清除当前行</span>
-<span class="variable">$ </span>ctrl + <span class="constant">A</span>      <span class="comment"># 到行首</span>
-<span class="variable">$ </span>ctrl + <span class="constant">E</span>      <span class="comment"># 到行尾</span>
-<span class="variable">$ </span>ctrl + <span class="constant">F</span>/<span class="constant">B</span>    <span class="comment"># 前进/后退(相当于左右方向键)</span>
-<span class="variable">$ </span>ctrl + <span class="constant">P</span>      <span class="comment"># 上一条命令</span>
-<span class="variable">$ </span>ctrl + <span class="constant">R</span>      <span class="comment"># 搜索历史命令</span>
-<span class="variable">$ </span>ctrl + <span class="constant">D</span>      <span class="comment"># 删除当前光标的字符</span>
-<span class="variable">$ </span>ctrl + <span class="constant">H</span>      <span class="comment"># 删除光标之前的字符</span>
-<span class="variable">$ </span>ctrl + w      <span class="comment"># 删除光标之前的单词</span>
-<span class="variable">$ </span>ctrl + <span class="constant">K</span>      <span class="comment"># 删除到文本末尾</span>
-<span class="variable">$ </span>ctrl + <span class="constant">T</span>      <span class="comment"># 交换光标处文本</span>
-<span class="variable">$ </span>command + <span class="constant">R</span>   <span class="comment"># 清屏</span>
-<span class="variable">$ </span>ctrl + <span class="constant">L</span>      <span class="comment"># 清屏</span>
-</code></pre><p>必备技巧：</p>
-<ul>
-<li>选中即复制，然后选择目标位置粘贴(command + v)即可</li>
-<li>具体配置参考： Profiles -&gt; open profiles</li>
-</ul>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p><pre><code><span class="variable">$ </span>command + <span class="regexp">/           # 查看光标位置$ command + T/</span><span class="constant">W</span>     <span class="comment"># 新建/关闭标签</span><span class="variable">$ </span>command + 数字/方向键    <span class="comment"># 切换标签</span><span class="variable">$ </span>command + enter       <span class="comment"># 全屏/退出全屏</span><span class="variable">$ </span>command + <span class="constant">F</span>   <span class="comment"># 当前窗口查找，tab键选中找到的文本，option + enter 粘贴光标处</span><span class="variable">$ </span>command + option + <span class="constant">B</span>  <span class="comment"># 回放功能</span><span class="variable">$ </span>command + option + <span class="constant">E</span>  <span class="comment"># 搜索所有的窗口标签Tabs</span><span class="variable">$ </span>command + <span class="constant">D</span>           <span class="comment"># 竖向分屏 </span><span class="variable">$ </span>command + shift + <span class="constant">D</span>   <span class="comment"># 横向分屏</span><span class="variable">$ </span>command + option + 方向键/<span class="string">'['</span>及<span class="string">']'</span>    <span class="comment"># 切换屏幕</span><span class="variable">$ </span>command + ;   <span class="comment"># 历史命令、自动匹配提示(根据上下文呼出来提示)</span><span class="variable">$ </span>command + shift + <span class="constant">H</span>   <span class="comment"># 列举粘贴历史</span><span class="variable">$ </span>ctrl + <span class="constant">U</span>      <span class="comment"># 清除当前行</span><span class="variable">$ </span>ctrl + <span class="constant">A</span>      <span class="comment"># 到行首</span><span class="variable">$ </span>ctrl + <span class="constant">E</span>      <span class="comment"># 到行尾</span><span class="variable">$ </span>ctrl + <span class="constant">F</span>/<span class="constant">B</span>    <span class="comment"># 前进/后退(相当于左右方向键)</span><span class="variable">$ </span>ctrl + <span class="constant">P</span>      <span class="comment"># 上一条命令</span><span class="variable">$ </span>ctrl + <span class="constant">R</span>      <span class="comment"># 搜索历史命令</span><span class="variable">$ </span>ctrl + <span class="constant">D</span>      <span class="comment"># 删除当前光标的字符</span><span class="variable">$ </span>ctrl + <span class="constant">H</span>      <span class="comment"># 删除光标之前的字符</span><span class="variable">$ </span>ctrl + w      <span class="comment"># 删除光标之前的单词</span><span class="variable">$ </span>ctrl + <span class="constant">K</span>      <span class="comment"># 删除到文本末尾</span><span class="variable">$ </span>ctrl + <span class="constant">T</span>      <span class="comment"># 交换光标处文本</span><span class="variable">$ </span>command + <span class="constant">R</span>   <span class="comment"># 清屏</span><span class="variable">$ </span>ctrl + <span class="constant">L</span>      <span class="comment"># 清屏</span></code></pre><p>必备技巧：</p><ul><li>选中即复制，然后选择目标位置粘贴(command + v)即可</li><li>具体配置参考： Profiles -&gt; open profiles</li></ul>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：</p>
-<pre><code><span class="variable">$ </span>command + <span cla]]>
+    
+      
+      
+        &lt;p&gt;Iterm 是Mac下必不可少的工具，它的各种特性及使用便捷性甩Mac自带的终端工具terminal几亿光年，前提是你必须收下其常用快捷键：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;command + &lt;span cla
+      
+    
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="iterm" scheme="http://effine.cn/tags/iterm/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Zookeeper 安装及配置]]></title>
+    <title>Zookeeper 安装及配置</title>
     <link href="http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/"/>
     <id>http://effine.cn/2017/03/02/ZookeeperInstallAndConfig/</id>
     <published>2017-03-02T15:33:37.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>
-$ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>
-
-$ tar -zxvf zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz     <span class="preprocessor"># 解压文件</span>
-$ cd zookeeper-<span class="number">3.4</span><span class="number">.9</span>   <span class="preprocessor"># 进入zookeeper根目录</span>
-$ mkdir data logs   <span class="preprocessor"># 新建目录data(数据目录)、logs(日志目录)</span>
-$ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
-
-    tickTime=<span class="number">2000</span>
-    dataDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/data
-    dataLogDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/logs
-    clientPort=<span class="number">2181</span>
-    initLimit=<span class="number">5</span>
-    syncLimit=<span class="number">2</span>
-</code></pre><a id="more"></a>
-<h2 id="二、启动_zk">二、启动 zk</h2><pre><code>$ cd zookeeper-3.4.9/bin  <span class="comment"># 进入zk命令目录</span>
-$ ./zkServer.sh start  <span class="comment"># 启动zk服务</span>
-$ ./zkServer.sh status <span class="comment"># 查看zk启动状态(打印信息出现"Mode: standalone"，即表示zk为单点)</span>
-<span class="comment"># zk基本基本命令[启动|前台启动|停止|重启|查看状态|升级|打印cmd]</span>
-$ zkServer.sh {start|<span class="string">start-foreground</span>|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">status</span>|<span class="string">upgrade</span>|<span class="string">print-cmd}</span>
-</code></pre><h2 id="三、配置_zk_集群">三、配置 zk 集群</h2><p>现提供三台服务器（当然你也可以提供一台机器，使用不同的端口来实现），如下：</p>
-<pre><code><span class="preprocessor"># HostName:  IP</span>
-server1:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.21</span>
-server2:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.22</span>
-server3:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.23</span>
-</code></pre><p>首先，在每台服务器以zk单点形式进行安装，然后分别对zk配置文件 zoo.cfg 添加集群配置：</p>
-<pre><code># <span class="tag">server</span>.<span class="attr_selector">[myid]</span>:<span class="attr_selector">[ip]</span>:<span class="attr_selector">[port1]</span>:<span class="attr_selector">[port2]</span>，具体信息参考博文"<span class="tag">zoo</span><span class="class">.cfg</span>配置"
-<span class="tag">server</span><span class="class">.1</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.21</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
-<span class="tag">server</span><span class="class">.2</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.22</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
-<span class="tag">server</span><span class="class">.3</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.23</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span>
-</code></pre><p>其次，在每台服务器zk的配置目录conf下新建 myid 文件,同时将上一步配置的“myid”值写入对应服务器myid文件即可；如 10.0.0.21 配置的myid文件内容为“1”，后面两台类推；具体操作： </p>
-<pre><code><span class="preprocessor"># 将myid为<span class="string">"1"</span>写入server1的myid文件 </span>
-$ echo <span class="string">"1"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid 
-
-<span class="preprocessor"># 将myid为<span class="string">"2"</span>写入server2的myid文件</span>
-$ echo <span class="string">"2"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
-
-<span class="preprocessor"># 将myid为<span class="string">"3"</span>写入server3的myid文件</span>
-$ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid
-</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是一台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org" target="_blank" rel="external">http://zookeeper.apache.org</a>；</p><h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>$ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>$ tar -zxvf zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz     <span class="preprocessor"># 解压文件</span>$ cd zookeeper-<span class="number">3.4</span><span class="number">.9</span>   <span class="preprocessor"># 进入zookeeper根目录</span>$ mkdir data logs   <span class="preprocessor"># 新建目录data(数据目录)、logs(日志目录)</span>$ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>    tickTime=<span class="number">2000</span>    dataDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/data    dataLogDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/logs    clientPort=<span class="number">2181</span>    initLimit=<span class="number">5</span>    syncLimit=<span class="number">2</span></code></pre><a id="more"></a><h2 id="二、启动_zk">二、启动 zk</h2><pre><code>$ cd zookeeper-3.4.9/bin  <span class="comment"># 进入zk命令目录</span>$ ./zkServer.sh start  <span class="comment"># 启动zk服务</span>$ ./zkServer.sh status <span class="comment"># 查看zk启动状态(打印信息出现"Mode: standalone"，即表示zk为单点)</span><span class="comment"># zk基本基本命令[启动|前台启动|停止|重启|查看状态|升级|打印cmd]</span>$ zkServer.sh {start|<span class="string">start-foreground</span>|<span class="string">stop</span>|<span class="string">restart</span>|<span class="string">status</span>|<span class="string">upgrade</span>|<span class="string">print-cmd}</span></code></pre><h2 id="三、配置_zk_集群">三、配置 zk 集群</h2><p>现提供三台服务器（当然你也可以提供一台机器，使用不同的端口来实现），如下：</p><pre><code><span class="preprocessor"># HostName:  IP</span>server1:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.21</span>server2:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.22</span>server3:  <span class="number">10.0</span><span class="number">.0</span><span class="number">.23</span></code></pre><p>首先，在每台服务器以zk单点形式进行安装，然后分别对zk配置文件 zoo.cfg 添加集群配置：</p><pre><code># <span class="tag">server</span>.<span class="attr_selector">[myid]</span>:<span class="attr_selector">[ip]</span>:<span class="attr_selector">[port1]</span>:<span class="attr_selector">[port2]</span>，具体信息参考博文"<span class="tag">zoo</span><span class="class">.cfg</span>配置"<span class="tag">server</span><span class="class">.1</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.21</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span><span class="tag">server</span><span class="class">.2</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.22</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span><span class="tag">server</span><span class="class">.3</span><span class="pseudo">:10</span><span class="class">.0</span><span class="class">.0</span><span class="class">.23</span><span class="pseudo">:2888</span><span class="pseudo">:3888</span></code></pre><p>其次，在每台服务器zk的配置目录conf下新建 myid 文件,同时将上一步配置的“myid”值写入对应服务器myid文件即可；如 10.0.0.21 配置的myid文件内容为“1”，后面两台类推；具体操作： </p><pre><code><span class="preprocessor"># 将myid为<span class="string">"1"</span>写入server1的myid文件 </span>$ echo <span class="string">"1"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid <span class="preprocessor"># 将myid为<span class="string">"2"</span>写入server2的myid文件</span>$ echo <span class="string">"2"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid<span class="preprocessor"># 将myid为<span class="string">"3"</span>写入server3的myid文件</span>$ echo <span class="string">"3"</span> &gt; ~/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/conf/myid</code></pre><p>最后，分别启动或重启zk即完成集群配置，zk会自动选举leader及follower（目前的配置会是一台为leader、两台为follower，使用<code>zkServer.sh status</code>查看状态）  </p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： <a href="http://zookeeper.apache.org">http://zookeeper.apache.org</a>；</p>
-<h2 id="一、安装_zk">一、安装 zk</h2><pre><code><span class="preprocessor"># 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz ）</span>
-$ wget http:<span class="comment">//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz</span>
+    
+      &lt;p&gt;Zookeeper（后续简称 zk ） 介绍自行 Google 及参考官网： &lt;a href=&quot;http://zookeeper.apache.org&quot;&gt;http://zookeeper.apache.org&lt;/a&gt;；&lt;/p&gt;
+&lt;h2 id=&quot;一、安装_zk&quot;&gt;一、安装 zk&lt;/h2&gt;&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;preprocessor&quot;&gt;# 官网下载对应版本的zk至用户目录（本文实验版本 zookeeper-&lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.9&lt;/span&gt;.tar.gz ）&lt;/span&gt;
+$ wget http:&lt;span class=&quot;comment&quot;&gt;//mirrors.hust.edu.cn/apache/zookeeper/current/zookeeper-3.4.9.tar.gz&lt;/span&gt;
 
-$ tar -zxvf zookeeper-<span class="number">3.4</span><span class="number">.9</span>.tar.gz     <span class="preprocessor"># 解压文件</span>
-$ cd zookeeper-<span class="number">3.4</span><span class="number">.9</span>   <span class="preprocessor"># 进入zookeeper根目录</span>
-$ mkdir data logs   <span class="preprocessor"># 新建目录data(数据目录)、logs(日志目录)</span>
-$ vi conf/zoo.cfg   <span class="preprocessor"># 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)</span>
+$ tar -zxvf zookeeper-&lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.9&lt;/span&gt;.tar.gz     &lt;span class=&quot;preprocessor&quot;&gt;# 解压文件&lt;/span&gt;
+$ cd zookeeper-&lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.9&lt;/span&gt;   &lt;span class=&quot;preprocessor&quot;&gt;# 进入zookeeper根目录&lt;/span&gt;
+$ mkdir data logs   &lt;span class=&quot;preprocessor&quot;&gt;# 新建目录data(数据目录)、logs(日志目录)&lt;/span&gt;
+$ vi conf/zoo.cfg   &lt;span class=&quot;preprocessor&quot;&gt;# 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，默认不存在，可参考提供的文件 zoo_sample.cfg)&lt;/span&gt;
 
-    tickTime=<span class="number">2000</span>
-    dataDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/data
-    dataLogDir=/${***}/zookeeper-<span class="number">3.4</span><span class="number">.9</span>/logs
-    clientPort=<span class="number">2181</span>
-    initLimit=<span class="number">5</span>
-    syncLimit=<span class="number">2</span>
-</code></pre>]]>
+    tickTime=&lt;span class=&quot;number&quot;&gt;2000&lt;/span&gt;
+    dataDir=/${***}/zookeeper-&lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.9&lt;/span&gt;/data
+    dataLogDir=/${***}/zookeeper-&lt;span class=&quot;number&quot;&gt;3.4&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.9&lt;/span&gt;/logs
+    clientPort=&lt;span class=&quot;number&quot;&gt;2181&lt;/span&gt;
+    initLimit=&lt;span class=&quot;number&quot;&gt;5&lt;/span&gt;
+    syncLimit=&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="zk" scheme="http://effine.cn/tags/zk/"/>
     
       <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[IDEA快捷方式]]></title>
+    <title>IDEA快捷方式</title>
     <link href="http://effine.cn/2017/01/09/IdeaShortcut/"/>
     <id>http://effine.cn/2017/01/09/IdeaShortcut/</id>
     <published>2017-01-09T15:27:21.000Z</published>
     <updated>2021-02-23T03:36:54.159Z</updated>
-    <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
-<pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>
-$ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>
-$ <span class="built_in">command</span> + X        <span class="comment"># 剪切当前行</span>
-$ <span class="built_in">command</span> + J       <span class="comment"># 智能提示补齐</span>
-$ <span class="built_in">command</span> +        <span class="comment"># 查看类往上查找继承的类或实现的接口</span>
-$ ctrl + H            <span class="comment"># 显示类结构(继承)图</span>
-$ ctrl + option + H         <span class="comment"># 查看方法调用结构图</span>
-
-$ <span class="built_in">command</span> + B         <span class="comment"># 全局查找方法调用</span>
-$ <span class="built_in">command</span> + option + B     <span class="comment"># 查看方法的实现细节</span>
-$ <span class="built_in">command</span> + f7      <span class="comment"># 当前文件查找方法的调用</span>
-
-$ <span class="built_in">command</span> + option + 方向键(左left/右right)     <span class="comment"># 返回至上、下次浏览的位置</span>
-$ <span class="built_in">command</span> + option + T      <span class="comment"># 给代码添加if、where等语句包括起来</span>
-$ <span class="built_in">command</span> + option + V      <span class="comment"># 给方法调用提出引用变量</span>
-$ <span class="built_in">command</span> + option + u    <span class="comment"># 生成类集成图</span>
-$ <span class="built_in">command</span> + option + <span class="built_in">shift</span> + u  <span class="comment"># 生成类图 </span>
-
-$ ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>
-
-$ <span class="built_in">command</span> + `         <span class="comment"># 切换打开的多个窗口</span>
-$ <span class="built_in">command</span> + option + L  <span class="comment"># 格式化代码（若选中及格式化选中代码）</span>
-$ option + enter       <span class="comment"># 快速修复（自动导包、快速定义并列出接收方法返回值等）</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + enter   <span class="comment"># 快速补全行尾分号、括号及方法等</span>
-
-$ commadn + \           <span class="comment"># 按请求的URL路径进行搜索</span>
-$ <span class="built_in">command</span> + R             <span class="comment"># 当前文件查找替换</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + R     <span class="comment"># 全局查找替换</span>
-
-$ <span class="built_in">command</span> + E      <span class="comment"># 列出最近查看过文件</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + E       <span class="comment"># 列出最近编辑过的文件</span>
-
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + A       <span class="comment"># Rest Client(打开调试用的Http等操作)</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + T   <span class="comment"># 选择/创建对应文件的测试类</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + V   <span class="comment"># 访问历史粘贴板</span>
-$ <span class="built_in">command</span> + <span class="built_in">shift</span> + u   <span class="comment"># 将选中内容进行大小写切换</span>
-
-
-$ <span class="built_in">command</span> + W      <span class="comment">#  关闭当前标签页</span>
-$ <span class="built_in">shift</span> + click   <span class="comment"># 关闭点击文件</span>
-$ <span class="built_in">shift</span> + esc     <span class="comment"># 光标返回编辑框,关闭获得焦点的窗口</span>
-
-$ F2        <span class="comment"># 移动到下一错误代码处</span>
-$ <span class="built_in">shift</span> + F2    <span class="comment"># 移动到上一错误代码处</span>
-$ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时遇到一行多个方法，查看执行到哪个方法</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p><pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“/”）</span>$ <span class="built_in">command</span> + D         <span class="comment"># 复制当前行到下一行</span>$ <span class="built_in">command</span> + X        <span class="comment"># 剪切当前行</span>$ <span class="built_in">command</span> + J       <span class="comment"># 智能提示补齐</span>$ <span class="built_in">command</span> +        <span class="comment"># 查看类往上查找继承的类或实现的接口</span>$ ctrl + H            <span class="comment"># 显示类结构(继承)图</span>$ ctrl + option + H         <span class="comment"># 查看方法调用结构图</span>$ <span class="built_in">command</span> + B         <span class="comment"># 全局查找方法调用</span>$ <span class="built_in">command</span> + option + B     <span class="comment"># 查看方法的实现细节</span>$ <span class="built_in">command</span> + f7      <span class="comment"># 当前文件查找方法的调用</span>$ <span class="built_in">command</span> + option + 方向键(左left/右right)     <span class="comment"># 返回至上、下次浏览的位置</span>$ <span class="built_in">command</span> + option + T      <span class="comment"># 给代码添加if、where等语句包括起来</span>$ <span class="built_in">command</span> + option + V      <span class="comment"># 给方法调用提出引用变量</span>$ <span class="built_in">command</span> + option + u    <span class="comment"># 生成类集成图</span>$ <span class="built_in">command</span> + option + <span class="built_in">shift</span> + u  <span class="comment"># 生成类图 </span>$ ctrl + tab        <span class="comment"># 切换标签页（唤醒Swither，包含打开的文件及快捷选项入口）</span>$ <span class="built_in">command</span> + `         <span class="comment"># 切换打开的多个窗口</span>$ <span class="built_in">command</span> + option + L  <span class="comment"># 格式化代码（若选中及格式化选中代码）</span>$ option + enter       <span class="comment"># 快速修复（自动导包、快速定义并列出接收方法返回值等）</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + enter   <span class="comment"># 快速补全行尾分号、括号及方法等</span>$ commadn + \           <span class="comment"># 按请求的URL路径进行搜索</span>$ <span class="built_in">command</span> + R             <span class="comment"># 当前文件查找替换</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + R     <span class="comment"># 全局查找替换</span>$ <span class="built_in">command</span> + E      <span class="comment"># 列出最近查看过文件</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + E       <span class="comment"># 列出最近编辑过的文件</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + A       <span class="comment"># Rest Client(打开调试用的Http等操作)</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + T   <span class="comment"># 选择/创建对应文件的测试类</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + V   <span class="comment"># 访问历史粘贴板</span>$ <span class="built_in">command</span> + <span class="built_in">shift</span> + u   <span class="comment"># 将选中内容进行大小写切换</span>$ <span class="built_in">command</span> + W      <span class="comment">#  关闭当前标签页</span>$ <span class="built_in">shift</span> + click   <span class="comment"># 关闭点击文件</span>$ <span class="built_in">shift</span> + esc     <span class="comment"># 光标返回编辑框,关闭获得焦点的窗口</span>$ F2        <span class="comment"># 移动到下一错误代码处</span>$ <span class="built_in">shift</span> + F2    <span class="comment"># 移动到上一错误代码处</span>$ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时遇到一行多个方法，查看执行到哪个方法</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>撸代码少不了IDEA，简单的IDEA快捷键记录：</p>
-<pre><code>$ double + <span class="built_in">shift</span>  <span class="comment"># 双击shift，可以搜索文件及文件夹（正斜杠打头“]]>
+    
+      
+      
+        &lt;p&gt;撸代码少不了IDEA，简单的IDEA快捷键记录：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ double + &lt;span class=&quot;built_in&quot;&gt;shift&lt;/span&gt;  &lt;span class=&quot;comment&quot;&gt;# 双击shift，可以搜索文件及文件夹（正斜杠打头“
+      
+    
     </summary>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
@@ -207,59 +110,32 @@ $ <span class="built_in">shift</span> + f7    <span class="comment">#  debug时�
   </entry>
   
   <entry>
-    <title><![CDATA[Dockerfile 基本语法]]></title>
+    <title>Dockerfile 基本语法</title>
     <link href="http://effine.cn/2017/01/09/Dockerfile/"/>
     <id>http://effine.cn/2017/01/09/Dockerfile/</id>
     <published>2017-01-09T15:04:51.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Dockerfile指令不区分大小写，默认约定大写；该文件必须以FROM命令开始，其意义为指定基础镜像；FROM命令可多次使用，表示会创建多个镜像</p>
-<pre><code><span class="built_in">FROM</span> &lt;IMAGE&gt;  <span class="comment"># 指定基础镜像</span>
-<span class="built_in">MAINTAINER</span> &lt;author&gt;  &lt;email&gt;   <span class="comment"># 指定创建Dockerfile作者及邮箱</span>
-RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每一条RUN执行的命令默认目录都是根目录'/'）</span>
-
-<span class="comment"># 添加宿主机文件至容器内，若是压缩包会自动解压</span>
-<span class="built_in">ADD</span>  <span class="bash">&lt;localhost dir | URL &gt; &lt;container dir&gt; 
-</span>
-<span class="comment"># 只是添加宿主机文件至容器，不处理压缩包文件，ADD命令简化版</span>
-<span class="built_in">COPY</span>  <span class="bash">&lt;localhost dir&gt;  &lt;container dir&gt;   
-</span>
-<span class="built_in">WORKDIR</span> <span class="bash">&lt;path&gt;      <span class="comment"># 指定RUN、CMD、ENTRYPOINT命令的工作目录</span></span>
-</code></pre><a id="more"></a>
-<pre><code><span class="built_in">USER</span> &lt;uid&gt;      <span class="comment"># 设置镜像运行时的UID</span>
-<span class="built_in">ENV</span> &lt;key&gt; &lt;value&gt;   <span class="comment"># 设置镜像环境变量</span>
-
-<span class="built_in">VOLUME</span> <span class="bash">&lt;container path&gt;  <span class="comment"># 设置容器待挂载目录，配合docker启动命令使用</span>
-</span>$ docker <span class="built_ins">run</span> -v &lt;localhost dir&gt;   <span class="comment"># 表示容器目录path挂载到宿主机目录(localhost dir)</span>
-$ docker <span class="built_ins">run</span> -v &lt;localhost dir&gt;:&lt;container path&gt;  <span class="comment"># 该命令执行效果同上 </span>
-
-<span class="built_in">EXPOSE</span> &lt;port&gt;   <span class="comment"># 指定容器运行时监听的端口</span>
-
-<span class="comment"># 容器默认执行命令，Dockerfile只允许使用一次CMD；若多个只执行最后一个</span>
-<span class="built_in">ENTRYPOINT</span> <span class="bash">[<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>, ...]
-</span><span class="built_in">ENTRYPOINT</span> <span class="bash">[<span class="string">"param1"</span>,<span class="string">"param2"</span>, ...]
-</span>
-<span class="comment"># 容器默认执行命令，Dockerfile只允许使用一次CMD；若多个只执行最后一个</span>
-<span class="built_in">CMD</span> <span class="bash">[<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>, ...]
-</span><span class="built_in">CMD</span> <span class="bash">[<span class="string">"param1"</span>,<span class="string">"param2"</span>, ...]
-</span><span class="built_in">CMD</span> <span class="bash"><span class="built_in">command</span> param1 param2 ...</span>
-</code></pre><p>注：ENTRYPOINT执行命令不会被ocker容器启动时指定命令(容器名后面接的内容)覆盖，而是作为参数传递进去(即连接到ENTRYPOINT执行命令后面)；而CMD执行命令会被Docker容器启动的命令覆盖。如果同时存在ENTRYPOINT和CMD，那么ENTRYPOINT是默认执行命令，且CMD作为ENTRYPOINT的参数；如果没有ENTRYPOINT，则CMD就是默认执行指令。</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>Dockerfile指令不区分大小写，默认约定大写；该文件必须以FROM命令开始，其意义为指定基础镜像；FROM命令可多次使用，表示会创建多个镜像</p><pre><code><span class="built_in">FROM</span> &lt;IMAGE&gt;  <span class="comment"># 指定基础镜像</span><span class="built_in">MAINTAINER</span> &lt;author&gt;  &lt;email&gt;   <span class="comment"># 指定创建Dockerfile作者及邮箱</span>RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每一条RUN执行的命令默认目录都是根目录'/'）</span><span class="comment"># 添加宿主机文件至容器内，若是压缩包会自动解压</span><span class="built_in">ADD</span>  <span class="bash">&lt;localhost dir | URL &gt; &lt;container dir&gt; </span><span class="comment"># 只是添加宿主机文件至容器，不处理压缩包文件，ADD命令简化版</span><span class="built_in">COPY</span>  <span class="bash">&lt;localhost dir&gt;  &lt;container dir&gt;   </span><span class="built_in">WORKDIR</span> <span class="bash">&lt;path&gt;      <span class="comment"># 指定RUN、CMD、ENTRYPOINT命令的工作目录</span></span></code></pre><a id="more"></a><pre><code><span class="built_in">USER</span> &lt;uid&gt;      <span class="comment"># 设置镜像运行时的UID</span><span class="built_in">ENV</span> &lt;key&gt; &lt;value&gt;   <span class="comment"># 设置镜像环境变量</span><span class="built_in">VOLUME</span> <span class="bash">&lt;container path&gt;  <span class="comment"># 设置容器待挂载目录，配合docker启动命令使用</span></span>$ docker <span class="built_ins">run</span> -v &lt;localhost dir&gt;   <span class="comment"># 表示容器目录path挂载到宿主机目录(localhost dir)</span>$ docker <span class="built_ins">run</span> -v &lt;localhost dir&gt;:&lt;container path&gt;  <span class="comment"># 该命令执行效果同上 </span><span class="built_in">EXPOSE</span> &lt;port&gt;   <span class="comment"># 指定容器运行时监听的端口</span><span class="comment"># 容器默认执行命令，Dockerfile只允许使用一次CMD；若多个只执行最后一个</span><span class="built_in">ENTRYPOINT</span> <span class="bash">[<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>, ...]</span><span class="built_in">ENTRYPOINT</span> <span class="bash">[<span class="string">"param1"</span>,<span class="string">"param2"</span>, ...]</span><span class="comment"># 容器默认执行命令，Dockerfile只允许使用一次CMD；若多个只执行最后一个</span><span class="built_in">CMD</span> <span class="bash">[<span class="string">"executable"</span>, <span class="string">"param1"</span>, <span class="string">"param2"</span>, ...]</span><span class="built_in">CMD</span> <span class="bash">[<span class="string">"param1"</span>,<span class="string">"param2"</span>, ...]</span><span class="built_in">CMD</span> <span class="bash"><span class="built_in">command</span> param1 param2 ...</span></code></pre><p>注：ENTRYPOINT执行命令不会被ocker容器启动时指定命令(容器名后面接的内容)覆盖，而是作为参数传递进去(即连接到ENTRYPOINT执行命令后面)；而CMD执行命令会被Docker容器启动的命令覆盖。如果同时存在ENTRYPOINT和CMD，那么ENTRYPOINT是默认执行命令，且CMD作为ENTRYPOINT的参数；如果没有ENTRYPOINT，则CMD就是默认执行指令。</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Dockerfile指令不区分大小写，默认约定大写；该文件必须以FROM命令开始，其意义为指定基础镜像；FROM命令可多次使用，表示会创建多个镜像</p>
-<pre><code><span class="built_in">FROM</span> &lt;IMAGE&gt;  <span class="comment"># 指定基础镜像</span>
-<span class="built_in">MAINTAINER</span> &lt;author&gt;  &lt;email&gt;   <span class="comment"># 指定创建Dockerfile作者及邮箱</span>
-RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每一条RUN执行的命令默认目录都是根目录'/'）</span>
+    
+      &lt;p&gt;Dockerfile指令不区分大小写，默认约定大写；该文件必须以FROM命令开始，其意义为指定基础镜像；FROM命令可多次使用，表示会创建多个镜像&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;built_in&quot;&gt;FROM&lt;/span&gt; &amp;lt;IMAGE&amp;gt;  &lt;span class=&quot;comment&quot;&gt;# 指定基础镜像&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;MAINTAINER&lt;/span&gt; &amp;lt;author&amp;gt;  &amp;lt;email&amp;gt;   &lt;span class=&quot;comment&quot;&gt;# 指定创建Dockerfile作者及邮箱&lt;/span&gt;
+RUN  &amp;lt;COMMAND&amp;gt;      &lt;span class=&quot;comment&quot;&gt;# 新镜像上执行命令（每一条RUN执行的命令默认目录都是根目录&#39;/&#39;）&lt;/span&gt;
 
-<span class="comment"># 添加宿主机文件至容器内，若是压缩包会自动解压</span>
-<span class="built_in">ADD</span>  <span class="bash">&lt;localhost dir | URL &gt; &lt;container dir&gt; 
-</span>
-<span class="comment"># 只是添加宿主机文件至容器，不处理压缩包文件，ADD命令简化版</span>
-<span class="built_in">COPY</span>  <span class="bash">&lt;localhost dir&gt;  &lt;container dir&gt;   
-</span>
-<span class="built_in">WORKDIR</span> <span class="bash">&lt;path&gt;      <span class="comment"># 指定RUN、CMD、ENTRYPOINT命令的工作目录</span></span>
-</code></pre>]]>
+&lt;span class=&quot;comment&quot;&gt;# 添加宿主机文件至容器内，若是压缩包会自动解压&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;ADD&lt;/span&gt;  &lt;span class=&quot;bash&quot;&gt;&amp;lt;localhost dir | URL &amp;gt; &amp;lt;container dir&amp;gt; 
+&lt;/span&gt;
+&lt;span class=&quot;comment&quot;&gt;# 只是添加宿主机文件至容器，不处理压缩包文件，ADD命令简化版&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;COPY&lt;/span&gt;  &lt;span class=&quot;bash&quot;&gt;&amp;lt;localhost dir&amp;gt;  &amp;lt;container dir&amp;gt;   
+&lt;/span&gt;
+&lt;span class=&quot;built_in&quot;&gt;WORKDIR&lt;/span&gt; &lt;span class=&quot;bash&quot;&gt;&amp;lt;path&amp;gt;      &lt;span class=&quot;comment&quot;&gt;# 指定RUN、CMD、ENTRYPOINT命令的工作目录&lt;/span&gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
@@ -268,210 +144,118 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
   </entry>
   
   <entry>
-    <title><![CDATA[TeamCity配置]]></title>
+    <title>TeamCity配置</title>
     <link href="http://effine.cn/2016/12/29/TeamCityConfig/"/>
     <id>http://effine.cn/2016/12/29/TeamCityConfig/</id>
     <published>2016-12-29T14:26:52.000Z</published>
     <updated>2019-07-11T16:20:39.000Z</updated>
-    <content type="html"><![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
-<ul>
-<li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
-<ol>
-<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>
-<a id="more"></a>
-</li>
-<li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
-<p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p>
-<p>-&gt; Build Configuration Templates： 创建构建的模板配置</p>
-<p>-&gt; Subprojects： 在该项目下创建子项目</p>
-</li>
-<li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
-</li>
-<li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
-<p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p>
-</li>
-<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p>
-</li>
-<li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
-<p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p>
-</li>
-</ol>
-</li>
-<li><p>配置TeamCity插件</p>
-</li>
-</ul>
-<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p><ul><li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p><ol><li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p><a id="more"></a></li><li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p><p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p><p>-&gt; Build Configuration Templates： 创建构建的模板配置</p><p>-&gt; Subprojects： 在该项目下创建子项目</p></li><li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p></li><li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p><p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p></li><li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p></li><li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p><p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p></li></ol></li><li><p>配置TeamCity插件</p></li></ul><p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面<code>&lt;Host|IP&gt;:8111</code>，参考如下：</p>
-<ul>
-<li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
-<ol>
-<li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>]]>
+    
+      &lt;p&gt;本文主要介绍TeamCity关于部署项目的配置，介绍一些常用功能，查看更多参考TeamCity官方文档。首先打开TeamCity界面&lt;code&gt;&amp;lt;Host|IP&amp;gt;:8111&lt;/code&gt;，参考如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;点击右上角Administration -&amp;gt; Create Project -&amp;gt; Manually（手动）&lt;br&gt;&lt;img src=&quot;/imgs/teamcity/tcc2.png&quot; alt=&quot;创建项目&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[TeamCity安装]]></title>
+    <title>TeamCity安装</title>
     <link href="http://effine.cn/2016/12/29/TeamCityInstall/"/>
     <id>http://effine.cn/2016/12/29/TeamCityInstall/</id>
     <published>2016-12-29T14:15:06.000Z</published>
     <updated>2019-07-11T16:20:39.000Z</updated>
-    <content type="html"><![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件" target="_blank" rel="external">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p>
-<pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span>
-<span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span>
-<span class="variable">$ </span>./runAll.sh (start | stop [force])    <span class="comment"># 启动、停止(强制)</span>
-</code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
-<pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
-</code></pre><a id="more"></a>
-<p><img src="/imgs/teamcity/tcc1.png" alt="配置访问端口"></p>
-<p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p>
-<p>数据目录默认为<code>/home/&lt;user&gt;/.BuildServer</code>，若需修改参考：</p>
-<pre><code><span class="comment"># 修改配置文件属性teamcity.data.path即可</span>
-<span class="variable">$ </span>vi <span class="constant">TeamCity</span>/conf/teamcity-startup.properties
-</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="/imgs/teamcity/tc2.png" alt="选择数据库"></p>
-<p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="/imgs/teamcity/tc3.png" alt="创建用户"></p>
-<p>填写完用户名密码后创建用户，即可进入“My Setting &amp; Tools”配置个人信息等信息，点击右上角的”Administration”进入选项Projects即可创建Project；至此，TeamCity的安装说明已介绍完成。</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件" target="_blank" rel="external">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p><pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span><span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span><span class="variable">$ </span>./runAll.sh (start | stop [force])    <span class="comment"># 启动、停止(强制)</span></code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p><pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件</code></pre><a id="more"></a><p><img src="/imgs/teamcity/tcc1.png" alt="配置访问端口"></p><p>首次访问该地址会进入配置TeamCity的数据目录页：<br><img src="/imgs/teamcity/tc1.png" alt="设置配置数据目录"></p><p>数据目录默认为<code>/home/&lt;user&gt;/.BuildServer</code>，若需修改参考：</p><pre><code><span class="comment"># 修改配置文件属性teamcity.data.path即可</span><span class="variable">$ </span>vi <span class="constant">TeamCity</span>/conf/teamcity-startup.properties</code></pre><p>我们使用默认目录进入下一步；设置存储使用的数据库(默认为HSQLDB)，当然你可选择其提供的PostgreSQL\MYSQL\Oracle\MS SQL Server<br><img src="/imgs/teamcity/tc2.png" alt="选择数据库"></p><p>我们选择默认数据库进入下一步；此时，它会初始化数据库及服务组件，稍等片刻即可进入选择协议license页面，点击接受Accept继续；将进入创建用户页面：<br><img src="/imgs/teamcity/tc3.png" alt="创建用户"></p><p>填写完用户名密码后创建用户，即可进入“My Setting &amp; Tools”配置个人信息等信息，点击右上角的”Administration”进入选项Projects即可创建Project；至此，TeamCity的安装说明已介绍完成。</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(<a href="https://www.jetbrains.com/teamcity/)下载对应系统版本文件">https://www.jetbrains.com/teamcity/)下载对应系统版本文件</a>: <code>TeamCity-&lt;version&gt;.tag.gz</code>，我下载的版本为10.0.4；然后按如下步骤进行：</p>
-<pre><code><span class="variable">$ </span>tar -zxvf <span class="constant">TeamCity</span>-&lt;version&gt;.tag.gz -<span class="constant">C</span> &lt;dist dir&gt;   <span class="comment"># 解压安装包</span>
-<span class="variable">$ </span>cd &lt;dist dir&gt;<span class="regexp">/TeamCity/bin</span>        <span class="comment"># 进入TeamCity的bin目录</span>
-<span class="variable">$ </span>./runAll.sh (start | stop [force])    <span class="comment"># 启动、停止(强制)</span>
-</code></pre><p>若以上步骤无错即可访问TeamCity界面：<code>&lt;Host|IP&gt;:8111</code>，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：</p>
-<pre><code>$ vi TeamCity/conf/server.<span class="keyword">xml</span>         <span class="title"># 编辑server</span>.xml配置文件
-</code></pre>]]>
+    
+      &lt;p&gt;TeamCity安装很简单，安装之前必须先安装JDK；首先去官网(&lt;a href=&quot;https://www.jetbrains.com/teamcity/)下载对应系统版本文件&quot;&gt;https://www.jetbrains.com/teamcity/)下载对应系统版本文件&lt;/a&gt;: &lt;code&gt;TeamCity-&amp;lt;version&amp;gt;.tag.gz&lt;/code&gt;，我下载的版本为10.0.4；然后按如下步骤进行：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;tar -zxvf &lt;span class=&quot;constant&quot;&gt;TeamCity&lt;/span&gt;-&amp;lt;version&amp;gt;.tag.gz -&lt;span class=&quot;constant&quot;&gt;C&lt;/span&gt; &amp;lt;dist dir&amp;gt;   &lt;span class=&quot;comment&quot;&gt;# 解压安装包&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;cd &amp;lt;dist dir&amp;gt;&lt;span class=&quot;regexp&quot;&gt;/TeamCity/bin&lt;/span&gt;        &lt;span class=&quot;comment&quot;&gt;# 进入TeamCity的bin目录&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;./runAll.sh (start | stop [force])    &lt;span class=&quot;comment&quot;&gt;# 启动、停止(强制)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;若以上步骤无错即可访问TeamCity界面：&lt;code&gt;&amp;lt;Host|IP&amp;gt;:8111&lt;/code&gt;，其默认访问端口为8111；若需修改参考(修改配置文件前需停止TeamCity，修改完成再重新启动)：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ vi TeamCity/conf/server.&lt;span class=&quot;keyword&quot;&gt;xml&lt;/span&gt;         &lt;span class=&quot;title&quot;&gt;# 编辑server&lt;/span&gt;.xml配置文件
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="teamcity" scheme="http://effine.cn/tags/teamcity/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Gradle Commands]]></title>
+    <title>Gradle Commands</title>
     <link href="http://effine.cn/2016/07/16/GradleCommands/"/>
     <id>http://effine.cn/2016/07/16/GradleCommands/</id>
     <published>2016-07-16T12:37:54.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
-<p>常用的gradle命令集锦：</p>
-<pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
-<span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
-<span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
-<span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
-<span class="variable">$ </span>gradle &lt;task&gt;     <span class="comment"># 运行build.gradle中定义的任务</span>
-<span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
-<span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
-<span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
-<span class="variable">$ </span>gradle clean      <span class="comment"># 清理项目构建文件(即就是build文件夹)</span>
-<span class="variable">$ </span>gradle test       <span class="comment"># 编译</span>
-<span class="variable">$ </span>gradle check      <span class="comment"># 代码质量检查</span>
-</code></pre><a id="more"></a>
-<p>使用技巧：<br>。 maven项目秒转成gradle项目:</p>
-<pre><code><span class="variable">$ </span>gradle setupBuild --<span class="keyword">type</span> pom        <span class="comment"># gradle1.7的写法</span>
-<span class="variable">$ </span>gradle init --<span class="keyword">type</span> pom        <span class="comment"># gradle2.0的写法</span>
-</code></pre><p>。 设置gradle本地仓库路径： </p>
-<pre><code>设置环境变量即可： GRADLE_USER_HOME = <span class="function"><span class="title">dest-path</span><span class="params">(目标目录)</span></span>
-</code></pre><p>题图来源：gradle官方 <a href="https://gradle.org/" target="_blank" rel="external">https://gradle.org/</a></p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p><p>常用的gradle命令集锦：</p><pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span><span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span><span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span><span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span><span class="variable">$ </span>gradle &lt;task&gt;     <span class="comment"># 运行build.gradle中定义的任务</span><span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span><span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span><span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span><span class="variable">$ </span>gradle clean      <span class="comment"># 清理项目构建文件(即就是build文件夹)</span><span class="variable">$ </span>gradle test       <span class="comment"># 编译</span><span class="variable">$ </span>gradle check      <span class="comment"># 代码质量检查</span></code></pre><a id="more"></a><p>使用技巧：<br>。 maven项目秒转成gradle项目:</p><pre><code><span class="variable">$ </span>gradle setupBuild --<span class="keyword">type</span> pom        <span class="comment"># gradle1.7的写法</span><span class="variable">$ </span>gradle init --<span class="keyword">type</span> pom        <span class="comment"># gradle2.0的写法</span></code></pre><p>。 设置gradle本地仓库路径： </p><pre><code>设置环境变量即可： GRADLE_USER_HOME = <span class="function"><span class="title">dest-path</span><span class="params">(目标目录)</span></span></code></pre><p>题图来源：gradle官方 <a href="https://gradle.org/" target="_blank" rel="external">https://gradle.org/</a></p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p><img src="http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg" alt="Gradle"></p>
-<p>常用的gradle命令集锦：</p>
-<pre><code><span class="variable">$ </span>gradle        <span class="comment"># 欢迎信息</span>
-<span class="variable">$ </span>gradle [-v | --version]       <span class="comment"># 显示gradle相关版本及相关环境版本信息</span>
-<span class="variable">$ </span>gradle eclipse        <span class="comment"># 构建eclipse项目开发环境(创建.classpash等文件)</span>
-<span class="variable">$ </span>gradle tasks      <span class="comment"># 得到可运行的任务和描述的完整列表</span>
-<span class="variable">$ </span>gradle &lt;task&gt;     <span class="comment"># 运行build.gradle中定义的任务</span>
-<span class="variable">$ </span>gradle assemble       <span class="comment"># 编译程序源码打包生成jar文件，不执行单元测试</span>
-<span class="variable">$ </span>gradle build      <span class="comment"># 编译程序源码打包生成jar文件,执行单元测试</span>
-<span class="variable">$ </span>gradle compileJava        <span class="comment"># 编译程序中的源代码</span>
-<span class="variable">$ </span>gradle clean      <span class="comment"># 清理项目构建文件(即就是build文件夹)</span>
-<span class="variable">$ </span>gradle test       <span class="comment"># 编译</span>
-<span class="variable">$ </span>gradle check      <span class="comment"># 代码质量检查</span>
-</code></pre>]]>
+    
+      &lt;p&gt;&lt;img src=&quot;http://7xlmfk.com1.z0.glb.clouddn.com/images/article/gradle.svg&quot; alt=&quot;Gradle&quot;&gt;&lt;/p&gt;
+&lt;p&gt;常用的gradle命令集锦：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle        &lt;span class=&quot;comment&quot;&gt;# 欢迎信息&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle [-v | --version]       &lt;span class=&quot;comment&quot;&gt;# 显示gradle相关版本及相关环境版本信息&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle eclipse        &lt;span class=&quot;comment&quot;&gt;# 构建eclipse项目开发环境(创建.classpash等文件)&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle tasks      &lt;span class=&quot;comment&quot;&gt;# 得到可运行的任务和描述的完整列表&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle &amp;lt;task&amp;gt;     &lt;span class=&quot;comment&quot;&gt;# 运行build.gradle中定义的任务&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle assemble       &lt;span class=&quot;comment&quot;&gt;# 编译程序源码打包生成jar文件，不执行单元测试&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle build      &lt;span class=&quot;comment&quot;&gt;# 编译程序源码打包生成jar文件,执行单元测试&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle compileJava        &lt;span class=&quot;comment&quot;&gt;# 编译程序中的源代码&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle clean      &lt;span class=&quot;comment&quot;&gt;# 清理项目构建文件(即就是build文件夹)&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle test       &lt;span class=&quot;comment&quot;&gt;# 编译&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;gradle check      &lt;span class=&quot;comment&quot;&gt;# 代码质量检查&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="gradle" scheme="http://effine.cn/tags/gradle/"/>
     
       <category term="commond" scheme="http://effine.cn/tags/commond/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Java try catch返回值分析]]></title>
+    <title>Java try catch返回值分析</title>
     <link href="http://effine.cn/2016/06/15/TrycatchReturn/"/>
     <id>http://effine.cn/2016/06/15/TrycatchReturn/</id>
     <published>2016-06-15T15:40:22.000Z</published>
     <updated>2019-07-11T16:20:39.000Z</updated>
-    <content type="html"><![CDATA[<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
-<p><img src="/imgs/article/TryCatchFinally.png" alt="try catch return"></p>
-<a id="more"></a>
-<p>参考程序分析：</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
-
-    @<span class="function">Test
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> i = method1();
-        System.<span class="keyword">out</span>.println(i);
-    }
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> a = <span class="number">1</span>;
-        <span class="keyword">try</span> {
-            <span class="keyword">return</span> ++a;
-        } <span class="keyword">catch</span> (Exception e) {
-            e.printStackTrace();
-        } <span class="keyword">finally</span> {
-            ++a;
-        }
-        <span class="keyword">return</span> a;
-    }
-}
-</code></pre><p>junit测试打印结果：2<br>分析：为什么打印的结果是2不是3呢？可以使用debug分析得出，在执行method1方法try中的<code>++a</code>之后（a的值为2，同时将返回值2保存到局部变量中），程序并没有立即执行return，而是紧接着执行了finally的<code>++a</code>(此时a的值为3)，然后再执行try中的return(返回局部变量中的2)；</p>
-<p>若对程序进行改动，在finally中加入return分析返回值是多少？</p>
-<pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {
-
-    @<span class="function">Test
-    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> i = method1();
-        System.<span class="keyword">out</span>.println(i);
-    }
-
-    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{
-        <span class="keyword">int</span> a = <span class="number">1</span>;
-        <span class="keyword">try</span> {
-            <span class="keyword">return</span> ++a;
-        } <span class="keyword">catch</span> (Exception e) {
-            e.printStackTrace();
-        } <span class="keyword">finally</span> {
-            <span class="keyword">return</span> ++a;
-        }
-    }
-}
-</code></pre><p>此时，junit测试打印结果为：3<br>分析：当程序执行到finally中的<code>++a</code> (此时a的值为3)，紧接着执行finally中的return；所以，try和finally中同时出现return时，try中的return将会失效；</p>
-<p>题图来源：<a href="http://kuroeveryday.blogspot.jp/2014/12/Try-Catch-Finally.html" target="_blank" rel="external">http://kuroeveryday.blogspot.jp/2014/12/Try-Catch-Finally.html</a></p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p><p><img src="/imgs/article/TryCatchFinally.png" alt="try catch return"></p><a id="more"></a><p>参考程序分析：</p><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {    @<span class="function">Test    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{        <span class="keyword">int</span> i = method1();        System.<span class="keyword">out</span>.println(i);    }    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{        <span class="keyword">int</span> a = <span class="number">1</span>;        <span class="keyword">try</span> {            <span class="keyword">return</span> ++a;        } <span class="keyword">catch</span> (Exception e) {            e.printStackTrace();        } <span class="keyword">finally</span> {            ++a;        }        <span class="keyword">return</span> a;    }}</code></pre><p>junit测试打印结果：2<br>分析：为什么打印的结果是2不是3呢？可以使用debug分析得出，在执行method1方法try中的<code>++a</code>之后（a的值为2，同时将返回值2保存到局部变量中），程序并没有立即执行return，而是紧接着执行了finally的<code>++a</code>(此时a的值为3)，然后再执行try中的return(返回局部变量中的2)；</p><p>若对程序进行改动，在finally中加入return分析返回值是多少？</p><pre><code><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">TryCatchTest</span> {    @<span class="function">Test    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMethod</span>(<span class="params"></span>) </span>{        <span class="keyword">int</span> i = method1();        System.<span class="keyword">out</span>.println(i);    }    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">method1</span>(<span class="params"></span>) </span>{        <span class="keyword">int</span> a = <span class="number">1</span>;        <span class="keyword">try</span> {            <span class="keyword">return</span> ++a;        } <span class="keyword">catch</span> (Exception e) {            e.printStackTrace();        } <span class="keyword">finally</span> {            <span class="keyword">return</span> ++a;        }    }}</code></pre><p>此时，junit测试打印结果为：3<br>分析：当程序执行到finally中的<code>++a</code> (此时a的值为3)，紧接着执行finally中的return；所以，try和finally中同时出现return时，try中的return将会失效；</p><p>题图来源：<a href="http://kuroeveryday.blogspot.jp/2014/12/Try-Catch-Finally.html" target="_blank" rel="external">http://kuroeveryday.blogspot.jp/2014/12/Try-Catch-Finally.html</a></p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>简单分析异常捕获try catch的try和finally中return对结果的影响</p>
-<p><img src="/imgs/article/TryCatchFinally.png" alt="try catch return"></p>]]>
+    
+      &lt;p&gt;简单分析异常捕获try catch的try和finally中return对结果的影响&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/imgs/article/TryCatchFinally.png&quot; alt=&quot;try catch return&quot;&gt;&lt;/p&gt;
     
     </summary>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
     
       <category term="try" scheme="http://effine.cn/tags/try/"/>
     
@@ -479,644 +263,373 @@ RUN  &lt;COMMAND&gt;      <span class="comment"># 新镜像上执行命令（每
     
       <category term="finally" scheme="http://effine.cn/tags/finally/"/>
     
-      <category term="java" scheme="http://effine.cn/categories/java/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[nginx commands]]></title>
+    <title>nginx commands</title>
     <link href="http://effine.cn/2016/01/06/NginxCommands/"/>
     <id>http://effine.cn/2016/01/06/NginxCommands/</id>
     <published>2016-01-06T10:08:00.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
-<pre><code>nginx version: nginx/1.8.0
-Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]
-
-Options:
-  -?,-h         :  this <span class="operator"><span class="keyword">help</span>
-  -v            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> <span class="keyword">exit</span>
-  -V            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> configure options <span class="keyword">then</span> <span class="keyword">exit</span>
-  -<span class="keyword">t</span>            :  <span class="keyword">test</span> configuration <span class="keyword">and</span> <span class="keyword">exit</span>
-  -q            :  suppress non-<span class="keyword">error</span> messages during configuration testing
-  -s signal     :  send signal <span class="keyword">to</span> a <span class="keyword">master</span> process: <span class="keyword">stop</span>, quit, reopen, reload
-  -<span class="keyword">p</span> prefix     :  <span class="keyword">set</span> prefix <span class="keyword">path</span> (<span class="keyword">default</span>: /usr/<span class="keyword">local</span>/nginx/)
-  -<span class="keyword">c</span> filename   :  <span class="keyword">set</span> configuration <span class="keyword">file</span> (<span class="keyword">default</span>: conf/nginx.conf)
-  -<span class="keyword">g</span> directives :  <span class="keyword">set</span> <span class="keyword">global</span> directives <span class="keyword">out</span> <span class="keyword">of</span> configuration <span class="keyword">file</span></span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p><pre><code>nginx version: nginx/1.8.0Usage: nginx [-?hvVtq] [-s signal] [-c filename] [-p prefix] [-g directives]Options:  -?,-h         :  this <span class="operator"><span class="keyword">help</span>  -v            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> <span class="keyword">exit</span>  -V            :  <span class="keyword">show</span> <span class="keyword">version</span> <span class="keyword">and</span> configure options <span class="keyword">then</span> <span class="keyword">exit</span>  -<span class="keyword">t</span>            :  <span class="keyword">test</span> configuration <span class="keyword">and</span> <span class="keyword">exit</span>  -q            :  suppress non-<span class="keyword">error</span> messages during configuration testing  -s signal     :  send signal <span class="keyword">to</span> a <span class="keyword">master</span> process: <span class="keyword">stop</span>, quit, reopen, reload  -<span class="keyword">p</span> prefix     :  <span class="keyword">set</span> prefix <span class="keyword">path</span> (<span class="keyword">default</span>: /usr/<span class="keyword">local</span>/nginx/)  -<span class="keyword">c</span> filename   :  <span class="keyword">set</span> configuration <span class="keyword">file</span> (<span class="keyword">default</span>: conf/nginx.conf)  -<span class="keyword">g</span> directives :  <span class="keyword">set</span> <span class="keyword">global</span> directives <span class="keyword">out</span> <span class="keyword">of</span> configuration <span class="keyword">file</span></span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 <code>nginx -?</code> 到的帮助信息:</p>
-<pre><code>nginx version: nginx/1.8.0
-Usage: nginx [-?hvVtq] [-s ]]>
+    
+      
+      
+        &lt;p&gt;nginx帮助信息如其本身性能一样轻巧清晰简明，无需更多的额外说明； 使用 &lt;code&gt;nginx -?&lt;/code&gt; 到的帮助信息:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;nginx version: nginx/1.8.0
+Usage: nginx [-?hvVtq] [-s 
+      
+    
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[nginx加入系统服务]]></title>
+    <title>nginx加入系统服务</title>
     <link href="http://effine.cn/2016/01/04/NginxService/"/>
     <id>http://effine.cn/2016/01/04/NginxService/</id>
     <published>2016-01-04T14:08:00.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
-<p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>
-<a id="more"></a>
-<pre><code><span class="shebang">#! /bin/bash</span>
-<span class="comment"># chkconfig: 35 85 15  </span>
-<span class="comment"># description: Nginx is an HTTP(S) server, HTTP(S) reverse</span>
-<span class="built_in">set</span> <span class="operator">-e</span>
-PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/bin
-DESC=<span class="string">"nginx daemon"</span>
-NAME=nginx
-DAEMON=/usr/<span class="built_in">local</span>/nginx/sbin/<span class="variable">$NAME</span>
-SCRIPTNAME=/etc/init.d/<span class="variable">$NAME</span>
-<span class="built_in">test</span> -x <span class="variable">$DAEMON</span> || <span class="built_in">exit</span> <span class="number">0</span>
-<span class="function"><span class="title">d_start</span></span>(){
-    <span class="variable">$DAEMON</span> || <span class="built_in">echo</span> -n <span class="string">" already running"</span>
-}
-<span class="function"><span class="title">d_stop</span></span>() {
-    <span class="variable">$DAEMON</span> <span class="operator">-s</span> quit || <span class="built_in">echo</span> -n <span class="string">" not running"</span>
-}
-<span class="function"><span class="title">d_reload</span></span>() {
-    <span class="variable">$DAEMON</span> <span class="operator">-s</span> reload || <span class="built_in">echo</span> -n <span class="string">" counld not reload"</span>
-}
-<span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span>
-start)
-    <span class="built_in">echo</span> -n <span class="string">"Starting <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>
-    d_start
-    <span class="built_in">echo</span> <span class="string">"."</span>
-;;
-stop)
-    <span class="built_in">echo</span> -n <span class="string">"Stopping <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>
-    d_stop
-    <span class="built_in">echo</span> <span class="string">"."</span>
-;;
-reload)
-    <span class="built_in">echo</span> -n <span class="string">"Reloading <span class="variable">$DESC</span> configuration..."</span>
-    d_reload
-    <span class="built_in">echo</span> <span class="string">"reloaded."</span>
-;;
-restart)
-    <span class="built_in">echo</span> -n <span class="string">"Restarting <span class="variable">$DESC</span>: <span class="variable">$NAME</span>"</span>
-    d_stop
-    sleep <span class="number">2</span>
-    d_start
-    <span class="built_in">echo</span> <span class="string">"."</span>
-;;
-*)
-    <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$SCRIPTNAME</span> {start|stop|restart|reload}"</span> &gt;&amp;<span class="number">2</span>
-    <span class="built_in">exit</span> <span class="number">3</span>
-;;
-<span class="keyword">esac</span>
-<span class="built_in">exit</span> <span class="number">0</span>
-</code></pre><p>然后执行以下命令：</p>
-<pre><code># 复制<span class="keyword">shell</span>脚本nginx文件到目录/etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/中
-cp ./nginx  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>     
-
-chmod +x  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/nginx     # 设置文件可执行权限
-chkconfig --add nginx      # 添加至系统服务
-</code></pre><p>任何目录执行命令即可操作nginx：</p>
-<pre><code>service nginx &lt;<span class="built_in">start</span> | <span class="built_in">stop</span> | restart | reload &gt;     <span class="comment"># &lt;启动|停止|重启|重载&gt; nginx</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p><p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p><a id="more"></a><pre><code><span class="shebang">#! /bin/bash</span><span class="comment"># chkconfig: 35 85 15  </span><span class="comment"># description: Nginx is an HTTP(S) server, HTTP(S) reverse</span><span class="built_in">set</span> <span class="operator">-e</span>PATH=/usr/<span class="built_in">local</span>/sbin:/usr/<span class="built_in">local</span>/bin:/sbin:/bin:/usr/sbin:/usr/binDESC=<span class="string">"nginx daemon"</span>NAME=nginxDAEMON=/usr/<span class="built_in">local</span>/nginx/sbin/<span class="variable">$NAME</span>SCRIPTNAME=/etc/init.d/<span class="variable">$NAME</span><span class="built_in">test</span> -x <span class="variable">$DAEMON</span> || <span class="built_in">exit</span> <span class="number">0</span><span class="function"><span class="title">d_start</span></span>(){    <span class="variable">$DAEMON</span> || <span class="built_in">echo</span> -n <span class="string">" already running"</span>}<span class="function"><span class="title">d_stop</span></span>() {    <span class="variable">$DAEMON</span> <span class="operator">-s</span> quit || <span class="built_in">echo</span> -n <span class="string">" not running"</span>}<span class="function"><span class="title">d_reload</span></span>() {    <span class="variable">$DAEMON</span> <span class="operator">-s</span> reload || <span class="built_in">echo</span> -n <span class="string">" counld not reload"</span>}<span class="keyword">case</span> <span class="string">"<span class="variable">$1</span>"</span> <span class="keyword">in</span>start)    <span class="built_in">echo</span> -n <span class="string">"Starting <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>    d_start    <span class="built_in">echo</span> <span class="string">"."</span>;;stop)    <span class="built_in">echo</span> -n <span class="string">"Stopping <span class="variable">$DESC</span>:<span class="variable">$NAME</span>"</span>    d_stop    <span class="built_in">echo</span> <span class="string">"."</span>;;reload)    <span class="built_in">echo</span> -n <span class="string">"Reloading <span class="variable">$DESC</span> configuration..."</span>    d_reload    <span class="built_in">echo</span> <span class="string">"reloaded."</span>;;restart)    <span class="built_in">echo</span> -n <span class="string">"Restarting <span class="variable">$DESC</span>: <span class="variable">$NAME</span>"</span>    d_stop    sleep <span class="number">2</span>    d_start    <span class="built_in">echo</span> <span class="string">"."</span>;;*)    <span class="built_in">echo</span> <span class="string">"Usage: <span class="variable">$SCRIPTNAME</span> {start|stop|restart|reload}"</span> &gt;&amp;<span class="number">2</span>    <span class="built_in">exit</span> <span class="number">3</span>;;<span class="keyword">esac</span><span class="built_in">exit</span> <span class="number">0</span></code></pre><p>然后执行以下命令：</p><pre><code># 复制<span class="keyword">shell</span>脚本nginx文件到目录/etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/中cp ./nginx  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>     chmod +x  /etc/rc.<span class="keyword">d</span>/init.<span class="keyword">d</span>/nginx     # 设置文件可执行权限chkconfig --add nginx      # 添加至系统服务</code></pre><p>任何目录执行命令即可操作nginx：</p><pre><code>service nginx &lt;<span class="built_in">start</span> | <span class="built_in">stop</span> | restart | reload &gt;     <span class="comment"># &lt;启动|停止|重启|重载&gt; nginx</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 <code>DAEMON=/usr/local/nginx/sbin/$NAME</code> 语句，指定nginx的安装目录。</p>
-<p>新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：</p>]]>
+    
+      &lt;p&gt;将nginx加入系统服务，可用很方便的对nginx进行启动和停止等操作；本环境nginx安装在/usr/local/nginx目录，若你未安装在该目录需修改下面的shell脚本 &lt;code&gt;DAEMON=/usr/local/nginx/sbin/$NAME&lt;/code&gt; 语句，指定nginx的安装目录。&lt;/p&gt;
+&lt;p&gt;新建nginx文件,添加内容(为方便显示对内容进行了缩进，你可以使用shift+tab来取消缩进至文件顶格)：&lt;/p&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Spring配置MessageConvertor]]></title>
+    <title>Spring配置MessageConvertor</title>
     <link href="http://effine.cn/2015/12/11/SpringMessageConverotr/"/>
     <id>http://effine.cn/2015/12/11/SpringMessageConverotr/</id>
     <published>2015-12-10T16:20:54.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
-<p>在你spring启动注解的配置文件中，进行如下配置：</p>
-<pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">bean</span>
-            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
-</code></pre><a id="more"></a>
-<p>当然如果配置文件xml顶部声明版本为3.0或者spring版本为3.0都可能出现如下错误</p>
-<pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element 
-information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.
-</code></pre><p>所以，尽量升级spring为当前文档的最新版本,将xml的声明修改为3.1及以上！</p>
-<pre><code>&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>
-xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> 
-xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>
-xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> 
-xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>
-xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans  </span>
-      http:<span class="comment">//www.springframework.org/schema/beans/spring-beans-3.2.xsd  </span>
-      http:<span class="comment">//www.springframework.org/schema/context  </span>
-      http:<span class="comment">//www.springframework.org/schema/context/spring-context.xsd  </span>
-      http:<span class="comment">//www.springframework.org/schema/mvc  </span>
-      http:<span class="comment">//www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"&gt;</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p><p>在你spring启动注解的配置文件中，进行如下配置：</p><pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>        <span class="tag">&lt;<span class="title">bean</span>            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>                <span class="tag">&lt;<span class="title">list</span>&gt;</span>                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>                <span class="tag">&lt;<span class="title">list</span>&gt;</span>                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span><span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span></code></pre><a id="more"></a><p>当然如果配置文件xml顶部声明版本为3.0或者spring版本为3.0都可能出现如下错误</p><pre><code>Element <span class="attribute">'mvc</span>:annotation-driven' must have no <span class="typename">character</span> <span class="keyword">or</span> element information item [children], because the <span class="keyword">type</span><span class="attribute">'s</span> content <span class="keyword">type</span> <span class="keyword">is</span> empty.</code></pre><p>所以，尽量升级spring为当前文档的最新版本,将xml的声明修改为3.1及以上！</p><pre><code>&lt;beans xmlns=<span class="string">"http://www.springframework.org/schema/beans"</span>xmlns:context=<span class="string">"http://www.springframework.org/schema/context"</span> xmlns:p=<span class="string">"http://www.springframework.org/schema/p"</span>xmlns:mvc=<span class="string">"http://www.springframework.org/schema/mvc"</span> xmlns:xsi=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span>xsi:schemaLocation=<span class="string">"http://www.springframework.org/schema/beans  </span>      http:<span class="comment">//www.springframework.org/schema/beans/spring-beans-3.2.xsd  </span>      http:<span class="comment">//www.springframework.org/schema/context  </span>      http:<span class="comment">//www.springframework.org/schema/context/spring-context.xsd  </span>      http:<span class="comment">//www.springframework.org/schema/mvc  </span>      http:<span class="comment">//www.springframework.org/schema/mvc/spring-mvc-3.2.xsd"&gt;</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：</p>
-<p>在你spring启动注解的配置文件中，进行如下配置：</p>
-<pre><code><span class="tag">&lt;<span class="title">mvc:annotation-driven</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">mvc:message-converters</span>&gt;</span>
-        <span class="tag">&lt;<span class="title">bean</span>
-            <span class="attribute">class</span>=<span class="value">"com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter"</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"supportedMediaTypes"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/plain;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>text/html;charset=UTF-8<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>application/json<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-            <span class="tag">&lt;<span class="title">property</span> <span class="attribute">name</span>=<span class="value">"features"</span>&gt;</span>
-                <span class="tag">&lt;<span class="title">list</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>WriteMapNullValue<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                    <span class="tag">&lt;<span class="title">value</span>&gt;</span>QuoteFieldNames<span class="tag">&lt;/<span class="title">value</span>&gt;</span>
-                <span class="tag">&lt;/<span class="title">list</span>&gt;</span>
-            <span class="tag">&lt;/<span class="title">property</span>&gt;</span>
-        <span class="tag">&lt;/<span class="title">bean</span>&gt;</span>
-    <span class="tag">&lt;/<span class="title">mvc:message-converters</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">mvc:annotation-driven</span>&gt;</span>
-</code></pre>]]>
+    
+      &lt;p&gt;开发中经常使用Fastjson来进行json数据的封装，不过Spring默认采用的是Jackson，如果需要定义fastjson为默认，你可以进行如下操作：&lt;/p&gt;
+&lt;p&gt;在你spring启动注解的配置文件中，进行如下配置：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;mvc:annotation-driven&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;mvc:message-converters&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;bean&lt;/span&gt;
+            &lt;span class=&quot;attribute&quot;&gt;class&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;property&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;supportedMediaTypes&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;list&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;text/plain;charset=UTF-8&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;text/html;charset=UTF-8&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;application/json&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;list&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;property&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;property&lt;/span&gt; &lt;span class=&quot;attribute&quot;&gt;name&lt;/span&gt;=&lt;span class=&quot;value&quot;&gt;&quot;features&quot;&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;list&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;WriteMapNullValue&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                    &lt;span class=&quot;tag&quot;&gt;&amp;lt;&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;QuoteFieldNames&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;value&lt;/span&gt;&amp;gt;&lt;/span&gt;
+                &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;list&lt;/span&gt;&amp;gt;&lt;/span&gt;
+            &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;property&lt;/span&gt;&amp;gt;&lt;/span&gt;
+        &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;bean&lt;/span&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;mvc:message-converters&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;tag&quot;&gt;&amp;lt;/&lt;span class=&quot;title&quot;&gt;mvc:annotation-driven&lt;/span&gt;&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
     
       <category term="java" scheme="http://effine.cn/tags/java/"/>
     
       <category term="spring" scheme="http://effine.cn/tags/spring/"/>
     
-      <category term="java" scheme="http://effine.cn/categories/java/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[linux安装nginx]]></title>
+    <title>linux安装nginx</title>
     <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
     <id>http://effine.cn/2015/11/17/NginxInstall/</id>
     <published>2015-11-17T10:08:00.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
-<pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
-$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
-$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
-$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span>
-</code></pre><a id="more"></a>
-<p>安装过程出现的错误解析：</p>
-<pre><code><span class="comment"># 错误 1</span>
-checking <span class="keyword">for</span> C compiler ... <span class="keyword">not</span> found
-./configure: <span class="keyword">error</span>: C compiler cc <span class="keyword">is</span> <span class="keyword">not</span> found
-</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p>
-<pre><code><span class="comment"># 错误 2</span>
-./configure: error: <span class="operator">the</span> HTTP gzip module requires <span class="operator">the</span> zlib library.
-You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_gzip_module</span>
-option, <span class="operator">or</span> install <span class="operator">the</span> zlib library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> zlib library
-statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-zlib=&lt;path&gt; option.</span>
-</code></pre><p>分析/解决：不存在zlib library；安装即可：yum install -y zlib-devel</p>
-<pre><code><span class="comment"># 错误 3</span>
-./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
-You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
-option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
-statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-pcre=&lt;path&gt; option.</span>
-</code></pre><p>分析/解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
-<pre><code><span class="variable">$ </span>cd pcre-{version}
-<span class="variable">$ </span>./configure
-<span class="variable">$ </span>make &amp;&amp; make install
-</code></pre><p>当然你也可以使用命令： yum install pcre</p>
-<pre><code># 错误 4
-./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions
-<span class="keyword">from</span> OpenSSL <span class="keyword">library</span>.   You can either <span class="keyword">disable</span> the <span class="keyword">module</span> <span class="keyword">by</span> <span class="keyword">using</span>
-<span class="comment">--without-http-cache option, or install the OpenSSL library into the system,</span>
-<span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
-<span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
-</code></pre><p>分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p>
-<pre><code><span class="preprocessor"># 错误<span class="number">5</span></span>
-nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">9000</span> failed (<span class="number">48</span>: Address already in use)
-</code></pre><p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p>
-<pre><code><span class="preprocessor"># 错误<span class="number">6</span></span>
-nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</span> failed (<span class="number">13</span>: Permission denied)
-</code></pre><p>解决： 没有权限，使用root用户启动</p>
-<p>根据nginx源码安装延伸</p>
-<pre><code>. configure     <span class="comment"># 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境</span>
-. make        <span class="comment"># 编译源码，生成Makefile</span>
-. make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
-</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p><pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span></code></pre><a id="more"></a><p>安装过程出现的错误解析：</p><pre><code><span class="comment"># 错误 1</span>checking <span class="keyword">for</span> C compiler ... <span class="keyword">not</span> found./configure: <span class="keyword">error</span>: C compiler cc <span class="keyword">is</span> <span class="keyword">not</span> found</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p><pre><code><span class="comment"># 错误 2</span>./configure: error: <span class="operator">the</span> HTTP gzip module requires <span class="operator">the</span> zlib library.You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_gzip_module</span>option, <span class="operator">or</span> install <span class="operator">the</span> zlib library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> zlib librarystatically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-zlib=&lt;path&gt; option.</span></code></pre><p>分析/解决：不存在zlib library；安装即可：yum install -y zlib-devel</p><pre><code><span class="comment"># 错误 3</span>./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE librarystatically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-pcre=&lt;path&gt; option.</span></code></pre><p>分析/解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p><pre><code><span class="variable">$ </span>cd pcre-{version}<span class="variable">$ </span>./configure<span class="variable">$ </span>make &amp;&amp; make install</code></pre><p>当然你也可以使用命令： yum install pcre</p><pre><code># 错误 4./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions<span class="keyword">from</span> OpenSSL <span class="keyword">library</span>.   You can either <span class="keyword">disable</span> the <span class="keyword">module</span> <span class="keyword">by</span> <span class="keyword">using</span><span class="comment">--without-http-cache option, or install the OpenSSL library into the system,</span><span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span><span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span></code></pre><p>分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p><pre><code><span class="preprocessor"># 错误<span class="number">5</span></span>nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">9000</span> failed (<span class="number">48</span>: Address already in use)</code></pre><p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p><pre><code><span class="preprocessor"># 错误<span class="number">6</span></span>nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</span> failed (<span class="number">13</span>: Permission denied)</code></pre><p>解决： 没有权限，使用root用户启动</p><p>根据nginx源码安装延伸</p><pre><code>. configure     <span class="comment"># 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境</span>. make        <span class="comment"># 编译源码，生成Makefile</span>. make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span></code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
-<pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
-$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
-$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
-$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span>
-</code></pre>]]>
+    
+      &lt;p&gt;若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： &lt;a href=&quot;http://nginx.org/&quot;&gt;http://nginx.org/&lt;/a&gt; （以下讲解环境使用centos，其他环境安装方式大同小异）&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;$ wget http:&lt;span class=&quot;comment&quot;&gt;//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx&lt;/span&gt;
+$ tar -zxvf nginx-&lt;span class=&quot;number&quot;&gt;1.8&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;.tar.gz [-C &amp;lt;dir&amp;gt;]     &lt;span class=&quot;preprocessor&quot;&gt;# 解压[指定目录]&lt;/span&gt;
+$ cd nginx-&lt;span class=&quot;number&quot;&gt;1.8&lt;/span&gt;&lt;span class=&quot;number&quot;&gt;.0&lt;/span&gt;
+$ ./configure --prefix=/usr/local/nginx      &lt;span class=&quot;preprocessor&quot;&gt;# prefix指定安装目录&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Git Remote]]></title>
+    <title>Git Remote</title>
     <link href="http://effine.cn/2015/11/17/GitRemote/"/>
     <id>http://effine.cn/2015/11/17/GitRemote/</id>
     <published>2015-11-17T07:08:24.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
-<pre><code>$ git remote        <span class="comment"># 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)</span>
-$ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看跟踪仓库别名及地址</span>
-$ git remote show <span class="variable">&lt;origin&gt;</span>    <span class="comment"># 查看跟踪仓库地址及分支情况</span>
-
-$ git remote add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加跟踪仓库别名及对应的跟踪地址 </span>
-
-<span class="comment"># 更新指定跟踪仓库名的地址</span>
-$ git remote set-url [--push] <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span> [<span class="variable">&lt;oldurl&gt;</span>] 
-$ git remote set-url --add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span>
-$ git remote set-url --delete <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>
-    [--push]                <span class="comment"># manipulate push URLs(操作push的URL)</span>
-    [--add]                <span class="comment"># add URL</span>
-    [--delete]              <span class="comment"># delete URLs</span>
-
-$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;origin&gt;</span>     <span class="comment"># 删除指定的跟踪仓库名</span>
-$ git remote rename <span class="variable">&lt;old&gt;</span> <span class="variable">&lt;new&gt;</span>       <span class="comment"># 重命名跟踪仓库名</span>
-
-<span class="comment"># 设置或删除跟踪仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行</span>
-$ git remote set-head <span class="variable">&lt;origin&gt;</span> (-a |<span class="string"> --auto </span>|<span class="string"> -d </span>|<span class="string"> --delete </span>|<span class="string"> &lt;branch&gt;) 
-    [-a</span>|<span class="string">--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote
-    [-d</span>|<span class="string">--delete]       # delete refs/remotes/&lt;name&gt;/HEAD
-
-# 清理存在过但现在不存在的本地跟踪分支的引用
-$ git remote prune [&lt;options&gt;] &lt;origin&gt; 
-    [-n</span>|<span class="string">--dry-run]         # dry run(试运行，彩排)</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p><pre><code>$ git remote        <span class="comment"># 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)</span>$ git remote <span class="variable">&lt;-v | --verbose&gt;</span>     <span class="comment"># 查看跟踪仓库别名及地址</span>$ git remote show <span class="variable">&lt;origin&gt;</span>    <span class="comment"># 查看跟踪仓库地址及分支情况</span>$ git remote add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>   <span class="comment"># 添加跟踪仓库别名及对应的跟踪地址 </span><span class="comment"># 更新指定跟踪仓库名的地址</span>$ git remote set-url [--push] <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span> [<span class="variable">&lt;oldurl&gt;</span>] $ git remote set-url --add <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;newurl&gt;</span>$ git remote set-url --delete <span class="variable">&lt;origin&gt;</span> <span class="variable">&lt;url&gt;</span>    [--push]                <span class="comment"># manipulate push URLs(操作push的URL)</span>    [--add]                <span class="comment"># add URL</span>    [--delete]              <span class="comment"># delete URLs</span>$ git remote <span class="variable">&lt;remove|rm&gt;</span> <span class="variable">&lt;origin&gt;</span>     <span class="comment"># 删除指定的跟踪仓库名</span>$ git remote rename <span class="variable">&lt;old&gt;</span> <span class="variable">&lt;new&gt;</span>       <span class="comment"># 重命名跟踪仓库名</span><span class="comment"># 设置或删除跟踪仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行</span>$ git remote set-head <span class="variable">&lt;origin&gt;</span> (-a |<span class="string"> --auto </span>|<span class="string"> -d </span>|<span class="string"> --delete </span>|<span class="string"> &lt;branch&gt;)     [-a</span>|<span class="string">--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote    [-d</span>|<span class="string">--delete]       # delete refs/remotes/&lt;name&gt;/HEAD# 清理存在过但现在不存在的本地跟踪分支的引用$ git remote prune [&lt;options&gt;] &lt;origin&gt;     [-n</span>|<span class="string">--dry-run]         # dry run(试运行，彩排)</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
-<pre>]]>
+    
+      
+      
+        &lt;p&gt;Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文&lt;code&gt;Manage the set of repositories (&amp;quot;remotes&amp;quot;) whose branches you track.&lt;/code&gt; &lt;/p&gt;
+&lt;pre&gt;
+      
+    
     </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="remote" scheme="http://effine.cn/tags/remote/"/>
     
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Hexo 博客配置访问统计]]></title>
+    <title>Hexo 博客配置访问统计</title>
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
     <published>2015-11-16T09:33:44.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
-<pre><code><span class="comment"># 以下内容来源网络</span>
-<span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行
-
-    baidu_tongji: <span class="constant">true</span>      <span class="comment"># 百度统计</span>
-
-<span class="number">2.</span>新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下
-
-    &lt;% <span class="keyword">if</span> (theme.baidu_tongji) { %&gt;
-    <span class="comment"># 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定</span>
-    &lt;<span class="keyword">script</span> type=<span class="string">"text/javascript"</span>&gt;
-        <span class="comment"># 申请的百度统计代码</span>
-    &lt;/<span class="keyword">script</span>&gt;
-    &lt;% } %&gt;
-
-<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 标签内添加
-
-    &lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;
-
-<span class="number">4.</span>重新生产部署站点即可。
-</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.com/" target="_blank" rel="external">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p><pre><code><span class="comment"># 以下内容来源网络</span><span class="number">1.</span>编辑文件 themes/landscape/_config.yml,使用<span class="string">"#"</span>注释原来的google analytics，添加百度统计配置行    baidu_tongji: <span class="constant">true</span>      <span class="comment"># 百度统计</span><span class="number">2.</span>新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下    &lt;% <span class="keyword">if</span> (theme.baidu_tongji) { %&gt;    <span class="comment"># 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定</span>    &lt;<span class="keyword">script</span> type=<span class="string">"text/javascript"</span>&gt;        <span class="comment"># 申请的百度统计代码</span>    &lt;/<span class="keyword">script</span>&gt;    &lt;% } %&gt;<span class="number">3.</span>编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;<span class="keyword">div</span> <span class="type">class</span>=<span class="string">"outer"</span>&gt;&lt;/<span class="keyword">div</span>&gt; 标签内添加    &lt;%- partial(<span class="string">"baidu_tongji"</span>) %&gt;<span class="number">4.</span>重新生产部署站点即可。</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/" target="_blank" rel="external">百度统计</a>和<a href="http://cnzz.]]>
+    
+      
+      
+        &lt;p&gt;常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、&lt;a href=&quot;http://tongji.baidu.com/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;百度统计&lt;/a&gt;和&lt;a href=&quot;http://cnzz.
+      
+    
     </summary>
     
-      <category term="hexo" scheme="http://effine.cn/tags/hexo/"/>
-    
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
+    
+      <category term="hexo" scheme="http://effine.cn/tags/hexo/"/>
     
   </entry>
   
   <entry>
-    <title><![CDATA[Eclipse Tasks]]></title>
+    <title>Eclipse Tasks</title>
     <link href="http://effine.cn/2015/11/15/EclipseTasks/"/>
     <id>http://effine.cn/2015/11/15/EclipseTasks/</id>
     <published>2015-11-15T14:15:02.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
-<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p>
-<pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
-. TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>
-. XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>
-. 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span>
-</code></pre><p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p>
-<p>当然，你还可以对标识设置优先权(proprity)</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p><p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p><pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>. TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>. XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>. 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span></code></pre><p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p><p>当然，你还可以对标识设置优先权(proprity)</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
-<p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义]]>
+    
+      
+      
+        &lt;p&gt;使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！&lt;/p&gt;
+&lt;p&gt;打开tasks面板： window -&amp;gt; show view -&amp;gt; other -&amp;gt; Tasks； 标记标签的具体含义
+      
+    
     </summary>
+    
+      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
+    
     
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
     
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Git Config]]></title>
+    <title>Git Config</title>
     <link href="http://effine.cn/2015/11/10/GitConfig/"/>
     <id>http://effine.cn/2015/11/10/GitConfig/</id>
     <published>2015-11-10T10:17:52.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>Git配置存在适用范围：</p>
-<ul>
-<li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
-<li>系统用户范围： <code>git config - -global</code>      # 保存在用户根目录.gitconfig文件</li>
-</ul>
-<p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p>
-<pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span>
-<span class="variable">$ </span>git config --list [| grep command]
-<span class="variable">$ </span>git config -l [| grep command]
-
-<span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span>
-<span class="variable">$ </span>git config --global user.email <span class="string">"email"</span>     <span class="comment"># 设置全局邮箱(提交历史可见)</span>
-<span class="variable">$ </span>git config --global color.ui &lt;<span class="keyword">true</span>|<span class="keyword">false</span>&gt;   <span class="comment"># Git会显示适当地颜色[打开|关闭]</span>
-<span class="variable">$ </span>git config --global core.editor &lt;emacs&gt;       <span class="comment"># 设置文本编辑器emacs</span>
-<span class="variable">$ </span>git config --global merge.tool &lt;vimdiff&gt;      <span class="comment"># 设置差异分析工具vimdiff</span>
-
-<span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span>
-<span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;   <span class="comment"># 使用别名aliasname代替command</span>
-<span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>
-    &gt; status [st]
-    &gt; commit [ci]
-    &gt; checkout [co]
-    &gt; branch [br]
-    &gt; diff [df]
-    &gt; cherry-pick [cp]
-<span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>
-    [<span class="keyword">alias</span>]  
-      st = status  
-      ci = commit  
-      br = branch  
-      co = checkout  
-      df = diff 
-      cp = cherry-pick
-
-<span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span>
-<span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; 
-
-<span class="variable">$ </span>git config  --global --unset-all core.ignorecase    <span class="comment"># 取消所有关于是否忽略Git大小写的设置</span>
-<span class="variable">$ </span>git config  --global --system core.ignorecase &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt;   <span class="comment"># 设置Git是否忽略大小写</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<p>Git配置存在适用范围：</p><ul><li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li><li>系统用户范围： <code>git config - -global</code>      # 保存在用户根目录.gitconfig文件</li></ul><p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p><pre><code><span class="comment"># 列出所有配置,grep可过滤具体Command命令</span><span class="variable">$ </span>git config --list [| grep command]<span class="variable">$ </span>git config -l [| grep command]<span class="variable">$ </span>git config --global user.name <span class="string">"username"</span>     <span class="comment"># 设置全局用户名(提交历史可见)</span><span class="variable">$ </span>git config --global user.email <span class="string">"email"</span>     <span class="comment"># 设置全局邮箱(提交历史可见)</span><span class="variable">$ </span>git config --global color.ui &lt;<span class="keyword">true</span>|<span class="keyword">false</span>&gt;   <span class="comment"># Git会显示适当地颜色[打开|关闭]</span><span class="variable">$ </span>git config --global core.editor &lt;emacs&gt;       <span class="comment"># 设置文本编辑器emacs</span><span class="variable">$ </span>git config --global merge.tool &lt;vimdiff&gt;      <span class="comment"># 设置差异分析工具vimdiff</span><span class="comment"># 设置命令别名；命令别名列举(可自定义其他别名)</span><span class="variable">$ </span>git config --global <span class="keyword">alias</span>.&lt;aliasname&gt; &lt;command&gt;   <span class="comment"># 使用别名aliasname代替command</span><span class="variable">$ </span>git config --global --unset <span class="keyword">alias</span>.&lt;aliasname&gt;   <span class="comment"># 取消别名aliasname设置</span>    &gt; status [st]    &gt; commit [ci]    &gt; checkout [co]    &gt; branch [br]    &gt; diff [df]    &gt; cherry-pick [cp]<span class="comment"># 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)</span>    [<span class="keyword">alias</span>]        st = status        ci = commit        br = branch        co = checkout        df = diff       cp = cherry-pick<span class="comment"># 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)</span><span class="variable">$ </span>git config  --global  core.autocrlf &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt; <span class="variable">$ </span>git config  --global --unset-all core.ignorecase    <span class="comment"># 取消所有关于是否忽略Git大小写的设置</span><span class="variable">$ </span>git config  --global --system core.ignorecase &lt;<span class="keyword">false</span>|<span class="keyword">true</span>&gt;   <span class="comment"># 设置Git是否忽略大小写</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>Git配置存在适用范围：</p>
-<ul>
-<li>项目范围： <code>git config</code>    # 保存在项目根目录.git/config文件</li>
-<li>系统用户范围： <code>git config - -global</code>    ]]>
+    
+      
+      
+        &lt;p&gt;Git配置存在适用范围：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;项目范围： &lt;code&gt;git config&lt;/code&gt;    # 保存在项目根目录.git/config文件&lt;/li&gt;
+&lt;li&gt;系统用户范围： &lt;code&gt;git config - -global&lt;/code&gt;    
+      
+    
     </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="config" scheme="http://effine.cn/tags/config/"/>
     
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Git Stash]]></title>
+    <title>Git Stash</title>
     <link href="http://effine.cn/2015/11/05/GitStash/"/>
     <id>http://effine.cn/2015/11/05/GitStash/</id>
     <published>2015-11-05T06:42:43.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
-<pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
-<span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
-<span class="variable">$ </span>git stash save [message]  <span class="comment"># 暂存当前改变，且为暂存添加描述信息</span>
-<span class="variable">$ </span>git stash list         <span class="comment"># 查看暂存列表</span>
-
-<span class="variable">$ </span>git stash apply         <span class="comment"># 恢复最近的暂存，不删除暂存</span>
-<span class="variable">$ </span>git stash pop         <span class="comment"># 恢复最近的暂存，并删除暂存</span>
-<span class="variable">$ </span>git stash drop        <span class="comment"># 删除最近的暂存 </span>
-<span class="variable">$ </span>git stash clear       <span class="comment"># 删除所有暂存</span>
-
-<span class="variable">$ </span>git stash show [&lt;stash&gt;]       <span class="comment"># 显示最近的暂存(或指定具体的暂存)</span>
-  <span class="symbol">eg:</span> git stash show -p stash@{<span class="number">1</span>}  <span class="comment"># 显示第二次暂存文件的具体改变</span>
-
-<span class="comment"># 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支</span>
-<span class="variable">$ </span>git stash branch &lt;branchname&gt; [&lt;stash&gt;]   
-</code></pre><a id="more"></a>
-<p>$ git stash create</p>
-<p>Create a stash (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>
-<p>$ git stash store</p>
-<p>Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p><pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span><span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span><span class="variable">$ </span>git stash save [message]  <span class="comment"># 暂存当前改变，且为暂存添加描述信息</span><span class="variable">$ </span>git stash list         <span class="comment"># 查看暂存列表</span><span class="variable">$ </span>git stash apply         <span class="comment"># 恢复最近的暂存，不删除暂存</span><span class="variable">$ </span>git stash pop         <span class="comment"># 恢复最近的暂存，并删除暂存</span><span class="variable">$ </span>git stash drop        <span class="comment"># 删除最近的暂存 </span><span class="variable">$ </span>git stash clear       <span class="comment"># 删除所有暂存</span><span class="variable">$ </span>git stash show [&lt;stash&gt;]       <span class="comment"># 显示最近的暂存(或指定具体的暂存)</span>  <span class="symbol">eg:</span> git stash show -p stash@{<span class="number">1</span>}  <span class="comment"># 显示第二次暂存文件的具体改变</span><span class="comment"># 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支</span><span class="variable">$ </span>git stash branch &lt;branchname&gt; [&lt;stash&gt;]   </code></pre><a id="more"></a><p>$ git stash create</p><p>Create a stash (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p><p>$ git stash store</p><p>Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
-<pre><code><span class="variable">$ </span>git stash --help         <span class="comment"># 查看帮助</span>
-<span class="variable">$ </span>git stash     <span class="comment"># 将当前的改变暂存起来</span>
-<span class="variable">$ </span>git stash save [message]  <span class="comment"># 暂存当前改变，且为暂存添加描述信息</span>
-<span class="variable">$ </span>git stash list         <span class="comment"># 查看暂存列表</span>
+    
+      &lt;p&gt;当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash --help         &lt;span class=&quot;comment&quot;&gt;# 查看帮助&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash     &lt;span class=&quot;comment&quot;&gt;# 将当前的改变暂存起来&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash save [message]  &lt;span class=&quot;comment&quot;&gt;# 暂存当前改变，且为暂存添加描述信息&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash list         &lt;span class=&quot;comment&quot;&gt;# 查看暂存列表&lt;/span&gt;
 
-<span class="variable">$ </span>git stash apply         <span class="comment"># 恢复最近的暂存，不删除暂存</span>
-<span class="variable">$ </span>git stash pop         <span class="comment"># 恢复最近的暂存，并删除暂存</span>
-<span class="variable">$ </span>git stash drop        <span class="comment"># 删除最近的暂存 </span>
-<span class="variable">$ </span>git stash clear       <span class="comment"># 删除所有暂存</span>
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash apply         &lt;span class=&quot;comment&quot;&gt;# 恢复最近的暂存，不删除暂存&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash pop         &lt;span class=&quot;comment&quot;&gt;# 恢复最近的暂存，并删除暂存&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash drop        &lt;span class=&quot;comment&quot;&gt;# 删除最近的暂存 &lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash clear       &lt;span class=&quot;comment&quot;&gt;# 删除所有暂存&lt;/span&gt;
 
-<span class="variable">$ </span>git stash show [&lt;stash&gt;]       <span class="comment"># 显示最近的暂存(或指定具体的暂存)</span>
-  <span class="symbol">eg:</span> git stash show -p stash@{<span class="number">1</span>}  <span class="comment"># 显示第二次暂存文件的具体改变</span>
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash show [&amp;lt;stash&amp;gt;]       &lt;span class=&quot;comment&quot;&gt;# 显示最近的暂存(或指定具体的暂存)&lt;/span&gt;
+  &lt;span class=&quot;symbol&quot;&gt;eg:&lt;/span&gt; git stash show -p stash@{&lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;}  &lt;span class=&quot;comment&quot;&gt;# 显示第二次暂存文件的具体改变&lt;/span&gt;
 
-<span class="comment"># 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支</span>
-<span class="variable">$ </span>git stash branch &lt;branchname&gt; [&lt;stash&gt;]   
-</code></pre>]]>
+&lt;span class=&quot;comment&quot;&gt;# 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支&lt;/span&gt;
+&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git stash branch &amp;lt;branchname&amp;gt; [&amp;lt;stash&amp;gt;]   
+&lt;/code&gt;&lt;/pre&gt;
     
     </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="stash" scheme="http://effine.cn/tags/stash/"/>
     
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Git 标签]]></title>
+    <title>Git 标签</title>
     <link href="http://effine.cn/2015/11/04/GitTag/"/>
     <id>http://effine.cn/2015/11/04/GitTag/</id>
     <published>2015-11-04T07:24:30.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
-</code></pre><p>[查看标签]</p>
-<pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>
-$ git show <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 查看标签tag-name信息</span>
-</code></pre><p>[创建/切换标签]</p>
-<pre><code>$ git <span class="keyword">tag</span> <span class="title">&lt;v1</span>.<span class="number">0</span>&gt;     <span class="comment"># 创建轻量级标签v1.0</span>
-$ git <span class="keyword">tag</span> <span class="title">&lt;tag-name</span>&gt; <span class="tag">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>
-$ git <span class="keyword">tag</span> <span class="title">[-a</span>] <span class="tag">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>
-
-$ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span>
-</code></pre><p>[删除标签]</p>
-<pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span>
-<span class="variable">$ </span>git push remote_name  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span>
-</code></pre><p>[获取/推送远程标签]</p>
-<pre><code><span class="variable">$ </span>git pull [remote_name] --tags     <span class="comment"># 获取远程所有标签(remote_name可选)</span>
-<span class="variable">$ </span>git push [remote_name] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span>
-<span class="variable">$ </span>git push [remote_name] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span>
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span></code></pre><p>[查看标签]</p><pre><code>$ git <span class="keyword">tag</span> <span class="title">[-l</span> [regular]]        <span class="comment"># 查看所有标签列表[list [正则过滤结果]]</span>$ git show <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 查看标签tag-name信息</span></code></pre><p>[创建/切换标签]</p><pre><code>$ git <span class="keyword">tag</span> <span class="title">&lt;v1</span>.<span class="number">0</span>&gt;     <span class="comment"># 创建轻量级标签v1.0</span>$ git <span class="keyword">tag</span> <span class="title">&lt;tag-name</span>&gt; <span class="tag">&lt;commitID&gt;</span>     <span class="comment"># 指定CommitID处创建标签tag-name</span>$ git <span class="keyword">tag</span> <span class="title">[-a</span>] <span class="tag">&lt;tag-name&gt;</span> -m <span class="string">"&lt;info&gt;"</span>     <span class="comment"># 创建待注释[annotate]信息info的标签tag-name</span>$ git checkout <span class="tag">&lt;tag-name&gt;</span>     <span class="comment"># 切换状态到指定标签提交处</span></code></pre><p>[删除标签]</p><pre><code><span class="variable">$ </span>git tag -d &lt;tag-name&gt;     <span class="comment"># 删除标签tag-name(多个标签用空格分隔)</span><span class="variable">$ </span>git push remote_name  <span class="symbol">:refs/tags/&lt;tag-name&gt;</span>    <span class="comment"># 删除远程标签(冒号前的空格不能省略)</span></code></pre><p>[获取/推送远程标签]</p><pre><code><span class="variable">$ </span>git pull [remote_name] --tags     <span class="comment"># 获取远程所有标签(remote_name可选)</span><span class="variable">$ </span>git push [remote_name] --tags     <span class="comment"># 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)</span><span class="variable">$ </span>git push [remote_name] &lt;tag-name&gt;        <span class="comment"># 将标签tag-name推送到远程</span></code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<pre><code>$ git <span class="keyword">tag</span> <span class="title">--help</span>     <span class="comment"># 查看帮助</span>
-</code></pre><p>]]>
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;$ git &lt;span class=&quot;keyword&quot;&gt;tag&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;--help&lt;/span&gt;     &lt;span class=&quot;comment&quot;&gt;# 查看帮助&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;
+      
+    
     </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="tag" scheme="http://effine.cn/tags/tag/"/>
     
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Git 分支]]></title>
+    <title>Git 分支</title>
     <link href="http://effine.cn/2015/10/23/GitBranch/"/>
     <id>http://effine.cn/2015/10/23/GitBranch/</id>
     <published>2015-10-23T14:35:35.000Z</published>
     <updated>2018-10-31T08:24:53.000Z</updated>
-    <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span>
-</code></pre><p>[查看分支]</p>
-<pre><code><span class="variable">$ </span>git branch    <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
-<span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
-<span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
-<span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
-<span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span>
-</code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
-$ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>
-$ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>
-$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>      <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
-$ git checkout <span class="variable">&lt;commit_id&gt;</span>      <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
-$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span> <span class="comment"># 继承master分支创建并切换新分支</span>
-$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 重命名分支</span>
-</code></pre><p>[删除分支]</p>
-<pre><code><span class="comment"># 删除本地分支</span>
-<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;
-    -d      <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>     <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
-
-<span class="comment"># 删除远程分支</span>
-<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;  <span class="comment"># 删除远程分支</span>
-<span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span>
-</code></pre><p>[合并分支]</p>
-<pre><code><span class="variable">$ </span>git branch --merged   <span class="comment"># 查看已合并的分支列表</span>
-<span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;branch&gt;    <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
-</code></pre><p>[关联分支]</p>
-<pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
-</span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
-$ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keyword">branch&gt; </span>&lt;origin/<span class="keyword">branch&gt; </span>   
-</code></pre><p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p>
-<pre><code>[<span class="keyword">branch </span><span class="string">"master"</span>]
-    remote = origin
-    merge = refs/heads/master
-</code></pre>]]></content>
+    
+    <content type="html"><![CDATA[<pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span></code></pre><p>[查看分支]</p><pre><code><span class="variable">$ </span>git branch    <span class="comment"># 查看本地分支（星号*标注为当前分支）</span><span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span><span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span><span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span><span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span></code></pre><p>[创建\切换\重命名分支]</p><pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>$ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>$ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>      <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>$ git checkout <span class="variable">&lt;commit_id&gt;</span>      <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span> <span class="comment"># 继承master分支创建并切换新分支</span>$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 重命名分支</span></code></pre><p>[删除分支]</p><pre><code><span class="comment"># 删除本地分支</span><span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;    -d      <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>    -<span class="constant">D </span>     <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span><span class="comment"># 删除远程分支</span><span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;  <span class="comment"># 删除远程分支</span><span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span><span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span></code></pre><p>[合并分支]</p><pre><code><span class="variable">$ </span>git branch --merged   <span class="comment"># 查看已合并的分支列表</span><span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span><span class="variable">$ </span>git merge &lt;branch&gt;    <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span></code></pre><p>[关联分支]</p><pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作</span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)$ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keyword">branch&gt; </span>&lt;origin/<span class="keyword">branch&gt; </span>   </code></pre><p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p><pre><code>[<span class="keyword">branch </span><span class="string">"master"</span>]    remote = origin    merge = refs/heads/master</code></pre>]]></content>
+    
     <summary type="html">
-    <![CDATA[<pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span>
-</code></pre><p>[查看分支]</p>
-]]>
+    
+      
+      
+        &lt;pre&gt;&lt;code&gt;&lt;span class=&quot;variable&quot;&gt;$ &lt;/span&gt;git branch --help     &lt;span class=&quot;comment&quot;&gt;# 查看关于git branch帮助&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;[查看分支]&lt;/p&gt;
+
+      
+    
     </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="branch" scheme="http://effine.cn/tags/branch/"/>
     
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
   </entry>
   
   <entry>
-    <title><![CDATA[Linux设置Java环境变量]]></title>
+    <title>Linux设置Java环境变量</title>
     <link href="http://effine.cn/2015/08/13/JavaEnvironmentVariable/"/>
     <id>http://effine.cn/2015/08/13/JavaEnvironmentVariable/</id>
     <published>2015-08-13T11:43:54.000Z</published>
     <updated>2015-11-23T16:43:28.000Z</updated>
-    <content type="html"><![CDATA[<p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
-<ol>
-<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
-</li>
-<li><p>tar.gz 格式<br> $ tar  -zxvf  dk-8u51-linux-x64.tar.gz  [-C  dist-dir]</p>
-</li>
-</ol>
-<p>设置环境变量</p>
-<pre><code><span class="variable">$ </span>vi /etc/profile
-
-    <span class="comment"># profile文件追加下面内容</span>
-    export <span class="constant">JAVA_HOME</span>= <span class="regexp">/tools/jdk</span>1.<span class="number">8.0_51</span>
-    export <span class="constant">PATH</span>=<span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$PATH</span>
-    export <span class="constant">CLASSPATH</span>=.:<span class="variable">$JAVA_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span>
-
-<span class="variable">$ </span>source /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span>
-</code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
-<pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建<span class="constant">Key</span>（存在则追加）
-
-<span class="comment"># 变量名及值"key [value]"</span>
-<span class="constant">JAVA_HOME</span>  [<span class="constant">E</span>:\tools\jdk1.<span class="number">7.0_55</span>]
-<span class="constant">CLASSPATH</span> [.;%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span>]
-<span class="constant">Path</span> [%<span class="constant">JAVA_HOME</span>%\bin;%<span class="constant">JAVA_HOME</span>%\jre\bin;]
-</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
-]]></content>
+    
+    <content type="html"><![CDATA[<p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p><ol><li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p></li><li><p>tar.gz 格式<br> $ tar  -zxvf  dk-8u51-linux-x64.tar.gz  [-C  dist-dir]</p></li></ol><p>设置环境变量</p><pre><code><span class="variable">$ </span>vi /etc/profile    <span class="comment"># profile文件追加下面内容</span>    export <span class="constant">JAVA_HOME</span>= <span class="regexp">/tools/jdk</span>1.<span class="number">8.0_51</span>    export <span class="constant">PATH</span>=<span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$PATH</span>    export <span class="constant">CLASSPATH</span>=.:<span class="variable">$JAVA_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span><span class="variable">$ </span>source /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span></code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p><pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建<span class="constant">Key</span>（存在则追加）<span class="comment"># 变量名及值"key [value]"</span><span class="constant">JAVA_HOME</span>  [<span class="constant">E</span>:\tools\jdk1.<span class="number">7.0_55</span>]<span class="constant">CLASSPATH</span> [.;%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span>]<span class="constant">Path</span> [%<span class="constant">JAVA_HOME</span>%\bin;%<span class="constant">JAVA_HOME</span>%\jre\bin;]</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>]]></content>
+    
     <summary type="html">
-    <![CDATA[<p>在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:</p>
-<ol>
-<li><p>rpm 格式<br> $ rpm  -ivh  jdk-8u51-linux-x64.rpm</p>
-</li>
-<li><p>tar.gz 格式]]>
+    
+      
+      
+        &lt;p&gt;在Linux下设置设置Java环境变量，下载对应平台的JDK版本；这里有两种格式的jdk版本:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;rpm 格式&lt;br&gt; $ rpm  -ivh  jdk-8u51-linux-x64.rpm&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;tar.gz 格式
+      
+    
     </summary>
+    
+      <category term="java" scheme="http://effine.cn/categories/java/"/>
+    
     
       <category term="java" scheme="http://effine.cn/tags/java/"/>
     
       <category term="linux" scheme="http://effine.cn/tags/linux/"/>
-    
-      <category term="java" scheme="http://effine.cn/categories/java/"/>
     
   </entry>
   
