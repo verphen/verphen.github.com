@@ -97,18 +97,10 @@
       
         <p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
 <ul>
-<li><p>服务 service</p>
-<pre><code>service mysql [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># Debian下mysql当前状态、启动、停止、重启</span>
-service mysqld [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># RedHat下mysql当前状态、启动、停止、重启</span>
-net [<span class="literal">start</span>|<span class="literal">stop</span>] mysql     <span class="comment"># windows下启动、停止mysql</span>
-</code></pre></li>
-<li><p>mysql</p>
-<pre><code>mysql&gt;  \s         <span class="preprocessor"># 查看mysql的版本信息和字符编码</span>
-mysql&gt;  show variables;     <span class="preprocessor"># 查看mysql的变量设置，可以使用like过滤</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'autocommit'</span>;     <span class="preprocessor"># 查看mysql事务是否自动提交</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'%max_connections%'</span>;  <span class="preprocessor"># 查看mysql的最大连接数</span>
-mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</span>
-</code></pre></li>
+<li><p>服务 service<br>  service mysql [status|start|stop|restart]	# Debian下mysql当前状态、启动、停止、重启<br>  service mysqld [status|start|stop|restart]	# RedHat下mysql当前状态、启动、停止、重启<br>  net [start|stop] mysql 	# windows下启动、停止mysql</p>
+</li>
+<li><p>mysql<br>  mysql&gt;  \s 		# 查看mysql的版本信息和字符编码<br>  mysql&gt;  show variables;     # 查看mysql的变量设置，可以使用like过滤<br>  mysql&gt;  show variables like ‘autocommit’;     # 查看mysql事务是否自动提交<br>  mysql&gt;  show variables like ‘%max_connections%’;  # 查看mysql的最大连接数<br>  mysql&gt;  set name utf8;    # 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</p>
+</li>
 </ul>
         
           <p class="article-more-link">
@@ -119,7 +111,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="ckmhwq9e000bkxzgngemrbqdy" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="cl335kvx300bih5gt8z0f4ckl" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -170,7 +162,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <div class="article-entry" itemprop="articleBody">
       
         <p>冬天来了，开始进入工作的节奏做项目，项目使用Oracle数据库，由于之前学习使用过一段时间Oracle，现在补充一下Oracle方面的只是，便于熟悉记忆：</p>
-<p>使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:<br><code>imp username/password@netname file=path\filename.dmp log=C:\log.log full=y</code>（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。</p>
+<p>使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:<br><code>imp username/password@netname file=path\filename.dmp log=C:\log.log full=y</code>（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。</p>
         
           <p class="article-more-link">
             <a href="/2013/11/06/OracleCommonCommand/#more">阅读全文</a>
@@ -180,7 +172,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/11/06/OracleCommonCommand/" data-id="ckmhwq9d4007xxzgnvpk6n4sa" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/11/06/OracleCommonCommand/" data-id="cl335kvwa0080h5gte52nf2jk" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -232,7 +224,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
       
         <ol>
 <li><p>忘记除SYS、SYSTEM用户之外的用户的登录密码。</p>
-<p> 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p> 用SYS (或SYSTEM)用户登录: CONN SYS&#x2F;PASS_WORD AS SYSDBA;</p>
 <p> 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;</p>
 <p> 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效</p>
 </li>
@@ -246,7 +238,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/" data-id="ckmhwq9cv006sxzgn8p4ddg1f" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/" data-id="cl335kvvz006sh5gtc24refh7" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -282,7 +274,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -292,6 +284,10 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -329,10 +325,6 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -342,7 +334,7 @@ mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

@@ -99,174 +99,177 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>发现 <code>zipperary</code> 的博客有个酷(niu)炫(bi)的功能：点击设置的链接，页面播放音乐，页面元素随着节奏律动，音乐播放完成，页面恢复正常；转存一下：</p>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>如果你想在博客导航菜单设置效果（当然你还可在其他页面元素部位设置），打开你博客根目录下主题文件夹;我使用的是landscape主题，所以打开文件路径为 <code>/themes/landscape/layout/_partial/header.ejs</code>,在博客导航菜单部位添加 <code>&lt;a&gt;</code> 标签如下：</p>
-<pre><code><span class="xml"><span class="tag">&lt;<span class="title">nav</span> <span class="attribute">id</span>=<span class="value">"main-nav"</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">id</span>=<span class="value">"main-nav-toggle"</span> <span class="attribute">class</span>=<span class="value">"nav-icon"</span>&gt;</span><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    </span>&lt;%<span class="ruby"> <span class="keyword">for</span> (var i <span class="keyword">in</span> theme.menu){ </span>%&gt;<span class="xml">
-      <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"main-nav-link"</span> <span class="attribute">href</span>=<span class="value">"</span></span></span>&lt;%-<span class="ruby"> url_for(theme.menu[i]) </span>%&gt;<span class="xml"><span class="tag"><span class="value">"</span>&gt;</span></span>&lt;%=<span class="ruby"> i </span>%&gt;<span class="xml"><span class="tag">&lt;/<span class="title">a</span>&gt;</span>
-    </span>&lt;%<span class="ruby"> } </span>%&gt;<span class="xml">
-    <span class="comment">&lt;!-- 添加下面一行代码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">a</span> <span class="attribute">class</span>=<span class="value">"main-nav-link"</span> <span class="attribute">href</span>=<span class="value">'需要添加下面的js代码'</span>&gt;</span>调皮一下<span class="tag">&lt;/<span class="title">a</span>&gt;</span>    
- <span class="tag">&lt;/<span class="title">nav</span>&gt;</span></span>
-</code></pre><p>注意：添加的超链接<code>&lt;a&gt;</code>标签的href属性必须使用单引号 <code>&#39;</code> ,因为如下的js代码存在双引号;其次，如下js代码第一行必须和 <code>href=&#39;</code> 自己不存在空格或回车，如 <code>&lt;a href=&#39;javascript:(function() {..其余code..}&#39;&gt;调皮一下&lt;/a&gt;</code>)即可；需要被添加的js代码如下: </p>
-<pre><code>javascript:(function() {
-    function c() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.createElement(<span class="string">"link"</span>);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"type"</span>, <span class="string">"text/css"</span>);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"rel"</span>, <span class="string">"stylesheet"</span>);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"href"</span>, f);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"class"</span>, <span class="keyword">l</span>);
-        document.body.appendChild(<span class="keyword">e</span>)
-    }
-
-    function <span class="literal">h</span>() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.getElementsByClassName(<span class="keyword">l</span>);
-        <span class="keyword">for</span> (<span class="keyword">var</span> t = 0; t &lt; <span class="keyword">e</span>.length; t++) {
-            document.body.removeChild(<span class="keyword">e</span>[t])
-        }
-    }
-
-    function p() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.createElement(<span class="string">"div"</span>);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"class"</span>, a);
-        document.body.appendChild(<span class="keyword">e</span>);
-        setTimeout(function() {
-            document.body.removeChild(<span class="keyword">e</span>)
-        }, 100)
-    }
-
-    function <span class="literal">d</span>(<span class="keyword">e</span>) {
-        <span class="keyword">return</span> {
-            height : <span class="keyword">e</span>.offsetHeight,
-            width : <span class="keyword">e</span>.offsetWidth
-        }
-    }
-
-    function v(i) {
-        <span class="keyword">var</span> s = <span class="literal">d</span>(i);
-        <span class="keyword">return</span> s.height &gt; <span class="keyword">e</span> &amp;&amp; s.height &lt; <span class="keyword">n</span> &amp;&amp; s.width &gt; t &amp;&amp; s.width &lt; <span class="literal">r</span>
-    }
-
-    function <span class="literal">m</span>(<span class="keyword">e</span>) {
-        <span class="keyword">var</span> t = <span class="keyword">e</span>;
-        <span class="keyword">var</span> <span class="keyword">n</span> = 0;
-        <span class="keyword">while</span> (!!t) {
-            <span class="keyword">n</span> += t.offsetTop;
+<pre><code>&lt;nav id=&quot;main-nav&quot;&gt;
+    &lt;a id=&quot;main-nav-toggle&quot; class=&quot;nav-icon&quot;&gt;&lt;/a&gt;
+    &lt;% for (var i in theme.menu)&#123; %&gt;
+      &lt;a class=&quot;main-nav-link&quot; href=&quot;&lt;%- url_for(theme.menu[i]) %&gt;&quot;&gt;&lt;%= i %&gt;&lt;/a&gt;
+    &lt;% &#125; %&gt;
+    &lt;!-- 添加下面一行代码 --&gt;
+    &lt;a class=&quot;main-nav-link&quot; href=&#39;需要添加下面的js代码&#39;&gt;调皮一下&lt;/a&gt;	
+ &lt;/nav&gt;
+</code></pre>
+<p>注意：添加的超链接<code>&lt;a&gt;</code>标签的href属性必须使用单引号 <code>&#39;</code> ,因为如下的js代码存在双引号;其次，如下js代码第一行必须和 <code>href=&#39; </code> 自己不存在空格或回车，如 <code>&lt;a href=&#39;javascript:(function() &#123;..其余code..&#125;&#39;&gt;调皮一下&lt;/a&gt; </code>)即可；需要被添加的js代码如下: </p>
+<pre><code>javascript:(function() &#123;
+    function c() &#123;
+        var e = document.createElement(&quot;link&quot;);
+        e.setAttribute(&quot;type&quot;, &quot;text/css&quot;);
+        e.setAttribute(&quot;rel&quot;, &quot;stylesheet&quot;);
+        e.setAttribute(&quot;href&quot;, f);
+        e.setAttribute(&quot;class&quot;, l);
+        document.body.appendChild(e)
+    &#125;
+ 
+    function h() &#123;
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t &lt; e.length; t++) &#123;
+            document.body.removeChild(e[t])
+        &#125;
+    &#125;
+ 
+    function p() &#123;
+        var e = document.createElement(&quot;div&quot;);
+        e.setAttribute(&quot;class&quot;, a);
+        document.body.appendChild(e);
+        setTimeout(function() &#123;
+            document.body.removeChild(e)
+        &#125;, 100)
+    &#125;
+ 
+    function d(e) &#123;
+        return &#123;
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        &#125;
+    &#125;
+ 
+    function v(i) &#123;
+        var s = d(i);
+        return s.height &gt; e &amp;&amp; s.height &lt; n &amp;&amp; s.width &gt; t &amp;&amp; s.width &lt; r
+    &#125;
+ 
+    function m(e) &#123;
+        var t = e;
+        var n = 0;
+        while (!!t) &#123;
+            n += t.offsetTop;
             t = t.offsetParent
-        }
-        <span class="keyword">return</span> <span class="keyword">n</span>
-    }
-
-    function <span class="keyword">g</span>() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.documentElement;
-        <span class="keyword">if</span> (!!<span class="keyword">window</span>.innerWidth) {
-            <span class="keyword">return</span> <span class="keyword">window</span>.innerHeight
-        } <span class="keyword">else</span> <span class="keyword">if</span> (<span class="keyword">e</span> &amp;&amp; !isNaN(<span class="keyword">e</span>.clientHeight)) {
-            <span class="keyword">return</span> <span class="keyword">e</span>.clientHeight
-        }
-        <span class="keyword">return</span> 0
-    }
-
-    function <span class="literal">y</span>() {
-        <span class="keyword">if</span> (<span class="keyword">window</span>.pageYOffset) {
-            <span class="keyword">return</span> <span class="keyword">window</span>.pageYOffset
-        }
-        <span class="keyword">return</span> Math.<span class="literal">max</span>(document.documentElement.scrollTop, document.body.scrollTop)
-    }
-
-    function <span class="literal">E</span>(<span class="keyword">e</span>) {
-        <span class="keyword">var</span> t = <span class="literal">m</span>(<span class="keyword">e</span>);
-        <span class="keyword">return</span> t &gt;= w &amp;&amp; t &lt;= b + <span class="literal">w</span>
-    }
-
-    function <span class="literal">S</span>() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.createElement(<span class="string">"audio"</span>);
-        <span class="keyword">e</span>.setAttribute(<span class="string">"class"</span>, <span class="keyword">l</span>);
-        <span class="keyword">e</span>.src = i;
-        <span class="keyword">e</span>.loop = false;
-        <span class="keyword">e</span>.addEventListener(<span class="string">"canplay"</span>, function() {
-            setTimeout(function() {
+        &#125;
+        return n
+    &#125;
+ 
+    function g() &#123;
+        var e = document.documentElement;
+        if (!!window.innerWidth) &#123;
+            return window.innerHeight
+        &#125; else if (e &amp;&amp; !isNaN(e.clientHeight)) &#123;
+            return e.clientHeight
+        &#125;
+        return 0
+    &#125;
+ 
+    function y() &#123;
+        if (window.pageYOffset) &#123;
+            return window.pageYOffset
+        &#125;
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    &#125;
+ 
+    function E(e) &#123;
+        var t = m(e);
+        return t &gt;= w &amp;&amp; t &lt;= b + w
+    &#125;
+ 
+    function S() &#123;
+        var e = document.createElement(&quot;audio&quot;);
+        e.setAttribute(&quot;class&quot;, l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener(&quot;canplay&quot;, function() &#123;
+            setTimeout(function() &#123;
                 x(k)
-            }, 500);
-            setTimeout(function() {
-                <span class="keyword">N</span>();
+            &#125;, 500);
+            setTimeout(function() &#123;
+                N();
                 p();
-                <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">e</span> = 0; <span class="keyword">e</span> &lt; O.length; <span class="keyword">e</span>++) {
-                    T(O[<span class="keyword">e</span>])
-                }
-            }, 15500)
-        }, true);
-        <span class="keyword">e</span>.addEventListener(<span class="string">"ended"</span>, function() {
-            <span class="keyword">N</span>();
-            <span class="literal">h</span>()
-        }, true);
-        <span class="keyword">e</span>.innerHTML = <span class="string">" &lt;p&gt;If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.&lt;/p&gt; &lt;p&gt;"</span>;
-        document.body.appendChild(<span class="keyword">e</span>);
-        <span class="keyword">e</span>.play()
-    }
-
-    function x(<span class="keyword">e</span>) {
-        <span class="keyword">e</span>.className += <span class="string">" "</span> + s + <span class="string">" "</span> + o
-    }
-
-    function T(<span class="keyword">e</span>) {
-        <span class="keyword">e</span>.className += <span class="string">" "</span> + s + <span class="string">" "</span> + <span class="keyword">u</span>[Math.<span class="literal">floor</span>(Math.random() * <span class="keyword">u</span>.length)]
-    }
-
-    function <span class="keyword">N</span>() {
-        <span class="keyword">var</span> <span class="keyword">e</span> = document.getElementsByClassName(s);
-        <span class="keyword">var</span> t = new RegExp(<span class="string">"\\b"</span> + s + <span class="string">"\\b"</span>);
-        <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">n</span> = 0; <span class="keyword">n</span> &lt; <span class="keyword">e</span>.length; ) {
-            <span class="keyword">e</span>[<span class="keyword">n</span>].className = <span class="keyword">e</span>[<span class="keyword">n</span>].className.<span class="keyword">replace</span>(t, <span class="string">""</span>)
-        }
-    }
-
-    <span class="keyword">var</span> <span class="keyword">e</span> = 30;
-    <span class="keyword">var</span> t = 30;
-    <span class="keyword">var</span> <span class="keyword">n</span> = 350;
-    <span class="keyword">var</span> r = 350;
-    <span class="keyword">var</span> i = <span class="string">"//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3"</span>;
-    <span class="keyword">var</span> s = <span class="string">"mw-harlem_shake_me"</span>;
-    <span class="keyword">var</span> o = <span class="string">"im_first"</span>;
-    <span class="keyword">var</span> <span class="keyword">u</span> = [<span class="string">"im_drunk"</span>, <span class="string">"im_baked"</span>, <span class="string">"im_trippin"</span>, <span class="string">"im_blown"</span>];
-    <span class="keyword">var</span> a = <span class="string">"mw-strobe_light"</span>;
-    <span class="keyword">var</span> f = <span class="string">"//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css"</span>;
-    <span class="keyword">var</span> <span class="keyword">l</span> = <span class="string">"mw_added_css"</span>;
-    <span class="keyword">var</span> b = <span class="keyword">g</span>();
-    <span class="keyword">var</span> w = <span class="literal">y</span>();
-    <span class="keyword">var</span> C = document.getElementsByTagName(<span class="string">"*"</span>);
-    <span class="keyword">var</span> k = null;
-    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">L</span> = 0; <span class="keyword">L</span> &lt; C.length; <span class="keyword">L</span>++) {
-        <span class="keyword">var</span> A = C[<span class="keyword">L</span>];
-        <span class="keyword">if</span> (v(A)) {
-            <span class="keyword">if</span> (<span class="literal">E</span>(A)) {
+                for (var e = 0; e &lt; O.length; e++) &#123;
+                    T(O[e])
+                &#125;
+            &#125;, 15500)
+        &#125;, true);
+        e.addEventListener(&quot;ended&quot;, function() &#123;
+            N();
+            h()
+        &#125;, true);
+        e.innerHTML = &quot; &lt;p&gt;If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.&lt;/p&gt; &lt;p&gt;&quot;;
+        document.body.appendChild(e);
+        e.play()
+    &#125;
+ 
+    function x(e) &#123;
+        e.className += &quot; &quot; + s + &quot; &quot; + o
+    &#125;
+ 
+    function T(e) &#123;
+        e.className += &quot; &quot; + s + &quot; &quot; + u[Math.floor(Math.random() * u.length)]
+    &#125;
+ 
+    function N() &#123;
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp(&quot;\\b&quot; + s + &quot;\\b&quot;);
+        for (var n = 0; n &lt; e.length; ) &#123;
+            e[n].className = e[n].className.replace(t, &quot;&quot;)
+        &#125;
+    &#125;
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3&quot;;
+    var s = &quot;mw-harlem_shake_me&quot;;
+    var o = &quot;im_first&quot;;
+    var u = [&quot;im_drunk&quot;, &quot;im_baked&quot;, &quot;im_trippin&quot;, &quot;im_blown&quot;];
+    var a = &quot;mw-strobe_light&quot;;
+    var f = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css&quot;;
+    var l = &quot;mw_added_css&quot;;
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName(&quot;*&quot;);
+    var k = null;
+    for (var L = 0; L &lt; C.length; L++) &#123;
+        var A = C[L];
+        if (v(A)) &#123;
+            if (E(A)) &#123;
                 k = A;
-                <span class="keyword">break</span>
-            }
-        }
-    }
-    <span class="keyword">if</span> (A === null) {
-        console.warn(<span class="string">"Could not find a node of the right size. Please try a different page."</span>);
-        <span class="literal">return</span>
-    }
+                break
+            &#125;
+        &#125;
+    &#125;
+    if (A === null) &#123;
+        console.warn(&quot;Could not find a node of the right size. Please try a different page.&quot;);
+        return
+    &#125;
     c();
-    <span class="literal">S</span>();
-    <span class="keyword">var</span> O = [];
-    <span class="keyword">for</span> (<span class="keyword">var</span> <span class="keyword">L</span> = 0; <span class="keyword">L</span> &lt; C.length; <span class="keyword">L</span>++) {
-        <span class="keyword">var</span> A = C[<span class="keyword">L</span>];
-        <span class="keyword">if</span> (v(A)) {
+    S();
+    var O = [];
+    for (var L = 0; L &lt; C.length; L++) &#123;
+        var A = C[L];
+        if (v(A)) &#123;
             O.push(A)
-        }
-    }
-})()
-</code></pre><p>完全按照以上操作，应该能实现！</p>
+        &#125;
+    &#125;
+&#125;)()
+</code></pre>
+<p>完全按照以上操作，应该能实现！</p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/12/20/HexoBlogConfig-2/" data-id="ckmhwq9do009wxzgnx4xzt5wk" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/12/20/HexoBlogConfig-2/" data-id="cl335kvwt00a1h5gt5d4o9if2" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -364,7 +367,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -374,6 +377,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -411,10 +418,6 @@
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -424,7 +427,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

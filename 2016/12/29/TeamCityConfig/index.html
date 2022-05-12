@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc6.png">
 <meta property="og:image" content="http://effine.cn/imgs/teamcity/tcc7.png">
 <meta property="article:published_time" content="2016-12-29T14:26:52.000Z">
-<meta property="article:modified_time" content="2019-07-11T16:20:39.000Z">
+<meta property="article:modified_time" content="2022-05-12T14:21:01.687Z">
 <meta property="article:author" content="effine">
 <meta property="article:tag" content="tools">
 <meta property="article:tag" content="teamcity">
@@ -111,19 +111,19 @@
 <li><p>创建Project(主要配置部署项目所需的外围工具，如Maven、Git等，可视当前需求配置)</p>
 <ol>
 <li><p>点击右上角Administration -&gt; Create Project -&gt; Manually（手动）<br><img src="/imgs/teamcity/tcc2.png" alt="创建项目"></p>
-<a id="more"></a>
+<span id="more"></span>
 </li>
 <li><p>填写项目名，自动生成项目ID -&gt; create -&gt; General Settings<br><img src="/imgs/teamcity/tcc3.png" alt="项目基本配置"><br>-&gt; Build Configurations： 构建具体项目的部署配置（常用操作);</p>
 <p>这里的创建流程和创建Project一样，创建之后左侧的导航栏和父级Project有些差别，粒度更细，针对具体的部署配置。我们可以在左侧导航栏的”Build Steps”制作我们的构建步骤，根据需求制作不同的构建顺序；如Maven编译（Maven的配置在父级）、Command Line（运行shell命令）等。</p>
 <p>-&gt; Build Configuration Templates： 创建构建的模板配置</p>
 <p>-&gt; Subprojects： 在该项目下创建子项目</p>
 </li>
-<li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git/SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
+<li><p>点击左侧导航栏<code>VCS Roots</code>版本控制系统 -&gt; Create VCS root -&gt; 选择Type of VCS（Git&#x2F;SVN或其他） -&gt; 查看高级选项<code>Show advanced options</code>，配置连接URL、用户名、密码等信息 -&gt; 点击页面底部<code>Test connection</code>测试是否可以正常连接</p>
 </li>
 <li><p>点击左侧导航栏<code>Parameters</code> -&gt; Add new parameter -&gt; 配置不同范围级别的常量<br><img src="/imgs/teamcity/tcc4.png" alt="配置变量"><br>– Name: 常量名称<br>-&gt; kind: 常量类型；Configuration parameter(配置级别参数)、System property(TeamCity系统级属性，使用默认加上<code>system.</code>前缀)、Environment variable(环境变量，使用默认加上<code>env.</code>前缀)<br>-&gt; Value: 常量值<br>-&gt; Spec： 配置常量格式及验证，暂未使用过</p>
 <p>注： 定义好不同级别的常量后，可以在项目构建步骤中或添加的shell脚本中使用；用两个百分号括上常量名即可（<code>%&lt;name&gt;%</code>)；子级项目继承父级定义的参数，且子级可以重新修改父级的参数值。</p>
 </li>
-<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave/conf/setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p>
+<li><p>点击左侧导航栏<code>Maven settings</code>，配置Maven来编译项目 -&gt; Upload settings file -&gt; 弹出框添加名称，选择待上传的mave&#x2F;conf&#x2F;setting.xml文件即可<br><img src="/imgs/teamcity/tcc5.png" alt="配置变量"></p>
 </li>
 <li><p>点击左侧导航栏<code>Clean-up Rules</code>，配置清理TeamCity残留文件 -&gt; 点击待配置项目尾部的<code>Edit</code><br><img src="/imgs/teamcity/tcc6.png" alt="配置项目清理规则"></p>
 <p>根据需求可以选择不同的策略，选择<code>Custom policy</code>自定义策略：清除超过多少天前的构建；清理多少个成功构建之前的构建。当然你可配置每天定时清理：右上角Administration -&gt; 右侧导航栏Clean-up Settings -&gt; 配置</p>
@@ -133,13 +133,13 @@
 <li><p>配置TeamCity插件</p>
 </li>
 </ul>
-<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity" target="_blank" rel="external">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>
+<p>在官方提供的插件库<a href="https://plugins.jetbrains.com/?teamcity">https://plugins.jetbrains.com/?teamcity</a>搜索下载你需要安装的插件，然后上传你下载的插件至安装的TeamCity即可: 点击右上角Administration -&gt; 点击左侧导航栏底部的<code>Plugins List</code> -&gt; <code>Upload plugin zip</code> -&gt; 填写名称，选择插件文件上传即可<br><img src="/imgs/teamcity/tcc7.png" alt="安装插件"></p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2016/12/29/TeamCityConfig/" data-id="ckmhwq9ee00d7xzgnn86oaghr" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2016/12/29/TeamCityConfig/" data-id="cl335kvxg00d5h5gt43bb2ksw" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -237,7 +237,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -247,6 +247,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -284,10 +288,6 @@
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -297,7 +297,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

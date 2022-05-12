@@ -5,16 +5,16 @@
   
   <title>Maven 命令详解 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="用了maven很多年，针对常用的命令做个总结，方便查阅 $ mvn archetype:create    # 创建 maven 项目  # maven生成web项目(参数-D意为定义[Define]) $ mvn archetype:create -DgroupId&#x3D;&#39;package-name&#39;    -DartifactId&#x3D;&#39;projectname&#39; -DarchetypeArtifact">
+  <meta name="description" content="用了maven很多年，针对常用的命令做个总结，方便查阅 $ mvn archetype:create	# 创建 maven 项目  # maven生成web项目(参数-D意为定义[Define]) $ mvn archetype:create -DgroupId&#x3D;&#39;package-name&#39;    -DartifactId&#x3D;&#39;projectname&#39; -Darc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Maven 命令详解">
 <meta property="og:url" content="http://effine.cn/2015/07/15/MavenCommands/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅 $ mvn archetype:create    # 创建 maven 项目  # maven生成web项目(参数-D意为定义[Define]) $ mvn archetype:create -DgroupId&#x3D;&#39;package-name&#39;    -DartifactId&#x3D;&#39;projectname&#39; -DarchetypeArtifact">
+<meta property="og:description" content="用了maven很多年，针对常用的命令做个总结，方便查阅 $ mvn archetype:create	# 创建 maven 项目  # maven生成web项目(参数-D意为定义[Define]) $ mvn archetype:create -DgroupId&#x3D;&#39;package-name&#39;    -DartifactId&#x3D;&#39;projectname&#39; -Darc">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://effine.cn/imgs/article/maven-standard-dir.png">
 <meta property="article:published_time" content="2015-07-15T02:43:38.000Z">
-<meta property="article:modified_time" content="2019-07-11T16:20:39.000Z">
+<meta property="article:modified_time" content="2022-05-12T14:21:01.677Z">
 <meta property="article:author" content="effine">
 <meta property="article:tag" content="command">
 <meta property="article:tag" content="maven">
@@ -101,48 +101,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/imgs/article/maven-standard-dir.png" alt="Maven标准目录"></p>
+        <img src="/imgs/article/maven-standard-dir.png" alt="Maven标准目录" />
+
 <p>用了maven很多年，针对常用的命令做个总结，方便查阅</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create    <span class="comment"># 创建 maven 项目</span>
+<pre><code>$ mvn archetype:create	# 创建 maven 项目
 
-<span class="comment"># maven生成web项目(参数-D意为定义[Define])</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create -<span class="constant">DgroupId=</span><span class="string">'package-name'</span> 
-  -<span class="constant">DartifactId=</span><span class="string">'projectname'</span> -<span class="constant">DarchetypeArtifactId=</span>maven-archetype-webapp
+# maven生成web项目(参数-D意为定义[Define])
+$ mvn archetype:create -DgroupId=&#39;package-name&#39; 
+  -DartifactId=&#39;projectname&#39; -DarchetypeArtifactId=maven-archetype-webapp
 
-<span class="comment"># maven生成java项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">archetype:</span>create  -<span class="constant">DgroupId=</span>package-name  -<span class="constant">DartifactId=</span>project-name  
+# maven生成java项目
+$ mvn archetype:create  -DgroupId=package-name  -DartifactId=project-name  
 
-<span class="variable">$ </span>mvn compile     <span class="comment"># 编译源码</span>
-<span class="variable">$ </span>mvn test-compile    <span class="comment"># 编译测试源码</span>
-<span class="variable">$ </span>mvn test        <span class="comment"># 运行应用的单元测试</span>
-<span class="variable">$ </span>mvn clean   <span class="comment"># 清理项目编译文件</span>
-</code></pre><a id="more"></a>
-<pre><code><span class="variable">$ </span>mvn package     <span class="comment"># 打包（mvn -Dtest package  只打包不测试）</span>
-<span class="variable">$ </span>mvn clean package  <span class="comment"># 组合命令，清理编译文件并打包</span>
-<span class="variable">$ </span>mvn <span class="symbol">jar:</span>jar     <span class="comment"># 打包成jar文件</span>
-<span class="variable">$ </span>mvn install     <span class="comment"># 安装项目打包文件至本地仓库Repository</span>
-<span class="variable">$ </span>mvn site    <span class="comment"># 生成项目相关网站信息(/target/site)</span>
-<span class="variable">$ </span>mvn validate    <span class="comment"># 验证工程是否正确，所需要的资源是否可用</span>
-<span class="variable">$ </span>mvn deploy      <span class="comment"># 发布项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree   <span class="comment"># 查看项目依赖树</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>tree -<span class="constant">Dverbose </span>-<span class="constant">Dincludes=</span>&lt;groupId&gt;<span class="symbol">:&lt;artifactId&gt;</span>   <span class="comment"># 查看依赖冲突</span>
-
-<span class="comment"># 启动服务前需配置相应插件</span>
-<span class="variable">$ </span>mvn <span class="symbol">jetty:</span>run   <span class="comment"># 启动jetty服务</span>
-  <span class="comment"># eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行</span>
-  <span class="symbol">eg:</span> mvn clean <span class="symbol">jetty:</span>run -<span class="constant">D </span>maven.test.skip=<span class="keyword">true</span> -<span class="constant">P </span>xxx  
-<span class="variable">$ </span>mvn <span class="symbol">tomcat:</span>run  <span class="comment"># 启动tomcat服务</span>
-
-<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>eclipse     <span class="comment"># 生成eclipse项目文件,将项目转换成eclipse项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">eclipse:</span>clean       <span class="comment"># 清理eclipse项目文件</span>
-<span class="variable">$ </span>mvn <span class="symbol">idea:</span>idea       <span class="comment"># 生成idea项目文件,将项目转换成idea项目</span>
-<span class="variable">$ </span>mvn <span class="symbol">idea:</span>clean      <span class="comment"># 清理idea项目文件</span>
+$ mvn compile     # 编译源码
+$ mvn test-compile    # 编译测试源码
+$ mvn test        # 运行应用的单元测试
+$ mvn clean   # 清理项目编译文件
 </code></pre>
+<span id="more"></span>
+
+<pre><code>$ mvn package     # 打包（mvn -Dtest package  只打包不测试）
+$ mvn clean package  # 组合命令，清理编译文件并打包
+$ mvn jar:jar     # 打包成jar文件
+$ mvn install     # 安装项目打包文件至本地仓库Repository
+$ mvn site    # 生成项目相关网站信息(/target/site)
+$ mvn validate    # 验证工程是否正确，所需要的资源是否可用
+$ mvn deploy      # 发布项目
+$ mvn dependency:tree   # 查看项目依赖树
+$ mvn dependency:tree -Dverbose -Dincludes=&lt;groupId&gt;:&lt;artifactId&gt;   # 查看依赖冲突
+
+# 启动服务前需配置相应插件
+$ mvn jetty:run   # 启动jetty服务
+  # eg表示先清理项目编译生成文件，跳过测试，使用pom.xml 中配置的profile环境xxx来编译，然后使用jetty来运行
+  eg: mvn clean jetty:run -D maven.test.skip=true -P xxx  
+$ mvn tomcat:run  # 启动tomcat服务
+
+$ mvn eclipse:eclipse     # 生成eclipse项目文件,将项目转换成eclipse项目
+$ mvn eclipse:clean       # 清理eclipse项目文件
+$ mvn idea:idea       # 生成idea项目文件,将项目转换成idea项目
+$ mvn idea:clean      # 清理idea项目文件
+</code></pre>
+
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="ckmhwq9e200brxzgndn9085cm" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenCommands/" data-id="cl335kvx300blh5gtc19r0u2q" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -240,7 +244,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -250,6 +254,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -287,10 +295,6 @@
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -300,7 +304,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

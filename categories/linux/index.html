@@ -98,17 +98,19 @@
         <p>linux单用户模式使用场景：</p>
 <ul>
 <li>忘记所有密码</li>
-<li>错误的修改/etc/inittab文件，导致系统reboot重启不起来</li>
+<li>错误的修改&#x2F;etc&#x2F;inittab文件，导致系统reboot重启不起来</li>
 <li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
 </ul>
 <p>进入单用户模式：</p>
 <ul>
 <li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet
-</code></pre></li>
+<pre><code>  kernel /boot/vmlinuz-2.6.11-1.1369_FC4 ro root=LABEL=/1 rhgb quiet
+</code></pre>
+</li>
 <li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
-<pre><code>kernel /boot/vmlinuz-<span class="number">2.6</span><span class="number">.11</span>-<span class="number">1.1369</span>_FC4 ro root=LABEL=/<span class="number">1</span> rhgb quiet linux single
-</code></pre></li>
+<pre><code>  kernel /boot/vmlinuz-2.6.11-1.1369_FC4 ro root=LABEL=/1 rhgb quiet linux single
+</code></pre>
+</li>
 <li><p>按回车结束编辑并返回</p>
 </li>
 <li><p>按一下b键重新启动，进入系统进行相关操作</p>
@@ -123,7 +125,7 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/06/22/LinuxSingleUser/" data-id="ckmhwq9dw00b3xzgnygm3u8rt" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/06/22/LinuxSingleUser/" data-id="cl335kvx000b1h5gt9jwrhsn2" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -174,10 +176,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>检查SSH是否安装(本文采用centos测试)</p>
-<pre><code><span class="variable">$ </span>rpm -qa | grep ssh     <span class="comment"># 只能检查是否通过rpm的软件</span>
-</code></pre><p>如未安装，则安装即可：</p>
-<pre><code>$ yum -y <span class="operator"><span class="keyword">install</span> openssh-<span class="keyword">server</span> openssh-clients 
-$ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop</span>|restart&gt;         # 重启SSH[]</span>
+<pre><code>$ rpm -qa | grep ssh 	# 只能检查是否通过rpm的软件
+</code></pre>
+<p>如未安装，则安装即可：</p>
+<pre><code>$ yum -y install openssh-server openssh-clients 
+$ service sshd &lt;start|stop|restart&gt; 		# 重启SSH[]
 </code></pre>
         
           <p class="article-more-link">
@@ -188,7 +191,7 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/06/19/SSHInstall/" data-id="ckmhwq9du00awxzgnrgyj6ad8" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/06/19/SSHInstall/" data-id="cl335kvwy00ath5gtbz1belpz" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -238,7 +241,8 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/imgs/linux/ssh.jpg" alt="SSH免密码登录" /></p>
+        <img src="/imgs/linux/ssh.jpg" alt="SSH免密码登录" />
+
 <p>频繁操作多台linux服务器互相SSH访问，输入密码是个残酷的操作，当遇到密码复杂我就砸键盘砸屏幕，下月工资已预支；于是，开始实施SSH免密码登录。</p>
         
           <p class="article-more-link">
@@ -249,7 +253,7 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/" data-id="ckmhwq9dt00amxzgncvfccd3x" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/05/20/SSHOmitPasswdLogin/" data-id="cl335kvwx00ajh5gt0xlm81k6" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -299,20 +303,37 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="/imgs/linux/tail.png" alt="tail command" /></p>
+        <img src="/imgs/linux/tail.png" alt="tail command" />
+
 <p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
-<pre><code><span class="variable">$ </span>tail -f &lt;tomcat-dir&gt;<span class="regexp">/logs/catalina</span>.<span class="keyword">out</span>       <span class="comment"># 屏幕即不断追加打印tomcat的运行日志</span>
-</code></pre><p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
-        
-          <p class="article-more-link">
-            <a href="/2015/05/20/TailCommand/#more">阅读全文</a>
-          </p>
-        
+<pre><code>$ tail -f &lt;tomcat-dir&gt;/logs/catalina.out   	# 屏幕即不断追加打印tomcat的运行日志
+</code></pre>
+<p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
+<!--  more  -->
+
+<p>tail 命令基本用法：</p>
+<pre><code>$ tail [参数] 文件地址  	# 无参数默认打印文件末尾10行数据
+</code></pre>
+<p>tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：</p>
+<pre><code>-f : 循环读取(常用于监控应用运行日志)
+-n number: 自定义显示行数
+</code></pre>
+<p>如果number前带正号(“+”)，则从文件头部第number行开始读取；若带负号（”-“）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。</p>
+<pre><code>$ tail -n +5 catalina.out 		# 从catalina.out文件顶部第5行开始读取内容
+
+$ tail -n -5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
+
+$ tail -n 5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
+</code></pre>
+<p>具体参数参考：</p>
+<pre><code>$ man mail		# getting help
+</code></pre>
+
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/05/20/TailCommand/" data-id="ckmhwq9du00asxzgnhqq7urw6" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/05/20/TailCommand/" data-id="cl335kvwx00amh5gteq2jc40r" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -352,7 +373,7 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -362,6 +383,10 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -399,10 +424,6 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -412,7 +433,7 @@ $ service sshd &lt;<span class="keyword">start</span>|<span class="keyword">stop
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

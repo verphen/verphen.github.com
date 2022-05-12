@@ -104,7 +104,7 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="ckmhwq9d8008jxzgn01uclg8m" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cl335kvwf008mh5gtau3f5dxf" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -155,69 +155,70 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：</p>
-<pre><code><span class="comment">/**
- * <span class="doctag">@author</span> effine
- * <span class="doctag">@date</span> 2013-10-28  下午11:50:34
- */</span>
+<pre><code>/**
+ * @author effine
+ * @date 2013-10-28  下午11:50:34
+ */
 
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InterviewThread</span> </span>{
+public class InterviewThread &#123;
 
-    <span class="keyword">private</span> <span class="keyword">int</span> j = <span class="number">0</span>;
+    private int j = 0;
 
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>{
+    public static void main(String args[]) &#123;
 
-        InterviewThread it = <span class="keyword">new</span> InterviewThread();
+        InterviewThread it = new InterviewThread();
 
-        <span class="comment">/* 实例化内部类 */</span>
+        /* 实例化内部类 */
         Inc inc = it.new Inc();
         Dec dec = it.new Dec();
 
-        <span class="comment">/* 循环得到四个线程 */</span>
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) {
-            Thread t = <span class="keyword">new</span> Thread(inc);
+        /* 循环得到四个线程 */
+        for (int i = 0; i &lt; 2; i++) &#123;
+            Thread t = new Thread(inc);
             t.start();
-            t = <span class="keyword">new</span> Thread(dec);
+            t = new Thread(dec);
             t.start();
-        }
-    } <span class="comment">//main method finish</span>
+        &#125;
+    &#125; //main method finish
 
-    <span class="comment">/* 同步加1方法 */</span>
-    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">inc</span><span class="params">()</span> </span>{
+    /* 同步加1方法 */
+    private synchronized void inc() &#123;
         j++;
-        System.out.println(Thread.currentThread().getName() + <span class="string">"-inc:"</span> + j);
-    }
+        System.out.println(Thread.currentThread().getName() + &quot;-inc:&quot; + j);
+    &#125;
 
-    <span class="comment">/* 同步减1方法 */</span>
-    <span class="function"><span class="keyword">private</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">dec</span><span class="params">()</span> </span>{
+    /* 同步减1方法 */
+    private synchronized void dec() &#123;
         j--;
-        System.out.println(Thread.currentThread().getName() + <span class="string">"-dec:"</span> + j);
-    }
+        System.out.println(Thread.currentThread().getName() + &quot;-dec:&quot; + j);
+    &#125;
 
-    <span class="comment">/* 加1线程类 */</span>
-    <span class="class"><span class="keyword">class</span> <span class="title">Inc</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
-        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+    /* 加1线程类 */
+    class Inc implements Runnable &#123;
+        public void run() &#123;
+            for (int i = 0; i &lt; 100; i++) &#123;
                 inc();
-            }
-        }
-    }
+            &#125;
+        &#125;
+    &#125;
 
-    <span class="comment">/* 减1线程类 */</span>
-    <span class="class"><span class="keyword">class</span> <span class="title">Dec</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>{
-        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
-            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100</span>; i++) {
+    /* 减1线程类 */
+    class Dec implements Runnable &#123;
+        public void run() &#123;
+            for (int i = 0; i &lt; 100; i++) &#123;
                 dec();
-            }
-        }
-    }
-
-}
+            &#125;
+        &#125;
+    &#125;
+    
+&#125;
 </code></pre>
+
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="ckmhwq9d1007nxzgnfhzyoux1" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="cl335kvw8007qh5gt414q35sb" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -268,61 +269,62 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>看到windows文件资源管理器，突然想用Java来实现这种不同层的文件缩进，参考OSC中一个博主的思想，记录一下；Code如下：</p>
-<pre><code><span class="comment">/**
+<pre><code>/**
 * @author effine
 * @date 2013年10月26日  下午1:25:14
-*/</span>
+*/
 
-<span class="keyword">import</span> java.io.<span class="keyword">File</span>;
+import java.io.File;
 
-<span class="keyword">public</span> <span class="keyword">class</span> <span class="keyword">FileTree</span> {
-<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="keyword">count</span> = <span class="number">0</span>;
+public class FileTree &#123;
+public static int count = 0;
 
-<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> parse(<span class="keyword">File</span>[] files) {
-    <span class="keyword">if</span> (files.length == <span class="number">0</span>) {
-        <span class="keyword">FileTree</span>.<span class="keyword">count</span>--;
-        System.out.<span class="keyword">println</span>();
-        <span class="keyword">return</span>;
-    } <span class="keyword">else</span> {
-        <span class="keyword">for</span> (<span class="keyword">File</span> f : files) {
-            <span class="keyword">if</span> (f.isDirectory()) {
-                <span class="keyword">FileTree</span>.<span class="keyword">count</span>++;
-                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="keyword">FileTree</span>.<span class="keyword">count</span>; i++) {
-                    System.out.<span class="keyword">print</span>(<span class="string">"\t"</span>);
-                }
+public static void parse(File[] files) &#123;
+    if (files.length == 0) &#123;
+        FileTree.count--;
+        System.out.println();
+        return;
+    &#125; else &#123;
+        for (File f : files) &#123;
+            if (f.isDirectory()) &#123;
+                FileTree.count++;
+                for (int i = 1; i &lt;= FileTree.count; i++) &#123;
+                    System.out.print(&quot;\t&quot;);
+                &#125;
+                
+                System.out.println(f.getName());
+                File[] files2 = f.listFiles();
+                
+                FileTree.parse(files2);
+            &#125;
+            
+        &#125;
+        for (File f : files) &#123;
+            if (!f.isDirectory()) &#123;
+                for (int i = 0; i &lt;= FileTree.count; i++) &#123;
+                    System.out.print(&quot;\t&quot;);
+                &#125;
+                System.out.println(f.getName());
+            &#125;
+        &#125;
+        FileTree.count--;
+    &#125;
+    
+&#125;
 
-                System.out.<span class="keyword">println</span>(f.getName());
-                <span class="keyword">File</span>[] files2 = f.listFiles();
-
-                <span class="keyword">FileTree</span>.parse(files2);
-            }
-
-        }
-        <span class="keyword">for</span> (<span class="keyword">File</span> f : files) {
-            <span class="keyword">if</span> (!f.isDirectory()) {
-                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= <span class="keyword">FileTree</span>.<span class="keyword">count</span>; i++) {
-                    System.out.<span class="keyword">print</span>(<span class="string">"\t"</span>);
-                }
-                System.out.<span class="keyword">println</span>(f.getName());
-            }
-        }
-        <span class="keyword">FileTree</span>.<span class="keyword">count</span>--;
-    }
-
-}
-
-<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) {
-        <span class="keyword">File</span> <span class="keyword">file</span> = <span class="keyword">new</span> <span class="keyword">File</span>(<span class="string">"d:/test"</span>);
-        <span class="keyword">File</span>[] files = <span class="keyword">file</span>.listFiles();
-        <span class="keyword">FileTree</span>.parse(files);
-    }
-}
+public static void main(String[] args) &#123;
+        File file = new File(&quot;d:/test&quot;);
+        File[] files = file.listFiles();
+        FileTree.parse(files);
+    &#125;
+&#125;
 </code></pre>
+
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/26/FileTree/" data-id="ckmhwq9d1007jxzgnv7cjtb2s" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/26/FileTree/" data-id="cl335kvw7007mh5gt76oe1x1p" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -385,7 +387,7 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="ckmhwq9d0007gxzgn6zj6gocs" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="cl335kvw6007jh5gt25ndc59b" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -425,7 +427,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -435,6 +437,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -472,10 +478,6 @@
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -485,7 +487,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

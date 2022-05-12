@@ -95,49 +95,56 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code><span class="variable">$ </span>git branch --help     <span class="comment"># 查看关于git branch帮助</span>
-</code></pre><p>[查看分支]</p>
-<pre><code><span class="variable">$ </span>git branch    <span class="comment"># 查看本地分支（星号*标注为当前分支）</span>
-<span class="variable">$ </span>git branch -r     <span class="comment"># 查看所有远程[remote]分支</span>
-<span class="variable">$ </span>git branch -a     <span class="comment"># 查看所有[all]本地及远程分支</span>
-<span class="variable">$ </span>git branch -v     <span class="comment"># 查看各个分支最后的提交</span>
-<span class="variable">$ </span>git branch -vv    <span class="comment"># 在[-v]参数结果增添本地分支对应的远程分支</span>
-</code></pre><p>[创建\切换\重命名分支]</p>
-<pre><code>$ git branch <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 创建新分支(继承当前分支最新提交来创建)</span>
-$ git branch <span class="variable">&lt;new_branch&gt;</span>  commit_id  <span class="comment"># 以指定的提交版本commit_id来创建新分支</span>
-$ git checkout <span class="variable">&lt;branch&gt;</span>     <span class="comment"># 切换分支</span>
-$ git checkout [commit_id] -b <span class="variable">&lt;new_branch&gt;</span>      <span class="comment"># 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支</span>
-$ git checkout <span class="variable">&lt;commit_id&gt;</span>      <span class="comment"># 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改</span>
-$ git checkout -b <span class="variable">&lt;new_branch&gt;</span> <span class="variable">&lt;master&gt;</span> <span class="comment"># 继承master分支创建并切换新分支</span>
-$ git branch -m <span class="variable">&lt;branch&gt;</span> <span class="variable">&lt;new_branch&gt;</span>       <span class="comment"># 重命名分支</span>
-</code></pre><p>[删除分支]</p>
-<pre><code><span class="comment"># 删除本地分支</span>
-<span class="variable">$ </span>git branch [-d | -<span class="constant">D]</span> &lt;branch&gt;
-    -d      <span class="comment"># 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)</span>
-    -<span class="constant">D </span>     <span class="comment"># 忽略修改强制删除本地分支（多个分支用空格分隔）</span>
+        <pre><code>$ git branch --help     # 查看关于git branch帮助
+</code></pre>
+<p>[查看分支]</p>
+<pre><code>$ git branch    # 查看本地分支（星号*标注为当前分支）
+$ git branch -r     # 查看所有远程[remote]分支
+$ git branch -a     # 查看所有[all]本地及远程分支
+$ git branch -v     # 查看各个分支最后的提交
+$ git branch -vv    # 在[-v]参数结果增添本地分支对应的远程分支
+</code></pre>
+<p>[创建\切换\重命名分支]</p>
+<pre><code>$ git branch &lt;new_branch&gt;       # 创建新分支(继承当前分支最新提交来创建)
+$ git branch &lt;new_branch&gt;  commit_id  # 以指定的提交版本commit_id来创建新分支
+$ git checkout &lt;branch&gt;     # 切换分支
+$ git checkout [commit_id] -b &lt;new_branch&gt;      # 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支
+$ git checkout &lt;commit_id&gt;      # 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改
+$ git checkout -b &lt;new_branch&gt; &lt;master&gt; # 继承master分支创建并切换新分支
+$ git branch -m &lt;branch&gt; &lt;new_branch&gt;       # 重命名分支
+</code></pre>
+<p>[删除分支]</p>
+<pre><code># 删除本地分支
+$ git branch [-d | -D] &lt;branch&gt;
+    -d      # 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)
+    -D      # 忽略修改强制删除本地分支（多个分支用空格分隔）
 
-<span class="comment"># 删除远程分支</span>
-<span class="variable">$ </span>git branch -d -r origin/&lt;branch&gt;  <span class="comment"># 删除远程分支</span>
-<span class="variable">$ </span>git push origin <span class="symbol">:&lt;branch&gt;</span>     <span class="comment"># 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]</span>
-<span class="variable">$ </span>git push origin --delete &lt;branch&gt;     <span class="comment"># [since Git v1.7.0]</span>
-</code></pre><p>[合并分支]</p>
-<pre><code><span class="variable">$ </span>git branch --merged   <span class="comment"># 查看已合并的分支列表</span>
-<span class="variable">$ </span>git branch --no-merged    <span class="comment"># 查看未合并的分支列表</span>
-<span class="variable">$ </span>git merge &lt;branch&gt;    <span class="comment"># 合并其他分支到当前分支,发生冲突修复后再次提交</span>
-</code></pre><p>[关联分支]</p>
-<pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git <span class="keyword">push即可直接查找到远程分支进行操作
-</span>$ git <span class="keyword">branch </span>--set-upstream-to<span class="label">=origin</span>/&lt;<span class="keyword">branch&gt; </span>&lt;<span class="keyword">branch&gt; </span> (推荐)
-$ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keyword">branch&gt; </span>&lt;origin/<span class="keyword">branch&gt; </span>   
-</code></pre><p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p>
-<pre><code>[<span class="keyword">branch </span><span class="string">"master"</span>]
+# 删除远程分支
+$ git branch -d -r origin/&lt;branch&gt;  # 删除远程分支
+$ git push origin :&lt;branch&gt;     # 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]
+$ git push origin --delete &lt;branch&gt;     # [since Git v1.7.0]
+</code></pre>
+<p>[合并分支]</p>
+<pre><code>$ git branch --merged   # 查看已合并的分支列表
+$ git branch --no-merged    # 查看未合并的分支列表
+$ git merge &lt;branch&gt;    # 合并其他分支到当前分支,发生冲突修复后再次提交
+</code></pre>
+<p>[关联分支]</p>
+<pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git push即可直接查找到远程分支进行操作
+$ git branch --set-upstream-to=origin/&lt;branch&gt; &lt;branch&gt;  (推荐)
+$ git branch --set-upstream &lt;branch&gt; &lt;origin/branch&gt;    
+</code></pre>
+<p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p>
+<pre><code>[branch &quot;master&quot;]
     remote = origin
     merge = refs/heads/master
 </code></pre>
+
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="ckmhwq9e600ccxzgn9lczlhvl" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/10/23/GitBranch/" data-id="cl335kvx600bzh5gthsdm4uut" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -195,28 +202,30 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
 </li>
 </ol>
 <p>设置环境变量</p>
-<pre><code><span class="variable">$ </span>vi /etc/profile
+<pre><code>$ vi /etc/profile
 
-    <span class="comment"># profile文件追加下面内容</span>
-    export <span class="constant">JAVA_HOME</span>= <span class="regexp">/tools/jdk</span>1.<span class="number">8.0_51</span>
-    export <span class="constant">PATH</span>=<span class="variable">$JAVA_HOME</span>/<span class="symbol">bin:</span><span class="variable">$PATH</span>
-    export <span class="constant">CLASSPATH</span>=.:<span class="variable">$JAVA_HOME</span>/<span class="class"><span class="keyword">lib</span>/<span class="title">dt</span>.<span class="title">jar</span>:$<span class="title">JAVA_HOME</span>/<span class="title">lib</span>/<span class="title">tools</span>.<span class="title">jar</span></span>
+    # profile文件追加下面内容
+    export JAVA_HOME= /tools/jdk1.8.0_51
+    export PATH=$JAVA_HOME/bin:$PATH
+    export CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-<span class="variable">$ </span>source /etc/profile    <span class="comment"># 使刚设置的环境变量生效</span>
-</code></pre><p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
-<pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建<span class="constant">Key</span>（存在则追加）
+$ source /etc/profile	# 使刚设置的环境变量生效
+</code></pre>
+<p>替换 <code>/tools/jdk1.8.0_51</code> 为你jdk解压目录；如果配置个人账户的java环境变量只需修改 <code>vi  ~/.bash_profile</code>文件即可，后面操作步骤相同；同时，有必要提一下windows下配置环境变量:</p>
+<pre><code>计算机[桌面|资源管理器] -&gt; 属性 -&gt; 高级系统设置 -&gt; 环境变量 -&gt; 系统环境变量 -&gt; 新建Key（存在则追加）
 
-<span class="comment"># 变量名及值"key [value]"</span>
-<span class="constant">JAVA_HOME</span>  [<span class="constant">E</span>:\tools\jdk1.<span class="number">7.0_55</span>]
-<span class="constant">CLASSPATH</span> [.;%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">dt</span>.<span class="title">jar</span>;</span>%<span class="constant">JAVA_HOME</span>%\<span class="class"><span class="keyword">lib</span>\<span class="title">tools</span>.<span class="title">jar</span>;</span>]
-<span class="constant">Path</span> [%<span class="constant">JAVA_HOME</span>%\bin;%<span class="constant">JAVA_HOME</span>%\jre\bin;]
-</code></pre><p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
+# 变量名及值&quot;key [value]&quot;
+JAVA_HOME  [E:\tools\jdk1.7.0_55]
+CLASSPATH [.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;]
+Path [%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin;]
+</code></pre>
+<p>注意：替换<code>E:\tools\jdk1.7.0_55</code>为你jdk的安装目录；若已存在的Path变量值末尾没有分号(;)必须添加分号再追加,或直接将以上的Path值添加在已存在值的最前面.</p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="ckmhwq9e400byxzgnj3xn9mej" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/08/13/JavaEnvironmentVariable/" data-id="cl335kvxb00ckh5gthm7rbhzq" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -267,13 +276,13 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <div class="article-entry" itemprop="articleBody">
       
         <p>在使用maven管理应用开发中，由于团队成员IDE默认打开\新建文件的字符编码不一样，常出现乱码或字符编码错乱问题，在pom.xml的<project>标签内进行以下配置：</p>
-<pre><code><span class="tag">&lt;<span class="title">properties</span>&gt;</span>
-    <span class="comment">&lt;!-- 文件拷贝时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">project.build.sourceEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.build.sourceEncoding</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">project.reporting.outputEncoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">project.reporting.outputEncoding</span>&gt;</span>
-    <span class="comment">&lt;!-- 编译时的编码 --&gt;</span>
-    <span class="tag">&lt;<span class="title">maven.compiler.encoding</span>&gt;</span>UTF-8<span class="tag">&lt;/<span class="title">maven.compiler.encoding</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">properties</span>&gt;</span>
+<pre><code>&lt;properties&gt;
+    &lt;!-- 文件拷贝时的编码 --&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+    &lt;!-- 编译时的编码 --&gt;
+    &lt;maven.compiler.encoding&gt;UTF-8&lt;/maven.compiler.encoding&gt;
+&lt;/properties&gt;
 </code></pre>
         
           <p class="article-more-link">
@@ -284,7 +293,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="ckmhwq9e300buxzgncpr9lmuv" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenEncoding/" data-id="cl335kvx700c3h5gt99ysdjon" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -337,23 +346,26 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
         <p>通过maven下载依赖文件的源码和JavaDoc，便于我们学习和借鉴</p>
 <ol>
 <li><p>maven命令行(针对具体项目)</p>
-<pre><code><span class="variable">$ </span>mvn <span class="symbol">dependency:</span>sources     <span class="comment"># 下载依赖文件源码</span>
-<span class="variable">$ </span>mvn <span class="symbol">dependency:</span>resolve -<span class="constant">Dclassifier</span>=javadoc     <span class="comment"># 下载依赖文件JavaDoc</span>
-</code></pre></li>
+<pre><code> $ mvn dependency:sources 	# 下载依赖文件源码
+ $ mvn dependency:resolve -Dclassifier=javadoc 	# 下载依赖文件JavaDoc
+</code></pre>
+</li>
 <li><p>配置maven全局文件settings</p>
-<p> 在配置文件<profiles> 标签内加入以下配置：</profiles></p>
-<pre><code><span class="tag">&lt;<span class="title">profile</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">id</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">id</span>&gt;</span>    
-    <span class="tag">&lt;<span class="title">properties</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadSources</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadSources</span>&gt;</span>         
-        <span class="tag">&lt;<span class="title">downloadJavadocs</span>&gt;</span>true<span class="tag">&lt;/<span class="title">downloadJavadocs</span>&gt;</span>               
-    <span class="tag">&lt;/<span class="title">properties</span>&gt;</span> 
-<span class="tag">&lt;/<span class="title">profile</span>&gt;</span> 
-</code></pre><p> 然后在标签 <settings> 内加入配置：</settings></p>
-<pre><code><span class="tag">&lt;<span class="title">activeProfiles</span>&gt;</span>
-    <span class="tag">&lt;<span class="title">activeProfile</span>&gt;</span>downloadSources<span class="tag">&lt;/<span class="title">activeProfile</span>&gt;</span>
-<span class="tag">&lt;/<span class="title">activeProfiles</span>&gt;</span>
-</code></pre><p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
+<p> 在配置文件<profiles> 标签内加入以下配置：</p>
+<pre><code> &lt;profile&gt;    
+     &lt;id&gt;downloadSources&lt;/id&gt;    
+     &lt;properties&gt;         
+         &lt;downloadSources&gt;true&lt;/downloadSources&gt;         
+         &lt;downloadJavadocs&gt;true&lt;/downloadJavadocs&gt;               
+     &lt;/properties&gt; 
+ &lt;/profile&gt; 
+</code></pre>
+<p> 然后在标签 <settings> 内加入配置：</p>
+<pre><code>     &lt;activeProfiles&gt;
+         &lt;activeProfile&gt;downloadSources&lt;/activeProfile&gt;
+     &lt;/activeProfiles&gt;
+</code></pre>
+<p> 标签 <code>&lt;activeProfiles&gt;</code> 默认在 <code>&lt;settings&gt;</code> 的最后，且默认为注释状态</p>
 </li>
 <li><p>eclipse配置</p>
 <p> 操作步骤： window -&gt; Preferences -&gt; Maven; 在右边出现的多选项中，勾选”Download Artifact Sources”（源码） 及”Download Artifact JavaDoc”(JavaDoc)即可</p>
@@ -364,7 +376,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="ckmhwq9e100bnxzgn5hyhdm56" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/15/MavenDownSourse/" data-id="cl335kvx500bsh5gtahqt7drv" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -404,7 +416,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -414,6 +426,10 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -451,10 +467,6 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -464,7 +476,7 @@ $ git <span class="keyword">branch </span>--set-upstream &lt;<span class="keywor
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

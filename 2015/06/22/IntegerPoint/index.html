@@ -5,12 +5,12 @@
   
   <title>Integer的对等比较 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="分析之前，先猜想一下看看下面code snippets的输出： package cn.effine.test;  public class IntegerTest {      public static void main(String[] args) {          Integer i1 &#x3D; 2;         Integer i2 &#x3D; 2;         System.err.pr">
+  <meta name="description" content="分析之前，先猜想一下看看下面code snippets的输出： package cn.effine.test;  public class IntegerTest &amp;#123;          public static void main(String[] args) &amp;#123;                  Integer i1 &#x3D; 2;         Integer i2 &#x3D; 2;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Integer的对等比较">
 <meta property="og:url" content="http://effine.cn/2015/06/22/IntegerPoint/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="分析之前，先猜想一下看看下面code snippets的输出： package cn.effine.test;  public class IntegerTest {      public static void main(String[] args) {          Integer i1 &#x3D; 2;         Integer i2 &#x3D; 2;         System.err.pr">
+<meta property="og:description" content="分析之前，先猜想一下看看下面code snippets的输出： package cn.effine.test;  public class IntegerTest &amp;#123;          public static void main(String[] args) &amp;#123;                  Integer i1 &#x3D; 2;         Integer i2 &#x3D; 2;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-06-22T09:38:25.000Z">
 <meta property="article:modified_time" content="2015-11-23T16:43:28.000Z">
@@ -102,42 +102,46 @@
         <p>分析之前，先猜想一下看看下面code snippets的输出：</p>
 <pre><code>package cn.effine.test;
 
-<span class="keyword">public</span> <span class="keyword">class</span> IntegerTest {
+public class IntegerTest &#123;
+    
+    public static void main(String[] args) &#123;
+        
+        Integer i1 = 2;
+        Integer i2 = 2;
+        System.err.println(&quot;i1 == i2 : &quot; + (i1 == i2));
+        
+        Integer i3 = new Integer(2);
+        Integer i4 = new Integer(2);
+        System.err.println(&quot;i3 == i4: &quot; + (i3 == i4));
+        
+        Integer i5 = 128;
+        Integer i6 = 128;
+        System.err.println(&quot;i5 == i6 : &quot; + (i5 == i6));
+        System.err.println(&quot;i5、i6的inValue()方法等值比较： &quot; + (i5.intValue() == i6.intValue()));
+        System.err.println(&quot;i5、i6的equals的比较： &quot; + i5.equals(i6));
 
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{
+    &#125;
+&#125;
+</code></pre>
+<span id="more"></span>
 
-        Integer i1 = <span class="number">2</span>;
-        Integer i2 = <span class="number">2</span>;
-        System.err.println(<span class="string">"i1 == i2 : "</span> + (i1 == i2));
-
-        Integer i3 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        Integer i4 = <span class="keyword">new</span> Integer(<span class="number">2</span>);
-        System.err.println(<span class="string">"i3 == i4: "</span> + (i3 == i4));
-
-        Integer i5 = <span class="number">128</span>;
-        Integer i6 = <span class="number">128</span>;
-        System.err.println(<span class="string">"i5 == i6 : "</span> + (i5 == i6));
-        System.err.println(<span class="string">"i5、i6的inValue()方法等值比较： "</span> + (i5.intValue() == i6.intValue()));
-        System.err.println(<span class="string">"i5、i6的equals的比较： "</span> + i5.equals(i6));
-
-    }
-}
-</code></pre><a id="more"></a>
 <p>运行结果：</p>
-<pre><code>i1 == <span class="string">i2 :</span> <span class="literal">true</span>
-i3 == <span class="string">i4:</span> <span class="literal">false</span>
-i5 == <span class="string">i6 :</span> <span class="literal">false</span>
-i5、i6的inValue()方法等值比较： <span class="literal">true</span>
-i5、i6的equals的比较： <span class="literal">true</span>
-</code></pre><p>如果你对某些输出感到诧异，接着往下看我的分析：</p>
+<pre><code>i1 == i2 : true
+i3 == i4: false
+i5 == i6 : false
+i5、i6的inValue()方法等值比较： true
+i5、i6的equals的比较： true
+</code></pre>
+<p>如果你对某些输出感到诧异，接着往下看我的分析：</p>
 <p>初始化Integer声明的变量时，会去调用Integer.valueOf()方法进行处理；方法源码如下</p>
-<pre><code><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">valueOf</span><span class="params">(<span class="keyword">int</span> i)</span> </span>{
-    assert IntegerCache.high &gt;= <span class="number">127</span>;
-    <span class="keyword">if</span> (i &gt;= -<span class="number">128</span> &amp;&amp; i &lt;= <span class="number">127</span>)
-        <span class="keyword">return</span> IntegerCache.cache[i + (-IntegerCache.low)];
-    <span class="keyword">return</span> <span class="keyword">new</span> Integer(i);
-}
-</code></pre><p>至于为什么调用该方法进行if判断？可能是因为8位二进制的范围是-128到127；当传入的参数在该范围则返回int原始数据类型，超出该范围则新建一个Integer对象，对象的对等比较（“==”）比较的是对象的内存地址；现在你再回去过看程序：</p>
+<pre><code>public static Integer valueOf(int i) &#123;
+    assert IntegerCache.high &gt;= 127;
+    if (i &gt;= -128 &amp;&amp; i &lt;= 127)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+&#125;
+</code></pre>
+<p>至于为什么调用该方法进行if判断？可能是因为8位二进制的范围是-128到127；当传入的参数在该范围则返回int原始数据类型，超出该范围则新建一个Integer对象，对象的对等比较（“&#x3D;&#x3D;”）比较的是对象的内存地址；现在你再回去过看程序：</p>
 <p>初始化i1、12时，调用Integer.valueOf()方法，由于i1\i2的值(2)在-128到127范围内，方法返回int类型的值2，进行对等比较时则返回ture</p>
 <p>声明i3、i4时，默认新建了个Integer对象，所以对等比较的是两个对象的内存地址，因此返回false</p>
 <p>初始化i5、i6时，调用Integer.valueOf()方法，其值-128在127范围外，所以方法返回新建的Integer对象，进行对等比较返回false</p>
@@ -148,7 +152,7 @@ i5、i6的equals的比较： <span class="literal">true</span>
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/06/22/IntegerPoint/" data-id="ckmhwq9dv00azxzgnwe0c3isz" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/06/22/IntegerPoint/" data-id="cl335kvx100bbh5gtd1mmh752" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -246,7 +250,7 @@ i5、i6的equals的比较： <span class="literal">true</span>
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -256,6 +260,10 @@ i5、i6的equals的比较： <span class="literal">true</span>
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -293,10 +301,6 @@ i5、i6的equals的比较： <span class="literal">true</span>
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -306,7 +310,7 @@ i5、i6的equals的比较： <span class="literal">true</span>
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

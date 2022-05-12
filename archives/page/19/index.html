@@ -69,6 +69,71 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-InitalMaven" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2012/11/22/InitalMaven/" class="article-date">
+  <time datetime="2012-11-22T07:40:12.000Z" itemprop="datePublished">11月 22 2012</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2012/11/22/InitalMaven/">初识Maven</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>今天开始学习怎样使用maven，听起来挺神奇的东西，我们来一步一步的加以剖析。Maven的一些具体细节，网上很多博客介绍，这里我就不逐一介绍，下面我们从安装maven开始讲解：</p>
+<ul>
+<li><p>Maven的安装</p>
+<p>  首先下载Maven<a href="http://maven.apache.org/download.cgi">(下载地址)</a>（电脑上有以前下载好的，版本是apache-maven-3.0.5，现在就将就这个是用吧），解压到你要安装的目录（我解压到E盘的）。设置环境变量，将bin目录加入到环境变量Path中（如 E:\apache-maven-3.0.5\bin）。现在在dos命令下输入：mvn -v （查看版本信息），如果显示：Apache Maven 3.0.5  、 Maven home: E:\apache-maven-3.0.5\bin..    、 Java home: E:\Install\JDK\jre （安装maven需要java环境，所以需要提前安装JDK）等信息，则说明你的maven安装成功；否则，检查一下你设置的环境变量，看是否有错误。</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2012/11/22/InitalMaven/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2012/11/22/InitalMaven/" data-id="cl335kvw0006vh5gtb4zc2h2c" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2012/11/22/InitalMaven/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/maven/" rel="tag">maven</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tools/" rel="tag">tools</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
     <article id="post-OracleForgetPasswd" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2012/11/15/OracleForgetPasswd/" class="article-date">
@@ -97,7 +162,7 @@
       
         <ol>
 <li><p>忘记除SYS、SYSTEM用户之外的用户的登录密码。</p>
-<p> 用SYS (或SYSTEM)用户登录: CONN SYS/PASS_WORD AS SYSDBA;</p>
+<p> 用SYS (或SYSTEM)用户登录: CONN SYS&#x2F;PASS_WORD AS SYSDBA;</p>
 <p> 使用如下语句修改用户的密码: ALTER USER user_name IDENTIFIED BY newpass;</p>
 <p> 注意：密码不能全是数字。并且不能是数字开头。否则会出现：ORA-00988: 口令缺失或无效</p>
 </li>
@@ -111,7 +176,7 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/" data-id="ckmhwq9cv006sxzgn8p4ddg1f" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/15/OracleForgetPasswd/" data-id="cl335kvvz006sh5gtc24refh7" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -177,7 +242,7 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/10/JavaSimpleFactoryPattern/" data-id="ckmhwq9cu006oxzgngh3d3v5b" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/10/JavaSimpleFactoryPattern/" data-id="cl335kvw20075h5gtd8232cb3" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -228,24 +293,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Java 的单例模式，即保证在Java应用程序中，一个Java类只有一个实例存在；单例模式可分为饿汉式、懒汉式及登记式（不常用，只做了解即可）；常用的场景：读取配置文件类、工具类、线程池、缓存、日志对象等。</p>
-<h3 id="饿汉式">饿汉式</h3><pre><code><span class="comment">/** 
- * <span class="doctag">@author</span> effine 
- * <span class="doctag">@date</span> 2013-9-9  下午11:23:42
- */</span>  
-<span class="keyword">package</span> cn.effine.singleton;  
-<span class="comment">/* 单例模式：饿汉式 */</span>  
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HungrySingleton</span> </span>{  
-    <span class="comment">/* 饿汉式单例模式, 声明的同时初始化对象 */</span>  
-    <span class="keyword">private</span> <span class="keyword">static</span> HungrySingleton hungry = <span class="keyword">new</span> HungrySingleton();  
-    <span class="comment">/* 构造方法设置成privae，不允许外部实实例化 */</span>  
-    <span class="function"><span class="keyword">private</span> <span class="title">HungrySingleton</span><span class="params">()</span> </span>{  
-    }  
-    <span class="comment">/* 返回一个单态模式的类的实例 */</span>  
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> HungrySingleton <span class="title">getInstance</span><span class="params">()</span> </span>{  
-        <span class="keyword">return</span> hungry;  
-    }  
-}  
-</code></pre><p>单例之饿汉式：对象预先加载，线程安全；在类创建的同时生成单例对象，调用时获得对象实例的方法反应速度快，代码简练。<br>
+<h3 id="饿汉式"><a href="#饿汉式" class="headerlink" title="饿汉式"></a>饿汉式</h3><pre><code>/** 
+ * @author effine 
+ * @date 2013-9-9  下午11:23:42
+ */  
+package cn.effine.singleton;  
+/* 单例模式：饿汉式 */  
+public class HungrySingleton &#123;  
+    /* 饿汉式单例模式, 声明的同时初始化对象 */  
+    private static HungrySingleton hungry = new HungrySingleton();  
+    /* 构造方法设置成privae，不允许外部实实例化 */  
+    private HungrySingleton() &#123;  
+    &#125;  
+    /* 返回一个单态模式的类的实例 */  
+    public static final HungrySingleton getInstance() &#123;  
+        return hungry;  
+    &#125;  
+&#125;  
+</code></pre>
+<p>单例之饿汉式：对象预先加载，线程安全；在类创建的同时生成单例对象，调用时获得对象实例的方法反应速度快，代码简练。</p>
         
           <p class="article-more-link">
             <a href="/2012/11/09/SingletonPattern/#more">阅读全文</a>
@@ -255,89 +321,12 @@
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/09/SingletonPattern/" data-id="ckmhwq9cu006nxzgn4p4tzw13" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2012/11/09/SingletonPattern/" data-id="cl335kvvz006rh5gt6w0h1bve" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
         
           <a href="http://effine.cn/2012/11/09/SingletonPattern/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
-    <article id="post-ObserverPattern" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2012/11/08/ObserverPattern/" class="article-date">
-  <time datetime="2012-11-08T15:33:00.000Z" itemprop="datePublished">11月 8 2012</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2012/11/08/ObserverPattern/">JAVA观察者模式</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Java观察者模式（Observer Pattern），简单说观察者模式包含四种角色：抽象被观察者角色、具体被观察者角色、抽象观察者角色和具体观察者角色；</p>
-<p>针对观察者与被观察者设定场景：每天我们关心的天气预报统一由中国气象局发布(被观察者)，每个发布气象平台（观察者）订阅中国气象局；天气发生变化气象局发布通知给各个平台，然后平台做相应的更新操作。当然，现实中该场景是不存在的，权宜是为了加深理解Java观察者模式而生，因为气象局是不会去通知各个订阅平台，更新操作是各个平台定时刷新完成。</p>
-<p>其中Java本身提供观察者模式的接口供开发者使用，在 java.util包下，包含接口Observer及类Observable，接口Observer是扮演抽象观察者角色，包含一个update()方法，而类Observable则扮演抽象被观察者角色，开发者只需要继承该类就能很好的运用观察者模式。闲话少说，贴出代码以供参考：</p>
-<h3 id="抽象被观察者角色">抽象被观察者角色</h3><pre><code><span class="comment">/** 
- * <span class="doctag">@author</span> effine 
- * <span class="doctag">@date</span> 2013年10月4日  下午11:02:21 
- */</span>  
-<span class="keyword">package</span> cn.effine.observer;  
-<span class="comment">/* 抽象被观察者角色 */</span>  
-<span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">IWitched</span> </span>{  
-    <span class="comment">/* 添加观察者 */</span>  
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addWitcher</span><span class="params">(IWitchers w)</span></span>;  
-    <span class="comment">/* 删除观察者 */</span>  
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">deleteWitcher</span><span class="params">(IWitchers w)</span></span>;  
-    <span class="comment">/* 被观察者 发生变化，通知观察者 */</span>  
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">notifyWitcher</span><span class="params">(Object o)</span></span>;  
-}
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2012/11/08/ObserverPattern/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2012/11/08/ObserverPattern/" data-id="ckmhwq9cw006zxzgnfqp8yz8o" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2012/11/08/ObserverPattern/#" class="article-comment-link">Comments</a>
         
       -->
 
@@ -372,7 +361,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -382,6 +371,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -419,10 +412,6 @@
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -432,7 +421,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

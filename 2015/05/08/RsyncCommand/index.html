@@ -5,12 +5,12 @@
   
   <title>rsync command | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。 以下采用centos进行讲解，其他平台原理相同，自行参考研究 既然设计文件的远程同步，需要两台服务器s1\s2 环境描述：     操作系统： centos  serverA: 192.168.0.140 待同步的服务器（源服务器） serverB: 192.168.0.141">
+  <meta name="description" content="rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。 以下采用centos进行讲解，其他平台原理相同，自行参考研究 既然设计文件的远程同步，需要两台服务器s1\s2 环境描述：	 操作系统： centos  serverA: 192.168.0.140 待同步的服务器（源服务器） serverB: 192.168.0.141 同步到">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rsync command">
 <meta property="og:url" content="http://effine.cn/2015/05/08/RsyncCommand/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。 以下采用centos进行讲解，其他平台原理相同，自行参考研究 既然设计文件的远程同步，需要两台服务器s1\s2 环境描述：     操作系统： centos  serverA: 192.168.0.140 待同步的服务器（源服务器） serverB: 192.168.0.141">
+<meta property="og:description" content="rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。 以下采用centos进行讲解，其他平台原理相同，自行参考研究 既然设计文件的远程同步，需要两台服务器s1\s2 环境描述：	 操作系统： centos  serverA: 192.168.0.140 待同步的服务器（源服务器） serverB: 192.168.0.141 同步到">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-05-08T06:27:12.000Z">
 <meta property="article:modified_time" content="2015-11-23T16:43:28.000Z">
@@ -102,79 +102,86 @@
         <p>rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。</p>
 <p>以下采用centos进行讲解，其他平台原理相同，自行参考研究</p>
 <p>既然设计文件的远程同步，需要两台服务器s1\s2</p>
-<p>环境描述：    </p>
+<p>环境描述：	</p>
 <pre><code>操作系统： centos 
-serverA: <span class="number">192.168</span><span class="number">.0</span><span class="number">.140</span> 待同步的服务器（源服务器）
-serverB: <span class="number">192.168</span><span class="number">.0</span><span class="number">.141</span> 同步到的服务器 (目标服务器)
+serverA: 192.168.0.140 待同步的服务器（源服务器）
+serverB: 192.168.0.141 同步到的服务器 (目标服务器)
 
 需求: 同步serverA的目录 /home/test 到 serverB 的相同目录
-</code></pre><a id="more"></a>
+</code></pre>
+<span id="more"></span>
+
 <ol>
 <li><p>安装rsync</p>
-<p> 。 源码安装（安装之前保证本机安装gcc）</p>
-<pre><code>rsync官网（http:<span class="comment">//rsync.samba.org/） #下载最新发行版本，目前最新版本rsync-3.1.1.tar.gz；</span>
-$ tar -zxvf rsync-<span class="number">3.1</span><span class="number">.1</span>.tar.gz    <span class="preprocessor">#解压</span>
-$ cd rsync-<span class="number">3.1</span><span class="number">.1</span> 进入rsync目录
-$ ./configure --prefix=/usr  ;make ;make install  
-</code></pre><p> 。 软件包安装</p>
-<pre><code>$ yum <span class="keyword">install</span> rsync
-</code></pre></li>
+<p> 。 源码安装（安装之前保证本机安装gcc）<br> rsync官网（<a href="http://rsync.samba.org/%EF%BC%89">http://rsync.samba.org/）</a> #下载最新发行版本，目前最新版本rsync-3.1.1.tar.gz；<br> $ tar -zxvf rsync-3.1.1.tar.gz    #解压<br> $ cd rsync-3.1.1 进入rsync目录<br> $ .&#x2F;configure –prefix&#x3D;&#x2F;usr  ;make ;make install<br> 。 软件包安装</p>
+<pre><code> $ yum install rsync
+</code></pre>
+</li>
 <li><p>配置rsync</p>
 <p> 默认rsync需要配置三个文件rsyncd.conf \ rsyncd.secrets \ rsyncd.motd; 如文件不存在则创建即可</p>
 <p> . rsyncd.conf: 主配置文件，主要配置rsync同步信息和权限设置;默认可能该文件不存在，需手动创建</p>
-<pre><code>$ <span class="keyword">vi</span> /etc/rsyncd.<span class="keyword">conf</span>   #创建rsyncd.<span class="keyword">conf</span>文件并在<span class="keyword">vi</span>中编辑
-</code></pre><p> 具体内容参考我的配置</p>
-<pre><code>#Global Settings
-pid file = /var/run/rsyncd.pid
-port = 873
-address = 192.168.0.140
+<pre><code> $ vi /etc/rsyncd.conf   #创建rsyncd.conf文件并在vi中编辑
+</code></pre>
+<p> 具体内容参考我的配置</p>
+<pre><code> #Global Settings
+ pid file = /var/run/rsyncd.pid
+ port = 873
+ address = 192.168.0.140
 
-#以什么身份运行rsync
-uid = root
-gid = root
+ #以什么身份运行rsync
+ uid = root
+ gid = root
 
-<span class="operator"><span class="keyword">use</span> chroot = <span class="literal">false</span>
-<span class="keyword">read</span> <span class="keyword">only</span> = <span class="keyword">no</span>
+ use chroot = false
+ read only = no
 
-#<span class="keyword">limit</span> <span class="keyword">access</span> <span class="keyword">to</span> <span class="keyword">private</span> LANs
-<span class="keyword">hosts</span> <span class="keyword">allow</span> = <span class="number">192.168</span><span class="number">.0</span><span class="number">.141</span>
-<span class="keyword">hosts</span> deny=*
-<span class="keyword">max</span> connections = <span class="number">5</span> 
-motd <span class="keyword">file</span> = /etc/rsyncd.motd
+ #limit access to private LANs
+ hosts allow = 192.168.0.141
+ hosts deny=*
+ max connections = 5 
+ motd file = /etc/rsyncd.motd
 
-[<span class="keyword">backup</span>]
-<span class="keyword">path</span> = /home/<span class="keyword">test</span>
-<span class="keyword">list</span>=yes 
-auth <span class="keyword">users</span> = rsync
-secrets <span class="keyword">file</span> = /etc/rsyncd.secrets 
-coment = welcome <span class="keyword">backup</span> !
-<span class="keyword">log</span> <span class="keyword">file</span> = /<span class="keyword">var</span>/<span class="keyword">log</span>/rsyncd.<span class="keyword">log</span>
-<span class="keyword">lock</span> <span class="keyword">file</span> = /<span class="keyword">var</span>/run/rsyncd.<span class="keyword">lock</span></span>
-</code></pre><p> auth users属性可以添加多个用户，用户之间用逗号分隔；所有的用户必须为服务器真实存在的用户</p>
+ [backup]
+ path = /home/test
+ list=yes 
+ auth users = rsync
+ secrets file = /etc/rsyncd.secrets 
+ coment = welcome backup !
+ log file = /var/log/rsyncd.log
+ lock file = /var/run/rsyncd.lock
+</code></pre>
+<p> auth users属性可以添加多个用户，用户之间用逗号分隔；所有的用户必须为服务器真实存在的用户</p>
 <p> . rsyncd.secrets： 存放用户密码文件,格式”用户名：密码”</p>
-<pre><code>$ vi /etc/rsyncd<span class="class">.secrets</span>   
-</code></pre><p> 参考我的配置</p>
-<pre><code><span class="comment"># username:passwd</span>
- rsync:<span class="built_in">test</span>123
-</code></pre><p> 修改属主</p>
-<pre><code><span class="variable">$chown</span> root.root rsyncd.secrets
-</code></pre><p> 将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!</p>
-<pre><code>$ chmod <span class="number">600</span> /etc/rsyncd<span class="class">.secrets</span>  
-</code></pre><p> . rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性</p>
-<pre><code>$ vi /etc/rsyncd<span class="class">.motd</span> 
-</code></pre></li>
+<pre><code> $ vi /etc/rsyncd.secrets   
+</code></pre>
+<p> 参考我的配置</p>
+<pre><code> # username:passwd
+  rsync:test123
+</code></pre>
+<p> 修改属主</p>
+<pre><code> $chown root.root rsyncd.secrets
+</code></pre>
+<p> 将rsyncd.secrets这个密码文件的文件属性设为root拥有, 且权限要设为600, 否则无法备份成功!</p>
+<pre><code> $ chmod 600 /etc/rsyncd.secrets  
+</code></pre>
+<p> . rsyncd.motd : 存放rsync服务器信息,客户端连接成功显示的信息,无格式限制; 此文件不是必须，若不配置则注释掉rsync.conf中的motd file属性</p>
+<pre><code> $ vi /etc/rsyncd.motd 
+</code></pre>
+</li>
 <li><p>开启rsync端口873(开启防火墙)</p>
-<pre><code><span class="variable">$ </span>vi /etc/sysconfig/iptables
-</code></pre><p> 添加如下记录：</p>
-<pre><code>-A RH-Firewall-<span class="number">1</span>-INPUT -m <span class="keyword">state</span> --state NEW -m tcp -p tcp --dport <span class="number">873</span> -j ACCEPT
-</code></pre></li>
+<pre><code> $ vi /etc/sysconfig/iptables
+</code></pre>
+<p> 添加如下记录：</p>
+<pre><code> -A RH-Firewall-1-INPUT -m state --state NEW -m tcp -p tcp --dport 873 -j ACCEPT
+</code></pre>
+</li>
 </ol>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/05/08/RsyncCommand/" data-id="ckmhwq9dt00apxzgnmihvoivj" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/05/08/RsyncCommand/" data-id="cl335kvww00afh5gtf33hbn09" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -272,7 +279,7 @@ coment = welcome <span class="keyword">backup</span> !
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -282,6 +289,10 @@ coment = welcome <span class="keyword">backup</span> !
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -319,10 +330,6 @@ coment = welcome <span class="keyword">backup</span> !
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -332,7 +339,7 @@ coment = welcome <span class="keyword">backup</span> !
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

@@ -103,7 +103,8 @@
 <ul>
 <li>Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon也就没有工作可做了，也就没有继续运行程序的必要了。值得一提的是，守护线程并非只有虚拟机内部提供，用户在编写程序时也可以自己设置守护线程。下面的方法就是用来设置守护线程的。<code>public final void setDaemon(boolean on)</code></li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <p>这里有几点需要注意： </p>
 <ol>
 <li>thread.setDaemon(true)必须在thread.start()之前设置，否则会跑出一个IllegalThreadStateException异常。你不能把正在运行的常规线程设置为守护线程</li>
@@ -111,86 +112,99 @@
 <li>不要认为所有的应用都可以分配给Daemon来进行服务，比如读写操作或者计算逻辑。因为你不可能知道在所有的User完成之前，Daemon是否已经完成了预期的服务任务。一旦User退出了，可能大量数据还没有来得及读入或写出，计算任务也可能多次运行结果不一样。这对程序是毁灭性的。造成这个结果理由已经说过了：一旦所有User Thread离开了，虚拟机也就退出运行了。</li>
 </ol>
 <!--lang:java-->
-<pre><code><span class="keyword">import</span> java.io.*;     
-
-<span class="comment">//完成文件输出的守护线程任务  </span>
-<span class="class"><span class="keyword">class</span> <span class="title">TestRunnable</span> <span class="keyword">implements</span> <span class="title">Runnable</span></span>{     
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>{     
-               <span class="keyword">try</span>{     
-                  Thread.sleep(<span class="number">1000</span>);<span class="comment">//守护线程阻塞1秒后运行     </span>
-                  File f=<span class="keyword">new</span> File(<span class="string">"daemon.txt"</span>);     
-                  FileOutputStream os=<span class="keyword">new</span> FileOutputStream(f,<span class="keyword">true</span>);     
-                  os.write(<span class="string">"daemon"</span>.getBytes());     
-           }     
-               <span class="keyword">catch</span>(IOException e1){     
+<pre><code>import java.io.*;     
+    
+//完成文件输出的守护线程任务  
+class TestRunnable implements Runnable&#123;     
+    public void run()&#123;     
+               try&#123;     
+                  Thread.sleep(1000);//守护线程阻塞1秒后运行     
+                  File f=new File(&quot;daemon.txt&quot;);     
+                  FileOutputStream os=new FileOutputStream(f,true);     
+                  os.write(&quot;daemon&quot;.getBytes());     
+           &#125;     
+               catch(IOException e1)&#123;     
           e1.printStackTrace();     
-               }     
-               <span class="keyword">catch</span>(InterruptedException e2){     
+               &#125;     
+               catch(InterruptedException e2)&#123;     
                   e2.printStackTrace();     
-           }     
-    }     
-}     
-<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestDemo2</span></span>{     
-    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException     
-    </span>{     
-        Runnable tr=<span class="keyword">new</span> TestRunnable();     
-        Thread thread=<span class="keyword">new</span> Thread(tr);     
-                thread.setDaemon(<span class="keyword">true</span>); <span class="comment">//设置守护线程     </span>
-        thread.start(); <span class="comment">//开始执行分进程     </span>
-    }     
-}     
-<span class="comment">//运行结果：文件daemon.txt中没有"daemon"字符串。  </span>
-</code></pre><p>看到了吧，把输入输出逻辑包装进守护线程多么的可怕，字符串并没有写入指定文件。原因也很简单，直到主线程完成，守护线程仍处于1秒的阻塞状态。这个时候主线程很快就运行完了，虚拟机退出，Daemon停止服务，输出操作自然失败了。</p>
-<p>例子2 ：<br><!--lang:java--><br>    public class Test {<br>        public static void main(String args) {<br>            Thread t1 = new MyCommon();<br>            Thread t2 = new Thread(new MyDaemon());<br>            t2.setDaemon(true); // 设置为守护线程<br>            t2.start();<br>            t1.start();<br>        }<br>    }</p>
-<pre><code><span class="keyword">class</span> MyCommon extends Thread {
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
-        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) {
-            System.out.println(<span class="string">"线程1第"</span> + i + <span class="string">"次执行！"</span>);
-            <span class="keyword">try</span> {
-                Thread.sleep(<span class="number">7</span>);
-            } <span class="keyword">catch</span> (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-}
+           &#125;     
+    &#125;     
+&#125;     
+public class TestDemo2&#123;     
+    public static void main(String[] args) throws InterruptedException     
+    &#123;     
+        Runnable tr=new TestRunnable();     
+        Thread thread=new Thread(tr);     
+                thread.setDaemon(true); //设置守护线程     
+        thread.start(); //开始执行分进程     
+    &#125;     
+&#125;     
+//运行结果：文件daemon.txt中没有&quot;daemon&quot;字符串。  
+</code></pre>
+<p>看到了吧，把输入输出逻辑包装进守护线程多么的可怕，字符串并没有写入指定文件。原因也很简单，直到主线程完成，守护线程仍处于1秒的阻塞状态。这个时候主线程很快就运行完了，虚拟机退出，Daemon停止服务，输出操作自然失败了。</p>
+<p>例子2 ： </p>
+<!--lang:java-->
+<pre><code>public class Test &#123;
+    public static void main(String args) &#123;
+        Thread t1 = new MyCommon();
+        Thread t2 = new Thread(new MyDaemon());
+        t2.setDaemon(true); // 设置为守护线程
+        t2.start();
+        t1.start();
+    &#125;
+&#125;
 
-<span class="keyword">class</span> MyDaemon implements Runnable {
-    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>{
-        <span class="keyword">for</span> (<span class="keyword">long</span> i = <span class="number">0</span>; i &lt; <span class="number">9999999L</span>; i++) {
-            System.out.println(<span class="string">"后台线程第"</span> + i + <span class="string">"次执行！"</span>);
-            <span class="keyword">try</span> {
-                Thread.sleep(<span class="number">7</span>);
-            } <span class="keyword">catch</span> (InterruptedException e) {
+class MyCommon extends Thread &#123;
+    public void run() &#123;
+        for (int i = 0; i &lt; 5; i++) &#123;
+            System.out.println(&quot;线程1第&quot; + i + &quot;次执行！&quot;);
+            try &#123;
+                Thread.sleep(7);
+            &#125; catch (InterruptedException e) &#123;
                 e.printStackTrace();
-            }
-        }
-    }
-} 
+            &#125;
+        &#125;
+    &#125;
+&#125;
 
-后台线程第<span class="number">0</span>次执行！ 
-线程<span class="number">1</span>第<span class="number">0</span>次执行！ 
-线程<span class="number">1</span>第<span class="number">1</span>次执行！ 
-后台线程第<span class="number">1</span>次执行！ 
-后台线程第<span class="number">2</span>次执行！ 
-线程<span class="number">1</span>第<span class="number">2</span>次执行！ 
-线程<span class="number">1</span>第<span class="number">3</span>次执行！ 
-后台线程第<span class="number">3</span>次执行！ 
-线程<span class="number">1</span>第<span class="number">4</span>次执行！ 
-后台线程第<span class="number">4</span>次执行！ 
-后台线程第<span class="number">5</span>次执行！ 
-后台线程第<span class="number">6</span>次执行！ 
-后台线程第<span class="number">7</span>次执行！ 
-Process finished with <span class="built_in">exit</span> code <span class="number">0</span> 
-</code></pre><p>从上面的执行结果可以看出：前台线程是保证执行完毕的，后台线程还没有执行完毕就退出了。实际上：JRE判断程序是否执行结束的标准是所有的前台执线程行完毕了，而不管后台线程的状态，因此，在使用后台县城时候一定要注意这个问题。实际应用例子：在使用长连接的comet服务端推送技术中，消息推送线程设置为守护线程，服务于ChatServlet的servlet用户线程，在servlet的init启动消息线程，servlet一旦初始化后，一直存在服务器，servlet摧毁后,消息线程自动退出 </p>
+class MyDaemon implements Runnable &#123;
+    public void run() &#123;
+        for (long i = 0; i &lt; 9999999L; i++) &#123;
+            System.out.println(&quot;后台线程第&quot; + i + &quot;次执行！&quot;);
+            try &#123;
+                Thread.sleep(7);
+            &#125; catch (InterruptedException e) &#123;
+                e.printStackTrace();
+            &#125;
+        &#125;
+    &#125;
+&#125; 
+
+后台线程第0次执行！ 
+线程1第0次执行！ 
+线程1第1次执行！ 
+后台线程第1次执行！ 
+后台线程第2次执行！ 
+线程1第2次执行！ 
+线程1第3次执行！ 
+后台线程第3次执行！ 
+线程1第4次执行！ 
+后台线程第4次执行！ 
+后台线程第5次执行！ 
+后台线程第6次执行！ 
+后台线程第7次执行！ 
+Process finished with exit code 0 
+</code></pre>
+<p>从上面的执行结果可以看出：前台线程是保证执行完毕的，后台线程还没有执行完毕就退出了。实际上：JRE判断程序是否执行结束的标准是所有的前台执线程行完毕了，而不管后台线程的状态，因此，在使用后台县城时候一定要注意这个问题。实际应用例子：在使用长连接的comet服务端推送技术中，消息推送线程设置为守护线程，服务于ChatServlet的servlet用户线程，在servlet的init启动消息线程，servlet一旦初始化后，一直存在服务器，servlet摧毁后,消息线程自动退出 </p>
 <p>容器收到一个Servlet请求，调度线程从线程池中选出一个工作者线程,将请求传递给该工作者线程，然后由该线程来执行Servlet的 service方法。当这个线程正在执行的时候,容器收到另外一个请求,调度线程同样从线程池中选出另一个工作者线程来服务新的请求,容器并不关心这个请求是否访问的是同一个Servlet.当容器同时收到对同一个Servlet的多个请求的时候，那么这个Servlet的service()方法将在多线程中并发执行。</p>
-<p>Servlet容器默认采用单实例多线程的方式来处理请求，这样减少产生Servlet实例的开销，提升了对请求的响应时间，对于Tomcat可以在server.xml中通过<connector>元素设置线程池中线程的数目。 </connector></p>
+<p>Servlet容器默认采用单实例多线程的方式来处理请求，这样减少产生Servlet实例的开销，提升了对请求的响应时间，对于Tomcat可以在server.xml中通过<Connector>元素设置线程池中线程的数目。 </p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="ckmhwq9d0007gxzgn6zj6gocs" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="cl335kvw6007jh5gt25ndc59b" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -288,7 +302,7 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -298,6 +312,10 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -335,10 +353,6 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -348,7 +362,7 @@ Process finished with <span class="built_in">exit</span> code <span class="numbe
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

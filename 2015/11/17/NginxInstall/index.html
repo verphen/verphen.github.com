@@ -5,12 +5,12 @@
   
   <title>linux安装nginx | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http:&#x2F;&#x2F;nginx.org&#x2F; （以下讲解环境使用centos，其他环境安装方式大同小异） $ wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.8.0.tar.gz     # 下载相应版本nginx $ tar -zx">
+  <meta name="description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http:&#x2F;&#x2F;nginx.org&#x2F; （以下讲解环境使用centos，其他环境安装方式大同小异） $ wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.8.0.tar.gz 	# 下载相应版本nginx $ tar -zxvf">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux安装nginx">
 <meta property="og:url" content="http://effine.cn/2015/11/17/NginxInstall/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http:&#x2F;&#x2F;nginx.org&#x2F; （以下讲解环境使用centos，其他环境安装方式大同小异） $ wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.8.0.tar.gz     # 下载相应版本nginx $ tar -zx">
+<meta property="og:description" content="若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： http:&#x2F;&#x2F;nginx.org&#x2F; （以下讲解环境使用centos，其他环境安装方式大同小异） $ wget http:&#x2F;&#x2F;nginx.org&#x2F;download&#x2F;nginx-1.8.0.tar.gz 	# 下载相应版本nginx $ tar -zxvf">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-11-17T10:08:00.000Z">
 <meta property="article:modified_time" content="2018-10-31T08:24:53.000Z">
@@ -99,57 +99,67 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/" target="_blank" rel="external">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
-<pre><code>$ wget http:<span class="comment">//nginx.org/download/nginx-1.8.0.tar.gz     # 下载相应版本nginx</span>
-$ tar -zxvf nginx-<span class="number">1.8</span><span class="number">.0</span>.tar.gz [-C &lt;dir&gt;]     <span class="preprocessor"># 解压[指定目录]</span>
-$ cd nginx-<span class="number">1.8</span><span class="number">.0</span>
-$ ./configure --prefix=/usr/local/nginx      <span class="preprocessor"># prefix指定安装目录</span>
-</code></pre><a id="more"></a>
+        <p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p>
+<pre><code>$ wget http://nginx.org/download/nginx-1.8.0.tar.gz 	# 下载相应版本nginx
+$ tar -zxvf nginx-1.8.0.tar.gz [-C &lt;dir&gt;] 	# 解压[指定目录]
+$ cd nginx-1.8.0
+$ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
+</code></pre>
+<span id="more"></span>
+
 <p>安装过程出现的错误解析：</p>
-<pre><code><span class="comment"># 错误 1</span>
-checking <span class="keyword">for</span> C compiler ... <span class="keyword">not</span> found
-./configure: <span class="keyword">error</span>: C compiler cc <span class="keyword">is</span> <span class="keyword">not</span> found
-</code></pre><p>分析/解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p>
-<pre><code><span class="comment"># 错误 2</span>
-./configure: error: <span class="operator">the</span> HTTP gzip module requires <span class="operator">the</span> zlib library.
-You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_gzip_module</span>
-option, <span class="operator">or</span> install <span class="operator">the</span> zlib library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> zlib library
-statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-zlib=&lt;path&gt; option.</span>
-</code></pre><p>分析/解决：不存在zlib library；安装即可：yum install -y zlib-devel</p>
-<pre><code><span class="comment"># 错误 3</span>
-./configure: error: <span class="operator">the</span> HTTP rewrite module requires <span class="operator">the</span> PCRE library.
-You can either disable <span class="operator">the</span> module <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--without-http_rewrite_module</span>
-option, <span class="operator">or</span> install <span class="operator">the</span> PCRE library <span class="keyword">into</span> <span class="operator">the</span> <span class="keyword">system</span>, <span class="operator">or</span> build <span class="operator">the</span> PCRE library
-statically <span class="built_in">from</span> <span class="operator">the</span> source <span class="operator">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span> <span class="comment">--with-pcre=&lt;path&gt; option.</span>
-</code></pre><p>分析/解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/" target="_blank" rel="external">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
-<pre><code><span class="variable">$ </span>cd pcre-{version}
-<span class="variable">$ </span>./configure
-<span class="variable">$ </span>make &amp;&amp; make install
-</code></pre><p>当然你也可以使用命令： yum install pcre</p>
+<pre><code># 错误 1
+checking for C compiler ... not found
+./configure: error: C compiler cc is not found
+</code></pre>
+<p>分析&#x2F;解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p>
+<pre><code># 错误 2
+./configure: error: the HTTP gzip module requires the zlib library.
+You can either disable the module by using --without-http_gzip_module
+option, or install the zlib library into the system, or build the zlib library
+statically from the source with nginx by using --with-zlib=&lt;path&gt; option.
+</code></pre>
+<p>分析&#x2F;解决：不存在zlib library；安装即可：yum install -y zlib-devel</p>
+<pre><code># 错误 3
+./configure: error: the HTTP rewrite module requires the PCRE library.
+You can either disable the module by using --without-http_rewrite_module
+option, or install the PCRE library into the system, or build the PCRE library
+statically from the source with nginx by using --with-pcre=&lt;path&gt; option.
+</code></pre>
+<p>分析&#x2F;解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p>
+<pre><code>$ cd pcre-&#123;version&#125;
+$ ./configure
+$ make &amp;&amp; make install
+</code></pre>
+<p>当然你也可以使用命令： yum install pcre</p>
 <pre><code># 错误 4
-./configure: error: the HTTP <span class="operator"><span class="keyword">cache</span> <span class="keyword">module</span> requires <span class="keyword">md5</span> functions
-<span class="keyword">from</span> OpenSSL <span class="keyword">library</span>.   You can either <span class="keyword">disable</span> the <span class="keyword">module</span> <span class="keyword">by</span> <span class="keyword">using</span>
-<span class="comment">--without-http-cache option, or install the OpenSSL library into the system,</span>
-<span class="keyword">or</span> <span class="keyword">build</span> the OpenSSL <span class="keyword">library</span> statically <span class="keyword">from</span> the <span class="keyword">source</span> <span class="keyword">with</span> nginx <span class="keyword">by</span> <span class="keyword">using</span>
-<span class="comment">--with-http_ssl_module --with-openssl=&lt;path&gt; options.</span></span>
-</code></pre><p>分析/解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p>
-<pre><code><span class="preprocessor"># 错误<span class="number">5</span></span>
-nginx: [emerg] bind() to <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span>:<span class="number">9000</span> failed (<span class="number">48</span>: Address already in use)
-</code></pre><p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p>
-<pre><code><span class="preprocessor"># 错误<span class="number">6</span></span>
-nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</span> failed (<span class="number">13</span>: Permission denied)
-</code></pre><p>解决： 没有权限，使用root用户启动</p>
+./configure: error: the HTTP cache module requires md5 functions
+from OpenSSL library.   You can either disable the module by using
+--without-http-cache option, or install the OpenSSL library into the system,
+or build the OpenSSL library statically from the source with nginx by using
+--with-http_ssl_module --with-openssl=&lt;path&gt; options.
+</code></pre>
+<p>分析&#x2F;解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p>
+<pre><code># 错误5
+nginx: [emerg] bind() to 0.0.0.0:9000 failed (48: Address already in use)
+</code></pre>
+<p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p>
+<pre><code># 错误6
+nginx: [emerg] open() &quot;/usr/local/nginx/logs/nginx.pid&quot; failed (13: Permission denied)
+</code></pre>
+<p>解决： 没有权限，使用root用户启动</p>
 <p>根据nginx源码安装延伸</p>
-<pre><code>. configure     <span class="comment"># 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境</span>
-. make        <span class="comment"># 编译源码，生成Makefile</span>
-. make <span class="keyword">install</span>    <span class="comment"># 读取Makefile中的指令，开始安装</span>
-</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
+<pre><code>. configure 	# 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境
+. make		# 编译源码，生成Makefile
+. make install    # 读取Makefile中的指令，开始安装
+</code></pre>
+<p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="ckmhwq9eb00cwxzgnelobujzs" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/17/NginxInstall/" data-id="cl335kvxi00dch5gtbevf8886" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -247,7 +257,7 @@ nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</sp
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -257,6 +267,10 @@ nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</sp
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -294,10 +308,6 @@ nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</sp
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -307,7 +317,7 @@ nginx: [emerg] open() <span class="string">"/usr/local/nginx/logs/nginx.pid"</sp
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

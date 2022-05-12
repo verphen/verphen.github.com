@@ -5,15 +5,15 @@
   
   <title>MySQL基本使用 | 追求优雅代码而不断受打击的艺术家</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；  服务 service service mysql [status|start|stop|restart]    # Debian下mysql当前状态、启动、停">
+  <meta name="description" content="在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；  服务 service  service mysql [status|start|stop|restart]	# Debian下mysql当前状态、启动、停止、">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL基本使用">
 <meta property="og:url" content="http://effine.cn/2015/07/08/MysqlCommand/index.html">
 <meta property="og:site_name" content="追求优雅代码而不断受打击的艺术家">
-<meta property="og:description" content="在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；  服务 service service mysql [status|start|stop|restart]    # Debian下mysql当前状态、启动、停">
+<meta property="og:description" content="在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；  服务 service  service mysql [status|start|stop|restart]	# Debian下mysql当前状态、启动、停止、">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2015-07-08T01:58:06.000Z">
-<meta property="article:modified_time" content="2018-10-31T08:24:53.000Z">
+<meta property="article:modified_time" content="2022-05-12T14:21:01.676Z">
 <meta property="article:author" content="effine">
 <meta property="article:tag" content="mysql">
 <meta property="article:tag" content="command">
@@ -101,99 +101,66 @@
       
         <p>在你使用一项工具或技术的时候，刚开始可能为了进度使用可视化界面来操作，如使用mysql的可视化界面工具mysql-front、navicat等等学习mysql一样；在熟悉使用后必须尽量摒弃这些可视化工具来使用原始的命令行，这是内功的修炼；</p>
 <ul>
-<li><p>服务 service</p>
-<pre><code>service mysql [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># Debian下mysql当前状态、启动、停止、重启</span>
-service mysqld [status|<span class="literal">start</span>|<span class="literal">stop</span>|restart]    <span class="comment"># RedHat下mysql当前状态、启动、停止、重启</span>
-net [<span class="literal">start</span>|<span class="literal">stop</span>] mysql     <span class="comment"># windows下启动、停止mysql</span>
-</code></pre></li>
-<li><p>mysql</p>
-<pre><code>mysql&gt;  \s         <span class="preprocessor"># 查看mysql的版本信息和字符编码</span>
-mysql&gt;  show variables;     <span class="preprocessor"># 查看mysql的变量设置，可以使用like过滤</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'autocommit'</span>;     <span class="preprocessor"># 查看mysql事务是否自动提交</span>
-mysql&gt;  show variables <span class="keyword">like</span> <span class="string">'%max_connections%'</span>;  <span class="preprocessor"># 查看mysql的最大连接数</span>
-mysql&gt;  set name utf8;    <span class="preprocessor"># 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</span>
-</code></pre></li>
+<li><p>服务 service<br>  service mysql [status|start|stop|restart]	# Debian下mysql当前状态、启动、停止、重启<br>  service mysqld [status|start|stop|restart]	# RedHat下mysql当前状态、启动、停止、重启<br>  net [start|stop] mysql 	# windows下启动、停止mysql</p>
+</li>
+<li><p>mysql<br>  mysql&gt;  \s 		# 查看mysql的版本信息和字符编码<br>  mysql&gt;  show variables;     # 查看mysql的变量设置，可以使用like过滤<br>  mysql&gt;  show variables like ‘autocommit’;     # 查看mysql事务是否自动提交<br>  mysql&gt;  show variables like ‘%max_connections%’;  # 查看mysql的最大连接数<br>  mysql&gt;  set name utf8;    # 设置字符编码(告诉mysql用utf8编码来处理客户端传过来的sql)</p>
+</li>
 </ul>
-<a id="more"></a>
+<span id="more"></span>
+
 <ul>
-<li>用户 user<pre><code># 登录mysql服务,-p和密码之间无空格；避免密码泄露这一步不要输入密码
-mysql -u username -p***；
-    -<span class="ruby">u username     <span class="comment"># 用户名</span>
-</span>    -<span class="ruby">p password     <span class="comment"># 密码,小写p</span>
-</span>    -<span class="ruby">h host         <span class="comment"># 主机</span>
-</span>    -<span class="ruby"><span class="constant">P</span> port         <span class="comment"># 端口, 大写P</span></span>
-</code></pre></li>
+<li>用户 user<br>  # 登录mysql服务,-p和密码之间无空格；避免密码泄露这一步不要输入密码<br>  mysql -u username -p***；<br>      -u username 	# 用户名<br>      -p password 	# 密码,小写p<br>      -h host 		# 主机<br>      -P port 		# 端口, 大写P</li>
 </ul>
 <p>Tag: 针对用户的操作即就是操作数据库默认mysql.user表，你可以使用一般操作表的sql语句操作用户;如更新用户密码:</p>
-<pre><code><span class="comment"># 更新用户 test1 的密码为“123456”</span>
-mysql&gt;  <span class="keyword">update</span> mysql.user <span class="keyword">set</span> password=password(<span class="string">'123456'</span>) where User=<span class="string">'test1'</span> and Host=<span class="string">'localhost'</span>;
-<span class="comment"># 将更新内容重新加入内存</span>
-mysql&gt;  <span class="keyword">flush</span> privileges;
-</code></pre><p>针对mysql.user表的操作最后都必须执行 <code>flush privileges;</code>,将执行的更新信息重新加入到内存；</p>
-<pre><code># 用户的操作都在mysql数据库的user表(两种方式)
-mysql&gt;  create user username[@host] [identified by <span class="string">'password'</span>]；
-mysql&gt;  <span class="built_in">insert</span> into mysql.user(host,user,password) <span class="built_in">values</span>(<span class="string">"***"</span>,<span class="string">"***"</span>,password(<span class="string">"***”));
-</span>    username     # 待创建的用户名
-    host         # 用户操作的主机,默认为<span class="string">'%'</span>表示可以操作任意主机
-    password     # 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证
+<pre><code>    # 更新用户 test1 的密码为“123456”
+    mysql&gt;  update mysql.user set password=password(&#39;123456&#39;) where User=&#39;test1&#39; and Host=&#39;localhost&#39;;
+    # 将更新内容重新加入内存
+    mysql&gt;  flush privileges;
+</code></pre>
+<p>针对mysql.user表的操作最后都必须执行 <code>flush privileges;</code>,将执行的更新信息重新加入到内存；</p>
+<pre><code>    # 用户的操作都在mysql数据库的user表(两种方式)
+    mysql&gt;  create user username[@host] [identified by &#39;password&#39;]；
+    mysql&gt;  insert into mysql.user(host,user,password) values(&quot;***&quot;,&quot;***&quot;,password(&quot;***”));
+        username 	# 待创建的用户名
+        host 		# 用户操作的主机,默认为&#39;%&#39;表示可以操作任意主机
+        password 	# 用户密码；不设置表示密码为空，用户登录mysql不需要密码验证
+    
 
+    # 删除用户,不指定主机host参数表示 usernmae@&#39;%&#39;
+    mysql&gt;  drop user username[@host]；
 
-# 删除用户,不指定主机host参数表示 usernmae@<span class="string">'%'</span>
-mysql&gt;  <span class="keyword">drop</span> user username[@host]；
+    # 修改root用户密码（该命令在非mysql命令模式下执行）
+    mysqladmin -u root -p password ****； 	
 
-# 修改root用户密码（该命令在非mysql命令模式下执行）
-mysqladmin -<span class="keyword">u</span> root -<span class="keyword">p</span> password ****；     
+    # 给用户授权
+    mysql&gt;  grant privileges on databaseName.tableName to username@host；
+            privileges 	# 权限名;全部权限为all，多个权限使用逗号分隔
+    eg: grant all on *.* to &#39;username@host&#39;; 	# 赋予用户指定主机的所有权限 
 
-# 给用户授权
-mysql&gt;  grant privileges <span class="keyword">on</span> databaseName.tableName <span class="keyword">to</span> username@host；
-        privileges     # 权限名;全部权限为<span class="keyword">all</span>，多个权限使用逗号分隔
-<span class="keyword">e</span><span class="variable">g:</span> grant <span class="keyword">all</span> <span class="keyword">on</span> *.* <span class="keyword">to</span> <span class="string">'username@host'</span>;     # 赋予用户指定主机的所有权限 
+    # 赋予用户&quot;给其他用户授权&quot;权限
+    mysql&gt;  grant privileges on databaseName.tableName to username@host with grant option;
 
-# 赋予用户<span class="string">"给其他用户授权"</span>权限
-mysql&gt;  grant privileges <span class="keyword">on</span> databaseName.tableName <span class="keyword">to</span> username@host with grant option;
+    # 查看用户已有权限
+    mysql&gt;  show grants for username[@host]；	
 
-# 查看用户已有权限
-mysql&gt;  show grants <span class="keyword">for</span> username[@host]；    
+    # 撤销用户权限
+    mysql&gt;  revoke privileges on databaseName.tableName from username@host；
 
-# 撤销用户权限
-mysql&gt;  revoke privileges <span class="keyword">on</span> databaseName.tableName from username@host；
+    # 创建只读用户（对指定主机的所有数据库）
+    mysql&gt;  grant select on *.*  to username[@host] identified by &#39;passowrd&#39;；
 
-# 创建只读用户（对指定主机的所有数据库）
-mysql&gt;  grant select <span class="keyword">on</span> *.*  <span class="keyword">to</span> username[@host] identified by <span class="string">'passowrd'</span>；
-
-# 查看当前登录用户和主机
-mysql&gt;  select user();
-</code></pre><ul>
-<li><p>数据库 database</p>
-<pre><code>mysql&gt;  create database database-<span class="built_in">name</span>；     <span class="preprocessor"># 创建数据库</span>
-mysql&gt;  show databases；                    <span class="preprocessor"># 查看所有数据库列表</span>
-mysql&gt;  <span class="built_in">drop</span> database database-<span class="built_in">name</span>;    <span class="preprocessor"># 删除数据库</span>
-mysql&gt;  use database-<span class="built_in">name</span>；                 <span class="preprocessor"># 使用数据库database-name</span>
-</code></pre></li>
-<li><p>表     table</p>
-<pre><code>mysql&gt;  show tables ；    <span class="preprocessor"># 查看使用数据库的全部表</span>
-mysql&gt;  describe[desc] table-<span class="built_in">name</span>；     <span class="preprocessor"># 显示表属性对象的名称和类型</span>
-mysql&gt;  <span class="built_in">drop</span> table-<span class="built_in">name</span>；     <span class="preprocessor"># 删除表</span>
-mysql&gt;  alter table table-<span class="built_in">name</span> rename <span class="keyword">to</span> new-table-<span class="built_in">name</span>；  <span class="preprocessor"># 修改表名</span>
-mysql&gt;  alter table table-<span class="built_in">name</span> <span class="built_in">drop</span> fild-<span class="built_in">name</span>；  <span class="preprocessor"># 删除表字段file-name</span>
-mysql&gt;  alter table table-<span class="built_in">name</span> modify fild-<span class="built_in">name</span> <span class="built_in">type</span>-<span class="built_in">name</span>；     <span class="preprocessor"># 修改字段数据类型</span>
-mysql&gt;  alter table table-<span class="built_in">name</span> change old-fild new-fild <span class="built_in">type</span>-<span class="built_in">name</span>；     <span class="preprocessor"># 修改字段名称和数据类型</span>
-</code></pre></li>
-<li><p>存储引擎 engine</p>
-<pre><code><span class="comment"># mysql支持的存储引擎</span>
-mysql&gt;  show engines；
-<span class="comment"># 查看表使用的存储引擎和一些其他信息</span>
-mysql&gt;  show table status <span class="keyword">from</span> databse-<span class="property">name</span> <span class="keyword">where</span> <span class="property">name</span> = 'table-<span class="property">name</span>'；
-<span class="comment"># 修改表table-name的存储引擎为InnerDB</span>
-mysql&gt;  alter table table-<span class="property">name</span> engine = InnerDB；
-</code></pre></li>
-<li><p>方法、函数 function</p>
-<pre><code><span class="comment"># 将查询结果field字段名用指定分隔符（默认为逗号）分隔显示</span>
-group_concat([<span class="keyword">distinct</span>] field [order by asc|desc order_field] [sepatator '使用的分隔符'])    ;
-<span class="comment"># 返回字符串str的字符颠倒顺序</span>
-reverse('待翻转字符串');
-eg: select reverse('effine')将输出 eniffe
-</code></pre></li>
+    # 查看当前登录用户和主机
+    mysql&gt;  select user();
+</code></pre>
+<ul>
+<li><p>数据库 database<br>  mysql&gt;  create database database-name； 	# 创建数据库<br>  mysql&gt;  show databases；					# 查看所有数据库列表<br>  mysql&gt;  drop database database-name;    # 删除数据库<br>  mysql&gt;  use database-name； 				# 使用数据库database-name</p>
+</li>
+<li><p>表	 table<br>  mysql&gt;  show tables ；	# 查看使用数据库的全部表<br>  mysql&gt;  describe[desc] table-name； 	# 显示表属性对象的名称和类型<br>  mysql&gt;  drop table-name； 	# 删除表<br>  mysql&gt;  alter table table-name rename to new-table-name；  # 修改表名<br>  mysql&gt;  alter table table-name drop fild-name；  # 删除表字段file-name<br>  mysql&gt;  alter table table-name modify fild-name type-name； 	# 修改字段数据类型<br>  mysql&gt;  alter table table-name change old-fild new-fild type-name； 	# 修改字段名称和数据类型</p>
+</li>
+<li><p>存储引擎 engine<br>  # mysql支持的存储引擎<br>  mysql&gt;  show engines；<br>  # 查看表使用的存储引擎和一些其他信息<br>  mysql&gt;  show table status from databse-name where name &#x3D; ‘table-name’；<br>  # 修改表table-name的存储引擎为InnerDB<br>  mysql&gt;  alter table table-name engine &#x3D; InnerDB；</p>
+</li>
+<li><p>方法、函数 function<br>  # 将查询结果field字段名用指定分隔符（默认为逗号）分隔显示<br>  group_concat([distinct] field [order by asc|desc order_field] [sepatator ‘使用的分隔符’])	;<br>  # 返回字符串str的字符颠倒顺序<br>  reverse(‘待翻转字符串’);<br>  eg: select reverse(‘effine’)将输出 eniffe</p>
+</li>
 <li><p>技巧</p>
 <p>  sql语句最后的分号”;”替换为”\G”则可以改变查询结果的显示方式,便于用户查看;</p>
 </li>
@@ -203,7 +170,7 @@ eg: select reverse('effine')将输出 eniffe
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="ckmhwq9e000bkxzgngemrbqdy" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/08/MysqlCommand/" data-id="cl335kvx300bih5gt8z0f4ckl" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -301,7 +268,7 @@ eg: select reverse('effine')将输出 eniffe
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -311,6 +278,10 @@ eg: select reverse('effine')将输出 eniffe
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -348,10 +319,6 @@ eg: select reverse('effine')将输出 eniffe
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -361,7 +328,7 @@ eg: select reverse('effine')将输出 eniffe
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 

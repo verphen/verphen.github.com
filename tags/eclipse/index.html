@@ -97,18 +97,19 @@
       
         <p>使用Eclipse开发中，难免出现很多需要当前标记的代码便于以后来完善，借助eclipse tasks来实现是最好不过了！</p>
 <p>打开tasks面板： window -&gt; show view -&gt; other -&gt; Tasks； 标记标签的具体含义如下</p>
-<pre><code>. FIXME       <span class="preprocessor"># 表示注释的代码需要被修正(修复我)</span>
-. TODO        <span class="preprocessor"># 尚未完成的待办事项(要做)</span>
-. XXX         <span class="preprocessor"># 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进</span>
-. 自定义标签   <span class="preprocessor"># window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags</span>
-</code></pre><p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p>
+<pre><code>. FIXME       # 表示注释的代码需要被修正(修复我)
+. TODO        # 尚未完成的待办事项(要做)
+. XXX         # 注释的代码虽然实现了功能，但是实现方案有待商榷，希望将来能改进
+. 自定义标签   # window -&gt; preferences -&gt; java -&gt; compiler -&gt; Task tags
+</code></pre>
+<p>那怎么来标记代码呢？你只需在待标记的代码处添添加注释行，将对应的标签写在注释行即可被Tasks面板收录；上述所有注释都会被eclipse task视图所收集。在项目发布前，检查一下task视图是一个很好的习惯。</p>
 <p>当然，你还可以对标识设置优先权(proprity)</p>
 
       
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/15/EclipseTasks/" data-id="ckmhwq9e700cjxzgn1xy4ute9" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/11/15/EclipseTasks/" data-id="cl335kvxc00cnh5gt5gzfdfg6" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -159,25 +160,25 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>对于java开发，eclipse是必不可少的IDE，现整理其使用快捷键如下：</p>
-<pre><code>ctrl + /     <span class="comment"># 注释与取消注释当前行或选中行</span>
-ctrl + <span class="built_in">shift</span> + c     <span class="comment"># 注释与取消注释当前行或选中行</span>
+<pre><code>ctrl + / 	# 注释与取消注释当前行或选中行
+ctrl + shift + c 	# 注释与取消注释当前行或选中行
 
-ctrl + <span class="built_in">shift</span> + /    <span class="comment"># 注释选中的行（多行注释/* content */ ）</span>
-ctrl + <span class="built_in">shift</span> + \    <span class="comment"># 取消选中的注释行（多行注释）</span>
+ctrl + shift + /    # 注释选中的行（多行注释/* content */ ）
+ctrl + shift + \    # 取消选中的注释行（多行注释）
 
-alt + <span class="built_in">shift</span> + j     <span class="comment"># 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)</span>
+alt + shift + j 	# 文档注释；给变量、方法、类添加描述(方法会列出参数和返回值等)
 
-ctrl + o     <span class="comment"># 显示类中方法和属性的大纲，能快速定位类的方法和属性</span>
-<span class="comment"># 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件</span>
-ctrl + <span class="built_in">shift</span> + o    
-ctrl + <span class="built_in">shift</span> + r     <span class="comment"># 查找并打开资源文件</span>
+ctrl + o 	# 显示类中方法和属性的大纲，能快速定位类的方法和属性
+# 自动导入必须包;鼠标焦点在当前java文件内，则只针对当前文件；如果焦在整个工程，则针对项目所有的文件
+ctrl + shift + o	
+ctrl + shift + r 	# 查找并打开资源文件
 
-ctrl + g    <span class="comment"># 搜索定位方法名或变量的所有方法或变量</span>
-ctrl + <span class="built_in">shift</span> + g     <span class="comment"># 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方</span>
-ctrl + <span class="built_in">shift</span> + h     <span class="comment"># 搜索包含指定内容的文件或其他,选择 "file search" 则搜索文件;</span>
-                       点击左下角的 <span class="string">"customize..."</span>,可以控制显示的标签tab和上次打开的page
-ctrl + <span class="built_in">shift</span> + x    <span class="comment"># 将选中的字母变为大写</span>
-ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选中的字母变为小写</span>
+ctrl + g    # 搜索定位方法名或变量的所有方法或变量
+ctrl + shift + g 	# 定位或选中方法名或变量名再使用快捷键，搜索列出所有调用此该方法或使用变量的地方
+ctrl + shift + h 	# 搜索包含指定内容的文件或其他,选择 &quot;file search&quot; 则搜索文件;
+                       点击左下角的 &quot;customize...&quot;,可以控制显示的标签tab和上次打开的page
+ctrl + shift + x    # 将选中的字母变为大写
+ctrl + shift + y    # 将选中的字母变为小写
 </code></pre>
         
           <p class="article-more-link">
@@ -188,7 +189,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/07/07/EclipseShortcutKey/" data-id="ckmhwq9dz00bdxzgnrkq8ip33" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2015/07/07/EclipseShortcutKey/" data-id="cl335kvx400bph5gt1nyo1o90" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -248,7 +249,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/" data-id="ckmhwq9dg009bxzgn2whk5kbg" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2014/07/07/EclipseGenerationJavaDoc/" data-id="cl335kvwo009nh5gt8bzzgav1" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -299,8 +300,9 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     <div class="article-entry" itemprop="articleBody">
       
         <p>在开发Eclipse插件过程中，遇到这样的错误：</p>
-<pre><code><span class="tag">The</span> <span class="tag">selected</span> <span class="tag">wizard</span> <span class="tag">could</span> <span class="tag">not</span> <span class="tag">be</span> <span class="tag">started</span><span class="class">.xxxWizard</span> <span class="tag">cannot</span> <span class="tag">be</span> <span class="tag">cast</span> <span class="tag">to</span> <span class="tag">org</span><span class="class">.eclipse</span><span class="class">.ui</span><span class="class">.IWorkbenchWizard</span>;
-</code></pre><p>错误分析:</p>
+<pre><code>The selected wizard could not be started.xxxWizard cannot be cast to org.eclipse.ui.IWorkbenchWizard;
+</code></pre>
+<p>错误分析:</p>
 <p>xxxWizard类使用了IWorkbenchWizard接口的init方法而没有实现该接口，我们只需要实现 INewWizard 接口即可（INewWizard接口是IWorkbenchWizard的子接口，而这两个接口又都是IWizard接口的子接口）；</p>
 <p>在Eclipse中，向导必须实现接口org.eclipse.jface.wizard.IWizard，如不实现IWizard接口而只继承Wizard类，则还需实现performFinish()方法，因为该方法在Wizard类中是对接口IWizard的抽象实现，即Eclipse提供的org.eclipse.jface.wizard.Wizard类是IWizard的抽象实现；一般我们编写自己的Wizard类既继承Wizard类，且实现INewWizard接口。</p>
 <p>向导页必须实现接口org.eclipse.jface.wizard.IWizardPage，因为org.eclipse.jface.wizard.WizardPage 也是 IWizardPage 的一个抽象实现.</p>
@@ -309,7 +311,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     </div>
 
     <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="ckmhwq9cy0079xzgn7cqw6s2g" class="article-share-link">Share</a>
+      <a data-url="http://effine.cn/2013/10/15/EclipsePluginProblem/" data-id="cl335kvw5007fh5gtc8dv9dbe" class="article-share-link">Share</a>
       
       <!-- 文章上的"comment"按钮 -->
       <!-- 
@@ -345,7 +347,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -355,6 +357,10 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/12/RichDadPoorDad/">穷爸爸富爸爸</a>
+          </li>
         
           <li>
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
@@ -392,10 +398,6 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
             <a href="/2016/01/06/NginxCommands/">nginx commands</a>
           </li>
         
-          <li>
-            <a href="/2016/01/04/NginxService/">nginx加入系统服务</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -405,7 +407,7 @@ ctrl + <span class="built_in">shift</span> + y    <span class="comment"># 将选
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 10px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
