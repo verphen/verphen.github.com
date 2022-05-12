@@ -1,0 +1,9 @@
+<% if (theme.word_count && !post.no_word_count){ %>
+  <div class="article-category">
+    
+    <span class="post-count">本文<%= wordcount(post.content) %>字</span>
+    /
+    <span class="post-count">阅读约<%= min2read(post.content) %>分钟</span> 
+
+  </div>
+<% } %>

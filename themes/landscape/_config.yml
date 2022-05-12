@@ -44,3 +44,5 @@ gitalk:
   admin: effine
   distractionFreeMode: true
 
+#是否开启字数统计（不需要使用，直接设置值为false，或注释掉）
+word_count: true
