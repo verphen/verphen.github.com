@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/reading/index.html</loc>
+    
+    <lastmod>2022-05-12T17:50:33.726Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2022/05/12/RichDadPoorDad/</loc>
     
     <lastmod>2022-05-12T15:14:27.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://effine.cn/riding/index.html</loc>
     
     <lastmod>2022-05-12T14:21:01.978Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/reading/index.html</loc>
-    
-    <lastmod>2022-05-12T14:21:01.977Z</lastmod>
     
   </url>
   
