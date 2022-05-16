@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://effine.cn/"/>
-  <updated>2022-05-12T15:14:27.000Z</updated>
+  <updated>2022-05-13T01:44:15.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《私域流量：0到1搭建私域流量池的方法论》</title>
+    <link href="http://effine.cn/2022/05/13/0To1PrivateDomainTraffic/"/>
+    <id>http://effine.cn/2022/05/13/0To1PrivateDomainTraffic/</id>
+    <published>2022-05-13T01:44:15.000Z</published>
+    <updated>2022-05-13T01:44:15.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>作者：祝福</p><p>阅读时需要问自己的问题：<br>。为什么要搭建私域流量？<br>。怎么搭建私域流量？<br>。怎么运营私域流量？<br>。怎么变现？搭建自己的MVP的项目做验证</p><p>本书上半部分阅读比较细，获得并记忆了作者传递的一些观点，下半部分则实在无法继续细读下去</p><p>如果是私域流量运营朋友圈时，别总是发商品，你也需要发你的生活状态，记录别人羡慕的生活，然后顺带推销你的产品</p><p>私域流量的本质是流量的所有权和使用权的归属问题</p><p>私域流量的本质不是收割用户，而是长期经营用户（私域流量视用户为朋友，卖货只是顺带的，而非视用户为韭菜）</p><p>将用户当人、当朋友、当成自己看待</p><p>思考：<br>。企微朋友圈用户点击不感兴趣的结果，是否有回调信息？<br>。怎么把私域的企微账号当着个人微信号来运营？<br>。做私域工具比直接运营私域更挣钱（如教人挣钱比直接挣钱更容易挣钱）<br>。私域工具给别人使用的时候，如果收集到的客户需求被采用，上线后可以给他们免费体验一段时间，在需求界面上可以给用户一定曝光或身份，让其觉得尊贵和重要<br>。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;作者：祝福&lt;/p&gt;
+&lt;p&gt;阅读时需要问自己的问题：&lt;br&gt;。为什么要搭建私域流量？&lt;br&gt;。怎么搭建私域流量？&lt;br&gt;。怎么运营私域流量？&lt;br&gt;。怎么变现？搭建自己的MVP的项目做验证&lt;/p&gt;
+&lt;p&gt;本书上半部分阅读比较细，获得并记忆了作者传递的一些观点，下半部分则实在无
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+      <category term="私域" scheme="http://effine.cn/tags/%E7%A7%81%E5%9F%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>《穷爸爸富爸爸》</title>
@@ -109,9 +138,9 @@ $ vi conf/zoo.cfg   # 新建并编辑conf/zoo.cfg文件(zookeeper配置文件，
       <category term="tools" scheme="http://effine.cn/categories/tools/"/>
     
     
-      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
-    
       <category term="zookeeper" scheme="http://effine.cn/tags/zookeeper/"/>
+    
+      <category term="zk" scheme="http://effine.cn/tags/zk/"/>
     
   </entry>
   
@@ -608,37 +637,6 @@ $ git show &amp;l
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="tag" scheme="http://effine.cn/tags/tag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 分支</title>
-    <link href="http://effine.cn/2015/10/23/GitBranch/"/>
-    <id>http://effine.cn/2015/10/23/GitBranch/</id>
-    <published>2015-10-23T14:35:35.000Z</published>
-    <updated>2022-05-12T14:21:01.679Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>$ git branch --help     # 查看关于git branch帮助</code></pre><p>[查看分支]</p><pre><code>$ git branch    # 查看本地分支（星号*标注为当前分支）$ git branch -r     # 查看所有远程[remote]分支$ git branch -a     # 查看所有[all]本地及远程分支$ git branch -v     # 查看各个分支最后的提交$ git branch -vv    # 在[-v]参数结果增添本地分支对应的远程分支</code></pre><p>[创建\切换\重命名分支]</p><pre><code>$ git branch &lt;new_branch&gt;       # 创建新分支(继承当前分支最新提交来创建)$ git branch &lt;new_branch&gt;  commit_id  # 以指定的提交版本commit_id来创建新分支$ git checkout &lt;branch&gt;     # 切换分支$ git checkout [commit_id] -b &lt;new_branch&gt;      # 继承当前分支最后一次提交(或指定某次提交)创建并切换到新分支$ git checkout &lt;commit_id&gt;      # 切换到某次提交，无分支信息；若再切换回分支则会丢弃切换之前的修改$ git checkout -b &lt;new_branch&gt; &lt;master&gt; # 继承master分支创建并切换新分支$ git branch -m &lt;branch&gt; &lt;new_branch&gt;       # 重命名分支</code></pre><p>[删除分支]</p><pre><code># 删除本地分支$ git branch [-d | -D] &lt;branch&gt;    -d      # 删除[delete]本地n支(存在修改或未合并删除失败,多个分支用空格分隔)    -D      # 忽略修改强制删除本地分支（多个分支用空格分隔）# 删除远程分支$ git branch -d -r origin/&lt;branch&gt;  # 删除远程分支$ git push origin :&lt;branch&gt;     # 冒号前面的空格不能少,即把空分支push到远程达到删除效果[since Git v1.5.0]$ git push origin --delete &lt;branch&gt;     # [since Git v1.7.0]</code></pre><p>[合并分支]</p><pre><code>$ git branch --merged   # 查看已合并的分支列表$ git branch --no-merged    # 查看未合并的分支列表$ git merge &lt;branch&gt;    # 合并其他分支到当前分支,发生冲突修复后再次提交</code></pre><p>[关联分支]</p><pre><code># 设置本地分支跟踪远程分支(与远程分支关联)，分支设置跟踪后直接git pull、git push即可直接查找到远程分支进行操作$ git branch --set-upstream-to=origin/&lt;branch&gt; &lt;branch&gt;  (推荐)$ git branch --set-upstream &lt;branch&gt; &lt;origin/branch&gt;    </code></pre><p>本地跟踪远程分支，会在当前项目的config文件产生如下配置</p><pre><code>[branch &quot;master&quot;]    remote = origin    merge = refs/heads/master</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code&gt;$ git branch --help     # 查看关于git branch帮助
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;[查看分支]&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ git branch    # 查看本地分支（星号*标注为当前分支）
-$ git bran
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-      <category term="branch" scheme="http://effine.cn/tags/branch/"/>
     
   </entry>
   
