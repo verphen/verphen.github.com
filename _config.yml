@@ -84,6 +84,15 @@ comment_enable: true
 # 评论插件
 # comment_plugin: disqus
 
+
+# 文章链接新标签页打开
+hexo_external_link:
+  enable: true
+  enable_base64_encode: true
+  url_param_name: 'u'
+  target_blank: true
+
+
 # 404
 permalink_defaults: /404.html
 
