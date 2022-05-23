@@ -48,7 +48,7 @@ git format-patch -X              # 根据提交的log生成patch，X为数字，
 
  
 
-Git工作流：https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md#一译序
+
 
  
 
@@ -93,14 +93,8 @@ git fsck
 相同分支开发，别git pull代码，使用：git rebase 远程分支 (保证自己的提交不是合并，而是顺序的)
 
 
+ 
 
-
-   git的回滚操作命令
-
-
-
-
-   github gist 
 
 
 
@@ -112,13 +106,4 @@ git fsck
 
 
 
-
-
-安装gitosis- http://blog.csdn.net/king_sundi/article/details/7065525
-比较
-
-gitosis和gitolite
-
-
-
-gitosis分支权限管理 
+ 
