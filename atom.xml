@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://effine.cn/"/>
-  <updated>2022-05-13T01:44:15.000Z</updated>
+  <updated>2022-05-23T09:32:09.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,6 +15,61 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一文讲透微服务架构（转）</title>
+    <link href="http://effine.cn/2022/05/23/MicroserviceArchitecture4OneArticle/"/>
+    <id>http://effine.cn/2022/05/23/MicroserviceArchitecture4OneArticle/</id>
+    <published>2022-05-23T09:32:09.000Z</published>
+    <updated>2022-05-23T09:32:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者以轻松风趣的语言将微服务的整个演变流程讲得十分透彻，可以作为微服务搭建的教科书，所以转载过来供大家参考阅读，文中涉及的技术点可以扩展研究，对自己技术能力的提升十分有益。</p><p>  原文链接：<a href="https://www.cnblogs.com/skabyy/p/11396571.html">https://www.cnblogs.com/skabyy/p/11396571.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  作者以轻松风趣的语言将微服务的整个演变流程讲得十分透彻，可以作为微服务搭建的教科书，所以转载过来供大家参考阅读，文中涉及的技术点可以扩展研究，对自己技术能力的提升十分有益。&lt;/p&gt;
+&lt;p&gt;  原文链接：&lt;a href=&quot;https://www.cnblogs.com/s
+      
+    
+    </summary>
+    
+      <category term="架构" scheme="http://effine.cn/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="架构" scheme="http://effine.cn/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+      <category term="微服务" scheme="http://effine.cn/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《中国大趋势4：中国经济未来十年》</title>
+    <link href="http://effine.cn/2022/05/17/ChinaTrend4FutureTenYears/"/>
+    <id>http://effine.cn/2022/05/17/ChinaTrend4FutureTenYears/</id>
+    <published>2022-05-17T03:45:11.000Z</published>
+    <updated>2022-05-17T03:45:11.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者：高连奎<br>  出版时间：2012年2月</p><p>高福利社会需要高税收来支持</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;  作者：高连奎&lt;br&gt;  出版时间：2012年2月&lt;/p&gt;
+&lt;p&gt;高福利社会需要高税收来支持&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>《私域流量：0到1搭建私域流量池的方法论》</title>
@@ -566,77 +621,6 @@ $ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="config" scheme="http://effine.cn/tags/config/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Stash</title>
-    <link href="http://effine.cn/2015/11/05/GitStash/"/>
-    <id>http://effine.cn/2015/11/05/GitStash/</id>
-    <published>2015-11-05T06:42:43.000Z</published>
-    <updated>2022-05-12T14:21:01.680Z</updated>
-    
-    <content type="html"><![CDATA[<p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p><pre><code>$ git stash --help # 查看帮助$ git stash     # 将当前的改变暂存起来$ git stash save [message]  # 暂存当前改变，且为暂存添加描述信息$ git stash list # 查看暂存列表$ git stash apply # 恢复最近的暂存，不删除暂存$ git stash pop # 恢复最近的暂存，并删除暂存$ git stash drop# 删除最近的暂存 $ git stash clear       # 删除所有暂存$ git stash show [&lt;stash&gt;]       # 显示最近的暂存(或指定具体的暂存)  eg: git stash show -p stash@&#123;1&#125;  # 显示第二次暂存文件的具体改变# 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支$ git stash branch &lt;branchname&gt; [&lt;stash&gt;]   </code></pre><span id="more"></span><p>$ git stash create</p><p>Create a stash (which is a regular commit object) and return its object name, without storing it anywhere in the ref namespace. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p><p>$ git stash store</p><p>Store a given stash created via git stash create (which is a dangling merge commit) in the stash ref, updating the stash reflog. This is intended to be useful for scripts. It is probably not the command you want to use; see “save” above.</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ git stash --help 		# 查看帮助
-$ git stash     # 将当前的改变暂存起来
-$ git stash save [message]  # 暂存当前改变，且为暂存添加描述信息
-$ git stash list 		# 查看暂存列表
-
-$ git stash apply 		# 恢复最近的暂存，不删除暂存
-$ git stash pop 		# 恢复最近的暂存，并删除暂存
-$ git stash drop		# 删除最近的暂存 
-$ git stash clear       # 删除所有暂存
-
-$ git stash show [&amp;lt;stash&amp;gt;]       # 显示最近的暂存(或指定具体的暂存)
-  eg: git stash show -p stash@&amp;#123;1&amp;#125;  # 显示第二次暂存文件的具体改变
-
-# 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支
-$ git stash branch &amp;lt;branchname&amp;gt; [&amp;lt;stash&amp;gt;]   
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-      <category term="stash" scheme="http://effine.cn/tags/stash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git 标签</title>
-    <link href="http://effine.cn/2015/11/04/GitTag/"/>
-    <id>http://effine.cn/2015/11/04/GitTag/</id>
-    <published>2015-11-04T07:24:30.000Z</published>
-    <updated>2022-05-12T14:21:01.680Z</updated>
-    
-    <content type="html"><![CDATA[<pre><code>$ git tag --help # 查看帮助</code></pre><p>[查看标签]</p><pre><code>$ git tag [-l [regular]]# 查看所有标签列表[list [正则过滤结果]]$ git show &lt;tag-name&gt; # 查看标签tag-name信息</code></pre><p>[创建&#x2F;切换标签]</p><pre><code>$ git tag &lt;v1.0&gt; # 创建轻量级标签v1.0$ git tag &lt;tag-name&gt; &lt;commitID&gt; # 指定CommitID处创建标签tag-name$ git tag [-a] &lt;tag-name&gt; -m &quot;&lt;info&gt;&quot; # 创建待注释[annotate]信息info的标签tag-name$ git checkout &lt;tag-name&gt; # 切换状态到指定标签提交处</code></pre><p>[删除标签]</p><pre><code>$ git tag -d &lt;tag-name&gt; # 删除标签tag-name(多个标签用空格分隔)$ git push remote_name  :refs/tags/&lt;tag-name&gt;# 删除远程标签(冒号前的空格不能省略)</code></pre><p>[获取&#x2F;推送远程标签]</p><pre><code>$ git pull [remote_name] --tags # 获取远程所有标签(remote_name可选)$ git push [remote_name] --tags # 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)$ git push [remote_name] &lt;tag-name&gt;# 将标签tag-name推送到远程</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;pre&gt;&lt;code&gt;$ git tag --help 	# 查看帮助
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;[查看标签]&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ git tag [-l [regular]]		# 查看所有标签列表[list [正则过滤结果]]
-$ git show &amp;l
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-      <category term="tag" scheme="http://effine.cn/tags/tag/"/>
     
   </entry>
   

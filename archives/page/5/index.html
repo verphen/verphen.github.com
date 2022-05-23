@@ -69,6 +69,183 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-GitRemote" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/17/GitRemote/" class="article-date">
+  <time datetime="2015-11-17T07:08:24.000Z" itemprop="datePublished">2015/11/17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/git/">git</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文335字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/17/GitRemote/" target="_blank">Git Remote</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p>
+<pre><code>$ git remote        # 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)
+$ git remote &lt;-v | --verbose&gt;     # 查看跟踪仓库别名及地址
+$ git remote show &lt;origin&gt;    # 查看跟踪仓库地址及分支情况
+
+$ git remote add &lt;origin&gt; &lt;url&gt;   # 添加跟踪仓库别名及对应的跟踪地址 
+
+# 更新指定跟踪仓库名的地址
+$ git remote set-url [--push] &lt;origin&gt; &lt;newurl&gt; [&lt;oldurl&gt;] 
+$ git remote set-url --add &lt;origin&gt; &lt;newurl&gt;
+$ git remote set-url --delete &lt;origin&gt; &lt;url&gt;
+    [--push]                # manipulate push URLs(操作push的URL)
+    [--add]                # add URL
+    [--delete]              # delete URLs
+
+$ git remote &lt;remove|rm&gt; &lt;origin&gt;     # 删除指定的跟踪仓库名
+$ git remote rename &lt;old&gt; &lt;new&gt;       # 重命名跟踪仓库名
+
+# 设置或删除跟踪仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行
+$ git remote set-head &lt;origin&gt; (-a | --auto | -d | --delete | &lt;branch&gt;) 
+    [-a|--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote
+    [-d|--delete]       # delete refs/remotes/&lt;name&gt;/HEAD
+
+# 清理存在过但现在不存在的本地跟踪分支的引用
+$ git remote prune [&lt;options&gt;] &lt;origin&gt; 
+    [-n|--dry-run]         # dry run(试运行，彩排)
+</code></pre>
+
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/11/17/GitRemote/" data-id="cl38i4wwg00cu6dgtfrfza4gm" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2015/11/17/GitRemote/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/remote/" rel="tag">remote</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
+    <article id="post-HexoTongji" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/16/HexoTongji/" class="article-date">
+  <time datetime="2015-11-16T09:33:44.000Z" itemprop="datePublished">2015/11/16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/tools/">tools</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文301字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/16/HexoTongji/" target="_blank">Hexo 博客配置访问统计</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a target="_blank" rel="noopener" href="http://tongji.baidu.com/">百度统计</a>和<a target="_blank" rel="noopener" href="http://cnzz.com/">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p>
+<pre><code># 以下内容来源网络
+1.编辑文件 themes/landscape/_config.yml,使用&quot;#&quot;注释原来的google analytics，添加百度统计配置行
+
+    baidu_tongji: true      # 百度统计
+
+2.新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下
+
+    &lt;% if (theme.baidu_tongji) &#123; %&gt;
+    # 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        # 申请的百度统计代码
+    &lt;/script&gt;
+    &lt;% &#125; %&gt;
+
+3.编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;div class=&quot;outer&quot;&gt;&lt;/div&gt; 标签内添加
+    
+    &lt;%- partial(&quot;baidu_tongji&quot;) %&gt;
+
+4.重新生产部署站点即可。
+</code></pre>
+<p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>
+
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/11/16/HexoTongji/" data-id="cl38i4wwe00cq6dgt7jyobdh0" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2015/11/16/HexoTongji/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/" rel="tag">hexo</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
     <article id="post-EclipseTasks" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/11/15/EclipseTasks/" class="article-date">
@@ -246,180 +423,9 @@ $ git config  --global --system core.ignorecase &lt;false|true&gt;   # 设置Git
 
 
   
-    <article id="post-GitStash" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/05/GitStash/" class="article-date">
-  <time datetime="2015-11-05T06:42:43.000Z" itemprop="datePublished">2015/11/05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文355字</span>
-    /
-    <span class="post-count">阅读约1分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/05/GitStash/" target="_blank">Git Stash</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>当你正在实现一个未完成的功能feature时，突然有个优先级更高的任务或者坑闯入你的任务栈，你不得不移情别恋到新的任务，然后，手头的修改又不足以做一个完整的commit，此时就需要暂存statsh你当前的改变。</p>
-<pre><code>$ git stash --help 		# 查看帮助
-$ git stash     # 将当前的改变暂存起来
-$ git stash save [message]  # 暂存当前改变，且为暂存添加描述信息
-$ git stash list 		# 查看暂存列表
-
-$ git stash apply 		# 恢复最近的暂存，不删除暂存
-$ git stash pop 		# 恢复最近的暂存，并删除暂存
-$ git stash drop		# 删除最近的暂存 
-$ git stash clear       # 删除所有暂存
-
-$ git stash show [&lt;stash&gt;]       # 显示最近的暂存(或指定具体的暂存)
-  eg: git stash show -p stash@&#123;1&#125;  # 显示第二次暂存文件的具体改变
-
-# 创建并切换分支，且将最近的暂存(默认)或具体某次暂存移动到新分支
-$ git stash branch &lt;branchname&gt; [&lt;stash&gt;]   
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2015/11/05/GitStash/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/05/GitStash/" data-id="cl38i4ww900cg6dgth2c1feaz" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2015/11/05/GitStash/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stash/" rel="tag">stash</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
-    <article id="post-GitTag" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/11/04/GitTag/" class="article-date">
-  <time datetime="2015-11-04T07:24:30.000Z" itemprop="datePublished">2015/11/04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/git/">git</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文256字</span>
-    /
-    <span class="post-count">阅读约1分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/04/GitTag/" target="_blank">Git 标签</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>$ git tag --help 	# 查看帮助
-</code></pre>
-<p>[查看标签]</p>
-<pre><code>$ git tag [-l [regular]]		# 查看所有标签列表[list [正则过滤结果]]
-$ git show &lt;tag-name&gt; 	# 查看标签tag-name信息
-</code></pre>
-<p>[创建&#x2F;切换标签]</p>
-<pre><code>$ git tag &lt;v1.0&gt; 	# 创建轻量级标签v1.0
-$ git tag &lt;tag-name&gt; &lt;commitID&gt; 	# 指定CommitID处创建标签tag-name
-$ git tag [-a] &lt;tag-name&gt; -m &quot;&lt;info&gt;&quot; 	# 创建待注释[annotate]信息info的标签tag-name
-
-$ git checkout &lt;tag-name&gt; 	# 切换状态到指定标签提交处
-</code></pre>
-<p>[删除标签]</p>
-<pre><code>$ git tag -d &lt;tag-name&gt; 	# 删除标签tag-name(多个标签用空格分隔)
-$ git push remote_name  :refs/tags/&lt;tag-name&gt;	# 删除远程标签(冒号前的空格不能省略)
-</code></pre>
-<p>[获取&#x2F;推送远程标签]</p>
-<pre><code>$ git pull [remote_name] --tags 	# 获取远程所有标签(remote_name可选)
-$ git push [remote_name] --tags 	# 推送所有未推送到远程的本地标签(注:存在两条横线，横线与tags之间没有空格)
-$ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
-</code></pre>
-
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/11/04/GitTag/" data-id="cl38i4ww700cd6dgt0p1l6eph" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2015/11/04/GitTag/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/" rel="tag">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tag/" rel="tag">tag</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="extend next" rel="next" href="/archives/page/6/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/archives/page/4/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/3/">3</a><a class="page-number" href="/archives/page/4/">4</a><span class="page-number current">5</span><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/21/">21</a><a class="extend next" rel="next" href="/archives/page/6/">Next &amp;raquo;</a>
     </nav>
   
 </section>
@@ -433,7 +439,7 @@ $ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -443,6 +449,14 @@ $ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/23/MicroserviceArchitecture4OneArticle/">一文讲透微服务架构（转）</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/17/ChinaTrend4FutureTenYears/">《中国大趋势4：中国经济未来十年》</a>
+          </li>
         
           <li>
             <a href="/2022/05/13/0To1PrivateDomainTraffic/">《私域流量：0到1搭建私域流量池的方法论》</a>
@@ -476,14 +490,6 @@ $ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
             <a href="/2016/12/29/TeamCityInstall/">TeamCity安装</a>
           </li>
         
-          <li>
-            <a href="/2016/07/16/GradleCommands/">Gradle Commands</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/15/TrycatchReturn/">Java try catch返回值分析</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -493,7 +499,7 @@ $ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 11.25px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11.25px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 12.5px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -532,7 +538,7 @@ $ git push [remote_name] &lt;tag-name&gt;		# 将标签tag-name推送到远程
 
       
          &nbsp; | &nbsp;
-         <span class="post-count">本站总共38.9k字</span>
+         <span class="post-count">本站总共39.1k字</span>
       
   
       &nbsp; | &nbsp;

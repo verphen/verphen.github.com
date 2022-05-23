@@ -69,6 +69,187 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-IntegerPoint" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/22/IntegerPoint/" class="article-date">
+  <time datetime="2015-06-22T09:38:25.000Z" itemprop="datePublished">2015/06/22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文510字</span>
+    /
+    <span class="post-count">阅读约2分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/22/IntegerPoint/" target="_blank">Integer的对等比较</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>分析之前，先猜想一下看看下面code snippets的输出：</p>
+<pre><code>package cn.effine.test;
+
+public class IntegerTest &#123;
+    
+    public static void main(String[] args) &#123;
+        
+        Integer i1 = 2;
+        Integer i2 = 2;
+        System.err.println(&quot;i1 == i2 : &quot; + (i1 == i2));
+        
+        Integer i3 = new Integer(2);
+        Integer i4 = new Integer(2);
+        System.err.println(&quot;i3 == i4: &quot; + (i3 == i4));
+        
+        Integer i5 = 128;
+        Integer i6 = 128;
+        System.err.println(&quot;i5 == i6 : &quot; + (i5 == i6));
+        System.err.println(&quot;i5、i6的inValue()方法等值比较： &quot; + (i5.intValue() == i6.intValue()));
+        System.err.println(&quot;i5、i6的equals的比较： &quot; + i5.equals(i6));
+
+    &#125;
+&#125;
+</code></pre>
+        
+          <p class="article-more-link">
+            <a href="/2015/06/22/IntegerPoint/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/06/22/IntegerPoint/" data-id="cl38i4wvt00b46dgtflbzcjkr" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2015/06/22/IntegerPoint/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Integer/" rel="tag">Integer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
+    <article id="post-LinuxSingleUser" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/06/22/LinuxSingleUser/" class="article-date">
+  <time datetime="2015-06-21T17:16:28.000Z" itemprop="datePublished">2015/06/22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/linux/">linux</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文235字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/06/22/LinuxSingleUser/" target="_blank">linux单用户模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>linux单用户模式使用场景：</p>
+<ul>
+<li>忘记所有密码</li>
+<li>错误的修改&#x2F;etc&#x2F;inittab文件，导致系统reboot重启不起来</li>
+<li>安装没有图形界面的linux（centos-minimal）,而系统默认图形界面启动</li>
+</ul>
+<p>进入单用户模式：</p>
+<ul>
+<li><p>grub启动时，按e键；然后利用键盘上下键，将光标定位到</p>
+<pre><code>  kernel /boot/vmlinuz-2.6.11-1.1369_FC4 ro root=LABEL=/1 rhgb quiet
+</code></pre>
+</li>
+<li><p>再按一下e键，进入编辑这行，然后在行尾输入: linux single</p>
+<pre><code>  kernel /boot/vmlinuz-2.6.11-1.1369_FC4 ro root=LABEL=/1 rhgb quiet linux single
+</code></pre>
+</li>
+<li><p>按回车结束编辑并返回</p>
+</li>
+<li><p>按一下b键重新启动，进入系统进行相关操作</p>
+</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2015/06/22/LinuxSingleUser/#more">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2015/06/22/LinuxSingleUser/" data-id="cl38i4wvu00b76dgt2ejgccev" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2015/06/22/LinuxSingleUser/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/inittab/" rel="tag">inittab</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
     <article id="post-SSHInstall" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/06/19/SSHInstall/" class="article-date">
@@ -215,176 +396,9 @@ $ service sshd &lt;start|stop|restart&gt; 		# 重启SSH[]
 
 
   
-    <article id="post-TailCommand" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/20/TailCommand/" class="article-date">
-  <time datetime="2015-05-20T08:54:22.000Z" itemprop="datePublished">2015/05/20</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文296字</span>
-    /
-    <span class="post-count">阅读约1分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/20/TailCommand/" target="_blank">tail command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <img src="/imgs/linux/tail.png" alt="tail command" />
-
-<p>每次部署项目上线后，通过tomcat的日志文件catalina.out监控项目的运行情况.</p>
-<pre><code>$ tail -f &lt;tomcat-dir&gt;/logs/catalina.out   	# 屏幕即不断追加打印tomcat的运行日志
-</code></pre>
-<p>当然，强制关闭打印屏幕 ctrl + c 即可. </p>
-<!--  more  -->
-
-<p>tail 命令基本用法：</p>
-<pre><code>$ tail [参数] 文件地址  	# 无参数默认打印文件末尾10行数据
-</code></pre>
-<p>tail命令主要是从指定点（默认末尾10行）开始将文件内容写到标准输出,常用于查看日志文件，具体参数：</p>
-<pre><code>-f : 循环读取(常用于监控应用运行日志)
--n number: 自定义显示行数
-</code></pre>
-<p>如果number前带正号(“+”)，则从文件头部第number行开始读取；若带负号（”-“）则从文件尾部倒数number行开始读取; number不指定符号默认为负号,即从尾部倒数number行开始读取内容。</p>
-<pre><code>$ tail -n +5 catalina.out 		# 从catalina.out文件顶部第5行开始读取内容
-
-$ tail -n -5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
-
-$ tail -n 5 catalina.out 		# 从catalina.out文件尾部倒数5行开始读取内容
-</code></pre>
-<p>具体参数参考：</p>
-<pre><code>$ man mail		# getting help
-</code></pre>
-
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/05/20/TailCommand/" data-id="cl38i4wvp00ax6dgteea65vst" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2015/05/20/TailCommand/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/command/" rel="tag">command</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
-    <article id="post-RsyncCommand" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/05/08/RsyncCommand/" class="article-date">
-  <time datetime="2015-05-08T06:27:12.000Z" itemprop="datePublished">2015/05/08</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/linux/">linux</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文596字</span>
-    /
-    <span class="post-count">阅读约2分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/05/08/RsyncCommand/" target="_blank">rsync command</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>rsync - remote synchronized 远程同步工具；采用增量压缩方式进行同步，提高了文件同步的效率。</p>
-<p>以下采用centos进行讲解，其他平台原理相同，自行参考研究</p>
-<p>既然设计文件的远程同步，需要两台服务器s1\s2</p>
-<p>环境描述：	</p>
-<pre><code>操作系统： centos 
-serverA: 192.168.0.140 待同步的服务器（源服务器）
-serverB: 192.168.0.141 同步到的服务器 (目标服务器)
-
-需求: 同步serverA的目录 /home/test 到 serverB 的相同目录
-</code></pre>
-        
-          <p class="article-more-link">
-            <a href="/2015/05/08/RsyncCommand/#more">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2015/05/08/RsyncCommand/" data-id="cl38i4wvn00aq6dgtbnfh8m43" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2015/05/08/RsyncCommand/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rsync/" rel="tag">rsync</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/20/">20</a><a class="extend next" rel="next" href="/archives/page/10/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/archives/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/archives/page/10/">10</a><a class="page-number" href="/archives/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/21/">21</a><a class="extend next" rel="next" href="/archives/page/10/">Next &amp;raquo;</a>
     </nav>
   
 </section>
@@ -398,7 +412,7 @@ serverB: 192.168.0.141 同步到的服务器 (目标服务器)
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -408,6 +422,14 @@ serverB: 192.168.0.141 同步到的服务器 (目标服务器)
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/05/23/MicroserviceArchitecture4OneArticle/">一文讲透微服务架构（转）</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/17/ChinaTrend4FutureTenYears/">《中国大趋势4：中国经济未来十年》</a>
+          </li>
         
           <li>
             <a href="/2022/05/13/0To1PrivateDomainTraffic/">《私域流量：0到1搭建私域流量池的方法论》</a>
@@ -441,14 +463,6 @@ serverB: 192.168.0.141 同步到的服务器 (目标服务器)
             <a href="/2016/12/29/TeamCityInstall/">TeamCity安装</a>
           </li>
         
-          <li>
-            <a href="/2016/07/16/GradleCommands/">Gradle Commands</a>
-          </li>
-        
-          <li>
-            <a href="/2016/06/15/TrycatchReturn/">Java try catch返回值分析</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -458,7 +472,7 @@ serverB: 192.168.0.141 同步到的服务器 (目标服务器)
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 10px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 11.25px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13.75px;">blog</a> <a href="/tags/book/" style="font-size: 13.75px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13.75px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13.75px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18.75px;">git</a> <a href="/tags/github/" style="font-size: 11.25px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12.5px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 20px;">java</a> <a href="/tags/linux/" style="font-size: 16.25px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13.75px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12.5px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11.25px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12.5px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11.25px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11.25px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11.25px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11.25px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11.25px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 15px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17.5px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11.25px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11.25px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13.75px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 12.5px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -497,7 +511,7 @@ serverB: 192.168.0.141 同步到的服务器 (目标服务器)
 
       
          &nbsp; | &nbsp;
-         <span class="post-count">本站总共38.9k字</span>
+         <span class="post-count">本站总共39.1k字</span>
       
   
       &nbsp; | &nbsp;
