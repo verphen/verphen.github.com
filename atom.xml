@@ -17,7 +17,7 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>一文讲透微服务架构（转）</title>
+    <title>一文讲透微服务架构</title>
     <link href="http://effine.cn/2022/05/23/MicroserviceArchitecture4OneArticle/"/>
     <id>http://effine.cn/2022/05/23/MicroserviceArchitecture4OneArticle/</id>
     <published>2022-05-23T09:32:09.000Z</published>
@@ -542,6 +542,37 @@ $ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
   </entry>
   
   <entry>
+    <title>Git版本管理</title>
+    <link href="http://effine.cn/2015/11/17/GitVersionManage/"/>
+    <id>http://effine.cn/2015/11/17/GitVersionManage/</id>
+    <published>2015-11-17T06:53:27.000Z</published>
+    <updated>2022-05-23T16:53:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>Git知识是程序员必备的技能，收集了网上比较好的Git教程供大家学习：</p><ul><li><p>官方网站：<a href="https://git-scm.com/">https://git-scm.com/</a></p></li><li><p>猴子都能懂的Git入门：<a href="https://backlog.com/git-tutorial/cn/">https://backlog.com/git-tutorial/cn/</a></p></li><li><p>图解Git： <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a> </p></li><li><p>Git工作流：<a href="https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md">https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md</a></p></li><li><p>易百教程： <a href="https://www.yiibai.com/git">https://www.yiibai.com/git</a></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Git知识是程序员必备的技能，收集了网上比较好的Git教程供大家学习：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;官方网站：&lt;a href=&quot;https://git-scm.com/&quot;&gt;https://git-scm.com/&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;猴子都能懂的G
+      
+    
+    </summary>
+    
+      <category term="git" scheme="http://effine.cn/categories/git/"/>
+    
+    
+      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
+    
+      <category term="git" scheme="http://effine.cn/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Hexo 博客配置访问统计</title>
     <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
     <id>http://effine.cn/2015/11/16/HexoTongji/</id>
@@ -591,36 +622,6 @@ $ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="eclipse" scheme="http://effine.cn/tags/eclipse/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Config</title>
-    <link href="http://effine.cn/2015/11/10/GitConfig/"/>
-    <id>http://effine.cn/2015/11/10/GitConfig/</id>
-    <published>2015-11-10T10:17:52.000Z</published>
-    <updated>2022-05-12T14:21:01.681Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git配置存在适用范围：</p><ul><li>项目范围： <code>git config</code>    # 保存在项目根目录.git&#x2F;config文件</li><li>系统用户范围： <code>git config - -global</code>      # 保存在用户根目录.gitconfig文件</li></ul><p>便于使用，我们通常配置系统用户范围；一些具体配置如下</p><pre><code># 列出所有配置,grep可过滤具体Command命令$ git config --list [| grep command]$ git config -l [| grep command]$ git config --global user.name &quot;username&quot;     # 设置全局用户名(提交历史可见)$ git config --global user.email &quot;email&quot;     # 设置全局邮箱(提交历史可见)$ git config --global color.ui &lt;true|false&gt;   # Git会显示适当地颜色[打开|关闭]$ git config --global core.editor &lt;emacs&gt;       # 设置文本编辑器emacs$ git config --global merge.tool &lt;vimdiff&gt;      # 设置差异分析工具vimdiff# 设置命令别名；命令别名列举(可自定义其他别名)$ git config --global alias.&lt;aliasname&gt; &lt;command&gt;   # 使用别名aliasname代替command$ git config --global --unset alias.&lt;aliasname&gt;   # 取消别名aliasname设置    &gt; status [st]    &gt; commit [ci]    &gt; checkout [co]    &gt; branch [br]    &gt; diff [df]    &gt; cherry-pick [cp]# 配置完别名之后，将在对应配置文件产生记录(可直接在该文件配置)    [alias]        st = status        ci = commit        br = branch        co = checkout        df = diff       cp = cherry-pick# 处理不同平台换行操作符(如警告: warning: LF will be replaced by CRLF in ...)$ git config  --global  core.autocrlf &lt;false|true&gt; $ git config  --global --unset-all core.ignorecase    # 取消所有关于是否忽略Git大小写的设置$ git config  --global --system core.ignorecase &lt;false|true&gt;   # 设置Git是否忽略大小写</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Git配置存在适用范围：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;项目范围： &lt;code&gt;git config&lt;/code&gt;    # 保存在项目根目录.git&amp;#x2F;config文件&lt;/li&gt;
-&lt;li&gt;系统用户范围： &lt;code&gt;git config - -global&lt;/code
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-      <category term="config" scheme="http://effine.cn/tags/config/"/>
     
   </entry>
   

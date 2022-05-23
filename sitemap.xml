@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/2015/11/17/GitVersionManage/</loc>
+    
+    <lastmod>2022-05-23T16:53:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2022/05/23/MicroserviceArchitecture4OneArticle/</loc>
     
     <lastmod>2022-05-23T09:32:09.000Z</lastmod>
