@@ -22,3 +22,27 @@ gradew和gradle.bat分别是linux的shell脚本和windows批处理文件，它�
     /**
     * 多行注释
     */
+
+
+
+
+gradle通过pom.xml生成的grade项目文件gradlew及gradle.bat文件的用处
+           http://sulong.me/2011/01/26/greate_gradle
+           http://sulong.me/2011/08/03/use_cobertura_in_gradle_in_a_better_way
+
+gradle学习：
+      http://my.oschina.net/zjzhai/blog/220028
+     http://pkaq.github.io/gradledoc/docs/userguide/userguide.html
+     http://www.blogjava.net/wldandan/archive/2012/07/05/382246.html
+     http://bloodwolf-china.iteye.com/blog/1779681
+
+ gradle2和1的区别
+http://blog.csdn.net/column/details/gradle-translation.html?&page=2
+http://gradledoc.qiniudn.com/1.12/userguide/userguide.html
+http://www.blogjava.net/wldandan/archive/2012/07/05/382246.html
+
+http://pkaq.github.io/2013/12/03/gradleforjenkins/
+http://www.cnblogs.com/CloudTeng/p/3417762.html?ADUIN=851474818&ADSESSION=1410338045&ADTAG=CLIENT.QQ.5353_.0&ADPUBNO=26381
+
+
+
