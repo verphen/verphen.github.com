@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://effine.cn/opus/index.html</loc>
+    
+    <lastmod>2022-05-24T07:15:24.332Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://effine.cn/2022/05/24/EfficientReading/</loc>
     
     <lastmod>2022-05-24T02:09:29.000Z</lastmod>
@@ -54,13 +61,6 @@
     <loc>http://effine.cn/riding/index.html</loc>
     
     <lastmod>2022-05-12T14:21:01.978Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://effine.cn/opus/index.html</loc>
-    
-    <lastmod>2022-05-12T14:21:01.976Z</lastmod>
     
   </url>
   
