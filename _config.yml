@@ -87,7 +87,7 @@ comment_enable: true
 
 # 文章链接新标签页打开
 hexo_external_link:
-  enable: true
+  enable: false # 打开后图片链接也是新标签页打开了
   enable_base64_encode: true
   url_param_name: 'u'
   target_blank: true
