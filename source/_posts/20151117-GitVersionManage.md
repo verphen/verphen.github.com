@@ -18,3 +18,5 @@ Git知识是程序员必备的技能，收集了网上比较好的Git教程供�
 -  Git工作流：https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md
 
 -  易百教程： https://www.yiibai.com/git
+
+-  Github作者贡献：https://geeeeeeeeek.github.io/git-recipes/
