@@ -108,7 +108,7 @@
 <p>使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:<br><code>imp username/password@netname file=path\filename.dmp log=C:\log.log full=y</code>（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。</p>
         
           <p class="article-more-link">
-            <a href="/2013/11/06/OracleCommonCommand/#more">阅读全文</a>
+            <a href="/2013/11/06/OracleCommonCommand/#more" target="_blank">阅读全文</a>
           </p>
         
       
@@ -183,7 +183,7 @@
 </ol>
         
           <p class="article-more-link">
-            <a href="/2012/11/15/OracleForgetPasswd/#more">阅读全文</a>
+            <a href="/2012/11/15/OracleForgetPasswd/#more" target="_blank">阅读全文</a>
           </p>
         
       
@@ -374,26 +374,5 @@
     <img style="position: absolute;z-index:1; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
   </a>
 
-
-        <script src="//cdn.jsdelivr.net/npm/js-base64/base64.min.js"></script>
-        <script>
-        const hasAttr = (e,a) => a.some(_=> e.attr(_)!==undefined);
-        $('a').each(function() {
-          const $this = $(this);
-          if(hasAttr($this,["data-fancybox","ignore-external-link"])) return;
-          const href = $this.attr('href');
-          if (href && href.match('^((http|https|thunder|qqdl|ed2k|Flashget|qbrowser|ftp|rtsp|mms)://)')) {
-            const strs = href.split('/');
-            if (strs.length >= 3) {
-                const host = strs[2];
-                if (host !== '' || window.location.host) {
-                    $this.attr('href', '/go.html?u='+Base64.encode(href)+'').attr('rel', 'external nofollow noopener noreferrer');
-                    if (true) {
-                        $this.attr('target', '_blank');
-                    }
-                }
-            }
-          }
-        });
-        </script></body>
+</body>
 </html>
