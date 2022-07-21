@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://effine.cn/"/>
-  <updated>2022-05-24T02:09:29.000Z</updated>
+  <updated>2022-05-26T15:53:06.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《Java编程的逻辑》-二进制</title>
+    <link href="http://effine.cn/2022/05/26/ProgrammingLogic4Java/"/>
+    <id>http://effine.cn/2022/05/26/ProgrammingLogic4Java/</id>
+    <published>2022-05-26T15:53:06.000Z</published>
+    <updated>2022-05-26T15:53:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者：马俊昌<br>  出版时间：2018年1月</p><img src="/imgs/article/programmingLogic4Java.png" alt="Java编程的逻辑" /> <p>记录阅读中缺失或遗忘的知识点，强化记忆；</p><span id="more"></span><p>。JDK7+提供十进制转换为其他进制方法：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 十转换为二进制，结果: 1111011</span></span><br><span class="line">Integer.toBinaryString(<span class="number">123</span>);  </span><br><span class="line">Long.toBinaryString(<span class="number">123L</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 十转换为八进制，结果: 173</span></span><br><span class="line">Integer.toOctalString(<span class="number">123</span>); </span><br><span class="line">Long.toOctalString(<span class="number">123L</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 十转换为十六进制，结果: 7b</span></span><br><span class="line">Integer.toHexString(<span class="number">123</span>); </span><br><span class="line">Long.toHexString(<span class="number">123L</span>); </span><br><span class="line"></span><br><span class="line"><span class="comment">// 十转换为指定进制（如十三进制），结果: 96</span></span><br><span class="line">Integer.toString(<span class="number">123</span>, <span class="number">13</span>); </span><br><span class="line">Long.toString(<span class="number">123L</span>, <span class="number">13</span>); </span><br></pre></td></tr></table></figure><p>.##### java补码 源码</p><p>。按位操作</p><p>  位运算有移位运算和逻辑运算。移位有以下几种。<br>  1）左移：操作符为&lt;&lt;，向左移动，右边的低位补0，高位的就舍弃掉了，将二进制看作整数，左移1位就相当于乘以2。2）无符号右移：操作符为&gt;&gt;&gt;，向右移动，右边的舍弃掉，左边补0。<br>  3）有符号右移：操作符为&gt;&gt;，向右移动，右边的舍弃掉，左边补什么取决于原来最高位是什么，原来是1就补1，原来是0就补0，将二进制看作整数，右移1位相当于除以2。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  作者：马俊昌&lt;br&gt;  出版时间：2018年1月&lt;/p&gt;
+&lt;img src=&quot;/imgs/article/programmingLogic4Java.png&quot; alt=&quot;Java编程的逻辑&quot; /&gt; 
+
+
+&lt;p&gt;记录阅读中缺失或遗忘的知识点，强化记忆；&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>《高效阅读》</title>
@@ -601,31 +627,6 @@ $ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
       <category term="tools" scheme="http://effine.cn/tags/tools/"/>
     
       <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 博客配置访问统计</title>
-    <link href="http://effine.cn/2015/11/16/HexoTongji/"/>
-    <id>http://effine.cn/2015/11/16/HexoTongji/</id>
-    <published>2015-11-16T09:33:44.000Z</published>
-    <updated>2022-05-12T14:21:01.682Z</updated>
-    
-    <content type="html"><![CDATA[<p>常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、<a href="http://tongji.baidu.com/">百度统计</a>和<a href="http://cnzz.com/">CNZZ</a>，怎么配置？先去对应的网站配置获取js代码，然后加入你网站的footer即可（有的加入head标签内；不过推荐放在footer，不影响页面加载）; Hexo博客添加统计代码都是添加在主题theme代码中（本站当前采用的是landscape主题），以当前主题来讲解添加百度统计，其他主题配置大同小异。</p><pre><code># 以下内容来源网络1.编辑文件 themes/landscape/_config.yml,使用&quot;#&quot;注释原来的google analytics，添加百度统计配置行    baidu_tongji: true      # 百度统计2.新建 themes/landscape/layout/_partial/baidu_tongji.ejs 内容如下    &lt;% if (theme.baidu_tongji) &#123; %&gt;    # 百度统计代码可能已经包含标签&lt;script&gt;,视情况而定    &lt;script type=&quot;text/javascript&quot;&gt;        # 申请的百度统计代码    &lt;/script&gt;    &lt;% &#125; %&gt;3.编辑themes/landscape/layout/_partial/footer.ejs 在 &lt;div class=&quot;outer&quot;&gt;&lt;/div&gt; 标签内添加        &lt;%- partial(&quot;baidu_tongji&quot;) %&gt;4.重新生产部署站点即可。</code></pre><p>当然，对于 CNZZ 统计的添加类似如上操作即可。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;常用的网站统计无非是google analytics(博客默认，国内访问不流畅)、&lt;a href=&quot;http://tongji.baidu.com/&quot;&gt;百度统计&lt;/a&gt;和&lt;a href=&quot;http://cnzz.com/&quot;&gt;CNZZ&lt;/a&gt;，怎么配置？先去对应的网站配置获取
-      
-    
-    </summary>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-    
-      <category term="hexo" scheme="http://effine.cn/tags/hexo/"/>
     
   </entry>
   
