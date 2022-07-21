@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://effine.cn/"/>
-  <updated>2022-05-26T15:53:06.000Z</updated>
+  <updated>2022-07-21T08:51:02.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《思考致富 Think Grow Rich》</title>
+    <link href="http://effine.cn/2022/07/21/ThinkGrowRich/"/>
+    <id>http://effine.cn/2022/07/21/ThinkGrowRich/</id>
+    <published>2022-07-21T08:51:02.000Z</published>
+    <updated>2022-07-21T08:51:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者：拿破仑.希尔(日)；曹爱菊（译）<br>  出版时间：2008年4月<br>  预设问题：</p><pre><code>。为什么思考就能致富？。怎么思考才能致富？。作者所处的美国与中国针对本书的观点，是否适用？中国当前时间能否继续适用？</code></pre><img src="/imgs/readGuide/thinkGrowRich.jpeg" alt="思考致富" /> <span id="more"></span>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  作者：拿破仑.希尔(日)；曹爱菊（译）&lt;br&gt;  出版时间：2008年4月&lt;br&gt;  预设问题：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;。为什么思考就能致富？
+。怎么思考才能致富？
+。作者所处的美国与中国针对本书的观点，是否适用？中国当前时间能否继续适用？
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&quot;/imgs/readGuide/thinkGrowRich.jpeg&quot; alt=&quot;思考致富&quot; /&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>《Java编程的逻辑》-二进制</title>
@@ -596,37 +623,6 @@ $ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
       <category term="git" scheme="http://effine.cn/tags/git/"/>
     
       <category term="remote" scheme="http://effine.cn/tags/remote/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git版本管理</title>
-    <link href="http://effine.cn/2015/11/17/GitVersionManage/"/>
-    <id>http://effine.cn/2015/11/17/GitVersionManage/</id>
-    <published>2015-11-17T06:53:27.000Z</published>
-    <updated>2022-05-23T16:53:27.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git知识是程序员必备的技能，收集了网上比较好的Git教程供大家学习：</p><ul><li><p>官方网站：<a href="https://git-scm.com/">https://git-scm.com/</a></p></li><li><p>猴子都能懂的Git入门：<a href="https://backlog.com/git-tutorial/cn/">https://backlog.com/git-tutorial/cn/</a></p></li><li><p>图解Git： <a href="http://marklodato.github.io/visual-git-guide/index-zh-cn.html">http://marklodato.github.io/visual-git-guide/index-zh-cn.html</a> </p></li><li><p>Git工作流：<a href="https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md">https://github.com/xirong/my-git/blob/master/git-workflow-tutorial.md</a></p></li><li><p>易百教程： <a href="https://www.yiibai.com/git">https://www.yiibai.com/git</a></p></li><li><p>Github作者贡献：<a href="https://geeeeeeeeek.github.io/git-recipes/">https://geeeeeeeeek.github.io/git-recipes/</a></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Git知识是程序员必备的技能，收集了网上比较好的Git教程供大家学习：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;官方网站：&lt;a href=&quot;https://git-scm.com/&quot;&gt;https://git-scm.com/&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;猴子都能懂的G
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
     
   </entry>
   
