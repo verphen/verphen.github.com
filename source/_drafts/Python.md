@@ -64,3 +64,10 @@ tags:
 
 Robot Framework是一款python编写的功能自动化测试框架
 
+
+
+
+廖雪峰教程：https://www.liaoxuefeng.com/wiki/1016959663602400
+
+
+
