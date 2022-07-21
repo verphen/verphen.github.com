@@ -9,7 +9,7 @@ tags: [阅读]
   出版时间：
   预设问题：
 
-<img src="/imgs/readGuide/park.png" alt="高效阅读" /> 
+<img src="/imgs/readGuide/park.jpeg" alt="高效阅读" /> 
 
 
 <!-- more -->

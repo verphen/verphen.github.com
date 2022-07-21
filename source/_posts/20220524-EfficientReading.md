@@ -10,7 +10,7 @@ updated: 2022-05-24 10:09:29
   作者：（日）渡边康弘；金磊（译）
   出版时间：2017年11月
 
-<img src="/imgs/readGuide/park.png" alt="高效阅读" /> 
+<img src="/imgs/readGuide/park.jpeg" alt="高效阅读" /> 
 
 阅读本书时，摘抄了书中具有指导意义的方法，并再文末做了适合自己的方法，指导后续阅读；
 
