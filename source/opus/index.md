@@ -4,6 +4,10 @@ date: 2014-09-12 08:33:35
 
 历史做过同时能收集到UI的项目整理于此，便于记录：
 
+- 每日优鲜 - 首页
+	<img src="/imgs/opus/missfresh/index0.png" alt="首页" style="padding:2px;background: #ececec; height: 500px;"/>
+	<img src="/imgs/opus/missfresh/index1.png" alt="首页" style="padding:2px;background: #ececec; height: 500px;"/>
+
 - 每日优鲜 - 每日省钱
 	<img src="/imgs/opus/missfresh/saveMoney.png" alt="每日省钱" style="padding:2px;background: #ececec; height: 500px;"/>
 
