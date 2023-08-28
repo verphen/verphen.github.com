@@ -69,6 +69,199 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-OracleCommonCommand" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/11/06/OracleCommonCommand/" class="article-date">
+  <time datetime="2013-11-06T14:58:46.000Z" itemprop="datePublished">2013/11/06</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/database/">database</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文322字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/11/06/OracleCommonCommand/" target="_blank">Oracle常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>冬天来了，开始进入工作的节奏做项目，项目使用Oracle数据库，由于之前学习使用过一段时间Oracle，现在补充一下Oracle方面的只是，便于熟悉记忆：</p>
+<p>使用Oracle数据库需要理解的名词：用户、角色、表空间、权限，我在别人的电脑导出数据库dmp文件，然后在本机进行导入（我使用的win8系统，win+r进入运行，cmd进入dos）:<br><code>imp username/password@netname file=path\filename.dmp log=C:\log.log full=y</code>（只有管理员角色才有这样的权限 Only a DBA can import file exported by another DBA ），可以参考<a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/4ad1d162caaedd3383c4d35d.html">《dmp文件导入Oracle数据库》</a>这篇文件。</p>
+        
+          <p class="article-more-link">
+            <a href="/2013/11/06/OracleCommonCommand/#more" target="_blank">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/11/06/OracleCommonCommand/" data-id="cl3plqzsa005u0xgthc49ai66" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2013/11/06/OracleCommonCommand/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag">数据库</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
+    <article id="post-InterviewThread" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2013/10/29/InterviewThread/" class="article-date">
+  <time datetime="2013-10-29T15:46:26.000Z" itemprop="datePublished">2013/10/29</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文244字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2013/10/29/InterviewThread/" target="_blank">线程设计面试题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>昨天的关于JAVA Thread的面试题：设计四个线程，其中两个线程对j加1操作，另外两个线程对j减1操作。发现这个面试题网上一大片，我这里也简单地记录一下：</p>
+<pre><code>/**
+ * @author effine
+ * @date 2013-10-28  下午11:50:34
+ */
+
+public class InterviewThread &#123;
+
+    private int j = 0;
+
+    public static void main(String args[]) &#123;
+
+        InterviewThread it = new InterviewThread();
+
+        /* 实例化内部类 */
+        Inc inc = it.new Inc();
+        Dec dec = it.new Dec();
+
+        /* 循环得到四个线程 */
+        for (int i = 0; i &lt; 2; i++) &#123;
+            Thread t = new Thread(inc);
+            t.start();
+            t = new Thread(dec);
+            t.start();
+        &#125;
+    &#125; //main method finish
+
+    /* 同步加1方法 */
+    private synchronized void inc() &#123;
+        j++;
+        System.out.println(Thread.currentThread().getName() + &quot;-inc:&quot; + j);
+    &#125;
+
+    /* 同步减1方法 */
+    private synchronized void dec() &#123;
+        j--;
+        System.out.println(Thread.currentThread().getName() + &quot;-dec:&quot; + j);
+    &#125;
+
+    /* 加1线程类 */
+    class Inc implements Runnable &#123;
+        public void run() &#123;
+            for (int i = 0; i &lt; 100; i++) &#123;
+                inc();
+            &#125;
+        &#125;
+    &#125;
+
+    /* 减1线程类 */
+    class Dec implements Runnable &#123;
+        public void run() &#123;
+            for (int i = 0; i &lt; 100; i++) &#123;
+                dec();
+            &#125;
+        &#125;
+    &#125;
+    
+&#125;
+</code></pre>
+
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2013/10/29/InterviewThread/" data-id="cl3plqzsa005q0xgt6vhh6bw9" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2013/10/29/InterviewThread/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag">面试</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
     <article id="post-FileTree" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2013/10/26/FileTree/" class="article-date">
@@ -255,145 +448,6 @@ public static void main(String[] args) &#123;
 
 
   
-    <article id="post-JavaDaemonThread" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/10/15/JavaDaemonThread/" class="article-date">
-  <time datetime="2013-10-14T17:20:22.000Z" itemprop="datePublished">2013/10/15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文1.3k字</span>
-    /
-    <span class="post-count">阅读约5分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/10/15/JavaDaemonThread/" target="_blank">Java守护线程</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程)</p>
-<ul>
-<li>Daemon的作用是为其他线程的运行提供便利服务，比如垃圾回收线程就是一个很称职的守护者。User和Daemon两者几乎没有区别，唯一的不同之处就在于虚拟机的离开：如果 User Thread已经全部退出运行了，只剩下Daemon Thread存在了，虚拟机也就退出了。 因为没有了被守护者，Daemon也就没有工作可做了，也就没有继续运行程序的必要了。值得一提的是，守护线程并非只有虚拟机内部提供，用户在编写程序时也可以自己设置守护线程。下面的方法就是用来设置守护线程的。<code>public final void setDaemon(boolean on)</code></li>
-</ul>
-        
-          <p class="article-more-link">
-            <a href="/2013/10/15/JavaDaemonThread/#more" target="_blank">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/15/JavaDaemonThread/" data-id="cl3plqzs9005k0xgtemcgg45a" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2013/10/15/JavaDaemonThread/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
-    <article id="post-OrgnizeIdeas" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2013/10/14/OrgnizeIdeas/" class="article-date">
-  <time datetime="2013-10-14T13:57:32.000Z" itemprop="datePublished">2013/10/14</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/essays/">essays</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文242字</span>
-    /
-    <span class="post-count">阅读约1分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2013/10/14/OrgnizeIdeas/" target="_blank">整理思路</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>今天周五，一周过去了。我回想这周所学习的知识，全部都集中在Git的使用上了，然后再Google Code上下载CDT源码；看着自己的效率，感觉不是很高！怎么提升自己的工作效率，成为今后一段时间需要解决的问题，得在周末这两天腾出点时间，找个宁静的地儿规划自己的路线，学习计划目标。不然，总觉得自己每天没正经做什么事情，激情度不够。</p>
-<p>提升自己的品味，拒绝低俗；培养自己内涵，加强自己对音乐的鉴赏，这不是为了装X，总觉得人活着就是需要改变，让自己优秀。我希望自己变得比较好，待老来回想，无悔也！好了，今天夜深了，捉不到思绪，想写点什么但却下笔无墨。就到此吧！</p>
-<p>优秀需要改变，我愿意改变！</p>
-
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2013/10/14/OrgnizeIdeas/" data-id="cl3plqzs8005d0xgt86xh58cg" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2013/10/14/OrgnizeIdeas/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/archives/page/18/">&lt;&lt; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/17/">17</a><a class="page-number" href="/archives/page/18/">18</a><span class="page-number current">19</span><a class="page-number" href="/archives/page/20/">20</a><a class="page-number" href="/archives/page/21/">21</a><a class="page-number" href="/archives/page/22/">22</a><a class="extend next" rel="next" href="/archives/page/20/">Next &gt;&gt;</a>
@@ -410,7 +464,7 @@ public static void main(String[] args) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -420,6 +474,14 @@ public static void main(String[] args) &#123;
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/09/20/Principle/">《原则》</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/16/GeneralEconomics/">《经济学通识(第二版)》</a>
+          </li>
         
           <li>
             <a href="/2022/07/21/ThinkGrowRich/">《思考致富 Think Grow Rich》</a>
@@ -453,14 +515,6 @@ public static void main(String[] args) &#123;
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
           </li>
         
-          <li>
-            <a href="/2017/03/02/ZookeeperInstallAndConfig/">Zookeeper 安装及配置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/09/IdeaShortcut/">IDEA快捷方式</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -470,7 +524,7 @@ public static void main(String[] args) &#123;
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/book/" style="font-size: 13px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 19px;">java</a> <a href="/tags/linux/" style="font-size: 16px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 15px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/book/" style="font-size: 13px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 19px;">java</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 16px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -479,7 +533,7 @@ public static void main(String[] args) &#123;
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2022 effine
+      &copy; 2023 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -509,7 +563,7 @@ public static void main(String[] args) &#123;
 
       
          &nbsp; | &nbsp;
-         <span class="post-count">本站总共42.2k字</span>
+         <span class="post-count">本站总共42.6k字</span>
       
   
       &nbsp; | &nbsp;

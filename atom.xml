@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://effine.cn/"/>
-  <updated>2022-08-12T08:51:02.000Z</updated>
+  <updated>2022-09-19T16:38:42.000Z</updated>
   <id>http://effine.cn/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《原则》</title>
+    <link href="http://effine.cn/2022/09/20/Principle/"/>
+    <id>http://effine.cn/2022/09/20/Principle/</id>
+    <published>2022-09-19T16:38:42.000Z</published>
+    <updated>2022-09-19T16:38:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者：瑞.达利欧(美)；刘波、綦相(译)<br>  出版时间：2017年12月<br>  预设问题：</p><pre><code>。我的生活原则应该是什么样？。我的工作原则应该是什么样？</code></pre><img src="/imgs/readGuide/principle.jpg" alt="原则 principle" /> <span id="more"></span><p>原则有两部：<br>。生活和工作原则<br>。经济与投资原则</p><p>做一件事情最重要的原则：先起步开始做，如果失败了，总结失败的原因，不断在进行尝试，以最终达到成功；但是我们需要控制自己试错的成本；<br>。最重要的是去分析失败的原因，总结失败的教训，避免下一次试错时不再继续出现<br>。</p><p>制作一份把事情做成功的流程图，标注过程中我们会遇到哪些困难，然后对应的解决方式应该是怎么样</p><p>《经济机器是怎样运行的》<br>。不要让债务的增长速度超过收入（因为债务负担最重会把你压垮）<br>。不要让收入的增长速度超过生产率（因为这将最终使你失去竞争力）<br>。尽一切努力提高生产率（因为生产率在长期内起着最关键的作用）</p><p>本次股票下跌原因是啥？<br>。巴菲特减持比亚迪股票<br>。美储联加息？<br>。国内银行加息？<br>。俄乌能源大战？</p><p>回答预设问题：</p><p>我的想法：</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  作者：瑞.达利欧(美)；刘波、綦相(译)&lt;br&gt;  出版时间：2017年12月&lt;br&gt;  预设问题：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;。我的生活原则应该是什么样？
+。我的工作原则应该是什么样？
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&quot;/imgs/readGuide/principle.jpg&quot; alt=&quot;原则 principle&quot; /&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>《经济学通识(第二版)》</title>
+    <link href="http://effine.cn/2022/08/16/GeneralEconomics/"/>
+    <id>http://effine.cn/2022/08/16/GeneralEconomics/</id>
+    <published>2022-08-16T09:14:09.000Z</published>
+    <updated>2022-08-16T09:14:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>  作者：薛兆丰<br>  出版时间：2015-08<br>  预设问题：</p><pre><code>。我能获得什么经济学知识?。应用该经济学原理，我应该改变哪些经济思维方式？。指导今后的经济学思想？</code></pre><img src="/imgs/readGuide/generalEconomics.jpeg" alt="经济学通识" /> <span id="more"></span><p>回答预设问题：</p><p>我的想法：</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;  作者：薛兆丰&lt;br&gt;  出版时间：2015-08&lt;br&gt;  预设问题：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;。我能获得什么经济学知识?
+。应用该经济学原理，我应该改变哪些经济思维方式？
+。指导今后的经济学思想？
+&lt;/code&gt;&lt;/pre&gt;
+&lt;img src=&quot;/imgs/readGuide/generalEconomics.jpeg&quot; alt=&quot;经济学通识&quot; /&gt;
+    
+    </summary>
+    
+      <category term="阅读" scheme="http://effine.cn/categories/%E9%98%85%E8%AF%BB/"/>
+    
+    
+      <category term="阅读" scheme="http://effine.cn/tags/%E9%98%85%E8%AF%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>《思考致富 Think Grow Rich》</title>
@@ -566,63 +619,6 @@ Usage: nginx [-?hvVtq] [-s
       <category term="java" scheme="http://effine.cn/tags/java/"/>
     
       <category term="spring" scheme="http://effine.cn/tags/spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux安装nginx</title>
-    <link href="http://effine.cn/2015/11/17/NginxInstall/"/>
-    <id>http://effine.cn/2015/11/17/NginxInstall/</id>
-    <published>2015-11-17T10:08:00.000Z</published>
-    <updated>2018-10-31T08:24:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： <a href="http://nginx.org/">http://nginx.org/</a> （以下讲解环境使用centos，其他环境安装方式大同小异）</p><pre><code>$ wget http://nginx.org/download/nginx-1.8.0.tar.gz # 下载相应版本nginx$ tar -zxvf nginx-1.8.0.tar.gz [-C &lt;dir&gt;] # 解压[指定目录]$ cd nginx-1.8.0$ ./configure --prefix=/usr/local/nginx  # prefix指定安装目录</code></pre><span id="more"></span><p>安装过程出现的错误解析：</p><pre><code># 错误 1checking for C compiler ... not found./configure: error: C compiler cc is not found</code></pre><p>分析&#x2F;解决：不存在C编译环境，安装即可：yum install gcc (如果不存在C++编译环境，使用命令安装即可: yum install gcc-c++)</p><pre><code># 错误 2./configure: error: the HTTP gzip module requires the zlib library.You can either disable the module by using --without-http_gzip_moduleoption, or install the zlib library into the system, or build the zlib librarystatically from the source with nginx by using --with-zlib=&lt;path&gt; option.</code></pre><p>分析&#x2F;解决：不存在zlib library；安装即可：yum install -y zlib-devel</p><pre><code># 错误 3./configure: error: the HTTP rewrite module requires the PCRE library.You can either disable the module by using --without-http_rewrite_moduleoption, or install the PCRE library into the system, or build the PCRE librarystatically from the source with nginx by using --with-pcre=&lt;path&gt; option.</code></pre><p>分析&#x2F;解决：缺少PCRE library; 那下载源码安装<a href="http://www.pcre.org/">PCRE library</a>即可(注意下载的是prce而不是prce2)，下载解压安装：</p><pre><code>$ cd pcre-&#123;version&#125;$ ./configure$ make &amp;&amp; make install</code></pre><p>当然你也可以使用命令： yum install pcre</p><pre><code># 错误 4./configure: error: the HTTP cache module requires md5 functionsfrom OpenSSL library.   You can either disable the module by using--without-http-cache option, or install the OpenSSL library into the system,or build the OpenSSL library statically from the source with nginx by using--with-http_ssl_module --with-openssl=&lt;path&gt; options.</code></pre><p>分析&#x2F;解决： 缺少OpenSSL library; 安装：yum install openssl openssl-devel </p><pre><code># 错误5nginx: [emerg] bind() to 0.0.0.0:9000 failed (48: Address already in use)</code></pre><p>解决：地址(端口)已经被使用，修改端口重新加载nginx（nginx -s reload）;有可能是需要root用户启动，可以尝试</p><pre><code># 错误6nginx: [emerg] open() &quot;/usr/local/nginx/logs/nginx.pid&quot; failed (13: Permission denied)</code></pre><p>解决： 没有权限，使用root用户启动</p><p>根据nginx源码安装延伸</p><pre><code>. configure # 该文件是软件作者或机构提供的shell脚本，用于初始化软件安装必需环境. make# 编译源码，生成Makefile. make install    # 读取Makefile中的指令，开始安装</code></pre><p>若文章阐述有误，欢迎指正；我会及时修正，以误他人！</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;若你的项目需要用到负载均衡、反向代理、静态文件服务器等功能，赶快入手nginx，她能超轻量级的完成你所需功能；现我们开始第一步安装 nginx： &lt;a href=&quot;http://nginx.org/&quot;&gt;http://nginx.org/&lt;/a&gt; （以下讲解环境使用centos，其他环境安装方式大同小异）&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;$ wget http://nginx.org/download/nginx-1.8.0.tar.gz 	# 下载相应版本nginx
-$ tar -zxvf nginx-1.8.0.tar.gz [-C &amp;lt;dir&amp;gt;] 	# 解压[指定目录]
-$ cd nginx-1.8.0
-$ ./configure --prefix=/usr/local/nginx  	# prefix指定安装目录
-&lt;/code&gt;&lt;/pre&gt;
-    
-    </summary>
-    
-      <category term="tools" scheme="http://effine.cn/categories/tools/"/>
-    
-    
-      <category term="tools" scheme="http://effine.cn/tags/tools/"/>
-    
-      <category term="nginx" scheme="http://effine.cn/tags/nginx/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Git Remote</title>
-    <link href="http://effine.cn/2015/11/17/GitRemote/"/>
-    <id>http://effine.cn/2015/11/17/GitRemote/</id>
-    <published>2015-11-17T07:08:24.000Z</published>
-    <updated>2018-10-31T08:24:53.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文<code>Manage the set of repositories (&quot;remotes&quot;) whose branches you track.</code> </p><pre><code>$ git remote        # 查看当前分支跟踪(远程)仓库别名(一般为origin，以下统一采用该别名)$ git remote &lt;-v | --verbose&gt;     # 查看跟踪仓库别名及地址$ git remote show &lt;origin&gt;    # 查看跟踪仓库地址及分支情况$ git remote add &lt;origin&gt; &lt;url&gt;   # 添加跟踪仓库别名及对应的跟踪地址 # 更新指定跟踪仓库名的地址$ git remote set-url [--push] &lt;origin&gt; &lt;newurl&gt; [&lt;oldurl&gt;] $ git remote set-url --add &lt;origin&gt; &lt;newurl&gt;$ git remote set-url --delete &lt;origin&gt; &lt;url&gt;    [--push]                # manipulate push URLs(操作push的URL)    [--add]                # add URL    [--delete]              # delete URLs$ git remote &lt;remove|rm&gt; &lt;origin&gt;     # 删除指定的跟踪仓库名$ git remote rename &lt;old&gt; &lt;new&gt;       # 重命名跟踪仓库名# 设置或删除跟踪仓库的HEAD指向指定分支,命令行中的圆括号表示必选其中之一执行$ git remote set-head &lt;origin&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)     [-a|--auto]         # set refs/remotes/&lt;name&gt;/HEAD according to remote    [-d|--delete]       # delete refs/remotes/&lt;name&gt;/HEAD# 清理存在过但现在不存在的本地跟踪分支的引用$ git remote prune [&lt;options&gt;] &lt;origin&gt;     [-n|--dry-run]         # dry run(试运行，彩排)</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;Git Remote命令官方解释是：管理和设置当前分支跟踪的仓库；原文&lt;code&gt;Manage the set of repositories (&amp;quot;remotes&amp;quot;) whose branches you track.&lt;/code&gt; &lt;/p&gt;
-&lt;pre&gt;
-      
-    
-    </summary>
-    
-      <category term="git" scheme="http://effine.cn/categories/git/"/>
-    
-    
-      <category term="git" scheme="http://effine.cn/tags/git/"/>
-    
-      <category term="remote" scheme="http://effine.cn/tags/remote/"/>
     
   </entry>
   

@@ -69,6 +69,201 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-NodejsInstall" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/06/30/NodejsInstall/" class="article-date">
+  <time datetime="2014-06-29T17:42:14.000Z" itemprop="datePublished">2014/06/30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/web/">web</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文307字</span>
+    /
+    <span class="post-count">阅读约1分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/06/30/NodejsInstall/" target="_blank">Nodejs 安装</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>nodejs听说过一段时间了，最近因为想使用hexo搭建自己的博客需要使用到nodejs，特此整理了一下对其的安装。</p>
+<p>Windows安装</p>
+<ol>
+<li>官网下载：[<a target="_blank" rel="noopener" href="http://nodejs.org/][1]">http://nodejs.org/][1]</a> ，两种安装方式：<ul>
+<li>exe 安装：下载对应平台的exe文件，将下载的node.exe文件复制到需要安装的目录，且将该目录加入到系统环境变量path；（建议采用，熟悉原理）</li>
+<li>msi 安装：包装exe安装方式，自动设置环境变量及复制node.exe到C:\program file目录</li>
+</ul>
+</li>
+</ol>
+<p>测试是否安装成功：</p>
+<pre><code>    $ node &lt;[-v|--version]&gt;        # 显示版本信息
+</code></pre>
+<ol start="2">
+<li><p>安装npm (Node Package Manager)</p>
+<p> 现在的node最新版本已经默认集成npm，所以不需要额外安装; 若是以前较低版本参考如下安装：</p>
+<pre><code> $ npm -v         # 测试npm是否安装（如打印版本信息说明已安装）
+ # Git自行查询安装
+ $ git config --system http.sslcainfo /bin/curl-ca-bundle.crt
+ $ git clone --recursive git://github.com/isaacs/npm.git                   # git克隆npm项目到本地
+ $ cd npm
+ $ node cli.js install npm -gf
+</code></pre>
+</li>
+</ol>
+<p>安装过程中错误分析</p>
+<ul>
+<li><p>出现错误：npm ERR! registry error parsing json，需要设置npm代理,执行命令</p>
+<pre><code> $ npm config set registry http://registry.cnpmjs.org
+</code></pre>
+</li>
+</ul>
+<p>[1]:	<a target="_blank" rel="noopener" href="http://nodejs.org/">http://nodejs.org/</a></p>
+
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2014/06/30/NodejsInstall/" data-id="cl3plqzsi00710xgthqdvcp1v" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2014/06/30/NodejsInstall/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/" rel="tag">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/" rel="tag">ubuntu</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/windows/" rel="tag">windows</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
+    <article id="post-JavaAdapterPattern" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2014/04/07/JavaAdapterPattern/" class="article-date">
+  <time datetime="2014-04-07T15:00:06.000Z" itemprop="datePublished">2014/04/07</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/java/">java</a>
+  </div>
+
+    
+  <div class="article-category">
+    
+    <span class="post-count">本文929字</span>
+    /
+    <span class="post-count">阅读约3分钟</span> 
+
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2014/04/07/JavaAdapterPattern/" target="_blank">JAVA适配器模式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>适配器模式（Adapter Pattern）：把类的接口变换成客户端所期待的另一种接口，从而使原本因接口不匹配而无法再一起工作的两个类一起工作。</p>
+<p>适配器模式的两种形式：</p>
+<ol>
+<li><p>类的适配器模式：把被适配的类的API转换成目标类的API；该模式涉及的角色：</p>
+<ul>
+<li><p>目标（Target）角色：这就是所期待得到的接口；<strong>注意，这里讨论的是类的适配器模式，因此目标不可以是类。</strong></p>
+<pre><code>  /**
+   * @author effine
+   * @date 2014年4月7日   下午11:44:58
+   */
+  
+  package org.effine.adapter;
+  
+  /* 目标角色 */
+  public interface Target &#123;
+      
+      /**
+       * 这是源类（客户端类）也有的方法method1()
+       */
+      void method1();
+      
+      /**
+       * 这是源类（客户端类）没有的方法method2()
+       */
+      void method2();
+  &#125;
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2014/04/07/JavaAdapterPattern/#more" target="_blank">阅读全文</a>
+          </p>
+        
+      
+    </div>
+
+    <footer class="article-footer">
+      <a data-url="http://effine.cn/2014/04/07/JavaAdapterPattern/" data-id="cl3plqzsi006x0xgt49m7hr4r" class="article-share-link">Share</a>
+      
+      <!-- 文章上的"comment"按钮 -->
+      <!-- 
+        
+          <a href="http://effine.cn/2014/04/07/JavaAdapterPattern/#" class="article-comment-link">Comments</a>
+        
+      -->
+
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" rel="tag">设计模式</a></li></ul>
+
+    </footer>
+
+  </div>
+  
+  
+
+</article>
+
+
+
+
+  
     <article id="post-TreesetSort" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2014/03/19/TreesetSort/" class="article-date">
@@ -205,144 +400,6 @@
 
 
   
-    <article id="post-JavaVirtualMachine" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02/27/JavaVirtualMachine/" class="article-date">
-  <time datetime="2014-02-27T14:18:22.000Z" itemprop="datePublished">2014/02/27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/java/">java</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文338字</span>
-    /
-    <span class="post-count">阅读约1分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02/27/JavaVirtualMachine/" target="_blank">深入JAVA虚拟机</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>做项目的时候，总觉得手头的技能不够用；现在总能对之前的一些话深有感触：书到用时方觉少；没办法，素材也就这样，收拾心情学吧！</p>
-<p>本书阐述JAVA的三大特性：跨平台性、安全性及网络移动性；近几年互联网的活跃，给Java也注了一剂生长素；</p>
-<p>针对JAVA的一套流程：<br>1、编辑器编写Java源码（.java文件）<br>2、java文件经过Java编译器编程成Class文件<br>3、java虚拟机加载class文件（由类加载器完成）解释执行成字节码，再由虚拟机中的执行引擎去执行字节码文件</p>
-<p>执行引擎有多种策略：<br>1、一次性解释字节码<br>2、较上一种执行引擎更快，消耗内存（即时编译Just In Time Compiler）；第一次执行的字节码会被编译成本地机器代码，编译出的本地机器代码会被缓存，当方法调用的时候可以重用<br>3、该种引擎是自适应优化器；虚拟机开始的时候解释字节码，会监事运行中的程序活动，并且激励下使用最频繁的代码段，程序运行的时候，虚拟机只把那些惠东最频繁的代码编译成本地代码，</p>
-
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/JavaVirtualMachine/" data-id="cl3plqzsf006n0xgtf8bgamec" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2014/02/27/JavaVirtualMachine/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/" rel="tag">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%80%BB%E7%BB%93/" rel="tag">总结</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
-    <article id="post-BookMeetUnknowMe" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2014/02/27/BookMeetUnknowMe/" class="article-date">
-  <time datetime="2014-02-27T13:00:00.000Z" itemprop="datePublished">2014/02/27</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/books/">books</a>
-  </div>
-
-    
-  <div class="article-category">
-    
-    <span class="post-count">本文986字</span>
-    /
-    <span class="post-count">阅读约3分钟</span> 
-
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2014/02/27/BookMeetUnknowMe/" target="_blank">阅《遇见未知的自己》</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>年前在当当给朋友买了这本张德芬的《遇见未知的自己》，自己翻了些许并送给了她；之后一直以没有时间为由而再次拾起，其实电子版一直存放在磁盘，它就是这样一直呆在那个被遗忘的角落；</p>
-<p>中途其实也试着去打开过，但还是缺少买书时的激情去看完；总觉得没有多大的帮助对人生，其实书中阐述的观点“找寻遗失的真我”我一直都懂，只是不去试着寻找而已，只是以没有时间为由去真正的停下来思考；很多次我也曾想过，到底在追寻什么？毕业找工作–努力工作–挣钱买房结婚，这好像就是被安排好的（当然，是现实让我不得不这样走），我应该以这样的流程走下去；在工作中提升自己、锻炼自己，让自己一步一步走向成熟、走向优秀；</p>
-        
-          <p class="article-more-link">
-            <a href="/2014/02/27/BookMeetUnknowMe/#more" target="_blank">阅读全文</a>
-          </p>
-        
-      
-    </div>
-
-    <footer class="article-footer">
-      <a data-url="http://effine.cn/2014/02/27/BookMeetUnknowMe/" data-id="cl3plqzsf006j0xgtchxgd23e" class="article-share-link">Share</a>
-      
-      <!-- 文章上的"comment"按钮 -->
-      <!-- 
-        
-          <a href="http://effine.cn/2014/02/27/BookMeetUnknowMe/#" class="article-comment-link">Comments</a>
-        
-      -->
-
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/book/" rel="tag">book</a></li></ul>
-
-    </footer>
-
-  </div>
-  
-  
-
-</article>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/15/">&lt;&lt; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="page-number" href="/page/15/">15</a><span class="page-number current">16</span><a class="page-number" href="/page/17/">17</a><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/22/">22</a><a class="extend next" rel="next" href="/page/17/">Next &gt;&gt;</a>
@@ -359,7 +416,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/blog/">blog</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/books/">books</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/database/">database</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/essays/">essays</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git/">git</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/java/">java</a><span class="category-list-count">15</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/linux/">linux</a><span class="category-list-count">7</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/redis/">redis</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/tools/">tools</a><span class="category-list-count">29</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/web/">web</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%9E%B6%E6%9E%84/">架构</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E9%98%85%E8%AF%BB/">阅读</a><span class="category-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -369,6 +426,14 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2022/09/20/Principle/">《原则》</a>
+          </li>
+        
+          <li>
+            <a href="/2022/08/16/GeneralEconomics/">《经济学通识(第二版)》</a>
+          </li>
         
           <li>
             <a href="/2022/07/21/ThinkGrowRich/">《思考致富 Think Grow Rich》</a>
@@ -402,14 +467,6 @@
             <a href="/2017/03/24/ITermShortcut/">iTerm 快捷键</a>
           </li>
         
-          <li>
-            <a href="/2017/03/02/ZookeeperInstallAndConfig/">Zookeeper 安装及配置</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/09/IdeaShortcut/">IDEA快捷方式</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -419,7 +476,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/book/" style="font-size: 13px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 19px;">java</a> <a href="/tags/linux/" style="font-size: 16px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 15px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
+      <a href="/tags/Integer/" style="font-size: 10px;">Integer</a> <a href="/tags/annual/" style="font-size: 10px;">annual</a> <a href="/tags/blog/" style="font-size: 13px;">blog</a> <a href="/tags/book/" style="font-size: 13px;">book</a> <a href="/tags/branch/" style="font-size: 10px;">branch</a> <a href="/tags/browser/" style="font-size: 10px;">browser</a> <a href="/tags/catch/" style="font-size: 10px;">catch</a> <a href="/tags/centos/" style="font-size: 10px;">centos</a> <a href="/tags/command/" style="font-size: 13px;">command</a> <a href="/tags/commond/" style="font-size: 10px;">commond</a> <a href="/tags/config/" style="font-size: 10px;">config</a> <a href="/tags/database/" style="font-size: 10px;">database</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/eclipse/" style="font-size: 13px;">eclipse</a> <a href="/tags/efficiency/" style="font-size: 10px;">efficiency</a> <a href="/tags/finally/" style="font-size: 10px;">finally</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/git/" style="font-size: 18px;">git</a> <a href="/tags/github/" style="font-size: 11px;">github</a> <a href="/tags/gradle/" style="font-size: 10px;">gradle</a> <a href="/tags/hexo/" style="font-size: 12px;">hexo</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/ignore/" style="font-size: 10px;">ignore</a> <a href="/tags/inittab/" style="font-size: 10px;">inittab</a> <a href="/tags/iterm/" style="font-size: 10px;">iterm</a> <a href="/tags/java/" style="font-size: 19px;">java</a> <a href="/tags/linux/" style="font-size: 15px;">linux</a> <a href="/tags/mac/" style="font-size: 10px;">mac</a> <a href="/tags/maven/" style="font-size: 13px;">maven</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nginx/" style="font-size: 12px;">nginx</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/oracle/" style="font-size: 11px;">oracle</a> <a href="/tags/redis/" style="font-size: 10px;">redis</a> <a href="/tags/remote/" style="font-size: 10px;">remote</a> <a href="/tags/role/" style="font-size: 10px;">role</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/shortcut/" style="font-size: 12px;">shortcut</a> <a href="/tags/skill/" style="font-size: 11px;">skill</a> <a href="/tags/spring/" style="font-size: 10px;">spring</a> <a href="/tags/ssh/" style="font-size: 11px;">ssh</a> <a href="/tags/stash/" style="font-size: 10px;">stash</a> <a href="/tags/sublime/" style="font-size: 11px;">sublime</a> <a href="/tags/tag/" style="font-size: 10px;">tag</a> <a href="/tags/teamcity/" style="font-size: 11px;">teamcity</a> <a href="/tags/tomcat/" style="font-size: 10px;">tomcat</a> <a href="/tags/tools/" style="font-size: 20px;">tools</a> <a href="/tags/try/" style="font-size: 10px;">try</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/web/" style="font-size: 11px;">web</a> <a href="/tags/windows/" style="font-size: 10px;">windows</a> <a href="/tags/zk/" style="font-size: 10px;">zk</a> <a href="/tags/zookeeper/" style="font-size: 10px;">zookeeper</a> <a href="/tags/%E5%B7%A5%E5%85%B7/" style="font-size: 14px;">工具</a> <a href="/tags/%E5%BE%AE%E6%9C%8D%E5%8A%A1/" style="font-size: 10px;">微服务</a> <a href="/tags/%E6%80%BB%E7%BB%93/" style="font-size: 17px;">总结</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" style="font-size: 11px;">数据库</a> <a href="/tags/%E6%9E%B6%E6%9E%84/" style="font-size: 11px;">架构</a> <a href="/tags/%E7%89%88%E6%9C%AC%E7%AE%A1%E7%90%86/" style="font-size: 10px;">版本管理</a> <a href="/tags/%E7%90%86%E8%B4%A2/" style="font-size: 10px;">理财</a> <a href="/tags/%E7%A7%81%E5%9F%9F/" style="font-size: 10px;">私域</a> <a href="/tags/%E7%AE%97%E6%B3%95/" style="font-size: 10px;">算法</a> <a href="/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">设计模式</a> <a href="/tags/%E9%98%85%E8%AF%BB/" style="font-size: 16px;">阅读</a> <a href="/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -428,7 +485,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2022 effine
+      &copy; 2023 effine
 
       &nbsp; | &nbsp;
       powered by <a href="http://hexo.io/" target="_blank">Hexo</a> 
@@ -458,7 +515,7 @@
 
       
          &nbsp; | &nbsp;
-         <span class="post-count">本站总共42.2k字</span>
+         <span class="post-count">本站总共42.6k字</span>
       
   
       &nbsp; | &nbsp;
