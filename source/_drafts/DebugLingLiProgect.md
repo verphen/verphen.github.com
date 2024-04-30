@@ -16,7 +16,7 @@ tags:
 		。安装pipreqs：pip install pipreqs
 		。生成requirements.txt文件：pipreqs ./ --encoding=utf8 --force
 
-		
+
 安装过程问题收集：
 。安装pipreqs出现无权限"PermissionError: [Errno 13] Permission denied"
 	
@@ -29,3 +29,5 @@ tags:
 
 	# 解决方法：将命令目录加入系统环境变量
 	$ pip show pipreqs  # 复制Location地址，替换路径尾部的"site-packages"为"Scripts"
+
+
